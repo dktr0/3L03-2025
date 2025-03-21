@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cer5tfevshgrk"
-path="res://.godot/imported/mantaray.glb-2be37c14bcdb1c44d98d10bf751513a4.scn"
+path="res://.godot/imported/mantaray.glb-9c14a4fe0b09369cacd8c656c9dcf742.scn"
 
 [deps]
 
-source_file="res://Matty/MantaRay/mantaray.glb"
-dest_files=["res://.godot/imported/mantaray.glb-2be37c14bcdb1c44d98d10bf751513a4.scn"]
+source_file="res://Matty/Manta Ray/mantaray.glb"
+dest_files=["res://.godot/imported/mantaray.glb-9c14a4fe0b09369cacd8c656c9dcf742.scn"]
 
 [params]
 
