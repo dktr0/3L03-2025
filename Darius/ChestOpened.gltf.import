@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://72tgkx4tkomx"
-path="res://.godot/imported/Chest_Test.glb-b4b289ba048c44e4f646dc869b77725d.scn"
+uid="uid://dkyvgdh6byf6j"
+path="res://.godot/imported/ChestOpened.gltf-928617c635e907e0fee6a94feebf581c.scn"
 
 [deps]
 
-source_file="res://Darius/Chest_Test.glb"
-dest_files=["res://.godot/imported/Chest_Test.glb-b4b289ba048c44e4f646dc869b77725d.scn"]
+source_file="res://Darius/ChestOpened.gltf"
+dest_files=["res://.godot/imported/ChestOpened.gltf-928617c635e907e0fee6a94feebf581c.scn"]
 
 [params]
 
