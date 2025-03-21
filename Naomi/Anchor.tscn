@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvqfkogi3enp" path="res://Naomi/Anchor.glb" id="1_rh4my"]
 
 [node name="Anchor" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34424, 0, 0)
 
 [node name="Anchor" parent="." instance=ExtResource("1_rh4my")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.324465, 0, 0.141304)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30756, 0, 0.141304)
