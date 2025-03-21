@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://be0r4ota4e1c"]
 
-[ext_resource type="PackedScene" uid="uid://xt2k5eif24su" path="res://Xinyu Luo/bird 01.glb" id="1_heh6x"]
+[ext_resource type="PackedScene" uid="uid://xt2k5eif24su" path="res://Xinyu Luo/Bird 01.glb" id="1_heh6x"]
 
 [node name="Bird 01" type="Node3D"]
 
