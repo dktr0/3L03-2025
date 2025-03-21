@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwevg5ffeyeu5"]
 
-[ext_resource type="PackedScene" uid="uid://df3pt4lnxneh2" path="res://Mason/Present_light_house.glb" id="1_04s5g"]
+[ext_resource type="PackedScene" uid="uid://df3pt4lnxneh2" path="res://Mason/Present_Light_House.glb" id="1_04s5g"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fp45y"]
 
