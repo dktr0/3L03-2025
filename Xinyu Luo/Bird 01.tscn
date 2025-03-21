@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://be0r4ota4e1c"]
+
+[ext_resource type="PackedScene" uid="uid://xt2k5eif24su" path="res://Xinyu Luo/bird 01.glb" id="1_heh6x"]
+
+[node name="Bird 01" type="Node3D"]
+
+[node name="Bird 01" parent="." instance=ExtResource("1_heh6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.676956, 0, -0.612284)

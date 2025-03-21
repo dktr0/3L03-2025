@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://3q2asem0i7vn"]
+
+[ext_resource type="Script" path="res://portal_1.gd" id="1_sk351"]
+[ext_resource type="Shader" uid="uid://dvkoqx2fbqiwy" path="res://Portal 1.tres" id="2_8om8n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rkxby"]
+render_priority = 0
+shader = ExtResource("2_8om8n")
+shader_parameter/Colour_Intesity = 5.0
+shader_parameter/Portal_Colour = Color(0.513293, 0.692811, 0.62027, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_w0jao"]
+
+[sub_resource type="Shader" id="Shader_d3sxo"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+uniform vec4 border_color: source_color;
+uniform mat4 cutplane;
+varying vec3 wvtx;
+
+void vertex() {
+	wvtx = (MODEL_MATRIX * vec4(VERTEX,1.0)).xyz;
+	
+}
+
+void fragment() {
+
+		
+	vec3 planeNormal = normalize(cutplane[2].xyz);
+	float planeDistance = dot(planeNormal,cutplane[3].xyz);
+	float vertexDistance = dot(planeNormal, wvtx);
+	float dist = vertexDistance - planeDistance;
+	
+	if (dist < 0.0) discard;
+	
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	
+	//Add border
+	float border_dist = smoothstep(0.0,0.1,dist);
+	ALBEDO =  (mix(border_color *7.0,albedo_tex, border_dist)).rgb;
+
+
+	float metallic_tex = dot(texture(texture_metallic, base_uv), metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	SPECULAR = specular;
+
+	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
+	float roughness_tex = dot(texture(texture_roughness, base_uv), roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5fmnf"]
+render_priority = 0
+shader = SubResource("Shader_d3sxo")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/border_color = null
+shader_parameter/cutplane = null
+
+[sub_resource type="BoxMesh" id="BoxMesh_tuph7"]
+material = SubResource("ShaderMaterial_5fmnf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b23p4"]
+
+[node name="Portal 1" type="Node3D"]
+script = ExtResource("1_sk351")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(12.6174, 0, 0, 0, 8.70814, 0, 0, 0, 3.67398, 4.40296, 0, 4.78054)
+material_override = SubResource("ShaderMaterial_rkxby")
+mesh = SubResource("QuadMesh_w0jao")
+
+[node name="Player" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1774, 0.650629, -1.80986)
+mesh = SubResource("BoxMesh_tuph7")
+surface_material_override/0 = SubResource("ShaderMaterial_b23p4")

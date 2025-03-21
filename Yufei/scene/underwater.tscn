@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dof4n81mmp5xs"]
+
+[ext_resource type="PackedScene" uid="uid://csghcdrsyaqju" path="res://underwater.glb" id="1_tv6my"]
+
+[node name="underwater" instance=ExtResource("1_tv6my")]
