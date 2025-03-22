@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhxorqquga27y"]
+
+[ext_resource type="Shader" uid="uid://cu52a36053kac" path="res://s_special_shader.tres" id="1_y7wgh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_84wcm"]
+render_priority = 0
+shader = ExtResource("1_y7wgh")
+shader_parameter/Speed = Vector2(0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_muygx"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6p5p8"]
+gravity = Vector3(0, 5, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vb0nw"]
+
+[sub_resource type="Environment" id="Environment_r55ss"]
+ambient_light_color = Color(4, 0.8, 0, 1)
+glow_enabled = true
+glow_intensity = 8.0
+glow_strength = 1.05
+glow_blend_mode = 0
+glow_hdr_luminance_cap = 1.0
+
+[node name="vfx_fire" type="Node3D"]
+visibility_parent = NodePath("Fire")
+
+[node name="Fire" type="CPUParticles3D" parent="."]
+sorting_offset = 2.0
+material_override = SubResource("ShaderMaterial_84wcm")
+amount = 1
+mesh = SubResource("QuadMesh_muygx")
+gravity = Vector3(0, 0, 0)
+color = Color(4, 0.8, 0, 1)
+
+[node name="Smoke" type="GPUParticles3D" parent="."]
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_6p5p8")
+draw_pass_1 = SubResource("QuadMesh_vb0nw")
+
+[node name="Glow" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r55ss")

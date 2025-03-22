@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://qb6x5rpu8cvk"]
+
+[ext_resource type="PackedScene" uid="uid://bwu2mbc6ovftj" path="res://Xinyu Luo/Swan.glb" id="1_jju7t"]
+
+[node name="Swan" type="Node3D"]
+
+[node name="Swan" parent="." instance=ExtResource("1_jju7t")]
+transform = Transform3D(0.605856, 0, 0, 0, 0.605856, 0, 0, 0, 0.605856, -1.10731, 0, -0.74069)
