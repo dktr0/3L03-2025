@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btt8ushfutyw0"
-path.s3tc="res://.godot/imported/CargoBoxSunken_CargoWood1 Base Color.png-7c02bf587e85872a1d5125f59492f408.s3tc.ctex"
+uid="uid://x8ueincawluq"
+path.s3tc="res://.godot/imported/coral2_Coral2 Base Color.png-c84f743da2bd730c5393ef4492efa94e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f74cd2df2806fa642126e90f23186023"
+"md5": "91178a1c736d0bf6623faa026f8f5108"
 }
 
 [deps]
 
-source_file="res://Riley/CargoBoxSunken_CargoWood1 Base Color.png"
-dest_files=["res://.godot/imported/CargoBoxSunken_CargoWood1 Base Color.png-7c02bf587e85872a1d5125f59492f408.s3tc.ctex"]
+source_file="res://Riley/GLBflies/coral2_Coral2 Base Color.png"
+dest_files=["res://.godot/imported/coral2_Coral2 Base Color.png-c84f743da2bd730c5393ef4492efa94e.s3tc.ctex"]
 
 [params]
 

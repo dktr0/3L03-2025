@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1mm2jbrsp6sa"
-path.s3tc="res://.godot/imported/Bulrush_bulrush2Texture Base Color.png-55edc931eb79f04b3b49acefdb57a593.s3tc.ctex"
+uid="uid://dn8os856itycc"
+path.s3tc="res://.godot/imported/CargoBoxSunken_CargoBolts Base Color.png-15298555e4937606840b9a6ea78e1356.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "85bea853e4ee0884310e189b9cd197a2"
+"md5": "c29560a73a1b437483636c5e0e1f549a"
 }
 
 [deps]
 
-source_file="res://Riley/Bulrush_bulrush2Texture Base Color.png"
-dest_files=["res://.godot/imported/Bulrush_bulrush2Texture Base Color.png-55edc931eb79f04b3b49acefdb57a593.s3tc.ctex"]
+source_file="res://Riley/GLBflies/CargoBoxSunken_CargoBolts Base Color.png"
+dest_files=["res://.godot/imported/CargoBoxSunken_CargoBolts Base Color.png-15298555e4937606840b9a6ea78e1356.s3tc.ctex"]
 
 [params]
 

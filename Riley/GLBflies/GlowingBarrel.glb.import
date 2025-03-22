@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bvo74tkylqpif"
-path="res://.godot/imported/Bulrush.glb-f7083a5390747312254d7bddf45a84c2.scn"
+uid="uid://dp42c0dbdp7uq"
+path="res://.godot/imported/GlowingBarrel.glb-69aa9e40f3a27c29ad2c7fd835b01a1b.scn"
 
 [deps]
 
-source_file="res://Riley/Bulrush.glb"
-dest_files=["res://.godot/imported/Bulrush.glb-f7083a5390747312254d7bddf45a84c2.scn"]
+source_file="res://Riley/GLBflies/GlowingBarrel.glb"
+dest_files=["res://.godot/imported/GlowingBarrel.glb-69aa9e40f3a27c29ad2c7fd835b01a1b.scn"]
 
 [params]
 

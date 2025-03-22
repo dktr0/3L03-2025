@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpfp5majm4qsh"
-path.s3tc="res://.godot/imported/Bulrush_OuterLeaves Base Color.png-9cf8f7c6113b5f4fde11b86c2b29d8f7.s3tc.ctex"
+uid="uid://25qu7c13rwb1"
+path.s3tc="res://.godot/imported/GlowingBarrel_BarrelWood Base Color.png-5af7630892bf1d595c4aee59cb9a7c46.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "726d725e0f0ce3e0bb554e59d4881530"
+"md5": "7ca2ac1613337d5ae5a28753cba35aa0"
 }
 
 [deps]
 
-source_file="res://Riley/Bulrush_OuterLeaves Base Color.png"
-dest_files=["res://.godot/imported/Bulrush_OuterLeaves Base Color.png-9cf8f7c6113b5f4fde11b86c2b29d8f7.s3tc.ctex"]
+source_file="res://Riley/GLBflies/GlowingBarrel_BarrelWood Base Color.png"
+dest_files=["res://.godot/imported/GlowingBarrel_BarrelWood Base Color.png-5af7630892bf1d595c4aee59cb9a7c46.s3tc.ctex"]
 
 [params]
 

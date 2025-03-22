@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5bf1mpccndrf"
-path.s3tc="res://.godot/imported/GlowingBarrel_CargoMetal Base Color.png-ded74681198050b328cd8207ebb026a2.s3tc.ctex"
+uid="uid://c8du2mygw03hn"
+path.s3tc="res://.godot/imported/coral_Coral1 Base Color.png-c2ceb3ba514f73c8f1e80f4729739ecd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "93d24bc0c0b02142da199e858c2535b3"
+"md5": "4fd69f200626666e3b37bc8b7daa184c"
 }
 
 [deps]
 
-source_file="res://Riley/GlowingBarrel_CargoMetal Base Color.png"
-dest_files=["res://.godot/imported/GlowingBarrel_CargoMetal Base Color.png-ded74681198050b328cd8207ebb026a2.s3tc.ctex"]
+source_file="res://Riley/GLBflies/coral_Coral1 Base Color.png"
+dest_files=["res://.godot/imported/coral_Coral1 Base Color.png-c2ceb3ba514f73c8f1e80f4729739ecd.s3tc.ctex"]
 
 [params]
 

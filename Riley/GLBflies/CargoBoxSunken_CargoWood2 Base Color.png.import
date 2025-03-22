@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://25qu7c13rwb1"
-path.s3tc="res://.godot/imported/GlowingBarrel_BarrelWood Base Color.png-a01aef461ecf44c2328df16f6a0b5905.s3tc.ctex"
+uid="uid://bsvk3qlvojie0"
+path.s3tc="res://.godot/imported/CargoBoxSunken_CargoWood2 Base Color.png-b5d02751e0d26e4ba4f5d97cd23f6ac9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7ca2ac1613337d5ae5a28753cba35aa0"
+"md5": "955c7be33fea055abaec6b99c85786c8"
 }
 
 [deps]
 
-source_file="res://Riley/GlowingBarrel_BarrelWood Base Color.png"
-dest_files=["res://.godot/imported/GlowingBarrel_BarrelWood Base Color.png-a01aef461ecf44c2328df16f6a0b5905.s3tc.ctex"]
+source_file="res://Riley/GLBflies/CargoBoxSunken_CargoWood2 Base Color.png"
+dest_files=["res://.godot/imported/CargoBoxSunken_CargoWood2 Base Color.png-b5d02751e0d26e4ba4f5d97cd23f6ac9.s3tc.ctex"]
 
 [params]
 

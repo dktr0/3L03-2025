@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cikrbgynjvfrp"
-path="res://.godot/imported/CargoBoxSunken.glb-46fa58192b243083770f4b4dc758aa7f.scn"
+uid="uid://bvo74tkylqpif"
+path="res://.godot/imported/Bulrush.glb-c26ca2f56f3664d0698fd278f4dffd82.scn"
 
 [deps]
 
-source_file="res://Riley/CargoBoxSunken.glb"
-dest_files=["res://.godot/imported/CargoBoxSunken.glb-46fa58192b243083770f4b4dc758aa7f.scn"]
+source_file="res://Riley/GLBflies/Bulrush.glb"
+dest_files=["res://.godot/imported/Bulrush.glb-c26ca2f56f3664d0698fd278f4dffd82.scn"]
 
 [params]
 
