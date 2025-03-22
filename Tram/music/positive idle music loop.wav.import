@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c8vehsoha68w"
-path="res://.godot/imported/positive:idle music loop.wav-87c4f45c48af38cf6112f6ab9bf7098c.sample"
+path="res://.godot/imported/positive idle music loop.wav-0833b2c0497ad3d7cf997aaa40156eb7.sample"
 
 [deps]
 
-source_file="res://Tram/music/positive:idle music loop.wav"
-dest_files=["res://.godot/imported/positive:idle music loop.wav-87c4f45c48af38cf6112f6ab9bf7098c.sample"]
+source_file="res://Tram/music/positive idle music loop.wav"
+dest_files=["res://.godot/imported/positive idle music loop.wav-0833b2c0497ad3d7cf997aaa40156eb7.sample"]
 
 [params]
 
