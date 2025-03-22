@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x8ueincawluq"
-path.s3tc="res://.godot/imported/coral2_Coral2 Base Color.png-1f5ad1f4c84f670542b97577ad1c09a6.s3tc.ctex"
+uid="uid://dtvm4lo3l87aj"
+path.s3tc="res://.godot/imported/coral3_coral3 Base Color.png-6b7982f5bd91745878ed3f13077db1ec.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "91178a1c736d0bf6623faa026f8f5108"
+"md5": "0378246bbdb12ba26735653b6a1cd608"
 }
 
 [deps]
 
-source_file="res://Riley/coral2_Coral2 Base Color.png"
-dest_files=["res://.godot/imported/coral2_Coral2 Base Color.png-1f5ad1f4c84f670542b97577ad1c09a6.s3tc.ctex"]
+source_file="res://Riley/GLBflies/coral3_coral3 Base Color.png"
+dest_files=["res://.godot/imported/coral3_coral3 Base Color.png-6b7982f5bd91745878ed3f13077db1ec.s3tc.ctex"]
 
 [params]
 

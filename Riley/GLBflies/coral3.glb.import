@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://brxq4qsfxrfws"
-path="res://.godot/imported/coral2.glb-717d13dd9e0b055382c1785d7799f708.scn"
+uid="uid://jfbs7edaurcl"
+path="res://.godot/imported/coral3.glb-e3ee7c1a414bae537252be27d4ed2e33.scn"
 
 [deps]
 
-source_file="res://Riley/coral2.glb"
-dest_files=["res://.godot/imported/coral2.glb-717d13dd9e0b055382c1785d7799f708.scn"]
+source_file="res://Riley/GLBflies/coral3.glb"
+dest_files=["res://.godot/imported/coral3.glb-e3ee7c1a414bae537252be27d4ed2e33.scn"]
 
 [params]
 

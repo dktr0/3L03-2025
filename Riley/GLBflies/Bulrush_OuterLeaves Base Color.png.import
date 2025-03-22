@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyni5mvx1p82k"
-path.s3tc="res://.godot/imported/Bulrush_bulrushLeaf1 Base Color.png-9f1bec4f4680afd1049f726f5b6bea33.s3tc.ctex"
+uid="uid://dpfp5majm4qsh"
+path.s3tc="res://.godot/imported/Bulrush_OuterLeaves Base Color.png-1482678c238c3ba859fc3f9e13f240ac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "63f3db7c61b2b49639fabfc79f966dec"
+"md5": "726d725e0f0ce3e0bb554e59d4881530"
 }
 
 [deps]
 
-source_file="res://Riley/Bulrush_bulrushLeaf1 Base Color.png"
-dest_files=["res://.godot/imported/Bulrush_bulrushLeaf1 Base Color.png-9f1bec4f4680afd1049f726f5b6bea33.s3tc.ctex"]
+source_file="res://Riley/GLBflies/Bulrush_OuterLeaves Base Color.png"
+dest_files=["res://.godot/imported/Bulrush_OuterLeaves Base Color.png-1482678c238c3ba859fc3f9e13f240ac.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dp42c0dbdp7uq"
-path="res://.godot/imported/GlowingBarrel.glb-b8dd2204ace1bf258c32bdb7fe811a43.scn"
+uid="uid://brxq4qsfxrfws"
+path="res://.godot/imported/coral2.glb-e4ab5b8699bce5412c3716f32d385e2a.scn"
 
 [deps]
 
-source_file="res://Riley/GlowingBarrel.glb"
-dest_files=["res://.godot/imported/GlowingBarrel.glb-b8dd2204ace1bf258c32bdb7fe811a43.scn"]
+source_file="res://Riley/GLBflies/coral2.glb"
+dest_files=["res://.godot/imported/coral2.glb-e4ab5b8699bce5412c3716f32d385e2a.scn"]
 
 [params]
 
