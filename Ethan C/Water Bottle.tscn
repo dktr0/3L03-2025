@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt1mfgeidwbmi"]
+
+[ext_resource type="PackedScene" uid="uid://du71viucocv8s" path="res://Ethan C/Water Bottle.glb" id="1_mwpp3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogmbm"]
+size = Vector3(1, 3.98431, 1)
+
+[node name="WaterBottle" type="Node3D"]
+
+[node name="Water Bottle" parent="." instance=ExtResource("1_mwpp3")]
+transform = Transform3D(0.223507, 0, 0, 0, 0.223507, 0, 0, 0, 0.223507, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water Bottle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97277, 0)
+shape = SubResource("BoxShape3D_ogmbm")
