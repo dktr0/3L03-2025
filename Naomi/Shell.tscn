@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxk8oo6kkuqgh"]
+
+[ext_resource type="PackedScene" uid="uid://b6viwjbfc56eg" path="res://Naomi/Shell.glb" id="1_gt2ut"]
+
+[node name="Shell" type="Node3D"]
+
+[node name="Shell" parent="." instance=ExtResource("1_gt2ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260652, 0.403777, -0.147682)

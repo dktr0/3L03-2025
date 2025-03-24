@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="3L03-2025"
+run/main_scene="res://Matty/Manta Ray/manta_ray.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[filesystem]
+
+import/blender/enabled=false
