@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctnkb5km08ug7"]
+
+[ext_resource type="PackedScene" uid="uid://ch7426oddci5x" path="res://Chiara/MultipleLaneDock.glb" id="1_1aw8o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_22tgk"]
+size = Vector3(1027.63, 195.517, 695.785)
+
+[node name="MultipleLaneDock" type="StaticBody3D"]
+
+[node name="MultipleLaneDock" parent="." instance=ExtResource("1_1aw8o")]
+transform = Transform3D(9.853, 0, 0, 0, 9.853, 0, 0, 0, 9.853, -535.304, -7.64056, -127.194)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.373, 91.809, -281.487)
+shape = SubResource("BoxShape3D_22tgk")
