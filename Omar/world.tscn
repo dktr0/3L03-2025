@@ -132,19 +132,6 @@ albedo_color = Color(0.345098, 1, 1, 1)
 
 [node name="World" type="Node3D"]
 
-[node name="Player" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304.92, 7.61413, -206.105)
-script = null
-
 [node name="Floors" type="Node" parent="."]
 
 [node name="LightHouseBase" type="StaticBody3D" parent="Floors"]
@@ -395,19 +382,6 @@ shape = SubResource("CapsuleShape3D_8wbfy")
 transform = Transform3D(30, 0, 0, 0, 20, 0, 0, 0, 30, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_pdm0c")
 surface_material_override/0 = SubResource("StandardMaterial3D_px5ia")
-
-[node name="NPC" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, 9)
-script = null
 
 [node name="Rocks" type="Node" parent="."]
 
