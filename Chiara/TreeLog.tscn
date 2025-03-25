@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://da4do3b0ei4an" path="res://Chiara/TreeLog.glb" id="1_fdevj"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ayqxe"]
-height = 4.02232
-radius = 0.731913
+height = 3.51443
+radius = 0.626615
 
 [node name="StaticBody3D" type="StaticBody3D"]
 
