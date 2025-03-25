@@ -1,7 +1,16 @@
-[gd_scene load_steps=51 format=3 uid="uid://dw8fde4ghx6qm"]
+[gd_scene load_steps=53 format=3 uid="uid://dw8fde4ghx6qm"]
 
 [ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="1_vvwvs"]
+[ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="2_cw1nb"]
 [ext_resource type="PackedScene" uid="uid://bgc5ynfk8hm0l" path="res://Omar/NPC_Greybox.tscn" id="2_x8rkw"]
+[ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="3_y2pp1"]
+[ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="4_8q2ra"]
+[ext_resource type="PackedScene" uid="uid://dosemi7q3pto8" path="res://Ethan C/Blue Tent.glb" id="6_7f6kg"]
+[ext_resource type="PackedScene" uid="uid://daxuesve7l7c6" path="res://Ethan C/Green Tent.glb" id="7_haqrp"]
+[ext_resource type="PackedScene" uid="uid://bav0lx2v4bb6c" path="res://Ethan C/Purple Tent.glb" id="8_eguyp"]
+[ext_resource type="PackedScene" uid="uid://c8bvv41k3j4aa" path="res://Ethan C/Red Tent.glb" id="9_1ytuf"]
+[ext_resource type="PackedScene" uid="uid://ct4yr6t3egslj" path="res://Ethan C/Yellow Tent.glb" id="10_nuet1"]
+[ext_resource type="PackedScene" uid="uid://du71viucocv8s" path="res://Ethan C/Water Bottle.glb" id="11_7iaq1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bx7su"]
 
@@ -52,13 +61,6 @@ size = Vector3(12.6341, 0.825043, 0.943878)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4bsy1"]
 size = Vector3(1, 1.17432, 0.938538)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8wbfy"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_pdm0c"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px5ia"]
-albedo_color = Color(1, 0.0588235, 0, 1)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_clo8w"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_y4x1p"]
@@ -71,20 +73,9 @@ albedo_color = Color(0.295867, 0.295866, 0.295866, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nostl"]
 albedo_color = Color(0.32549, 0.47451, 0, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lj6dp"]
-size = Vector3(0.943237, 0.901489, 0.392456)
-
-[sub_resource type="BoxMesh" id="BoxMesh_meeto"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y58u1"]
-albedo_color = Color(0.592157, 0.27451, 0, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_44rp5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i1f3j"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxwlg"]
-albedo_color = Color(0.678431, 0.290196, 0.0627451, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa0dh"]
 albedo_color = Color(0.834614, 0.834614, 0.834614, 1)
@@ -167,7 +158,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0469551, 0.597702, -24.096
 shape = SubResource("BoxShape3D_e0b6j")
 
 [node name="Base" type="StaticBody3D" parent="Floors"]
-transform = Transform3D(1.4, 0, 0, 0, 0.802688, 0, 0, 0, 1.18321, -19, 0.759038, 6.36864)
+transform = Transform3D(1.21256, 0, 0, 0, 0.802688, 0, 0, 0, 1.18321, -9.19878, 0.759038, 6.36864)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Base"]
 transform = Transform3D(127.726, 0, 0, 0, 8.97515, 0, 0, 0, 89.9854, 0.143902, -3.96132, -11.688)
@@ -377,17 +368,8 @@ skeleton = NodePath("")
 transform = Transform3D(12.7103, 0, 0, 0, 0.611101, 0, 0, 0, 11.49, 0, 0.0532625, -5.73377)
 shape = SubResource("BoxShape3D_4bsy1")
 
-[node name="Light House" type="StaticBody3D" parent="."]
-transform = Transform3D(0.521477, 0, 0, 0, 0.660307, 0, 0, 0, 0.571809, 0, 11.8224, -37.9914)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Light House"]
-transform = Transform3D(30, 0, 0, 0, 20, 0, 0, 0, 30, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_8wbfy")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Light House"]
-transform = Transform3D(30, 0, 0, 0, 20, 0, 0, 0, 30, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_pdm0c")
-surface_material_override/0 = SubResource("StandardMaterial3D_px5ia")
+[node name="Present_light_house" parent="." instance=ExtResource("2_cw1nb")]
+transform = Transform3D(2, 0, 0, 0, 2.532, 0, 0, 0, 2.196, 0, 2.45926, -31.4331)
 
 [node name="NPC" parent="." instance=ExtResource("2_x8rkw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, 9)
@@ -869,78 +851,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_nostl")
 
 [node name="Docks" type="Node" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Docks"]
-transform = Transform3D(31.1373, 0, 0, 0, 5.20873, 0, 0, 0, 193.189, -64.5898, 2.96137, 16.3484)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Docks/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00004, 0.92876, -1.87383, 0.237615)
-shape = SubResource("BoxShape3D_lj6dp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Docks/StaticBody3D"]
-transform = Transform3D(0.961484, 0, 0, 0, 1.01594, 0, 0, 0, 0.396165, 0.932533, -1.95287, 0.241156)
-mesh = SubResource("BoxMesh_meeto")
-surface_material_override/0 = SubResource("StandardMaterial3D_y58u1")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="Docks"]
-transform = Transform3D(-1.00857e-06, 0, -93.1784, 0, 5.20873, 0, 23.0733, 0, -4.07296e-06, -105.218, 2.96137, -12.2773)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Docks/StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00004, 0.92876, -1.87383, 0.237615)
-shape = SubResource("BoxShape3D_lj6dp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Docks/StaticBody3D4"]
-transform = Transform3D(0.961484, 0, 0, 0, 1.01594, 0, 0, 0, 0.396165, 0.932533, -1.95287, 0.241156)
-mesh = SubResource("BoxMesh_meeto")
-surface_material_override/0 = SubResource("StandardMaterial3D_y58u1")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="Docks"]
-transform = Transform3D(-23.0733, 0, 8.14591e-06, 0, 5.20873, 0, -2.01713e-06, 0, -93.1784, -154.182, 0.820074, 92.7897)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Docks/StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00004, 0.92876, -1.87383, 0.237615)
-shape = SubResource("BoxShape3D_lj6dp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Docks/StaticBody3D5"]
-transform = Transform3D(0.961484, 0, 0, 0, 1.01594, 0, 0, 0, 0.396165, 0.932533, -1.95287, 0.241156)
-mesh = SubResource("BoxMesh_meeto")
-surface_material_override/0 = SubResource("StandardMaterial3D_y58u1")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Docks"]
-transform = Transform3D(-1.36106e-06, 0, -193.189, 0, 5.20873, 0, 31.1373, 0, -8.44455e-06, -40.4418, 2.96137, 16.3484)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Docks/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00004, 0.92876, -1.87383, 0.237615)
-shape = SubResource("BoxShape3D_lj6dp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Docks/StaticBody3D2"]
-transform = Transform3D(0.961484, 0, 0, 0, 1.01594, 0, 0, 0, 0.396165, 0.932533, -1.95287, 0.241156)
-mesh = SubResource("BoxMesh_meeto")
-surface_material_override/0 = SubResource("StandardMaterial3D_y58u1")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Docks"]
-transform = Transform3D(56.8206, 0, -9.09495e-13, 0, 5.20873, 0, 0, 0, 193.189, -151.079, 2.96137, -26.5511)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Docks/StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00004, 0.92876, -1.87383, 0.237615)
-shape = SubResource("BoxShape3D_lj6dp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Docks/StaticBody3D3"]
-transform = Transform3D(0.961484, 0, 0, 0, 1.01594, 0, 0, 0, 0.396165, 0.932533, -1.95287, 0.241156)
-mesh = SubResource("BoxMesh_meeto")
-surface_material_override/0 = SubResource("StandardMaterial3D_y58u1")
-
-[node name="StaticBody3D6" type="StaticBody3D" parent="Docks"]
-transform = Transform3D(0.784525, 0, 0, 0, 6.5402, 0, 0, 0, 0.637395, -121.651, -6.49841, -35.4055)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Docks/StaticBody3D6"]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
-shape = SubResource("BoxShape3D_44rp5")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Docks/StaticBody3D6"]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
-mesh = SubResource("BoxMesh_i1f3j")
-surface_material_override/0 = SubResource("StandardMaterial3D_wxwlg")
-
 [node name="StaticBody3D7" type="StaticBody3D" parent="Docks"]
 transform = Transform3D(0.347122, 0, 0, 0, 6.5402, 0, 0, 0, 0.944001, -169.069, -6.49841, -40.439)
 
@@ -952,6 +862,21 @@ shape = SubResource("BoxShape3D_44rp5")
 transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0.0918942, 0.541306)
 mesh = SubResource("BoxMesh_i1f3j")
 surface_material_override/0 = SubResource("StandardMaterial3D_qa0dh")
+
+[node name="SingleLaneDock2" parent="Docks" instance=ExtResource("4_8q2ra")]
+transform = Transform3D(-0.1, 0, -1.50996e-08, 0, 0.1, 0, 1.50996e-08, 0, -0.1, -172.074, -54.8892, -56.0307)
+
+[node name="SingleLaneDock3" parent="Docks" instance=ExtResource("4_8q2ra")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -48.9539, -55.0208, -11.2719)
+
+[node name="SingleLaneDock" parent="Docks" instance=ExtResource("4_8q2ra")]
+transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -171.865, -61.9377, -16.4185)
+
+[node name="MultipleLaneDock2" parent="Docks" instance=ExtResource("3_y2pp1")]
+transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, -148.689, -17.5571, -13.7116)
+
+[node name="MultipleLaneDock" parent="Docks" instance=ExtResource("3_y2pp1")]
+transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -27.5772, -17.7387, 18.8029)
 
 [node name="Beach" type="Node" parent="."]
 
@@ -990,6 +915,44 @@ shape = SubResource("BoxShape3D_xtakq")
 transform = Transform3D(600, 0, 0, 0, 1, 0, 0, 0, 200, 38.4141, 0, 86.919)
 mesh = SubResource("BoxMesh_j18po")
 surface_material_override/0 = SubResource("StandardMaterial3D_sr5ei")
+
+[node name="Water Bottle" parent="Beach" instance=ExtResource("11_7iaq1")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -74.3292, -8.2136, 120.571)
+
+[node name="Water Bottle2" parent="Beach" instance=ExtResource("11_7iaq1")]
+transform = Transform3D(0.2, 0.344954, -0.0317272, 0.0301916, 0.0191381, 0.3984, 0.345092, -0.201595, -0.0164678, -75.3588, -8.13005, 121.743)
+
+[node name="Tents" type="Node" parent="Beach"]
+
+[node name="Blue Tent" parent="Beach/Tents" instance=ExtResource("6_7f6kg")]
+transform = Transform3D(15.2897, 0, 12.8929, 0, 20, 0, -12.8929, 0, 15.2897, -74.9155, -8.34582, 110.941)
+
+[node name="Green Tent" parent="Beach/Tents" instance=ExtResource("7_haqrp")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -64.8179, -8.32037, 107.085)
+
+[node name="Purple Tent" parent="Beach/Tents" instance=ExtResource("8_eguyp")]
+transform = Transform3D(14.1421, 0, -14.1421, 0, 20, 0, 14.1421, 0, 14.1421, -56.3121, -8.38834, 112.8)
+
+[node name="Red Tent" parent="Beach/Tents" instance=ExtResource("9_1ytuf")]
+transform = Transform3D(5.17638, 0, 19.3185, 0, 20, 0, -19.3185, 0, 5.17638, -79.7164, -8.32404, 118.961)
+
+[node name="Blue Tent3" parent="Beach/Tents" instance=ExtResource("6_7f6kg")]
+transform = Transform3D(19.9681, 0, 1.12828, 0, 20, 0, -1.12828, 0, 19.9681, -147.523, -8.34582, 107.655)
+
+[node name="Green Tent2" parent="Beach/Tents" instance=ExtResource("7_haqrp")]
+transform = Transform3D(-19.75, 0, 3.15248, 0, 20, 0, -3.15248, 0, -19.75, -147.615, -8.32037, 123.672)
+
+[node name="Purple Tent2" parent="Beach/Tents" instance=ExtResource("8_eguyp")]
+transform = Transform3D(16.7588, 0, -10.9153, 0, 20, 0, 10.9153, 0, 16.7588, -137.066, -8.38834, 108.791)
+
+[node name="Red Tent2" parent="Beach/Tents" instance=ExtResource("9_1ytuf")]
+transform = Transform3D(15.7398, 0, 12.3393, 0, 20, 0, -12.3393, 0, 15.7398, -156.178, -8.32404, 111.185)
+
+[node name="Blue Tent2" parent="Beach/Tents" instance=ExtResource("6_7f6kg")]
+transform = Transform3D(23.8512, 0, -7.49142, 0, 25, 0, 7.49142, 0, 23.8512, 138.318, -8.25668, 56.0452)
+
+[node name="Yellow Tent" parent="Beach/Tents" instance=ExtResource("10_nuet1")]
+transform = Transform3D(24.5541, 0, 17.2364, 0, 30, 0, -17.2364, 0, 24.5541, 80.7291, -8.20813, 73.1335)
 
 [node name="water" type="Node" parent="."]
 
