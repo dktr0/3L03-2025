@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d3r0rm08l6cp5"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_rp5lc"]
+[ext_resource type="Script" path="res://Sandhya/player.gd" id="1_rp5lc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_x2ive"]
 

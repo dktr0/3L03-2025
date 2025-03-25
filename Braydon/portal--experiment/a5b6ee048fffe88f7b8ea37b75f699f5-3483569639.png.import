@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dheswumwcr8yp"
-path.s3tc="res://.godot/imported/a5b6ee048fffe88f7b8ea37b75f699f5-3483569639.png-b806a1e1b53c75a0e818d309e501a297.s3tc.ctex"
+path.s3tc="res://.godot/imported/a5b6ee048fffe88f7b8ea37b75f699f5-3483569639.png-c3f093ad3248863a0a865673e1de9c53.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://a5b6ee048fffe88f7b8ea37b75f699f5-3483569639.png"
-dest_files=["res://.godot/imported/a5b6ee048fffe88f7b8ea37b75f699f5-3483569639.png-b806a1e1b53c75a0e818d309e501a297.s3tc.ctex"]
+source_file="res://Braydon/portal--experiment/a5b6ee048fffe88f7b8ea37b75f699f5-3483569639.png"
+dest_files=["res://.godot/imported/a5b6ee048fffe88f7b8ea37b75f699f5-3483569639.png-c3f093ad3248863a0a865673e1de9c53.s3tc.ctex"]
 
 [params]
 

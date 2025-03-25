@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://b5xqkd7wyxnl8"]
 
-[ext_resource type="PackedScene" uid="uid://dijrmpgru8y63" path="res://tree_0.tscn" id="2_ve84o"]
-[ext_resource type="PackedScene" uid="uid://dhu8qjg4onsej" path="res://branch.tscn" id="4_m1ek6"]
-[ext_resource type="PackedScene" uid="uid://cvps8cpv8bmj" path="res://Hill.tscn" id="5_7hk8d"]
-[ext_resource type="PackedScene" uid="uid://b0j6glrfr80lu" path="res://Path.tscn" id="6_dy8nl"]
-[ext_resource type="PackedScene" uid="uid://d3r0rm08l6cp5" path="res://Player.tscn" id="7_kf7n0"]
+[ext_resource type="PackedScene" uid="uid://dijrmpgru8y63" path="res://Sandhya/tree_0.tscn" id="2_ve84o"]
+[ext_resource type="PackedScene" uid="uid://dhu8qjg4onsej" path="res://Sandhya/branch.tscn" id="4_m1ek6"]
+[ext_resource type="PackedScene" uid="uid://cvps8cpv8bmj" path="res://Sandhya/Hill.tscn" id="5_7hk8d"]
+[ext_resource type="PackedScene" uid="uid://b0j6glrfr80lu" path="res://Sandhya/Path.tscn" id="6_dy8nl"]
+[ext_resource type="PackedScene" uid="uid://d3r0rm08l6cp5" path="res://Sandhya/Player.tscn" id="7_kf7n0"]
 
 [sub_resource type="Environment" id="Environment_akj7a"]
 background_mode = 1
