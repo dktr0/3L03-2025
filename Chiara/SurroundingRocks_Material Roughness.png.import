@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://njn1443bc85c"
-path.s3tc="res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.s3tc.ctex"
+uid="uid://dbq150qja0o6r"
+path.s3tc="res://.godot/imported/SurroundingRocks_Material Roughness.png-d33b0f823585ed161cf057c36be3f1aa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "54a3aaad335e2356bc86cd02af6363a0"
+}
 
 [deps]
 
-source_file="res://Braydon/portal--experiment/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png"
-dest_files=["res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.s3tc.ctex"]
+source_file="res://Chiara/SurroundingRocks_Material Roughness.png"
+dest_files=["res://.godot/imported/SurroundingRocks_Material Roughness.png-d33b0f823585ed161cf057c36be3f1aa.s3tc.ctex"]
 
 [params]
 

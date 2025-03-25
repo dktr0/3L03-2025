@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://njn1443bc85c"
-path.s3tc="res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.s3tc.ctex"
+uid="uid://blrmph8n61l5w"
+path.s3tc="res://.godot/imported/SurroundingRocks_Material Bump.png-9cc993ca4f19fecdcdc4646f00e72e9a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "58e3079e9ce3570cc31970a4e5c800a8"
+}
 
 [deps]
 
-source_file="res://Braydon/portal--experiment/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png"
-dest_files=["res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.s3tc.ctex"]
+source_file="res://SurroundingRocks_Material Bump.png"
+dest_files=["res://.godot/imported/SurroundingRocks_Material Bump.png-9cc993ca4f19fecdcdc4646f00e72e9a.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://SurroundingRocks_Material Bump.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

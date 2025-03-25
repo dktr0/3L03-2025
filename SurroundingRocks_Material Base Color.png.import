@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://njn1443bc85c"
-path.s3tc="res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.s3tc.ctex"
+uid="uid://q2fhal77q2uw"
+path.s3tc="res://.godot/imported/SurroundingRocks_Material Base Color.png-ec225231a11dd5ade5a63bdd60b595bf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "79f3d881b1875f58d5cccbcd1f890dc2"
+}
 
 [deps]
 
-source_file="res://Braydon/portal--experiment/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png"
-dest_files=["res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.s3tc.ctex"]
+source_file="res://SurroundingRocks_Material Base Color.png"
+dest_files=["res://.godot/imported/SurroundingRocks_Material Base Color.png-ec225231a11dd5ade5a63bdd60b595bf.s3tc.ctex"]
 
 [params]
 
