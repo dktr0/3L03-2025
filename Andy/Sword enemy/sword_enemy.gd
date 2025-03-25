@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-# 敌人枚举/AI状态
 enum AbilityType { NONE, SWORD, MAGIC }
 enum State {
 	IDLE,
@@ -15,7 +14,7 @@ enum State {
 @export var chase_speed: float = 2.0
 @export var attack_cooldown: float = 2.0
 
-@export var damage_amount: int = 1  # 小兵对玩家伤害
+@export var damage_amount: int = 1  
 
 @export var max_health: int = 5
 var health: int = 5
@@ -176,10 +175,10 @@ func _check_player_distance() -> void:
 			if anim_player:
 				anim_player.play("walk")
 
-# ========== AttackArea触发 ==========
+
 
 func _on_attack_area_body_entered(body: Node) -> void:
-	if body.name == "Player": # or body.is_in_group("Player")
+	if body.name == "Player": 
 		if current_state in [State.CHASE, State.IDLE, State.PATROL]:
 			current_state = State.ATTACK
 			attack_timer = 0.0
@@ -189,7 +188,7 @@ func _on_attack_area_body_entered(body: Node) -> void:
 			sword_area.set_deferred("monitorable", true)
 
 func _on_attack_area_body_exited(_body: Node) -> void:
-	# 不立即切状态
+
 	pass
 
 func _is_player_in_attack_area() -> bool:
@@ -198,22 +197,13 @@ func _is_player_in_attack_area() -> bool:
 	var bodies = attack_area.get_overlapping_bodies()
 	return player_ref in bodies
 
-# ========== 剑碰撞区:对玩家造成伤害 ==========
+
 
 func _on_sword_area_body_entered(body: Node) -> void:
 	if body.name == "Player": # or body.is_in_group("Player")
 		if body.has_method("take_damage"):
 			body.take_damage(damage_amount, self)
 
-# ========== 被吸收逻辑 ==========
-
-func be_absorbed(player):
-	# 玩家吸收 => 得到SWORD能力
-	if player.has_method("absorb_enemy_ability"):
-		player.absorb_enemy_ability(AbilityType.SWORD)
-	queue_free()
-
-# ========== 敌人受击/死亡(若需要) ==========
 
 func take_damage(dmg_amount: int, _attacker: Node=null) -> void:
 	health -= dmg_amount
