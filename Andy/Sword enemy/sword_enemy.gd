@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-# 敌人枚举/AI状态
+
 enum AbilityType { NONE, SWORD, MAGIC }
 enum State {
 	IDLE,
@@ -15,7 +15,7 @@ enum State {
 @export var chase_speed: float = 2.0
 @export var attack_cooldown: float = 2.0
 
-@export var damage_amount: int = 1  # 小兵对玩家伤害
+@export var damage_amount: int = 1  
 
 @export var max_health: int = 5
 var health: int = 5

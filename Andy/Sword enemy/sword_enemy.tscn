@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://7xm62lefk2vo"]
+[gd_scene load_steps=12 format=3 uid="uid://7xm62lefk2vo"]
 
-[ext_resource type="Script" path="res://sword_enemy.gd" id="1_fp43f"]
-[ext_resource type="ArrayMesh" uid="uid://cod10psmk07eh" path="res://sword.tres" id="3_t4ngg"]
+[ext_resource type="Script" path="res://Andy/Sword enemy/sword_enemy.gd" id="1_rget3"]
 
 [sub_resource type="Animation" id="Animation_xpvmq"]
 resource_name = "Patrol"
@@ -294,7 +293,7 @@ size = Vector3(69.8, 330.195, 30.87)
 [sub_resource type="BoxShape3D" id="BoxShape3D_05rpa"]
 
 [node name="SwordEnemy" type="CharacterBody3D" groups=["Enemy"]]
-script = ExtResource("1_fp43f")
+script = ExtResource("1_rget3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -303,7 +302,7 @@ libraries = {
 autoplay = "Patrol"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.727585, 0, -0.686018, 0, 1, 0, 0.686018, 0, 0.727585, -0.00372941, 0, 10.0116)
+transform = Transform3D(0.953533, 0, 0.301291, 0, 1, 0, -0.301291, 0, 0.953533, 2.69949e-05, 0, 0.0620341)
 mesh = SubResource("CapsuleMesh_ph6pi")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
@@ -314,8 +313,7 @@ shape = SubResource("CapsuleShape3D_uoiei")
 transform = Transform3D(-0.00054964, -3.27611e-11, -0.00396206, -0.00259438, 0.00302318, 0.000359908, 0.00299451, 0.00261923, -0.000415416, 0.568157, -0.301948, -0.0646057)
 
 [node name="Sword" type="MeshInstance3D" parent="Sword"]
-transform = Transform3D(0.445771, -0.361603, -0.818865, -0.486171, 0.670304, -0.560659, 0.751622, 0.648031, 0.123001, 0, 0, 0)
-mesh = ExtResource("3_t4ngg")
+transform = Transform3D(0.40602, -0.908091, 0.102603, 0.911747, 0.394868, -0.113165, 0.0622494, 0.139494, 0.988268, 0, 0, 0)
 
 [node name="SwordArea" type="Area3D" parent="Sword/Sword"]
 
