@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://mka1vutdf1l8"]
+
+[ext_resource type="PackedScene" uid="uid://b13v3uvimou0" path="res://Chiara/chiara_SingleLane_Dock.glb" id="1_ax02u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mdlpp"]
+size = Vector3(54.3126, 18.8579, 17.4871)
+
+[node name="SingleLaneDock" type="StaticBody3D"]
+transform = Transform3D(1.03382, 0, 0, 0, 1.03382, 0, 0, 0, 1.03382, 550.479, -385.933, 139.75)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(9.85321, 0.0257685, 0.00536997, -0.0257576, 9.85319, -0.0199411, -0.00542199, 0.0199271, 9.85322, -764.344, 463.359, -215.082)
+shape = SubResource("BoxShape3D_mdlpp")
+
+[node name="SingleLaneDock" parent="." instance=ExtResource("1_ax02u")]
+transform = Transform3D(9.85321, 0.0257685, 0.00536997, -0.0257576, 9.85319, -0.0199411, -0.00542199, 0.0199271, 9.85322, -915.82, 374.168, -320.363)

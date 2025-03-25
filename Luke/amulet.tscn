@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c217uro8bdwyr"]
+
+[ext_resource type="PackedScene" uid="uid://c52rkfex1ts7f" path="res://Luke/amuletgem.glb" id="1_cglr8"]
+[ext_resource type="PackedScene" uid="uid://5trngm4ml1rs" path="res://Luke/amuletring.glb" id="2_q1hlf"]
+
+[node name="amulet" type="Node3D"]
+
+[node name="amuletgem" parent="." instance=ExtResource("1_cglr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.329651, 0)
+
+[node name="amuletring" parent="." instance=ExtResource("2_q1hlf")]
+transform = Transform3D(3, 0, 0, 0, 2.99996, -0.0163361, 0, 0.0163361, 2.99996, 0, 0, 0)
+
+[node name="amuletring2" parent="." instance=ExtResource("2_q1hlf")]
+transform = Transform3D(0.342428, 0.0105864, -2.98038, 2.9802, 0.0328399, 0.342525, 0.0338339, -2.9998, -0.00676782, 0, 0, 0)

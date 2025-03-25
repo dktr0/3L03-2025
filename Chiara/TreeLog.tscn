@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b64q7f76oh3mn"]
+
+[ext_resource type="PackedScene" uid="uid://da4do3b0ei4an" path="res://Chiara/TreeLog.glb" id="1_fdevj"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ayqxe"]
+height = 4.02232
+radius = 0.731913
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="TreeLog" parent="." instance=ExtResource("1_fdevj")]
+transform = Transform3D(0.699992, -0.00329866, 0, 0.00329866, 0.699992, 0, 0, 0, 0.7, 0.687445, 0, 0.794807)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.999963, 0.00858697, 0, -0.00858697, -0.999963, 1, -4.37098e-08, 3.75348e-10, -0.05764, 0.19543, 0.746294)
+shape = SubResource("CylinderShape3D_ayqxe")
