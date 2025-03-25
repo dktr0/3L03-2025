@@ -1,7 +1,7 @@
 [gd_scene load_steps=51 format=3 uid="uid://dw8fde4ghx6qm"]
 
-[ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://test-player.tscn" id="1_vvwvs"]
-[ext_resource type="PackedScene" uid="uid://bgc5ynfk8hm0l" path="res://NPC_Greybox.tscn" id="2_x8rkw"]
+[ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="1_vvwvs"]
+[ext_resource type="PackedScene" uid="uid://bgc5ynfk8hm0l" path="res://Omar/NPC_Greybox.tscn" id="2_x8rkw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bx7su"]
 
@@ -136,7 +136,7 @@ albedo_color = Color(0.345098, 1, 1, 1)
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_vvwvs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304.92, 7.61413, -206.105)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.89219, 2.87725, 15.0619)
 
 [node name="Floors" type="Node" parent="."]
 
