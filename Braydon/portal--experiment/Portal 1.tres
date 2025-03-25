@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" load_steps=13 format=3 uid="uid://dvkoqx2fbqiwy"]
 
-[ext_resource type="Texture2D" uid="uid://njn1443bc85c" path="res://82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png" id="1_yi7d1"]
-[ext_resource type="Texture2D" uid="uid://dheswumwcr8yp" path="res://a5b6ee048fffe88f7b8ea37b75f699f5-3483569639.png" id="2_rfgky"]
+[ext_resource type="Texture2D" uid="uid://njn1443bc85c" path="res://Braydon/portal--experiment/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png" id="1_yi7d1"]
+[ext_resource type="Texture2D" uid="uid://dheswumwcr8yp" path="res://Braydon/portal--experiment/a5b6ee048fffe88f7b8ea37b75f699f5-3483569639.png" id="2_rfgky"]
 
 [sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_41cvf"]
 default_input_values = [0, Vector4(0, 0, 0, 0), 1, Vector4(1, 1, 1, 1), 2, Vector4(0, 0, 0, 0)]
