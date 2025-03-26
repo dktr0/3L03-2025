@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dw8fde4ghx6qm"]
+[gd_scene load_steps=51 format=3 uid="uid://dw8fde4ghx6qm"]
 
 [ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="1_vvwvs"]
 [ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="2_cw1nb"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cxk8oo6kkuqgh" path="res://Naomi/Shell.tscn" id="15_inl8m"]
 [ext_resource type="PackedScene" uid="uid://dyvrv1jas7hna" path="res://Naomi/Ant.tscn" id="16_ih4pq"]
 [ext_resource type="PackedScene" path="res://Chiara/TreeLog.tscn" id="17_66xdu"]
+[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/3d-assets---wilsoncheng/water_base.tscn" id="17_hk01b"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bx7su"]
 
@@ -75,13 +76,6 @@ size = Vector3(1.19287, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sr5ei"]
 albedo_color = Color(1, 0.901961, 0.686275, 0.286275)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_hi2fi"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cckji"]
-albedo_color = Color(0.0980392, 0.313726, 1, 1)
-metallic = 0.58
-metallic_specular = 1.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ai5b5"]
 size = Vector3(0.999878, 0.994629, 1.04371)
 
@@ -99,6 +93,8 @@ albedo_color = Color(0.425006, 0.730918, 0.390561, 1)
 albedo_color = Color(0.269257, 0.000262024, 0.808439, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jfdho"]
+height = 2.08108
+radius = 0.502913
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qdj81"]
 
@@ -580,13 +576,8 @@ transform = Transform3D(-0.144086, 0, -0.0417028, 0, 0.15, 0, 0.0417028, 0, -0.1
 
 [node name="water" type="Node" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="water"]
-transform = Transform3D(0.508293, 0, 0, 0, 1, 0, 0, 0, 0.449956, 0, 0, -236.77)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="water/StaticBody3D"]
-transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, -156.754, -8.56832, 0)
-mesh = SubResource("PlaneMesh_hi2fi")
-surface_material_override/0 = SubResource("StandardMaterial3D_cckji")
+[node name="Water_Base" parent="water" instance=ExtResource("17_hk01b")]
+transform = Transform3D(9.81115, 0, 0, 0, 10, 0, 0, 0, 9.11001, -72.4818, -108.338, -233.351)
 
 [node name="Forest" type="Node" parent="."]
 
@@ -661,7 +652,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_janhd")
 [node name="Iceberg" type="Node" parent="."]
 
 [node name="iceberg base" type="StaticBody3D" parent="Iceberg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.885, -107.491, -239)
+transform = Transform3D(1, 0, 0, 0, 0.134507, 0, 0, 0, 1, 130.885, -20.9061, -239)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Iceberg/iceberg base"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
