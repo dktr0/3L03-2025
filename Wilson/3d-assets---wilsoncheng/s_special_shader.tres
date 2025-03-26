@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" load_steps=22 format=3 uid="uid://cu52a36053kac"]
 
-[ext_resource type="Texture2D" uid="uid://6n6py1bmlrb7" path="res://texture/fire001_texture.png" id="1_oqxxe"]
-[ext_resource type="Texture2D" uid="uid://dg44wes38d5ee" path="res://texture/smoke001_texture.png" id="2_r235x"]
+[ext_resource type="Texture2D" uid="uid://6n6py1bmlrb7" path="res://Wilson/3d-assets---wilsoncheng/texture/fire001_texture.png" id="1_oqxxe"]
+[ext_resource type="Texture2D" uid="uid://dg44wes38d5ee" path="res://Wilson/3d-assets---wilsoncheng/texture/smoke001_texture.png" id="2_r235x"]
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_jdiss"]
 output_port_for_preview = 0

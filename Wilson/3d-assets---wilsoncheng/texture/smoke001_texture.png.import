@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg44wes38d5ee"
-path.s3tc="res://.godot/imported/smoke001_texture.png-6286342cbc8c69d33c196c164ff1c4bc.s3tc.ctex"
+path.s3tc="res://.godot/imported/smoke001_texture.png-87c73376bacef88035a212784513def6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://texture/smoke001_texture.png"
-dest_files=["res://.godot/imported/smoke001_texture.png-6286342cbc8c69d33c196c164ff1c4bc.s3tc.ctex"]
+source_file="res://Wilson/3d-assets---wilsoncheng/texture/smoke001_texture.png"
+dest_files=["res://.godot/imported/smoke001_texture.png-87c73376bacef88035a212784513def6.s3tc.ctex"]
 
 [params]
 
