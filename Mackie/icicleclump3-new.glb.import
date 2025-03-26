@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dj4qqapsno1e1"
-path="res://.godot/imported/icicleclump.glb-ccefe9ef6fec2648a9933cece1ce60be.scn"
+uid="uid://di0oxfxxenrys"
+path="res://.godot/imported/icicleclump3-new.glb-a53051cc4a05e1dde45f58f5de7bb87a.scn"
 
 [deps]
 
-source_file="res://Mackie/icicleclump.glb"
-dest_files=["res://.godot/imported/icicleclump.glb-ccefe9ef6fec2648a9933cece1ce60be.scn"]
+source_file="res://Mackie/icicleclump3-new.glb"
+dest_files=["res://.godot/imported/icicleclump3-new.glb-a53051cc4a05e1dde45f58f5de7bb87a.scn"]
 
 [params]
 
