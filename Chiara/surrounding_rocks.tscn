@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dffctwdfacdjg"]
+
+[ext_resource type="PackedScene" uid="uid://sv4wlx565e3" path="res://Chiara/SurroundingRocks.glb" id="1_ms6o3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w4wts"]
+size = Vector3(6.16016, 4.59689, 2.49377)
+
+[node name="Surrounding Rocks" type="StaticBody3D"]
+
+[node name="SurroundingRocks" parent="." instance=ExtResource("1_ms6o3")]
+transform = Transform3D(0.129528, 0, -0.482931, 0, 0.5, 0, 0.482931, 0, 0.129528, -0.882256, 0, -4.14387)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.666748, 0.972702, -4.03757)
+shape = SubResource("BoxShape3D_w4wts")

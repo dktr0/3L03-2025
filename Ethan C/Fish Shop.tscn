@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ir3emhbgyaih"]
+
+[ext_resource type="PackedScene" uid="uid://bjmtx8qxluqqk" path="res://Ethan C/Fish Shop.glb" id="1_b8cap"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewrf1"]
+size = Vector3(1.69298, 1.09467, 0.873688)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5stp"]
+size = Vector3(0.317261, 0.389893, 0.303711)
+
+[node name="Area3D" type="Area3D"]
+
+[node name="Fish Shop" parent="." instance=ExtResource("1_b8cap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.220846, 0, 0.437531)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145828, 0.525787, 0.157296)
+shape = SubResource("BoxShape3D_ewrf1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14005, 0.184954, 0.504709)
+shape = SubResource("BoxShape3D_u5stp")
