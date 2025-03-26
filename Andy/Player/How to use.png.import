@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg44wes38d5ee"
-path.s3tc="res://.godot/imported/smoke001_texture.png-87c73376bacef88035a212784513def6.s3tc.ctex"
+uid="uid://dtyarlinlugfl"
+path="res://.godot/imported/How to use.png-1e7c67fd64a02dd6ecd775b685478225.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wilson/3d-assets---wilsoncheng/texture/smoke001_texture.png"
-dest_files=["res://.godot/imported/smoke001_texture.png-87c73376bacef88035a212784513def6.s3tc.ctex"]
+source_file="res://Andy/Player/How to use.png"
+dest_files=["res://.godot/imported/How to use.png-1e7c67fd64a02dd6ecd775b685478225.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
