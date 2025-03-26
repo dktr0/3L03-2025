@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://cno47m3u2lv28"]
+[gd_scene load_steps=3 format=3 uid="uid://cno47m3u2lv28"]
 
-[node name="RedTent" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://c8bvv41k3j4aa" path="res://Ethan C/Red Tent.glb" id="1_epqdj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yswve"]
+size = Vector3(0.344971, 0.358643, 0.27887)
+
+[node name="Area3D" type="Area3D"]
+
+[node name="Red Tent" parent="." instance=ExtResource("1_epqdj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0560849, 0, 0.102662)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0588925, 0.171753, 0.103975)
+shape = SubResource("BoxShape3D_yswve")
