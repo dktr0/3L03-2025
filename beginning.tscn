@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://t3v7ddegi0pl"]
+
+[ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ecddj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1dh0p"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_01k5g"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2r8nu"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cojy5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_maqh7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6a1uf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kpb8e"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_omcde"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gg4dq"]
+
+[node name="Beginning" type="Node3D"]
+
+[node name="factory" type="Node3D" parent="."]
+transform = Transform3D(16.3016, 0, 0, 0, 15.4902, 0, 0, 0, 30.6385, 173.971, 4, 60.4297)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="factory"]
+mesh = SubResource("BoxMesh_1dh0p")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="factory"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.70459, 0.356227)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="factory"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.563672, 0.0712453)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="factory"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.422754, -0.213736)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="factory3" type="Node3D" parent="factory"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61541, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="factory/factory3"]
+mesh = SubResource("BoxMesh_1dh0p")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="factory/factory3"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.70459, 0.356227)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="factory/factory3"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.563672, 0.0712453)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="factory/factory3"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.422754, -0.213736)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="factory2" type="Node3D" parent="factory"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74075, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="factory/factory2"]
+mesh = SubResource("BoxMesh_1dh0p")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="factory/factory2"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.70459, 0.356227)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="factory/factory2"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.563672, 0.0712453)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="factory/factory2"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.422754, -0.213736)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="factory"]
+transform = Transform3D(0.2, 0, 0, 0, 0.4, 0, 0, 0, 0.1, 0, 0.70459, 0.356227)
+mesh = SubResource("CylinderMesh_01k5g")
+
+[node name="pipe" type="MeshInstance3D" parent="factory"]
+transform = Transform3D(0.0883767, 0, 0, 0, -2.89806e-08, 0.0930059, 0, -0.335199, -2.05539e-09, 0.133904, -0.422754, -0.92619)
+mesh = SubResource("CylinderMesh_2r8nu")
+skeleton = NodePath("../..")
+
+[node name="pipe2" type="MeshInstance3D" parent="factory"]
+transform = Transform3D(0.0883767, 0, 0, 0, -2.89806e-08, 0.0930059, 0, -0.335199, -2.05539e-09, -1.74075, -0.422754, -0.92619)
+mesh = SubResource("CylinderMesh_2r8nu")
+skeleton = NodePath("../..")
+
+[node name="pipe3" type="MeshInstance3D" parent="factory"]
+transform = Transform3D(0.0883767, 0, 0, 0, -2.89806e-08, 0.0930059, 0, -0.335199, -2.05539e-09, -3.61541, -0.422754, -0.92619)
+mesh = SubResource("CylinderMesh_2r8nu")
+skeleton = NodePath("../..")
+
+[node name="polluted water" type="MeshInstance3D" parent="."]
+transform = Transform3D(106.689, 0, 0, 0, 7.09147, 0, 0, 0, 39.476, 136.076, -7.94999, 0.841249)
+mesh = SubResource("CylinderMesh_cojy5")
+
+[node name="World" parent="." instance=ExtResource("1_ecddj")]
+
+[node name="sun" type="MeshInstance3D" parent="."]
+transform = Transform3D(313.699, 0, 0, 0, 313.699, 0, 0, 0, 313.699, 0, 0, -976.123)
+mesh = SubResource("SphereMesh_maqh7")
+
+[node name="NPC with gas masks" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.408, -5.79681, 91.7809)
+mesh = SubResource("CapsuleMesh_6a1uf")
+
+[node name="collapsed building" type="MeshInstance3D" parent="."]
+transform = Transform3D(37.871, -0.0707106, 0.0448473, -0.0323516, 68.4865, 34.172, -0.0352096, -138.987, 16.8385, -166.887, 0, 88.0584)
+mesh = SubResource("BoxMesh_kpb8e")
+
+[node name="black cloud" type="MeshInstance3D" parent="."]
+transform = Transform3D(157.642, 0, 0, 0, 3.67857, 0, 0, 0, 141.651, 0, 131.201, 0)
+mesh = SubResource("CylinderMesh_omcde")
+
+[node name="Garbage Hill" type="MeshInstance3D" parent="."]
+transform = Transform3D(112.114, 0, 0, 0, 74.818, 0, 0, 0, 81.093, 237.245, 0, -149.417)
+mesh = SubResource("BoxMesh_gg4dq")
