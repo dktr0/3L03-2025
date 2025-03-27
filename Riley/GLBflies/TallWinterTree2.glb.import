@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2eprcv6m50bu"
-path="res://.godot/imported/Ant.glb-cd31b6a91054c9e0cea3fd70c513faf5.scn"
+uid="uid://px403q7vwnaj"
+path="res://.godot/imported/TallWinterTree2.glb-c537663592e57f85b4ea48366befae4b.scn"
 
 [deps]
 
-source_file="res://Naomi/Ant.glb"
-dest_files=["res://.godot/imported/Ant.glb-cd31b6a91054c9e0cea3fd70c513faf5.scn"]
+source_file="res://Riley/GLBflies/TallWinterTree2.glb"
+dest_files=["res://.godot/imported/TallWinterTree2.glb-c537663592e57f85b4ea48366befae4b.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

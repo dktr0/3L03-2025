@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2eprcv6m50bu"
-path="res://.godot/imported/Ant.glb-cd31b6a91054c9e0cea3fd70c513faf5.scn"
+uid="uid://cenwaoerl7fjx"
+path="res://.godot/imported/glass bottle.glb-43f5f461cba918b2dd421d25857b6864.scn"
 
 [deps]
 
-source_file="res://Naomi/Ant.glb"
-dest_files=["res://.godot/imported/Ant.glb-cd31b6a91054c9e0cea3fd70c513faf5.scn"]
+source_file="res://Qi/3L03 underwater objects/Glass/glass bottle.glb"
+dest_files=["res://.godot/imported/glass bottle.glb-43f5f461cba918b2dd421d25857b6864.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
