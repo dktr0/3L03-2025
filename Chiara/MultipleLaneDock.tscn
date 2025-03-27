@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://ch7426oddci5x" path="res://Chiara/MultipleLaneDock.glb" id="1_1aw8o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_22tgk"]
-size = Vector3(677.484, 188.811, 198.099)
+size = Vector3(677.484, 189.631, 198.099)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w8301"]
-size = Vector3(185.789, 158.708, 322.777)
+size = Vector3(185.789, 153.108, 322.777)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71ga5"]
-size = Vector3(512.613, 180.499, 177.226)
+size = Vector3(520.409, 147.523, 161.651)
 
 [node name="MultipleLaneDock" type="StaticBody3D"]
 
@@ -17,13 +17,13 @@ size = Vector3(512.613, 180.499, 177.226)
 transform = Transform3D(9.853, 0, 0, 0, 9.853, 0, 0, 0, 9.853, -535.304, -7.64056, -127.194)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7001, 88.4561, -530.33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7001, 85.0069, -532.366)
 shape = SubResource("BoxShape3D_22tgk")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.238, 98.0381, -269.542)
+transform = Transform3D(0.999931, 0.0117807, 0, -0.0117807, 0.999931, 0, 0, 0, 1, -208.271, 101.521, -272.62)
 shape = SubResource("BoxShape3D_w8301")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -387.823, 80.4209, -21.7335)
+transform = Transform3D(0.998, -0.0183088, 0.0605085, 0.0183424, 0.999832, 0, -0.0604983, 0.00110987, 0.998168, -391.184, 101.455, -28.9953)
 shape = SubResource("BoxShape3D_71ga5")
