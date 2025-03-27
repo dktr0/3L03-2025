@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://2gv276l2p1uf"]
+
+[ext_resource type="PackedScene" uid="uid://dp42c0dbdp7uq" path="res://Riley/GLBflies/GlowingBarrel.glb" id="1_bkf0x"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_svhcq"]
+radius = 1.1
+height = 3.0
+
+[node name="GlowingBarrel" type="RigidBody3D"]
+
+[node name="GlowingBarrel" parent="." instance=ExtResource("1_bkf0x")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape3D_svhcq")

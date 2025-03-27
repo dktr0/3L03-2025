@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cugyufxm7gt77"]
+
+[ext_resource type="PackedScene" uid="uid://bo7wgi8rakjeb" path="res://Naomi/Anchor.glb" id="1_2gi6u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gln4t"]
+size = Vector3(3.22949, 0.466309, 1.75873)
+
+[node name="Anchor" type="StaticBody3D"]
+
+[node name="Anchor" parent="." instance=ExtResource("1_2gi6u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0174541, -0.0756932, -0.045417)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.967903, 0, 0, 0, 12.1777, 0, 0, 0, 3.63787, -0.533576, 2.83927, -0.00252378)
+shape = SubResource("BoxShape3D_gln4t")

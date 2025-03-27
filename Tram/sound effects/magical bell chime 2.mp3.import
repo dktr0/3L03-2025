@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3tlvx8jlm073"
+path="res://.godot/imported/magical bell chime 2.mp3-b25754ca571c916d85ca505401ad0531.mp3str"
+
+[deps]
+
+source_file="res://Tram/sound effects/magical bell chime 2.mp3"
+dest_files=["res://.godot/imported/magical bell chime 2.mp3-b25754ca571c916d85ca505401ad0531.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
