@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyvrv1jas7hna"]
 
-[ext_resource type="PackedScene" uid="uid://bv4ogc6fux2af" path="res://Naomi/ant.glb" id="1_bhg5k"]
+[ext_resource type="PackedScene" uid="uid://bv4ogc6fux2af" path="res://Naomi/Ant.glb" id="1_bhg5k"]
 
 [node name="Ant" type="Node3D"]
 
