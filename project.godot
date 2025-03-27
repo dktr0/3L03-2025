@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="3L03-2025"
-run/main_scene="res://Matty/Manta Ray/manta_ray.tscn"
+run/main_scene="res://dr0/placeholder_launch_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Zibo/icon.svg"
 
