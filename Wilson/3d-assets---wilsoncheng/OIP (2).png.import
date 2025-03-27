@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crtqowepbv1dv"
-path.s3tc="res://.godot/imported/OIP (2).png-30672aeb249f41eb66990ff2e22ba97f.s3tc.ctex"
+path.s3tc="res://.godot/imported/OIP (2).png-5f3aed9ff2f4cc8f9302983c673f5d0d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://OIP (2).png"
-dest_files=["res://.godot/imported/OIP (2).png-30672aeb249f41eb66990ff2e22ba97f.s3tc.ctex"]
+source_file="res://Wilson/3d-assets---wilsoncheng/OIP (2).png"
+dest_files=["res://.godot/imported/OIP (2).png-5f3aed9ff2f4cc8f9302983c673f5d0d.s3tc.ctex"]
 
 [params]
 

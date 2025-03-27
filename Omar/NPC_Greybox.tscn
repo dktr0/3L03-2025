@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgc5ynfk8hm0l"]
+
+[ext_resource type="Script" path="res://Omar/npc_greyboxx.gd" id="1_i67d5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_58pqy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usysm"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvu1m"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_i67d5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_58pqy")
+surface_material_override/0 = SubResource("StandardMaterial3D_usysm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_uvu1m")

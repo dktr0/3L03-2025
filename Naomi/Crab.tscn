@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvcgaa6bfn1ex"]
+
+[ext_resource type="PackedScene" uid="uid://c0thfkwqyybek" path="res://Naomi/crab.glb" id="1_fk158"]
+
+[node name="Crab" type="Node3D"]
+
+[node name="crab" parent="." instance=ExtResource("1_fk158")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0194244, 0.482757, -0.0467)

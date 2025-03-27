@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ctqo3g1pb73t3"]
 
-[ext_resource type="Script" path="res://camera_rig.gd" id="1_6qnfu"]
+[ext_resource type="Script" path="res://Andy/camera_rig.gd" id="1_6qnfu"]
 
 [node name="FreeCameraRig" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.516931, 0)
