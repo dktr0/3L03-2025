@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7ge4fbq1syiw"]
+
+[ext_resource type="PackedScene" uid="uid://cf5o4f8vxjq7p" path="res://Zibo/glb/windmill.glb" id="1_xca2h"]
+
+[node name="windmill" type="Node3D"]
+
+[node name="windmill" parent="." instance=ExtResource("1_xca2h")]

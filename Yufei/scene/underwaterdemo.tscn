@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm8foyf1i0tyd"]
+
+[ext_resource type="PackedScene" uid="uid://csghcdrsyaqju" path="res://Yufei/scene/underwater.glb" id="1_oooil"]
+[ext_resource type="PackedScene" uid="uid://chmtnc7lo4wpx" path="res://Yufei/scene/underwater_player.tscn" id="2_j5wf0"]
+
+[node name="UNDERWATERDEMO" type="Node3D"]
+
+[node name="underwater" parent="." instance=ExtResource("1_oooil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.682516, 0, 1.62531)
+
+[node name="underwaterPlayer" parent="." instance=ExtResource("2_j5wf0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.79754, 0)
+script = null
+
+[node name="Camera3D" type="Camera3D" parent="underwaterPlayer"]
+transform = Transform3D(-1, -9.03362e-09, 8.64791e-08, 9.03363e-09, 0.978412, 0.206665, -8.64791e-08, 0.206665, -0.978412, 0.0753467, 3.96648, -16.8614)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.261764, -0.94176, -0.211111, 0.385187, -0.098621, 0.917554, -0.884935, -0.3215, 0.336939, -6.75491, 13.3315, -16.9643)
