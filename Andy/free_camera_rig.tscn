@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctqo3g1pb73t3"]
+
+[ext_resource type="Script" path="res://Andy/camera_rig.gd" id="1_6qnfu"]
+
+[node name="FreeCameraRig" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.516931, 0)
+script = ExtResource("1_6qnfu")
+player_path = NodePath("..")
+default_camera_distance = 10.0
+sprint_camera_distance = 12.0
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23019, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, -0.000451281, -4.2035e-05, 0.000451281, 0.982797, 0.184688, -4.20348e-05, -0.184688, 0.982797, 0.0195428, 2.67341, 7.99797)
+current = true

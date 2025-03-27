@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://chmtnc7lo4wpx"]
+
+[ext_resource type="Script" path="res://Yufei/scene/underwater_player.gd" id="1_yh2n4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_buef0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0kjx4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7h1a"]
+albedo_color = Color(0.38, 0.38, 0.38, 1)
+
+[node name="underwaterPlayer" type="CharacterBody3D"]
+script = ExtResource("1_yh2n4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_buef0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_0kjx4")
+surface_material_override/0 = SubResource("StandardMaterial3D_a7h1a")

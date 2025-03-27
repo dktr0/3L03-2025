@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbh3xre0r522d"]
+
+[ext_resource type="PackedScene" uid="uid://bvo74tkylqpif" path="res://Riley/GLBflies/Bulrush.glb" id="1_7tddq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bqn0l"]
+
+[node name="HealthyBulrush" type="StaticBody3D"]
+
+[node name="Bulrush" parent="." instance=ExtResource("1_7tddq")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.980696, 0)
+shape = SubResource("CapsuleShape3D_bqn0l")
