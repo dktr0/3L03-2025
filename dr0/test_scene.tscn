@@ -1,5 +1,15 @@
-[gd_scene format=3 uid="uid://1a5ygcnv1rc"]
+[gd_scene load_steps=3 format=3 uid="uid://1a5ygcnv1rc"]
 
-[node name="TestScene" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://ch7426oddci5x" path="res://Chiara/MultipleLaneDock.glb" id="1_mks4j"]
 
-[node name="Node3D" type="Node3D" parent="."]
+[sub_resource type="BoxShape3D" id="BoxShape3D_4fw3r"]
+size = Vector3(1007.54, 205.991, 650.197)
+
+[node name="MultipleLaneDock" type="StaticBody3D"]
+
+[node name="MultipleLaneDock" parent="." instance=ExtResource("1_mks4j")]
+transform = Transform3D(9.853, 0, 0, 0, 9.853, 0, 0, 0, 9.853, -322.945, -66.8751, 160.899)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.977, 28.9135, 9.17096)
+shape = SubResource("BoxShape3D_4fw3r")
