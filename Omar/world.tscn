@@ -656,11 +656,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_janhd")
 transform = Transform3D(1, 0, 0, 0, 0.134507, 0, 0, 0, 1, 130.885, -20.9061, -239)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Iceberg/iceberg base"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 20.6045, 0, -116.295)
 shape = SubResource("CylinderShape3D_jfdho")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Iceberg/iceberg base"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 20.6045, 0, -116.295)
 mesh = SubResource("CylinderMesh_qdj81")
 skeleton = NodePath("../CollisionShape3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_x2mlk")
@@ -673,9 +673,9 @@ transform = Transform3D(23.9196, 0, -30.5921, 0, 5, 0, 7.27006, 0, 100.653, -18.
 shape = SubResource("BoxShape3D_5rayk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Iceberg/iceberg bridge"]
-transform = Transform3D(23.9196, 0, -30.5921, 0, 5, 0, 7.27006, 0, 100.653, -18.546, 0, 15.3722)
+transform = Transform3D(23.9196, 0, -30.5921, 0, 5, 0, 7.27006, 0, 100.653, 2.0585, 0, -100.923)
 mesh = SubResource("BoxMesh_gfnq8")
 surface_material_override/0 = SubResource("StandardMaterial3D_e0hgv")
 
 [node name="Node3D" parent="." instance=ExtResource("20_874no")]
-transform = Transform3D(3.7024, 0, -1.51401, 0, 4, 0, 1.51401, 0, 3.7024, 129.611, -6.75569, -235.826)
+transform = Transform3D(3.7024, 0, -1.51401, 0, 4, 0, 1.51401, 0, 3.7024, 150.215, -6.75569, -352.121)
