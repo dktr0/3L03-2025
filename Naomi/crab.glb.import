@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2eprcv6m50bu"
-path="res://.godot/imported/ant.glb-762c5e1af4a7e3bd2403d57852232a4f.scn"
+uid="uid://c0thfkwqyybek"
+path="res://.godot/imported/crab.glb-d3fd56f69290d3d09542d73650a9c522.scn"
 
 [deps]
 
-source_file="res://Naomi/ant.glb"
-dest_files=["res://.godot/imported/ant.glb-762c5e1af4a7e3bd2403d57852232a4f.scn"]
+source_file="res://Naomi/crab.glb"
+dest_files=["res://.godot/imported/crab.glb-d3fd56f69290d3d09542d73650a9c522.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
