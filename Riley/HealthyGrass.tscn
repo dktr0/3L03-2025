@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0j3jdkb5bmhw"]
+
+[ext_resource type="PackedScene" uid="uid://dqembpgp7oelt" path="res://Riley/GLBflies/RegGrass.glb" id="1_g8yin"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xar00"]
+
+[node name="HealthyGrass" type="StaticBody3D"]
+
+[node name="RegGrass" parent="." instance=ExtResource("1_g8yin")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.499037, 0)
+shape = SubResource("SphereShape3D_xar00")

@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvioh3otnsxom"]
+
+[ext_resource type="PackedScene" uid="uid://cpon3c06lq50d" path="res://Quinn/Ice Monster/ice_monster.glb" id="1_wb6kr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b32nw"]
+
+[node name="ice_monster" type="CharacterBody3D"]
+
+[node name="ice_monster" parent="." instance=ExtResource("1_wb6kr")]
+
+[node name="Skeleton3D" parent="ice_monster/Armature" index="0"]
+bones/0/rotation = Quaternion(0, -0.0190423, 0, 0.999819)
+bones/1/rotation = Quaternion(-0.0672074, 0.138886, 0.889606, 0.429879)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(0.00307729, 0.0259062, 0.187879, 0.981846)
+bones/3/rotation = Quaternion(-0.0859991, -0.00352511, 0.202792, 0.975432)
+bones/4/rotation = Quaternion(-0.625393, 0.023908, -0.095865, 0.77403)
+bones/5/rotation = Quaternion(-0.000566103, -0.0423086, 0.00998675, 0.999055)
+bones/6/rotation = Quaternion(-0.00784204, 7.98972e-05, -0.0108514, 0.99991)
+bones/7/rotation = Quaternion(-0.0398687, -1.71851e-09, 0.00440524, 0.999195)
+bones/9/rotation = Quaternion(-0.048801, -0.120986, 0.0782199, 0.988364)
+bones/10/rotation = Quaternion(-0.00538287, 0.0507181, 0.360376, 0.931412)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(-0.0798611, -0.02812, -0.00435929, 0.9964)
+bones/12/rotation = Quaternion(0.0352875, -1.31929e-25, -3.7362e-24, 0.999377)
+bones/13/rotation = Quaternion(-0.7699, 6.2837e-17, 2.87314e-18, 0.638165)
+bones/14/rotation = Quaternion(0.0132893, -0.0229715, 0.0354666, 0.999018)
+bones/16/rotation = Quaternion(3.79851e-08, 2.5423e-08, -0.741279, 0.671198)
+bones/17/rotation = Quaternion(0.0471206, -0.077149, -0.0965757, 0.991212)
+bones/18/rotation = Quaternion(-0.00273363, -0.0257568, -0.353334, 0.935139)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(0.0956036, -0.0424555, -0.0155354, 0.994392)
+bones/20/rotation = Quaternion(0.0105805, 0.0159639, 0.90294, -0.42934)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(-0.0624709, 0.0420345, -0.179184, 0.98093)
+bones/22/rotation = Quaternion(-0.0010877, -0.0122847, -0.194082, 0.980908)
+bones/23/rotation = Quaternion(-0.618282, -0.0288628, 0.0743551, 0.781898)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(5.69803, 0, 0, 0, 2.72957, 0, 0, 0, 1.97864, 0, 1.34086, -0.196707)
+shape = SubResource("BoxShape3D_b32nw")
+
+[editable path="ice_monster"]
