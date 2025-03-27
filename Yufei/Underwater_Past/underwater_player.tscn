@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://chmtnc7lo4wpx"]
 
-[ext_resource type="Script" path="res://Underwater_Past/underwater_player2.gd" id="1_rbool"]
+[ext_resource type="Script" path="res://Yufei/Underwater_Past/underwater_player.gd" id="1_rbool"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_buef0"]
 radius = 0.55

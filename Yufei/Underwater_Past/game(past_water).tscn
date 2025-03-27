@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://bragmruxldk4r"]
+[gd_scene load_steps=16 format=3 uid="uid://bragmruxldk4r"]
 
 [ext_resource type="PackedScene" uid="uid://chmtnc7lo4wpx" path="res://Yufei/Underwater_Past/underwater_player.tscn" id="1_4hhrs"]
-[ext_resource type="Script" path="res://Yufei/Underwater_Past/underwater_player.gd" id="2_1mxkj"]
 [ext_resource type="PackedScene" uid="uid://bvcdbkjkcsmfd" path="res://Yufei/Underwater_Past/collectables.tscn" id="2_rx1k3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_51a85"]
@@ -428,7 +427,6 @@ shape = SubResource("ConvexPolygonShape3D_gbylg")
 
 [node name="underwaterPlayer" parent="." instance=ExtResource("1_4hhrs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1549, 4.12053, 15.1801)
-script = ExtResource("2_1mxkj")
 
 [node name="collectables" type="Node3D" parent="."]
 
