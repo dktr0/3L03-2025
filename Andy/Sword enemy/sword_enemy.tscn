@@ -313,7 +313,7 @@ shape = SubResource("CapsuleShape3D_uoiei")
 transform = Transform3D(-0.00054964, -3.27611e-11, -0.00396206, -0.00259438, 0.00302318, 0.000359908, 0.00299451, 0.00261923, -0.000415416, 0.568157, -0.301948, -0.0646057)
 
 [node name="Sword" type="MeshInstance3D" parent="Sword"]
-transform = Transform3D(0.40602, -0.908091, 0.102603, 0.911747, 0.394868, -0.113165, 0.0622494, 0.139494, 0.988268, 0, 0, 0)
+transform = Transform3D(0.40602, -0.908091, 0.102602, 0.911747, 0.394868, -0.113165, 0.0622494, 0.139494, 0.988268, 0, 0, 0)
 
 [node name="SwordArea" type="Area3D" parent="Sword/Sword"]
 

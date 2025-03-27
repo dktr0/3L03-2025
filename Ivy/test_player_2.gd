@@ -3,14 +3,18 @@ extends CharacterBody3D
 
 var mouseLookLeftRight = 0
 var mouseLookUpDown = 0
-var in_water: bool = false
-
 
 const SPEED = 2.5
 const SWIM_SPEED = 2.5
 const ACCEL = 10.0
 const DECEL = 10.0
-const DEATH_Y = -10
+
+const GRAVITY = -4.0     
+const BUOYANCY = 3.0     
+const DRAG = 0.1         
+const MOVE_SPEED = 2.5   
+const JUMP_FORCE = 4.0     
+const MAX_RISE_SPEED = 2.5
 
 
 func _ready():
@@ -19,17 +23,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene();
-
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE);
-
-	if global_transform.origin.y < DEATH_Y:
-		get_tree().reload_current_scene();
 
 
 func _physics_process(delta):
@@ -40,12 +38,10 @@ func _physics_process(delta):
 	mouseLookLeftRight = 0;
 	mouseLookUpDown = 0;
 
-	if Input.is_action_just_pressed("swimup"):
-		velocity.y = SWIM_SPEED;
-	elif Input.is_action_just_pressed("swimdown"):
-		velocity.y = -SWIM_SPEED;
+	velocity.y += (GRAVITY + BUOYANCY) * delta
+	velocity.y = clamp(velocity.y, -MAX_RISE_SPEED, MAX_RISE_SPEED)
 
-	var input_dir = Input.get_vector("left", "right", "forward", "backward");
+	var input_dir = Input.get_vector("left", "right", "forward", "back");
 	var dir = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized();
 	# handling 4 different possibilities:
 	# these can easily be tweaked to the requirements of specific games
@@ -56,6 +52,11 @@ func _physics_process(delta):
 		var velDir = velocity.normalized();
 		velocity.x = move_toward(velocity.x, 0, abs(velDir.x*DECEL*delta));
 		velocity.z = move_toward(velocity.z, 0, abs(velDir.z*DECEL*delta));
+
+	if Input.is_action_just_pressed("Jump"):
+		velocity.y = JUMP_FORCE
+
+	velocity = velocity.lerp(Vector3.ZERO, DRAG * delta)
 
 	move_and_slide()
 
@@ -68,8 +69,3 @@ func _input(event):
 		mouseLookUpDown = -event.relative.y * 0.01; # increase/decrease 0.01 to change sensitivity
 		if abs(mouseLookUpDown) < 0.02: # dead zone for mouse motion up/down
 			mouseLookUpDown = 0.0;
-
-
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	if area.is_in_group("Water"):
-		in_water = true;
