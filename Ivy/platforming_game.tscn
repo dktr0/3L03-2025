@@ -1,7 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://cguq43dg6fpog"]
+[gd_scene load_steps=40 format=3 uid="uid://cguq43dg6fpog"]
 
 [ext_resource type="PackedScene" uid="uid://vi1tkufch6vp" path="res://Ivy/test_player.tscn" id="1_lddec"]
 [ext_resource type="Animation" uid="uid://ddljjodotfye6" path="res://Ivy/Plane_animation.res" id="1_q4rys"]
+[ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="2_u0bwf"]
+[ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="4_1n8n2"]
+[ext_resource type="PackedScene" uid="uid://bbh3xre0r522d" path="res://Riley/HealthyBulrush.tscn" id="5_svlm5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4gt67"]
 
@@ -114,7 +117,7 @@ albedo_color = Color(0.356863, 0, 0, 1)
 [node name="PlatformingGame" type="Node3D"]
 
 [node name="TestPlayer" parent="." instance=ExtResource("1_lddec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.801, 17.2165)
+transform = Transform3D(0.655216, 0, 0, 0, 0.655216, 0, 0, 0, 0.655216, 0, 0.801, 17.2165)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.241034, -0.579982, 0.778154, 2.69098e-05, 0.801798, 0.597596, -0.970517, -0.14402, 0.193276, 10.1401, 20.7611, 0)
@@ -169,7 +172,7 @@ mesh = SubResource("BoxMesh_rsggb")
 shape = SubResource("ConcavePolygonShape3D_w3voj")
 
 [node name="Plane 1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.15694, 0, 0, 0, 1.53465, 0, 0, 0, 1.73522, -4.48572, 0.60857, 14.0393)
+transform = Transform3D(1.15694, 0, 0, 0, 1.53465, 0, 0, 0, 1.73522, -8.01552, 0.60857, 14.0393)
 mesh = SubResource("BoxMesh_6clsn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane 1"]
@@ -178,7 +181,7 @@ mesh = SubResource("BoxMesh_6clsn")
 shape = SubResource("ConcavePolygonShape3D_yl3d4")
 
 [node name="Plane 2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.407907, 0, 0, 0, 0.462089, 0, 0, 0, 0.407907, -3.75742, 0.479841, 14.5362)
+transform = Transform3D(0.407907, 0, 0, 0, 0.462089, 0, 0, 0, 0.407907, -7.24888, 0.479841, 14.5362)
 mesh = SubResource("BoxMesh_dksgx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane 2"]
@@ -213,8 +216,11 @@ mesh = SubResource("CylinderMesh_eu0ly")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree 2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_x2ko3")
 
+[node name="TreeLog" parent="." instance=ExtResource("2_u0bwf")]
+transform = Transform3D(-0.0712215, -0.0552781, -1.65761, -0.163999, 1.65124, -0.0480193, 1.6504, 0.161696, -0.0763042, -3.16958, 1.64859, 10.5934)
+
 [node name="Tree 3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.07386e-09, -0.337433, 0.369962, 0.369273, -0.277593, -0.00505003, 0.0393531, 2.60481, 0.0473874, -4.17965, 1.78007, 10.671)
+transform = Transform3D(-0.000256237, -0.334895, 0.370008, 0.36925, -0.279387, -0.00478581, 0.03957, 2.60495, 0.0470552, -7.59097, 1.78007, 10.671)
 mesh = SubResource("CylinderMesh_eu0ly")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Tree 3"]
@@ -332,3 +338,9 @@ autoplay = "Plane_animation"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.8819, -12.3054)
 mesh = SubResource("SphereMesh_nrggd")
 surface_material_override/0 = SubResource("StandardMaterial3D_757l5")
+
+[node name="WaterRock" parent="." instance=ExtResource("4_1n8n2")]
+transform = Transform3D(0.158184, 0, -0.156591, 0, 0.222582, 0, 0.156591, 0, 0.158184, -3.98222, 0.689819, 14.1125)
+
+[node name="HealthyBulrush" parent="." instance=ExtResource("5_svlm5")]
+transform = Transform3D(0.510387, 0, 0, 0, 0.510387, 0, 0, 0, 0.510387, -4.01428, 0.321605, 15.3897)
