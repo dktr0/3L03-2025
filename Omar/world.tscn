@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="1_vvwvs"]
 [ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="2_cw1nb"]
-[ext_resource type="PackedScene" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
+[ext_resource type="PackedScene" uid="uid://dv4mqi5ll4dx7" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
 [ext_resource type="PackedScene" uid="uid://bgc5ynfk8hm0l" path="res://Omar/NPC_Greybox.tscn" id="2_x8rkw"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="3_y2pp1"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="4_8q2ra"]
-[ext_resource type="PackedScene" path="res://Chiara/surrounding_rocks.tscn" id="5_ek8y3"]
-[ext_resource type="PackedScene" path="res://Chiara/water_rock.tscn" id="6_1rjgs"]
+[ext_resource type="PackedScene" uid="uid://dffctwdfacdjg" path="res://Chiara/surrounding_rocks.tscn" id="5_ek8y3"]
+[ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="6_1rjgs"]
 [ext_resource type="PackedScene" uid="uid://dosemi7q3pto8" path="res://Ethan C/Blue Tent.glb" id="6_7f6kg"]
 [ext_resource type="PackedScene" uid="uid://daxuesve7l7c6" path="res://Ethan C/Green Tent.glb" id="7_haqrp"]
 [ext_resource type="PackedScene" uid="uid://bav0lx2v4bb6c" path="res://Ethan C/Purple Tent.glb" id="8_eguyp"]
@@ -16,7 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://du71viucocv8s" path="res://Ethan C/Water Bottle.glb" id="11_7iaq1"]
 [ext_resource type="PackedScene" uid="uid://cxk8oo6kkuqgh" path="res://Naomi/Shell.tscn" id="15_inl8m"]
 [ext_resource type="PackedScene" uid="uid://dyvrv1jas7hna" path="res://Naomi/Ant.tscn" id="16_ih4pq"]
-[ext_resource type="PackedScene" path="res://Chiara/TreeLog.tscn" id="17_66xdu"]
+[ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="17_66xdu"]
+[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/3d-assets---wilsoncheng/water_base.tscn" id="17_hk01b"]
+[ext_resource type="PackedScene" uid="uid://4cexfi3rf5f1" path="res://Braydon/battle-areana-(past)/Ice Areana Past Level.tscn" id="20_874no"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bx7su"]
 
@@ -75,13 +77,6 @@ size = Vector3(1.19287, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sr5ei"]
 albedo_color = Color(1, 0.901961, 0.686275, 0.286275)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_hi2fi"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cckji"]
-albedo_color = Color(0.0980392, 0.313726, 1, 1)
-metallic = 0.58
-metallic_specular = 1.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ai5b5"]
 size = Vector3(0.999878, 0.994629, 1.04371)
 
@@ -99,6 +94,8 @@ albedo_color = Color(0.425006, 0.730918, 0.390561, 1)
 albedo_color = Color(0.269257, 0.000262024, 0.808439, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jfdho"]
+height = 2.08108
+radius = 0.502913
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_qdj81"]
 
@@ -580,13 +577,8 @@ transform = Transform3D(-0.144086, 0, -0.0417028, 0, 0.15, 0, 0.0417028, 0, -0.1
 
 [node name="water" type="Node" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="water"]
-transform = Transform3D(0.508293, 0, 0, 0, 1, 0, 0, 0, 0.449956, 0, 0, -236.77)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="water/StaticBody3D"]
-transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, -156.754, -8.56832, 0)
-mesh = SubResource("PlaneMesh_hi2fi")
-surface_material_override/0 = SubResource("StandardMaterial3D_cckji")
+[node name="Water_Base" parent="water" instance=ExtResource("17_hk01b")]
+transform = Transform3D(9.81115, 0, 0, 0, 10, 0, 0, 0, 9.11001, -72.4818, -108.338, -233.351)
 
 [node name="Forest" type="Node" parent="."]
 
@@ -661,14 +653,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_janhd")
 [node name="Iceberg" type="Node" parent="."]
 
 [node name="iceberg base" type="StaticBody3D" parent="Iceberg"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.885, -107.491, -239)
+transform = Transform3D(1, 0, 0, 0, 0.134507, 0, 0, 0, 1, 130.885, -20.9061, -239)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Iceberg/iceberg base"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 20.6045, 0, -116.295)
 shape = SubResource("CylinderShape3D_jfdho")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Iceberg/iceberg base"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 20.6045, 0, -116.295)
 mesh = SubResource("CylinderMesh_qdj81")
 skeleton = NodePath("../CollisionShape3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_x2mlk")
@@ -681,6 +673,9 @@ transform = Transform3D(23.9196, 0, -30.5921, 0, 5, 0, 7.27006, 0, 100.653, -18.
 shape = SubResource("BoxShape3D_5rayk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Iceberg/iceberg bridge"]
-transform = Transform3D(23.9196, 0, -30.5921, 0, 5, 0, 7.27006, 0, 100.653, -18.546, 0, 15.3722)
+transform = Transform3D(23.9196, 0, -30.5921, 0, 5, 0, 7.27006, 0, 100.653, 2.0585, 0, -100.923)
 mesh = SubResource("BoxMesh_gfnq8")
 surface_material_override/0 = SubResource("StandardMaterial3D_e0hgv")
+
+[node name="Node3D" parent="." instance=ExtResource("20_874no")]
+transform = Transform3D(3.7024, 0, -1.51401, 0, 4, 0, 1.51401, 0, 3.7024, 150.215, -6.75569, -352.121)

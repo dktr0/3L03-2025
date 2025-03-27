@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyvrv1jas7hna"]
+[gd_scene load_steps=2 format=3 uid="uid://c01ihmgehc1ui"]
 
-[ext_resource type="PackedScene" uid="uid://bv4ogc6fux2af" path="res://Naomi/ant.glb" id="1_bhg5k"]
+[ext_resource type="PackedScene" uid="uid://d2eprcv6m50bu" path="res://Naomi/ant.glb" id="1_1v2do"]
 
 [node name="Ant" type="Node3D"]
 
-[node name="Ant" parent="." instance=ExtResource("1_bhg5k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0198239, 0, 0.715479)
+[node name="ant" parent="." instance=ExtResource("1_1v2do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.33728, 0, 0.926105)
