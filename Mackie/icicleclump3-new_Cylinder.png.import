@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhln8nu6whq0x"
-path.s3tc="res://.godot/imported/SurroundingRocks_Material Base Color.png-a80a43c474b10b6462238262cc821fbb.s3tc.ctex"
+uid="uid://cek3ykknffofq"
+path.s3tc="res://.godot/imported/icicleclump3-new_Cylinder.png-210192345abd1af1097801171450939b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "d98835c92a6883e5541e64fa2bc7834d"
+}
 
 [deps]
 
-source_file="res://Chiara/SurroundingRocks_Material Base Color.png"
-dest_files=["res://.godot/imported/SurroundingRocks_Material Base Color.png-a80a43c474b10b6462238262cc821fbb.s3tc.ctex"]
+source_file="res://Mackie/icicleclump3-new_Cylinder.png"
+dest_files=["res://.godot/imported/icicleclump3-new_Cylinder.png-210192345abd1af1097801171450939b.s3tc.ctex"]
 
 [params]
 

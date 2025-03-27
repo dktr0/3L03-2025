@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chhmf8uuf12uo"
-path.s3tc="res://.godot/imported/icicleclump2_Cylinder.png-c13ccb4a533ec99fe9c7ec2b039eb2a0.s3tc.ctex"
+uid="uid://dy1xegmyjl2gi"
+path.s3tc="res://.godot/imported/icicleclump-new_Cylinder Base Color.png-8055805fbc881d82d01140362bd36729.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d98835c92a6883e5541e64fa2bc7834d"
+"md5": "cccbb7267581bcd0c7259841275a2c11"
 }
 
 [deps]
 
-source_file="res://Mackie/icicleclump2_Cylinder.png"
-dest_files=["res://.godot/imported/icicleclump2_Cylinder.png-c13ccb4a533ec99fe9c7ec2b039eb2a0.s3tc.ctex"]
+source_file="res://Mackie/icicleclump-new_Cylinder Base Color.png"
+dest_files=["res://.godot/imported/icicleclump-new_Cylinder Base Color.png-8055805fbc881d82d01140362bd36729.s3tc.ctex"]
 
 [params]
 

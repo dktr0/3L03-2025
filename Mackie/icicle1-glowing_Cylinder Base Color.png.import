@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csp8fi512w84f"
-path.s3tc="res://.godot/imported/icicleclump2_Cylinder Base Color.png-3f0a636b98f9dcda082d0d98d934e3b0.s3tc.ctex"
+uid="uid://co8lxk5igac5s"
+path.s3tc="res://.godot/imported/icicle1-glowing_Cylinder Base Color.png-37cb02675757aa13cb908b37a98a6f51.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Mackie/icicleclump2_Cylinder Base Color.png"
-dest_files=["res://.godot/imported/icicleclump2_Cylinder Base Color.png-3f0a636b98f9dcda082d0d98d934e3b0.s3tc.ctex"]
+source_file="res://Mackie/icicle1-glowing_Cylinder Base Color.png"
+dest_files=["res://.godot/imported/icicle1-glowing_Cylinder Base Color.png-37cb02675757aa13cb908b37a98a6f51.s3tc.ctex"]
 
 [params]
 
