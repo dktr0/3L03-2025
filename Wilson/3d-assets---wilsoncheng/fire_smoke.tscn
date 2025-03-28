@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dj0ikx20ebw7a"]
 
-[ext_resource type="Shader" uid="uid://ba4x72iqeobm7" path="res://Wilson/3d-assets---wilsoncheng/s_smoke_shader.tres" id="1_6e4io"]
-[ext_resource type="PackedScene" uid="uid://dhxorqquga27y" path="res://Wilson/3d-assets---wilsoncheng/vfx_fire.tscn" id="2_b88jb"]
+[ext_resource type="Shader" uid="uid://ba4x72iqeobm7" path="res://s_smoke_shader.tres" id="1_6e4io"]
+[ext_resource type="PackedScene" uid="uid://dhxorqquga27y" path="res://vfx_fire.tscn" id="2_b88jb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqevc"]
 render_priority = 0
@@ -28,10 +28,11 @@ angle_min = -120.0
 angle_max = 90.0
 angular_velocity_min = -180.0
 angular_velocity_max = 180.0
-gravity = Vector3(0, 5, 0)
+gravity = Vector3(0, 30, 0)
 damping_min = 1.5
 damping_max = 2.2
-scale_min = 0.5
+scale_min = 10.0
+scale_max = 20.0
 scale_curve = SubResource("CurveTexture_bfe1a")
 color = Color(0.960784, 0.764706, 0.498039, 1)
 color_ramp = SubResource("GradientTexture1D_e8n75")
@@ -46,6 +47,7 @@ amount = 15
 lifetime = 1.6
 randomness = 0.1
 fixed_fps = 60
+visibility_aabb = AABB(0, 0, 0, 1, 1, 1)
 process_material = SubResource("ParticleProcessMaterial_iy1tf")
 draw_pass_1 = SubResource("QuadMesh_nv0vs")
 

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6xmw21g7x5kr"]
+
+[ext_resource type="Material" uid="uid://bc62nga50weke" path="res://new_shader_material.tres" id="1_dhlvr"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1ajsp"]
+emission_shape = 3
+emission_box_extents = Vector3(200, 100, 200)
+spread = 180.0
+flatness = 0.185
+gravity = Vector3(0, 5, 0)
+color = Color(0, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_03u37"]
+material = ExtResource("1_dhlvr")
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.0729, 0)
+amount = 200
+lifetime = 2.0
+visibility_aabb = AABB(-4, -4, -4, 100, 100, 100)
+process_material = SubResource("ParticleProcessMaterial_1ajsp")
+draw_pass_1 = SubResource("SphereMesh_03u37")
