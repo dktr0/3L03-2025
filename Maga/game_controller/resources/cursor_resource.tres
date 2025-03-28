@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CursorSettings" load_steps=2 format=3 uid="uid://bk3tl3b05vy8w"]
+
+[ext_resource type="Script" path="res://Maga/game_controller/autoload/cursor_settings.gd" id="1_esu3f"]
+
+[resource]
+script = ExtResource("1_esu3f")
+locked_by_default = true
+always_visible_scenes = Array[String](["res://Maga/developer_console/scenes/developer_console_scene.tscn", "res://dr0/placeholder_launch_scene.tscn"])
+enable_escape_toggle = true
+cursor_hotspot = Vector2(0, 0)
+force_visibility = false
