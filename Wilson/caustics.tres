@@ -1,3 +1,13 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://dei0tur2s00f6"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://ddlg5iasny477"]
+
+[ext_resource type="Shader" path="res://Underwater_Caustics/caustics.gdshader" id="1_erqe4"]
+
+[sub_resource type="Gradient" id="Gradient_xo4qt"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p0of3"]
+gradient = SubResource("Gradient_xo4qt")
 
 [resource]
+render_priority = 0
+shader = ExtResource("1_erqe4")
+shader_parameter/color_ramp = SubResource("GradientTexture1D_p0of3")
