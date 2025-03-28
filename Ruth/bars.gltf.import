@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgthiurowcelo"
-path="res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"
+uid="uid://cdqhy4022qr12"
+path="res://.godot/imported/bars.gltf-528e08599ffdcf49eac97f70336e572a.scn"
 
 [deps]
 
-source_file="res://Gia/oyster2.glb"
-dest_files=["res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"]
+source_file="res://Ruth/bars.gltf"
+dest_files=["res://.godot/imported/bars.gltf-528e08599ffdcf49eac97f70336e572a.scn"]
 
 [params]
 
