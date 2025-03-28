@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://chmtnc7lo4wpx"]
 
-[ext_resource type="Script" path="res://Underwater_Past/underwater_player2.gd" id="1_rbool"]
+[ext_resource type="Script" path="res://Yufei/underwater_player.gd" id="1_xhplb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_buef0"]
 radius = 0.55
@@ -12,7 +12,7 @@ albedo_color = Color(0.38, 0.38, 0.38, 1)
 
 [node name="underwaterPlayer" type="CharacterBody3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-script = ExtResource("1_rbool")
+script = ExtResource("1_xhplb")
 
 [node name="Area3D" type="Area3D" parent="."]
 

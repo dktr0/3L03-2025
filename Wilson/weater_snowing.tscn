@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://dlmvtoi6hdyvo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j4kai"]
+sky_top_color = Color(0.643137, 0.721569, 0.847059, 1)
+sky_horizon_color = Color(0.820588, 0.893137, 0.961765, 1)
+ground_bottom_color = Color(0.639216, 0.85098, 1, 1)
+ground_horizon_color = Color(0.820588, 0.893137, 0.961765, 1)
+
+[sub_resource type="Sky" id="Sky_ggal6"]
+sky_material = SubResource("ProceduralSkyMaterial_j4kai")
+
+[sub_resource type="Environment" id="Environment_wgol2"]
+background_mode = 2
+sky = SubResource("Sky_ggal6")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.666667, 0.74902, 0.8, 1)
+fog_sun_scatter = 0.5
+fog_density = 0.02
+fog_sky_affect = 0.7
+
+[sub_resource type="Gradient" id="Gradient_j7mee"]
+offsets = PackedFloat32Array(0.0272727, 0.490909, 1)
+colors = PackedColorArray(0.933333, 0.933333, 0.933333, 1, 0.933333, 0.933333, 0.933333, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nr7id"]
+gradient = SubResource("Gradient_j7mee")
+
+[sub_resource type="Curve" id="Curve_p8whx"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.137681, 1), 0.0, 0.0, 0, 0, Vector2(0.536232, 0.659341), -0.678427, -0.678427, 0, 0, Vector2(1, 0.494505), 0.040986, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_l40xh"]
+curve = SubResource("Curve_p8whx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_36acn"]
+emission_shape_scale = Vector3(16, 2, 16)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 6.0
+gravity = Vector3(0, -5.5, 0)
+radial_accel_min = -4.0
+radial_accel_max = 4.0
+tangential_accel_min = -8.0
+tangential_accel_max = 8.0
+damping_max = 4.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_l40xh")
+color = Color(0.933333, 0.933333, 0.933333, 1)
+color_ramp = SubResource("GradientTexture1D_nr7id")
+
+[sub_resource type="Gradient" id="Gradient_8oxf7"]
+offsets = PackedFloat32Array(0.342105, 0.701754)
+colors = PackedColorArray(1, 1, 1, 1, 0.32549, 0.32549, 0.32549, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_du01c"]
+gradient = SubResource("Gradient_8oxf7")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggyt3"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_du01c")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_dde04"]
+material = SubResource("StandardMaterial3D_ggyt3")
+
+[node name="weater_snowing" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wgol2")
+
+[node name="vfx_snow" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.832, 0)
+amount = 256
+lifetime = 3.5
+visibility_aabb = AABB(-48.0463, -67.4196, -52.2014, 96.8633, 70.3684, 95.0685)
+process_material = SubResource("ParticleProcessMaterial_36acn")
+draw_pass_1 = SubResource("QuadMesh_dde04")
