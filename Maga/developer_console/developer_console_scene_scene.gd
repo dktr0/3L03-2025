@@ -23,6 +23,7 @@ class_name DeveloperConsoleSceneManager
 var console: Node # Reference to the main developer console node
 var scene_tab: Control # Reference to the Scene tab Control node 
 var scene_list: ItemList # Reference to the existing SceneList ItemList
+var scene_search: LineEdit # Reference to the scene search bar
 var scroll_container: ScrollContainer # Container for scene buttons
 var button_container: VBoxContainer # Container for organizing buttons vertically
 
@@ -35,6 +36,10 @@ var button_style_pressed: StyleBoxFlat
 const MAX_BUTTON_WIDTH = 1000
 const BUTTON_HEIGHT = 30
 const BUTTON_MARGIN = 5
+
+# --- Scene Data ---
+var all_scenes: PackedStringArray = [] # Store all found scenes
+var filtered_scenes: PackedStringArray = [] # Store filtered scenes based on search
 
 # ============================================================================ #
 # region Initialization
@@ -53,16 +58,29 @@ func initialize(developer_console: Node) -> void:
 	console.log("Found Scene tab, visibility: " + str(scene_tab.visible))
 	console.log("Scene tab path: " + str(scene_tab.get_path()))
 	
-	scene_list = scene_tab.get_node_or_null("SceneList")
+	# Get reference to VBoxContainer in Scene tab
+	var vbox = scene_tab.get_node_or_null("VBoxContainer")
+	if vbox == null:
+		console.log("[ERROR] Could not find VBoxContainer in Scene tab")
+		return
+		
+	# Get reference to SceneList
+	scene_list = vbox.get_node_or_null("SceneList")
 	if scene_list == null:
 		console.log("[ERROR] Could not find SceneList in Scene tab")
 		return
 	
-	console.log("Found SceneList, visibility: " + str(scene_list.visible))
-	console.log("SceneList path: " + str(scene_list.get_path()))
+	# Get reference to SceneSearch
+	scene_search = vbox.get_node_or_null("SceneSearch") 
+	if scene_search == null:
+		console.log("[ERROR] Could not find SceneSearch in Scene tab")
+		return
+		
+	# Connect search bar signals
+	scene_search.text_changed.connect(_on_scene_search_changed)
+	scene_search.text_submitted.connect(_on_scene_search_submitted)
 	
-	# Hide the original scene list as we'll replace it with buttons
-	scene_list.visible = false
+	console.log("Found SceneList and SceneSearch, connecting signals...")
 	
 	# Create the new UI for buttons
 	_setup_scene_tab_ui()
@@ -175,19 +193,25 @@ func scan_scenes() -> void:
 	label.add_theme_font_size_override("font_size", 16)
 	button_container.add_child(label)
 	
-	# Get scenes from the console's scanning function (reuse existing code)
-	var scenes = _find_all_scenes()
+	# Get all scenes from the project
+	all_scenes = _find_all_scenes()
 	
 	# Sort scenes alphabetically
-	scenes.sort()
+	all_scenes.sort()
 	
-	console.log("Found " + str(scenes.size()) + " scenes")
+	console.log("Found " + str(all_scenes.size()) + " scenes")
+	
+	# Reset search field
+	if scene_search:
+		scene_search.text = ""
+	
+	# Initially, show all scenes
+	filtered_scenes = all_scenes.duplicate()
 	
 	# Create a button for each scene
-	for scene_path in scenes:
-		_create_scene_button(scene_path)
+	update_scene_buttons()
 	
-	console.log("Scene buttons created - found %d scenes." % scenes.size())
+	console.log("Scene buttons created - found %d scenes." % all_scenes.size())
 
 
 ## Create a button for a scene file
@@ -302,5 +326,54 @@ func _on_tab_changed(tab_idx: int) -> void:
 	if tab_control == scene_tab:
 		console.log("Scene tab selected, scanning scenes...")
 		scan_scenes()
+
+# Handle scene search text changes
+func _on_scene_search_changed(search_text: String) -> void:
+	filter_scenes(search_text)
+	update_scene_buttons()
+
+# Handle scene search text submission (Enter key)
+func _on_scene_search_submitted(search_text: String) -> void:
+	filter_scenes(search_text)
+	update_scene_buttons()
+	
+# Filter scenes based on search text
+func filter_scenes(search_text: String) -> void:
+	# If search is empty, use all scenes
+	if search_text.strip_edges() == "":
+		filtered_scenes = all_scenes
+		return
+	
+	# Perform case-insensitive search
+	filtered_scenes = []
+	var lowercase_search = search_text.to_lower()
+	
+	for scene_path in all_scenes:
+		if scene_path.to_lower().contains(lowercase_search):
+			filtered_scenes.append(scene_path)
+	
+	console.log("Found %d scenes matching search: '%s'" % [filtered_scenes.size(), search_text])
+
+# Update scene buttons based on current filtered scenes
+func update_scene_buttons() -> void:
+	# Clear existing buttons
+	if button_container:
+		for child in button_container.get_children():
+			if not child is Label:  # Keep the "Available Scenes:" label
+				child.queue_free()
+	
+	# If no scenes match the filter, show a message
+	if filtered_scenes.is_empty():
+		var label = Label.new()
+		label.text = "No matching scenes found"
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.add_theme_font_size_override("font_size", 14)
+		label.modulate = Color(0.7, 0.7, 0.7)
+		button_container.add_child(label)
+		return
+	
+	# Create a button for each filtered scene
+	for scene_path in filtered_scenes:
+		_create_scene_button(scene_path)
 
 # endregion 

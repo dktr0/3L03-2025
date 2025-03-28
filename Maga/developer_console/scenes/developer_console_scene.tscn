@@ -80,7 +80,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 text = "Developer Console"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -90,19 +90,20 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
+offset_left = -50.0
 offset_top = -1.0
 offset_bottom = 41.0
 grow_horizontal = 0
 tooltip_text = "Close Console"
 focus_mode = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 text = "X"
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
 theme_override_styles/panel = SubResource("StyleBoxFlat_1")
 current_tab = 0
 
@@ -129,15 +130,15 @@ theme_override_constants/separation = 15
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/normal_font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_2")
 bbcode_enabled = true
 scroll_following = true
 
 [node name="Input" type="LineEdit" parent="PanelContainer/VBoxContainer/TabContainer/Console/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 16
 theme_override_styles/focus = SubResource("StyleBoxFlat_4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3")
 placeholder_text = "Enter command or expression..."
@@ -149,7 +150,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_tab_index = 1
 
-[node name="SceneList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Scene"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer/Scene"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -162,8 +163,23 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="SceneList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Scene/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
 allow_reselect = true
 allow_rmb_select = true
+
+[node name="SceneSearch" type="LineEdit" parent="PanelContainer/VBoxContainer/TabContainer/Scene/VBoxContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxFlat_4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3")
+placeholder_text = "Search scenes..."
 
 [node name="Log" type="Control" parent="PanelContainer/VBoxContainer/TabContainer"]
 visible = false
@@ -172,7 +188,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_tab_index = 2
 
-[node name="Output" type="RichTextLabel" parent="PanelContainer/VBoxContainer/TabContainer/Log"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/TabContainer/Log"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -185,21 +201,35 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 14
+theme_override_constants/separation = 15
+
+[node name="Output" type="RichTextLabel" parent="PanelContainer/VBoxContainer/TabContainer/Log/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_2")
 bbcode_enabled = true
 scroll_following = true
+
+[node name="SearchBar" type="LineEdit" parent="PanelContainer/VBoxContainer/TabContainer/Log/VBoxContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxFlat_4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3")
+placeholder_text = "Search logs..."
 
 [node name="ToggleButton" type="Button" parent="."]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
-offset_top = -50.0
-offset_right = 150.0
+offset_top = -55.0
+offset_right = 160.0
 offset_bottom = -20.0
 grow_vertical = 0
 tooltip_text = "Toggle Developer Console (F1)"
 focus_mode = 0
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 16
 text = "Toggle Console"

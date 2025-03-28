@@ -33,9 +33,11 @@ extends CanvasLayer
 ## Console Input LineEdit
 @onready var console_input: LineEdit = $PanelContainer/VBoxContainer/TabContainer/Console/VBoxContainer/Input
 ## Scene List ItemList
-@onready var scene_list: ItemList = $PanelContainer/VBoxContainer/TabContainer/Scene/SceneList
-## Log Output RichTextLabel
-@onready var log_output: RichTextLabel = $PanelContainer/VBoxContainer/TabContainer/Log/Output
+@onready var scene_list: ItemList = $PanelContainer/VBoxContainer/TabContainer/Scene/VBoxContainer/SceneList
+## Scene Search LineEdit
+@onready var scene_search: LineEdit = $PanelContainer/VBoxContainer/TabContainer/Scene/VBoxContainer/SceneSearch
+## Log Output RichTextLabel (Deprecated - use log_manager instead)
+@onready var log_output: RichTextLabel = $PanelContainer/VBoxContainer/TabContainer/Log/VBoxContainer/Output
 
 # --- Configuration ---
 const CONSOLE_HOTKEY: StringName = "ui_quoteleft" # Action to toggle console visibility (Tilde/Backtick key `)
@@ -54,9 +56,11 @@ var _resize_start_size: Vector2 = Vector2.ZERO
 var _hover_edge_h: String = "" # For visual feedback
 var _hover_edge_v: String = "" # For visual feedback
 var _scenes_scanned: bool = false # Flag to scan scenes only once needed
+var _all_scene_items: Array = [] # Store all scene items for search filtering
 
 # --- Extensions ---
 var scene_manager = null # Will hold the scene manager extension
+var log_manager = null # Will hold the log manager extension
 
 # --- Command & Expression Handling ---
 var registered_commands: Dictionary = {} # { "command_name": { "callable": Callable, "description": String } }
@@ -82,7 +86,17 @@ func _ready() -> void:
 		panel_container.draw.connect(_draw_resize_handles)
 		console_input.text_submitted.connect(_on_console_input_submitted)
 		console_input.gui_input.connect(_on_console_input_gui_input) # For history navigation
-		scene_list.item_activated.connect(_on_scene_list_item_activated)
+		
+		# Safely connect scene_list signals if it exists
+		if is_instance_valid(scene_list):
+			scene_list.item_activated.connect(_on_scene_list_item_activated)
+			# Connect scene search functionality
+			if is_instance_valid(scene_search):
+				scene_search.text_changed.connect(_on_scene_search_text_changed)
+				scene_search.text_submitted.connect(_on_scene_search_text_submitted)
+		else:
+			printerr("DeveloperConsole: scene_list node not found, some functionality may be limited")
+			
 		tab_container.tab_changed.connect(_on_tab_changed)
 	
 	# Setup initial state
@@ -135,8 +149,10 @@ func toggle() -> void:
 			get_node("/root/Cursor").request_cursor("console", true)
 		
 		# Scan scenes when console is opened and Scene tab exists, if not already scanned
-		if is_instance_valid(scene_list) and tab_container.get_tab_idx_from_control(scene_list.get_parent()) != -1 and not _scenes_scanned:
-			_scan_project_scenes()
+		if is_instance_valid(scene_list) and not _scenes_scanned:
+			var parent = scene_list.get_parent()
+			if parent and tab_container.get_tab_idx_from_control(parent.get_parent()) != -1:
+				_scan_project_scenes()
 	else:
 		# Hide console and release cursor visibility request
 		if get_node_or_null("/root/Cursor"):
@@ -150,11 +166,14 @@ func toggle() -> void:
 ## Logs a message to the Log tab. Adds a timestamp.
 ## Can be called from anywhere using DeveloperConsole.log("message")
 func log(message: String) -> void:
-	if not is_instance_valid(log_output): return # Avoid errors if called before ready or node deleted
-	var timestamp = Time.get_datetime_string_from_system(false, true) # UTC=false, use_msec=true
-	# Append with BBCode for potential formatting
-	log_output.append_text("\n[%s] %s" % [timestamp, message])
-	# Optional: Add color based on message type (e.g., check for "[ERROR]" prefix)
+	if log_manager != null:
+		log_manager.add_log(message)
+	else:
+		# Fallback in case log_manager isn't initialized yet
+		if not is_instance_valid(log_output): return # Avoid errors if called before ready or node deleted
+		var timestamp = Time.get_datetime_string_from_system(false, true) # UTC=false, use_msec=true
+		# Append with BBCode for potential formatting
+		log_output.append_text("\n[%s] %s" % [timestamp, message])
 
 
 ## Registers a custom command accessible via the console input.
@@ -186,6 +205,7 @@ func _register_default_commands() -> void:
 	register_command("clear", Callable(self, "_cmd_clear"), "Clears the console output.")
 	register_command("quit", Callable(self, "_cmd_quit"), "Quits the application.")
 	register_command("log", Callable(self, "_cmd_log"), "Logs a message to the Log tab. Usage: log <message>")
+	register_command("log.clear", Callable(self, "_cmd_log_clear"), "Clears the log output.")
 	register_command("scene.change", Callable(self, "_cmd_scene_change"), "Changes scene by file path. Usage: scene.change <res://path/to/scene.tscn>")
 
 # --- Command Implementations ---
@@ -212,11 +232,21 @@ func _cmd_quit(_args: Array) -> String:
 	return "Quitting..." # This might not be seen if quit is immediate
 
 func _cmd_log(args: Array) -> String:
-	if args.is_empty():
-		return "[color=yellow]Usage: log <message>[/color]"
-	var message_to_log = " ".join(args) # Join args back into a string
-	self.log("From console command: %s" % message_to_log) # Use self.log
-	return "Logged to Log tab: '%s'" % message_to_log
+	if log_manager != null:
+		return log_manager.handle_log_command(args)
+	else:
+		if args.is_empty():
+			return "[color=yellow]Usage: log <message>[/color]"
+		var message_to_log = " ".join(args) # Join args back into a string
+		self.log("From console command: %s" % message_to_log) # Use self.log
+		return "Logged to Log tab: '%s'" % message_to_log
+
+func _cmd_log_clear(_args: Array) -> String:
+	if log_manager != null:
+		log_manager.clear_log()
+		return "[i]Log cleared.[/i]"
+	else:
+		return "[color=red]Log manager not initialized.[/color]"
 
 func _cmd_scene_change(args: Array) -> String:
 	if args.is_empty() or args.size() > 1:
@@ -358,6 +388,7 @@ func _scan_project_scenes() -> void:
 	# Otherwise, use the original implementation
 	self.log("Scanning for scene files...") # Use self.log
 	scene_list.clear()
+	_all_scene_items.clear() # Clear stored items
 	
 	# FIX: Use the correct method to check if the directory exists in Godot 4
 	var dir = DirAccess.open("res://")
@@ -405,8 +436,16 @@ func _scan_project_scenes() -> void:
 	found_scenes.sort()
 	for scene_path in found_scenes:
 		# Add item with path as text and maybe tooltip
-		scene_list.add_item(scene_path.replace("res://", ""), null, true) # Use relative path for display
+		var display_path = scene_path.replace("res://", "")
+		scene_list.add_item(display_path, null, true) # Use relative path for display
 		scene_list.set_item_tooltip(scene_list.item_count - 1, scene_path) # Store full path in tooltip
+		
+		# Store scene item info for search
+		_all_scene_items.append({
+			"path": scene_path, 
+			"display": display_path,
+			"index": scene_list.item_count - 1
+		})
 
 	_scenes_scanned = true
 	self.log("Scene scan complete. Found %d scenes." % scene_list.item_count) # Use self.log
@@ -628,3 +667,45 @@ func _initialize_extensions() -> void:
 		scene_manager.initialize(self)
 	else:
 		printerr("Failed to load Scene Manager extension")
+
+	# Initialize Log Manager
+	var LogManagerClass = load("res://Maga/developer_console/developer_console_scene_logs.gd")
+	if LogManagerClass:
+		log_manager = LogManagerClass.new()
+		log_manager.initialize(self)
+	else:
+		printerr("Failed to load Log Manager extension")
+
+# Scene search functionality
+func _on_scene_search_text_changed(search_text: String) -> void:
+	_filter_scenes(search_text)
+
+func _on_scene_search_text_submitted(search_text: String) -> void:
+	_filter_scenes(search_text)
+
+func _filter_scenes(search_text: String) -> void:
+	if not is_instance_valid(scene_list): return
+	
+	# Clear the current list
+	scene_list.clear()
+	
+	# If search is empty, show all scenes
+	if search_text.strip_edges() == "":
+		for item in _all_scene_items:
+			scene_list.add_item(item["display"], null, true)
+			scene_list.set_item_tooltip(scene_list.item_count - 1, item["path"])
+		return
+	
+	# Filter scenes based on search text (case-insensitive)
+	search_text = search_text.to_lower()
+	var found = false
+	
+	for item in _all_scene_items:
+		if item["display"].to_lower().contains(search_text) or item["path"].to_lower().contains(search_text):
+			scene_list.add_item(item["display"], null, true)
+			scene_list.set_item_tooltip(scene_list.item_count - 1, item["path"])
+			found = true
+	
+	if not found:
+		# Add a placeholder item showing no results
+		scene_list.add_item("No matching scenes found", null, false)
