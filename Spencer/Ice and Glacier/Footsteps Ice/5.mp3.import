@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2r2a5qmc1csg"
+path="res://.godot/imported/5.mp3-0b27aa4e94d96be6ab3ca5a8b3efec51.mp3str"
+
+[deps]
+
+source_file="res://Spencer/Ice and Glacier/Footsteps Ice/5.mp3"
+dest_files=["res://.godot/imported/5.mp3-0b27aa4e94d96be6ab3ca5a8b3efec51.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
