@@ -1,9 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://dw8fde4ghx6qm"]
+[gd_scene load_steps=26 format=3 uid="uid://dw8fde4ghx6qm"]
 
-[ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="1_x0kgn"]
 [ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="2_cw1nb"]
 [ext_resource type="PackedScene" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
-[ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="2_sjwru"]
 [ext_resource type="PackedScene" uid="uid://bgc5ynfk8hm0l" path="res://Omar/NPC_Greybox.tscn" id="2_x8rkw"]
 [ext_resource type="PackedScene" uid="uid://c2lomx2fhrd4i" path="res://Chiara/rock_platform.tscn" id="4_b0u6j"]
 [ext_resource type="PackedScene" uid="uid://dffctwdfacdjg" path="res://Chiara/surrounding_rocks.tscn" id="5_ek8y3"]
@@ -64,11 +62,6 @@ size = Vector3(0.999878, 0.994629, 1.04371)
 albedo_color = Color(0.694118, 0.533333, 0.301961, 1)
 
 [node name="World" type="Node3D"]
-
-[node name="Player" parent="." instance=ExtResource("1_x0kgn")]
-transform = Transform3D(-0.999997, 0, 0.00244346, 0, 1, 0, -0.00244346, 0, -0.999997, 0, 3.37104, 19.6398)
-
-[node name="FreeCameraRig" parent="Player" instance=ExtResource("2_sjwru")]
 
 [node name="Floors" type="Node" parent="."]
 
