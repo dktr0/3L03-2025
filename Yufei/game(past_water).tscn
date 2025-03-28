@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bragmruxldk4r"]
+[gd_scene load_steps=25 format=3 uid="uid://bragmruxldk4r"]
 
+[ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="1_a3mtb"]
 [ext_resource type="PackedScene" uid="uid://cj2h26ls141qf" path="res://Riley/CargoBox.tscn" id="1_g48qg"]
 [ext_resource type="PackedScene" uid="uid://2gv276l2p1uf" path="res://Riley/GlowingBarrel.tscn" id="2_fdts6"]
 [ext_resource type="PackedScene" uid="uid://bvcdbkjkcsmfd" path="res://Yufei/collectables.tscn" id="2_rx1k3"]
@@ -51,6 +52,8 @@ size = Vector2(50, 50)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1400b"]
 points = PackedVector3Array(-25, 0, -25, -25, 0, 25, 25, 0, -25, 25, 0, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kxmlo"]
 
 [node name="Game(past_water)" type="Node3D"]
 
@@ -265,14 +268,8 @@ mesh = SubResource("CylinderMesh_my7wl")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="bricks/brick23/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_yqxj2")
 
-[node name="brick24" type="MeshInstance3D" parent="bricks"]
-transform = Transform3D(-0.741096, -1.26071, 0.231154, -0.180985, -0.287966, -0.972889, 0.646546, -1.52568, -0.00737912, -5.18227, -7.95325, -14.3824)
-mesh = SubResource("CylinderMesh_my7wl")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="bricks/brick24"]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="bricks/brick24/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_yqxj2")
+[node name="StaticBody3D2" parent="bricks" instance=ExtResource("1_a3mtb")]
+transform = Transform3D(-2.54216, 0, 3.71314, -0.732278, 4.41162, -0.501345, -3.64022, -0.887456, -2.49223, -9.00993, -8.23408, -12.1145)
 
 [node name="brick25" type="MeshInstance3D" parent="bricks"]
 transform = Transform3D(1.1, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -19.511, -3.005, -16.7053)
@@ -403,7 +400,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7bvil")
 shape = SubResource("ConvexPolygonShape3D_s2vqx")
 
 [node name="wall2" type="MeshInstance3D" parent="bricks"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, 25)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, 0, -2.5, 25)
 visible = false
 mesh = SubResource("PlaneMesh_1h6l0")
 skeleton = NodePath("../..")
@@ -463,7 +460,7 @@ shape = SubResource("ConvexPolygonShape3D_gbylg")
 [node name="decoration" type="Node3D" parent="bricks"]
 
 [node name="GlowingBarrel" parent="bricks/decoration" instance=ExtResource("2_fdts6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.221, -9, -16.09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.221, -9, -18.09)
 
 [node name="Coral2" parent="bricks/decoration" instance=ExtResource("3_nhg8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2111, -9.95932, -22.2155)
@@ -488,24 +485,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9599, 0.968461, 9.27078)
 [node name="collectables" parent="collectables" instance=ExtResource("2_rx1k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0451, -6.3793, 4.37827)
 
-[node name="collectables2" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9128, -5.81836, 23.5281)
-
-[node name="collectables3" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1115, -6.28292, 17.3844)
-
-[node name="collectables4" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84298, -9.84491, -21.4976)
-
-[node name="collectables5" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8072, -9.9698, -11.802)
-
-[node name="collectables6" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8072, -2.40872, -11.802)
-
 [node name="underwaterPlayer" parent="." instance=ExtResource("9_13wxl")]
 
 [node name="lights" type="Node3D" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="lights"]
 transform = Transform3D(1, 0, 0, 0, -0.201933, 0.979399, 0, -0.979399, -0.201933, 0, 30.6767, 0)
+
+[node name="teleport here" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2158, 5.21799, 19.5679)
+mesh = SubResource("BoxMesh_kxmlo")
