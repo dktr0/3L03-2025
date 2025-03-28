@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7x1we2j4o0ph"]
+
+[ext_resource type="PackedScene" uid="uid://c25obgijf20vr" path="res://Gia/oyster.glb" id="1_7gp85"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fbt2j"]
+radius = 0.903546
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="oyster" parent="." instance=ExtResource("1_7gp85")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.667088, 0)
+visible = false
+shape = SubResource("SphereShape3D_fbt2j")
