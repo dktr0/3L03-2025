@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cwt8v5knqsabg"
-path="res://.godot/imported/SHANGSHOUYIFANGTI.TTF-7a9c3887e03cfc2e4a71d91ee387fcb2.fontdata"
+path="res://.godot/imported/SHANGSHOUYIFANGTI.TTF-8b176254339d5f0f697c03b71f5f2ae4.fontdata"
 
 [deps]
 
-source_file="res://SHANGSHOUYIFANGTI.TTF"
-dest_files=["res://.godot/imported/SHANGSHOUYIFANGTI.TTF-7a9c3887e03cfc2e4a71d91ee387fcb2.fontdata"]
+source_file="res://Zhu/new-game-project/SHANGSHOUYIFANGTI.TTF"
+dest_files=["res://.godot/imported/SHANGSHOUYIFANGTI.TTF-8b176254339d5f0f697c03b71f5f2ae4.fontdata"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bniniiuyy70ll"
-path="res://.godot/imported/HATTEN.TTF-2c36c8af361e5646afd5a5f6951d9b75.fontdata"
+path="res://.godot/imported/HATTEN.TTF-356e674ec62c50a9188187edee00a139.fontdata"
 
 [deps]
 
-source_file="res://HATTEN.TTF"
-dest_files=["res://.godot/imported/HATTEN.TTF-2c36c8af361e5646afd5a5f6951d9b75.fontdata"]
+source_file="res://Zhu/new-game-project/HATTEN.TTF"
+dest_files=["res://.godot/imported/HATTEN.TTF-356e674ec62c50a9188187edee00a139.fontdata"]
 
 [params]
 
