@@ -3,15 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-uid="uid://cvvwc1aptxygo"
-=======
-uid="uid://dx07iyupuvfsn"
->>>>>>> Stashed changes
-=======
-uid="uid://dx07iyupuvfsn"
->>>>>>> Stashed changes
+uid="uid://bi17f182x54nd"
 path="res://.godot/imported/plastic bottle.glb-d60c69551ac87357a23a3e930c88dc2b.scn"
 
 [deps]
@@ -40,13 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 gltf/naming_version=0
-=======
-gltf/naming_version=1
->>>>>>> Stashed changes
-=======
-gltf/naming_version=1
->>>>>>> Stashed changes
 gltf/embedded_image_handling=1

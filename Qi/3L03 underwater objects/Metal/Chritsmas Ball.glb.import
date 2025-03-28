@@ -3,15 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-uid="uid://d1tc5qoxm50co"
-=======
-uid="uid://c8hosldpws1fc"
->>>>>>> Stashed changes
-=======
-uid="uid://c8hosldpws1fc"
->>>>>>> Stashed changes
+uid="uid://cl34ja7vvepk4"
 path="res://.godot/imported/Chritsmas Ball.glb-db2484bad7c115a026d457537c625e51.scn"
 
 [deps]
@@ -40,13 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 gltf/naming_version=0
-=======
-gltf/naming_version=1
->>>>>>> Stashed changes
-=======
-gltf/naming_version=1
->>>>>>> Stashed changes
 gltf/embedded_image_handling=1
