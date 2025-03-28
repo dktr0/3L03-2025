@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cycjp4vmr1kal"]
+
+[ext_resource type="PackedScene" uid="uid://craqwm4x5w6so" path="res://Naomi/DeadSeaweed.glb" id="1_81s34"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q24pn"]
+size = Vector3(8.60956, 8.09864, 11.9736)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="DeadSeaweed" parent="." instance=ExtResource("1_81s34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0167236, 0, -0.316528)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60526, 3.83059, -2.0025)
+shape = SubResource("BoxShape3D_q24pn")
