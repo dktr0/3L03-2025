@@ -4,7 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 uid="uid://d1tc5qoxm50co"
+=======
+uid="uid://c8hosldpws1fc"
+>>>>>>> Stashed changes
 =======
 uid="uid://c8hosldpws1fc"
 >>>>>>> Stashed changes
@@ -37,7 +41,11 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 gltf/naming_version=0
+=======
+gltf/naming_version=1
+>>>>>>> Stashed changes
 =======
 gltf/naming_version=1
 >>>>>>> Stashed changes
