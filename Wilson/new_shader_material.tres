@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bc62nga50weke"]
+
+[ext_resource type="Shader" path="res://bubble_shader.gdshader" id="1_wq1jx"]
+[ext_resource type="Texture2D" uid="uid://6eegnbdmog4j" path="res://single_bubble.tres" id="2_0lgfs"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wq1jx")
+shader_parameter/smoothness = 0.05
+shader_parameter/noise_texture = ExtResource("2_0lgfs")

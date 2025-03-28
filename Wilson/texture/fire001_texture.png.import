@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crtqowepbv1dv"
-path.s3tc="res://.godot/imported/OIP (2).png-5f3aed9ff2f4cc8f9302983c673f5d0d.s3tc.ctex"
+uid="uid://6n6py1bmlrb7"
+path.s3tc="res://.godot/imported/fire001_texture.png-575db8da4628852c25dc29bd7655a1b0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Wilson/3d-assets---wilsoncheng/OIP (2).png"
-dest_files=["res://.godot/imported/OIP (2).png-5f3aed9ff2f4cc8f9302983c673f5d0d.s3tc.ctex"]
+source_file="res://Wilson/texture/fire001_texture.png"
+dest_files=["res://.godot/imported/fire001_texture.png-575db8da4628852c25dc29bd7655a1b0.s3tc.ctex"]
 
 [params]
 
