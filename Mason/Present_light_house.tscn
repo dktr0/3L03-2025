@@ -11,9 +11,9 @@
 [node name="Present_light_house" parent="." instance=ExtResource("1_04s5g")]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 0, 11.2009, 0.0941544)
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 8.1493, 0.0941544)
 shape = SubResource("CylinderShape3D_fp45y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2.69026, -4.3313)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.68987, -4.44587)
 shape = SubResource("BoxShape3D_26t0r")

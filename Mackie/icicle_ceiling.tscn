@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpuumvdadj8b7"]
+
+[ext_resource type="PackedScene" uid="uid://cvywm7v6dj3gb" path="res://Mackie/icicle ceiling.glb" id="1_nf140"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xtvp"]
+size = Vector3(0.748962, 0.475006, 1)
+
+[node name="icicle ceiling" type="StaticBody3D"]
+
+[node name="icicle ceiling" parent="." instance=ExtResource("1_nf140")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.0618, 0, 0, 0, 1.0618, 0, 0, 0, 1.0618, -0.00452462, 0.051518, -0.00207222)
+shape = SubResource("BoxShape3D_6xtvp")
