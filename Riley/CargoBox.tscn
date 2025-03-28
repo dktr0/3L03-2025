@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj2h26ls141qf"]
+
+[ext_resource type="PackedScene" uid="uid://cikrbgynjvfrp" path="res://Riley/GLBflies/CargoBoxSunken.glb" id="1_j82k1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yuusd"]
+size = Vector3(2.3, 2.3, 2.3)
+
+[node name="CargoBox" type="RigidBody3D"]
+
+[node name="CargoBoxSunken" parent="." instance=ExtResource("1_j82k1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_yuusd")
