@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgthiurowcelo"
-path="res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"
+uid="uid://ctc8rrf3cr32k"
+path="res://.godot/imported/starfish.glb-4d4e206725dea084133ab2dcbfdf7730.scn"
 
 [deps]
 
-source_file="res://Gia/oyster2.glb"
-dest_files=["res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"]
+source_file="res://Suyeon/starfish.glb"
+dest_files=["res://.godot/imported/starfish.glb-4d4e206725dea084133ab2dcbfdf7730.scn"]
 
 [params]
 
