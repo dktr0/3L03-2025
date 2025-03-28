@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://tpt1r8wcuu1t"
+path.s3tc="res://.godot/imported/DeadBulrush_bulrush2Texture Base Color.png-3dccbfd093b5a1624590d91084b3cd2d.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "115c6c64c8628d1f7ea024985bb0f28b"
+}
+
+[deps]
+
+source_file="res://Riley/GLBflies/DeadBulrush_bulrush2Texture Base Color.png"
+dest_files=["res://.godot/imported/DeadBulrush_bulrush2Texture Base Color.png-3dccbfd093b5a1624590d91084b3cd2d.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

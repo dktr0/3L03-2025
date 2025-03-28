@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cto2owdx8llbi"]
+
+[ext_resource type="PackedScene" uid="uid://px403q7vwnaj" path="res://Riley/GLBflies/TallWinterTree2.glb" id="1_535v5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1chwf"]
+height = 8.0
+radius = 1.5
+
+[node name="HealthyPineTree2" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("CylinderShape3D_1chwf")
+
+[node name="TallWinterTree2" parent="." instance=ExtResource("1_535v5")]

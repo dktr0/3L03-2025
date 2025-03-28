@@ -18,7 +18,8 @@ offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Launch Future"
+text = "Launch Beginning
+"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -28,6 +29,17 @@ text = "Launch Present"
 layout_mode = 2
 text = "Launch Past"
 
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Launch Good Ending"
+
+[node name="Button5" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Launch Bad
+ Ending"
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button5" to="." method="_on_button_5_pressed"]

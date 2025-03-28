@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxv1pswtk7jhx"]
+
+[ext_resource type="PackedScene" uid="uid://s1ttgrfbc1cm" path="res://Quinn/Dock Spiders/spider3.glb" id="1_cvw4f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgnf5"]
+
+[node name="Spider3" type="Node3D"]
+
+[node name="spider3" parent="." instance=ExtResource("1_cvw4f")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(7.27144, 0, 0, 0, 2.47842, 0, 0, 0, 5.50444, -0.43488, 0.769403, 0)
+shape = SubResource("BoxShape3D_vgnf5")
