@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bh47ldj70i4kk"
-path="res://.godot/imported/Ice_Platform.glb-212f8b473857ae95cb77e7c84e4aa9d4.scn"
+uid="uid://cy2bujfaljo53"
+path="res://.godot/imported/Cliff-number-one1.glb-3b64196aa5bc0f18055c210c3389d317.scn"
 
 [deps]
 
-source_file="res://Wilson/Ice_Platform.glb"
-dest_files=["res://.godot/imported/Ice_Platform.glb-212f8b473857ae95cb77e7c84e4aa9d4.scn"]
+source_file="res://Andrew/Cliff-number-one1.glb"
+dest_files=["res://.godot/imported/Cliff-number-one1.glb-3b64196aa5bc0f18055c210c3389d317.scn"]
 
 [params]
 

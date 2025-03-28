@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7e2410cv35u"
-path.s3tc="res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"
+uid="uid://bq7p77mtiafvk"
+path.s3tc="res://.godot/imported/cliff-number-three1_BROWN.png-7608628e6a6f88b68ea07f6bb5d58b12.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "fdf66d857700ee13477cd99b9ff5498d"
+"md5": "acf834acbe62998d80ab98ae8ec14864"
 }
 
 [deps]
 
-source_file="res://Xinyu Luo/Box_wood.jpg"
-dest_files=["res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"]
+source_file="res://Andrew/cliff-number-three1_BROWN.png"
+dest_files=["res://.godot/imported/cliff-number-three1_BROWN.png-7608628e6a6f88b68ea07f6bb5d58b12.s3tc.ctex"]
 
 [params]
 

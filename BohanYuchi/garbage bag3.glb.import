@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bh47ldj70i4kk"
-path="res://.godot/imported/Ice_Platform.glb-212f8b473857ae95cb77e7c84e4aa9d4.scn"
+uid="uid://8ohrn7lfky2b"
+path="res://.godot/imported/garbage bag3.glb-5ff84372eff0ed032c7b829e1421e06b.scn"
 
 [deps]
 
-source_file="res://Wilson/Ice_Platform.glb"
-dest_files=["res://.godot/imported/Ice_Platform.glb-212f8b473857ae95cb77e7c84e4aa9d4.scn"]
+source_file="res://BohanYuchi/garbage bag3.glb"
+dest_files=["res://.godot/imported/garbage bag3.glb-5ff84372eff0ed032c7b829e1421e06b.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bh47ldj70i4kk"
-path="res://.godot/imported/Ice_Platform.glb-212f8b473857ae95cb77e7c84e4aa9d4.scn"
+uid="uid://7fpmbsss5660"
+path="res://.godot/imported/gadrink can1.glb-dbaf6ec3d8cb04b94ac2ed3abfc18d20.scn"
 
 [deps]
 
-source_file="res://Wilson/Ice_Platform.glb"
-dest_files=["res://.godot/imported/Ice_Platform.glb-212f8b473857ae95cb77e7c84e4aa9d4.scn"]
+source_file="res://BohanYuchi/gadrink can1.glb"
+dest_files=["res://.godot/imported/gadrink can1.glb-dbaf6ec3d8cb04b94ac2ed3abfc18d20.scn"]
 
 [params]
 

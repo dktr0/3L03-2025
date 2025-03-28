@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7e2410cv35u"
-path.s3tc="res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"
+uid="uid://by7t565ppg26q"
+path.s3tc="res://.godot/imported/starfish_starfish Base Color.png-78519edbc8e64d65868fa39fdc08d5ca.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "fdf66d857700ee13477cd99b9ff5498d"
+"md5": "b9d9707a0a61a198440697dd92660e76"
 }
 
 [deps]
 
-source_file="res://Xinyu Luo/Box_wood.jpg"
-dest_files=["res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"]
+source_file="res://Matty/Starfish_matty/starfish_starfish Base Color.png"
+dest_files=["res://.godot/imported/starfish_starfish Base Color.png-78519edbc8e64d65868fa39fdc08d5ca.s3tc.ctex"]
 
 [params]
 

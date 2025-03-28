@@ -11,8 +11,8 @@ extends CharacterBody3D
 
 func _physics_process(delta: float) -> void:
 
-	var forward_input = Input.get_action_strength("forward") - Input.get_action_strength("back")
-	var turn_input    = Input.get_action_strength("right")  - Input.get_action_strength("left")
+	var forward_input = Input.get_action_strength("move_forward") - Input.get_action_strength("move_back")
+	var turn_input    = Input.get_action_strength("move_right")  - Input.get_action_strength("move_left")
 
 
 	var dir = transform.basis.z
@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 
 
 	velocity.y -= gravity * delta
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = jump_speed
 
 
@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 
 
 func is_sprinting() -> bool:
-	return Input.is_action_pressed("run")
+	return Input.is_action_pressed("move_sprint")
 
 func is_aiming() -> bool:
 	return Input.is_action_pressed("aim")

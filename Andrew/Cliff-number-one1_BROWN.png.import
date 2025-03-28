@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7e2410cv35u"
-path.s3tc="res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"
+uid="uid://3kn6o6nlkvif"
+path.s3tc="res://.godot/imported/Cliff-number-one1_BROWN.png-fa62e7d35d050aa72f356e48e7265ea2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "fdf66d857700ee13477cd99b9ff5498d"
+"md5": "15a2a0e7a49ebc56e60ad5dec7b8c1fe"
 }
 
 [deps]
 
-source_file="res://Xinyu Luo/Box_wood.jpg"
-dest_files=["res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"]
+source_file="res://Andrew/Cliff-number-one1_BROWN.png"
+dest_files=["res://.godot/imported/Cliff-number-one1_BROWN.png-fa62e7d35d050aa72f356e48e7265ea2.s3tc.ctex"]
 
 [params]
 
