@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< HEAD
 uid="uid://bkhqyh8xgxg0y"
+=======
+uid="uid://jlljnabmlodx"
+>>>>>>> da1ac17e66987a8fc6c4d18060e63074c4a3f5cf
 path="res://.godot/imported/beachterrain1 2.glb-1969b1ed2ef709e05503822ab1e58d6c.scn"
 
 [deps]
