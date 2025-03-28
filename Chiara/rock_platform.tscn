@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2lomx2fhrd4i"]
+
+[ext_resource type="PackedScene" uid="uid://3ekitxybp3q5" path="res://Chiara/rock_platform.glb" id="1_4imln"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cbea"]
+size = Vector3(91.7523, 29.3447, 406.236)
+
+[node name="rock_platform" type="Area3D"]
+
+[node name="rock_platform" parent="." instance=ExtResource("1_4imln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103018, 24.0739, -110.007)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4052, 27.3704, 7.77127)
+shape = SubResource("BoxShape3D_7cbea")

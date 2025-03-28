@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhqptf34vj0c8"]
+
+[ext_resource type="PackedScene" uid="uid://b2wsyi58ygko6" path="res://Gia/coral4.glb" id="1_5rhch"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tko2b"]
+radius = 6.96126
+height = 14.8117
+
+[node name="Coral_4" type="StaticBody3D"]
+
+[node name="coral4" parent="." instance=ExtResource("1_5rhch")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.544502, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.82041, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_tko2b")

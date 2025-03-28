@@ -8,7 +8,7 @@ var jumps_left: int = max_jumps
 
 
 const SPEED = 2.5
-const JUMP_VELOCITY = 6
+const JUMP_VELOCITY = 6.0
 const ACCEL = 10.0
 const DECEL = 10.0
 const DEATH_Y = -10
@@ -20,9 +20,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene();
-
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
@@ -47,11 +44,11 @@ func _physics_process(delta):
 	if is_on_floor():
 		jumps_left = max_jumps
 
-	if Input.is_action_just_pressed("jump") and jumps_left > 0: # jumping
+	if Input.is_action_just_pressed("ui_accept") and jumps_left > 0: # jumping
 		velocity.y = JUMP_VELOCITY;
 		jumps_left -= 1
 
-	var input_dir = Input.get_vector("left", "right", "forward", "backward");
+	var input_dir = Input.get_vector("left", "right", "forward", "back");
 	var dir = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized();
 	# handling 4 different possibilities:
 	# these can easily be tweaked to the requirements of specific games

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce32aale4h4y6"]
+
+[ext_resource type="PackedScene" uid="uid://dpcpm538hbjih" path="res://Mackie/icicle1-glowing.glb" id="1_brvw1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4qev1"]
+height = 0.866791
+radius = 0.103545
+
+[node name="icicle1" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.407343, 0)
+
+[node name="icicle 1 collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0194198, -0.158062, 0)
+shape = SubResource("CylinderShape3D_4qev1")
+
+[node name="icicle1-glowing" parent="." instance=ExtResource("1_brvw1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.198262)
