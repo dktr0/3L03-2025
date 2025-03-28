@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uib046wtsle6"
-path.s3tc="res://.godot/imported/coastguardstation_panels Base Color.png-42b95f4138faba421db3904949bd97c3.s3tc.ctex"
+uid="uid://42012kptm8vb"
+path.s3tc="res://.godot/imported/can_Cylinder Base Color.png-435317d1f9c3a78611a538955603b993.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "27948ecbb45ae1bf84a2427fee854efe"
+}
 
 [deps]
 
-source_file="res://Wren/coastguardstation_panels Base Color.png"
-dest_files=["res://.godot/imported/coastguardstation_panels Base Color.png-42b95f4138faba421db3904949bd97c3.s3tc.ctex"]
+source_file="res://Suyeon/can_Cylinder Base Color.png"
+dest_files=["res://.godot/imported/can_Cylinder Base Color.png-435317d1f9c3a78611a538955603b993.s3tc.ctex"]
 
 [params]
 

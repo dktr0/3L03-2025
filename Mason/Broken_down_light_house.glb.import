@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c6bycespptre0"
-path="res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"
+uid="uid://b1k2j8kjwglsq"
+path="res://.godot/imported/Broken_down_light_house.glb-4b9c7e6c259b55bcc457249e3dac8c6c.scn"
 
 [deps]
 
-source_file="res://Wren/coastguardstation.glb"
-dest_files=["res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"]
+source_file="res://Mason/Broken_down_light_house.glb"
+dest_files=["res://.godot/imported/Broken_down_light_house.glb-4b9c7e6c259b55bcc457249e3dac8c6c.scn"]
 
 [params]
 
