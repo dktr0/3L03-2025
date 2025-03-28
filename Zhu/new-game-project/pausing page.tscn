@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://di5rdf7i1sj6r"]
+
+[ext_resource type="Texture2D" uid="uid://bq5eihyejmrgj" path="res://reference (9)_setting page.png" id="1_3ta1n"]
+[ext_resource type="FontFile" uid="uid://bniniiuyy70ll" path="res://HATTEN.TTF" id="2_drgmi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0sbp"]
+
+[node name="TitleUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r0sbp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3ta1n")
+expand_mode = 1
+
+[node name="Start" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -426.0
+offset_top = 150.0
+offset_right = -375.0
+offset_bottom = 181.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_drgmi")
+theme_override_font_sizes/font_size = 30
+text = "Start"
+metadata/_edit_group_ = true
+
+[node name="Introduction" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1002.0
+offset_top = -74.0
+offset_right = -888.0
+offset_bottom = -43.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_drgmi")
+theme_override_font_sizes/font_size = 30
+text = "Introduction"
+metadata/_edit_group_ = true
+
+[node name="Timeline" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -426.0
+offset_top = -298.0
+offset_right = -346.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_drgmi")
+theme_override_font_sizes/font_size = 30
+text = "Timeline"
+uppercase = true
+metadata/_edit_group_ = true
+
+[node name="Load(?)" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = 126.0
+offset_right = 222.0
+offset_bottom = 157.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_drgmi")
+theme_override_font_sizes/font_size = 30
+text = "Load (?)"
+metadata/_edit_group_ = true
