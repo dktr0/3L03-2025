@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfvj8bnn0sykj"]
+
+[ext_resource type="Texture2D" uid="uid://cgnnr5mgd35s6" path="res://background-green (0).png" id="1_prttw"]
+[ext_resource type="FontFile" uid="uid://cwt8v5knqsabg" path="res://SHANGSHOUYIFANGTI.TTF" id="2_i4aga"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0sbp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vcdg2"]
+font = ExtResource("2_i4aga")
+font_size = 33
+
+[node name="TitleUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r0sbp")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_prttw")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -479.0
+offset_top = -35.5
+offset_bottom = 35.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Title Page
+(fill the name of this game)"
+label_settings = SubResource("LabelSettings_vcdg2")
