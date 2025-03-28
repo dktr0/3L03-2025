@@ -40,7 +40,7 @@ func _physics_process(delta):
 
 
 
-	var input_dir = Input.get_vector("Left", "Right", "Front", "Back")
+	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	var dir = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized();
 	if dir:
 		velocity.x = move_toward(velocity.x, dir.x*SPEED, abs(dir.x*ACCEL*delta));

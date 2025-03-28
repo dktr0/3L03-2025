@@ -1,7 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://bragmruxldk4r"]
+[gd_scene load_steps=22 format=3 uid="uid://bragmruxldk4r"]
 
-[ext_resource type="PackedScene" uid="uid://chmtnc7lo4wpx" path="res://Underwater_Past/underwater_player.tscn" id="1_4hhrs"]
-[ext_resource type="PackedScene" uid="uid://bvcdbkjkcsmfd" path="res://Underwater_Past/collectables.tscn" id="2_rx1k3"]
+[ext_resource type="PackedScene" uid="uid://cj2h26ls141qf" path="res://Riley/CargoBox.tscn" id="1_g48qg"]
+[ext_resource type="PackedScene" uid="uid://2gv276l2p1uf" path="res://Riley/GlowingBarrel.tscn" id="2_fdts6"]
+[ext_resource type="PackedScene" uid="uid://bvcdbkjkcsmfd" path="res://Yufei/collectables.tscn" id="2_rx1k3"]
+[ext_resource type="PackedScene" uid="uid://b5jdppew1ktlt" path="res://Riley/Coral2.tscn" id="3_nhg8p"]
+[ext_resource type="PackedScene" uid="uid://bqluc3quqvy3b" path="res://Riley/Coral1.tscn" id="4_dc4gf"]
+[ext_resource type="PackedScene" uid="uid://qnbt3b0y2qtf" path="res://Riley/Coral3.tscn" id="5_ww6hv"]
+[ext_resource type="PackedScene" uid="uid://b0j3jdkb5bmhw" path="res://Riley/HealthyGrass.tscn" id="6_r4omk"]
+[ext_resource type="PackedScene" uid="uid://bbh3xre0r522d" path="res://Riley/HealthyBulrush.tscn" id="7_8ya2j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_51a85"]
 size = Vector3(10, 2, 20)
@@ -295,8 +301,12 @@ mesh = SubResource("CylinderMesh_my7wl")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="bricks/brick27/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_yqxj2")
 
+[node name="CargoBox2" parent="bricks" instance=ExtResource("1_g48qg")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 22.992, -9, -2.331)
+
 [node name="brick28" type="MeshInstance3D" parent="bricks"]
 transform = Transform3D(0.25, 0, 0, 0, -4.37114e-08, -0.25, 0, 1, -1.09278e-08, 22.992, -9, -2.331)
+visible = false
 mesh = SubResource("BoxMesh_gwfmr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bricks/brick28"]
@@ -304,8 +314,12 @@ mesh = SubResource("BoxMesh_gwfmr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bricks/brick28/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gbylg")
 
+[node name="CargoBox3" parent="bricks" instance=ExtResource("1_g48qg")]
+transform = Transform3D(0.770992, 0.636844, -2.78374e-08, 0, -4.37114e-08, -1, -0.636844, 0.770992, -3.37011e-08, 22.992, -9, -4.73737)
+
 [node name="brick29" type="MeshInstance3D" parent="bricks"]
 transform = Transform3D(0.192748, 0.636846, -6.95935e-09, 0, -4.37114e-08, -0.25, -0.159211, 0.770991, -8.42528e-09, 22.992, -9, -4.73737)
+visible = false
 mesh = SubResource("BoxMesh_gwfmr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bricks/brick29"]
@@ -313,8 +327,12 @@ mesh = SubResource("BoxMesh_gwfmr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bricks/brick29/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gbylg")
 
+[node name="CargoBox4" parent="bricks" instance=ExtResource("1_g48qg")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 22.992, -9, -0.311702)
+
 [node name="brick30" type="MeshInstance3D" parent="bricks"]
 transform = Transform3D(0.25, 0, 0, 0, -4.37114e-08, -0.25, 0, 1, -1.09278e-08, 22.992, -9, -0.311702)
+visible = false
 mesh = SubResource("BoxMesh_gwfmr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bricks/brick30"]
@@ -322,8 +340,12 @@ mesh = SubResource("BoxMesh_gwfmr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bricks/brick30/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gbylg")
 
+[node name="CargoBox" parent="bricks" instance=ExtResource("1_g48qg")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 14.6088, -6.93274, 15.1656)
+
 [node name="brick31" type="MeshInstance3D" parent="bricks"]
 transform = Transform3D(0.25, 0, 0, 0, -4.37114e-08, -0.25, 0, 1, -1.09278e-08, 14.6088, -6.93274, 15.1656)
+visible = false
 mesh = SubResource("BoxMesh_gwfmr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bricks/brick31"]
@@ -331,8 +353,12 @@ mesh = SubResource("BoxMesh_gwfmr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bricks/brick31/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gbylg")
 
+[node name="CargoBox5" parent="bricks" instance=ExtResource("1_g48qg")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -12.1689, 2.01204, 15.1656)
+
 [node name="brick32" type="MeshInstance3D" parent="bricks"]
 transform = Transform3D(0.25, 0, 0, 0, -4.37114e-08, -0.25, 0, 1, -1.09278e-08, -12.1689, 2.01204, 15.1656)
+visible = false
 mesh = SubResource("BoxMesh_gwfmr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bricks/brick32"]
@@ -340,8 +366,12 @@ mesh = SubResource("BoxMesh_gwfmr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bricks/brick32/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gbylg")
 
+[node name="CargoBox6" parent="bricks" instance=ExtResource("1_g48qg")]
+transform = Transform3D(0.667096, -0.51386, 0.539379, 0.404532, 0.857847, 0.316941, -0.625568, 0.00676626, 0.78014, 3.32408, -8.42575, 17.0783)
+
 [node name="brick33" type="MeshInstance3D" parent="bricks"]
 transform = Transform3D(0.166774, -0.53938, -0.128465, 0.101133, -0.316941, 0.214462, -0.156392, -0.780139, 0.00169144, 3.2985, -8.45437, 17.2605)
+visible = false
 mesh = SubResource("BoxMesh_gwfmr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bricks/brick33"]
@@ -416,8 +446,12 @@ mesh = SubResource("PlaneMesh_uhrp2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bricks/ground/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_1400b")
 
+[node name="CargoBox7" parent="bricks" instance=ExtResource("1_g48qg")]
+transform = Transform3D(1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, -21.154, -1.33995, -16.706)
+
 [node name="brick35" type="MeshInstance3D" parent="bricks"]
 transform = Transform3D(0.25, 0, 0, 0, -4.37114e-08, -0.25, 0, 1, -1.09278e-08, -18.112, -1.36752, -18.7182)
+visible = false
 mesh = SubResource("BoxMesh_gwfmr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bricks/brick35"]
@@ -425,28 +459,48 @@ mesh = SubResource("BoxMesh_gwfmr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bricks/brick35/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gbylg")
 
-[node name="underwaterPlayer" parent="." instance=ExtResource("1_4hhrs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9583, 4.25835, 15.1397)
+[node name="decoration" type="Node3D" parent="bricks"]
+
+[node name="GlowingBarrel" parent="bricks/decoration" instance=ExtResource("2_fdts6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.221, -9, -16.09)
+
+[node name="Coral2" parent="bricks/decoration" instance=ExtResource("3_nhg8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2111, -9.95932, -22.2155)
+
+[node name="Coral1" parent="bricks/decoration" instance=ExtResource("4_dc4gf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.102, -9.98677, -22.2854)
+
+[node name="Coral3" parent="bricks/decoration" instance=ExtResource("5_ww6hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4418, -9.9597, -20.3847)
+
+[node name="HealthyGrass" parent="bricks/decoration" instance=ExtResource("6_r4omk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4478, -7.94819, 21.638)
+
+[node name="HealthyGrass2" parent="bricks/decoration" instance=ExtResource("6_r4omk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6776, -7.94819, 22.4782)
+
+[node name="HealthyBulrush" parent="bricks/decoration" instance=ExtResource("7_8ya2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9599, 0.968461, 9.27078)
 
 [node name="collectables" type="Node3D" parent="."]
 
 [node name="collectables" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35928, -6.3793, 4.37827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0451, -6.3793, 4.37827)
 
 [node name="collectables2" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9128, -4.51916, 23.5281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9128, -5.81836, 23.5281)
 
 [node name="collectables3" parent="collectables" instance=ExtResource("2_rx1k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1115, -6.28292, 17.3844)
 
 [node name="collectables4" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84298, -8.8146, -21.4976)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84298, -9.84491, -21.4976)
 
 [node name="collectables5" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8072, -8.71095, -11.802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8072, -9.9698, -11.802)
 
 [node name="collectables6" parent="collectables" instance=ExtResource("2_rx1k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8072, -0.877493, -11.802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8072, -2.40872, -11.802)
 
 [node name="lights" type="Node3D" parent="."]
 
