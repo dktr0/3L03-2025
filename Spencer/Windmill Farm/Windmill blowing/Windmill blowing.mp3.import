@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://222yt3eqdo2x"
+path="res://.godot/imported/Windmill blowing.mp3-9c3e3fbd94e612eecb45360c2c9af9d9.mp3str"
+
+[deps]
+
+source_file="res://Spencer/Windmill Farm/Windmill blowing/Windmill blowing.mp3"
+dest_files=["res://.godot/imported/Windmill blowing.mp3-9c3e3fbd94e612eecb45360c2c9af9d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

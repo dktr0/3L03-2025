@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp6183w8v6hq8"]
+
+[ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ddo5a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4iof"]
+albedo_color = Color(0.364706, 1, 0.364706, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4hydq"]
+material = SubResource("StandardMaterial3D_t4iof")
+
+[sub_resource type="BoxMesh" id="BoxMesh_dcf6f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wyilg"]
+albedo_color = Color(0.0352941, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sjx3k"]
+material = SubResource("StandardMaterial3D_wyilg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_bur8h"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t44mi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qfogl"]
+
+[node name="good" type="Node3D"]
+
+[node name="World" parent="." instance=ExtResource("1_ddo5a")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(145.802, 0, 0, 0, 48.7582, 0, 0, 0, 62.9069, 152.442, -7.32037, 87.2445)
+mesh = SubResource("PlaneMesh_4hydq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.32613, 0, 0, 0, 6.32613, 0, 0, 0, 6.32613, 113.451, -2.46026, 22.7378)
+mesh = SubResource("BoxMesh_dcf6f")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.91305, 0, 0, 0, 1.95255, 0, 0, 0, 94.4419, 107.343, -6.46806, 117.834)
+mesh = SubResource("PlaneMesh_sjx3k")
+
+[node name="Villages" type="Node3D" parent="."]
+
+[node name="village" type="MeshInstance3D" parent="Villages"]
+transform = Transform3D(7.09412, 0, 0, 0, 7.09412, 0, 0, 0, 10.8059, 150.766, 0.228649, 73.3399)
+mesh = SubResource("BoxMesh_bur8h")
+skeleton = NodePath("../..")
+
+[node name="village2" type="MeshInstance3D" parent="Villages"]
+transform = Transform3D(4.14323, 0, -8.77146, 0, 7.09412, 0, 5.75849, 0, 6.31106, 137.318, 0.228649, 94.5773)
+mesh = SubResource("BoxMesh_bur8h")
+skeleton = NodePath("../..")
+
+[node name="village3" type="MeshInstance3D" parent="Villages"]
+transform = Transform3D(-2.39711, 0, -10.1703, 0, 7.09412, 0, 6.67686, 0, -3.65133, 132.67, 0.228649, 54.8296)
+mesh = SubResource("BoxMesh_bur8h")
+skeleton = NodePath("../..")
+
+[node name="farm crop" type="MeshInstance3D" parent="Villages"]
+transform = Transform3D(8.16684, 0, 0, 0, 8.16684, 0, 0, 0, 8.16684, 122.31, -7.24646, 76.5149)
+mesh = SubResource("PlaneMesh_t44mi")
+skeleton = NodePath("../..")
+
+[node name="windmill" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.67804, 0, 0, 0, 16.4218, 0, 0, 0, 2.0602, 93.9392, 3.3091, 144.344)
+mesh = SubResource("BoxMesh_qfogl")
+
+[node name="windmill2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.67804, 0, 0, 0, 16.4218, 0, 0, 0, 2.0602, 177.953, 3.3091, 144.344)
+mesh = SubResource("BoxMesh_qfogl")
+
+[node name="windmill3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.67804, 0, 0, 0, 16.4218, 0, 0, 0, 2.0602, 136.824, 3.3091, 144.344)
+mesh = SubResource("BoxMesh_qfogl")
+
+[node name="windmill4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.67804, 0, 0, 0, 16.4218, 0, 0, 0, 2.0602, 222.342, 3.3091, 144.344)
+mesh = SubResource("BoxMesh_qfogl")
+
+[node name="windmill5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.67804, 0, 0, 0, 16.4218, 0, 0, 0, 2.0602, 62.7086, 3.3091, 144.344)
+mesh = SubResource("BoxMesh_qfogl")
+
+[node name="Villages2" type="Node3D" parent="."]
+transform = Transform3D(-0.997288, 0.00613649, 0.0733457, 0.00591368, 0.999977, -0.00325455, -0.073364, -0.00281197, -0.997301, 195.528, 0, 187.408)
+
+[node name="village" type="MeshInstance3D" parent="Villages2"]
+transform = Transform3D(7.09412, 0, 0, 0, 7.09412, 0, 0, 0, 10.8059, 150.766, 0.228649, 73.3399)
+mesh = SubResource("BoxMesh_bur8h")
+skeleton = NodePath("../..")
+
+[node name="village2" type="MeshInstance3D" parent="Villages2"]
+transform = Transform3D(4.14323, 0, -8.77146, 0, 7.09412, 0, 5.75849, 0, 6.31106, 137.318, 0.228649, 94.5773)
+mesh = SubResource("BoxMesh_bur8h")
+skeleton = NodePath("../..")
+
+[node name="village3" type="MeshInstance3D" parent="Villages2"]
+transform = Transform3D(-2.39711, 0, -10.1703, 0, 7.09412, 0, 6.67686, 0, -3.65133, 132.67, 0.228649, 54.8296)
+mesh = SubResource("BoxMesh_bur8h")
+skeleton = NodePath("../..")
+
+[node name="farm crop" type="MeshInstance3D" parent="Villages2"]
+transform = Transform3D(8.16684, 0, 0, 0, 8.16684, 0, 0, 0, 8.16684, 122.31, -7.24646, 76.5149)
+mesh = SubResource("PlaneMesh_t44mi")
+skeleton = NodePath("../..")
