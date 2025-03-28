@@ -126,7 +126,7 @@ shader_parameter/texture_normal = SubResource("NoiseTexture2D_vdk1k")
 
 [sub_resource type="BoxMesh" id="BoxMesh_vol12"]
 material = SubResource("ShaderMaterial_3dqx4")
-size = Vector3(100, 20, 100)
+size = Vector3(200, 20, 200)
 
 [node name="Water_Base" type="MeshInstance3D"]
 mesh = SubResource("BoxMesh_vol12")
