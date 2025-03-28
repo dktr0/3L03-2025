@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgthiurowcelo"
-path="res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"
+uid="uid://b67n2hadh5ons"
+path="res://.godot/imported/sea_shell_3d.glb-4c5613828d69004b823122564acd38a9.scn"
 
 [deps]
 
-source_file="res://Gia/oyster2.glb"
-dest_files=["res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"]
+source_file="res://Suyeon/sea_shell_3d.glb"
+dest_files=["res://.godot/imported/sea_shell_3d.glb-4c5613828d69004b823122564acd38a9.scn"]
 
 [params]
 

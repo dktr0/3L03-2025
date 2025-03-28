@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgthiurowcelo"
-path="res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"
+uid="uid://caxyhb661lrwl"
+path="res://.godot/imported/can.glb-db4028580d94a6222d33d85834305f3f.scn"
 
 [deps]
 
-source_file="res://Gia/oyster2.glb"
-dest_files=["res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"]
+source_file="res://Suyeon/can.glb"
+dest_files=["res://.godot/imported/can.glb-db4028580d94a6222d33d85834305f3f.scn"]
 
 [params]
 

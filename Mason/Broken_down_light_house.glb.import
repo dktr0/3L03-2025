@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgthiurowcelo"
-path="res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"
+uid="uid://b1k2j8kjwglsq"
+path="res://.godot/imported/Broken_down_light_house.glb-4b9c7e6c259b55bcc457249e3dac8c6c.scn"
 
 [deps]
 
-source_file="res://Gia/oyster2.glb"
-dest_files=["res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"]
+source_file="res://Mason/Broken_down_light_house.glb"
+dest_files=["res://.godot/imported/Broken_down_light_house.glb-4b9c7e6c259b55bcc457249e3dac8c6c.scn"]
 
 [params]
 
