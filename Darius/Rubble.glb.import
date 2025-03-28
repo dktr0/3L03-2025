@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c6bycespptre0"
-path="res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"
+uid="uid://c2bdcxn28whgv"
+path="res://.godot/imported/Rubble.glb-cb2b51e20fc15ed11f38cd4f92ae0da0.scn"
 
 [deps]
 
-source_file="res://Wren/coastguardstation.glb"
-dest_files=["res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"]
+source_file="res://Darius/Rubble.glb"
+dest_files=["res://.godot/imported/Rubble.glb-cb2b51e20fc15ed11f38cd4f92ae0da0.scn"]
 
 [params]
 

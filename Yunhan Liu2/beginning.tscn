@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://t3v7ddegi0pl"]
+[gd_scene load_steps=13 format=3 uid="uid://t3v7ddegi0pl"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ecddj"]
+[ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="2_3ym8d"]
+[ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="3_poens"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1dh0p"]
 
@@ -21,6 +23,8 @@
 [sub_resource type="BoxMesh" id="BoxMesh_gg4dq"]
 
 [node name="Beginning" type="Node3D"]
+
+[node name="World2" parent="." instance=ExtResource("1_ecddj")]
 
 [node name="factory" type="Node3D" parent="."]
 transform = Transform3D(16.3016, 0, 0, 0, 15.4902, 0, 0, 0, 30.6385, 173.971, 4, 60.4297)
@@ -99,14 +103,13 @@ skeleton = NodePath("../..")
 transform = Transform3D(106.689, 0, 0, 0, 7.09147, 0, 0, 0, 39.476, 136.076, -7.94999, 0.841249)
 mesh = SubResource("CylinderMesh_cojy5")
 
-[node name="World" parent="." instance=ExtResource("1_ecddj")]
-
 [node name="sun" type="MeshInstance3D" parent="."]
 transform = Transform3D(313.699, 0, 0, 0, 313.699, 0, 0, 0, 313.699, 0, 0, -976.123)
 mesh = SubResource("SphereMesh_maqh7")
 
 [node name="NPC with gas masks" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.408, -5.79681, 91.7809)
+visible = false
 mesh = SubResource("CapsuleMesh_6a1uf")
 
 [node name="collapsed building" type="MeshInstance3D" parent="."]
@@ -120,3 +123,8 @@ mesh = SubResource("CylinderMesh_omcde")
 [node name="Garbage Hill" type="MeshInstance3D" parent="."]
 transform = Transform3D(112.114, 0, 0, 0, 74.818, 0, 0, 0, 81.093, 237.245, 0, -149.417)
 mesh = SubResource("BoxMesh_gg4dq")
+
+[node name="Player" parent="." instance=ExtResource("2_3ym8d")]
+transform = Transform3D(-1.99999, 0, 0.00488692, 0, 2, 0, -0.00488692, 0, -1.99999, 0, 5.55452, 17.3178)
+
+[node name="FreeCameraRig" parent="Player" instance=ExtResource("3_poens")]

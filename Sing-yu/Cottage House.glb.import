@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c6bycespptre0"
-path="res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"
+uid="uid://c2c7f2l3440de"
+path="res://.godot/imported/Cottage House.glb-1142f8b6894e0c8fd5bfcb738d20e87c.scn"
 
 [deps]
 
-source_file="res://Wren/coastguardstation.glb"
-dest_files=["res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"]
+source_file="res://Cottage House.glb"
+dest_files=["res://.godot/imported/Cottage House.glb-1142f8b6894e0c8fd5bfcb738d20e87c.scn"]
 
 [params]
 

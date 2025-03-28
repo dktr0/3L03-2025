@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cs8dkj0gx0a2"
-path="res://.godot/imported/ChestClosed.gltf-e66e90b0b04e59b16e1bd64e21f87696.scn"
+uid="uid://b2wsyi58ygko6"
+path="res://.godot/imported/coral4.glb-e2ef3b328ea730bc142b1e52ed5be329.scn"
 
 [deps]
 
-source_file="res://Darius/ChestClosed.gltf"
-dest_files=["res://.godot/imported/ChestClosed.gltf-e66e90b0b04e59b16e1bd64e21f87696.scn"]
+source_file="res://Gia/coral4.glb"
+dest_files=["res://.godot/imported/coral4.glb-e2ef3b328ea730bc142b1e52ed5be329.scn"]
 
 [params]
 
