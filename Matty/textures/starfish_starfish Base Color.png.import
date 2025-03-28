@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0n8ekuuuhbh1"
-path.s3tc="res://.godot/imported/Cliff-number-one_Cliff-Albedo.png-c454c314b49ae9ceaa57f39770cda70a.s3tc.ctex"
+uid="uid://dolee036vlelo"
+path.s3tc="res://.godot/imported/starfish_starfish Base Color.png-eb37aa551ea816d708ab39c8e75177e1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7a0cd00d48331af597678355ec64b2ec"
+"md5": "b9d9707a0a61a198440697dd92660e76"
 }
 
 [deps]
 
-source_file="res://Andrew/Cliff-number-one_Cliff-Albedo.png"
-dest_files=["res://.godot/imported/Cliff-number-one_Cliff-Albedo.png-c454c314b49ae9ceaa57f39770cda70a.s3tc.ctex"]
+source_file="res://Matty/textures/starfish_starfish Base Color.png"
+dest_files=["res://.godot/imported/starfish_starfish Base Color.png-eb37aa551ea816d708ab39c8e75177e1.s3tc.ctex"]
 
 [params]
 

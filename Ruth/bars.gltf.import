@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dd5ovkw1hiq51"
-path="res://.godot/imported/Cliff-number-one.glb-aef8cc043f707bf3c98a22894d1198a9.scn"
+uid="uid://bmayxwbwgohns"
+path="res://.godot/imported/bars.gltf-528e08599ffdcf49eac97f70336e572a.scn"
 
 [deps]
 
-source_file="res://Andrew/Cliff-number-one.glb"
-dest_files=["res://.godot/imported/Cliff-number-one.glb-aef8cc043f707bf3c98a22894d1198a9.scn"]
+source_file="res://Ruth/bars.gltf"
+dest_files=["res://.godot/imported/bars.gltf-528e08599ffdcf49eac97f70336e572a.scn"]
 
 [params]
 
