@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://icjd630qdk6d"]
+
+[ext_resource type="PackedScene" uid="uid://bmpc03v6kg8c7" path="res://Darius/ChestClosed.glb" id="1_ebg64"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rafy6"]
+size = Vector3(1.12811, 0.64088, 0.650665)
+
+[node name="ChestClosed" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="ChestClosed" parent="StaticBody3D" instance=ExtResource("1_ebg64")]
+transform = Transform3D(0.208984, 0, 0, 0, 0.208984, 0, 0, 0, 0.208984, 0.00868297, 0, 0.286856)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999868, 0.334572, 0.284027)
+shape = SubResource("BoxShape3D_rafy6")
