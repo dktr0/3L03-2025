@@ -8,6 +8,7 @@ shader = ExtResource("1_y7wgh")
 shader_parameter/Speed = Vector2(0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_muygx"]
+size = Vector2(10, 10)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6p5p8"]
 gravity = Vector3(0, 5, 0)
@@ -18,7 +19,7 @@ gravity = Vector3(0, 5, 0)
 ambient_light_color = Color(4, 0.8, 0, 1)
 glow_enabled = true
 glow_intensity = 8.0
-glow_strength = 1.05
+glow_strength = 1.2
 glow_blend_mode = 0
 glow_hdr_luminance_cap = 1.0
 
