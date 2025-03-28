@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://vi1tkufch6vp"]
+[gd_scene load_steps=5 format=3 uid="uid://gwugaype7el2"]
 
-[ext_resource type="Script" path="res://Ivy/test_player.gd" id="1_ycadh"]
+[ext_resource type="Script" path="res://Ivy/test_player_underwater.gd" id="1_7f301"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ynpky"]
 
@@ -9,8 +9,8 @@ albedo_color = Color(1, 0.74902, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5kn8e"]
 
-[node name="TestPlayer" type="CharacterBody3D" groups=["Player"]]
-script = ExtResource("1_ycadh")
+[node name="TestPlayerUnderwater" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_7f301")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -22,4 +22,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_5kn8e")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.965691, 0.259696, 0, -0.259696, 0.965691, 0, 2.73875, 6.28992)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.338685, 0.15243)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337972, 0)

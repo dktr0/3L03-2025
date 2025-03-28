@@ -8,7 +8,7 @@ var jumps_left: int = max_jumps
 
 
 const SPEED = 2.5
-const JUMP_VELOCITY = 6
+const JUMP_VELOCITY = 6.0
 const ACCEL = 10.0
 const DECEL = 10.0
 const DEATH_Y = -10
@@ -44,7 +44,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		jumps_left = max_jumps
 
-	if Input.is_action_just_pressed("Jump") and jumps_left > 0: # jumping
+	if Input.is_action_just_pressed("ui_accept") and jumps_left > 0: # jumping
 		velocity.y = JUMP_VELOCITY;
 		jumps_left -= 1
 
