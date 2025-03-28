@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bragmruxldk4r"]
+[gd_scene load_steps=23 format=3 uid="uid://bragmruxldk4r"]
 
 [ext_resource type="PackedScene" uid="uid://cj2h26ls141qf" path="res://Riley/CargoBox.tscn" id="1_g48qg"]
 [ext_resource type="PackedScene" uid="uid://2gv276l2p1uf" path="res://Riley/GlowingBarrel.tscn" id="2_fdts6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qnbt3b0y2qtf" path="res://Riley/Coral3.tscn" id="5_ww6hv"]
 [ext_resource type="PackedScene" uid="uid://b0j3jdkb5bmhw" path="res://Riley/HealthyGrass.tscn" id="6_r4omk"]
 [ext_resource type="PackedScene" uid="uid://bbh3xre0r522d" path="res://Riley/HealthyBulrush.tscn" id="7_8ya2j"]
+[ext_resource type="PackedScene" uid="uid://chmtnc7lo4wpx" path="res://Yufei/underwater_player.tscn" id="9_13wxl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_51a85"]
 size = Vector3(10, 2, 20)
@@ -474,7 +475,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.102, -9.98677, -22.2854)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4418, -9.9597, -20.3847)
 
 [node name="HealthyGrass" parent="bricks/decoration" instance=ExtResource("6_r4omk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4478, -7.94819, 21.638)
+transform = Transform3D(0.999961, -0.00883125, 0, 0.00883125, 0.999961, 0, 0, 0, 1, -15.4478, -7.94819, 21.638)
 
 [node name="HealthyGrass2" parent="bricks/decoration" instance=ExtResource("6_r4omk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6776, -7.94819, 22.4782)
@@ -501,6 +502,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8072, -9.9698, -11.802)
 
 [node name="collectables6" parent="collectables" instance=ExtResource("2_rx1k3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8072, -2.40872, -11.802)
+
+[node name="underwaterPlayer" parent="." instance=ExtResource("9_13wxl")]
 
 [node name="lights" type="Node3D" parent="."]
 
