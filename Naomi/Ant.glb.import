@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d2eprcv6m50bu"
-path="res://.godot/imported/ant.glb-762c5e1af4a7e3bd2403d57852232a4f.scn"
+path="res://.godot/imported/Ant.glb-cd31b6a91054c9e0cea3fd70c513faf5.scn"
 
 [deps]
 
-source_file="res://Naomi/ant.glb"
-dest_files=["res://.godot/imported/ant.glb-762c5e1af4a7e3bd2403d57852232a4f.scn"]
+source_file="res://Naomi/Ant.glb"
+dest_files=["res://.godot/imported/Ant.glb-cd31b6a91054c9e0cea3fd70c513faf5.scn"]
 
 [params]
 
