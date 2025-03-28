@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bq2nvtsx41u4l"
-path="res://.godot/imported/cottage_house2.glb-d6b069f9e46441fb6ebdacf979a3440c.scn"
+uid="uid://craqwm4x5w6so"
+path="res://.godot/imported/DeadSeaweed.glb-20cf8fbd32e71977142d9ae7b53d90ba.scn"
 
 [deps]
 
-source_file="res://Sing-yu/cottage_house2.glb"
-dest_files=["res://.godot/imported/cottage_house2.glb-d6b069f9e46441fb6ebdacf979a3440c.scn"]
+source_file="res://Naomi/DeadSeaweed.glb"
+dest_files=["res://.godot/imported/DeadSeaweed.glb-20cf8fbd32e71977142d9ae7b53d90ba.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="StaticBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

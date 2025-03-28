@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bq2nvtsx41u4l"
-path="res://.godot/imported/cottage_house2.glb-d6b069f9e46441fb6ebdacf979a3440c.scn"
+uid="uid://dw6qngmwpxk3q"
+path="res://.godot/imported/garbage bag1.glb-a7c50d82116caf2e686947ee41f218c6.scn"
 
 [deps]
 
-source_file="res://Sing-yu/cottage_house2.glb"
-dest_files=["res://.godot/imported/cottage_house2.glb-d6b069f9e46441fb6ebdacf979a3440c.scn"]
+source_file="res://BohanYuchi/garbage bag1.glb"
+dest_files=["res://.godot/imported/garbage bag1.glb-a7c50d82116caf2e686947ee41f218c6.scn"]
 
 [params]
 

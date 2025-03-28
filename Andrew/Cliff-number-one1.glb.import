@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bq2nvtsx41u4l"
-path="res://.godot/imported/cottage_house2.glb-d6b069f9e46441fb6ebdacf979a3440c.scn"
+uid="uid://cy2bujfaljo53"
+path="res://.godot/imported/Cliff-number-one1.glb-3b64196aa5bc0f18055c210c3389d317.scn"
 
 [deps]
 
-source_file="res://Sing-yu/cottage_house2.glb"
-dest_files=["res://.godot/imported/cottage_house2.glb-d6b069f9e46441fb6ebdacf979a3440c.scn"]
+source_file="res://Andrew/Cliff-number-one1.glb"
+dest_files=["res://.godot/imported/Cliff-number-one1.glb-3b64196aa5bc0f18055c210c3389d317.scn"]
 
 [params]
 
