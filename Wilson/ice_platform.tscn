@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnupbmfgig6my"]
+
+[ext_resource type="PackedScene" uid="uid://bh47ldj70i4kk" path="res://Ice_Platform.glb" id="1_x6ft2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7qd8o"]
+height = 4.22443
+radius = 8.94166
+
+[node name="Ice_Platform" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0401931, -0.201163, 0.12561)
+shape = SubResource("CylinderShape3D_7qd8o")
+
+[node name="Ice_Platform" parent="." instance=ExtResource("1_x6ft2")]
