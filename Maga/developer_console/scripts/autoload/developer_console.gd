@@ -61,6 +61,7 @@ var _all_scene_items: Array = [] # Store all scene items for search filtering
 # --- Extensions ---
 var scene_manager = null # Will hold the scene manager extension
 var log_manager = null # Will hold the log manager extension
+var quick_manager = null # Will hold the quick tab extension
 
 # --- Command & Expression Handling ---
 var registered_commands: Dictionary = {} # { "command_name": { "callable": Callable, "description": String } }
@@ -142,7 +143,13 @@ func toggle() -> void:
 	if panel_container.visible:
 		# Show console and request cursor visibility
 		panel_container.grab_focus() # Focus panel when shown
-		console_input.grab_focus() # Focus input line
+		
+		# Make sure Quick tab is shown first
+		tab_container.current_tab = 0
+		
+		# If we're showing the Console tab, focus the input line
+		if tab_container.current_tab == 1:
+			console_input.grab_focus()
 		
 		# Request cursor visibility from the CursorManager
 		if get_node_or_null("/root/Cursor"):
@@ -630,22 +637,22 @@ func _draw_resize_handles() -> void:
 		
 		# Top-left
 		if ((_resize_edge_h == "left" and _resize_edge_v == "top") or 
-		    (_hover_edge_h == "left" and _hover_edge_v == "top")):
+			(_hover_edge_h == "left" and _hover_edge_v == "top")):
 			panel_container.draw_rect(Rect2(0, 0, handle_size, handle_size), draw_color)
 		
 		# Top-right
 		if ((_resize_edge_h == "right" and _resize_edge_v == "top") or 
-		    (_hover_edge_h == "right" and _hover_edge_v == "top")):
+			(_hover_edge_h == "right" and _hover_edge_v == "top")):
 			panel_container.draw_rect(Rect2(panel_size.x - handle_size, 0, handle_size, handle_size), draw_color)
 		
 		# Bottom-left
 		if ((_resize_edge_h == "left" and _resize_edge_v == "bottom") or 
-		    (_hover_edge_h == "left" and _hover_edge_v == "bottom")):
+			(_hover_edge_h == "left" and _hover_edge_v == "bottom")):
 			panel_container.draw_rect(Rect2(0, panel_size.y - handle_size, handle_size, handle_size), draw_color)
 		
 		# Bottom-right
 		if ((_resize_edge_h == "right" and _resize_edge_v == "bottom") or 
-		    (_hover_edge_h == "right" and _hover_edge_v == "bottom")):
+			(_hover_edge_h == "right" and _hover_edge_v == "bottom")):
 			panel_container.draw_rect(Rect2(panel_size.x - handle_size, panel_size.y - handle_size, handle_size, handle_size), draw_color)
 
 
@@ -661,12 +668,20 @@ func _on_panel_container_mouse_exited() -> void:
 # Initialize all extensions
 func _initialize_extensions() -> void:
 	# Initialize Scene Manager
-	var SceneManagerClass = load("res://Maga/developer_console/scripts/autoload/developer_console_scene.gd")
+	var SceneManagerClass = load("res://Maga/developer_console/scripts/autoload/developer_console_scene_search.gd")
 	if SceneManagerClass:
 		scene_manager = SceneManagerClass.new()
 		scene_manager.initialize(self)
 	else:
 		printerr("Failed to load Scene Manager extension")
+
+	# Initialize Quick Manager
+	var QuickManagerClass = load("res://Maga/developer_console/scripts/developer_console_scene_quick.gd")
+	if QuickManagerClass:
+		quick_manager = QuickManagerClass.new()
+		quick_manager.initialize(self)
+	else:
+		printerr("Failed to load Quick Manager extension")
 
 	# Initialize Log Manager
 	var LogManagerClass = load("res://Maga/developer_console/developer_console_scene_logs.gd")
