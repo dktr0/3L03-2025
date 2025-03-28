@@ -3,11 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD
-uid="uid://bkhqyh8xgxg0y"
-=======
-uid="uid://jlljnabmlodx"
->>>>>>> da1ac17e66987a8fc6c4d18060e63074c4a3f5cf
+uid="uid://ce0bw07df67ww"
 path="res://.godot/imported/beachterrain1 2.glb-1969b1ed2ef709e05503822ab1e58d6c.scn"
 
 [deps]
@@ -36,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

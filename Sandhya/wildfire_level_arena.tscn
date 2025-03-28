@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5xqkd7wyxnl8"]
+[gd_scene load_steps=7 format=3 uid="uid://b5xqkd7wyxnl8"]
 
 [ext_resource type="PackedScene" uid="uid://dijrmpgru8y63" path="res://Sandhya/tree_0.tscn" id="2_ve84o"]
 [ext_resource type="PackedScene" uid="uid://dhu8qjg4onsej" path="res://Sandhya/branch.tscn" id="4_m1ek6"]
 [ext_resource type="PackedScene" uid="uid://cvps8cpv8bmj" path="res://Sandhya/Hill.tscn" id="5_7hk8d"]
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="6_7aicr"]
 [ext_resource type="PackedScene" uid="uid://b0j6glrfr80lu" path="res://Sandhya/Path.tscn" id="6_dy8nl"]
-[ext_resource type="PackedScene" uid="uid://d3r0rm08l6cp5" path="res://Sandhya/Player.tscn" id="7_kf7n0"]
-[ext_resource type="PackedScene" uid="uid://cto2owdx8llbi" path="res://Riley/HealthyPineTree2.tscn" id="7_krh0e"]
 
 [sub_resource type="Environment" id="Environment_akj7a"]
 background_mode = 1
@@ -30,9 +28,6 @@ transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 44.160
 
 [node name="Path" parent="." instance=ExtResource("6_dy8nl")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -246.419)
-
-[node name="Player" parent="." instance=ExtResource("7_kf7n0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -178.947)
 
 [node name="Tree 1" parent="." instance=ExtResource("2_ve84o")]
 transform = Transform3D(-0.173201, 0, 11.9987, 0, 12, 0, -11.9987, 0, -0.173201, 39.3992, -10.1667, -94.0741)
@@ -137,8 +132,5 @@ transform = Transform3D(8, 0, 1.11759e-07, 0, 8, 0, -1.11759e-07, 0, 8, 105.547,
 
 [node name="StaticBody3D4" parent="Trees" instance=ExtResource("6_7aicr")]
 transform = Transform3D(-0.0723347, -0.0520752, -7.9995, 3.46864, 7.2085, -0.0782906, 7.20856, -3.46913, -0.0425992, -75.3687, 89.7931, 84.9684)
-
-[node name="HealthyPineTree2" parent="Trees" instance=ExtResource("7_krh0e")]
-transform = Transform3D(7, -0.00229749, -2.50414e-05, 0.00229749, 6.99833, 0.153053, -2.52426e-05, -0.153054, 6.99833, 0.0916569, 1.91664, -93.5687)
 
 [node name="Grass" type="Node3D" parent="."]

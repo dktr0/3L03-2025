@@ -3,7 +3,11 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+<<<<<<< Updated upstream
 uid="uid://c8roi384wijml"
+=======
+uid="uid://b31vthpo3mmx1"
+>>>>>>> Stashed changes
 path="res://.godot/imported/Cup.glb-1e0957d2dc5c7d27a0600dadf04b557f.scn"
 
 [deps]
@@ -32,5 +36,9 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
+<<<<<<< Updated upstream
 gltf/naming_version=0
+=======
+gltf/naming_version=1
+>>>>>>> Stashed changes
 gltf/embedded_image_handling=1
