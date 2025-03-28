@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cs8dkj0gx0a2"
-path="res://.godot/imported/ChestClosed.gltf-e66e90b0b04e59b16e1bd64e21f87696.scn"
+uid="uid://c2c7f2l3440de"
+path="res://.godot/imported/Cottage House.glb-1142f8b6894e0c8fd5bfcb738d20e87c.scn"
 
 [deps]
 
-source_file="res://Darius/ChestClosed.gltf"
-dest_files=["res://.godot/imported/ChestClosed.gltf-e66e90b0b04e59b16e1bd64e21f87696.scn"]
+source_file="res://Cottage House.glb"
+dest_files=["res://.godot/imported/Cottage House.glb-1142f8b6894e0c8fd5bfcb738d20e87c.scn"]
 
 [params]
 
