@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1c684oki5ms0"
+path="res://.godot/imported/WindMillSoundEffects.mp3-5012888e70ed3953ac8f52c55eb85283.mp3str"
+
+[deps]
+
+source_file="res://Bihan/SoundEffects and Soundscape/WindMillSoundEffects.mp3"
+dest_files=["res://.godot/imported/WindMillSoundEffects.mp3-5012888e70ed3953ac8f52c55eb85283.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
