@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uib046wtsle6"
-path.s3tc="res://.godot/imported/coastguardstation_panels Base Color.png-42b95f4138faba421db3904949bd97c3.s3tc.ctex"
+uid="uid://s0xmutwg7wsg"
+path.s3tc="res://.godot/imported/starfish_starfish Base Color.png-9d61b1f3d6dafdaf58bd0ed9e69e49b8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "069060cf6e30dc35475f43e3f11f6527"
+}
 
 [deps]
 
-source_file="res://Wren/coastguardstation_panels Base Color.png"
-dest_files=["res://.godot/imported/coastguardstation_panels Base Color.png-42b95f4138faba421db3904949bd97c3.s3tc.ctex"]
+source_file="res://Suyeon/starfish_starfish Base Color.png"
+dest_files=["res://.godot/imported/starfish_starfish Base Color.png-9d61b1f3d6dafdaf58bd0ed9e69e49b8.s3tc.ctex"]
 
 [params]
 

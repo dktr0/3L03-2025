@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c6bycespptre0"
-path="res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"
+uid="uid://b67n2hadh5ons"
+path="res://.godot/imported/sea_shell_3d.glb-4c5613828d69004b823122564acd38a9.scn"
 
 [deps]
 
-source_file="res://Wren/coastguardstation.glb"
-dest_files=["res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"]
+source_file="res://Suyeon/sea_shell_3d.glb"
+dest_files=["res://.godot/imported/sea_shell_3d.glb-4c5613828d69004b823122564acd38a9.scn"]
 
 [params]
 
