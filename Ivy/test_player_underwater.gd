@@ -5,7 +5,6 @@ var mouseLookLeftRight = 0
 var mouseLookUpDown = 0
 
 const SPEED = 2.5
-const SWIM_SPEED = 2.5
 const ACCEL = 10.0
 const DECEL = 10.0
 
@@ -53,7 +52,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, abs(velDir.x*DECEL*delta));
 		velocity.z = move_toward(velocity.z, 0, abs(velDir.z*DECEL*delta));
 
-	if Input.is_action_just_pressed("Jump"):
+	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP_FORCE
 
 	velocity = velocity.lerp(Vector3.ZERO, DRAG * delta)
