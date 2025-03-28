@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkyvgdh6byf6j"
-path="res://.godot/imported/ChestOpened.gltf-928617c635e907e0fee6a94feebf581c.scn"
+uid="uid://cgthiurowcelo"
+path="res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"
 
 [deps]
 
-source_file="res://Darius/ChestOpened.gltf"
-dest_files=["res://.godot/imported/ChestOpened.gltf-928617c635e907e0fee6a94feebf581c.scn"]
+source_file="res://Gia/oyster2.glb"
+dest_files=["res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"]
 
 [params]
 
