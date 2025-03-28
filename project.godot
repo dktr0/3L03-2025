@@ -18,7 +18,7 @@ config/icon="res://Zibo/icon.svg"
 [autoload]
 
 DeveloperConsole="*res://Maga/developer_console/scenes/developer_console_scene.tscn"
-Cursor="*res://Maga/game_controller/autoload/cursor_manager.gd"
+Cursor="*res://Maga/game_controller/cursor/autoload/cursor_manager.gd"
 
 [filesystem]
 

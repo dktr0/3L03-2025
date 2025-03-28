@@ -50,10 +50,16 @@ func initialize(developer_console: Node) -> void:
 		console.log("[ERROR] Could not find Scene tab")
 		return
 		
+	console.log("Found Scene tab, visibility: " + str(scene_tab.visible))
+	console.log("Scene tab path: " + str(scene_tab.get_path()))
+	
 	scene_list = scene_tab.get_node_or_null("SceneList")
 	if scene_list == null:
 		console.log("[ERROR] Could not find SceneList in Scene tab")
 		return
+	
+	console.log("Found SceneList, visibility: " + str(scene_list.visible))
+	console.log("SceneList path: " + str(scene_list.get_path()))
 	
 	# Hide the original scene list as we'll replace it with buttons
 	scene_list.visible = false
@@ -67,6 +73,8 @@ func initialize(developer_console: Node) -> void:
 	# Connect to tab changed signal to load scenes when needed
 	var tab_container = console.get_node("PanelContainer/VBoxContainer/TabContainer")
 	if tab_container:
+		console.log("Found TabContainer, current tab: " + str(tab_container.current_tab))
+		console.log("TabContainer path: " + str(tab_container.get_path()))
 		if tab_container.is_connected("tab_changed", _on_tab_changed):
 			tab_container.disconnect("tab_changed", _on_tab_changed)
 		tab_container.tab_changed.connect(_on_tab_changed)
@@ -80,9 +88,12 @@ func initialize(developer_console: Node) -> void:
 
 ## Set up the UI components for the scene tab
 func _setup_scene_tab_ui() -> void:
+	console.log("Setting up Scene tab UI...")
+	
 	# First, remove any existing UI that might be there from previous attempts
 	var existing_scroll = scene_tab.get_node_or_null("SceneButtonScroll")
 	if existing_scroll:
+		console.log("Removing existing scroll container...")
 		existing_scroll.queue_free()
 	
 	# Create scroll container
@@ -94,10 +105,10 @@ func _setup_scene_tab_ui() -> void:
 	# Setup anchors and position
 	scroll_container.anchor_right = 1.0
 	scroll_container.anchor_bottom = 1.0
-	scroll_container.offset_left = 10
-	scroll_container.offset_top = 10
-	scroll_container.offset_right = -10
-	scroll_container.offset_bottom = -10
+	scroll_container.offset_left = 20
+	scroll_container.offset_top = 20
+	scroll_container.offset_right = -20
+	scroll_container.offset_bottom = -20
 	
 	# Create button container
 	button_container = VBoxContainer.new()
@@ -110,7 +121,10 @@ func _setup_scene_tab_ui() -> void:
 	scroll_container.add_child(button_container)
 	scene_tab.add_child(scroll_container)
 	
-	# Log UI setup
+	# Make sure everything is visible
+	scroll_container.visible = true
+	button_container.visible = true
+	
 	console.log("Scene tab UI initialized")
 
 
@@ -147,14 +161,18 @@ func _create_styles() -> void:
 
 ## Scan the project for scene files and create buttons
 func scan_scenes() -> void:
+	console.log("Starting scene scan...")
+	
 	# Clear existing buttons
-	for child in button_container.get_children():
-		child.queue_free()
+	if button_container:
+		for child in button_container.get_children():
+			child.queue_free()
 	
 	# Add a label at the top
 	var label = Label.new()
 	label.text = "Available Scenes:"
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.add_theme_font_size_override("font_size", 16)
 	button_container.add_child(label)
 	
 	# Get scenes from the console's scanning function (reuse existing code)
@@ -162,6 +180,8 @@ func scan_scenes() -> void:
 	
 	# Sort scenes alphabetically
 	scenes.sort()
+	
+	console.log("Found " + str(scenes.size()) + " scenes")
 	
 	# Create a button for each scene
 	for scene_path in scenes:

@@ -39,7 +39,8 @@ extends CanvasLayer
 
 # --- Configuration ---
 const CONSOLE_HOTKEY: StringName = "ui_quoteleft" # Action to toggle console visibility (Tilde/Backtick key `)
-const RESIZE_MARGIN: float = 10.0 # Pixels from edge to trigger resize
+const RESIZE_MARGIN: float = 8.0 # Pixels from edge to trigger resize
+const RESIZE_BORDER_COLOR: Color = Color(0.6, 0.6, 0.6, 0.5) # Color of the resize indicator
 
 # --- State ---
 var _is_dragging: bool = false
@@ -50,6 +51,8 @@ var _resize_edge_v: String = "" # "top", "bottom", ""
 var _resize_start_mouse_pos: Vector2 = Vector2.ZERO
 var _resize_start_pos: Vector2 = Vector2.ZERO
 var _resize_start_size: Vector2 = Vector2.ZERO
+var _hover_edge_h: String = "" # For visual feedback
+var _hover_edge_v: String = "" # For visual feedback
 var _scenes_scanned: bool = false # Flag to scan scenes only once needed
 
 # --- Extensions ---
@@ -76,6 +79,7 @@ func _ready() -> void:
 		header.gui_input.connect(_on_header_gui_input)
 		panel_container.gui_input.connect(_on_panel_container_gui_input)
 		panel_container.mouse_exited.connect(_on_panel_container_mouse_exited)
+		panel_container.draw.connect(_draw_resize_handles)
 		console_input.text_submitted.connect(_on_console_input_submitted)
 		console_input.gui_input.connect(_on_console_input_gui_input) # For history navigation
 		scene_list.item_activated.connect(_on_scene_list_item_activated)
@@ -475,6 +479,7 @@ func _on_panel_container_gui_input(event: InputEvent) -> void:
 					_resize_start_mouse_pos = panel_container.get_global_mouse_position()
 					_resize_start_pos = panel_container.global_position
 					_resize_start_size = panel_container.size
+					panel_container.queue_redraw() # Redraw for visual feedback
 				
 				get_viewport().set_input_as_handled()
 			else:
@@ -482,6 +487,7 @@ func _on_panel_container_gui_input(event: InputEvent) -> void:
 					_is_resizing = false
 					_resize_edge_h = ""
 					_resize_edge_v = ""
+					panel_container.queue_redraw() # Redraw to remove resize indicators
 				
 				panel_container.mouse_default_cursor_shape = Control.CURSOR_ARROW
 				get_viewport().set_input_as_handled()
@@ -516,6 +522,7 @@ func _on_panel_container_gui_input(event: InputEvent) -> void:
 
 			panel_container.global_position = new_pos
 			panel_container.size = new_size
+			panel_container.queue_redraw() # Redraw during resizing
 			
 			get_viewport().set_input_as_handled()
 
@@ -523,28 +530,92 @@ func _on_panel_container_gui_input(event: InputEvent) -> void:
 func _update_resize_cursor() -> void:
 	var mouse_pos: Vector2 = panel_container.get_local_mouse_position()
 	var panel_size: Vector2 = panel_container.size
-	var current_edge_h: String = ""
-	var current_edge_v: String = ""
+	var old_h = _hover_edge_h
+	var old_v = _hover_edge_v
+	
+	_hover_edge_h = ""
+	_hover_edge_v = ""
 
-	if mouse_pos.x < RESIZE_MARGIN: current_edge_h = "left"
-	elif mouse_pos.x > panel_size.x - RESIZE_MARGIN: current_edge_h = "right"
-	if mouse_pos.y < RESIZE_MARGIN: current_edge_v = "top"
-	elif mouse_pos.y > panel_size.y - RESIZE_MARGIN: current_edge_v = "bottom"
+	if mouse_pos.x < RESIZE_MARGIN: _hover_edge_h = "left"
+	elif mouse_pos.x > panel_size.x - RESIZE_MARGIN: _hover_edge_h = "right"
+	if mouse_pos.y < RESIZE_MARGIN: _hover_edge_v = "top"
+	elif mouse_pos.y > panel_size.y - RESIZE_MARGIN: _hover_edge_v = "bottom"
 
 	var cursor_shape = Control.CURSOR_ARROW # Default
-	if current_edge_h == "left" and current_edge_v == "top": cursor_shape = Control.CURSOR_BDIAGSIZE
-	elif current_edge_h == "right" and current_edge_v == "bottom": cursor_shape = Control.CURSOR_BDIAGSIZE
-	elif current_edge_h == "right" and current_edge_v == "top": cursor_shape = Control.CURSOR_FDIAGSIZE
-	elif current_edge_h == "left" and current_edge_v == "bottom": cursor_shape = Control.CURSOR_FDIAGSIZE
-	elif current_edge_h != "": cursor_shape = Control.CURSOR_HSIZE
-	elif current_edge_v != "": cursor_shape = Control.CURSOR_VSIZE
+	if _hover_edge_h == "left" and _hover_edge_v == "top": cursor_shape = Control.CURSOR_BDIAGSIZE
+	elif _hover_edge_h == "right" and _hover_edge_v == "bottom": cursor_shape = Control.CURSOR_BDIAGSIZE
+	elif _hover_edge_h == "right" and _hover_edge_v == "top": cursor_shape = Control.CURSOR_FDIAGSIZE
+	elif _hover_edge_h == "left" and _hover_edge_v == "bottom": cursor_shape = Control.CURSOR_FDIAGSIZE
+	elif _hover_edge_h != "": cursor_shape = Control.CURSOR_HSIZE
+	elif _hover_edge_v != "": cursor_shape = Control.CURSOR_VSIZE
 
 	panel_container.mouse_default_cursor_shape = cursor_shape
+	
+	# Request redraw if edges changed to update resize indicators
+	if old_h != _hover_edge_h or old_v != _hover_edge_v:
+		panel_container.queue_redraw()
+
+# Draw resize handles
+func _draw_resize_handles() -> void:
+	if not panel_container.visible:
+		return
+		
+	# Set up drawing on the panel
+	var panel_size = panel_container.size
+	var draw_color = RESIZE_BORDER_COLOR
+	var line_width = 2.0
+	
+	# Draw highlight for resize edges based on hover or active resize
+	if _is_resizing or _hover_edge_h != "" or _hover_edge_v != "":
+		if _is_resizing:
+			draw_color = Color(0.8, 0.8, 0.8, 0.7) # Brighter during active resize
+		
+		# Left edge
+		if _resize_edge_h == "left" or _hover_edge_h == "left":
+			panel_container.draw_line(Vector2(0, 0), Vector2(0, panel_size.y), draw_color, line_width)
+		
+		# Right edge
+		if _resize_edge_h == "right" or _hover_edge_h == "right":
+			panel_container.draw_line(Vector2(panel_size.x, 0), Vector2(panel_size.x, panel_size.y), draw_color, line_width)
+		
+		# Top edge
+		if _resize_edge_v == "top" or _hover_edge_v == "top":
+			panel_container.draw_line(Vector2(0, 0), Vector2(panel_size.x, 0), draw_color, line_width)
+		
+		# Bottom edge
+		if _resize_edge_v == "bottom" or _hover_edge_v == "bottom":
+			panel_container.draw_line(Vector2(0, panel_size.y), Vector2(panel_size.x, panel_size.y), draw_color, line_width)
+		
+		# Draw corner handles (small squares)
+		var handle_size = 6.0
+		
+		# Top-left
+		if ((_resize_edge_h == "left" and _resize_edge_v == "top") or 
+		    (_hover_edge_h == "left" and _hover_edge_v == "top")):
+			panel_container.draw_rect(Rect2(0, 0, handle_size, handle_size), draw_color)
+		
+		# Top-right
+		if ((_resize_edge_h == "right" and _resize_edge_v == "top") or 
+		    (_hover_edge_h == "right" and _hover_edge_v == "top")):
+			panel_container.draw_rect(Rect2(panel_size.x - handle_size, 0, handle_size, handle_size), draw_color)
+		
+		# Bottom-left
+		if ((_resize_edge_h == "left" and _resize_edge_v == "bottom") or 
+		    (_hover_edge_h == "left" and _hover_edge_v == "bottom")):
+			panel_container.draw_rect(Rect2(0, panel_size.y - handle_size, handle_size, handle_size), draw_color)
+		
+		# Bottom-right
+		if ((_resize_edge_h == "right" and _resize_edge_v == "bottom") or 
+		    (_hover_edge_h == "right" and _hover_edge_v == "bottom")):
+			panel_container.draw_rect(Rect2(panel_size.x - handle_size, panel_size.y - handle_size, handle_size, handle_size), draw_color)
 
 
 func _on_panel_container_mouse_exited() -> void:
 	if not _is_resizing: # Don't reset cursor if actively resizing
+		_hover_edge_h = ""
+		_hover_edge_v = ""
 		panel_container.mouse_default_cursor_shape = Control.CURSOR_ARROW
+		panel_container.queue_redraw() # Redraw to remove hover indicators
 
 # endregion
 

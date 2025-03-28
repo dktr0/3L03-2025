@@ -51,25 +51,26 @@ script = ExtResource("1_w515n")
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
 custom_minimum_size = Vector2(400, 300)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -300.0
-offset_right = 250.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
 grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 1
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
 
 [node name="Header" type="Panel" parent="PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 28)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
 [node name="Title" type="Label" parent="PanelContainer/VBoxContainer/Header"]
@@ -79,6 +80,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 16
 text = "Developer Console"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -88,16 +90,19 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -24.0
+offset_left = -40.0
 offset_top = -1.0
-offset_bottom = 30.0
+offset_bottom = 41.0
 grow_horizontal = 0
 tooltip_text = "Close Console"
 focus_mode = 0
+theme_override_font_sizes/font_size = 16
 text = "X"
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_1")
 current_tab = 0
 
@@ -110,24 +115,29 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 194.5
-offset_right = -10.0
-offset_bottom = 235.5
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
 
 [node name="Output" type="RichTextLabel" parent="PanelContainer/VBoxContainer/TabContainer/Console/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_2")
 bbcode_enabled = true
 scroll_following = true
 
 [node name="Input" type="LineEdit" parent="PanelContainer/VBoxContainer/TabContainer/Console/VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxFlat_4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3")
 placeholder_text = "Enter command or expression..."
@@ -135,6 +145,8 @@ placeholder_text = "Enter command or expression..."
 [node name="Scene" type="Control" parent="PanelContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 metadata/_tab_index = 1
 
 [node name="SceneList" type="ItemList" parent="PanelContainer/VBoxContainer/TabContainer/Scene"]
@@ -142,18 +154,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 allow_reselect = true
 allow_rmb_select = true
 
 [node name="Log" type="Control" parent="PanelContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 metadata/_tab_index = 2
 
 [node name="Output" type="RichTextLabel" parent="PanelContainer/VBoxContainer/TabContainer/Log"]
@@ -161,12 +177,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_2")
 bbcode_enabled = true
 scroll_following = true
@@ -175,11 +194,12 @@ scroll_following = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -40.0
-offset_right = 110.0
-offset_bottom = -10.0
+offset_left = 20.0
+offset_top = -50.0
+offset_right = 150.0
+offset_bottom = -20.0
 grow_vertical = 0
 tooltip_text = "Toggle Developer Console (F1)"
 focus_mode = 0
+theme_override_font_sizes/font_size = 14
 text = "Toggle Console"
