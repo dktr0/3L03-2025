@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uib046wtsle6"
-path.s3tc="res://.godot/imported/coastguardstation_panels Base Color.png-42b95f4138faba421db3904949bd97c3.s3tc.ctex"
+uid="uid://by0i2rxeq8obe"
+path.s3tc="res://.godot/imported/sea_shell_3d_Shell_texture.png-aaee4f8ddca0aa93b845abcb3f1ee436.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "569933e28b1bb41909c97e636d52f470"
+}
 
 [deps]
 
-source_file="res://Wren/coastguardstation_panels Base Color.png"
-dest_files=["res://.godot/imported/coastguardstation_panels Base Color.png-42b95f4138faba421db3904949bd97c3.s3tc.ctex"]
+source_file="res://Suyeon/sea_shell_3d_Shell_texture.png"
+dest_files=["res://.godot/imported/sea_shell_3d_Shell_texture.png-aaee4f8ddca0aa93b845abcb3f1ee436.s3tc.ctex"]
 
 [params]
 
