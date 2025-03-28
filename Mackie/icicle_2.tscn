@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckkddppq8adaw"]
+
+[ext_resource type="PackedScene" uid="uid://cighxnipso4yx" path="res://Mackie/iciclesmall-new.glb" id="1_6u3ov"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8q8t5"]
+height = 2.146
+radius = 0.33608
+
+[node name="icicle2_nonglow" type="StaticBody3D"]
+
+[node name="iciclesmall-new" parent="." instance=ExtResource("1_6u3ov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0127788, 0.0664735, -0.192976)
+
+[node name="icicle2 cyl collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.275147, 0, 0, 0, 0.275147, 0, 0, 0, 0.275147, -0.00073426, -0.136645, 0.0487537)
+shape = SubResource("CylinderShape3D_8q8t5")

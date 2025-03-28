@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3glb2e2flfrj"]
+
+[ext_resource type="Script" path="res://Andy/Player/main_character.gd" id="1_fs0oo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ky1bh"]
+radius = 1.757
+height = 3.514
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_orcio"]
+radius = 0.635
+height = 2.53
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+transform = Transform3D(-0.999997, 0, 0.00244346, 0, 1, 0, -0.00244346, 0, -0.999997, 0, 0.516931, 0)
+script = ExtResource("1_fs0oo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0602837, 0.805705, -0.117899)
+shape = SubResource("CapsuleShape3D_ky1bh")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0602837, 0.805705, -0.117899)
+shape = SubResource("CapsuleShape3D_ky1bh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.476079, 0)
+mesh = SubResource("CapsuleMesh_orcio")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

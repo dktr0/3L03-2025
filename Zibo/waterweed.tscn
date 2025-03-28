@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://brpse8kilyf1m"]
+
+[ext_resource type="PackedScene" uid="uid://xrw1kp5ep4dn" path="res://Zibo/glb/Waterweed.glb" id="1_no1g4"]
+
+[node name="Waterweed" type="Node3D"]
+
+[node name="Waterweed" parent="." instance=ExtResource("1_no1g4")]
