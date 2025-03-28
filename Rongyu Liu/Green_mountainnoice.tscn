@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmckqn74iwe3i"]
+
+[ext_resource type="PackedScene" uid="uid://cf643rusgt2mt" path="res://Rongyu Liu/Green_mountainnoice.glb" id="1_uulmd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5k5yk"]
+size = Vector3(1, 0.246338, 0.893555)
+
+[node name="Green_mountainnoice" type="StaticBody3D"]
+
+[node name="Green_mountainnoice" parent="." instance=ExtResource("1_uulmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0980067, 0, -0.200645)
+
+[node name="Green_mountainnoice2" type="CollisionShape3D" parent="."]
+transform = Transform3D(129.27, 0, 0, 0, 129.27, 0, 0, 0, 129.27, -109.97, 11.1422, 87.8893)
+shape = SubResource("BoxShape3D_5k5yk")

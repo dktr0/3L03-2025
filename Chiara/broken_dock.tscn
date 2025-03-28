@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://btbfwfjoc6wqr"]
+
+[ext_resource type="PackedScene" uid="uid://k0juh3usoo66" path="res://Chiara/broken_Dock.glb" id="1_5y3b0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8751"]
+size = Vector3(43.3762, 18.89, 15.6035)
+
+[node name="broken_dock" type="StaticBody3D"]
+
+[node name="broken_Dock" parent="." instance=ExtResource("1_5y3b0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422245, 4.03272, 0.748285)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99745, 0.0628471, -0.0338038, -0.0648748, 0.995924, -0.0626686, 0.0297274, 0.0647018, 0.997462, 28.8114, 6.5238, -26.7303)
+shape = SubResource("BoxShape3D_r8751")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99859, -0.0412577, -0.033408, 0.0395724, 0.997984, -0.0496272, 0.0353881, 0.0482352, 0.998209, -41.2978, 7.52159, -0.830724)
+shape = SubResource("BoxShape3D_r8751")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.204363, 0.0405328, 0.978056, 0.163466, 0.9837, -0.0749226, -0.96515, 0.17519, 0.194406, -7.47037, 8.0887, -9.04037)
+shape = SubResource("BoxShape3D_r8751")

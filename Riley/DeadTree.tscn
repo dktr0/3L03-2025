@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://31k1eq7dvbqa"]
+
+[ext_resource type="PackedScene" uid="uid://uwedl47dhfvq" path="res://Riley/GLBflies/TallDeadTree.glb" id="1_ba6ca"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8wt4k"]
+height = 8.0
+radius = 1.5
+
+[node name="DeadTree" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("CylinderShape3D_8wt4k")
+
+[node name="TallDeadTree" parent="." instance=ExtResource("1_ba6ca")]

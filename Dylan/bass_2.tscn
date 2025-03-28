@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://83a6l8u1euuj"]
+
+[ext_resource type="PackedScene" uid="uid://cmbdbg5d2aj6e" path="res://Dylan/Bass2.glb" id="1_f8qix"]
+
+[node name="Bass2" instance=ExtResource("1_f8qix")]
