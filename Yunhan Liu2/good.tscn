@@ -1,8 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dp6183w8v6hq8"]
+[gd_scene load_steps=19 format=3 uid="uid://dp6183w8v6hq8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ddo5a"]
 [ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="2_joaes"]
 [ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="3_l8euk"]
+[ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="4_ccliw"]
+[ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="5_2b4bn"]
+[ext_resource type="PackedScene" uid="uid://b3eoabwbarjfo" path="res://Le Zhang/boat.glb" id="6_jlsgo"]
+[ext_resource type="PackedScene" uid="uid://b1vpaq4amcbie" path="res://Le Zhang/Fish.glb" id="6_nilax"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4iof"]
 albedo_color = Color(0.364706, 1, 0.364706, 1)
@@ -23,6 +27,68 @@ material = SubResource("StandardMaterial3D_wyilg")
 [sub_resource type="PlaneMesh" id="PlaneMesh_t44mi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qfogl"]
+
+[sub_resource type="Animation" id="Animation_8e5i2"]
+resource_name = "fish"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.43333, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-162, -23, 12), Vector3(-221.5, -23, 12), Vector3(-144.031, -23, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.33333, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.333358, 0), Vector3(0, 1.67203, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qj1fd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-162, -23, 12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5n1p"]
+_data = {
+"RESET": SubResource("Animation_qj1fd"),
+"fish": SubResource("Animation_8e5i2")
+}
 
 [node name="good" type="Node3D"]
 
@@ -106,6 +172,38 @@ mesh = SubResource("PlaneMesh_t44mi")
 skeleton = NodePath("../..")
 
 [node name="Player2" parent="." instance=ExtResource("2_joaes")]
-transform = Transform3D(-1.99999, 0, 0.00488692, 0, 2, 0, -0.00488692, 0, -1.99999, 0, 5.55452, 17.3178)
+transform = Transform3D(-1.85928, 0, 0.00454309, 0, 1.85929, 0, -0.00454309, 0, -1.85928, 0, 5.55452, 17.3178)
 
 [node name="FreeCameraRig" parent="Player2" instance=ExtResource("3_l8euk")]
+
+[node name="Docks" type="Node" parent="."]
+
+[node name="MultipleLaneDock" parent="Docks" instance=ExtResource("4_ccliw")]
+transform = Transform3D(-3.79266e-09, 0, 0.0797585, 0, 0.086766, 0, -0.086766, 0, -3.48635e-09, -42.219, -22.4027, 29.5097)
+
+[node name="MultipleLaneDock2" parent="Docks" instance=ExtResource("4_ccliw")]
+transform = Transform3D(0.0742725, 0, 0, 0, 0.0742725, 0, 0, 0, 0.0742725, -119.151, -20.7414, 61.9283)
+
+[node name="SingleLaneDock" parent="Docks" instance=ExtResource("5_2b4bn")]
+transform = Transform3D(-3.955e-09, 0, -0.0904799, 0, 0.0904799, 0, 0.0904799, 0, -3.955e-09, -194.088, -58.2444, 136.063)
+
+[node name="SingleLaneDock2" parent="Docks" instance=ExtResource("5_2b4bn")]
+transform = Transform3D(-0.0902923, 0, 7.8936e-09, 0, 0.0902923, 0, -7.8936e-09, 0, -0.0902923, -169.721, -56.3197, -29.7217)
+
+[node name="SingleLaneDock3" parent="Docks" instance=ExtResource("5_2b4bn")]
+transform = Transform3D(-0.0950345, 0, 8.30817e-09, 0, 0.0950345, 0, -8.30817e-09, 0, -0.0950345, -221.106, -59.2336, -29.2019)
+
+[node name="3d models" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.544006, -0.965363, 0.458832)
+
+[node name="Fish" parent="3d models" instance=ExtResource("6_nilax")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -162, -23, 12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="3d models/Fish"]
+libraries = {
+"": SubResource("AnimationLibrary_o5n1p")
+}
+autoplay = "fish"
+
+[node name="boat" parent="." instance=ExtResource("6_jlsgo")]
+transform = Transform3D(-0.165677, 0, -5.96116, 0, 5.96346, 0, 5.96116, 0, -0.165677, -106.904, -14.3109, -33.5579)
