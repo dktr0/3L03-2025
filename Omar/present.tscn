@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=22 format=3 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="17_01jia"]
 [ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="17_n3ard"]
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="17_vhbp1"]
+[ext_resource type="PackedScene" uid="uid://b4kixgrxdj358" path="res://Omar/ice_arena_present.tscn" id="18_2sia6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
 
@@ -50,7 +51,7 @@ transform = Transform3D(-0.11, 0, 9.6165e-09, 0, 0.11, 0, -9.6165e-09, 0, -0.11,
 transform = Transform3D(-3.53553, 0, -3.53553, 0, 5, 0, 3.53553, 0, -3.53553, 391.669, -7.53811, 272.302)
 
 [node name="PuzzleGame" parent="." instance=ExtResource("6_k0hcq")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -327.887, -119.278, -181.481)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -450.358, -119.278, -295.492)
 
 [node name="deadgrass" type="Node" parent="."]
 
@@ -1294,7 +1295,7 @@ mesh = SubResource("BoxMesh_ov3oa")
 surface_material_override/0 = SubResource("StandardMaterial3D_iclnn")
 
 [node name="Water_Base" parent="." instance=ExtResource("16_532hx")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -58.2908, 0)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -160.322, 0)
 
 [node name="Logs" type="Node" parent="."]
 
@@ -1318,3 +1319,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.62613, 3.22927, -29.9847)
 
 [node name="Player" parent="." instance=ExtResource("17_n3ard")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 152.806, 3.43992, 118.328)
+
+[node name="Ice_Arena_Present" parent="." instance=ExtResource("18_2sia6")]
+transform = Transform3D(2.82275, 0, -1.01592, 0, 3, 0, 1.01592, 0, 2.82275, 92.1779, -11.4512, -283.764)
