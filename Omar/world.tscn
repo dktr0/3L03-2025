@@ -554,10 +554,10 @@ transform = Transform3D(-3.0598e-07, 0, -7, 0, 6.03301, 0, 7, 0, -3.0598e-07, -9
 transform = Transform3D(-3.53907, 0, -6.03945, 0, 6.03301, 0, 6.03945, 0, -3.53907, -285.887, -13.8103, 339.308)
 
 [node name="Green_mountainnoice" parent="mountain" instance=ExtResource("9_qxx8k")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 1594.12, -152.252, -3224.66)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 1594.12, -64.0883, -3224.66)
 
 [node name="Green_mountainnoice2" parent="mountain" instance=ExtResource("9_qxx8k")]
-transform = Transform3D(1.50996e-06, 0, -20, 0, 20, 0, 20, 0, 1.50996e-06, 2290.96, -152.252, -199.239)
+transform = Transform3D(1.50996e-06, 0, -20, 0, 20, 0, 20, 0, 1.50996e-06, 2290.96, -64.0883, -199.239)
 
 [node name="Green_mountainnoice3" parent="mountain" instance=ExtResource("9_qxx8k")]
-transform = Transform3D(-26.9389, 0, 1.74846e-06, 0, 20, 0, -2.35508e-06, 0, -20, -2494.16, -152.252, 3249.16)
+transform = Transform3D(-26.9389, 0, 1.74846e-06, 0, 20, 0, -2.35508e-06, 0, -20, -2494.16, -59.3198, 3249.16)
