@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ca0h1g1v3xw7f"
+path.s3tc="res://.godot/imported/water_bucket_Circle Base Color.png-adf3f445e3ae87374f76b803c6eaeb90.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "32f41f95a5256689d1034a22e498ca2e"
+}
+
+[deps]
+
+source_file="res://Chiara/water_bucket_Circle Base Color.png"
+dest_files=["res://.godot/imported/water_bucket_Circle Base Color.png-adf3f445e3ae87374f76b803c6eaeb90.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
