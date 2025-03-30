@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dg4pp3s4vmcnd"
-path="res://.godot/imported/glacier_wall.glb-4861dff9a81798b5662501f9ba5fdd53.scn"
+path="res://.godot/imported/glacier_wall.glb-1ec28df79899f4b708c45b6de0cf38d0.scn"
 
 [deps]
 
-source_file="res://glacier_wall.glb"
-dest_files=["res://.godot/imported/glacier_wall.glb-4861dff9a81798b5662501f9ba5fdd53.scn"]
+source_file="res://Wilson/glacier_wall.glb"
+dest_files=["res://.godot/imported/glacier_wall.glb-1ec28df79899f4b708c45b6de0cf38d0.scn"]
 
 [params]
 

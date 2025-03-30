@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2ig84ibu73vb"]
+
+[ext_resource type="Texture2D" uid="uid://dj03bhja8v404" path="res://inventory overlay.png" id="1_vnqya"]
+
+[node name="Inventory" type="CanvasLayer"]
+
+[node name="InventoryBar" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -471.5
+offset_top = -147.0
+offset_right = 471.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_vnqya")

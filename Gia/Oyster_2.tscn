@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw0fearx0rplr"]
+
+[ext_resource type="PackedScene" uid="uid://cgthiurowcelo" path="res://Gia/oyster2.glb" id="1_5alrf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ovnhl"]
+radius = 0.890536
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.585228, 0)
+visible = false
+shape = SubResource("SphereShape3D_ovnhl")
+
+[node name="oyster2" parent="." instance=ExtResource("1_5alrf")]
