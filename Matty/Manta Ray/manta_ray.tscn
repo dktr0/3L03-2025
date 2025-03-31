@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvvcn5m53xl14"]
 
-[ext_resource type="PackedScene" uid="uid://cer5tfevshgrk" path="res://Matty/Manta Ray/mantaray.glb" id="1_do7jd"]
+[ext_resource type="PackedScene" uid="uid://dlbm40rr87gpg" path="res://Matty/Manta Ray/mantarayanimation.tscn" id="1_puu7m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vosoh"]
-size = Vector3(0.251785, 1.7984, 1.7184)
+size = Vector3(0.251785, 2.25434, 2.71516)
 
 [node name="Area3D" type="Area3D"]
 
-[node name="mantaray" parent="." instance=ExtResource("1_do7jd")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0, 0, 2, 0.463143, 0.566345, 0.0479376)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.0168186, 0.301202, -0.4544)
 shape = SubResource("BoxShape3D_vosoh")
+
+[node name="manta_ray" parent="." instance=ExtResource("1_puu7m")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
