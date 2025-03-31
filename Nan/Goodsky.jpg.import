@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfpl3v88xnekt"
-path.s3tc="res://.godot/imported/BeachTerrain_obsessio.png-dc8211df780282c1be2d1f6a09a1a320.s3tc.ctex"
+uid="uid://bxq5ocr2ykene"
+path.s3tc="res://.godot/imported/Goodsky.jpg-d9dab985da622d87b257a509c12bac1b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "13b8365b4a1febb51440c8d458fb27b0"
-}
 
 [deps]
 
-source_file="res://Haozhen(Isaac) Liang/BeachTerrain_obsessio.png"
-dest_files=["res://.godot/imported/BeachTerrain_obsessio.png-dc8211df780282c1be2d1f6a09a1a320.s3tc.ctex"]
+source_file="res://Nan/Goodsky.jpg"
+dest_files=["res://.godot/imported/Goodsky.jpg-d9dab985da622d87b257a509c12bac1b.s3tc.ctex"]
 
 [params]
 

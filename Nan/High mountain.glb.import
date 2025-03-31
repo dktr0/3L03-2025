@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://nm3nkas0vl4d"
-path="res://.godot/imported/bars.gltf-528e08599ffdcf49eac97f70336e572a.scn"
+uid="uid://bkib2oxlcxfb1"
+path="res://.godot/imported/High mountain.glb-bcfcc1b6aca332f3e7fd1dfd782962c1.scn"
 
 [deps]
 
-source_file="res://Ruth/bars.gltf"
-dest_files=["res://.godot/imported/bars.gltf-528e08599ffdcf49eac97f70336e572a.scn"]
+source_file="res://Nan/High mountain.glb"
+dest_files=["res://.godot/imported/High mountain.glb-bcfcc1b6aca332f3e7fd1dfd782962c1.scn"]
 
 [params]
 
