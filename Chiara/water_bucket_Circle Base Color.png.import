@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cej32um1882lu"
-path.s3tc="res://.godot/imported/Cliff-number-one1_BROWN.png-fa62e7d35d050aa72f356e48e7265ea2.s3tc.ctex"
+uid="uid://ca0h1g1v3xw7f"
+path.s3tc="res://.godot/imported/water_bucket_Circle Base Color.png-adf3f445e3ae87374f76b803c6eaeb90.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "15a2a0e7a49ebc56e60ad5dec7b8c1fe"
+"md5": "32f41f95a5256689d1034a22e498ca2e"
 }
 
 [deps]
 
-source_file="res://Andrew/Cliff-number-one1_BROWN.png"
-dest_files=["res://.godot/imported/Cliff-number-one1_BROWN.png-fa62e7d35d050aa72f356e48e7265ea2.s3tc.ctex"]
+source_file="res://Chiara/water_bucket_Circle Base Color.png"
+dest_files=["res://.godot/imported/water_bucket_Circle Base Color.png-adf3f445e3ae87374f76b803c6eaeb90.s3tc.ctex"]
 
 [params]
 

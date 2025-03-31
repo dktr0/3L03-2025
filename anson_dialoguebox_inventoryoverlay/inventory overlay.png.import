@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k6uhbwmjveyp"
-path="res://.godot/imported/compass2(1).png-62f104560485c42b43414b49b04620e3.ctex"
+uid="uid://dj03bhja8v404"
+path="res://.godot/imported/inventory overlay.png-6bd04c80a3eb1a896c85358f71653307.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ruth/compass2(1).png"
-dest_files=["res://.godot/imported/compass2(1).png-62f104560485c42b43414b49b04620e3.ctex"]
+source_file="res://inventory overlay.png"
+dest_files=["res://.godot/imported/inventory overlay.png-6bd04c80a3eb1a896c85358f71653307.ctex"]
 
 [params]
 

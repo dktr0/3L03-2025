@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dae575rpdepgb"
-path="res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"
+uid="uid://bbuncayiowro1"
+path="res://.godot/imported/water_bucket.glb-de9f204cedf91d72385cf6277b902a0a.scn"
 
 [deps]
 
-source_file="res://Wren/coastguardstation.glb"
-dest_files=["res://.godot/imported/coastguardstation.glb-6fd4a3eea2c712d2706f1b1cd1bea900.scn"]
+source_file="res://Chiara/water_bucket.glb"
+dest_files=["res://.godot/imported/water_bucket.glb-de9f204cedf91d72385cf6277b902a0a.scn"]
 
 [params]
 
