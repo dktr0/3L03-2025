@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://di5rdf7i1sj6r"]
 
-[ext_resource type="Texture2D" uid="uid://bq5eihyejmrgj" path="res://reference (9)_setting page.png" id="1_3ta1n"]
-[ext_resource type="FontFile" uid="uid://bniniiuyy70ll" path="res://HATTEN.TTF" id="2_drgmi"]
+[ext_resource type="Texture2D" uid="uid://bq5eihyejmrgj" path="res://Zhu/new-game-project/reference (9)_setting page.png" id="1_3ta1n"]
+[ext_resource type="FontFile" uid="uid://bniniiuyy70ll" path="res://Zhu/new-game-project/HATTEN.TTF" id="2_drgmi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0sbp"]
 

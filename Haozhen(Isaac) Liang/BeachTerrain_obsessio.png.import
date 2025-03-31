@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfpl3v88xnekt"
-path.s3tc="res://.godot/imported/BeachTerrain_obsessio.png-e3b9ef4529844178a7dc1cdc53967f3c.s3tc.ctex"
+path.s3tc="res://.godot/imported/BeachTerrain_obsessio.png-dc8211df780282c1be2d1f6a09a1a320.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://BeachTerrain_obsessio.png"
-dest_files=["res://.godot/imported/BeachTerrain_obsessio.png-e3b9ef4529844178a7dc1cdc53967f3c.s3tc.ctex"]
+source_file="res://Haozhen(Isaac) Liang/BeachTerrain_obsessio.png"
+dest_files=["res://.godot/imported/BeachTerrain_obsessio.png-dc8211df780282c1be2d1f6a09a1a320.s3tc.ctex"]
 
 [params]
 

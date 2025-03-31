@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx6jtdwd2satn"]
+
+[ext_resource type="PackedScene" uid="uid://daggh56yuy6g3" path="res://Nan/Bad Cloud.glb" id="1_l5wyt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_75i11"]
+size = Vector3(1, 0.120911, 0.898926)
+
+[node name="Bad Cloud" type="StaticBody3D"]
+
+[node name="Bad Cloud" parent="." instance=ExtResource("1_l5wyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.350407, 0, 0.965988)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(68.2705, 0, 0, 0, 68.2705, 0, 0, 0, 68.2705, 0, 12.802, -3.45019)
+shape = SubResource("BoxShape3D_75i11")
