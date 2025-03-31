@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dw8fde4ghx6qm"]
+[gd_scene load_steps=24 format=3 uid="uid://dw8fde4ghx6qm"]
 
 [ext_resource type="PackedScene" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
 [ext_resource type="PackedScene" uid="uid://c2lomx2fhrd4i" path="res://Chiara/rock_platform.tscn" id="4_b0u6j"]
@@ -26,16 +26,6 @@ albedo_color = Color(0.310617, 0.310617, 0.310617, 1)
 size = Vector3(1.00096, 0.990234, 2.72393)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wkr7r"]
-
-[sub_resource type="Sky" id="Sky_6myrh"]
-
-[sub_resource type="Environment" id="Environment_fbq1c"]
-background_mode = 1
-background_color = Color(0.53779, 0.495609, 0.432248, 1)
-background_energy_multiplier = 0.75
-sky = SubResource("Sky_6myrh")
-ambient_light_source = 3
-ambient_light_color = Color(0.821751, 0.798216, 0.847238, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhcm1"]
 size = Vector3(12.8075, 3.79721, 5.83105)
@@ -123,9 +113,6 @@ transform = Transform3D(0.577905, 0, 0, 0, 0.5, 0, 0, 0, 0.384867, 270.035, -17.
 transform = Transform3D(-2.18557e-08, 0, -0.305556, 0, 0.5, 0, 0.5, 0, -1.33563e-08, 239.238, -19.1431, -94.1072)
 
 [node name="Lights" type="Node" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Lights"]
-environment = SubResource("Environment_fbq1c")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 77.2292, -16.2793)
