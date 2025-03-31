@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://qucvw7swurot"]
 
-[ext_resource type="PackedScene" uid="uid://d3r1j3pk2xwvh" path="res://Rongyu Liu/Green_mountain.glb" id="1_kitdf"]
+[ext_resource type="PackedScene" uid="uid://d3r1j3pk2xwvh" path="res://Rongyu Liu/Mountain/Green_mountain.glb" id="1_kitdf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_liv3j"]
 size = Vector3(0.370155, 0.236587, 0.84306)

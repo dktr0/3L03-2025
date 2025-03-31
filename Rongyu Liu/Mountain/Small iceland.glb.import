@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3r1j3pk2xwvh"
-path="res://.godot/imported/Green_mountain.glb-f9e5c99ac8fcbd60af1539f25a34c5b3.scn"
+uid="uid://bofodt0ugejj5"
+path="res://.godot/imported/Small iceland.glb-4fd185f0560f903907328b014c2d7018.scn"
 
 [deps]
 
-source_file="res://Rongyu Liu/Green_mountain.glb"
-dest_files=["res://.godot/imported/Green_mountain.glb-f9e5c99ac8fcbd60af1539f25a34c5b3.scn"]
+source_file="res://Rongyu Liu/Mountain/Small iceland.glb"
+dest_files=["res://.godot/imported/Small iceland.glb-4fd185f0560f903907328b014c2d7018.scn"]
 
 [params]
 
