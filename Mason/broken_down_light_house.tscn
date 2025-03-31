@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr5llopximudo"]
+
+[ext_resource type="PackedScene" uid="uid://b1k2j8kjwglsq" path="res://Mason/Broken_down_light_house.glb" id="1_yei44"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7btu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_oqopu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ucuxy"]
+
+[node name="Broken_down_light_house" type="StaticBody3D"]
+
+[node name="Broken_down_light_house" parent="." instance=ExtResource("1_yei44")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, 7.38, 2.74781, 0)
+shape = SubResource("BoxShape3D_x7btu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 6.2026, 0)
+shape = SubResource("CylinderShape3D_oqopu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.99895, -4.29337)
+shape = SubResource("BoxShape3D_ucuxy")

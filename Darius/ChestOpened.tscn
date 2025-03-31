@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://btl1ap6tswitv"]
+
+[ext_resource type="PackedScene" uid="uid://dnbxr8ajtc0vc" path="res://Darius/ChestOpened.glb" id="1_xqph4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wsdd1"]
+size = Vector3(0.897217, 0.722832, 0.606567)
+
+[node name="ChestOpened" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00305176, 0.359303, 0.0493774)
+shape = SubResource("BoxShape3D_wsdd1")
+
+[node name="Node3D" parent="StaticBody3D" instance=ExtResource("1_xqph4")]
+transform = Transform3D(0.171703, 0, 0, 0, 0.171703, 0, 0, 0, 0.171703, 0, 0, 0)
