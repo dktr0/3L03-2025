@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7h4k0gic4a3n"
-path="res://.godot/imported/Mon.glb-8c734eec563f457ee1987efa3cc340ca.scn"
+uid="uid://nm3nkas0vl4d"
+path="res://.godot/imported/bars.gltf-528e08599ffdcf49eac97f70336e572a.scn"
 
 [deps]
 
-source_file="res://Nan/Mon.glb"
-dest_files=["res://.godot/imported/Mon.glb-8c734eec563f457ee1987efa3cc340ca.scn"]
+source_file="res://Ruth/bars.gltf"
+dest_files=["res://.godot/imported/bars.gltf-528e08599ffdcf49eac97f70336e572a.scn"]
 
 [params]
 

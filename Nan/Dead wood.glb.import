@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgthiurowcelo"
-path="res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"
+uid="uid://d23nvm8m4i5k5"
+path="res://.godot/imported/Dead wood.glb-6ed071cfdd83c4f7b5580e8b6a5d0e8f.scn"
 
 [deps]
 
-source_file="res://Gia/oyster2.glb"
-dest_files=["res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"]
+source_file="res://Nan/Dead wood.glb"
+dest_files=["res://.godot/imported/Dead wood.glb-6ed071cfdd83c4f7b5580e8b6a5d0e8f.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cgthiurowcelo"
-path="res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"
+uid="uid://daggh56yuy6g3"
+path="res://.godot/imported/Bad Cloud.glb-2a950535b2e3dc9d95de014e2cf7bc2b.scn"
 
 [deps]
 
-source_file="res://Gia/oyster2.glb"
-dest_files=["res://.godot/imported/oyster2.glb-0db8b5a3b8586ffce5a854ccc03a6af6.scn"]
+source_file="res://Nan/Bad Cloud.glb"
+dest_files=["res://.godot/imported/Bad Cloud.glb-2a950535b2e3dc9d95de014e2cf7bc2b.scn"]
 
 [params]
 

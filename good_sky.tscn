@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwunh13guxrji"]
+
+[ext_resource type="Texture2D" uid="uid://bxq5ocr2ykene" path="res://Nan/Goodsky.jpg" id="1_kp06t"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xbsyh"]
+panorama = ExtResource("1_kp06t")
+
+[sub_resource type="Sky" id="Sky_njy5p"]
+sky_material = SubResource("PanoramaSkyMaterial_xbsyh")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_sqk52"]
+background_mode = 2
+sky = SubResource("Sky_njy5p")
+sky_custom_fov = 126.6
+
+[node name="Good sky" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sqk52")
