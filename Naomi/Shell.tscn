@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://devktc7pfnl5r"]
+
+[ext_resource type="PackedScene" uid="uid://co60itailrugy" path="res://Naomi/Shell.glb" id="1_4ye5x"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xwcun"]
+
+[node name="Shell" type="StaticBody3D"]
+
+[node name="Shell" parent="." instance=ExtResource("1_4ye5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00294685, 0.523553, -0.0362313)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shell"]
+transform = Transform3D(3.54552, 0, 0, 0, 2.33626, 0, 0, 0, 2.82094, 0.081593, 0.462359, 0)
+shape = SubResource("SphereShape3D_xwcun")

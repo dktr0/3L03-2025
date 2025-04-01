@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://w6yst81o2dve"]
+
+[ext_resource type="PackedScene" uid="uid://bbuncayiowro1" path="res://Chiara/water_bucket.glb" id="1_u7lp5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_42wcu"]
+radius = 0.645577
+height = 1.529
+
+[node name="water_bucket" type="Area3D"]
+
+[node name="water_bucket" parent="." instance=ExtResource("1_u7lp5")]
+transform = Transform3D(0.495558, 0, 0, 0, 0.495558, 0, 0, 0, 0.495558, 0.831827, 0.0836279, 0.924572)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999974, -0.00727796, 0, 0.00727651, 0.999774, 0.0199652, -0.000145306, -0.0199647, 0.999801, 0.833005, 0.637356, 0.931885)
+shape = SubResource("CapsuleShape3D_42wcu")

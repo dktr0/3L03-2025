@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwfbfb754fbg7"]
+
+[ext_resource type="PackedScene" uid="uid://ec07vgldpavi" path="res://Rongyu Liu/Soil/Soil.glb" id="1_levga"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rth8a"]
+size = Vector3(1.05774, 0.0313721, 1.05481)
+
+[node name="Soil" type="StaticBody3D"]
+
+[node name="Soil" parent="." instance=ExtResource("1_levga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000647306, -1.19209e-07, -0.0688944)
+
+[node name="Soil2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.91729, 0, 0, 0, 1.91729, 0, 0, 0, 1.91729, -0.000753243, 0.0237392, -0.0717347)
+shape = SubResource("BoxShape3D_rth8a")

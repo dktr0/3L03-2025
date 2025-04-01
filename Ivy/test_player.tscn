@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://vi1tkufch6vp"]
+
+[ext_resource type="Script" path="res://Ivy/test_player.gd" id="1_ycadh"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ynpky"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bltkc"]
+albedo_color = Color(1, 0.74902, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5kn8e"]
+
+[node name="TestPlayer" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_ycadh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_ynpky")
+surface_material_override/0 = SubResource("StandardMaterial3D_bltkc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_5kn8e")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965691, 0.259696, 0, -0.259696, 0.965691, 0, 2.73875, 6.28992)

@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://cguq43dg6fpog"]
+
+[ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="2_u0bwf"]
+[ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="4_1n8n2"]
+[ext_resource type="PackedScene" uid="uid://icjd630qdk6d" path="res://Darius/ChestClosed.tscn" id="6_m8mpi"]
+[ext_resource type="PackedScene" uid="uid://31k1eq7dvbqa" path="res://Riley/DeadTree.tscn" id="9_eqirc"]
+[ext_resource type="PackedScene" uid="uid://bnesfoix585wh" path="res://Riley/DeadBulrush.tscn" id="10_7d6id"]
+[ext_resource type="PackedScene" uid="uid://spmbye82jg58" path="res://Riley/DeadGrass.tscn" id="11_t7toi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4gt67"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u452d"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="PlatformingGame" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.241034, -0.579982, 0.778154, 2.69098e-05, 0.801798, 0.597596, -0.970517, -0.14402, 0.193276, 10.1401, 20.7611, 0)
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.748592, -0.0223792, -0.662654, -0.64705, 0.242764, 0.722766, 0.144694, 0.969827, -0.196212, -10.5396, 20.7611, -14.0717)
+
+[node name="Greybox" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Greybox"]
+transform = Transform3D(17.6978, 0, 0, 0, 0.58518, 0, 0, 0, 26.4631, 0, 0, 6.08056)
+mesh = SubResource("BoxMesh_4gt67")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Greybox/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Greybox/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_u452d")
+
+[node name="TreeLog" parent="." instance=ExtResource("2_u0bwf")]
+transform = Transform3D(-0.0643425, -0.049939, -1.49751, -0.463181, 1.42613, -0.0276576, 1.42495, 0.46131, -0.0766089, -3.16958, 3.56956, 10.8678)
+
+[node name="TreeLog3" parent="." instance=ExtResource("2_u0bwf")]
+transform = Transform3D(0.282469, 0.0839758, 0.955594, -0.0614048, -0.992535, 0.105373, 0.957309, -0.0884426, -0.275203, 2.81048, 0.724848, 11.9341)
+
+[node name="TreeLog2" parent="." instance=ExtResource("2_u0bwf")]
+transform = Transform3D(-7.65209e-08, -1.7506, 1.77014, 2.48957, -1.08823e-07, 0, 7.73751e-08, 1.77014, 1.7506, -1.58239, 4.45612, -0.455069)
+
+[node name="TreeLog4" parent="." instance=ExtResource("2_u0bwf")]
+transform = Transform3D(-1.90284e-07, -4.35319, -1.77261, 4.70025, -2.05455e-07, 0, -7.74829e-08, -1.7726, 4.35319, 6.38098, 8.10545, -5.82522)
+
+[node name="WaterRock" parent="." instance=ExtResource("4_1n8n2")]
+transform = Transform3D(0.316447, 0, -0.31326, 0, 0.445276, 0, 0.31326, 0, 0.316447, -3.50367, 0.991506, 14.1125)
+
+[node name="WaterRock4" parent="." instance=ExtResource("4_1n8n2")]
+transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, -4.10563, 1.23267, 6.13638)
+
+[node name="WaterRock5" parent="." instance=ExtResource("4_1n8n2")]
+transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, -2.78442, 1.23267, 6.22658)
+
+[node name="WaterRock6" parent="." instance=ExtResource("4_1n8n2")]
+transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, -1.44051, 1.23267, 6.32592)
+
+[node name="WaterRock7" parent="." instance=ExtResource("4_1n8n2")]
+transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, -0.0537552, 1.23267, 6.41442)
+
+[node name="WaterRock8" parent="." instance=ExtResource("4_1n8n2")]
+transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, 1.23573, 1.23267, 6.51126)
+
+[node name="WaterRock2" parent="." instance=ExtResource("4_1n8n2")]
+transform = Transform3D(-0.102292, 0, 0.107963, 0, 0.148726, 0, -0.107963, 0, -0.102292, 3.53392, 0.507164, 14.6985)
+
+[node name="WaterRock3" parent="." instance=ExtResource("4_1n8n2")]
+transform = Transform3D(0.0596069, -0.123067, -0.0584897, 0.0878407, 0.0835105, -0.0861944, 0.104166, -5.65223e-09, 0.106155, -4.17188, 0.4021, 15.9724)
+
+[node name="DeadTree" parent="." instance=ExtResource("9_eqirc")]
+transform = Transform3D(0.409521, 0, 0.717995, 0, 0.826574, 0, -0.717995, 0, 0.409521, 6.18704, 0.184548, 12.1612)
+
+[node name="DeadTree2" parent="." instance=ExtResource("9_eqirc")]
+transform = Transform3D(0.449391, 0, -0.163938, 0, 0.478359, 0, 0.163938, 0, 0.449391, 5.17459, 0.234969, 15.277)
+
+[node name="DeadTree5" parent="." instance=ExtResource("9_eqirc")]
+transform = Transform3D(0.337833, 0, -0.23323, 0, 0.410521, 0, 0.23323, 0, 0.337833, 7.51118, 0.234969, 14.6782)
+
+[node name="DeadTree4" parent="." instance=ExtResource("9_eqirc")]
+transform = Transform3D(-0.218313, 0, 0.477124, 0, 0.524698, 0, -0.477124, 0, -0.218313, -6.77652, 0.234969, 14.8898)
+
+[node name="DeadTree3" parent="." instance=ExtResource("9_eqirc")]
+transform = Transform3D(0.672749, 0, -0.914531, 0, 1.13532, 0, 0.914531, 0, 0.672749, 3.86955, 0.234969, 7.80749)
+
+[node name="DeadBulrush" parent="." instance=ExtResource("10_7d6id")]
+transform = Transform3D(0.57623, 0, 0, 0, 0.57623, 0, 0, 0, 0.57623, -6.25215, 0.296152, 15.9032)
+
+[node name="DeadGrass" parent="." instance=ExtResource("11_t7toi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03329, 0.289268, 15.7057)
+
+[node name="DeadGrass2" parent="." instance=ExtResource("11_t7toi")]
+transform = Transform3D(0.0476907, 0, -0.546095, 0, 0.548174, 0, 0.546095, 0, 0.0476907, 4.48116, 0.210138, 16.3111)
+
+[node name="ChestClosed" parent="." instance=ExtResource("6_m8mpi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.62215, 16.4819, -2.63095)

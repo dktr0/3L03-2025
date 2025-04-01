@@ -1,0 +1,329 @@
+[gd_scene load_steps=12 format=3 uid="uid://7xm62lefk2vo"]
+
+[ext_resource type="Script" path="res://Andy/Sword enemy/sword_enemy.gd" id="1_rget3"]
+
+[sub_resource type="Animation" id="Animation_xpvmq"]
+resource_name = "Patrol"
+length = 3.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.26667, 1.66667, 2, 2.86667, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 10.0169), Vector3(-0.00452331, 0, 10.0124), Vector3(5.87544e-05, 0, 10.0078), Vector3(5.87544e-05, 0, 0.0657008), Vector3(2.35512e-05, 0, 0.0616365)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.66667, 2, 2.86667, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5701, 0), Vector3(0, 3.12856, 0), Vector3(0, 3.12856, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.26667, 1.66667, 2, 2.86667, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-5.96046e-08, 5.96046e-08, 7.45058e-09), Vector3(-5.96046e-08, 5.96046e-08, 10.0078), Vector3(0.00452229, 5.96046e-08, 10.0123), Vector3(-5.97677e-05, 5.96046e-08, 10.0169), Vector3(0, 0, 0.0616367), Vector3(3.52031e-05, 0, 0.065701)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape3D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.66667, 2, 2.86667, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.76951e-08, -7.45058e-09, 0), Vector3(1.76951e-08, -1.5701, -1.32349e-23), Vector3(1.76951e-08, 3.12856, 8.67348e-19), Vector3(1.76951e-08, 3.12856, 8.67348e-19), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sword/Sword:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.26667, 1.66667, 2, 2.86667, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0261799, 0.0226893, -0.00349066), Vector3(0.0261799, 0.0226893, -0.00349066), Vector3(0.715553, -1.08519, -0.464765), Vector3(0.0208009, -3.02741, -1.40403), Vector3(0.0208009, -3.02741, -1.40403), Vector3(0.0215014, 0.160701, 0.0241979)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sword/Sword:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.26667, 1.66667, 2, 2.86667, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1851.98, 1621.43, -269.948), Vector3(1992.55, 1731.82, -183.875), Vector3(1970.75, 1667.28, 21.2599), Vector3(110.881, 40.4968, 279.272), Vector3(5.2825, -15.9681, -7.62965)]
+}
+
+[sub_resource type="Animation" id="Animation_lg5n5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.96046e-08, 5.96046e-08, 7.45058e-09)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.76951e-08, -7.45058e-09, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword/Sword:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8e6x4"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword/Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-51.717, 60.2648, 7.1745), Vector3(-27.5668, 32.1231, 3.82425), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword/Sword:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.633333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0261187, 0.0227693, -0.00332094), Vector3(0.137298, 0.125532, 1.48106), Vector3(-0.0879825, 0.0315927, -0.689122), Vector3(0.0261799, 0.0226893, -0.00349066)]
+}
+
+[sub_resource type="Animation" id="Animation_v1ugd"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword/Sword:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667, 1.7, 1.93333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0261799, 0.0226893, -0.00349066), Vector3(-0.537091, -1.3873, 0.0506321), Vector3(0.447359, 1.1279, 0.0377295), Vector3(0.693472, 1.75669, 0.0345038), Vector3(0.0261799, 0.0226892, -0.00349066)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword/Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.766667, 1.93333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-40.4912, -16.8894, 5.61725), Vector3(-77.5086, 33.4265, -51.7043), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.96046e-08, 5.96046e-08, 7.45058e-09)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape3D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.76951e-08, -7.45058e-09, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_buhhn"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.151512, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.475967, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-5.96046e-08, 5.96046e-08, 7.45058e-09), Vector3(-5.96046e-08, 0.463561, 7.45058e-09), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape3D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.76951e-08, -7.45058e-09, 0), Vector3(0.151844, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sword/Sword:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0261799, 0.0226893, -0.00349066), Vector3(0.0261799, 0.0226893, -0.00349067), Vector3(0.0261799, 0.0226893, -0.00349066)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sword/Sword:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-97.2145, 113.282, 13.4862), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8r2ww"]
+_data = {
+"Patrol": SubResource("Animation_xpvmq"),
+"RESET": SubResource("Animation_lg5n5"),
+"attack": SubResource("Animation_8e6x4"),
+"idle": SubResource("Animation_v1ugd"),
+"walk": SubResource("Animation_buhhn")
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ph6pi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uoiei"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1s1ut"]
+size = Vector3(69.8, 330.195, 30.87)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_05rpa"]
+
+[node name="SwordEnemy" type="CharacterBody3D" groups=["Enemy"]]
+script = ExtResource("1_rget3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8r2ww")
+}
+autoplay = "Patrol"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.953533, 0, 0.301291, 0, 1, 0, -0.301291, 0, 0.953533, 2.69949e-05, 0, 0.0620341)
+mesh = SubResource("CapsuleMesh_ph6pi")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, -1.31839e-16, -7.45058e-09, 0, 1, -1.76951e-08, 7.45058e-09, 1.76951e-08, 1, -5.96046e-08, 5.96046e-08, 7.45058e-09)
+shape = SubResource("CapsuleShape3D_uoiei")
+
+[node name="Sword" type="Node3D" parent="."]
+transform = Transform3D(-0.00054964, -3.27611e-11, -0.00396206, -0.00259438, 0.00302318, 0.000359908, 0.00299451, 0.00261923, -0.000415416, 0.568157, -0.301948, -0.0646057)
+
+[node name="Sword" type="MeshInstance3D" parent="Sword"]
+transform = Transform3D(0.40602, -0.908091, 0.102602, 0.911747, 0.394868, -0.113165, 0.0622494, 0.139494, 0.988268, 0, 0, 0)
+
+[node name="SwordArea" type="Area3D" parent="Sword/Sword"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sword/Sword/SwordArea"]
+transform = Transform3D(1, -1.78814e-07, 2.68221e-07, -4.47035e-07, 1, 2.5332e-07, -2.83122e-07, 1.49012e-08, 1, 11.0303, 272.283, -4.92326)
+shape = SubResource("BoxShape3D_1s1ut")
+
+[node name="AttackArea" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.098536, 0.850158)
+shape = SubResource("BoxShape3D_05rpa")

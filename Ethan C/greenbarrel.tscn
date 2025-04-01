@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv1eb3hpcnx0j"]
+
+[ext_resource type="PackedScene" uid="uid://gg5r78p62xaw" path="res://Ethan C/greenbarrel.glb" id="1_i7wl3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i56yg"]
+size = Vector3(1.1521, 1.6015, 1.11182)
+
+[node name="Area3D" type="Area3D"]
+
+[node name="greenbarrel" parent="." instance=ExtResource("1_i7wl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.131165, 0, 0.0308304)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134399, 0.787018, 0.0559082)
+shape = SubResource("BoxShape3D_i56yg")

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2a5bjsxw63wr"]
+
+[ext_resource type="Script" path="res://water_plane/water_plane.gd" id="1_ltm8k"]
+[ext_resource type="Shader" path="res://water_plane/water_shader.gdshader" id="1_rujqj"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_gbeoi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qy6ln"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_rujqj")
+shader_parameter/albedo = Color(5.19812e-06, 0.748295, 0.942472, 1)
+shader_parameter/metalic = 1.0
+shader_parameter/roughness = 0.0
+shader_parameter/effect_texture_size = null
+shader_parameter/effect_texture = SubResource("Texture2DRD_gbeoi")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wl5mm"]
+size = Vector2(5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gvcbg"]
+size = Vector3(5, 0.01, 5)
+
+[node name="WaterPlane" type="Node3D"]
+transform = Transform3D(121.875, 0, 0, 0, 121.875, 0, 0, 0, 121.875, 0, 0, 0)
+script = ExtResource("1_ltm8k")
+damp = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_qy6ln")
+mesh = SubResource("PlaneMesh_wl5mm")
+skeleton = NodePath("../..")
+
+[node name="WaveArea" type="Area3D" parent="."]
+
+[node name="WaveArea" type="CollisionShape3D" parent="WaveArea"]
+shape = SubResource("BoxShape3D_gvcbg")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmvsesuv1ccn1"
+path="res://.godot/imported/woodfootstep4(sharp).mp3-1a4551f773a9af46a12ac5ef1764db82.mp3str"
+
+[deps]
+
+source_file="res://Tram/sound effects/woodfootstep4(sharp).mp3"
+dest_files=["res://.godot/imported/woodfootstep4(sharp).mp3-1a4551f773a9af46a12ac5ef1764db82.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

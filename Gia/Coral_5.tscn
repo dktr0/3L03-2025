@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv682s4cyicvs"]
+
+[ext_resource type="PackedScene" uid="uid://b02m7q5kbojuj" path="res://Gia/coral5.glb" id="1_7o04l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h82ww"]
+size = Vector3(8.97437, 8.70432, 5.30127)
+
+[node name="Coral_5" type="StaticBody3D"]
+
+[node name="coral5" parent="." instance=ExtResource("1_7o04l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.312134, 3.85216, -0.122314)
+visible = false
+shape = SubResource("BoxShape3D_h82ww")

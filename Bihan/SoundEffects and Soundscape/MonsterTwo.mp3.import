@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjlmbv0onu1ny"
+path="res://.godot/imported/MonsterTwo.mp3-b5db4dd84d1cb5d3fcb8144bc56b97bf.mp3str"
+
+[deps]
+
+source_file="res://Bihan/SoundEffects and Soundscape/MonsterTwo.mp3"
+dest_files=["res://.godot/imported/MonsterTwo.mp3-b5db4dd84d1cb5d3fcb8144bc56b97bf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlbm40rr87gpg"]
+
+[ext_resource type="PackedScene" uid="uid://cer5tfevshgrk" path="res://Matty/Manta Ray/mantaray.glb" id="1_sm3bn"]
+[ext_resource type="Script" path="res://animation_autoplay.gd" id="2_5cji4"]
+
+[node name="mantaray" instance=ExtResource("1_sm3bn")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/4/rotation = Quaternion(-0.0266825, 0.000295601, -0.00348603, 0.999638)
+bones/5/rotation = Quaternion(-0.00517, -0.00110211, 0.00779727, 0.999956)
+bones/9/position = Vector3(0.971113, 0.196265, 0.149328)
+bones/10/rotation = Quaternion(0.113803, -0.0184447, 0.11836, 0.986255)
+bones/11/rotation = Quaternion(0.00528689, 0.0414705, 0.41764, 0.90765)
+bones/12/rotation = Quaternion(0.0218216, -0.124819, 0.229824, 0.964948)
+bones/13/rotation = Quaternion(-0.0101231, 0.300023, -0.0377389, 0.953131)
+bones/14/rotation = Quaternion(-0.169512, -0.0199028, -0.160968, 0.97209)
+bones/15/rotation = Quaternion(0.663036, 0.359963, 0.606359, -0.251274)
+bones/20/position = Vector3(-0.971113, 0.196265, 0.149328)
+bones/21/rotation = Quaternion(0.113803, 0.0184447, -0.11836, 0.986255)
+bones/22/rotation = Quaternion(0.00528689, -0.0414705, -0.41764, 0.90765)
+bones/23/rotation = Quaternion(0.0218216, 0.124819, -0.229824, 0.964948)
+bones/24/rotation = Quaternion(-0.0101231, -0.300023, 0.0377389, 0.953131)
+bones/25/rotation = Quaternion(-0.169512, 0.0199028, 0.160968, 0.97209)
+bones/26/rotation = Quaternion(0.663036, -0.359963, -0.606359, -0.251274)
+
+[node name="AnimationPlayer" parent="." index="1"]
+script = ExtResource("2_5cji4")

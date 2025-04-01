@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnesfoix585wh"]
+
+[ext_resource type="PackedScene" uid="uid://c7dhid4op2anq" path="res://Riley/GLBflies/DeadBulrush.glb" id="1_406fu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xej6k"]
+radius = 0.75
+height = 1.5
+
+[node name="DeadBulrush" type="StaticBody3D"]
+
+[node name="DeadBulrush" parent="." instance=ExtResource("1_406fu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843545, 0)
+shape = SubResource("CapsuleShape3D_xej6k")

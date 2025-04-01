@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://5kebg2i472px"]
+
+[ext_resource type="PackedScene" uid="uid://c7r3ao0ckr0dm" path="res://Andrew/cliff-number-three1.glb" id="1_fttv3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gb3ye"]
+
+[node name="cliff-number-three1" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 1.08678, 0.068048)
+shape = SubResource("BoxShape3D_gb3ye")
+
+[node name="cliff-number-three1" parent="." instance=ExtResource("1_fttv3")]

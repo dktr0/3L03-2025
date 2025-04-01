@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbgrkkkwp2ukl"]
+
+[ext_resource type="PackedScene" uid="uid://dosemi7q3pto8" path="res://Ethan C/Blue Tent.glb" id="1_34dog"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3lx0d"]
+size = Vector3(0.366882, 0.352264, 0.295258)
+
+[node name="Area3D" type="Area3D"]
+
+[node name="Blue Tent" parent="." instance=ExtResource("1_34dog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0245705, 0, 0.0446197)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.96074, 0, 0, 0, 0.96074, 0, 0, 0, 0.96074, 0.0226781, 0.159982, 0.0426829)
+shape = SubResource("BoxShape3D_3lx0d")

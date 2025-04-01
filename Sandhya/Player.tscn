@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3r0rm08l6cp5"]
+
+[ext_resource type="Script" path="res://Sandhya/player.gd" id="1_rp5lc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x2ive"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uis5h"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_neape"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2764x"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_rp5lc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 5.15578, 0)
+mesh = SubResource("BoxMesh_x2ive")
+surface_material_override/0 = SubResource("StandardMaterial3D_uis5h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 5.156, 0)
+shape = SubResource("BoxShape3D_neape")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(9.1, 0, 0, 0, 9.1, 0, 0, 0, 9.1, 0, 5.156, 0)
+shape = SubResource("BoxShape3D_2764x")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.65187, -4.94258)
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceuver5421605"]
+
+[ext_resource type="PackedScene" uid="uid://bmj13p1kekhwv" path="res://Matty/Starfish_matty/starfish.glb" id="1_mol62"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xyr68"]
+size = Vector3(1, 1, 0.194611)
+
+[node name="Area3D" type="Area3D"]
+
+[node name="starfish" parent="." instance=ExtResource("1_mol62")]
+transform = Transform3D(0.0328015, -0.072961, 0.000872328, 0, 0.000956419, 0.0799943, -0.0729662, -0.0327991, 0.00039215, 0.115162, 0, 0.0703796)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.065603, -0.145922, 0.00174467, -3.49869e-11, 0.00191287, 0.159989, -0.145932, -0.0655983, 0.000784304, -0.0118292, 0.00994387, 0.0101247)
+shape = SubResource("BoxShape3D_xyr68")

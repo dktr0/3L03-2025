@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwevg5ffeyeu5"]
+
+[ext_resource type="PackedScene" uid="uid://df3pt4lnxneh2" path="res://Mason/Present_Light_House.glb" id="1_04s5g"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fp45y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_26t0r"]
+
+[node name="Present_light_house" type="StaticBody3D"]
+
+[node name="Present_light_house" parent="." instance=ExtResource("1_04s5g")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 8.1493, 0.0941544)
+shape = SubResource("CylinderShape3D_fp45y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.68987, -4.44587)
+shape = SubResource("BoxShape3D_26t0r")
