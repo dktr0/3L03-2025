@@ -1,7 +1,7 @@
 [gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://snlp8xd5hv2n"]
 
-[ext_resource type="Texture2D" uid="uid://yefl5c3gv3kb" path="res://Andy/texture/2d3_DeadTreeLeaf Base Color.png" id="1_2w87p"]
-[ext_resource type="Texture2D" uid="uid://003vttgp0swj" path="res://Andy/texture/2d3_DeadTreeTrunk Base Color.png" id="2_aq56f"]
+[ext_resource type="Texture2D" uid="uid://yefl5c3gv3kb" path="res://Omar/texture/2d3_DeadTreeLeaf Base Color.png" id="1_2w87p"]
+[ext_resource type="Texture2D" uid="uid://cruxtujc3aco0" path="res://Omar/texture/2d3_DeadTreeTrunk Base Color.png" id="2_aq56f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0bgj"]
 resource_name = "DeadTreeLeaf"
