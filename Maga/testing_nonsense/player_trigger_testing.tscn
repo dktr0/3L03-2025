@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://csq0sskel77yq"]
+
+[ext_resource type="PackedScene" uid="uid://btj6i7h1cco8a" path="res://Maga/player_controller/scenes/player_trigger.tscn" id="1_dqri5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ba5l6"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_sehu0"]
+sky_material = SubResource("ProceduralSkyMaterial_ba5l6")
+
+[sub_resource type="Environment" id="Environment_p8ksm"]
+background_mode = 2
+sky = SubResource("Sky_sehu0")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rh5yd"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_coppl"]
+size = Vector3(20, 1, 20)
+
+[node name="PlayerTesting" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_p8ksm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("BoxShape3D_rh5yd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_coppl")
+
+[node name="PlayerTrigger" parent="." instance=ExtResource("1_dqri5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39606, 0.5, 2.7557)
