@@ -1,12 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://dw8fde4ghx6qm"]
+[gd_scene load_steps=18 format=3 uid="uid://dw8fde4ghx6qm"]
 
-[ext_resource type="PackedScene" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
+[ext_resource type="PackedScene" uid="uid://dv4mqi5ll4dx7" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
 [ext_resource type="PackedScene" uid="uid://c2lomx2fhrd4i" path="res://Chiara/rock_platform.tscn" id="4_b0u6j"]
 [ext_resource type="PackedScene" uid="uid://dffctwdfacdjg" path="res://Chiara/surrounding_rocks.tscn" id="5_ek8y3"]
+[ext_resource type="PackedScene" uid="uid://15so6a73xnba" path="res://Rongyu Liu/beach_onepiece.tscn" id="5_qhjos"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="6_1rjgs"]
-[ext_resource type="PackedScene" uid="uid://cxuv0tja5rb2q" path="res://Rongyu Liu/Beach_onepiece.glb" id="6_3jdxe"]
-[ext_resource type="PackedScene" path="res://Rongyu Liu/Highmountain.tscn" id="8_tuxek"]
-[ext_resource type="PackedScene" uid="uid://cmckqn74iwe3i" path="res://Rongyu Liu/Green_mountainnoice.tscn" id="9_qxx8k"]
+[ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Mountain/Highmountain.tscn" id="8_tuxek"]
+[ext_resource type="PackedScene" uid="uid://cmckqn74iwe3i" path="res://Rongyu Liu/Mountain/Green_mountainnoice.tscn" id="9_qxx8k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bx7su"]
 
@@ -27,16 +27,6 @@ size = Vector3(1.00096, 0.990234, 2.72393)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wkr7r"]
 
-[sub_resource type="Sky" id="Sky_6myrh"]
-
-[sub_resource type="Environment" id="Environment_fbq1c"]
-background_mode = 1
-background_color = Color(0.53779, 0.495609, 0.432248, 1)
-background_energy_multiplier = 0.75
-sky = SubResource("Sky_6myrh")
-ambient_light_source = 3
-ambient_light_color = Color(0.821751, 0.798216, 0.847238, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhcm1"]
 size = Vector3(12.8075, 3.79721, 5.83105)
 
@@ -44,22 +34,6 @@ size = Vector3(12.8075, 3.79721, 5.83105)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4bsy1"]
 size = Vector3(1, 0.98053, 0.975727)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xtakq"]
-size = Vector3(1.09692, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_j18po"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sr5ei"]
-albedo_color = Color(1, 0.901961, 0.686275, 0.286275)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ai5b5"]
-size = Vector3(0.999878, 0.994629, 1.04371)
-
-[sub_resource type="BoxMesh" id="BoxMesh_nlcfa"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7oms"]
-albedo_color = Color(0.694118, 0.533333, 0.301961, 1)
 
 [node name="World" type="Node3D"]
 
@@ -123,9 +97,6 @@ transform = Transform3D(0.577905, 0, 0, 0, 0.5, 0, 0, 0, 0.384867, 270.035, -17.
 transform = Transform3D(-2.18557e-08, 0, -0.305556, 0, 0.5, 0, 0.5, 0, -1.33563e-08, 239.238, -19.1431, -94.1072)
 
 [node name="Lights" type="Node" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Lights"]
-environment = SubResource("Environment_fbq1c")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 77.2292, -16.2793)
@@ -444,94 +415,80 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2765, 3.01762, 0)
 
 [node name="Beach" type="Node" parent="."]
 
-[node name="BeachSand" type="StaticBody3D" parent="Beach"]
-transform = Transform3D(0.474265, 0, 0, 0, 1, 0, 0, 0, 0.653278, 160.475, -8.75932, 29.7929)
+[node name="Beach_onepiece23" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 95.4382, -7.67388, 96.9936)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Beach/BeachSand"]
-transform = Transform3D(600, 0, 0, 0, 1, 0, 0, 0, 200, -28.784, 0, 87.9887)
-shape = SubResource("BoxShape3D_xtakq")
+[node name="Beach_onepiece42" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 23.9209, 95.4382, -7.67388, 41.3094)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Beach/BeachSand"]
-transform = Transform3D(600, 0, 0, 0, 1, 0, 0, 0, 200, 0, 0, 86.9189)
-mesh = SubResource("BoxMesh_j18po")
-surface_material_override/0 = SubResource("StandardMaterial3D_sr5ei")
+[node name="Beach_onepiece43" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 23.9209, 159.308, -7.67388, 41.083)
 
-[node name="BeachSandLeft" type="StaticBody3D" parent="Beach"]
-transform = Transform3D(0.424635, 0, 0, 0, 1, 0, 0, 0, 0.325938, -129.999, -8.75932, 90.2492)
+[node name="Beach_onepiece44" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 23.9209, 223.033, -7.67388, 41.1581)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Beach/BeachSandLeft"]
-transform = Transform3D(600, 0, 0, 0, 1, 0, 0, 0, 200, 57.8613, 0, 87.9887)
-shape = SubResource("BoxShape3D_xtakq")
+[node name="Beach_onepiece45" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 23.9209, 286.971, -7.67388, 41.1025)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Beach/BeachSandLeft"]
-transform = Transform3D(600, 0, 0, 0, 1, 0, 0, 0, 200, 38.4141, 0, 86.919)
-mesh = SubResource("BoxMesh_j18po")
-surface_material_override/0 = SubResource("StandardMaterial3D_sr5ei")
+[node name="Beach_onepiece46" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 23.9209, 31.791, -7.67388, 41.251)
 
-[node name="BeachSandLeft2" type="StaticBody3D" parent="Beach"]
-transform = Transform3D(0.103037, 0, 0, 0, 1, 0, 0, 0, 0.325938, -273.313, -8.75932, 57.6002)
+[node name="Beach_onepiece27" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 31.9845, -7.67388, 96.9936)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Beach/BeachSandLeft2"]
-transform = Transform3D(600, 0, 0, 0, 1, 0, 0, 0, 200, 0, 0, 87.9887)
-shape = SubResource("BoxShape3D_xtakq")
+[node name="Beach_onepiece36" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 21.1398, -32.4537, -7.67388, 108.543)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Beach/BeachSandLeft2"]
-transform = Transform3D(600, 0, 0, 0, 1, 0, 0, 0, 200, 38.4141, 0, 86.919)
-mesh = SubResource("BoxMesh_j18po")
-surface_material_override/0 = SubResource("StandardMaterial3D_sr5ei")
+[node name="Beach_onepiece37" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 21.1398, -95.5097, -7.67388, 108.815)
 
-[node name="Beach_onepiece" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(32.4884, 0, 0, 0, 33, 0, 0, 0, 33, -208.915, -8.20995, 118.644)
+[node name="Beach_onepiece38" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 21.1398, -159.462, -7.67388, 108.502)
 
-[node name="Beach_onepiece14" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(31.2232, 0, 0, 0, 33, 0, 0, 0, 32.8747, -269.86, -8.20995, 85.5588)
+[node name="Beach_onepiece39" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(25.5477, 0, 0, 0, 32, 0, 0, 0, 21.1398, -216.698, -7.67388, 108.801)
 
-[node name="Beach_onepiece2" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(-1.4324e-06, 0, -33, 0, 33, 0, 32.7694, 0, -1.44248e-06, -143.987, -8.20995, 118.434)
+[node name="Beach_onepiece24" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 159.384, -7.67388, 96.9936)
 
-[node name="Beach_onepiece3" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(32.8223, 0, 0, 0, 33, 0, 0, 0, 33, -78.4214, -8.20995, 118.465)
+[node name="Beach_onepiece25" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 223.349, -7.67388, 96.9936)
 
-[node name="Beach_onepiece4" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(-1.4324e-06, 0, -33, 0, 33, 0, 32.7694, 0, -1.44248e-06, -14.0274, -8.20995, 118.434)
+[node name="Beach_onepiece28" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 34.8749, 95.9879, -7.67388, 162.921)
 
-[node name="Beach_onepiece9" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(39.1552, 0, 0, 0, 33, 0, 0, 0, 33, 59.7735, -8.20995, 119.18)
+[node name="Beach_onepiece29" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 34.8749, 32.0907, -7.67388, 163.747)
 
-[node name="Beach_onepiece6" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(-1.45552e-06, 0, -33, 0, 33, 0, 33.2985, 0, -1.44248e-06, 131.42, -8.20995, 118.866)
+[node name="Beach_onepiece30" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 34.8749, 159.917, -7.67388, 163.067)
 
-[node name="Beach_onepiece7" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(34.3737, 0, 0, 0, 33, 0, 0, 0, 33.3114, 198.196, -8.20995, 118.963)
+[node name="Beach_onepiece31" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 34.8749, 223.238, -7.67388, 163.304)
 
-[node name="Beach_onepiece10" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(34.3737, 0, 0, 0, 33, 0, 0, 0, 33, 64.2903, -8.20995, 53.6785)
+[node name="Beach_onepiece41" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(27.5195, 0, 0, 0, 32, 0, 0, 0, 34.8749, 283.276, -7.67388, 163.109)
 
-[node name="Beach_onepiece11" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(-1.4324e-06, 0, -33, 0, 33, 0, 32.7694, 0, -1.44248e-06, 131.42, -8.20995, 53.3711)
+[node name="Beach_onepiece32" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 34.8749, -159.418, -7.67388, 164.594)
 
-[node name="Beach_onepiece12" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(34.3737, 0, 0, 0, 33, 0, 0, 0, 33, 198.196, -8.20995, 52.9741)
+[node name="Beach_onepiece33" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 34.8749, -223.131, -7.67388, 164.594)
 
-[node name="Beach_onepiece8" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(-1.45797e-06, 0, -37.4857, 0, 33.1058, 0, 33.3546, 0, -1.63855e-06, 269.936, -8.20995, 118.928)
+[node name="Beach_onepiece47" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 30.27, -286.996, -7.67388, 168.739)
 
-[node name="Beach_onepiece13" parent="Beach" instance=ExtResource("6_3jdxe")]
-transform = Transform3D(-1.4324e-06, 0, -35.1379, 0, 33, 0, 32.7694, 0, -1.53592e-06, 265.404, -8.20995, 53.5706)
+[node name="Beach_onepiece40" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, -274.23, -7.67388, 86.0314)
 
-[node name="Forest" type="Node" parent="."]
+[node name="Beach_onepiece34" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 34.8749, -95.978, -7.67388, 164.594)
 
-[node name="dirt" type="StaticBody3D" parent="Forest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.82931, 175.612)
+[node name="Beach_onepiece35" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32.3644, 0, 0, 0, 32, 0, 0, 0, 34.8749, -32.1726, -7.67388, 164.381)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest/dirt"]
-transform = Transform3D(600, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-shape = SubResource("BoxShape3D_ai5b5")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Forest/dirt"]
-transform = Transform3D(600, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-mesh = SubResource("BoxMesh_nlcfa")
-surface_material_override/0 = SubResource("StandardMaterial3D_x7oms")
+[node name="Beach_onepiece26" parent="Beach" instance=ExtResource("5_qhjos")]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 286.803, -7.67388, 96.9936)
 
 [node name="mountain" type="Node" parent="."]
 
