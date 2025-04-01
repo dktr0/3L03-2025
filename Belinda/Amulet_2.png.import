@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vk4erucl1l5a"
-path="res://.godot/imported/compass2.png-0d59fc9d888b360d97220ce368d8ed96.ctex"
+uid="uid://bjtheusp68bdv"
+path="res://.godot/imported/Amulet_2.png-8cdf048e4f5ec33edc4126ddfd822f96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ruth/compass2.png"
-dest_files=["res://.godot/imported/compass2.png-0d59fc9d888b360d97220ce368d8ed96.ctex"]
+source_file="res://Belinda/Amulet_2.png"
+dest_files=["res://.godot/imported/Amulet_2.png-8cdf048e4f5ec33edc4126ddfd822f96.ctex"]
 
 [params]
 

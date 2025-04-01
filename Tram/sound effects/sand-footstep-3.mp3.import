@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qdh2t6ctwnt8"
+path="res://.godot/imported/sand-footstep-3.mp3-ed67ec9364ac181ccc4c098f669edc9f.mp3str"
+
+[deps]
+
+source_file="res://Tram/sound effects/sand-footstep-3.mp3"
+dest_files=["res://.godot/imported/sand-footstep-3.mp3-ed67ec9364ac181ccc4c098f669edc9f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

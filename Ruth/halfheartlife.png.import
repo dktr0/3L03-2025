@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vk4erucl1l5a"
-path="res://.godot/imported/compass2.png-0d59fc9d888b360d97220ce368d8ed96.ctex"
+uid="uid://bma3l0weipioj"
+path="res://.godot/imported/halfheartlife.png-570c9aeee182fb920f5944fab475759b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ruth/compass2.png"
-dest_files=["res://.godot/imported/compass2.png-0d59fc9d888b360d97220ce368d8ed96.ctex"]
+source_file="res://Ruth/halfheartlife.png"
+dest_files=["res://.godot/imported/halfheartlife.png-570c9aeee182fb920f5944fab475759b.ctex"]
 
 [params]
 

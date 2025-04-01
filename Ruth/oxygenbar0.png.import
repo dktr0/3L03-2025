@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vk4erucl1l5a"
-path="res://.godot/imported/compass2.png-0d59fc9d888b360d97220ce368d8ed96.ctex"
+uid="uid://cftqll1uehh4r"
+path="res://.godot/imported/oxygenbar0.png-8926ebfc172e8fa0ce7ba201295b171a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ruth/compass2.png"
-dest_files=["res://.godot/imported/compass2.png-0d59fc9d888b360d97220ce368d8ed96.ctex"]
+source_file="res://Ruth/oxygenbar0.png"
+dest_files=["res://.godot/imported/oxygenbar0.png-8926ebfc172e8fa0ce7ba201295b171a.ctex"]
 
 [params]
 
