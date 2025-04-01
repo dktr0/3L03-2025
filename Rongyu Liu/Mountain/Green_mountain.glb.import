@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cf643rusgt2mt"
-path="res://.godot/imported/Green_mountainnoice.glb-f1f51c24dd3a71151280fcdfb48db550.scn"
+uid="uid://d3r1j3pk2xwvh"
+path="res://.godot/imported/Green_mountain.glb-e000d836b78687c81237e7db8621730c.scn"
 
 [deps]
 
-source_file="res://Rongyu Liu/Green_mountainnoice.glb"
-dest_files=["res://.godot/imported/Green_mountainnoice.glb-f1f51c24dd3a71151280fcdfb48db550.scn"]
+source_file="res://Rongyu Liu/Mountain/Green_mountain.glb"
+dest_files=["res://.godot/imported/Green_mountain.glb-e000d836b78687c81237e7db8621730c.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5nthmmj56nh5"
-path="res://.godot/imported/Highmountain.glb-f455ce0e0935e7725479fe11e5b05f6c.scn"
+uid="uid://ec07vgldpavi"
+path="res://.godot/imported/Soil.glb-014305244a62b82fc9f73c3308f285ba.scn"
 
 [deps]
 
-source_file="res://Rongyu Liu/Highmountain.glb"
-dest_files=["res://.godot/imported/Highmountain.glb-f455ce0e0935e7725479fe11e5b05f6c.scn"]
+source_file="res://Rongyu Liu/Soil/Soil.glb"
+dest_files=["res://.godot/imported/Soil.glb-014305244a62b82fc9f73c3308f285ba.scn"]
 
 [params]
 

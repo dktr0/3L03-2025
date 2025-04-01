@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://570he6wjcjyd"
-path.s3tc="res://.godot/imported/Green_mountainnoice_no1image.png-987e500513b4b136b93040c2ba79c491.s3tc.ctex"
+uid="uid://bv7t4a606ccww"
+path.s3tc="res://.godot/imported/Green_mountain_no1image.png-77215a9e83ecfa1b755066ccdd252d54.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bd7b444bf76a2ed0582e0df71441af53"
+"md5": "83352218cd8bcd8fd3d55f436a7b761a"
 }
 
 [deps]
 
-source_file="res://Rongyu Liu/Green_mountainnoice_no1image.png"
-dest_files=["res://.godot/imported/Green_mountainnoice_no1image.png-987e500513b4b136b93040c2ba79c491.s3tc.ctex"]
+source_file="res://Rongyu Liu/Mountain/Green_mountain_no1image.png"
+dest_files=["res://.godot/imported/Green_mountain_no1image.png-77215a9e83ecfa1b755066ccdd252d54.s3tc.ctex"]
 
 [params]
 
