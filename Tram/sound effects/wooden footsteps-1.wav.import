@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bspgvhktijn4v"
+path="res://.godot/imported/wooden footsteps-1.wav-3a474145a2f2fc3c0b32a2582a62a700.sample"
+
+[deps]
+
+source_file="res://Tram/sound effects/wooden footsteps-1.wav"
+dest_files=["res://.godot/imported/wooden footsteps-1.wav-3a474145a2f2fc3c0b32a2582a62a700.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

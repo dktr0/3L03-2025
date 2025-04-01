@@ -3,19 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://devl8kontvce5"
-path.s3tc="res://.godot/imported/BeachTerrain_color.jpg-15c9651cbe2616e4980d61c5583e219e.s3tc.ctex"
+path.s3tc="res://.godot/imported/BeachTerrain_color.jpg-4ab61eaef48ec582446d4b1bd96b0e9b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cfac8db283d634eaef8fd3daa1d27e67"
+"md5": "9930d31cae83478e1d72d12222aa2219"
 }
 
 [deps]
 
-source_file="res://BeachTerrain_color.jpg"
-dest_files=["res://.godot/imported/BeachTerrain_color.jpg-15c9651cbe2616e4980d61c5583e219e.s3tc.ctex"]
+source_file="res://Haozhen(Isaac) Liang/BeachTerrain_color.jpg"
+dest_files=["res://.godot/imported/BeachTerrain_color.jpg-4ab61eaef48ec582446d4b1bd96b0e9b.s3tc.ctex"]
 
 [params]
 

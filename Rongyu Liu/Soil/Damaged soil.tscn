@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm24h3lp0q575"]
+
+[ext_resource type="PackedScene" uid="uid://dm3pl02h2a4d4" path="res://Rongyu Liu/Soil/Damaged soil.glb" id="1_wf8rk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5uvc"]
+size = Vector3(1.0083, 0.0146484, 1.0061)
+
+[node name="Damaged soil" type="StaticBody3D"]
+
+[node name="Damaged soil" parent="." instance=ExtResource("1_wf8rk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00794232, 0, 0.0208547)
+
+[node name="Damaged soil2" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.03161, 0, 0, 0, 2.03161, 0, 0, 0, 2.03161, 0.00843198, 0.00495997, 0.0225679)
+shape = SubResource("BoxShape3D_v5uvc")
