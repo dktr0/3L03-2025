@@ -37,6 +37,11 @@ extends CharacterBody3D
 @export var air_control_factor := 0.7 # Increased air control
 @export var sideways_jump_hindrance := 0.2 # Multiplier for air control when jumping sideways/backwards (0=none, 1=full)
 
+@export_category("Jump Tuning")
+@export var variable_jump_cutoff_multiplier := 0.5 # Multiplies upward velocity when jump is released early
+@export var coyote_time_duration := 0.1 # Seconds player can still jump after leaving ground
+@export var jump_buffer_duration := 0.1 # Seconds the jump input is buffered before landing
+
 var camera_node: Camera3D
 var movement_system: Node # Keep reference to the movement system node
 var controller: Node
@@ -49,6 +54,9 @@ var potential_targets := []
 
 # Jump state variable
 var jump_direction := Vector3.FORWARD # Store the look direction at the moment of jump
+var coyote_timer := 0.0
+var jump_buffer_timer := 0.0
+var is_performing_jump := false # Flag for variable jump height check
 
 func _ready():
 	# Get component references using node paths/names from player.tscn
@@ -82,24 +90,57 @@ func _physics_process(delta: float):
 		printerr("Player Core: Movement system invalid or missing 'get_movement_input' method.")
 		return
 
+	# --- Update Timers ---
+	if coyote_timer > 0.0:
+		coyote_timer -= delta
+	if jump_buffer_timer > 0.0:
+		jump_buffer_timer -= delta
+
 	# --- Get Movement Input First (needed for jump direction) ---
 	var movement_input = movement_system.get_movement_input(delta, is_targeting)
 	var target_horizontal_velocity = movement_input["velocity"] # Raw target velocity based on input
 	var look_direction = movement_input["look_direction"] # Direction player should face
 
-	# --- Apply Gravity ---
+	# --- Ground Check & Coyote Time Update ---
 	var on_floor = is_on_floor()
+	if on_floor:
+		coyote_timer = coyote_time_duration
+		is_performing_jump = false # Reset jump state on ground
+	else:
+		# If we just left the ground, start coyote timer (if not already started)
+		# This is handled implicitly by resetting on_floor and decrementing
+		pass 
+
+	# --- Handle Jump Input Buffering ---
+	if Input.is_action_just_pressed("move_jump"):
+		jump_buffer_timer = jump_buffer_duration
+		
+	# --- Check Jump Condition (Buffer & Coyote Time) ---
+	var can_jump = jump_buffer_timer > 0.0 and coyote_timer > 0.0
+	
+	if can_jump:
+		velocity.y = jump_strength
+		# Store direction (Fix: Check length before normalizing)
+		if look_direction.length_squared() > 0.0001:
+			jump_direction = look_direction.normalized()
+		else:
+			# Fallback if look_direction is zero
+			jump_direction = transform.basis.z if transform.basis.z != Vector3.ZERO else Vector3.FORWARD
+		
+		# Consume timers & set state
+		jump_buffer_timer = 0.0 
+		coyote_timer = 0.0 
+		is_performing_jump = true
+
+	# --- Variable Jump Height Cutoff ---
+	# If jump button released early while still moving up, reduce upward velocity
+	if is_performing_jump and not on_floor and Input.is_action_just_released("move_jump") and velocity.y > 0:
+		velocity.y *= variable_jump_cutoff_multiplier
+		is_performing_jump = false # Cutoff applied, stop checking
+	
+	# --- Apply Gravity ---
 	if not on_floor:
 		velocity.y -= gravity * delta
-
-	# --- Handle Jump ---
-	if Input.is_action_just_pressed("move_jump") and on_floor:
-		velocity.y = jump_strength
-		# Store the look direction when jump starts
-		jump_direction = look_direction.normalized()
-		# Ensure jump_direction is never zero if look_direction was zero
-		if jump_direction == Vector3.ZERO:
-			jump_direction = global_transform.basis.z # Fallback to player's current forward
 
 	# --- Apply Air Control & Directional Hindrance ---
 	var current_accel = movement_system.acceleration
@@ -128,7 +169,7 @@ func _physics_process(delta: float):
 		current_decel *= effective_air_control
 	else:
 		# Reset jump direction when grounded (optional, but clean)
-		jump_direction = Vector3.FORWARD
+		jump_direction = transform.basis.z if transform.basis.z != Vector3.ZERO else Vector3.FORWARD
 
 	# --- Apply Horizontal Velocity (using lerp for accel/decel) ---
 	if target_horizontal_velocity.length_squared() > 0.01:
