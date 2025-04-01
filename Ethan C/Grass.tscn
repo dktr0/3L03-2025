@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cde78h7fgegbv"]
+[gd_scene load_steps=6 format=3 uid="uid://cde78h7fgegbv"]
 
 [ext_resource type="ArrayMesh" uid="uid://55j7pdicqfld" path="res://Ethan C/Grass.res" id="1_wgini"]
 
@@ -7,6 +7,9 @@ size = Vector2(10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wadx"]
 albedo_color = Color(1.86507e-06, 0.402331, 9.62615e-08, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ltav6"]
+albedo_color = Color(0.0829294, 0.443289, 0, 1)
 
 [sub_resource type="MultiMesh" id="MultiMesh_g2ch2"]
 transform_format = 1
@@ -22,5 +25,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1wadx")
 
 [node name="Grass" type="MultiMeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.543995, 0)
+material_override = SubResource("StandardMaterial3D_ltav6")
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_g2ch2")
