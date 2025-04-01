@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdh45f6l17eoq"]
+
+[ext_resource type="PackedScene" uid="uid://b0eilar5bw40r" path="res://cottage_house3.glb" id="1_llevm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvv3p"]
+
+[node name="cottage_house3" instance=ExtResource("1_llevm")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="35"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(5.31428, 0, 0, 0, 5.31428, 0, 0, 0, 5.31428, 0.334972, 2.66063, 0)
+shape = SubResource("BoxShape3D_bvv3p")

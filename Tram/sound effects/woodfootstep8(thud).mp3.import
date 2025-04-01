@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxmqiatgqrvge"
+path="res://.godot/imported/woodfootstep8(thud).mp3-33b300a1c786720743df05711d2ae382.mp3str"
+
+[deps]
+
+source_file="res://Tram/sound effects/woodfootstep8(thud).mp3"
+dest_files=["res://.godot/imported/woodfootstep8(thud).mp3-33b300a1c786720743df05711d2ae382.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://63503u7f80bf"]
 
-[ext_resource type="Texture2D" uid="uid://cx1r456ihuuux" path="res://background (2).png" id="1_w7l5i"]
-[ext_resource type="Texture2D" uid="uid://g58t2kpd8uv6" path="res://clock (3).png" id="2_5s8x1"]
-[ext_resource type="FontFile" uid="uid://bniniiuyy70ll" path="res://HATTEN.TTF" id="2_q37vh"]
-[ext_resource type="Texture2D" uid="uid://j28mpciepjrm" path="res://clock (2).png" id="3_p0i6p"]
-[ext_resource type="Texture2D" uid="uid://ded4maw23eojh" path="res://clock (4).png" id="4_apiio"]
+[ext_resource type="Texture2D" uid="uid://cx1r456ihuuux" path="res://Zhu/new-game-project/background (2).png" id="1_w7l5i"]
+[ext_resource type="Texture2D" uid="uid://g58t2kpd8uv6" path="res://Zhu/new-game-project/clock (3).png" id="2_5s8x1"]
+[ext_resource type="FontFile" uid="uid://bniniiuyy70ll" path="res://Zhu/new-game-project/HATTEN.TTF" id="2_q37vh"]
+[ext_resource type="Texture2D" uid="uid://j28mpciepjrm" path="res://Zhu/new-game-project/clock (2).png" id="3_p0i6p"]
+[ext_resource type="Texture2D" uid="uid://ded4maw23eojh" path="res://Zhu/new-game-project/clock (4).png" id="4_apiio"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0sbp"]
 

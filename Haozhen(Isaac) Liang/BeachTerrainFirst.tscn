@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8t3278g3joh3"]
+
+[ext_resource type="PackedScene" uid="uid://5dfa1dsdcpsw" path="res://BeachTerrain.glb" id="1_gda1m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o4c2b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1pmqv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wfgmk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1y57l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m851q"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="BeachTerrain" parent="." instance=ExtResource("1_gda1m")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="BeachTerrain"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BeachTerrain/Area3D"]
+transform = Transform3D(6.7, 0, 0, 0, 0.995542, -0.216929, 0, 0.0943168, 2.28975, 1.57331, 3.89171, -1.44954)
+shape = SubResource("BoxShape3D_o4c2b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BeachTerrain/Area3D"]
+transform = Transform3D(6.7, 0, 0, 0, 0.962275, -0.136039, 0, 0.272079, 0.481138, 1.5783, 3.74887, -0.151078)
+shape = SubResource("BoxShape3D_1pmqv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BeachTerrain/Area3D"]
+transform = Transform3D(6.7, 0, 0, 0, 0.271974, -0.0844066, 0, 0.12661, 0.181316, 1.55975, 4.0203, 0.266115)
+shape = SubResource("BoxShape3D_wfgmk")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="BeachTerrain/Area3D"]
+transform = Transform3D(6.69999, -0.000138795, 0.000564237, 0.00946946, 0.0977204, -0.445824, 0.000215057, 0.0212297, 2.05213, 1.56433, 3.78522, 1.39563)
+shape = SubResource("BoxShape3D_1y57l")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="BeachTerrain/Area3D"]
+transform = Transform3D(6.75, 0, 0, 0, 0.4, 0, 0, 0, 2.6, 1.55868, 3.35842, 3.69495)
+shape = SubResource("BoxShape3D_m851q")

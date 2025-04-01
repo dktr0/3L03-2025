@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfvj8bnn0sykj"]
 
-[ext_resource type="Texture2D" uid="uid://cgnnr5mgd35s6" path="res://background-green (0).png" id="1_prttw"]
-[ext_resource type="FontFile" uid="uid://cwt8v5knqsabg" path="res://SHANGSHOUYIFANGTI.TTF" id="2_i4aga"]
+[ext_resource type="Texture2D" uid="uid://cgnnr5mgd35s6" path="res://Zhu/new-game-project/background-green (0).png" id="1_prttw"]
+[ext_resource type="FontFile" uid="uid://cwt8v5knqsabg" path="res://Zhu/new-game-project/SHANGSHOUYIFANGTI.TTF" id="2_i4aga"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0sbp"]
 
