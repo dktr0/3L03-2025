@@ -20,41 +20,135 @@ extends CharacterBody3D
 
 # Core script that manages and coordinates all player controller components
 
-@export_category("Component Paths")
-@export var camera_path: NodePath
-@export var movement_system_path: NodePath
+# --- REMOVED EXPORTED PATHS ---
+# @export_category("Component Paths")
+# @export var camera_path: NodePath
+# @export var movement_system_path: NodePath
 
 @export_category("Targeting Settings")
 @export var target_detection_range := 10.0
 @export var target_group := "targetable"
 
+@export_category("Physics Settings")
+@export var gravity := 9.8
+@export var jump_strength := 5.0
+@export var rotation_speed := 10.0 # Base rotation speed
+@export var moving_rotation_multiplier := 1.2 # Faster turn when moving
+@export var air_control_factor := 0.7 # Increased air control
+@export var sideways_jump_hindrance := 0.2 # Multiplier for air control when jumping sideways/backwards (0=none, 1=full)
+
 var camera_node: Camera3D
-var movement_system: Node
+var movement_system: Node # Keep reference to the movement system node
 var controller: Node
 var input_handler: Node
 
-# Targeting variables (moved from targeting system)
+# Targeting variables
 var current_target: Node3D = null
 var is_targeting := false
 var potential_targets := []
 
+# Jump state variable
+var jump_direction := Vector3.FORWARD # Store the look direction at the moment of jump
+
 func _ready():
-	# Get camera reference
-	if camera_path:
-		camera_node = get_node(camera_path)
-	
-	# Get movement system reference
-	if movement_system_path:
-		movement_system = get_node(movement_system_path)
-		if movement_system and camera_node:
-			movement_system.setup(camera_node)
-	
+	# Get component references using node paths/names from player.tscn
+	camera_node = get_node_or_null("CameraRoot/Camera3D") as Camera3D
+	movement_system = get_node_or_null("MovementSystem")
+
+	# Check if nodes were found
+	if !camera_node:
+		printerr("Player Core: Camera3D node not found at 'CameraRoot/Camera3D'.")
+	if !movement_system:
+		printerr("Player Core: MovementSystem node not found at 'MovementSystem'.")
+	# Pass camera reference to movement system if both exist
+	elif movement_system.has_method("setup"):
+		movement_system.setup(camera_node)
+	else:
+		printerr("Player Core: MovementSystem node does not have a setup() method.")
+
 	# Get controller reference from AutoLoad
-	controller = get_node("/root/PlayerController")
-	
+	controller = get_node_or_null("/root/PlayerController")
+	if !controller:
+		push_warning("Player Core: PlayerController Autoload not found.")
+
 	# Connect to the input handler for interaction
 	input_handler = InputManager.new(self)
 	add_child(input_handler)
+
+# Central physics loop
+func _physics_process(delta: float):
+	# Ensure movement system is valid and has the method we need
+	if !movement_system or !movement_system.has_method("get_movement_input"):
+		printerr("Player Core: Movement system invalid or missing 'get_movement_input' method.")
+		return
+
+	# --- Get Movement Input First (needed for jump direction) ---
+	var movement_input = movement_system.get_movement_input(delta, is_targeting)
+	var target_horizontal_velocity = movement_input["velocity"] # Raw target velocity based on input
+	var look_direction = movement_input["look_direction"] # Direction player should face
+
+	# --- Apply Gravity ---
+	var on_floor = is_on_floor()
+	if not on_floor:
+		velocity.y -= gravity * delta
+
+	# --- Handle Jump ---
+	if Input.is_action_just_pressed("move_jump") and on_floor:
+		velocity.y = jump_strength
+		# Store the look direction when jump starts
+		jump_direction = look_direction.normalized()
+		# Ensure jump_direction is never zero if look_direction was zero
+		if jump_direction == Vector3.ZERO:
+			jump_direction = global_transform.basis.z # Fallback to player's current forward
+
+	# --- Apply Air Control & Directional Hindrance ---
+	var current_accel = movement_system.acceleration
+	var current_decel = movement_system.deceleration
+	var effective_air_control = air_control_factor # Base air control
+
+	if not on_floor:
+		# Calculate directional hindrance factor based on alignment with jump direction
+		var current_dir = Vector3.ZERO
+		if target_horizontal_velocity.length_squared() > 0.0001: # Use small threshold to avoid normalizing zero vector
+			current_dir = target_horizontal_velocity.normalized()
+		
+		if current_dir != Vector3.ZERO:
+			# Dot product: 1 if aligned with jump, 0 if perpendicular, -1 if opposite
+			var alignment = jump_direction.dot(current_dir)
+			# Map alignment (-1 to 1) to hindrance factor (sideways_jump_hindrance to 1.0)
+			# Using max(0, alignment) makes backward jumps treated like sideways jumps
+			var directional_factor = lerp(sideways_jump_hindrance, 1.0, max(0.0, alignment))
+			effective_air_control *= directional_factor
+		else:
+			# If no input, apply full base air control for deceleration
+			pass # effective_air_control remains air_control_factor
+			
+		# Apply the final effective air control to accel/decel
+		current_accel *= effective_air_control
+		current_decel *= effective_air_control
+	else:
+		# Reset jump direction when grounded (optional, but clean)
+		jump_direction = Vector3.FORWARD
+
+	# --- Apply Horizontal Velocity (using lerp for accel/decel) ---
+	if target_horizontal_velocity.length_squared() > 0.01:
+		velocity.x = lerp(velocity.x, target_horizontal_velocity.x, current_accel * delta)
+		velocity.z = lerp(velocity.z, target_horizontal_velocity.z, current_accel * delta)
+	else:
+		velocity.x = lerp(velocity.x, 0.0, current_decel * delta)
+		velocity.z = lerp(velocity.z, 0.0, current_decel * delta)
+
+	# --- Apply Movement ---
+	move_and_slide()
+
+	# --- Handle Rotation ---
+	if look_direction != Vector3.ZERO:
+		var current_rotation_speed = rotation_speed
+		if velocity.length_squared() > 0.1:
+			current_rotation_speed *= moving_rotation_multiplier
+		
+		var target_transform = transform.looking_at(global_position + look_direction, Vector3.UP)
+		transform = transform.interpolate_with(target_transform, delta * current_rotation_speed)
 
 func _process(_delta):
 	# Handle targeting system update
@@ -114,11 +208,11 @@ func acquire_target():
 				camera_node.set_targeting_mode(true, current_target)
 				
 			# Notify movement system about targeting
-			if movement_system and movement_system.has_method("set_targeting_direction"):
+			if movement_system and movement_system.has_method("set_targeting_state"):
 				var direction = (current_target.global_position - global_position)
 				direction.y = 0
 				direction = direction.normalized()
-				movement_system.set_targeting_direction(direction, true)
+				movement_system.set_targeting_state(true, direction)
 
 func release_target():
 	is_targeting = false
@@ -133,8 +227,8 @@ func release_target():
 		camera_node.set_targeting_mode(false, null)
 		
 	# Notify movement system about targeting off
-	if movement_system and movement_system.has_method("set_targeting_direction"):
-		movement_system.set_targeting_direction(Vector3.ZERO, false)
+	if movement_system and movement_system.has_method("set_targeting_state"):
+		movement_system.set_targeting_state(false, Vector3.ZERO)
 
 func update_targeting():
 	# Check if target is still valid
@@ -152,13 +246,6 @@ func update_targeting():
 	if controller and controller.has_method("set_target_icon_position"):
 		var target_position = current_target.global_position + Vector3.UP * 1.5
 		controller.set_target_icon_position(true, target_position)
-	
-	# Update movement direction for targeting
-	if movement_system and movement_system.has_method("set_targeting_direction"):
-		var direction = (current_target.global_position - global_position)
-		direction.y = 0
-		direction = direction.normalized()
-		movement_system.set_targeting_direction(direction, true)
 
 func find_potential_targets():
 	potential_targets.clear()

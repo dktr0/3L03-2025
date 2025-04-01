@@ -22,6 +22,7 @@ shadow_enabled = true
 transform = Transform3D(-0.748592, -0.0223792, -0.662654, -0.64705, 0.242764, 0.722766, 0.144694, 0.969827, -0.196212, -10.5396, 20.7611, -14.0717)
 
 [node name="Greybox" type="Node3D" parent="."]
+visible = false
 
 [node name="Floor" type="MeshInstance3D" parent="Greybox"]
 transform = Transform3D(17.6978, 0, 0, 0, 0.58518, 0, 0, 0, 26.4631, 0, 0, 6.08056)

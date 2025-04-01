@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://dw8fde4ghx6qm"]
 
-[ext_resource type="PackedScene" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
+[ext_resource type="PackedScene" uid="uid://dv4mqi5ll4dx7" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
 [ext_resource type="PackedScene" uid="uid://c2lomx2fhrd4i" path="res://Chiara/rock_platform.tscn" id="4_b0u6j"]
 [ext_resource type="PackedScene" uid="uid://dffctwdfacdjg" path="res://Chiara/surrounding_rocks.tscn" id="5_ek8y3"]
 [ext_resource type="PackedScene" uid="uid://15so6a73xnba" path="res://Rongyu Liu/beach_onepiece.tscn" id="5_qhjos"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="6_1rjgs"]
-[ext_resource type="PackedScene" path="res://Rongyu Liu/Highmountain.tscn" id="8_tuxek"]
-[ext_resource type="PackedScene" uid="uid://cmckqn74iwe3i" path="res://Rongyu Liu/Green_mountainnoice.tscn" id="9_qxx8k"]
+[ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Mountain/Highmountain.tscn" id="8_tuxek"]
+[ext_resource type="PackedScene" uid="uid://cmckqn74iwe3i" path="res://Rongyu Liu/Mountain/Green_mountainnoice.tscn" id="9_qxx8k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bx7su"]
 

@@ -21,141 +21,95 @@ extends Node
 @export var move_speed := 5.0
 @export var sprint_speed := 8.0
 @export var targeting_move_speed := 3.5
-@export var acceleration := 10.0
-@export var deceleration := 12.0
-@export var jump_strength := 5.0
-@export var gravity := 9.8
-@export var rotation_speed := 10.0
+@export var acceleration := 15.0
+@export var deceleration := 18.0
 
 var player: CharacterBody3D
 var camera_node: Camera3D
-var velocity := Vector3.ZERO
-var is_jumping := false
+var current_horizontal_velocity := Vector3.ZERO
 var is_sprinting := false
-var snap_vector := Vector3.DOWN
 var is_targeting := false
 var targeting_direction := Vector3.ZERO
+
+# --- ADD Getter for Sprint Status ---
+func is_player_sprinting() -> bool:
+	return is_sprinting
+# -----------------------------------
 
 func _ready():
 	# Get the parent player reference
 	player = get_parent() as CharacterBody3D
-	
+	if !player:
+		printerr("MovementSystem: Parent is not a CharacterBody3D or not found.")
+
 func setup(camera: Camera3D):
 	camera_node = camera
+	if !camera_node:
+		printerr("MovementSystem: Invalid Camera3D passed to setup().")
 
-func _physics_process(delta: float) -> void:
+func get_movement_input(delta: float, targeting_active: bool) -> Dictionary:
+	is_targeting = targeting_active
+	var look_direction = Vector3.ZERO
+	var target_velocity = Vector3.ZERO
+
 	if !player or !camera_node:
-		return
-		
-	# Apply gravity
-	if not player.is_on_floor():
-		player.velocity.y -= gravity * delta
-	else:
-		snap_vector = Vector3.DOWN
-		
-	# Check for sprint input
+		printerr("MovementSystem: Player or Camera node is invalid in get_movement_input.")
+		return {"velocity": Vector3.ZERO, "look_direction": Vector3.ZERO}
+
 	is_sprinting = Input.is_action_pressed("move_sprint") and not is_targeting
-		
-	# Handle jumping
-	if Input.is_action_just_pressed("move_jump") and player.is_on_floor():
-		player.velocity.y = jump_strength
-		is_jumping = true
-		snap_vector = Vector3.ZERO
-	
-	if is_jumping and player.is_on_floor():
-		is_jumping = false
 
-	# Get input direction
-	var input_dir = Vector2(
-		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
-	).normalized()
+	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 
-	# Get camera basis
 	var cam_basis = camera_node.global_transform.basis
 	var cam_forward = -cam_basis.z
 	var cam_right = cam_basis.x
-
-	# Flatten vectors
 	cam_forward.y = 0
 	cam_right.y = 0
 	cam_forward = cam_forward.normalized()
 	cam_right = cam_right.normalized()
 
-	# Direction relative to camera
-	var direction = Vector3.ZERO
+	var move_direction = Vector3.ZERO
 	if input_dir != Vector2.ZERO:
-		# In targeting mode, move relative to targeting direction
 		if is_targeting:
 			var forward = targeting_direction
-			var right = forward.cross(Vector3.UP)
-			
-			direction = (forward * -input_dir.y + right * input_dir.x).normalized()
-			
-			# Use targeting movement speed
-			var target_velocity = direction * targeting_move_speed
-			var current_velocity = Vector3(player.velocity.x, 0, player.velocity.z)
-			
-			# Apply acceleration or deceleration
-			current_velocity = current_velocity.lerp(target_velocity, acceleration * delta)
-			
-			# Apply to velocity
-			player.velocity.x = current_velocity.x
-			player.velocity.z = current_velocity.z
+			var right = forward.cross(Vector3.UP).normalized()
+			move_direction = (forward * -input_dir.y + right * input_dir.x).normalized()
+			look_direction = targeting_direction
+			target_velocity = move_direction * targeting_move_speed
 		else:
-			# Normal movement relative to camera
-			direction = (cam_forward * input_dir.y + cam_right * input_dir.x).normalized()
-			
-			# Determine movement speed based on sprint state
+			move_direction = (cam_forward * -input_dir.y + cam_right * input_dir.x).normalized()
+			look_direction = cam_forward
 			var current_speed = sprint_speed if is_sprinting else move_speed
-			
-			# Horizontal movement
-			var target_velocity = direction * current_speed
-			var current_velocity = Vector3(player.velocity.x, 0, player.velocity.z)
-			
-			# Apply acceleration or deceleration
-			current_velocity = current_velocity.lerp(target_velocity, acceleration * delta)
-			
-			# Apply to velocity
-			player.velocity.x = current_velocity.x
-			player.velocity.z = current_velocity.z
+			target_velocity = move_direction * current_speed
 	else:
-		# Decelerate when no input
-		player.velocity.x = move_toward(player.velocity.x, 0, deceleration * delta)
-		player.velocity.z = move_toward(player.velocity.z, 0, deceleration * delta)
+		target_velocity = Vector3.ZERO
+		
+		if !is_targeting:
+			look_direction = cam_forward
+		else:
+			look_direction = targeting_direction
 
-	# Apply movement
-	player.move_and_slide()
+	return {"velocity": target_velocity, "look_direction": look_direction}
 
-	# Handle rotation
-	if direction != Vector3.ZERO and !is_targeting:
-		var look_direction = direction
-		var target_transform = player.transform.looking_at(player.global_position + look_direction, Vector3.UP)
-		player.transform = player.transform.interpolate_with(target_transform, delta * rotation_speed)
-	elif is_targeting:
-		# When targeting, always face the target
-		if targeting_direction != Vector3.ZERO:
-			var target_transform = player.transform.looking_at(player.global_position + targeting_direction, Vector3.UP)
-			player.transform = player.transform.interpolate_with(target_transform, delta * 15.0)
-
-# Called by the core when a target is acquired or released
-func set_targeting_direction(direction: Vector3, is_target_active: bool):
-	targeting_direction = direction
+func set_targeting_state(is_target_active: bool, direction_to_target: Vector3):
 	is_targeting = is_target_active
-	
-	# Disable sprinting when targeting
+	targeting_direction = direction_to_target.normalized()
+
 	if is_targeting:
 		is_sprinting = false
 
-# Handle interactions
 func interact():
-	# Create a raycast forward to detect interactable objects
+	if !player:
+		printerr("MovementSystem: Cannot interact, player reference is invalid.")
+		return
+		
 	var space_state = player.get_world_3d().direct_space_state
 	var ray_params = PhysicsRayQueryParameters3D.new()
 	ray_params.from = player.global_position + Vector3.UP * 0.5
 	ray_params.to = player.global_position + Vector3.UP * 0.5 + -player.global_transform.basis.z * 2.0
-	ray_params.collision_mask = 1  # Adjust mask as needed
-	
+	ray_params.collision_mask = 1
+	ray_params.exclude = [player]
+
 	var result = space_state.intersect_ray(ray_params)
 	if result:
 		var collider = result.collider
