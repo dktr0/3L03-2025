@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bofodt0ugejj5"
-path="res://.godot/imported/Small iceland.glb-8e771fde62c5daf4e25792c7f6f9eca4.scn"
+uid="uid://dm3pl02h2a4d4"
+path="res://.godot/imported/Damaged soil.glb-3f14f64807d56640019614465a668518.scn"
 
 [deps]
 
-source_file="res://Rongyu Liu/Small iceland.glb"
-dest_files=["res://.godot/imported/Small iceland.glb-8e771fde62c5daf4e25792c7f6f9eca4.scn"]
+source_file="res://Rongyu Liu/Soil/Damaged soil.glb"
+dest_files=["res://.godot/imported/Damaged soil.glb-3f14f64807d56640019614465a668518.scn"]
 
 [params]
 

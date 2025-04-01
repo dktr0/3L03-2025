@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv7t4a606ccww"
-path.s3tc="res://.godot/imported/Green_mountain_no1image.png-187c5e30fbaeac6d8efdae1cb8299853.s3tc.ctex"
+uid="uid://2hnwyu7vtxxj"
+path.s3tc="res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "83352218cd8bcd8fd3d55f436a7b761a"
+"md5": "a5b92de456fc82b99267cef7e6b88b4d"
 }
 
 [deps]
 
-source_file="res://Rongyu Liu/Green_mountain_no1image.png"
-dest_files=["res://.godot/imported/Green_mountain_no1image.png-187c5e30fbaeac6d8efdae1cb8299853.s3tc.ctex"]
+source_file="res://Rongyu Liu/Soil/No green soil_cracked_red_ground_diff_1k.jpg"
+dest_files=["res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"]
 
 [params]
 
