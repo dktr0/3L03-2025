@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7niujgajwjqk"]
+
+[ext_resource type="Texture2D" uid="uid://df8rytnkxhlci" path="res://Nan/Badsky.jpg" id="1_6cm0e"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2pq0m"]
+panorama = ExtResource("1_6cm0e")
+
+[sub_resource type="Sky" id="Sky_r4p6x"]
+sky_material = SubResource("PanoramaSkyMaterial_2pq0m")
+
+[sub_resource type="Environment" id="Environment_i6ply"]
+background_mode = 2
+sky = SubResource("Sky_r4p6x")
+sky_custom_fov = 119.3
+sky_rotation = Vector3(0, -0.678933, 0)
+
+[node name="Badsky" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i6ply")
