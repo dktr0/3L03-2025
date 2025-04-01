@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=33 format=3 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="16_28bgx"]
 [ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="16_532hx"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="16_aie5t"]
+[ext_resource type="PackedScene" uid="uid://cde78h7fgegbv" path="res://Ethan C/Grass.tscn" id="16_vxd02"]
 [ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="17_01jia"]
 [ext_resource type="ArrayMesh" uid="uid://snlp8xd5hv2n" path="res://Omar/texture/tree.tres" id="17_2xwom"]
 [ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="17_n3ard"]
@@ -19,7 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://b4kixgrxdj358" path="res://Omar/ice_arena_present.tscn" id="18_2sia6"]
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="19_qt78c"]
 [ext_resource type="PackedScene" uid="uid://dx6jtdwd2satn" path="res://Nan/Bad_cloud.tscn" id="20_pd4jm"]
-[ext_resource type="PackedScene" uid="uid://blfhxlyf1qdo3" path="res://Rongyu Liu/Small iceland.tscn" id="21_th3ma"]
+[ext_resource type="PackedScene" path="res://Rongyu Liu/Small iceland.tscn" id="21_th3ma"]
+[ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="22_tpijs"]
+[ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="23_51q5n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
 
@@ -51,7 +54,7 @@ mesh = ExtResource("17_2xwom")
 buffer = PackedFloat32Array(-5.95424, 0, 2.10273, -36.83, 0, 6.31462, 0, -52.1086, -2.10273, 0, -5.95424, -3.32996, -5.04022, 0, 0.258385, -35.0327, 0, 5.04683, 0, -52.1086, -0.258385, 0, -5.04022, -6.21386, -5.61351, 0, 1.07037, 15.291, 0, 5.71465, 0, -52.1086, -1.07037, 0, -5.61351, 22.6701, -6.74134, 0, 1.82525, 19.8389, 0, 6.98407, 0, -52.1086, -1.82525, 0, -6.74134, 49.5307, 1.95322, 0, -6.47977, -27.972, 0, 6.76775, 0, -52.1086, 6.47977, 0, 1.95322, 17.8906, 0.977815, 0, -6.20041, 17.261, 0, 6.27704, 0, -52.1086, 6.20041, 0, 0.977815, 58.782, -5.74762, 0, 0.0975573, -37.2374, 0, 5.74844, 0, -52.1086, -0.0975575, 0, -5.74761, -37.6716, -6.29516, 0, 1.81902, 14.2821, 0, 6.5527, 0, -52.1086, -1.81902, 0, -6.29516, 14.5735, 1.65364, 0, 6.05888, 6.38293, 0, 6.28049, 0, -52.1086, -6.05888, 0, 1.65364, -3.00974, 0.727319, 0, -6.41684, 17.9982, 0, 6.45793, 0, -52.1086, 6.41684, 0, 0.727319, 60.4196)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnsm1"]
-size = Vector3(595.355, 56.7036, 147.719)
+size = Vector3(595.355, 56.7036, 149.093)
 
 [node name="Present" type="Node3D"]
 
@@ -215,8 +218,22 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 293.935, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.09371, 200.768)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="treewall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0296, 27.8518, 73.3593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0296, 27.8518, 72.6721)
 shape = SubResource("BoxShape3D_gnsm1")
 
 [node name="Small iceland" parent="." instance=ExtResource("21_th3ma")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 36.9228, -17.6831, -337.57)
+
+[node name="Grass" parent="." instance=ExtResource("16_vxd02")]
+
+[node name="Soil" parent="." instance=ExtResource("22_tpijs")]
+transform = Transform3D(306.395, 0, 0, 0, 50, 0, 0, 0, 76.4474, -32.0429, -7.85794, 278.666)
+
+[node name="Damaged soil" parent="." instance=ExtResource("23_51q5n")]
+transform = Transform3D(75.4726, 0, -36.1584, 0, 50, 0, 74.3767, 0, 36.6912, 317.038, -9.94134, 330.408)
+
+[node name="Damaged soil2" parent="." instance=ExtResource("23_51q5n")]
+transform = Transform3D(50.8222, 0, -30.8963, 0, 50, 0, 50.0843, 0, 31.3516, 421.702, -9.94134, 206.304)
+
+[node name="Damaged soil3" parent="." instance=ExtResource("23_51q5n")]
+transform = Transform3D(-34.8592, 0, -26.2821, 0, 50, 0, 35.3728, 0, -25.9005, 437.924, -9.94134, 317.289)
