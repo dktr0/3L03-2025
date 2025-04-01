@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8lwqwikifb5e"
-path.s3tc="res://.godot/imported/coastguardstation_panels Base Color.png-42b95f4138faba421db3904949bd97c3.s3tc.ctex"
+uid="uid://bc770nda762l8"
+path.s3tc="res://.godot/imported/Cottage_House_destroyed1_floor.png-268c2dc8e619dc6dd6a891fb8d668dfb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "45441bcede93c907d577a41e1627e36a"
+}
 
 [deps]
 
-source_file="res://Wren/coastguardstation_panels Base Color.png"
-dest_files=["res://.godot/imported/coastguardstation_panels Base Color.png-42b95f4138faba421db3904949bd97c3.s3tc.ctex"]
+source_file="res://Sing-yu/Cottage_House_destroyed1_floor.png"
+dest_files=["res://.godot/imported/Cottage_House_destroyed1_floor.png-268c2dc8e619dc6dd6a891fb8d668dfb.s3tc.ctex"]
 
 [params]
 
