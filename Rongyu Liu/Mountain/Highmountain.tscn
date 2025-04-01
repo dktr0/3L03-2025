@@ -9,7 +9,7 @@ size = Vector3(0.37925, 0.582577, 0.393883)
 size = Vector3(0.599365, 0.836273, 0.779053)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jxinw"]
-size = Vector3(1.21924, 1.41211, 1.07715)
+size = Vector3(1.21924, 1.39844, 1.07715)
 
 [node name="Highmountain" type="StaticBody3D"]
 
@@ -25,5 +25,5 @@ transform = Transform3D(16.244, 0, 0, 0, 16.244, 0, 0, 0, 16.244, -0.0416411, 5.
 shape = SubResource("BoxShape3D_dot65")
 
 [node name="Highmountain4" type="CollisionShape3D" parent="."]
-transform = Transform3D(8.0206, 0, 0, 0, 8.0206, 0, 0, 0, 8.0206, -0.0293723, 3.64771, -10.484)
+transform = Transform3D(8.0206, 0, 0, 0, 8.0206, 0, 0, 0, 8.0206, -0.0293723, 3.70254, -10.484)
 shape = SubResource("BoxShape3D_jxinw")
