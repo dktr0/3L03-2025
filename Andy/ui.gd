@@ -113,13 +113,13 @@ func _update_button_highlight(node_name: String) -> void:
 	match node_name:
 		"PosStart":
 			button_to_highlight = start_label
-			target_color = Color(1, 1, 1, 1)             # 示例：纯白
+			target_color = Color(0.3, 0.8, 1, 1)              # 示例：纯白
 		"PosCredit":
 			button_to_highlight = credit_label
 			target_color = Color(0.25, 0.25, 0.25, 1)     # 示例：灰暗
 		"PosIntro":
 			button_to_highlight = intro_label
-			target_color = Color(0.3, 0.8, 1, 1)         # 示例：蓝绿
+			target_color = Color(1.0, 0.2, 0.2, 1.0)         # 示例：蓝绿
 		_:
 			# 离开特殊节点，只暗淡按钮，不改变背景
 			pass
