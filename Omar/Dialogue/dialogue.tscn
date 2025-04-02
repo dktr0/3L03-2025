@@ -6,7 +6,6 @@
 
 [node name="Dialogue" type="CanvasLayer"]
 script = ExtResource("1_ul05s")
-d_file = "res://Omar/Dialogue/json/FisherMan_Chat.json"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_right = 623.0
