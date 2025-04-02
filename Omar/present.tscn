@@ -1,10 +1,12 @@
-[gd_scene load_steps=36 format=3 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=39 format=3 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="3_k0l6t"]
 [ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="5_eyu1o"]
 [ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="6_k0hcq"]
+[ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="11_6vhei"]
+[ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="12_aqf1w"]
 [ext_resource type="PackedScene" uid="uid://dbhxcdh47t2s" path="res://Quinn/Dock Spiders/spider_1.tscn" id="13_x8py4"]
 [ext_resource type="PackedScene" uid="uid://cgtq2fff325mx" path="res://Quinn/Dock Spiders/spider_2.tscn" id="14_rolbw"]
 [ext_resource type="PackedScene" uid="uid://dxv1pswtk7jhx" path="res://Quinn/Dock Spiders/spider_3.tscn" id="15_u36hn"]
@@ -24,6 +26,9 @@
 [ext_resource type="Script" path="res://Omar/kill_zone.gd" id="23_7v35e"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="23_51q5n"]
 [ext_resource type="PackedScene" uid="uid://6j5da011fd4a" path="res://Wren/coastguardstation.glb" id="24_jgkje"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8kw5l"]
+size = Vector3(8.48912, 5.17664, 4.11774)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
 
@@ -69,6 +74,7 @@ size = Vector3(6.09671, 6.40433, 10.2422)
 
 [node name="Player" parent="." instance=ExtResource("17_n3ard")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 94.9352, -1.90093, 54.4193)
+collision_mask = 31
 
 [node name="Docks" type="Node" parent="."]
 
@@ -108,6 +114,20 @@ transform = Transform3D(7.45058e-09, -0.5, 2.98023e-08, -0.453102, 2.78906e-09, 
 
 [node name="fish_shop_owner" parent="." instance=ExtResource("16_aie5t")]
 transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 35.2944, 0.469059, 9.8571)
+collision_layer = 16
+collision_mask = 2
+
+[node name="Area3D" type="Area3D" parent="fish_shop_owner"]
+transform = Transform3D(0.999966, 0, -0.00822034, 0, 1, 0, 0.00822034, 0, 0.999966, -0.39463, 0.901521, -1.98553)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("11_6vhei")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fish_shop_owner/Area3D"]
+transform = Transform3D(0.975474, 0, 0.22012, 0, 1, 0, -0.22012, 0, 0.975474, -0.223166, 2.08832, -1.34286)
+shape = SubResource("BoxShape3D_8kw5l")
+
+[node name="Dialogue" parent="fish_shop_owner" instance=ExtResource("12_aqf1w")]
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="."]
 transform = Transform3D(-9.43409, 0, -28.7437, 0, 1, 0, 9.19349, 0, -29.496, 316.983, -7.69652, 193.099)

@@ -9,8 +9,8 @@ script = ExtResource("1_ul05s")
 d_file = "res://Omar/Dialogue/json/FisherMan_Chat.json"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_right = 512.0
-offset_bottom = 136.0
+offset_right = 623.0
+offset_bottom = 234.0
 texture = SubResource("CanvasTexture_yntl7")
 
 [node name="Name" type="RichTextLabel" parent="NinePatchRect"]
@@ -30,3 +30,9 @@ offset_right = 471.0
 offset_bottom = 128.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Chatting..."
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
