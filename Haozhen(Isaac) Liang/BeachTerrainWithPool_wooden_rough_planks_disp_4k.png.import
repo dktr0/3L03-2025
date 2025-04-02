@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv1fbda5tav5t"
-path.s3tc="res://.godot/imported/BeachTerrainWithPool_wooden_rough_planks_disp_4k.png-41366f2db952ed066035c94bd9216d04.s3tc.ctex"
+path.s3tc="res://.godot/imported/BeachTerrainWithPool_wooden_rough_planks_disp_4k.png-34a7cb8df6fdae54cb09cadbaa16de70.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://BeachTerrainWithPool_wooden_rough_planks_disp_4k.png"
-dest_files=["res://.godot/imported/BeachTerrainWithPool_wooden_rough_planks_disp_4k.png-41366f2db952ed066035c94bd9216d04.s3tc.ctex"]
+source_file="res://Haozhen(Isaac) Liang/BeachTerrainWithPool_wooden_rough_planks_disp_4k.png"
+dest_files=["res://.godot/imported/BeachTerrainWithPool_wooden_rough_planks_disp_4k.png-34a7cb8df6fdae54cb09cadbaa16de70.s3tc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq3uxf4rfguwx"
-path="res://.godot/imported/oxygenbars.png-2aa0ba6ccb9e43685e0a7ac730a53e0e.ctex"
+uid="uid://dj3ndwsgnt0h"
+path="res://.godot/imported/Amulet.png-0ffe87c5b82bdde77503eee0099a2c07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ruth/oxygenbars.png"
-dest_files=["res://.godot/imported/oxygenbars.png-2aa0ba6ccb9e43685e0a7ac730a53e0e.ctex"]
+source_file="res://Belinda/Amulet.png"
+dest_files=["res://.godot/imported/Amulet.png-0ffe87c5b82bdde77503eee0099a2c07.ctex"]
 
 [params]
 
