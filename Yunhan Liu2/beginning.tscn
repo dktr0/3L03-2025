@@ -1,16 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://t3v7ddegi0pl"]
+[gd_scene load_steps=20 format=3 uid="uid://t3v7ddegi0pl"]
 
 [ext_resource type="Script" path="res://Yunhan Liu2/beginning.gd" id="1_bvrav"]
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ecddj"]
 [ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="2_3ym8d"]
 [ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="3_poens"]
 [ext_resource type="PackedScene" uid="uid://k0juh3usoo66" path="res://Chiara/broken_Dock.glb" id="5_566ev"]
+[ext_resource type="PackedScene" uid="uid://dt1mfgeidwbmi" path="res://Ethan C/Water Bottle.tscn" id="5_l4yj5"]
 [ext_resource type="PackedScene" uid="uid://c2bdcxn28whgv" path="res://Darius/Rubble.glb" id="6_4o6i1"]
 [ext_resource type="PackedScene" uid="uid://b1k2j8kjwglsq" path="res://Mason/Broken_down_light_house.glb" id="7_8m2o7"]
 [ext_resource type="PackedScene" uid="uid://2gv276l2p1uf" path="res://Riley/GlowingBarrel.tscn" id="8_l8mxk"]
 [ext_resource type="PackedScene" uid="uid://gg5r78p62xaw" path="res://Ethan C/greenbarrel.glb" id="9_16nsc"]
 [ext_resource type="PackedScene" uid="uid://bvyb2xg8rlhg0" path="res://Ethan C/yellowbarrel.glb" id="10_i66x5"]
 [ext_resource type="PackedScene" uid="uid://bvifc45ylvlma" path="res://Ethan C/redbarrel.glb" id="11_0fsuw"]
+[ext_resource type="PackedScene" uid="uid://bwqy20x2uomik" path="res://Rongyu Liu/Bad_water.tscn" id="13_q5xgr"]
+[ext_resource type="PackedScene" uid="uid://dm3pl02h2a4d4" path="res://Rongyu Liu/Soil/Damaged soil.glb" id="14_cxkyl"]
+[ext_resource type="PackedScene" uid="uid://daggh56yuy6g3" path="res://Nan/Bad Cloud.glb" id="15_o5xlu"]
+[ext_resource type="PackedScene" uid="uid://neudcqb0ff87" path="res://Nan/Dead_wood.tscn" id="16_kw47s"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cojy5"]
 
@@ -43,23 +48,26 @@ transform = Transform3D(-1.99999, 0, 0.00488692, 0, 2, 0, -0.00488692, 0, -1.999
 
 [node name="3d" type="Node3D" parent="."]
 
+[node name="bottle" parent="3d" instance=ExtResource("5_l4yj5")]
+transform = Transform3D(0.470084, 0, 0, 0, 0.330392, 0, 0, 0, 0.330392, 0, 15.649, 0)
+
 [node name="broken_Dock" parent="3d" instance=ExtResource("5_566ev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.719, -16.244, 66.3471)
 
 [node name="Rubble" parent="3d" instance=ExtResource("6_4o6i1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.9347, -5.72974, 104.244)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355561, 3.59808, -22.8677)
 
 [node name="Rubble2" parent="3d" instance=ExtResource("6_4o6i1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6713, 4.28799, -20.19)
 
 [node name="Broken_down_light_house" parent="3d" instance=ExtResource("7_8m2o7")]
-transform = Transform3D(2.13961, 0, 0, 0, 2.13961, 0, 0, 0, 2.13961, 11.8473, 5.41692, -30.4189)
+transform = Transform3D(2.3388, 0, 0, 0, 2.3388, 0, 0, 0, 2.3388, 4.61589, 3.50898, -30.4189)
 
 [node name="Rubble3" parent="3d" instance=ExtResource("6_4o6i1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55085, 4.1517, -16.8511)
 
 [node name="Rubble4" parent="3d" instance=ExtResource("6_4o6i1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4814, 4.07888, -8.43194)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29409, 4.07888, -8.43194)
 
 [node name="GlowingBarrel" parent="3d" instance=ExtResource("8_l8mxk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7521, 3.08801, 5.29281)
@@ -87,3 +95,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9294, 1.71087, 7.63683)
 
 [node name="redbarrel" parent="3d/barrels2" instance=ExtResource("11_0fsuw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2691, 1.77459, 6.6993)
+
+[node name="Badwater" parent="3d" instance=ExtResource("13_q5xgr")]
+transform = Transform3D(693.379, 0, 0, 0, 693.379, 0, 0, 0, 693.379, 0, 21.6228, -703.907)
+
+[node name="Soil" type="Node3D" parent="3d"]
+
+[node name="Damaged soil" parent="3d/Soil" instance=ExtResource("14_cxkyl")]
+transform = Transform3D(142.242, 0, 0, 0, 142.242, 0, 0, 0, 142.242, -163.713, -8.8218, 285.395)
+
+[node name="Damaged soil2" parent="3d/Soil" instance=ExtResource("14_cxkyl")]
+transform = Transform3D(142.242, 0, 0, 0, 142.242, 0, 0, 0, 142.242, 121.558, -8.8218, 285.395)
+
+[node name="Cloud" type="Node3D" parent="3d"]
+
+[node name="Bad Cloud" parent="3d/Cloud" instance=ExtResource("15_o5xlu")]
+transform = Transform3D(2.41138, 0, 0, 0, 2.41138, 0, 0, 0, 2.41138, 0, 28.6671, 0)
+
+[node name="Bad Cloud2" parent="3d/Cloud" instance=ExtResource("15_o5xlu")]
+transform = Transform3D(2.41138, 0, 0, 0, 2.41138, 0, 0, 0, 2.41138, 146.429, 28.6671, 0)
+
+[node name="tree" type="Node3D" parent="3d"]
+
+[node name="Dead wood" parent="3d/tree" instance=ExtResource("16_kw47s")]
+transform = Transform3D(9.06562, 0, 4.43944, 0, 10.0943, 0, -4.43944, 0, 9.06562, -72.0348, -4.88386, 220.754)
+
+[node name="Dead wood2" parent="3d/tree" instance=ExtResource("16_kw47s")]
+transform = Transform3D(9.06562, 0, 4.43944, 0, 10.0943, 0, -4.43944, 0, 9.06562, 65.0992, -4.88386, 220.754)
