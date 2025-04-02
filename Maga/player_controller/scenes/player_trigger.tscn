@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://btj6i7h1cco8a"]
+[gd_scene load_steps=3 format=3 uid="uid://btj6i7h1cco8a"]
+
+[ext_resource type="Script" path="res://Maga/player_controller/scripts/player_controller_trigger.gd" id="1_bo356"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ds5x"]
 
 [node name="PlayerTrigger" type="Node3D"]
+script = ExtResource("1_bo356")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_0ds5x")
