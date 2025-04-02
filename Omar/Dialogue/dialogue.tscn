@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://comn1ruh06kyp"]
+
+[ext_resource type="Script" path="res://Omar/Dialogue/DialogueNPC.gd" id="1_ul05s"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yntl7"]
+
+[node name="Dialogue" type="CanvasLayer"]
+script = ExtResource("1_ul05s")
+d_file = "res://Omar/Dialogue/json/FisherMan_Chat.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_right = 512.0
+offset_bottom = 136.0
+texture = SubResource("CanvasTexture_yntl7")
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 2.0
+offset_right = 141.0
+offset_bottom = 34.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Name"
+
+[node name="Chat" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 41.0
+offset_right = 471.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Chatting..."
