@@ -8,8 +8,8 @@
 script = ExtResource("1_ul05s")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_right = 623.0
-offset_bottom = 234.0
+offset_right = 520.0
+offset_bottom = 194.0
 texture = SubResource("CanvasTexture_yntl7")
 
 [node name="Name" type="RichTextLabel" parent="NinePatchRect"]
@@ -24,9 +24,9 @@ text = "Name"
 [node name="Chat" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 29.0
-offset_top = 41.0
-offset_right = 471.0
-offset_bottom = 128.0
+offset_top = 34.0
+offset_right = 492.0
+offset_bottom = 189.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Chatting..."
 
