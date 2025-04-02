@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ttreyma0ladq"]
+
+[ext_resource type="PackedScene" uid="uid://6u5l3dgbsjjj" path="res://Matty/Penguin/penguin.glb" id="1_70mu0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jmdkc"]
+radius = 0.389731
+height = 1.69073
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="penguin" parent="." instance=ExtResource("1_70mu0")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="Skeleton3D" parent="penguin/Armature" index="0"]
+bones/6/rotation = Quaternion(0.0061808, -0.000495809, 0.0236181, 0.999702)
+bones/9/rotation = Quaternion(0.611351, 0.0360908, 0.788071, -0.0623828)
+bones/12/rotation = Quaternion(-0.61591, 0.0390062, 0.784006, 0.0668461)
+bones/15/rotation = Quaternion(-0.000273919, -0.0136374, 0.999706, -0.0200464)
+
+[node name="AnimationPlayer" parent="penguin" index="2"]
+autoplay = "Idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0.665119, 0.128964)
+shape = SubResource("CapsuleShape3D_jmdkc")
+
+[editable path="penguin"]
