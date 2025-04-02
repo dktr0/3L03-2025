@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://p2qxn5bv4gkk"]
+
+[ext_resource type="Texture2D" uid="uid://d0gmigf3pubck" path="res://Belinda/Amulet_3.png" id="1_ihh20"]
+
+[node name="Amulet3" type="Node2D"]
+
+[node name="Amulet3" type="Sprite2D" parent="."]
+position = Vector2(206, 123)
+scale = Vector2(5.08228, 4.25926)
+texture = ExtResource("1_ihh20")

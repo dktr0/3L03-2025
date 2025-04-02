@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnivkmk5xids2"]
+
+[ext_resource type="Texture2D" uid="uid://cqhm8jy5jdqyo" path="res://Ruth/oxygenbar8.png" id="1_mc4qq"]
+
+[node name="Oxygen8" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mc4qq")

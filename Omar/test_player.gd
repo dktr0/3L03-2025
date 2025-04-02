@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 40.0
-const JUMP_VELOCITY = 12.5
+const JUMP_VELOCITY = 16.5
 
 var last_direction = Vector3.FORWARD
 @export var rotation_speed = 6
@@ -33,3 +33,7 @@ func _physics_process(delta: float) -> void:
 	$".".rotation.y = lerp_angle($".".rotation.y, atan2(-last_direction.x, -last_direction.z), delta * rotation_speed)
 
 	move_and_slide()
+
+
+func _on_kill_zone_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.

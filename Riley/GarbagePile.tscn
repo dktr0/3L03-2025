@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1mb8vepspln2"]
+
+[ext_resource type="PackedScene" uid="uid://ihwnj70qps8n" path="res://Riley/GLBflies/GarbagePile.glb" id="1_3wqyh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hds0b"]
+height = 0.8
+radius = 1.2
+
+[node name="GarbagePile" type="StaticBody3D"]
+
+[node name="GarbagePile" parent="." instance=ExtResource("1_3wqyh")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.392351, -0.249)
+shape = SubResource("CylinderShape3D_hds0b")
