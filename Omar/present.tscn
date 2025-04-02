@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=34 format=3 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="19_qt78c"]
 [ext_resource type="PackedScene" uid="uid://dx6jtdwd2satn" path="res://Nan/Bad_cloud.tscn" id="20_pd4jm"]
 [ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="22_tpijs"]
+[ext_resource type="Script" path="res://Omar/kill_zone.gd" id="23_7v35e"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="23_51q5n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
@@ -55,12 +56,15 @@ buffer = PackedFloat32Array(-5.95424, 0, 2.10273, -36.83, 0, 6.31462, 0, -52.108
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnsm1"]
 size = Vector3(595.355, 56.7036, 149.093)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dlss7"]
+size = Vector3(217.825, 12.5083, 142.023)
+
 [node name="Present" type="Node3D"]
 
 [node name="World" parent="." instance=ExtResource("1_pht0b")]
 
 [node name="Player" parent="." instance=ExtResource("17_n3ard")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 94.9352, -1.90093, 54.4193)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 94.9352, -1.90093, 54.4193)
 
 [node name="Docks" type="Node" parent="."]
 
@@ -220,21 +224,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.09371, 200.768)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0296, 27.8518, 72.6721)
 shape = SubResource("BoxShape3D_gnsm1")
 
-[node name="Small iceland" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 36.9228, -17.6831, -337.57)
-script = null
-
-[node name="Grass" parent="." instance=ExtResource("16_vxd02")]
-
 [node name="Soil" parent="." instance=ExtResource("22_tpijs")]
 transform = Transform3D(306.395, 0, 0, 0, 50, 0, 0, 0, 76.4474, -32.0429, -7.85794, 278.666)
 
@@ -246,3 +235,149 @@ transform = Transform3D(50.8222, 0, -30.8963, 0, 50, 0, 50.0843, 0, 31.3516, 421
 
 [node name="Damaged soil3" parent="." instance=ExtResource("23_51q5n")]
 transform = Transform3D(-34.8592, 0, -26.2821, 0, 50, 0, 35.3728, 0, -25.9005, 437.924, -9.94134, 317.289)
+
+[node name="grass" type="Node" parent="."]
+
+[node name="Grass" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 189.326, -8.42926, 232.305)
+
+[node name="Grass2" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 189.326, -8.42926, 277.593)
+
+[node name="Grass3" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 189.326, -8.42926, 318.314)
+
+[node name="Grass4" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 139.185, -8.42926, 232.305)
+
+[node name="Grass5" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 139.185, -8.42926, 277.593)
+
+[node name="Grass6" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 139.185, -8.42926, 318.314)
+
+[node name="Grass7" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 91.2157, -8.42926, 232.305)
+
+[node name="Grass8" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 91.2157, -8.42926, 277.593)
+
+[node name="Grass9" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 91.2157, -8.42926, 318.314)
+
+[node name="Grass10" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 41.0749, -8.42926, 232.305)
+
+[node name="Grass11" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 41.0749, -8.42926, 277.593)
+
+[node name="Grass12" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 41.0749, -8.42926, 318.314)
+
+[node name="Grass13" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.25388, -8.42926, 232.305)
+
+[node name="Grass14" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.25388, -8.42926, 277.593)
+
+[node name="Grass15" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.25388, -8.42926, 318.314)
+
+[node name="Grass16" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -53.3946, -8.42926, 232.305)
+
+[node name="Grass17" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -53.3946, -8.42926, 277.593)
+
+[node name="Grass18" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -53.3946, -8.42926, 318.314)
+
+[node name="Grass19" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -101.364, -8.42926, 232.305)
+
+[node name="Grass20" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -101.364, -8.42926, 277.593)
+
+[node name="Grass21" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -101.364, -8.42926, 318.314)
+
+[node name="Grass22" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -151.505, -8.42926, 232.305)
+
+[node name="Grass23" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -151.505, -8.42926, 277.593)
+
+[node name="Grass24" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -151.505, -8.42926, 318.314)
+
+[node name="Grass25" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -201.124, -8.42926, 232.305)
+
+[node name="Grass26" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -201.124, -8.42926, 277.593)
+
+[node name="Grass27" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -201.124, -8.42926, 318.314)
+
+[node name="Grass28" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -255.728, -8.42926, 232.305)
+
+[node name="Grass29" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -255.728, -8.42926, 277.593)
+
+[node name="Grass30" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -255.728, -8.42926, 318.314)
+
+[node name="Grass31" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -302.457, -8.42926, 232.305)
+
+[node name="Grass32" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -302.457, -8.42926, 277.593)
+
+[node name="Grass33" parent="grass" instance=ExtResource("16_vxd02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -302.457, -8.42926, 318.314)
+
+[node name="Kill Zone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.555, -20.4196, -28.9995)
+script = ExtResource("23_7v35e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kill Zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9303, 0, 5.98335)
+shape = SubResource("BoxShape3D_dlss7")
+
+[node name="Kill Zone4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -367.699, -20.4196, 127.179)
+script = ExtResource("23_7v35e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kill Zone4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7079, 0, 5.98335)
+shape = SubResource("BoxShape3D_dlss7")
+
+[node name="Kill Zone3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.254, -20.4196, 30.0191)
+script = ExtResource("23_7v35e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kill Zone3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1317, -8.07365, -8.5789)
+shape = SubResource("BoxShape3D_dlss7")
+
+[node name="Kill Zone2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.005, -16.8496, 121.781)
+script = ExtResource("23_7v35e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kill Zone2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 54.1183, -5.75415, 5.98335)
+shape = SubResource("BoxShape3D_dlss7")
+
+[connection signal="area_entered" from="Kill Zone" to="Player" method="_on_kill_zone_area_entered"]
+[connection signal="body_entered" from="Kill Zone" to="Player" method="_on_kill_zone_body_entered"]
+[connection signal="body_entered" from="Kill Zone" to="Kill Zone" method="_on_body_entered"]
+[connection signal="area_entered" from="Kill Zone4" to="Player" method="_on_kill_zone_area_entered"]
+[connection signal="body_entered" from="Kill Zone4" to="Player" method="_on_kill_zone_body_entered"]
+[connection signal="body_entered" from="Kill Zone4" to="Kill Zone4" method="_on_body_entered"]
+[connection signal="area_entered" from="Kill Zone3" to="Player" method="_on_kill_zone_area_entered"]
+[connection signal="body_entered" from="Kill Zone3" to="Player" method="_on_kill_zone_body_entered"]
+[connection signal="body_entered" from="Kill Zone3" to="Kill Zone3" method="_on_body_entered"]
+[connection signal="area_entered" from="Kill Zone2" to="Player" method="_on_kill_zone_area_entered"]
+[connection signal="body_entered" from="Kill Zone2" to="Player" method="_on_kill_zone_body_entered"]
+[connection signal="body_entered" from="Kill Zone2" to="Kill Zone2" method="_on_body_entered"]
