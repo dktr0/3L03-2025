@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5uq0353c3pvy"]
 
-[ext_resource type="ArrayMesh" uid="uid://snlp8xd5hv2n" path="res://Andy/texture/tree.tres" id="1_m220m"]
+[ext_resource type="ArrayMesh" uid="uid://snlp8xd5hv2n" path="res://Omar/texture/tree.tres" id="1_m220m"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8ettn"]
 
