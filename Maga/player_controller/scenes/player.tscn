@@ -1,21 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://divnvg70t62q"]
+[gd_scene load_steps=6 format=3 uid="uid://divnvg70t62q"]
 
 [ext_resource type="Script" path="res://Maga/player_controller/scripts/player_controller_core.gd" id="1_k1nj4"]
 [ext_resource type="Script" path="res://Maga/player_controller/scripts/player_controller_camera.gd" id="2_uqf3q"]
 [ext_resource type="Script" path="res://Maga/player_controller/scripts/player_controller_movement.gd" id="3_gg43f"]
+[ext_resource type="PackedScene" uid="uid://b0wwl01auf08j" path="res://Dylan/character_1.tscn" id="4_duoy4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sada1"]
 radius = 0.4
 height = 1.6
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_cnfsi"]
-radius = 0.4
-height = 1.6
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_5p7kk"]
-top_radius = 0.24
-bottom_radius = 0.0
-height = 0.8
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_k1nj4")
@@ -23,10 +15,6 @@ script = ExtResource("1_k1nj4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_sada1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
-mesh = SubResource("CapsuleMesh_cnfsi")
 
 [node name="CameraRoot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.2)
@@ -38,6 +26,5 @@ target_path = NodePath("../..")
 [node name="MovementSystem" type="Node" parent="."]
 script = ExtResource("3_gg43f")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.00890105, 0.99996, 0, -0.99996, -0.00890105, 0, 1.19445, -0.187216)
-mesh = SubResource("CylinderMesh_5p7kk")
+[node name="Character1" parent="." instance=ExtResource("4_duoy4")]
+transform = Transform3D(-0.65, 0, 9.81473e-08, 0, 0.65, 0, -9.81473e-08, 0, -0.65, 0, 0, 0)
