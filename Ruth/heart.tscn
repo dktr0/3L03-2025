@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://nvcbq6oq13cd" path="res://Ruth/heartlives.png" id="1_iv7uj"]
 
-[node name="Heart" type="Node2D"]
+[node name="Heart" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_iv7uj")
