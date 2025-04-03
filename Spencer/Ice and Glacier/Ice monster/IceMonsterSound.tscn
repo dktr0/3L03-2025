@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0ylwq1b8dvjj"]
+
+[ext_resource type="Script" path="res://Spencer/Ice and Glacier/Ice monster/ice_monster_sound.gd" id="1_452f5"]
+[ext_resource type="AudioStream" uid="uid://bl31sgyabmo7r" path="res://Spencer/Ice and Glacier/Ice monster/ice monster with roar.mp3" id="1_v6wh5"]
+[ext_resource type="AudioStream" uid="uid://c2i2okl4khod3" path="res://Spencer/Ice and Glacier/Ice monster/ice monster without roar.mp3" id="2_iwusw"]
+
+[node name="IceMonsterSound" type="Node3D"]
+script = ExtResource("1_452f5")
+
+[node name="IceMonsterRoar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_v6wh5")
+
+[node name="IceMonsterNoRoar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_iwusw")

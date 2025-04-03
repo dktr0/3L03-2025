@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://do5gxa6ye15wg"]
+
+[ext_resource type="AudioStream" uid="uid://222yt3eqdo2x" path="res://Spencer/Windmill Farm/Windmill blowing/Windmill blowing.mp3" id="1_phq6h"]
+
+[node name="WindmillBlowingSound3d" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_phq6h")

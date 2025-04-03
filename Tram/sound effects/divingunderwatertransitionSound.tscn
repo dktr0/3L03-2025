@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://lkt4q5j1yoim"]
+
+[ext_resource type="AudioStream" uid="uid://gxs0tltd663c" path="res://Tram/sound effects/diving underwater start.mp3" id="1_gm510"]
+
+[node name="DivingunderwatertransitionSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_gm510")

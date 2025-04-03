@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://k2hrjewq652b"]
+
+[ext_resource type="AudioStream" uid="uid://ckylbqy8mxdft" path="res://Tram/sound effects/grass-step-1.mp3" id="1_c6bke"]
+[ext_resource type="Script" path="res://Tram/sound effects/foot_step_grass.gd" id="1_xn35f"]
+[ext_resource type="AudioStream" uid="uid://cvdn7vbape021" path="res://Tram/sound effects/grass-step-2.mp3" id="2_tcxum"]
+[ext_resource type="AudioStream" uid="uid://cw0m7yp5e4mdb" path="res://Tram/sound effects/grass-step-3.mp3" id="3_p0iii"]
+[ext_resource type="AudioStream" uid="uid://ddwpwsc3asyay" path="res://Tram/sound effects/grass-step-4.mp3" id="4_hbyl6"]
+[ext_resource type="AudioStream" uid="uid://ds5cv8bl8e0xb" path="res://Tram/sound effects/grass-step-5.mp3" id="5_lnq78"]
+
+[node name="FootStepGrass" type="Node3D"]
+script = ExtResource("1_xn35f")
+
+[node name="grassstep1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_c6bke")
+
+[node name="grassstep2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tcxum")
+
+[node name="grassstep3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p0iii")
+
+[node name="grassstep4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hbyl6")
+
+[node name="grassstep5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lnq78")
+volume_db = -6.0

@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg2gydq1pawev"]
+
+[ext_resource type="Texture2D" uid="uid://msl5hnliqx0v" path="res://Anson/dialoguebox.png" id="1_01cqn"]
+
+[node name="Dialogue_present1" type="CanvasLayer"]
+
+[node name="DialogueBox1" type="TextureRect" parent="."]
+offset_left = -65.0
+offset_top = -286.0
+offset_right = 959.0
+offset_bottom = 738.0
+texture = ExtResource("1_01cqn")
+
+[node name="Text1" type="RichTextLabel" parent="DialogueBox1"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 348.0
+offset_right = 910.0
+offset_bottom = 730.0
+theme_override_font_sizes/normal_font_size = 28
+text = "\"Eh? You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned
+up with got destroyed, I seen the shards of it fly off all over the place
+
+One flew right into that fire, at the top of those charred trees, wouldnt want to be the one to have
+to go there."
+visible_characters_behavior = 1
+
+[node name="DialogueBox2" type="TextureRect" parent="DialogueBox1"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 957.0
+offset_right = 1021.0
+offset_bottom = 1981.0
+texture = ExtResource("1_01cqn")
+
+[node name="Text2" type="RichTextLabel" parent="DialogueBox1/DialogueBox2"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 318.0
+offset_right = 912.0
+offset_bottom = 706.0
+theme_override_font_sizes/normal_font_size = 28
+text = "Another got snatched by some ice critters settin’ traps up north east. Been watching those
+troublemakers destroy everything around them. I tell you, there is no reasoning with those fellas,
+what with their violent nature
+Last piece? Done sunk to the bottom of what was once my home. The village under the sea - just
+north west of here. Was thinking of heading there to snag it, but that water ain't what it used to
+be - too much filth in the water as is"
+visible_characters_behavior = 1
+
+[node name="DialogueBox3" type="TextureRect" parent="DialogueBox1/DialogueBox2"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 957.0
+offset_right = 1021.0
+offset_bottom = 1981.0
+texture = ExtResource("1_01cqn")
+
+[node name="Text3" type="RichTextLabel" parent="DialogueBox1/DialogueBox2/DialogueBox3"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 318.0
+offset_right = 912.0
+offset_bottom = 706.0
+theme_override_font_sizes/normal_font_size = 28
+text = "Things ain’t like they used to be. The ice, the rivers, even the fish—they’re all disappearin’. Used
+to be a paradise here. Now? Just smoke, poison, and bad luck.
+Hope you find what you’re lookin’ for. Just watch where you step—world ain’t too kind these
+days.\"
+These may help ya later on, I got no use for these anymore, so have your pick. Only 1 thing,
+though, I’m not foolish enough to be here defenseless."
+visible_characters_behavior = 1

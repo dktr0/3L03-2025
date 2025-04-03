@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://dd5r3d4iel2xx"]
+
+[ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="1_rsee3"]
+[ext_resource type="Texture2D" uid="uid://cmhupq3njsfqu" path="res://Nan/Goodsky.jpg" id="2_leoo4"]
+[ext_resource type="PackedScene" path="res://Andy/amulet/chest.tscn" id="3_r6s54"]
+[ext_resource type="PackedScene" path="res://Andy/amulet/amulet_ui.tscn" id="4_o2vly"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3cnva"]
+size = Vector2(100, 100)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5cgbn"]
+points = PackedVector3Array(-50, 0, -50, -50, 0, 50, 50, 0, -50, 50, 0, 50)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_u0rtn"]
+panorama = ExtResource("2_leoo4")
+
+[sub_resource type="Sky" id="Sky_njy5p"]
+sky_material = SubResource("PanoramaSkyMaterial_u0rtn")
+
+[sub_resource type="Environment" id="Environment_n38y1"]
+background_mode = 2
+sky = SubResource("Sky_njy5p")
+sky_custom_fov = 127.7
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_3cnva")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_5cgbn")
+
+[node name="Player" parent="." instance=ExtResource("1_rsee3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494966, 0)
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n38y1")
+
+[node name="Chest" parent="." instance=ExtResource("3_r6s54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.170968, 4.5184)
+
+[node name="Chest2" parent="." instance=ExtResource("3_r6s54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76681, 0.170968, 4.5184)
+shard_index = 2
+
+[node name="Chest3" parent="." instance=ExtResource("3_r6s54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85003, 0.170968, 4.5184)
+shard_index = 3
+
+[node name="AmuletUI" parent="." instance=ExtResource("4_o2vly")]

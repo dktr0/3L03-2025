@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh1g7wywkgw8r"]
+
+[ext_resource type="Script" path="res://Spencer/Ice and Glacier/Footsteps Ice/foot_step_ice.gd" id="1_fr55u"]
+[ext_resource type="AudioStream" uid="uid://b80odwl7112kg" path="res://Spencer/Ice and Glacier/Footsteps Ice/1.mp3" id="1_ln6au"]
+[ext_resource type="AudioStream" uid="uid://6qvi330h0mf1" path="res://Spencer/Ice and Glacier/Footsteps Ice/2.mp3" id="2_e5dmd"]
+[ext_resource type="AudioStream" uid="uid://cy7b7bwb6s418" path="res://Spencer/Ice and Glacier/Footsteps Ice/3.mp3" id="3_k4kpu"]
+[ext_resource type="AudioStream" uid="uid://diigox6b03hp4" path="res://Spencer/Ice and Glacier/Footsteps Ice/4.mp3" id="4_do2wk"]
+[ext_resource type="AudioStream" uid="uid://b2r2a5qmc1csg" path="res://Spencer/Ice and Glacier/Footsteps Ice/5.mp3" id="5_ax48g"]
+
+[node name="FootStepIce" type="Node3D"]
+script = ExtResource("1_fr55u")
+
+[node name="1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ln6au")
+
+[node name="2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_e5dmd")
+
+[node name="3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k4kpu")
+
+[node name="4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_do2wk")
+
+[node name="5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ax48g")
