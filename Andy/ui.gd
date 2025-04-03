@@ -37,9 +37,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("move_right"):
 		angle += rotate_speed * delta
-	elif Input.is_action_pressed("left"):
+	elif Input.is_action_pressed("move_left"):
 		angle -= rotate_speed * delta
 
 	collision_pivot.rotation = angle
