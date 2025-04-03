@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b3it3vdiaqouq" path="res://Ruth/bar3.png" id="1_wmhka"]
 
-[node name="Bar3" type="Node2D"]
+[node name="Bar3" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wmhka")

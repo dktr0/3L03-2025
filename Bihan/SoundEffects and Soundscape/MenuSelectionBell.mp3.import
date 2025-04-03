@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5412bkm1brf8"
+path="res://.godot/imported/MenuSelectionBell.mp3-b4acd295ae07d4def53d68a865a159ed.mp3str"
+
+[deps]
+
+source_file="res://Bihan/SoundEffects and Soundscape/MenuSelectionBell.mp3"
+dest_files=["res://.godot/imported/MenuSelectionBell.mp3-b4acd295ae07d4def53d68a865a159ed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
