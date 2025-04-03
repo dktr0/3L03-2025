@@ -317,6 +317,16 @@ shape = SubResource("WorldBoundaryShape3D_ckpmj")
 transform = Transform3D(2.64296e-07, -4.43922e-08, 1.32486, 6.0464, 9.15654e-15, -5.79116e-08, 0, 1.01557, 5.79116e-08, -4, -2, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 
+[node name="Wall Plane 12" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.23073e-08, -4.43922e-08, 1.65608, 1.88297, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, -2.94222, 5.59621, -11.83)
+mesh = SubResource("PlaneMesh_gnbse")
+surface_material_override/0 = SubResource("StandardMaterial3D_4hoe6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 12/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_stha3")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-16.1562, 0, 0, 0, 1, 0, 0, 0, -19.5387, -6.6018, 0.878046, -0.252868)
 mesh = SubResource("CylinderMesh_6cmrb")
