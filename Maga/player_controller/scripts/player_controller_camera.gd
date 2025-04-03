@@ -37,12 +37,15 @@ extends Camera3D
 @export var base_fov := 75.0 # Default field of view
 @export var sprint_fov_increase := 10.0 # How much FOV increases when sprinting
 @export var fov_lerp_speed := 6.0 # How fast the FOV transitions
+@export var trail_offset_strength := 0.3 # Strength of the movement trail effect
+@export var trail_lerp_speed := 5.0 # How quickly the trail offset adapts
 
 var target: Node3D
 var movement_system: Node # Add reference to get sprint status
 var camera_pitch := 0.0
 var camera_yaw := 0.0
 var current_distance := desired_distance
+var current_trail_offset := Vector3.ZERO # Stores the smoothly interpolated offset
 # var right_stick_deadzone := 0.1 # No longer needed for mouse
 var targeting_mode := false
 var current_target: Node3D = null
@@ -106,18 +109,36 @@ func process_free_camera(delta):
 	cam_rot = cam_rot.rotated(Vector3.UP, camera_yaw)
 	cam_rot = cam_rot.rotated(cam_rot.x, camera_pitch)
 
+	# --- Calculate Target Trail Offset --- 
+	var target_trail_offset = Vector3.ZERO # The offset we want to reach
+	# Ensure target and velocity exist before accessing
+	if target and target.has_meta("velocity") or "velocity" in target: # Safer check
+		var player_velocity = target.velocity
+		player_velocity.y = 0 # Use only horizontal velocity
+		var trail_velocity_threshold_sq = 0.1 # Avoid applying offset when nearly still
+		if player_velocity.length_squared() > trail_velocity_threshold_sq: 
+			target_trail_offset = player_velocity.normalized() * -trail_offset_strength # Negative to trail *behind* movement
+	# ----------------------------------
+	
+	# --- Smoothly Interpolate Trail Offset ---
+	current_trail_offset = current_trail_offset.lerp(target_trail_offset, delta * trail_lerp_speed)
+	# -----------------------------------------
+
 	# Apply horizontal offset relative to camera's right direction
-	var offset = cam_rot.x * horizontal_offset
-	var target_pos = target.global_transform.origin + Vector3.UP * desired_height + offset
+	var shoulder_offset = cam_rot.x * horizontal_offset
+	# --- Incorporate SMOOTHED Trail Offset into Target Position ---
+	var base_target_origin = target.global_transform.origin + current_trail_offset # Apply SMOOTHED trail offset
+	var target_pos = base_target_origin + Vector3.UP * desired_height + shoulder_offset # Add height and shoulder offset
+	# ------------------------------------------------------------
 
 	var cam_dir = -cam_rot.z.normalized()
 	var ideal_cam_pos = target_pos + cam_dir * desired_distance # Where camera wants to be without collision
 	var target_cam_pos = ideal_cam_pos # Final position after collision check
 
-	# Check for collisions
+	# Check for collisions (Uses the modified target_pos)
 	var space_state = get_world_3d().direct_space_state
 	var ray_params = PhysicsRayQueryParameters3D.new()
-	ray_params.from = target_pos
+	ray_params.from = target_pos # Raycast starts from the offsetted look-at point
 	ray_params.to = ideal_cam_pos # Raycast to the ideal position
 	ray_params.collision_mask = collision_mask
 	ray_params.exclude = [target]
@@ -135,15 +156,14 @@ func process_free_camera(delta):
 	# Clamp distance (even if collision adjusted it)
 	current_distance = clamp(current_distance, min_distance, max_distance)
 
-	# Ensure target_cam_pos respects the clamped distance if there was no collision
+	# Ensure target_cam_pos respects the clamped distance if there was no collision (Uses the modified target_pos)
 	if !collision:
 		target_cam_pos = target_pos + cam_dir * current_distance
 
-	# --- CHANGE: Removed positional lerp to test bounce issue ---
 	# Make camera position update instantly
 	global_transform.origin = target_cam_pos 
 
-	# Always look at the target position (slightly above player origin)
+	# Always look at the target position (which now includes the trail offset)
 	look_at(target_pos, Vector3.UP)
 
 func process_targeting_camera(delta):
