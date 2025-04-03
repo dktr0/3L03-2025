@@ -183,12 +183,17 @@ func _physics_process(delta: float):
 	move_and_slide()
 
 	# --- Handle Rotation ---
-	if look_direction != Vector3.ZERO:
+	if look_direction.length_squared() > 0.0001: # Use length_squared for efficiency
+		# Re-introduced smoothing to prevent camera jolting
 		var current_rotation_speed = rotation_speed
-		if velocity.length_squared() > 0.1:
+		# Use a higher rotation speed if the player is moving significantly
+		if velocity.length_squared() > 0.1: # Threshold to consider moving
 			current_rotation_speed *= moving_rotation_multiplier
 		
+		# Calculate the target transform based on look_direction
 		var target_transform = transform.looking_at(global_position + look_direction, Vector3.UP)
+		
+		# Interpolate towards the target rotation
 		transform = transform.interpolate_with(target_transform, delta * current_rotation_speed)
 
 func _process(_delta):

@@ -20,7 +20,6 @@ extends Camera3D
 
 @export_category("Camera Settings")
 @export var follow_speed := 5.0
-# @export var rotation_speed := 2.0 # Replaced by mouse sensitivity
 @export var mouse_sensitivity_x := 0.003 # Sensitivity for horizontal mouse movement
 @export var mouse_sensitivity_y := 0.003 # Sensitivity for vertical mouse movement
 @export var min_distance := 1.0 # Closer min distance
@@ -34,7 +33,7 @@ extends Camera3D
 @export var target_path: NodePath
 @export var min_pitch_degrees := -60.0 # Minimum vertical angle
 @export var max_pitch_degrees := 75.0  # Maximum vertical angle
-@export var horizontal_offset := 0.3 # Horizontal offset for over-the-shoulder view
+@export var horizontal_offset := 0 # Horizontal offset for over-the-shoulder view
 @export var base_fov := 75.0 # Default field of view
 @export var sprint_fov_increase := 10.0 # How much FOV increases when sprinting
 @export var fov_lerp_speed := 6.0 # How fast the FOV transitions
@@ -79,11 +78,11 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and not targeting_mode:
 		# Adjust yaw and pitch based on relative mouse movement
 		camera_yaw -= event.relative.x * mouse_sensitivity_x
-		camera_pitch -= event.relative.y * mouse_sensitivity_y
+		camera_pitch += event.relative.y * mouse_sensitivity_y
 		# Clamp pitch
 		camera_pitch = clamp(camera_pitch, min_pitch_rad, max_pitch_rad)
 
-func _process(delta):
+func _physics_process(delta):
 	if target == null:
 		return
 
@@ -140,8 +139,9 @@ func process_free_camera(delta):
 	if !collision:
 		target_cam_pos = target_pos + cam_dir * current_distance
 
-	# --- CHANGE: Smoothly interpolate camera position --- 
-	global_transform.origin = global_transform.origin.lerp(target_cam_pos, delta * follow_speed * 2.0) # Use follow_speed for interpolation
+	# --- CHANGE: Removed positional lerp to test bounce issue ---
+	# Make camera position update instantly
+	global_transform.origin = target_cam_pos 
 
 	# Always look at the target position (slightly above player origin)
 	look_at(target_pos, Vector3.UP)
