@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://cswa167n3gdaa"]
 
-[ext_resource type="Texture2D" uid="uid://c86tw2nomi5kp" path="res://Omar/texture/2d_healthyTrunk1 Base Color.png" id="1_riter"]
+[ext_resource type="Texture2D" uid="uid://c86tw2nomi5kp" path="res://Andy/texture/2d_healthyTrunk1 Base Color.png" id="1_riter"]
 [ext_resource type="Texture2D" uid="uid://dvt2vbpw6pm72" path="res://Andy/texture/2d_HealthyTree1 Base Color.png" id="2_l6euv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lyal5"]
