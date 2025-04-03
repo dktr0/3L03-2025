@@ -15,77 +15,70 @@
 # - 
 # .----------------------------------------------------------------------------.
 
-
 extends CharacterBody3D
-
-# Core script that manages and coordinates all player controller components
-
-# --- REMOVED EXPORTED PATHS ---
-# @export_category("Component Paths")
-# @export var camera_path: NodePath
-# @export var movement_system_path: NodePath
 
 @export_category("Targeting Settings")
 @export var target_detection_range := 10.0
-@export var target_group := "targetable"
+@export var target_group := "targetable" # Group name for objects that can be targeted
 
 @export_category("Physics Settings")
 @export var gravity := 9.8
 @export var jump_strength := 5.0
-@export var rotation_speed := 10.0 # Base rotation speed
-@export var moving_rotation_multiplier := 1.2 # Faster turn when moving
-@export var air_control_factor := 0.7 # Increased air control
-@export var sideways_jump_hindrance := 0.2 # Multiplier for air control when jumping sideways/backwards (0=none, 1=full)
+@export var rotation_speed := 10.0 # Base speed for player rotation towards look direction
+@export var moving_rotation_multiplier := 1.2 # Multiplier applied to rotation speed when moving
+@export var air_control_factor := 0.7 # How much control the player has while airborne (0=none, 1=full)
+@export var sideways_jump_hindrance := 0.2 # Reduces air control when moving sideways/backwards during jump (0=no hindrance, 1=full stop)
 
 @export_category("Jump Tuning")
-@export var variable_jump_cutoff_multiplier := 0.5 # Multiplies upward velocity when jump is released early
-@export var coyote_time_duration := 0.1 # Seconds player can still jump after leaving ground
-@export var jump_buffer_duration := 0.1 # Seconds the jump input is buffered before landing
+@export var variable_jump_cutoff_multiplier := 0.5 # Multiplies upward velocity when jump button released early
+@export var coyote_time_duration := 0.1 # Seconds player can still jump after leaving a platform
+@export var jump_buffer_duration := 0.1 # Seconds a jump input is remembered before landing
 
+# Node References
 var camera_node: Camera3D
-var movement_system: Node # Keep reference to the movement system node
-var controller: Node
-var input_handler: Node
+var movement_system: Node # Reference to the MovementSystem script/node
+var controller: Node # Reference to the PlayerControllerInputs Autoload
+var input_handler: Node # Reference to the InputManager inner class instance
 
-# Targeting variables
-var current_target: Node3D = null
-var is_targeting := false
-var potential_targets := []
+# Targeting State
+var current_target: Node3D = null # The currently locked-on target
+var is_targeting := false # Flag indicating if targeting mode is active
+var potential_targets := [] # List of targets currently within range
 
-# Jump state variable
-var jump_direction := Vector3.FORWARD # Store the look direction at the moment of jump
-var coyote_timer := 0.0
-var jump_buffer_timer := 0.0
-var is_performing_jump := false # Flag for variable jump height check
+# Jump State
+var jump_direction := Vector3.FORWARD # Stores the player's look direction at the moment of jumping
+var coyote_timer := 0.0 # Timer for coyote time window
+var jump_buffer_timer := 0.0 # Timer for jump input buffer
+var is_performing_jump := false # Flag to track if currently in the upward phase of a jump (for variable height)
 
+## Called when the node enters the scene tree for the first time.
 func _ready():
-	# Get component references using node paths/names from player.tscn
+	# Get references to child nodes and autoloads
 	camera_node = get_node_or_null("CameraRoot/Camera3D") as Camera3D
 	movement_system = get_node_or_null("MovementSystem")
+	controller = get_node_or_null("/root/PlayerControllerInputs")
 
-	# Check if nodes were found
+	# Validate node references
 	if !camera_node:
 		printerr("Player Core: Camera3D node not found at 'CameraRoot/Camera3D'.")
 	if !movement_system:
 		printerr("Player Core: MovementSystem node not found at 'MovementSystem'.")
-	# Pass camera reference to movement system if both exist
+	# Pass camera reference to movement system if both exist and method is available
 	elif movement_system.has_method("setup"):
 		movement_system.setup(camera_node)
 	else:
 		printerr("Player Core: MovementSystem node does not have a setup() method.")
-
-	# Get controller reference from AutoLoad
-	controller = get_node_or_null("/root/PlayerController")
+	
 	if !controller:
-		push_warning("Player Core: PlayerController Autoload not found.")
+		push_warning("Player Core: PlayerControllerInputs Autoload not found.")
 
-	# Connect to the input handler for interaction
+	# Instantiate and add the input handler
 	input_handler = InputManager.new(self)
 	add_child(input_handler)
 
-# Central physics loop
+## Called every physics frame. Handles movement, jumping, gravity, and rotation.
 func _physics_process(delta: float):
-	# Ensure movement system is valid and has the method we need
+	# Ensure movement system is valid before proceeding
 	if !movement_system or !movement_system.has_method("get_movement_input"):
 		printerr("Player Core: Movement system invalid or missing 'get_movement_input' method.")
 		return
@@ -96,47 +89,45 @@ func _physics_process(delta: float):
 	if jump_buffer_timer > 0.0:
 		jump_buffer_timer -= delta
 
-	# --- Get Movement Input First (needed for jump direction) ---
+	# --- Get Movement Input ---
+	# This is needed early for jump direction calculation
 	var movement_input = movement_system.get_movement_input(delta, is_targeting)
-	var target_horizontal_velocity = movement_input["velocity"] # Raw target velocity based on input
-	var look_direction = movement_input["look_direction"] # Direction player should face
+	var target_horizontal_velocity = movement_input["velocity"] # Desired velocity based on input
+	var look_direction = movement_input["look_direction"] # Desired facing direction
 
-	# --- Ground Check & Coyote Time Update ---
+	# --- Ground Check & Coyote Time ---
 	var on_floor = is_on_floor()
 	if on_floor:
-		coyote_timer = coyote_time_duration
-		is_performing_jump = false # Reset jump state on ground
-	else:
-		# If we just left the ground, start coyote timer (if not already started)
-		# This is handled implicitly by resetting on_floor and decrementing
-		pass 
+		coyote_timer = coyote_time_duration # Reset coyote timer when grounded
+		is_performing_jump = false # Reset jump state flags when grounded
+	# Coyote timer naturally decreases when not on floor
 
 	# --- Handle Jump Input Buffering ---
 	if Input.is_action_just_pressed("move_jump"):
 		jump_buffer_timer = jump_buffer_duration
 		
-	# --- Check Jump Condition (Buffer & Coyote Time) ---
+	# --- Check Jump Condition (Requires buffered input and coyote time window) ---
 	var can_jump = jump_buffer_timer > 0.0 and coyote_timer > 0.0
 	
 	if can_jump:
 		velocity.y = jump_strength
-		# Store direction (Fix: Check length before normalizing)
-		if look_direction.length_squared() > 0.0001:
+		# Store the horizontal direction faced when jumping for air control calculation
+		if look_direction.length_squared() > 0.0001: # Avoid normalizing zero vector
 			jump_direction = look_direction.normalized()
 		else:
-			# Fallback if look_direction is zero
-			jump_direction = transform.basis.z if transform.basis.z != Vector3.ZERO else Vector3.FORWARD
+			# Fallback if look_direction is zero (e.g., standing still)
+			jump_direction = -transform.basis.z if transform.basis.z != Vector3.ZERO else Vector3.FORWARD
 		
-		# Consume timers & set state
+		# Consume timers and set jump state
 		jump_buffer_timer = 0.0 
 		coyote_timer = 0.0 
 		is_performing_jump = true
 
 	# --- Variable Jump Height Cutoff ---
-	# If jump button released early while still moving up, reduce upward velocity
+	# If jump button is released early while still moving upwards, reduce upward velocity
 	if is_performing_jump and not on_floor and Input.is_action_just_released("move_jump") and velocity.y > 0:
 		velocity.y *= variable_jump_cutoff_multiplier
-		is_performing_jump = false # Cutoff applied, stop checking
+		is_performing_jump = false # Cutoff applied, stop checking for this jump
 	
 	# --- Apply Gravity ---
 	if not on_floor:
@@ -145,120 +136,131 @@ func _physics_process(delta: float):
 	# --- Apply Air Control & Directional Hindrance ---
 	var current_accel = movement_system.acceleration
 	var current_decel = movement_system.deceleration
-	var effective_air_control = air_control_factor # Base air control
+	var effective_air_control = air_control_factor # Start with base air control
 
 	if not on_floor:
-		# Calculate directional hindrance factor based on alignment with jump direction
+		# Reduce air control if moving sideways or backwards relative to the jump direction
 		var current_dir = Vector3.ZERO
-		if target_horizontal_velocity.length_squared() > 0.0001: # Use small threshold to avoid normalizing zero vector
+		if target_horizontal_velocity.length_squared() > 0.0001:
 			current_dir = target_horizontal_velocity.normalized()
 		
 		if current_dir != Vector3.ZERO:
-			# Dot product: 1 if aligned with jump, 0 if perpendicular, -1 if opposite
+			# Dot product gives alignment: 1 (forward) to -1 (backward)
 			var alignment = jump_direction.dot(current_dir)
-			# Map alignment (-1 to 1) to hindrance factor (sideways_jump_hindrance to 1.0)
-			# Using max(0, alignment) makes backward jumps treated like sideways jumps
-			var directional_factor = lerp(sideways_jump_hindrance, 1.0, max(0.0, alignment))
+			# Map alignment to hindrance factor: Lerp between full hindrance (0.0) and no hindrance (1.0)
+			# max(0, alignment) treats backward like sideways for hindrance calculation
+			var directional_factor = lerp(sideways_jump_hindrance, 1.0, (alignment + 1.0) / 2.0) 
 			effective_air_control *= directional_factor
-		else:
-			# If no input, apply full base air control for deceleration
-			pass # effective_air_control remains air_control_factor
+		# If no input (current_dir is ZERO), effective_air_control remains base air_control_factor for deceleration
 			
-		# Apply the final effective air control to accel/decel
+		# Apply the calculated effective air control to acceleration and deceleration
 		current_accel *= effective_air_control
 		current_decel *= effective_air_control
 	else:
-		# Reset jump direction when grounded (optional, but clean)
-		jump_direction = transform.basis.z if transform.basis.z != Vector3.ZERO else Vector3.FORWARD
+		# Reset jump direction when grounded (optional, but ensures clean state)
+		jump_direction = -transform.basis.z if transform.basis.z != Vector3.ZERO else Vector3.FORWARD
 
-	# --- Apply Horizontal Velocity (using lerp for accel/decel) ---
-	if target_horizontal_velocity.length_squared() > 0.01:
+	# --- Apply Horizontal Velocity (Lerp for smooth acceleration/deceleration) ---
+	if target_horizontal_velocity.length_squared() > 0.01: # Check if there is movement input
 		velocity.x = lerp(velocity.x, target_horizontal_velocity.x, current_accel * delta)
 		velocity.z = lerp(velocity.z, target_horizontal_velocity.z, current_accel * delta)
-	else:
+	else: # No movement input, decelerate
 		velocity.x = lerp(velocity.x, 0.0, current_decel * delta)
 		velocity.z = lerp(velocity.z, 0.0, current_decel * delta)
 
-	# --- Apply Movement ---
+	# --- Apply Movement via move_and_slide ---
 	move_and_slide()
 
-	# --- Handle Rotation ---
-	if look_direction.length_squared() > 0.0001: # Use length_squared for efficiency
-		# Re-introduced smoothing to prevent camera jolting
+	# --- Handle Rotation (Smoothly turn towards look_direction) ---
+	if look_direction.length_squared() > 0.0001: # Check if there is a valid look direction
 		var current_rotation_speed = rotation_speed
-		# Use a higher rotation speed if the player is moving significantly
-		if velocity.length_squared() > 0.1: # Threshold to consider moving
+		# Rotate faster when actively moving
+		if velocity.length_squared() > 0.1: # Use velocity magnitude to check if moving significantly
 			current_rotation_speed *= moving_rotation_multiplier
 		
-		# Calculate the target transform based on look_direction
+		# Calculate the target transform based on the look direction
 		var target_transform = transform.looking_at(global_position + look_direction, Vector3.UP)
 		
-		# Interpolate towards the target rotation
+		# Interpolate the current transform towards the target transform for smooth rotation
 		transform = transform.interpolate_with(target_transform, delta * current_rotation_speed)
 
+## Called every frame. Handles non-physics updates like targeting UI.
 func _process(_delta):
-	# Handle targeting system update
+	# Update targeting UI elements if targeting is active
 	if is_targeting and current_target:
 		update_targeting()
 
-# Input handler inner class to isolate input handling
+# ============================================================================ #
+# region Input Handling (Inner Class)
+# ============================================================================ #
+
+## Inner class dedicated to handling player input actions.
 class InputManager extends Node:
-	var parent: Node
+	var parent: Node # Reference to the PlayerControllerCore instance
 	
+	## Constructor: Stores the parent reference.
 	func _init(p):
 		parent = p
 	
+	## Handles unhandled input events.
 	func _input(event):
+		# Toggle targeting mode
 		if event.is_action_pressed("target"):
 			parent.toggle_targeting()
 			
+		# Trigger interaction via the movement system
 		if event.is_action_pressed("action"):
 			if parent.movement_system and parent.movement_system.has_method("interact"):
 				parent.movement_system.interact()
 
-# Targeting system functions (moved from targeting_system.gd)
+# ============================================================================ #
+# region Targeting System
+# ============================================================================ #
+
+## Toggles the targeting state between active and inactive.
 func toggle_targeting():
 	if is_targeting:
 		release_target()
 	else:
 		acquire_target()
 
+## Attempts to find and lock onto a suitable target.
 func acquire_target():
-	find_potential_targets()
+	find_potential_targets() # Refresh the list of nearby targets
 	
-	if potential_targets.size() > 0:
-		# Find closest target in front of player
-		var closest_target = null
-		var closest_dot = -1.0
+	if not potential_targets.is_empty():
+		# Find the closest target generally in front of the player
+		var closest_target: Node3D = null
+		var closest_dot = -1.0 # Use dot product for angle check (-1 to 1)
 		var player_forward = -transform.basis.z
 		
 		for target in potential_targets:
 			var to_target = (target.global_position - global_position).normalized()
 			var dot_product = player_forward.dot(to_target)
 			
-			# Only consider targets in front of player (within ~120 degree cone)
+			# Consider targets within a forward cone (dot > 0.5 is roughly < 60 degrees off center)
+			# and closer to the center than the current best candidate
 			if dot_product > 0.5 and dot_product > closest_dot:
 				closest_target = target
 				closest_dot = dot_product
 		
 		if closest_target:
+			# Lock onto the selected target
 			current_target = closest_target
 			is_targeting = true
 			
-			# Use the controller to show and position the target icon
+			# Update UI and subsystems
 			if controller and controller.has_method("set_target_icon_position"):
+				# Position icon slightly above target's origin
 				controller.set_target_icon_position(true, current_target.global_position + Vector3.UP * 1.5)
 			
-			# Notify the camera to adjust behavior for targeting mode
 			if camera_node and camera_node.has_method("set_targeting_mode"):
 				camera_node.set_targeting_mode(true, current_target)
 				
-			# Notify movement system about targeting
 			if movement_system and movement_system.has_method("set_targeting_state"):
-				var direction = (current_target.global_position - global_position)
-				direction.y = 0
-				direction = direction.normalized()
-				movement_system.set_targeting_state(true, direction)
+				var direction_to_target = (current_target.global_position - global_position)
+				direction_to_target.y = 0 # Ignore vertical difference for movement direction
+				movement_system.set_targeting_state(true, direction_to_target.normalized())
 
 func release_target():
 	is_targeting = false
