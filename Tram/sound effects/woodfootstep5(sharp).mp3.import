@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://d0fc7nnak1rrm"
+<<<<<<< Updated upstream
+uid="uid://dl2vklbs463lq"
+=======
+uid="uid://ddkfq5wx6kcyl"
+>>>>>>> Stashed changes
 path="res://.godot/imported/woodfootstep5(sharp).mp3-38506811e7b227521a4c38e75942fc34.mp3str"
 
 [deps]

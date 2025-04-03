@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7e2410cv35u"
-path.s3tc="res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"
+uid="uid://dh5eq84at5o14"
+path.s3tc="res://.godot/imported/Cottage_house_destroyed2_wall.png-607d5ca0fae9376d52e83f04f49363df.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3b28932f4804f2b4e6d184197ec168ce"
+"md5": "42c05fdac385586ccaf643ad0cf73244"
 }
 
 [deps]
 
-source_file="res://Xinyu Luo/Box_wood.jpg"
-dest_files=["res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"]
+source_file="res://Sing-yu/Cottage_house_destroyed2_wall.png"
+dest_files=["res://.godot/imported/Cottage_house_destroyed2_wall.png-607d5ca0fae9376d52e83f04f49363df.s3tc.ctex"]
 
 [params]
 
