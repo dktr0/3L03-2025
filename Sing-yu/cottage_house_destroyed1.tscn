@@ -78,7 +78,7 @@ transform = Transform3D(0.133126, -0.0206146, 1.02075, -9.31323e-10, 0.263779, 0
 shape = SubResource("BoxShape3D_2gmvc")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D" index="11"]
-transform = Transform3D(0.347066, 0.00832222, 0.244886, -0.387608, 0.178002, 0.0235238, -0.89761, -0.0736473, 0.0845284, 0.777616, 0.404633, -0.597379)
+transform = Transform3D(0.347066, 0.00832222, 0.244886, -0.387608, 0.178002, 0.0235238, -0.89761, -0.0736473, 0.0845284, 0.784239, 0.407038, -0.606188)
 shape = SubResource("BoxShape3D_ipolq")
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D" index="12"]

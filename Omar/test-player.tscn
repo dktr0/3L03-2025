@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvtc2s5ni02xp"]
+[gd_scene load_steps=10 format=3 uid="uid://dvtc2s5ni02xp"]
 
 [ext_resource type="Script" path="res://Omar/test_player.gd" id="1_alftv"]
 [ext_resource type="Script" path="res://Omar/spring_arm_3d.gd" id="2_bhgbg"]
+[ext_resource type="PackedScene" uid="uid://dxssorpkdmi3w" path="res://Dylan/character_1.tscn" id="2_ybuqa"]
 [ext_resource type="Script" path="res://Omar/CameraFollow.gd" id="3_o7vvc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ddj74"]
+height = 2.55524
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bdre6"]
 
@@ -17,21 +19,29 @@ albedo_color = Color(0, 1, 1, 1)
 radius = 0.3
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 31
 script = ExtResource("1_alftv")
 
 [node name="Body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19395, 0)
 shape = SubResource("CapsuleShape3D_ddj74")
 
+[node name="Character1" parent="." instance=ExtResource("2_ybuqa")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_bdre6")
 surface_material_override/0 = SubResource("StandardMaterial3D_wkeh6")
 
 [node name="Face" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, -1.31134e-08, -0.7, 0, 0.3, -3.0598e-08, 0, 0.234593, -0.243508)
+visible = false
 mesh = SubResource("CylinderMesh_qlle6")
 
 [node name="SpringArmPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.485288, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.533664, 1.81125, 0)
 top_level = true
 script = ExtResource("2_bhgbg")
 
@@ -43,6 +53,7 @@ spring_length = 6.0
 [node name="SpringPosition" type="Node3D" parent="SpringArmPivot/SpringArm3D"]
 
 [node name="Camera3D" type="Camera3D" parent="SpringArmPivot" node_paths=PackedStringArray("spring_arm")]
+visible = false
 script = ExtResource("3_o7vvc")
 spring_arm = NodePath("../SpringArm3D/SpringPosition")
 lerp_power = 6.0

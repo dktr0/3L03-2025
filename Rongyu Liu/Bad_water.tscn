@@ -107,7 +107,7 @@ noise = SubResource("FastNoiseLite_kgpen")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uucmi"]
 render_priority = 0
 shader = SubResource("Shader_hu1ko")
-shader_parameter/albedo = Color(1.05888e-06, 0.379371, 0.367051, 0.635294)
+shader_parameter/albedo = Color(0.069933, 0.196684, 0.104011, 0.635294)
 shader_parameter/point_size = 1.0
 shader_parameter/roughness = 0.0
 shader_parameter/metallic_texture_channel = null

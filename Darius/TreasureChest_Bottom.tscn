@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp5rc8lma8b25"]
+
+[ext_resource type="PackedScene" uid="uid://c12cf76u5mqfy" path="res://Darius/TreasureChest_Bottom.glb" id="1_imudr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u1fyc"]
+size = Vector3(1.01416, 0.297729, 0.583618)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="TreasureChest_Bottom" parent="StaticBody3D" instance=ExtResource("1_imudr")]
+transform = Transform3D(0.196271, 0, 0, 0, 0.196271, 0, 0, 0, 0.196271, 0.1085, 0.186222, 0.0491226)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111084, 0.358093, 0.0516968)
+shape = SubResource("BoxShape3D_u1fyc")

@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://drxasnndr16oi"]
+[gd_scene load_steps=2 format=3 uid="uid://ybe1widemeit"]
 
-[ext_resource type="Texture2D" uid="uid://cms8o7orjb6q0" path="res://halfheartlife.png" id="1_n8xtl"]
+[ext_resource type="Texture2D" uid="uid://labouy65hbfg" path="res://Ruth/halfheartlife.png" id="1_u56xd"]
 
 [node name="HalfHeart" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_n8xtl")
+texture = ExtResource("1_u56xd")

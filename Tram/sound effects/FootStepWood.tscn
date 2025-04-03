@@ -1,0 +1,42 @@
+[gd_scene load_steps=11 format=3 uid="uid://p1w01e1j3qya"]
+
+[ext_resource type="Script" path="res://Tram/sound effects/foot_step_wood.gd" id="1_1lg8w"]
+[ext_resource type="AudioStream" uid="uid://ccy1cuw4u8c7s" path="res://Tram/sound effects/woodfootstep1.mp3" id="1_f8ldm"]
+[ext_resource type="AudioStream" uid="uid://btwtyvyqixhgt" path="res://Tram/sound effects/woodfootstep2.mp3" id="2_cbvld"]
+[ext_resource type="AudioStream" uid="uid://dyt5bfvehqhej" path="res://Tram/sound effects/woodfootstep3.mp3" id="3_ksj76"]
+[ext_resource type="AudioStream" uid="uid://bmvsesuv1ccn1" path="res://Tram/sound effects/woodfootstep4(sharp).mp3" id="4_vlr0m"]
+[ext_resource type="AudioStream" uid="uid://d0fc7nnak1rrm" path="res://Tram/sound effects/woodfootstep5(sharp).mp3" id="5_1elk8"]
+[ext_resource type="AudioStream" uid="uid://7oep7lcv34pa" path="res://Tram/sound effects/woodfootstep7(thud).mp3" id="6_vhhow"]
+[ext_resource type="AudioStream" uid="uid://cxmqiatgqrvge" path="res://Tram/sound effects/woodfootstep8(thud).mp3" id="7_sqd3m"]
+[ext_resource type="AudioStream" uid="uid://p1una8dw3kdw" path="res://Tram/sound effects/woodfootstep11.mp3" id="8_7vtlk"]
+[ext_resource type="AudioStream" uid="uid://qpqh25ggpnrh" path="res://Tram/sound effects/woodfootstep12.mp3" id="9_3tlw3"]
+
+[node name="FootStepWood" type="Node3D"]
+script = ExtResource("1_1lg8w")
+
+[node name="woodstep1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_f8ldm")
+
+[node name="woodstep2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cbvld")
+
+[node name="woodstep3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ksj76")
+
+[node name="woodstep4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vlr0m")
+
+[node name="woodstep5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1elk8")
+
+[node name="woodstep7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vhhow")
+
+[node name="woodstep8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_sqd3m")
+
+[node name="woodstep11" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_7vtlk")
+
+[node name="woodstep12" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_3tlw3")
