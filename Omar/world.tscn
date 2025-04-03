@@ -1,23 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://dw8fde4ghx6qm"]
+[gd_scene load_steps=16 format=3 uid="uid://dw8fde4ghx6qm"]
 
-[ext_resource type="PackedScene" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
+[ext_resource type="PackedScene" uid="uid://dv4mqi5ll4dx7" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
 [ext_resource type="PackedScene" uid="uid://c2lomx2fhrd4i" path="res://Chiara/rock_platform.tscn" id="4_b0u6j"]
 [ext_resource type="PackedScene" uid="uid://dffctwdfacdjg" path="res://Chiara/surrounding_rocks.tscn" id="5_ek8y3"]
 [ext_resource type="PackedScene" uid="uid://15so6a73xnba" path="res://Rongyu Liu/beach_onepiece.tscn" id="5_qhjos"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="6_1rjgs"]
-[ext_resource type="PackedScene" path="res://Rongyu Liu/Highmountain.tscn" id="8_tuxek"]
-[ext_resource type="PackedScene" uid="uid://cmckqn74iwe3i" path="res://Rongyu Liu/Green_mountainnoice.tscn" id="9_qxx8k"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_bx7su"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdpdt"]
-albedo_color = Color(0.454524, 0.454524, 0.454524, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_e0b6j"]
-size = Vector3(97.9689, 0.974678, 42.3387)
+[ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Mountain/Highmountain.tscn" id="8_tuxek"]
+[ext_resource type="PackedScene" uid="uid://cmckqn74iwe3i" path="res://Rongyu Liu/Mountain/Green_mountainnoice.tscn" id="9_qxx8k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbtjg"]
 size = Vector3(0.787845, 0.99295, 0.734731)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bx7su"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svgfv"]
 albedo_color = Color(0.310617, 0.310617, 0.310617, 1)
@@ -38,19 +32,6 @@ size = Vector3(1, 0.98053, 0.975727)
 [node name="World" type="Node3D"]
 
 [node name="Floors" type="Node" parent="."]
-
-[node name="UpperBase" type="StaticBody3D" parent="Floors"]
-transform = Transform3D(1, 0, 0, 0, 0.802688, 0, 0, 0, 1, 0, 1.09406, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/UpperBase"]
-transform = Transform3D(98.0363, 0, 0, 0, 1.14767, 0, 0, 0, 42.6492, 0, 0.476114, -23.9671)
-mesh = SubResource("BoxMesh_bx7su")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cdpdt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/UpperBase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0469551, 0.597702, -24.0964)
-shape = SubResource("BoxShape3D_e0b6j")
 
 [node name="Base" type="StaticBody3D" parent="Floors"]
 transform = Transform3D(1.21256, 0, 0, 0, 0.802688, 0, 0, 0, 1.18321, -9.19878, 0.759038, 6.36864)

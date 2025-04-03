@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://x0m71ju3mf21"]
+
+[ext_resource type="AudioStream" uid="uid://b63f2ayg162eq" path="res://Tram/music/bossa-nova-guitar.mp3" id="1_acj87"]
+
+[node name="Bossanovaguitar" type="AudioStreamPlayer"]
+stream = ExtResource("1_acj87")

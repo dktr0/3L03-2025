@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://detpiupc6lcb8"]
+
+[ext_resource type="AudioStream" uid="uid://djwie21r2h3xf" path="res://Tram/music/Pollutionloop-neg-future.mp3" id="1_ujv6x"]
+
+[node name="Pollutionloopnegfuture" type="AudioStreamPlayer"]
+stream = ExtResource("1_ujv6x")

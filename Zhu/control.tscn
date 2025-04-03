@@ -1,0 +1,233 @@
+[gd_scene load_steps=24 format=3 uid="uid://ibd80rq3l2u5"]
+
+[ext_resource type="Script" path="res://Andy/ui.gd" id="1_82klm"]
+[ext_resource type="Texture2D" uid="uid://3y7vlp5ha7a1" path="res://Andy/backgrounds/content page (1).png" id="2_r00vy"]
+[ext_resource type="Texture2D" uid="uid://dh4fpl8vorfgu" path="res://Zhu/something to use/资源 63.png" id="3_stitn"]
+[ext_resource type="Texture2D" uid="uid://c57wtsc2ohhq8" path="res://Andy/资源 65.png" id="4_fp02o"]
+[ext_resource type="Texture2D" uid="uid://y2y4ss35xi2c" path="res://Zhu/something to use/资源 64.png" id="5_pa08g"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="7_ilghq"]
+[ext_resource type="AudioStream" uid="uid://rdmwwbtnvxxs" path="res://Andy/3月29日.MP3" id="8_xkcnl"]
+[ext_resource type="AudioStream" uid="uid://dtpxj7b311dgw" path="res://Andy/3月29日(1).MP3" id="9_kdjbv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_km45p"]
+radius = 5.85
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahtxm"]
+radius = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vufl"]
+radius = 10.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sytv3"]
+radius = 6.9
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tnh73"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_alcww"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oj1xy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsapg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1axwe"]
+radius = 13.7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jxhef"]
+radius = 17.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wln7b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cl2oo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sivj6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8db8m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c8qg1"]
+
+[node name="Control" type="Node2D"]
+script = ExtResource("1_82klm")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.99558, 0.99558, 0.99558, 1)
+position = Vector2(583, 332)
+scale = Vector2(0.615, 0.615)
+texture = ExtResource("2_r00vy")
+metadata/_edit_lock_ = true
+
+[node name="clock" type="Sprite2D" parent="."]
+position = Vector2(589, 343)
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("3_stitn")
+
+[node name="Ring" type="Sprite2D" parent="."]
+position = Vector2(587, 347)
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("4_fp02o")
+
+[node name="CollisionPivot" type="Node2D" parent="."]
+position = Vector2(590, 341)
+
+[node name="CollisionDetector" type="Area2D" parent="CollisionPivot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionPivot/CollisionDetector"]
+position = Vector2(1, -150)
+shape = SubResource("CircleShape2D_km45p")
+
+[node name="PointerPivot" type="Node2D" parent="."]
+position = Vector2(590, 342)
+
+[node name="PointerSprite" type="Sprite2D" parent="PointerPivot"]
+position = Vector2(1, -64)
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("5_pa08g")
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="PosStart" type="StaticBody2D" parent="Positions"]
+position = Vector2(590, 190)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/PosStart"]
+shape = SubResource("CircleShape2D_ahtxm")
+
+[node name="PosCredit" type="StaticBody2D" parent="Positions"]
+position = Vector2(467, 449)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/PosCredit"]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_5vufl")
+
+[node name="PosIntro" type="StaticBody2D" parent="Positions"]
+position = Vector2(702, 451)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/PosIntro"]
+position = Vector2(5, 1)
+shape = SubResource("CircleShape2D_sytv3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Positions"]
+position = Vector2(450, 268)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D4"]
+position = Vector2(-1, 0)
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_tnh73")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Positions"]
+position = Vector2(523, 203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D5"]
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_alcww")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Positions"]
+position = Vector2(428, 346)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D6"]
+position = Vector2(0, -5)
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_oj1xy")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="Positions"]
+position = Vector2(439, 413)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D7"]
+position = Vector2(4, 2)
+scale = Vector2(0.665, 0.665)
+shape = SubResource("RectangleShape2D_tsapg")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Positions"]
+position = Vector2(510, 485)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D8"]
+position = Vector2(-3, -2)
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_1axwe")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Positions"]
+position = Vector2(592, 505)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D9"]
+position = Vector2(-1, 0)
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_jxhef")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Positions"]
+position = Vector2(665, 484)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D10"]
+position = Vector2(6, -3)
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_wln7b")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Positions"]
+position = Vector2(731, 411)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D11"]
+position = Vector2(1, -3)
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_cl2oo")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Positions"]
+position = Vector2(744, 344)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D12"]
+position = Vector2(1, -2)
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_sivj6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Positions"]
+position = Vector2(729, 278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D"]
+position = Vector2(-2, -10)
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_8db8m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Positions"]
+position = Vector2(661, 207)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/StaticBody2D2"]
+scale = Vector2(0.665, 0.665)
+shape = SubResource("CircleShape2D_c8qg1")
+
+[node name="StartLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 563.0
+offset_top = 73.0
+offset_right = 625.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_ilghq")
+theme_override_font_sizes/font_size = 29
+text = "Start"
+
+[node name="CreditLabel" type="Label" parent="."]
+offset_left = 372.0
+offset_top = 476.0
+offset_right = 440.0
+offset_bottom = 506.0
+theme_override_fonts/font = ExtResource("7_ilghq")
+theme_override_font_sizes/font_size = 29
+text = "Credit"
+
+[node name="IntroLabel" type="Label" parent="."]
+offset_left = 751.0
+offset_top = 483.0
+offset_right = 812.0
+offset_bottom = 513.0
+theme_override_fonts/font = ExtResource("7_ilghq")
+theme_override_font_sizes/font_size = 29
+text = "Intro"
+
+[node name="SFX_Tick" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(591, 338)
+stream = ExtResource("8_xkcnl")
+
+[node name="SFX_dong" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(582, 328)
+stream = ExtResource("9_kdjbv")

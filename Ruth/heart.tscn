@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://duumi42705q73"]
+
+[ext_resource type="Texture2D" uid="uid://nvcbq6oq13cd" path="res://Ruth/heartlives.png" id="1_iv7uj"]
+
+[node name="Heart" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iv7uj")

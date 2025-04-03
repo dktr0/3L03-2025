@@ -1,0 +1,70 @@
+[gd_scene load_steps=18 format=3 uid="uid://bnru447be82w2"]
+
+[ext_resource type="AudioStream" uid="uid://d12jej0u6l033" path="res://Tram/sound effects/sand-footstep-1.mp3" id="1_qfhga"]
+[ext_resource type="Script" path="res://Tram/sound effects/foot_step_sand.gd" id="1_u6m2q"]
+[ext_resource type="AudioStream" uid="uid://brkg4h1pg57h3" path="res://Tram/sound effects/sand-footstep-2.mp3" id="2_r6bov"]
+[ext_resource type="AudioStream" uid="uid://dytxig8rylijn" path="res://Tram/sound effects/sand-footstep-3.mp3" id="3_2v4ts"]
+[ext_resource type="AudioStream" uid="uid://bcc883se8n3hg" path="res://Tram/sound effects/sand-footstep-4.mp3" id="4_v8aj7"]
+[ext_resource type="AudioStream" uid="uid://2lx468puf35u" path="res://Tram/sound effects/sand-footstep-5.mp3" id="5_g0bjy"]
+[ext_resource type="AudioStream" uid="uid://b7pyiehh02s51" path="res://Tram/sound effects/sand-footstep-6.mp3" id="6_ipb2w"]
+[ext_resource type="AudioStream" uid="uid://bugo1i3lxfv8w" path="res://Tram/sound effects/sand-footstep-7.mp3" id="7_vvmcx"]
+[ext_resource type="AudioStream" uid="uid://bb8boiccylold" path="res://Tram/sound effects/sand-footstep-8.mp3" id="8_6s3ov"]
+[ext_resource type="AudioStream" uid="uid://douh66fpx3ems" path="res://Tram/sound effects/sand-footstep-9.mp3" id="9_ijx5e"]
+[ext_resource type="AudioStream" uid="uid://cutlidbp2amca" path="res://Tram/sound effects/sand-footstep-10.mp3" id="10_1a31h"]
+[ext_resource type="AudioStream" uid="uid://cat3xefva11s7" path="res://Tram/sound effects/sand-footstep-11.mp3" id="11_y5cwx"]
+[ext_resource type="AudioStream" uid="uid://lv27h3q66v28" path="res://Tram/sound effects/sand-footstep-12.mp3" id="12_ymamh"]
+[ext_resource type="AudioStream" uid="uid://t0i6eci5gbqh" path="res://Tram/sound effects/sand-footstep-13.mp3" id="13_ru2x2"]
+[ext_resource type="AudioStream" uid="uid://bqnfadt8mjpmi" path="res://Tram/sound effects/sand-footstep-14.mp3" id="14_6qseq"]
+[ext_resource type="AudioStream" uid="uid://b7lbq24tu0yba" path="res://Tram/sound effects/sand-footstep-15.mp3" id="15_fc0xv"]
+[ext_resource type="AudioStream" uid="uid://bpefkkvo1xed7" path="res://Tram/sound effects/sand-footstep-16.mp3" id="16_0hjlb"]
+
+[node name="FootStepSand" type="Node3D"]
+script = ExtResource("1_u6m2q")
+
+[node name="sandstep1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_qfhga")
+
+[node name="sandstep2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r6bov")
+
+[node name="sandstep3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2v4ts")
+
+[node name="sandstep4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v8aj7")
+
+[node name="sandstep5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_g0bjy")
+
+[node name="sandstep6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ipb2w")
+
+[node name="sandstep7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vvmcx")
+
+[node name="sandstep8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_6s3ov")
+
+[node name="sandstep9" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ijx5e")
+
+[node name="sandstep10" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_1a31h")
+
+[node name="sandstep11" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_y5cwx")
+
+[node name="sandstep12" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ymamh")
+
+[node name="sandstep13" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ru2x2")
+
+[node name="sandstep14" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_6qseq")
+
+[node name="sandstep15" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_fc0xv")
+
+[node name="sandstep16" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_0hjlb")

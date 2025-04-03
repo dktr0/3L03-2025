@@ -12,7 +12,7 @@ height = 1.6
 radius = 0.4
 height = 1.6
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_k1nj4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -24,10 +24,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 mesh = SubResource("CapsuleMesh_cnfsi")
 
 [node name="CameraRoot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.2)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRoot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 script = ExtResource("2_uqf3q")
 target_path = NodePath("../..")
 
