@@ -600,7 +600,7 @@ transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 
 fragment_scene = ExtResource("8_fio87")
 
 [node name="Player" parent="." instance=ExtResource("32_3v2qo")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 5.72086, 23.8381)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.26274, 14.8615)
 
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer" to="killzone/Kill Zone Platformer" method="_on_body_entered"]
