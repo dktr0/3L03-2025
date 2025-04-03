@@ -18,7 +18,7 @@ albedo_color = Color(0, 1, 1, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_loqyr"]
 radius = 0.3
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 31
 script = ExtResource("1_alftv")
@@ -41,7 +41,7 @@ visible = false
 mesh = SubResource("CylinderMesh_qlle6")
 
 [node name="SpringArmPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.533664, 1.81125, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000407338, 2.08431, 3.38729)
 top_level = true
 script = ExtResource("2_bhgbg")
 
