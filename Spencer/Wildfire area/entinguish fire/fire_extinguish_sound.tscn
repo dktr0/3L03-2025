@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxmijngk0gwt5"]
+
+[ext_resource type="AudioStream" uid="uid://cnty1fvp6b0x" path="res://Spencer/Wildfire area/entinguish fire/extinguishing fire sound.mp3" id="1_jygxe"]
+
+[node name="FireExtinguishSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_jygxe")
