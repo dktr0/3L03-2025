@@ -2,11 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-<<<<<<< Updated upstream
-uid="uid://dnsuk8qdfpxrm"
-=======
-uid="uid://bd4clbqdp57hg"
->>>>>>> Stashed changes
+uid="uid://cd2wif78vc74e"
 path="res://.godot/imported/positive-idle-music-loop.wav-31a8254c5d277eb86dfbb8646b7fefea.sample"
 
 [deps]
