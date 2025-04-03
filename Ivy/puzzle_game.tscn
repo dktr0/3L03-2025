@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bhvggiixftuup"]
+[gd_scene load_steps=31 format=3 uid="uid://bhvggiixftuup"]
 
 [ext_resource type="PackedScene" uid="uid://couoihr1xwbk3" path="res://Riley/Kelp.tscn" id="2_4ty13"]
 [ext_resource type="PackedScene" uid="uid://brpse8kilyf1m" path="res://Zibo/waterweed.tscn" id="3_1bdq5"]
@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://2gv276l2p1uf" path="res://Riley/GlowingBarrel.tscn" id="25_sa3ab"]
 [ext_resource type="PackedScene" uid="uid://cj2h26ls141qf" path="res://Riley/CargoBox.tscn" id="26_ahco6"]
 [ext_resource type="PackedScene" uid="uid://3012mnglbpa5" path="res://Sing-yu/cottage_house.tscn" id="27_3uvvl"]
-[ext_resource type="PackedScene" uid="uid://gwugaype7el2" path="res://Ivy/test_player_underwater.tscn" id="28_ehox5"]
 [ext_resource type="PackedScene" uid="uid://bdh45f6l17eoq" path="res://Sing-yu/cottage_house_3.tscn" id="28_ojkg2"]
 [ext_resource type="PackedScene" uid="uid://w5oq0f2krj7h" path="res://Sing-yu/cottage_house_4.tscn" id="28_vqaxj"]
 [ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="29_4udvm"]
@@ -642,6 +641,3 @@ shape = SubResource("BoxShape3D_ce1wu")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D4"]
 transform = Transform3D(2.10271, 0, 0, 0, 2.10271, 0, 0, 0, 2.10271, 7.07208, 6.49512, 0.0099206)
 shape = SubResource("BoxShape3D_ce1wu")
-
-[node name="TestPlayerUnderwater" parent="." instance=ExtResource("28_ehox5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971418, 8.94331)
