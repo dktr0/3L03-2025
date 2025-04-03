@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://gxs0tltd663c"
+<<<<<<< Updated upstream
+uid="uid://b17oo58f8y5yj"
+=======
+uid="uid://cuphrkromhilh"
+>>>>>>> Stashed changes
 path="res://.godot/imported/diving underwater start.mp3-0922a4e1d1cee0dd6be5badc65209b43.mp3str"
 
 [deps]
