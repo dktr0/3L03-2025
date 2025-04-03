@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 40.0
-const JUMP_VELOCITY = 16.5
+const JUMP_VELOCITY = 10
 
 var last_direction = Vector3.FORWARD
 @export var rotation_speed = 6
@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

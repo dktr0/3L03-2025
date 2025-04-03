@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://isw3nr1witqk"
+<<<<<<< Updated upstream
+uid="uid://cilyw16tlng1u"
+=======
+uid="uid://bfpg445s4m7qy"
+>>>>>>> Stashed changes
 path="res://.godot/imported/bossa-nova-synth.mp3-f65d089b4a7e78b8e12b626faf153bc7.mp3str"
 
 [deps]

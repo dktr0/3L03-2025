@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" path="res://Omar/test_player.gd" id="1_alftv"]
 [ext_resource type="Script" path="res://Omar/spring_arm_3d.gd" id="2_bhgbg"]
-[ext_resource type="PackedScene" uid="uid://b0wwl01auf08j" path="res://Dylan/character_1.tscn" id="2_ybuqa"]
+[ext_resource type="PackedScene" uid="uid://dxssorpkdmi3w" path="res://Dylan/character_1.tscn" id="2_ybuqa"]
 [ext_resource type="Script" path="res://Omar/CameraFollow.gd" id="3_o7vvc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ddj74"]
+height = 2.55524
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bdre6"]
 
@@ -18,13 +19,16 @@ albedo_color = Color(0, 1, 1, 1)
 radius = 0.3
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 31
 script = ExtResource("1_alftv")
 
 [node name="Body" type="CollisionShape3D" parent="."]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19395, 0)
 shape = SubResource("CapsuleShape3D_ddj74")
 
 [node name="Character1" parent="." instance=ExtResource("2_ybuqa")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
