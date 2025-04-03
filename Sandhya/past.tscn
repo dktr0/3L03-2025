@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://co0ky7kry764f"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_atq23"]
-[ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Highmountain.tscn" id="3_pujxe"]
-[ext_resource type="PackedScene" uid="uid://4cexfi3rf5f1" path="res://Braydon/battle-areana-(past)/Ice Areana Past Level.tscn" id="4_ratvb"]
+[ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Mountain/Highmountain.tscn" id="3_pujxe"]
+[ext_resource type="PackedScene" uid="uid://4cexfi3rf5f1" path="res://Braydon/Ice areana/Ice Areana Past Level.tscn" id="4_ratvb"]
 [ext_resource type="PackedScene" uid="uid://bragmruxldk4r" path="res://Yufei/game(past_water).tscn" id="5_3x1ld"]
 [ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="7_k5dbg"]
 [ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="8_2erhy"]
@@ -13,132 +13,6 @@
 [node name="World" parent="." instance=ExtResource("1_atq23")]
 
 [node name="Water" type="Node3D" parent="."]
-
-[node name="Water_Base" parent="Water"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -187.025, -62.4506, 51.4724)
-skeleton = NodePath("../..")
-script = null
-
-[node name="Water_Base2" parent="Water"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 108.159, -62.4506, 51.4185)
-skeleton = NodePath("../..")
-script = null
-
-[node name="Water_Base3" parent="Water"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 195.227, -62.4506, 50.6209)
-skeleton = NodePath("../..")
-script = null
-
-[node name="Water_Base4" parent="Water"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 195.227, -62.4506, -94.8543)
-skeleton = NodePath("../..")
-script = null
-
-[node name="Water_Base5" parent="Water"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -93.3081, -62.4506, -94.8543)
-skeleton = NodePath("../..")
-script = null
-
-[node name="Water_Base6" parent="Water"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -186.687, -62.4506, -94.8543)
-skeleton = NodePath("../..")
-script = null
-
-[node name="Water_Base7" parent="Water"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -186.687, -62.4506, -285.309)
-skeleton = NodePath("../..")
-script = null
-
-[node name="Water_Base8" parent="Water"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 84.1148, -62.4506, -285.309)
-skeleton = NodePath("../..")
-script = null
-
-[node name="Water_Base9" parent="Water"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 197.062, -62.4506, -285.309)
-skeleton = NodePath("../..")
-script = null
 
 [node name="Mountains" type="Node3D" parent="."]
 
