@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c83b6oarv554h"]
-
-[ext_resource type="PackedScene" uid="uid://t3v7ddegi0pl" path="res://Yunhan Liu2/beginning.tscn" id="1_c3ijl"]
-
-[node name="bad" type="Node3D"]
-
-[node name="Beginning" parent="." instance=ExtResource("1_c3ijl")]
