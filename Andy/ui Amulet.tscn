@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://brol5h8bq6u43"]
+[gd_scene load_steps=9 format=3 uid="uid://brol5h8bq6u43"]
 
 [ext_resource type="Script" path="res://Amulet.gd" id="1_55qcy"]
 [ext_resource type="Texture2D" uid="uid://bjtheusp68bdv" path="res://Belinda/Amulet_2.png" id="2_mbspc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dj3ndwsgnt0h" path="res://Belinda/Amulet.png" id="5_02e0t"]
 [ext_resource type="AudioStream" uid="uid://cmf6x8ht3xydp" path="res://Andy/clock.MP3" id="6_bwenx"]
 [ext_resource type="AudioStream" uid="uid://chs4srfmh7r81" path="res://Andy/clocking.MP3" id="7_1apaf"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Andy/words/font/font for all words.ttf" id="8_h7jqh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -82,3 +83,14 @@ grow_vertical = 2
 texture = ExtResource("5_02e0t")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="MissingShardsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 555.0
+offset_right = 902.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("8_h7jqh")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
