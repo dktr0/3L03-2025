@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://be4kys356wnsm" path="res://Andy/资源 63.png" id="2_n83xy"]
 [ext_resource type="Texture2D" uid="uid://c57wtsc2ohhq8" path="res://Andy/资源 65.png" id="3_mklvf"]
 [ext_resource type="Texture2D" uid="uid://g5wbrd7d78db" path="res://Andy/资源 64.png" id="4_pnrs5"]
-[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Andy/words/font/font for all words.ttf" id="5_2cplp"]
-[ext_resource type="AudioStream" uid="uid://rdmwwbtnvxxs" path="res://Andy/3月29日.MP3" id="7_3k4k8"]
-[ext_resource type="AudioStream" uid="uid://dtpxj7b311dgw" path="res://Andy/3月29日(1).MP3" id="8_l25iq"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="5_2cplp"]
+[ext_resource type="AudioStream" uid="uid://dgljuci7qlmfw" path="res://MenuSelectionClock_Test.mp3" id="7_7rb23"]
+[ext_resource type="AudioStream" uid="uid://bf6ooh1upbjtj" path="res://Bihan/SoundEffects and Soundscape/GatheringCollectables.mp3" id="8_hwlld"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_km45p"]
 radius = 5.85
@@ -226,8 +226,9 @@ text = "Intro"
 
 [node name="SFX_Tick" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(591, 338)
-stream = ExtResource("7_3k4k8")
+stream = ExtResource("7_7rb23")
 
 [node name="SFX_dong" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(582, 328)
-stream = ExtResource("8_l25iq")
+stream = ExtResource("8_hwlld")
+volume_db = 7.495

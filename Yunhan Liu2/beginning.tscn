@@ -1,10 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://t3v7ddegi0pl"]
+[gd_scene load_steps=32 format=3 uid="uid://t3v7ddegi0pl"]
 
 [ext_resource type="Script" path="res://Yunhan Liu2/beginning.gd" id="1_bvrav"]
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ecddj"]
-[ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="2_3ym8d"]
-[ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="3_poens"]
-[ext_resource type="PackedScene" uid="uid://cycjp4vmr1kal" path="res://DeadLargeSeaweed.tscn" id="5_0m64u"]
+[ext_resource type="Texture2D" uid="uid://df8rytnkxhlci" path="res://Nan/Badsky.jpg" id="2_vurye"]
+[ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="3_tlibs"]
+[ext_resource type="PackedScene" path="res://DeadLargeSeaweed.tscn" id="5_0m64u"]
 [ext_resource type="PackedScene" uid="uid://k0juh3usoo66" path="res://Chiara/broken_Dock.glb" id="5_566ev"]
 [ext_resource type="PackedScene" uid="uid://dt1mfgeidwbmi" path="res://Ethan C/Water Bottle.tscn" id="5_l4yj5"]
 [ext_resource type="PackedScene" uid="uid://c2bdcxn28whgv" path="res://Darius/Rubble.glb" id="6_4o6i1"]
@@ -16,33 +16,47 @@
 [ext_resource type="PackedScene" uid="uid://bwqy20x2uomik" path="res://Rongyu Liu/Bad_water.tscn" id="13_q5xgr"]
 [ext_resource type="PackedScene" uid="uid://dm3pl02h2a4d4" path="res://Rongyu Liu/Soil/Damaged soil.glb" id="14_cxkyl"]
 [ext_resource type="PackedScene" uid="uid://daggh56yuy6g3" path="res://Nan/Bad Cloud.glb" id="15_o5xlu"]
-[ext_resource type="PackedScene" uid="uid://neudcqb0ff87" path="res://Nan/Dead_wood.tscn" id="16_kw47s"]
-[ext_resource type="PackedScene" uid="uid://31k1eq7dvbqa" path="res://Riley/DeadTree.tscn" id="16_p4h5s"]
-[ext_resource type="PackedScene" uid="uid://bnesfoix585wh" path="res://Riley/DeadBulrush.tscn" id="18_ab1yo"]
-[ext_resource type="PackedScene" uid="uid://spmbye82jg58" path="res://Riley/DeadGrass.tscn" id="19_vtykn"]
-[ext_resource type="PackedScene" uid="uid://b1mb8vepspln2" path="res://Riley/GarbagePile.tscn" id="20_r730t"]
+[ext_resource type="PackedScene" path="res://Nan/Dead_wood.tscn" id="16_kw47s"]
+[ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="16_p4h5s"]
+[ext_resource type="PackedScene" path="res://Riley/DeadBulrush.tscn" id="18_ab1yo"]
+[ext_resource type="PackedScene" path="res://Riley/DeadGrass.tscn" id="19_vtykn"]
+[ext_resource type="PackedScene" path="res://Riley/GarbagePile.tscn" id="20_r730t"]
 [ext_resource type="PackedScene" uid="uid://dj0ikx20ebw7a" path="res://Wilson/fire_smoke.tscn" id="21_ql066"]
 [ext_resource type="PackedScene" uid="uid://bt0oah83alnvb" path="res://Wilson/vfx_smoke.tscn" id="22_vvb41"]
 [ext_resource type="PackedScene" uid="uid://craqwm4x5w6so" path="res://Naomi/DeadSeaweed.glb" id="23_b5ud8"]
-[ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="24_qmrum"]
+[ext_resource type="PackedScene" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="24_qmrum"]
 [ext_resource type="PackedScene" uid="uid://c2kt27qdcgfu" path="res://Sing-yu/Cottage_House_destroyed1.glb" id="25_d7rdg"]
+[ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="26_igua4"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_edrb3"]
+panorama = ExtResource("2_vurye")
+
+[sub_resource type="Sky" id="Sky_r4p6x"]
+sky_material = SubResource("PanoramaSkyMaterial_edrb3")
+
+[sub_resource type="Environment" id="Environment_68mya"]
+background_mode = 2
+sky = SubResource("Sky_r4p6x")
+sky_custom_fov = 119.3
+sky_rotation = Vector3(0, -0.678933, 0)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6a1uf"]
 
 [node name="Beginning" type="Node3D"]
 script = ExtResource("1_bvrav")
 
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_68mya")
+
 [node name="World2" parent="." instance=ExtResource("1_ecddj")]
+transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 8.762, -20.4973, 147.279)
 
 [node name="NPC with gas masks" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.408, -5.79681, 91.7809)
-visible = false
 mesh = SubResource("CapsuleMesh_6a1uf")
 
-[node name="Player" parent="." instance=ExtResource("2_3ym8d")]
-transform = Transform3D(-1.99999, 0, 0.00488692, 0, 2, 0, -0.00488692, 0, -1.99999, 0, 5.55452, 17.3178)
-
-[node name="FreeCameraRig" parent="Player" instance=ExtResource("3_poens")]
+[node name="Player" parent="." instance=ExtResource("3_tlibs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5532, 0)
 
 [node name="3d" type="Node3D" parent="."]
 
@@ -221,3 +235,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.342, -4.46617, 75.6791)
 
 [node name="broken_Dock2" parent="3d" instance=ExtResource("5_566ev")]
 transform = Transform3D(0.0249382, 0, -0.999689, 0, 1, 0, 0.999689, 0, 0.0249382, -111.653, -15.8173, 30.6201)
+
+[node name="Portal 1" parent="." instance=ExtResource("26_igua4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9038, 8.63192, 140.922)
+player_path = NodePath("../Player")
+teleport_method = 1
+target_scene_path = "res://Omar/present.tscn"
