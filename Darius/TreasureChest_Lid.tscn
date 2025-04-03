@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cobenij0mftuy"]
+
+[ext_resource type="PackedScene" uid="uid://fs44ocvsevik" path="res://Darius/TreasureChest_Lid.glb" id="1_gp21c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pn0i4"]
+size = Vector3(0.976532, 0.308975, 0.518188)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="TreasureChest_Lid" parent="StaticBody3D" instance=ExtResource("1_gp21c")]
+transform = Transform3D(0.183696, 0, 0, 0, 0.183696, 0, 0, 0, 0.183696, 0.0456064, 0, 0.0834818)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.99996, 0, 0, 0, 0.99996, 0, 0, 0, 0.99996, 0.0438395, 0.402627, 0.0759888)
+shape = SubResource("BoxShape3D_pn0i4")
