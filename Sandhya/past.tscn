@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://co0ky7kry764f"]
+[gd_scene load_steps=12 format=3 uid="uid://co0ky7kry764f"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_atq23"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="2_dci5a"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="5_atutq"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="6_4ucsn"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="8_mm83i"]
+[ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="9_rv4y1"]
+[ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="10_4wkfk"]
+[ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="11_56olb"]
 
 [node name="past" type="Node3D"]
 
@@ -361,25 +364,34 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 74.3667, -8.90054, 302.293)
 [node name="Game(past_water)" parent="." instance=ExtResource("5_3x1ld")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -554.68, -62.0821, -283.71)
 
-[node name="SingleLaneDock" parent="." instance=ExtResource("8_mm83i")]
+[node name="Docks" type="Node3D" parent="."]
+
+[node name="SingleLaneDock" parent="Docks" instance=ExtResource("8_mm83i")]
 transform = Transform3D(-0.00291592, 0, -0.109961, 0, 0.11, 0, 0.109961, 0, -0.00291592, -106.385, -68.0907, 27.7056)
 
-[node name="MultipleLaneDock" parent="." instance=ExtResource("6_4ucsn")]
+[node name="MultipleLaneDock" parent="Docks" instance=ExtResource("6_4ucsn")]
 transform = Transform3D(0.000353242, 0, 0.109999, 0, 0.11, 0, -0.109999, 0, 0.000353242, -22.4298, -29.0658, 14.8477)
 
-[node name="SingleLaneDock2" parent="." instance=ExtResource("8_mm83i")]
+[node name="SingleLaneDock2" parent="Docks" instance=ExtResource("8_mm83i")]
 transform = Transform3D(0.109997, 0, -0.000790967, 0, 0.11, 0, 0.000790967, 0, 0.109997, -238.201, -129.863, -236.44)
 
-[node name="MultipleLaneDock2" parent="." instance=ExtResource("6_4ucsn")]
+[node name="MultipleLaneDock2" parent="Docks" instance=ExtResource("6_4ucsn")]
 transform = Transform3D(0.000353242, 0, 0.109999, 0, 0.11, 0, -0.109999, 0, 0.000353242, -76.9208, -43.8808, -154.152)
 
-[node name="MultipleLaneDock3" parent="." instance=ExtResource("6_4ucsn")]
+[node name="MultipleLaneDock3" parent="Docks" instance=ExtResource("6_4ucsn")]
 transform = Transform3D(-0.109967, 0, 0.00269904, 0, 0.11, 0, -0.00269904, 0, -0.109967, -195.011, -58.756, -208.384)
 
-[node name="MultipleLaneDock4" parent="." instance=ExtResource("6_4ucsn")]
+[node name="MultipleLaneDock4" parent="Docks" instance=ExtResource("6_4ucsn")]
 transform = Transform3D(0.00066809, 0, 0.109998, 0, 0.11, 0, -0.109998, 0, 0.00066809, -247.05, -71.4179, -212.303)
 
-[node name="SingleLaneDock3" parent="." instance=ExtResource("8_mm83i")]
+[node name="SingleLaneDock3" parent="Docks" instance=ExtResource("8_mm83i")]
 transform = Transform3D(0.109997, 0, -0.000790967, 0, 0.11, 0, 0.000790967, 0, 0.109997, -291.465, -148.305, -235.351)
 
-[node name="Docks" type="Node3D" parent="."]
+[node name="Present_light_house" parent="." instance=ExtResource("9_rv4y1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.626, 3.229, -29.98)
+
+[node name="Area3D" parent="." instance=ExtResource("10_4wkfk")]
+transform = Transform3D(9.96939, 0, -4.6488, 0, 11, 0, 4.6488, 0, 9.96939, 34.59, 1.102, 7.09)
+
+[node name="fish_shop_owner" parent="Area3D" instance=ExtResource("11_56olb")]
+transform = Transform3D(-0.149941, 0, 0.00420392, 0, 0.15, 0, -0.00420392, 0, -0.149941, 0.248459, 0.015935, 0.179053)
