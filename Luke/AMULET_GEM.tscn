@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2gtilnolrux0"]
+
+[ext_resource type="PackedScene" uid="uid://b4lnemk2503au" path="res://amuletgem2.glb" id="1_ox0sb"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="amuletgem2" parent="." instance=ExtResource("1_ox0sb")]

@@ -1,12 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4kixgrxdj358"]
+[gd_scene load_steps=7 format=3 uid="uid://b4kixgrxdj358"]
 
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="1_htwf0"]
 [ext_resource type="PackedScene" uid="uid://fxscysncqxhj" path="res://Wilson/glacier_wall.tscn" id="2_e0li6"]
 [ext_resource type="PackedScene" uid="uid://ee3607ux8b25" path="res://Mackie/icicle clump_2.tscn" id="3_njnep"]
 [ext_resource type="PackedScene" uid="uid://dfjs3jo3ls7is" path="res://Mackie/icicle clump_1.tscn" id="4_rqhed"]
 [ext_resource type="PackedScene" uid="uid://lfu2wgkp8eu" path="res://Mackie/icicle clump_3.tscn" id="5_j4k7k"]
+[ext_resource type="PackedScene" uid="uid://bvioh3otnsxom" path="res://Quinn/Ice Monster/ice_monster.tscn" id="6_jqymf"]
 
 [node name="Ice_Arena_Present" type="Node3D"]
+
+[node name="ice_monster" parent="." instance=ExtResource("6_jqymf")]
+transform = Transform3D(-0.751172, 0, 0.660106, 0, 1, 0, -0.660106, 0, -0.751172, 24.6743, 2.20029, 1.74458)
+
+[node name="ice_monster2" parent="." instance=ExtResource("6_jqymf")]
+transform = Transform3D(-0.894467, 0, -0.447135, 0, 1, 0, 0.447135, 0, -0.894467, 14.9823, 2.1439, 0.25923)
+
+[node name="ice_monster3" parent="." instance=ExtResource("6_jqymf")]
+transform = Transform3D(-1.15671, 0, 1.63157, 0, 2, 0, -1.63157, 0, -1.15671, 6.28936, 5.36671, -17.9257)
 
 [node name="Ice_Platform" parent="." instance=ExtResource("1_htwf0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5, 13.4676, 0, 0)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cos4fx5speitq"]
+
+[ext_resource type="Texture2D" uid="uid://g3smkwhk6xw7" path="res://Ruth/oxygenbar0.png" id="1_ogtas"]
+
+[node name="Oxygen0" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ogtas")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://if3f5lyupjxr"]
+
+[ext_resource type="Script" path="res://Andy/chest.gd" id="1_tddmd"]
+[ext_resource type="PackedScene" uid="uid://btl1ap6tswitv" path="res://Darius/ChestOpened.tscn" id="2_aups3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m08d4"]
+
+[sub_resource type="Animation" id="Animation_qdymc"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.289909, 0), Vector3(0, 0.488283, -0.472598)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l3ab8"]
+_data = {
+"open": SubResource("Animation_qdymc")
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wgfbq"]
+radius = 0.1375
+height = 0.275
+
+[node name="Chest" type="Node3D"]
+script = ExtResource("1_tddmd")
+
+[node name="ChestOpened" parent="." instance=ExtResource("2_aups3")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553633, 0)
+shape = SubResource("BoxShape3D_m08d4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l3ab8")
+}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.488283, -0.472598)
+visible = false
+mesh = SubResource("CapsuleMesh_wgfbq")
