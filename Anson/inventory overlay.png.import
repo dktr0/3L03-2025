@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj03bhja8v404"
-path="res://.godot/imported/inventory overlay.png-6bd04c80a3eb1a896c85358f71653307.ctex"
+path="res://.godot/imported/inventory overlay.png-138ee534777775a63e1a2db3b34528be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inventory overlay.png"
-dest_files=["res://.godot/imported/inventory overlay.png-6bd04c80a3eb1a896c85358f71653307.ctex"]
+source_file="res://Anson/inventory overlay.png"
+dest_files=["res://.godot/imported/inventory overlay.png-138ee534777775a63e1a2db3b34528be.ctex"]
 
 [params]
 
