@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://kbrotijrqnw1" path="res://Ruth/oxygenbar6.png" id="1_on2e1"]
 
-[node name="Oxygen6" type="Node2D"]
+[node name="Oxygen6" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_on2e1")
