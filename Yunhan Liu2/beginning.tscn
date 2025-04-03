@@ -1,9 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://t3v7ddegi0pl"]
+[gd_scene load_steps=27 format=3 uid="uid://t3v7ddegi0pl"]
 
 [ext_resource type="Script" path="res://Yunhan Liu2/beginning.gd" id="1_bvrav"]
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ecddj"]
-[ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="2_3ym8d"]
-[ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="3_poens"]
 [ext_resource type="PackedScene" uid="uid://cycjp4vmr1kal" path="res://DeadLargeSeaweed.tscn" id="5_0m64u"]
 [ext_resource type="PackedScene" uid="uid://k0juh3usoo66" path="res://Chiara/broken_Dock.glb" id="5_566ev"]
 [ext_resource type="PackedScene" uid="uid://dt1mfgeidwbmi" path="res://Ethan C/Water Bottle.tscn" id="5_l4yj5"]
@@ -26,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://craqwm4x5w6so" path="res://Naomi/DeadSeaweed.glb" id="23_b5ud8"]
 [ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="24_qmrum"]
 [ext_resource type="PackedScene" uid="uid://c2kt27qdcgfu" path="res://Sing-yu/Cottage_House_destroyed1.glb" id="25_d7rdg"]
+[ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="25_qh4nn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6a1uf"]
 
@@ -38,11 +37,6 @@ script = ExtResource("1_bvrav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.408, -5.79681, 91.7809)
 visible = false
 mesh = SubResource("CapsuleMesh_6a1uf")
-
-[node name="Player" parent="." instance=ExtResource("2_3ym8d")]
-transform = Transform3D(-1.99999, 0, 0.00488692, 0, 2, 0, -0.00488692, 0, -1.99999, 0, 5.55452, 17.3178)
-
-[node name="FreeCameraRig" parent="Player" instance=ExtResource("3_poens")]
 
 [node name="3d" type="Node3D" parent="."]
 
@@ -100,7 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9294, 1.71087, 7.63683)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2691, 1.77459, 6.6993)
 
 [node name="Badwater" parent="3d" instance=ExtResource("13_q5xgr")]
-transform = Transform3D(693.379, 0, 0, 0, 693.379, 0, 0, 0, 693.379, 0, 21.6228, -703.907)
+transform = Transform3D(693.379, 0, 0, 0, 693.379, 0, 0, 0, 693.379, 0, 10.7172, -703.907)
 
 [node name="Soil" type="Node3D" parent="3d"]
 
@@ -221,3 +215,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.342, -4.46617, 75.6791)
 
 [node name="broken_Dock2" parent="3d" instance=ExtResource("5_566ev")]
 transform = Transform3D(0.0249382, 0, -0.999689, 0, 1, 0, 0.999689, 0, 0.0249382, -111.653, -15.8173, 30.6201)
+
+[node name="Player" parent="." instance=ExtResource("25_qh4nn")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 70.6867, -2.01459, 40.6774)
+collision_layer = 1
