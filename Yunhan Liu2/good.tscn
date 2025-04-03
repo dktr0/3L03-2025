@@ -1,8 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://dp6183w8v6hq8"]
+[gd_scene load_steps=25 format=3 uid="uid://dp6183w8v6hq8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ddo5a"]
-[ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="2_joaes"]
-[ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="3_l8euk"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="4_ccliw"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="5_2b4bn"]
 [ext_resource type="PackedScene" uid="uid://b3eoabwbarjfo" path="res://Le Zhang/boat.glb" id="6_jlsgo"]
@@ -19,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://r2bamq0fhu4k" path="res://Xinyu Luo/tree.glb" id="16_jxrs8"]
 [ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="16_wdtqw"]
 [ext_resource type="PackedScene" uid="uid://bas58vrt0ro6o" path="res://Xinyu Luo/Tree2.glb" id="17_eh4x8"]
+[ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="18_1xakh"]
 
 [sub_resource type="Animation" id="Animation_qj1fd"]
 length = 0.001
@@ -96,11 +95,6 @@ buffer = PackedFloat32Array(-1.55168, 0, -3.02944, 85.6591, 0, 3.40371, 0, -9.54
 [node name="good" type="Node3D"]
 
 [node name="World" parent="." instance=ExtResource("1_ddo5a")]
-
-[node name="Player2" parent="." instance=ExtResource("2_joaes")]
-transform = Transform3D(-1.85928, 0, 0.00454309, 0, 1.85929, 0, -0.00454309, 0, -1.85928, 0, 5.55452, 17.3178)
-
-[node name="FreeCameraRig" parent="Player2" instance=ExtResource("3_l8euk")]
 
 [node name="3d" type="Node" parent="."]
 
@@ -3379,3 +3373,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.7748, -8.82355, 121.532)
 
 [node name="rock_group9" parent="rocks/rocks6" instance=ExtResource("16_3igs2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8903, -8.78195, 121.354)
+
+[node name="Player" parent="." instance=ExtResource("18_1xakh")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 70.6867, -2.01459, 40.6774)
+collision_layer = 1
