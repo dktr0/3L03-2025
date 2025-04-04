@@ -1,24 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlmvtoi6hdyvo"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j4kai"]
-sky_top_color = Color(0.643137, 0.721569, 0.847059, 1)
-sky_horizon_color = Color(0.820588, 0.893137, 0.961765, 1)
-ground_bottom_color = Color(0.639216, 0.85098, 1, 1)
-ground_horizon_color = Color(0.820588, 0.893137, 0.961765, 1)
-
-[sub_resource type="Sky" id="Sky_ggal6"]
-sky_material = SubResource("ProceduralSkyMaterial_j4kai")
-
-[sub_resource type="Environment" id="Environment_wgol2"]
-background_mode = 2
-sky = SubResource("Sky_ggal6")
-tonemap_mode = 2
-glow_enabled = true
-fog_enabled = true
-fog_light_color = Color(0.666667, 0.74902, 0.8, 1)
-fog_sun_scatter = 0.5
-fog_density = 0.02
-fog_sky_affect = 0.7
+[gd_scene load_steps=10 format=3 uid="uid://dlmvtoi6hdyvo"]
 
 [sub_resource type="Gradient" id="Gradient_j7mee"]
 offsets = PackedFloat32Array(0.0272727, 0.490909, 1)
@@ -73,9 +53,6 @@ billboard_keep_scale = true
 material = SubResource("StandardMaterial3D_ggyt3")
 
 [node name="weater_snowing" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_wgol2")
 
 [node name="vfx_snow" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.832, 0)
