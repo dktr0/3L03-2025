@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bhvggiixftuup"]
+[gd_scene load_steps=38 format=3 uid="uid://bhvggiixftuup"]
 
 [ext_resource type="PackedScene" uid="uid://couoihr1xwbk3" path="res://Riley/Kelp.tscn" id="2_4ty13"]
 [ext_resource type="PackedScene" uid="uid://brpse8kilyf1m" path="res://Zibo/waterweed.tscn" id="3_1bdq5"]
@@ -30,7 +30,9 @@
 [ext_resource type="PackedScene" uid="uid://lbgqh634a3jy" path="res://Zibo/broken_windmill_1.tscn" id="30_r8e8l"]
 [ext_resource type="PackedScene" uid="uid://cn67k105en2ld" path="res://Suyeon/dead_sea_turtle.tscn" id="31_1jnf1"]
 [ext_resource type="PackedScene" uid="uid://rqy64lsppbid" path="res://Sing-yu/cottage_house_destroyed2.tscn" id="31_jvfwo"]
+[ext_resource type="PackedScene" uid="uid://bvvcn5m53xl14" path="res://Matty/Manta Ray/manta_ray.tscn" id="33_uwn0q"]
 [ext_resource type="PackedScene" uid="uid://dnhxmh2okb2u0" path="res://Tram/sound effects/under_water_sound_scape_tram.tscn" id="33_v1vur"]
+[ext_resource type="PackedScene" uid="uid://bxld4rvbsdc7m" path="res://Matty/Octopus/octopus.tscn" id="34_cwpad"]
 [ext_resource type="PackedScene" uid="uid://dvkoynp3vo2xd" path="res://Rongyu Liu/Soil/No_green_soil.tscn" id="34_fxlfq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m2nfa"]
@@ -85,7 +87,7 @@ transform = Transform3D(0.200282, 0, 0, 0, 0.200282, 0, 0, 0, 0.200282, 17.1627,
 transform = Transform3D(-0.315493, 0, -0.305616, 0, 0.439246, 0, 0.305616, 0, -0.315493, 7.42405, 5.02587, 0.66452)
 
 [node name="starfish" parent="AquaticAnimals" instance=ExtResource("11_ajdkl")]
-transform = Transform3D(2.82794, 0, 0, 0, 2.82794, 0, 0, 0, 2.82794, 6.1854, 0.0115421, 15.9662)
+transform = Transform3D(4.32496, 0, 0, 0, 4.32496, 0, 0, 0, 4.32496, 6.1854, 0.0115421, 15.9662)
 
 [node name="Crab" parent="AquaticAnimals" instance=ExtResource("12_doah5")]
 transform = Transform3D(0.67677, 0, 0.235001, 0, 0.71641, 0, -0.235001, 0, 0.67677, -1.99947, 0, -18.0537)
@@ -663,28 +665,35 @@ autoplay = true
 transform = Transform3D(45, 0, 0, 0, 45, 0, 0, 0, 45, 10, 0, 0)
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.14203, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 95, -37.0729, 20.0069, 6)
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 95, -37.0729, 17.4538, 6)
 shape = SubResource("BoxShape3D_upq26")
 
 [node name="StaticBody3D6" type="StaticBody3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, -8.14203, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6"]
-transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 95, -52.9155, 20.0069, -0.904878)
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 95, -52.9155, 17.4538, -0.904878)
 shape = SubResource("BoxShape3D_upq26")
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -8.14203, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7"]
-transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 95, -49.313, 20.0069, 9.43857)
+transform = Transform3D(1, 0, 0, 0, 20, 0, 0, 0, 95, -49.313, 17.4538, 9.43857)
 shape = SubResource("BoxShape3D_upq26")
 
 [node name="StaticBody3D8" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -8.14203, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8"]
-transform = Transform3D(1, 0, 0, 0, 40, 0, -3.55271e-15, 0, 95, -40.9267, 20.0069, -5.61999)
+transform = Transform3D(1, 0, 4.54747e-13, 0, 20, 0, -3.55271e-15, 0, 95, -40.9267, 17.4538, -5.61999)
 shape = SubResource("BoxShape3D_upq26")
+
+[node name="MantaRay" parent="." instance=ExtResource("33_uwn0q")]
+transform = Transform3D(-0.997291, 0, -0.0735516, 0, 1, 0, 0.0735516, 0, -0.997291, -3.40662, 15.8608, 27.932)
+
+[node name="Area3D" parent="." instance=ExtResource("34_cwpad")]
+transform = Transform3D(0.92977, 0, -0.368141, 0, 1, 0, 0.368141, 0, 0.92977, -7.77552, 0.351045, 14.2186)
