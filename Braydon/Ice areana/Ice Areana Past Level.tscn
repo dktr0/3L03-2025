@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://4cexfi3rf5f1"]
+[gd_scene load_steps=83 format=3 uid="uid://4cexfi3rf5f1"]
 
 [ext_resource type="Script" path="res://Braydon/Ice areana/ice_areana_past_level.gd" id="1_dixax"]
 [ext_resource type="PackedScene" uid="uid://dpcpm538hbjih" path="res://Mackie/icicle1-glowing.glb" id="4_0pln2"]
@@ -8,15 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://ttreyma0ladq" path="res://Matty/Penguin/penguin.tscn" id="8_qoe8n"]
 [ext_resource type="PackedScene" uid="uid://dg4pp3s4vmcnd" path="res://Wilson/glacier_wall.glb" id="8_vsc4l"]
 [ext_resource type="PackedScene" uid="uid://6u5l3dgbsjjj" path="res://Matty/Penguin/penguin.glb" id="9_wvyns"]
-[ext_resource type="PackedScene" uid="uid://cpon3c06lq50d" path="res://Quinn/Ice Monster/ice_monster.glb" id="10_146yo"]
-[ext_resource type="PackedScene" uid="uid://bvioh3otnsxom" path="res://Quinn/Ice Monster/ice_monster.tscn" id="11_qkw5j"]
 [ext_resource type="PackedScene" uid="uid://cfto4t17rbswa" path="res://Mackie/icicleclump2-glowing.glb" id="12_kfgkj"]
-[ext_resource type="PackedScene" uid="uid://c0ylwq1b8dvjj" path="res://Spencer/Ice and Glacier/Ice monster/IceMonsterSound.tscn" id="12_o2i1x"]
 [ext_resource type="PackedScene" uid="uid://dn8b2oofj5cdi" path="res://Mackie/icicleclump3-glowing.glb" id="13_suwgt"]
 [ext_resource type="PackedScene" uid="uid://dlmvtoi6hdyvo" path="res://Wilson/weater_snowing.tscn" id="17_ionju"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/assests/chest.tscn" id="18_m0guq"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="18_ui4io"]
 [ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="19_j60uq"]
+[ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/sword_enemy.tscn" id="19_t6t31"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="20_fhpke"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gnbse"]
@@ -28,17 +26,11 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpmpq"]
 albedo_color = Color(0.8, 1, 1, 1)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_uspot"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc4mo"]
 albedo_color = Color(0.788235, 1, 1, 1)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sacdx"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dio32"]
 albedo_color = Color(0.811765, 1, 1, 1)
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_b2u2n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsq3i"]
 albedo_color = Color(0.752941, 1, 1, 1)
@@ -46,46 +38,28 @@ albedo_color = Color(0.752941, 1, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hoe6"]
 albedo_color = Color(0.866667, 1, 1, 1)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_stha3"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74d7n"]
 albedo_color = Color(0.843137, 1, 1, 1)
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8d2av"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rknr"]
 albedo_color = Color(0.870588, 1, 1, 1)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4247p"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slx8t"]
 albedo_color = Color(0.878431, 1, 1, 1)
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4erpn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bddx2"]
 albedo_color = Color(0.858824, 1, 1, 1)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dfhey"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cuatg"]
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_41wne"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnmmd"]
 albedo_color = Color(0.835294, 1, 1, 1)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yi1ug"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nifvt"]
 albedo_color = Color(0.843137, 1, 1, 1)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ji15w"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uydnq"]
 albedo_color = Color(0.835294, 1, 1, 1)
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ckpmj"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_6cmrb"]
 
@@ -213,30 +187,15 @@ transform = Transform3D(9.59746, 0, 0, 0, -4.43922e-08, 8.28039, 0, -1.01557, -3
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_rpmpq")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 1/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_uspot")
-
 [node name="Wall Plane 1_5" type="MeshInstance3D" parent="."]
 transform = Transform3D(-3.77566e-07, 1.01557, 3.61948e-07, 0, -4.43922e-08, 8.28039, 8.63771, 4.43922e-08, 4.52391e-14, -9, 8, 0)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_dc4mo")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 1_5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 1_5/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_sacdx")
-
 [node name="Wall Plane 1_6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.1327e-06, -1.01557, -3.61948e-07, 3.17049e-21, -4.43922e-08, 8.28039, -8.63771, -1.33177e-07, -7.68816e-14, 9, 8, 0)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_dio32")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 1_6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 1_6/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_b2u2n")
 
 [node name="Ceiling Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(9.59746, 0, 0, 0, -1.01557, -7.96285e-07, 0, 8.87844e-08, -9.10843, 0, 16, -1)
@@ -248,90 +207,45 @@ transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_4hoe6")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 2/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_stha3")
-
 [node name="Wall Plane 3" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, 5, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_74d7n")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 3/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_8d2av")
 
 [node name="Wall Plane 4" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, -8, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_2rknr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 4/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_4247p")
-
 [node name="Wall Plane 5" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, 2, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_slx8t")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 5/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_4erpn")
-
 [node name="Wall Plane 6" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.82169, 9.59746, 9.15654e-15, -7.96284e-08, 0, 1.01557, 7.96285e-08, -1, 8, -8)
+transform = Transform3D(4.19518e-07, -4.43922e-08, 1.82169, 9.59746, 9.15654e-15, -7.96284e-08, 0, 1.01557, 7.96285e-08, 0.284321, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_bddx2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 6/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_dfhey")
-
 [node name="Wall Plane 7" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.82169, -9.59746, 8.87844e-08, 7.96284e-08, -8.39036e-07, -1.01557, -7.96284e-08, -1, 8, -8)
+transform = Transform3D(4.19518e-07, -4.43922e-08, 1.82169, -9.59746, 8.87844e-08, 7.96284e-08, -8.39036e-07, -1.01557, -7.96284e-08, 0.211765, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_cuatg")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 7"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 7/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_41wne")
 
 [node name="Wall Plane 8" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, -6, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_nnmmd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 8"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 8/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_yi1ug")
-
 [node name="Wall Plane 9" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, -9.59746, 8.9407e-08, 7.23895e-08, -4.76837e-07, -1.01557, -7.23895e-08, -6, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_nifvt")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 9"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 9/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_ji15w")
-
 [node name="Wall Plane 10" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.64296e-07, -4.43922e-08, 1.32486, 6.0464, 9.15654e-15, -5.79116e-08, 0, 1.01557, 5.79116e-08, -4, 12, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_uydnq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall Plane 10"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Plane 10/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_ckpmj")
 
 [node name="Wall Plane 11" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.64296e-07, -4.43922e-08, 1.32486, 6.0464, 9.15654e-15, -5.79116e-08, 0, 1.01557, 5.79116e-08, -4, -2, -8)
@@ -498,7 +412,7 @@ mesh = SubResource("CapsuleMesh_6adpq")
 shape = SubResource("CapsuleShape3D_5ih12")
 
 [node name="Ice Pillar 3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.727849, 0.960054, 0.472161, -0.00621447, 12.4034, -0.0737773, -0.680646, 0.913389, 0.505579, 8.08256, 11.5282, 5.24206)
+transform = Transform3D(0.727849, 0.960054, 0.472161, -0.00621447, 12.4034, -0.0737773, -0.680646, 0.913389, 0.505579, 8.08256, 7.53075, 5.24206)
 mesh = SubResource("CapsuleMesh_6adpq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ice Pillar 3"]
@@ -699,7 +613,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.33793, 5.74426, -4.0771)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96741, 3.04332, 6.29884)
 
 [node name="weater_snowing" parent="." instance=ExtResource("17_ionju")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72422, 5.60395, -1.28803)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02014, -2.01191, -0.188829)
 
 [node name="Chest" parent="." instance=ExtResource("18_m0guq")]
 transform = Transform3D(-0.690176, 0, 0.723642, 0, 1, 0, -0.723642, 0, -0.690176, 7.14051, 0.322842, -4.91271)
@@ -709,14 +623,7 @@ fragment_index = 3
 [node name="Control" parent="." instance=ExtResource("20_fhpke")]
 
 [node name="Player" parent="." instance=ExtResource("18_ui4io")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44238, 0.274389, 2.16574)
-
-[node name="ice_monster" parent="." instance=ExtResource("10_146yo")]
-transform = Transform3D(-0.721049, 0, 0.346537, 0, 0.8, 0, -0.346537, 0, -0.721049, 5.33789, 0.309834, -3.21364)
-
-[node name="IceMonsterSound" parent="ice_monster" instance=ExtResource("12_o2i1x")]
-
-[node name="ice_monster" parent="ice_monster" instance=ExtResource("11_qkw5j")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 5.44238, 0.279614, 2.16574)
 
 [node name="Penguin" parent="." instance=ExtResource("8_qoe8n")]
 
@@ -733,3 +640,6 @@ transform = Transform3D(0.992527, 0, 0.122025, 0, 1, 0, -0.122025, 0, 0.992527, 
 
 [node name="penguin2" parent="Penguin3" instance=ExtResource("9_wvyns")]
 transform = Transform3D(0.0631601, 0, 0.495995, 0, 0.5, 0, -0.495995, 0, 0.0631601, -4.81463, 2.00065, 1.42016)
+
+[node name="Enemy" parent="." instance=ExtResource("19_t6t31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24918, 0.320499, -2.33692)
