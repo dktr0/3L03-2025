@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pd4yydgbv67o"
+uid="uid://bbnnk4rxwwdmi"
 path.s3tc="res://.godot/imported/penguin_Penguin_WR Base Color.png-403fe758d3bc9c8934bbecf86b11d2cc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "242618ce980d6b7e23bada060c88d956"
 }
 
 [deps]

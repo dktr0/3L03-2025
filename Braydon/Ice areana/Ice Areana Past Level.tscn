@@ -1,19 +1,23 @@
-[gd_scene load_steps=94 format=3 uid="uid://4cexfi3rf5f1"]
+[gd_scene load_steps=97 format=3 uid="uid://4cexfi3rf5f1"]
 
 [ext_resource type="Script" path="res://Braydon/Ice areana/ice_areana_past_level.gd" id="1_dixax"]
-[ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="3_n2rbw"]
-[ext_resource type="PackedScene" uid="uid://dh1g7wywkgw8r" path="res://Spencer/Ice and Glacier/Footsteps Ice/FootStepIce.tscn" id="3_q755y"]
 [ext_resource type="PackedScene" uid="uid://dpcpm538hbjih" path="res://Mackie/icicle1-glowing.glb" id="4_0pln2"]
-[ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="4_ul8bi"]
 [ext_resource type="PackedScene" uid="uid://c7b3jfvcpwv7j" path="res://Mackie/icicle2-glowing.glb" id="5_0bh8j"]
 [ext_resource type="PackedScene" uid="uid://c50uqkdddnib" path="res://Mackie/icicle3-glowing.glb" id="6_jwhm4"]
 [ext_resource type="PackedScene" uid="uid://cvywm7v6dj3gb" path="res://Mackie/icicle ceiling.glb" id="7_b7kdh"]
+[ext_resource type="PackedScene" uid="uid://ttreyma0ladq" path="res://Matty/Penguin/penguin.tscn" id="8_qoe8n"]
 [ext_resource type="PackedScene" uid="uid://dg4pp3s4vmcnd" path="res://Wilson/glacier_wall.glb" id="8_vsc4l"]
+[ext_resource type="PackedScene" uid="uid://6u5l3dgbsjjj" path="res://Matty/Penguin/penguin.glb" id="9_wvyns"]
 [ext_resource type="PackedScene" uid="uid://cpon3c06lq50d" path="res://Quinn/Ice Monster/ice_monster.glb" id="10_146yo"]
 [ext_resource type="PackedScene" uid="uid://bvioh3otnsxom" path="res://Quinn/Ice Monster/ice_monster.tscn" id="11_qkw5j"]
 [ext_resource type="PackedScene" uid="uid://cfto4t17rbswa" path="res://Mackie/icicleclump2-glowing.glb" id="12_kfgkj"]
 [ext_resource type="PackedScene" uid="uid://c0ylwq1b8dvjj" path="res://Spencer/Ice and Glacier/Ice monster/IceMonsterSound.tscn" id="12_o2i1x"]
 [ext_resource type="PackedScene" uid="uid://dn8b2oofj5cdi" path="res://Mackie/icicleclump3-glowing.glb" id="13_suwgt"]
+[ext_resource type="PackedScene" uid="uid://dlmvtoi6hdyvo" path="res://Wilson/weater_snowing.tscn" id="17_ionju"]
+[ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/assests/chest.tscn" id="18_m0guq"]
+[ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="18_ui4io"]
+[ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="19_j60uq"]
+[ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="20_fhpke"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gnbse"]
 
@@ -142,8 +146,6 @@ albedo_color = Color(0.992157, 1, 1, 1)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ny24v"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6adpq"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tpi0y"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ih12"]
 
@@ -345,14 +347,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dep8l")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
 shape = SubResource("CylinderShape3D_vph7s")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+[node name="Frozen lake" type="MeshInstance3D" parent="."]
 transform = Transform3D(10.3025, 0, 0, 0, 1, 0, 0, 0, -15.3431, 3.68542, -0.753838, -0.252868)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_ly1sh")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Frozen lake"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Frozen lake/StaticBody3D"]
 shape = SubResource("CylinderShape3D_58mcl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -486,15 +488,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pkrhh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D38/StaticBody3D"]
 shape = SubResource("CylinderShape3D_ny24v")
 
-[node name="Ice Pillar 1" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.727849, 0.960054, 0.472161, -0.00621447, 12.4034, -0.0737773, -0.680646, 0.913389, 0.505579, 0.0825577, 14.5282, -5.75794)
-mesh = SubResource("CapsuleMesh_6adpq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ice Pillar 1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ice Pillar 1/StaticBody3D"]
-shape = SubResource("CapsuleShape3D_tpi0y")
-
 [node name="Ice Pillar 2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.0199, 0, 0, 0, 7.58518, 0, 0, 0, 1.06405, 1.08256, 8.9985, -0.219858)
 mesh = SubResource("CapsuleMesh_6adpq")
@@ -558,7 +551,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3djp4")
 shape = SubResource("BoxShape3D_2kabc")
 
 [node name="MeshInstance3D33" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.215, 0, 0, 0, -1.6901e-07, -2.72, 0, 3.8665, -1.18895e-07, -5, 5, -10)
+transform = Transform3D(-1.215, 0, 0, 0, -1.6901e-07, -2.72, 0, 3.8665, -1.18895e-07, -4.63878, 5, -10)
 mesh = SubResource("BoxMesh_hxj6e")
 surface_material_override/0 = SubResource("StandardMaterial3D_cu42f")
 
@@ -566,23 +559,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cu42f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D33/StaticBody3D"]
 shape = SubResource("BoxShape3D_46a7n")
-
-[node name="Player" parent="." instance=ExtResource("3_n2rbw")]
-transform = Transform3D(-0.476415, 0, 0.00109557, 0, 0.3747, 0, -0.0011641, 0, -0.448365, 6.14581, 0.559267, 1.44404)
-
-[node name="FootStepIce" parent="Player" instance=ExtResource("3_q755y")]
-transform = Transform3D(-2.099, 0, -0.00512886, 0, 2.6688, 0, 0.00544968, 0, -2.23031, 12.9074, -1.49257, 3.18717)
-
-[node name="FreeCameraRig" parent="Player" instance=ExtResource("4_ul8bi")]
-transform = Transform3D(-0.999998, 0, -0.00244346, 0, 1, 0, 0.00244346, 0, -0.999998, 0.671935, -2.09569, 3.31642)
-player_path = NodePath("")
-
-[node name="ice_monster" parent="." instance=ExtResource("10_146yo")]
-transform = Transform3D(-0.994228, 0, 0.107288, 0, 1, 0, -0.107288, 0, -0.994228, 5.47579, 0.309834, -3.8302)
-
-[node name="IceMonsterSound" parent="ice_monster" instance=ExtResource("12_o2i1x")]
-
-[node name="ice_monster" parent="ice_monster" instance=ExtResource("11_qkw5j")]
 
 [node name="icicle1-glowing" parent="." instance=ExtResource("4_0pln2")]
 transform = Transform3D(3.83047, 0, 0, 0, -3.44308, -0.175597, 0, 0.187315, -3.22769, 6.12604, 1.03078, -4.91032)
@@ -624,10 +600,13 @@ transform = Transform3D(0.414214, 0, 0, 0, 0.794118, 0, 0, 0, 0.637088, -8.61566
 transform = Transform3D(0.414134, 0, 0.0124862, 0, 0.794118, 0, -0.00811813, 0, 0.636966, 31.1297, 0.0328159, -1.21731)
 
 [node name="glacier_wall3" parent="." instance=ExtResource("8_vsc4l")]
-transform = Transform3D(0.0302642, 0, -0.635385, 0, 0.794118, 0, 0.413107, 0, 0.0465483, 7.63584, 0.0328159, -7.11357)
+transform = Transform3D(0.030875, 0, -0.460344, 0, 0.794118, 0, 0.421444, 0, 0.0337248, 5.50423, 0.0328159, -7.11357)
 
 [node name="glacier_wall5" parent="." instance=ExtResource("8_vsc4l")]
-transform = Transform3D(0.0302642, 0, -0.635385, 0, 0.794118, 0, 0.413107, 0, 0.0465483, -2.00213, 6.46536, -6.53749)
+transform = Transform3D(0.0302642, 0, -0.635385, 0, 0.576128, 0, 0.413107, 0, 0.0465483, -2.00213, 6.46536, -6.53749)
+
+[node name="glacier_wall6" parent="." instance=ExtResource("8_vsc4l")]
+transform = Transform3D(0.0324127, 0, -0.158023, 0, 0.244167, 0, 0.442435, 0, 0.0115768, -7.36882, 4.26835, -6.53749)
 
 [node name="glacier_wall4" parent="." instance=ExtResource("8_vsc4l")]
 transform = Transform3D(-0.0116811, 0, 0.636835, 0, 0.794118, 0, -0.414049, 0, -0.0179664, 0.109657, 0.0328159, 30.4591)
@@ -718,3 +697,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.33793, 5.74426, -4.0771)
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96741, 3.04332, 6.29884)
+
+[node name="weater_snowing" parent="." instance=ExtResource("17_ionju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72422, 5.60395, -1.28803)
+
+[node name="Chest" parent="." instance=ExtResource("18_m0guq")]
+transform = Transform3D(-0.690176, 0, 0.723642, 0, 1, 0, -0.723642, 0, -0.690176, 7.14051, 0.322842, -4.91271)
+fragment_scene = ExtResource("19_j60uq")
+fragment_index = 3
+
+[node name="Control" parent="." instance=ExtResource("20_fhpke")]
+
+[node name="Player" parent="." instance=ExtResource("18_ui4io")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.44238, 0.274389, 2.16574)
+
+[node name="ice_monster" parent="." instance=ExtResource("10_146yo")]
+transform = Transform3D(-0.721049, 0, 0.346537, 0, 0.8, 0, -0.346537, 0, -0.721049, 5.33789, 0.309834, -3.21364)
+
+[node name="IceMonsterSound" parent="ice_monster" instance=ExtResource("12_o2i1x")]
+
+[node name="ice_monster" parent="ice_monster" instance=ExtResource("11_qkw5j")]
+
+[node name="Penguin" parent="." instance=ExtResource("8_qoe8n")]
+
+[node name="penguin2" parent="Penguin" instance=ExtResource("9_wvyns")]
+transform = Transform3D(-0.151543, 0, -0.476482, 0, 0.5, 0, 0.476482, 0, -0.151543, -2.92628, 2.00065, 5.67872)
+
+[node name="Penguin2" parent="." instance=ExtResource("8_qoe8n")]
+
+[node name="penguin2" parent="Penguin2" instance=ExtResource("9_wvyns")]
+transform = Transform3D(-0.366093, 0, 0.340552, 0, 0.5, 0, -0.340552, 0, -0.366093, -5.27122, 2.00065, 5.1339)
+
+[node name="Penguin3" parent="." instance=ExtResource("8_qoe8n")]
+transform = Transform3D(0.992527, 0, 0.122025, 0, 1, 0, -0.122025, 0, 0.992527, -1.35512, 0, 1.97746)
+
+[node name="penguin2" parent="Penguin3" instance=ExtResource("9_wvyns")]
+transform = Transform3D(0.0631601, 0, 0.495995, 0, 0.5, 0, -0.495995, 0, 0.0631601, -4.81463, 2.00065, 1.42016)

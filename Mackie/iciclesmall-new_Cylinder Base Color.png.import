@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx1nj8rbokd8p"
+uid="uid://blqwrtv0fllxn"
 path.s3tc="res://.godot/imported/iciclesmall-new_Cylinder Base Color.png-ed78cbbc76ffe4e243d76a8104c1a8e6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "cccbb7267581bcd0c7259841275a2c11"
 }
 
 [deps]
