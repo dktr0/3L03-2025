@@ -1,10 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5xp7gtkn6r52"]
+[gd_scene load_steps=12 format=3 uid="uid://c5xp7gtkn6r52"]
 
-[ext_resource type="PackedScene" uid="uid://c2kt27qdcgfu" path="res://Sing-yu/Cottage_House_destroyed1.glb" id="1_18i3v"]
-[ext_resource type="Texture2D" uid="uid://bg4yxuo7r1m3y" path="res://Sing-yu/Cottage_House_destroyed1_walls.png" id="2_fg8i2"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3757l"]
-albedo_texture = ExtResource("2_fg8i2")
+[ext_resource type="PackedScene" uid="uid://dpy4o0jr4mb4a" path="res://Sing-yu/Cottage_house_destroyed2.glb" id="1_18i3v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r0us5"]
 
@@ -27,9 +23,6 @@ albedo_texture = ExtResource("2_fg8i2")
 [sub_resource type="BoxShape3D" id="BoxShape3D_nra2j"]
 
 [node name="Cottage_House_destroyed1" instance=ExtResource("1_18i3v")]
-
-[node name="Cube_017" parent="." index="10"]
-material_override = SubResource("StandardMaterial3D_3757l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="39"]
 
