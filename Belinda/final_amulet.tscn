@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://bahmetxc7f45c"]
+
+[ext_resource type="Script" path="res://final_amulet.gd" id="1_w0xqi"]
+[ext_resource type="PackedScene" uid="uid://dg74el00a2jlx" path="res://Belinda/Amulet_1.tscn" id="2_jf7tv"]
+[ext_resource type="PackedScene" uid="uid://cow6312f4l512" path="res://Belinda/Amulet_2.tscn" id="3_dfepb"]
+[ext_resource type="PackedScene" uid="uid://ebdjymt356bv" path="res://Belinda/Amulet_2_3.tscn" id="4_qb2gd"]
+[ext_resource type="PackedScene" uid="uid://bj5c7y6jjowji" path="res://Belinda/Amulet_2_4.tscn" id="5_fjjmm"]
+[ext_resource type="PackedScene" uid="uid://mkcyy5fq7vsm" path="res://Belinda/Amulet_3.tscn" id="6_kx6ls"]
+[ext_resource type="PackedScene" uid="uid://hbmvg1gh6e6o" path="res://Belinda/Amulet_3_4.tscn" id="7_lbqog"]
+[ext_resource type="PackedScene" uid="uid://chtmrwggokmm0" path="res://Belinda/Amulet_4.tscn" id="8_dlvx6"]
+
+[node name="Final Amulet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w0xqi")
+
+[node name="Amulet1" parent="." instance=ExtResource("2_jf7tv")]
+layout_mode = 1
+
+[node name="Amulet2" parent="." instance=ExtResource("3_dfepb")]
+layout_mode = 1
+
+[node name="Amulet23" parent="." instance=ExtResource("4_qb2gd")]
+layout_mode = 1
+
+[node name="Amulet24" parent="." instance=ExtResource("5_fjjmm")]
+layout_mode = 1
+
+[node name="Amulet3" parent="." instance=ExtResource("6_kx6ls")]
+layout_mode = 1
+
+[node name="Amulet34" parent="." instance=ExtResource("7_lbqog")]
+layout_mode = 1
+
+[node name="Amulet4" parent="." instance=ExtResource("8_dlvx6")]
+layout_mode = 1
