@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=4 uid="uid://dw8fde4ghx6qm"]
 
 [ext_resource type="PackedScene" uid="uid://dv4mqi5ll4dx7" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
-[ext_resource type="PackedScene" uid="uid://3squhnolhfdx" path="res://Chiara/rock_platform.tscn" id="4_b0u6j"]
+[ext_resource type="PackedScene" uid="uid://c2lomx2fhrd4i" path="res://Chiara/rock_platform.tscn" id="4_b0u6j"]
 [ext_resource type="PackedScene" uid="uid://15so6a73xnba" path="res://Rongyu Liu/beach_onepiece.tscn" id="5_qhjos"]
 [ext_resource type="Texture2D" uid="uid://bc4iw6slufnsy" path="res://Chiara/filice_chiara_waterrock_Material Base Color.png" id="6_xw1is"]
 [ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Mountain/Highmountain.tscn" id="8_tuxek"]
