@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dv5oimat0ack8"]
+[gd_scene load_steps=4 format=3 uid="uid://dv5oimat0ack8"]
 
-[ext_resource type="Script" path="res://overlays.gd" id="1_5l30d"]
+[ext_resource type="Script" path="res://dr0/overlays.gd" id="1_5l30d"]
 [ext_resource type="PackedScene" uid="uid://f0mn5b8lwtx" path="res://Ruth/all_bars.tscn" id="2_qrdbh"]
+[ext_resource type="PackedScene" uid="uid://bahmetxc7f45c" path="res://Belinda/final_amulet.tscn" id="3_p5fsy"]
 
 [node name="Overlays" type="Control"]
 layout_mode = 3
@@ -13,4 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_5l30d")
 
 [node name="AllBars" parent="." instance=ExtResource("2_qrdbh")]
+layout_mode = 1
+
+[node name="Final Amulet" parent="." instance=ExtResource("3_p5fsy")]
 layout_mode = 1
