@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Braydon/portal--experiment/portal_1.gd" id="1_sk351"]
 [ext_resource type="Shader" uid="uid://dvkoqx2fbqiwy" path="res://Braydon/portal--experiment/Portal 1.tres" id="2_8om8n"]
-[ext_resource type="PackedScene" uid="uid://dfv81cn6unrtp" path="res://Bihan/SoundEffects and Soundscape/portal_sound.tscn" id="2_ayi1e"]
+[ext_resource type="PackedScene" path="res://Bihan/SoundEffects and Soundscape/portal_sound.tscn" id="2_ayi1e"]
 [ext_resource type="AudioStream" uid="uid://cithrn2r6k2dr" path="res://Bihan/SoundEffects and Soundscape/TeleportSoundEffects.mp3" id="3_yaxt5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rkxby"]

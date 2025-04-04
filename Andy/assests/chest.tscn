@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Andy/chest.gd" id="1_tddmd"]
 [ext_resource type="PackedScene" uid="uid://btl1ap6tswitv" path="res://Darius/ChestOpened.tscn" id="2_aups3"]
-[ext_resource type="PackedScene" uid="uid://p7cm4ty7jjw8" path="res://Darius/TreasureChest_Lid.tscn" id="3_r5dnr"]
+[ext_resource type="PackedScene" uid="uid://cobenij0mftuy" path="res://Darius/TreasureChest_Lid.tscn" id="3_r5dnr"]
 [ext_resource type="PackedScene" path="res://Darius/TreasureChest_Bottom.tscn" id="4_m3pvl"]
-[ext_resource type="AudioStream" uid="uid://c3tlvx8jlm073" path="res://Tram/sound effects/magical bell chime 2.mp3" id="5_1ga1c"]
+[ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="5_1ga1c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m08d4"]
 
