@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://bkp3ik4kiwvr7"]
+
+[ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="1_habo4"]
+[ext_resource type="PackedScene" uid="uid://bvdew8p0jq66c" path="res://BohanYuchi/helmet.glb" id="2_p7ec7"]
+[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="3_2uhbg"]
+[ext_resource type="Script" path="res://Andy/underwater/area_3d.gd" id="3_23ib3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tj25j"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_uv62u"]
+sky_material = SubResource("ProceduralSkyMaterial_tj25j")
+
+[sub_resource type="Environment" id="Environment_ectct"]
+background_mode = 2
+sky = SubResource("Sky_uv62u")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_kriwb"]
+size = Vector3(200, 200, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7puiy"]
+size = Vector3(200, 200, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f8ece"]
+size = Vector3(5, 5, 5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ectct")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_kriwb")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_7puiy")
+
+[node name="Player" parent="." instance=ExtResource("1_habo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100.23, 0)
+
+[node name="Water_Base" parent="." instance=ExtResource("3_2uhbg")]
+transform = Transform3D(-0.21978, 0, 0.00983409, 0, 0.22, 0, -0.00983409, 0, -0.21978, 31.0182, 102.143, 4.71835)
+skeleton = NodePath("../Area3D/helmet")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("3_23ib3")
+
+[node name="helmet" parent="Area3D" instance=ExtResource("2_p7ec7")]
+transform = Transform3D(-0.999, 0, 0.0447004, 0, 1, 0, -0.0447004, 0, -0.999, 0, 101.239, 4.71835)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100.481, 4.92677)
+shape = SubResource("BoxShape3D_f8ece")

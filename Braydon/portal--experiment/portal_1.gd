@@ -46,7 +46,7 @@ func _calculate_missing_shards() -> int:
 	return missing
 
 func _show_missing_shards_on_ui(missing: int):
-	var ui = get_node_or_null(amulet_ui_path)
+	var ui = get_node_or_null("res://Andy/ui Amulet.tscn")
 	if ui:
 		# 调用前面UI脚本写的 show_missing_shards(missing)
 		ui.show_missing_shards(missing)
@@ -61,4 +61,5 @@ func _teleport_player(player: Node):
 			player.global_transform = transform
 
 		TeleportMethod.CHANGE_SCENE:
-			get_tree().change_scene_to_file(target_scene_path)
+			AmuletManager.reset_shards()
+			Loadingmanager.change_scene_with_loading(target_scene_path)

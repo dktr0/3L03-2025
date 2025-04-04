@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyar0qgvuey7c"]
+
+[ext_resource type="PackedScene" uid="uid://cidm50ivkc0vb" path="res://Mackie/icepickaxe.glb" id="1_crumf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cfnem"]
+height = 2.12777
+radius = 0.134642
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xcsw"]
+size = Vector3(0.03302, 0.863708, 1.30652)
+
+[node name="Pickaxe" type="StaticBody3D"]
+
+[node name="pickaxe cyl collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00742507, -0.0617363, -0.000887156)
+shape = SubResource("CylinderShape3D_cfnem")
+
+[node name="icepickaxe" parent="." instance=ExtResource("1_crumf")]
+
+[node name="axe box collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.15527e-05, 0.544122, -0.00299072)
+shape = SubResource("BoxShape3D_5xcsw")

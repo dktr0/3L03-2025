@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmolplwylq7vl"]
+
+[ext_resource type="Script" path="res://Andy/start.gd" id="1_4ue0o"]
+[ext_resource type="Texture2D" uid="uid://dht65tp05n0tq" path="res://Zhu/concept page.png" id="2_4pplv"]
+[ext_resource type="Texture2D" uid="uid://di2fk6fw1ydpu" path="res://Andy/HALCYON-click to start.png" id="3_lrkh6"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="4_p3g1q"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4ue0o")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -43.0
+offset_top = -35.0
+offset_right = 1877.0
+offset_bottom = 1045.0
+scale = Vector2(0.665, 0.665)
+texture = ExtResource("2_4pplv")
+
+[node name="Halcyon-clickToStart" type="Sprite2D" parent="."]
+position = Vector2(726, 279)
+texture = ExtResource("3_lrkh6")
+
+[node name="PressLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.713
+anchor_top = 0.598
+anchor_right = 0.713
+anchor_bottom = 0.598
+offset_left = 853.0
+offset_top = 588.0
+offset_right = 1148.0
+offset_bottom = 618.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_p3g1q")
+theme_override_font_sizes/font_size = 29
+text = "Press enter to continue "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(482, 141)

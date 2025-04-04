@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnhxmh2okb2u0"]
+
+[ext_resource type="AudioStream" uid="uid://hxuj7xlh6tjx" path="res://Tram/sound effects/underwater-soundscape-loop.mp3" id="1_upo3l"]
+
+[node name="UnderWaterSoundScapeTram" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_upo3l")

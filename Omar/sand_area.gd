@@ -24,7 +24,7 @@ func _process(delta):
 
 func _ready():
 	sand_audio = $AudioStreamPlayer3D
-	player = $"../Player2"
+	player = $"../Player"
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
