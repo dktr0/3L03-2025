@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ddchensmyov"
+uid="uid://ly3qrd2t2tgn"
 path.s3tc="res://.godot/imported/iciclelarge-new_Cylinder.png-f1f726b7b29578b2513c5b89e97a4608.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "d98835c92a6883e5541e64fa2bc7834d"
 }
 
 [deps]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bp7olf7tr54s1"]
 
-[ext_resource type="Material" uid="uid://ddlg5iasny477" path="res://Underwater_Caustics/caustics.tres" id="1_ntorc"]
-[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Underwater_Caustics/water_base.tscn" id="2_4bupu"]
-[ext_resource type="PackedScene" uid="uid://c6xmw21g7x5kr" path="res://underwater_bubbles.tscn" id="3_qswaf"]
+[ext_resource type="Material" uid="uid://ddlg5iasny477" path="res://Wilson/caustics.tres" id="1_ntorc"]
+[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="2_4bupu"]
+[ext_resource type="PackedScene" uid="uid://c6xmw21g7x5kr" path="res://Wilson/underwater_bubbles.tscn" id="3_qswaf"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nw2ef"]
 size = Vector2(200, 200)
