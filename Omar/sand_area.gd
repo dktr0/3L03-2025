@@ -27,11 +27,11 @@ func _ready():
 	player = $"../Player"
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("player"):
 		player_inside = true
 
 
 func _on_body_exited(body: Node3D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("player"):
 		player_inside = false
 		target_volume = fade_out_volume

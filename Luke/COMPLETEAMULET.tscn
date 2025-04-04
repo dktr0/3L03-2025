@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://lx5ilk5blad1"]
+
+[ext_resource type="Script" path="res://Luke/amulet.gd" id="1_ghs7g"]
+[ext_resource type="PackedScene" uid="uid://b4lnemk2503au" path="res://Luke/amuletgem2.glb" id="2_6jes7"]
+[ext_resource type="PackedScene" uid="uid://cnv0uavf6cwgm" path="res://Luke/amuletring2.glb" id="3_40b8v"]
+
+[node name="amulet" type="Node3D"]
+script = ExtResource("1_ghs7g")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.626178, 0.921261, 7.84293)
+
+[node name="gem" parent="." instance=ExtResource("2_6jes7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0444183, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="gem"]
+
+[node name="ring1" parent="." instance=ExtResource("3_40b8v")]
+transform = Transform3D(2.7, 0, 0, 0, -0.00508952, -2.7, 0, 2.7, -0.00508952, 0.00167191, 0.271868, 0.00440514)
+
+[node name="ring2" parent="." instance=ExtResource("3_40b8v")]
+transform = Transform3D(2.17606, 1.59832, -0.0117445, -1.59836, 2.176, -0.0159894, -6.59659e-10, 0.0198392, 2.69993, 0.00167191, 0.271868, 0.00440514)
