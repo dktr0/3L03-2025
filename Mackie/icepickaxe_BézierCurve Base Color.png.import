@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx5ny6oh20mmg"
-path.s3tc="res://.godot/imported/icicleclump-glowing_Cylinder.png-05c1ff62ed26d400a2749f08d979235e.s3tc.ctex"
+uid="uid://c868erqxuoavl"
+path.s3tc="res://.godot/imported/icepickaxe_BézierCurve Base Color.png-d2d29e7297a0e6c7f4b501ab1f1aacd6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "0674176707533ce4dd0c7b5b707c4f85"
+}
 
 [deps]
 
-source_file="res://Mackie/icicleclump-glowing_Cylinder.png"
-dest_files=["res://.godot/imported/icicleclump-glowing_Cylinder.png-05c1ff62ed26d400a2749f08d979235e.s3tc.ctex"]
+source_file="res://Mackie/icepickaxe_BézierCurve Base Color.png"
+dest_files=["res://.godot/imported/icepickaxe_BézierCurve Base Color.png-d2d29e7297a0e6c7f4b501ab1f1aacd6.s3tc.ctex"]
 
 [params]
 
