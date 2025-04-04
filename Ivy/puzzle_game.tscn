@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bhvggiixftuup"]
+[gd_scene load_steps=36 format=3 uid="uid://bhvggiixftuup"]
 
 [ext_resource type="PackedScene" uid="uid://couoihr1xwbk3" path="res://Riley/Kelp.tscn" id="2_4ty13"]
 [ext_resource type="PackedScene" uid="uid://brpse8kilyf1m" path="res://Zibo/waterweed.tscn" id="3_1bdq5"]
@@ -18,22 +18,27 @@
 [ext_resource type="PackedScene" uid="uid://dffctwdfacdjg" path="res://Chiara/surrounding_rocks.tscn" id="15_gwluc"]
 [ext_resource type="PackedScene" uid="uid://gr4k51xejfwf" path="res://Ethan C/redbarrel.tscn" id="15_yj140"]
 [ext_resource type="PackedScene" uid="uid://hmade3vwwc0u" path="res://Ethan C/yellowbarrel.tscn" id="16_yn3rv"]
-[ext_resource type="PackedScene" uid="uid://15so6a73xnba" path="res://Rongyu Liu/beach_onepiece.tscn" id="17_qvljx"]
 [ext_resource type="PackedScene" uid="uid://b7ge4fbq1syiw" path="res://Zibo/windmill.tscn" id="20_hlthf"]
 [ext_resource type="PackedScene" uid="uid://s3tdan6y7gjg" path="res://Darius/Rubble.tscn" id="21_c8ykp"]
 [ext_resource type="PackedScene" uid="uid://cxnxgy1ct3kaa" path="res://Gia/Rock_Group.tscn" id="22_fhbnj"]
 [ext_resource type="PackedScene" uid="uid://2gv276l2p1uf" path="res://Riley/GlowingBarrel.tscn" id="25_sa3ab"]
 [ext_resource type="PackedScene" uid="uid://cj2h26ls141qf" path="res://Riley/CargoBox.tscn" id="26_ahco6"]
 [ext_resource type="PackedScene" uid="uid://3012mnglbpa5" path="res://Sing-yu/cottage_house.tscn" id="27_3uvvl"]
-[ext_resource type="PackedScene" uid="uid://gwugaype7el2" path="res://Ivy/test_player_underwater.tscn" id="28_ehox5"]
-[ext_resource type="PackedScene" uid="uid://bdh45f6l17eoq" path="res://Sing-yu/cottage_house_3.tscn" id="28_ojkg2"]
 [ext_resource type="PackedScene" uid="uid://w5oq0f2krj7h" path="res://Sing-yu/cottage_house_4.tscn" id="28_vqaxj"]
 [ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="29_4udvm"]
+[ext_resource type="PackedScene" uid="uid://bxad2s0o121ou" path="res://Zibo/broken_windmill_2.tscn" id="29_28cmr"]
+[ext_resource type="PackedScene" uid="uid://lbgqh634a3jy" path="res://Zibo/broken_windmill_1.tscn" id="30_r8e8l"]
+[ext_resource type="PackedScene" uid="uid://cn67k105en2ld" path="res://Suyeon/dead_sea_turtle.tscn" id="31_1jnf1"]
+[ext_resource type="PackedScene" uid="uid://rqy64lsppbid" path="res://Sing-yu/cottage_house_destroyed2.tscn" id="31_jvfwo"]
+[ext_resource type="PackedScene" uid="uid://dnhxmh2okb2u0" path="res://Tram/sound effects/under_water_sound_scape_tram.tscn" id="33_v1vur"]
+[ext_resource type="PackedScene" uid="uid://dvkoynp3vo2xd" path="res://Rongyu Liu/Soil/No_green_soil.tscn" id="34_fxlfq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m2nfa"]
 size = Vector3(1.41895, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ce1wu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_upq26"]
 
 [node name="PuzzleGame" type="Node3D"]
 
@@ -84,6 +89,9 @@ transform = Transform3D(2.82794, 0, 0, 0, 2.82794, 0, 0, 0, 2.82794, 6.1854, 0.0
 
 [node name="Crab" parent="AquaticAnimals" instance=ExtResource("12_doah5")]
 transform = Transform3D(0.67677, 0, 0.235001, 0, 0.71641, 0, -0.235001, 0, 0.67677, -1.99947, 0, -18.0537)
+
+[node name="dead sea turtle" parent="AquaticAnimals" instance=ExtResource("31_1jnf1")]
+transform = Transform3D(0.756566, -0.145938, 0.637424, 0.189404, 0.981899, 0, -0.625886, 0.120731, 0.770513, 35.7555, -1.94476, 16.9883)
 
 [node name="ChestClosed" parent="." instance=ExtResource("13_7hm1y")]
 transform = Transform3D(0.0384749, 0, 1.38088, 0, 1.38142, 0, -1.38088, 0, 0.0384749, 18.038, 0.289313, -3.84497)
@@ -528,14 +536,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1755, 0.543176, 12.1223)
 [node name="OmniLight3D8" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0785, 1.2795, 13.9958)
 
-[node name="Beach_onepiece" parent="." instance=ExtResource("17_qvljx")]
-transform = Transform3D(44.1309, 0, 0, 0, 44.1309, 0, 0, 0, 44.1309, 4.76355, 0, 0)
-
 [node name="windmill" parent="." instance=ExtResource("20_hlthf")]
 transform = Transform3D(0.615878, 0.06212, 0.35206, -0.208235, 0.632371, 0.252697, -0.290591, -0.321495, 0.565074, -10.2212, -3.5082, -13.0077)
 
-[node name="windmill2" parent="." instance=ExtResource("20_hlthf")]
-transform = Transform3D(0.711342, -0.0332128, -0.000340178, 0.00127993, 0.0201151, 0.711831, -0.0331902, -0.711058, 0.0201532, 34.3245, 0.708591, 2.00773)
+[node name="broken windmill1" parent="." instance=ExtResource("30_r8e8l")]
+transform = Transform3D(0.337223, 0.0251076, 0.41231, -0.086891, 0.524661, 0.0391178, -0.403831, -0.0919231, 0.335887, -30.8603, -0.234806, -2.15661)
+
+[node name="broken windmill2" parent="." instance=ExtResource("29_28cmr")]
+transform = Transform3D(0.66979, -0.468698, 0.0270824, 0, 0.0471838, 0.81658, -0.46948, -0.668674, 0.0386375, 39.3095, 1.92292, 0)
 
 [node name="rubble" parent="." instance=ExtResource("21_c8ykp")]
 transform = Transform3D(2.68669, 0, 0, 0, 2.68669, 0, 0, 0, 2.68669, 15.0174, 0, 2.79745)
@@ -555,6 +563,9 @@ transform = Transform3D(-1.43953, 0, -1.58736, 0, 2.14288, 0, 1.58736, 0, -1.439
 [node name="rubble3" parent="." instance=ExtResource("21_c8ykp")]
 transform = Transform3D(3.46418, 0, -1.97874, 0, 3.98948, 0, 1.97874, 0, 3.46418, -12.3455, 0.187333, -12.115)
 
+[node name="rubble7" parent="." instance=ExtResource("21_c8ykp")]
+transform = Transform3D(0.530787, 0, 1.08553, 0, 1.20835, 0, -1.08553, 0, 0.530787, -12.6602, 0, 24.1024)
+
 [node name="rocks" parent="." instance=ExtResource("22_fhbnj")]
 transform = Transform3D(0.46685, 0, -0.884337, 0, 1, 0, 0.884337, 0, 0.46685, 19.7829, -0.522109, 15.577)
 
@@ -568,7 +579,7 @@ transform = Transform3D(-0.448535, 0, -0.45963, 0, 0.642218, 0, 0.45963, 0, -0.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4446, 5.2259, -3.59169)
 
 [node name="GlowingBarrel3" parent="." instance=ExtResource("25_sa3ab")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3377, 1.00189, -10.6725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3377, 0.997116, -10.6725)
 
 [node name="GlowingBarrel2" parent="." instance=ExtResource("25_sa3ab")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.63791, 1.00876, -16.9762)
@@ -609,14 +620,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7419, 3.09121, -7.29653)
 [node name="Cottage House" parent="." instance=ExtResource("27_3uvvl")]
 transform = Transform3D(2.71236, 0, 0.657241, 0, 2.79086, 0, -0.657241, 0, 2.71236, -23.9516, 0, -20.1005)
 
-[node name="cottage_house3" parent="." instance=ExtResource("28_ojkg2")]
-transform = Transform3D(2.35764, 0, 0.545259, 0, 2.41987, 0, -0.545259, 0, 2.35764, -24.8651, 0, 22.9012)
-
 [node name="cottage_house_4" parent="." instance=ExtResource("28_vqaxj")]
 transform = Transform3D(0.872832, 0, 1.5426, 0, 1.77241, 0, -1.5426, 0, 0.872832, -11.7733, 0, 8.08936)
 
 [node name="Cottage_House_destroyed1" parent="." instance=ExtResource("29_4udvm")]
 transform = Transform3D(2.74793, 0, -1.64284, 0, 3.20157, 0, 1.64284, 0, 2.74793, 35.6463, 0, 18.4089)
+
+[node name="Cottage_house_destroyed2" parent="." instance=ExtResource("31_jvfwo")]
+transform = Transform3D(1.97788, 0, 0.371365, 0, 2.01244, 0, -0.371365, 0, 1.97788, -22.8869, 0, 26.2764)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(12.6718, 0, 0, 0, -0.927357, -1.6871, 0, -0.124576, 12.559, 6.72428, 8.36225, -7.45305)
@@ -643,5 +654,37 @@ shape = SubResource("BoxShape3D_ce1wu")
 transform = Transform3D(2.10271, 0, 0, 0, 2.10271, 0, 0, 0, 2.10271, 7.07208, 6.49512, 0.0099206)
 shape = SubResource("BoxShape3D_ce1wu")
 
-[node name="TestPlayerUnderwater" parent="." instance=ExtResource("28_ehox5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971418, 8.94331)
+[node name="UnderWaterSoundScapeTram" parent="." instance=ExtResource("33_v1vur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03317, 9.61887, 0)
+unit_size = 5.0
+autoplay = true
+
+[node name="No green soil" parent="." instance=ExtResource("34_fxlfq")]
+transform = Transform3D(45, 0, 0, 0, 45, 0, 0, 0, 45, 10, 0, 0)
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 95, -37.0729, 20.0069, 6)
+shape = SubResource("BoxShape3D_upq26")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6"]
+transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 95, -52.9155, 20.0069, -0.904878)
+shape = SubResource("BoxShape3D_upq26")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7"]
+transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 95, -49.313, 20.0069, 9.43857)
+shape = SubResource("BoxShape3D_upq26")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8"]
+transform = Transform3D(1, 0, 0, 0, 40, 0, -3.55271e-15, 0, 95, -40.9267, 20.0069, -5.61999)
+shape = SubResource("BoxShape3D_upq26")

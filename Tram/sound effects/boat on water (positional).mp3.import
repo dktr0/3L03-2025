@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://eh53yhkpgb40"
+path="res://.godot/imported/boat on water (positional).mp3-794264017a879e6bfe22630bcd14cbfd.mp3str"
+
+[deps]
+
+source_file="res://Tram/sound effects/boat on water (positional).mp3"
+dest_files=["res://.godot/imported/boat on water (positional).mp3-794264017a879e6bfe22630bcd14cbfd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

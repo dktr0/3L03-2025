@@ -62,8 +62,16 @@ var current_target: Node3D = null
 var min_pitch_rad: float
 var max_pitch_rad: float
 
+# Parent Node for smoothing
+var camera_root: Node3D
+
 ## Called when the node enters the scene tree for the first time.
 func _ready():
+	# Get Parent Node (CameraRoot)
+	camera_root = get_parent() as Node3D
+	if !camera_root:
+		printerr("Camera: Parent node is not a Node3D or not found. Smoothing may not work.")
+
 	# Get Autoload references
 	player_controller = get_node_or_null("/root/PlayerControllerInputs")
 	cursor_manager = get_node_or_null("/root/Cursor")
@@ -218,10 +226,14 @@ func process_free_camera(delta):
 		final_cam_pos = camera_lookat_pos + cam_dir * current_distance
 
 	# --- Apply Camera Transform --- 
-	# Position the camera directly (no lerping for responsiveness)
-	global_transform.origin = final_cam_pos 
-	# Make the camera look at the calculated target position (includes offsets)
-	look_at(camera_lookat_pos, Vector3.UP)
+	# Set the parent (CameraRoot) transform, the Camera3D will smooth towards it
+	if camera_root:
+		var target_transform = Transform3D(Basis(), final_cam_pos).looking_at(camera_lookat_pos, Vector3.UP)
+		camera_root.global_transform = target_transform
+	else:
+		# Fallback if root not found (direct positioning, no smoothing)
+		global_transform.origin = final_cam_pos 
+		look_at(camera_lookat_pos, Vector3.UP)
 
 ## Calculates and applies camera position/rotation for targeting mode.
 func process_targeting_camera(delta):
@@ -257,7 +269,7 @@ func process_targeting_camera(delta):
 	var collision = space_state.intersect_ray(ray_params)
 	if collision:
 		# If collision, move camera slightly away from the collision point
-		final_cam_pos = collision.position + collision.normal * 0.2 
+		final_cam_pos = collision.position + collision.normal * 0.1 
 		# Update current distance based on collision for clamping
 		current_distance = midpoint.distance_to(final_cam_pos)
 	else:
@@ -272,10 +284,14 @@ func process_targeting_camera(delta):
 		final_cam_pos = midpoint + direction * current_distance
 
 	# --- Apply Camera Transform --- 
-	# Position the camera directly (no lerping for responsiveness)
-	global_transform.origin = final_cam_pos 
-	# Make the camera look at the calculated target position (includes offsets)
-	look_at(final_cam_pos, Vector3.UP)
+	# Set the parent (CameraRoot) transform, the Camera3D will smooth towards it
+	if camera_root:
+		var target_transform = Transform3D(Basis(), final_cam_pos).looking_at(midpoint, Vector3.UP)
+		camera_root.global_transform = target_transform
+	else:
+		# Fallback if root not found (direct positioning, no smoothing)
+		global_transform.origin = final_cam_pos
+		look_at(midpoint, Vector3.UP)
 
 # Called by the core when targeting is engaged/disengaged
 func set_targeting_mode(is_targeting: bool, target_node: Node3D):

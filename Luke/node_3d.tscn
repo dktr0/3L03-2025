@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://oo0p6m53058k"]
+
+[ext_resource type="Script" path="res://amulet.gd" id="1_nxaqo"]
+[ext_resource type="PackedScene" uid="uid://b4lnemk2503au" path="res://amuletgem2.glb" id="1_x65ue"]
+[ext_resource type="Texture2D" uid="uid://b0l3a7p2jsky0" path="res://studio_small_09_4k.exr" id="2_3b1bq"]
+[ext_resource type="PackedScene" uid="uid://cnv0uavf6cwgm" path="res://amuletring2.glb" id="3_g8smx"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r0w2k"]
+panorama = ExtResource("2_3b1bq")
+
+[sub_resource type="Sky" id="Sky_hsoya"]
+sky_material = SubResource("PanoramaSkyMaterial_r0w2k")
+
+[sub_resource type="Environment" id="Environment_f67in"]
+background_mode = 2
+sky = SubResource("Sky_hsoya")
+
+[node name="amulet" type="Node3D"]
+script = ExtResource("1_nxaqo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.626178, 0.921261, 7.84293)
+
+[node name="gem" parent="." instance=ExtResource("1_x65ue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0444183, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="gem"]
+
+[node name="ring1" parent="." instance=ExtResource("3_g8smx")]
+transform = Transform3D(2.7, 0, 0, 0, -0.00508952, -2.7, 0, 2.7, -0.00508952, 0.00167191, 0.271868, 0.00440514)
+
+[node name="ring2" parent="." instance=ExtResource("3_g8smx")]
+transform = Transform3D(2.17606, 1.59832, -0.0117445, -1.59836, 2.176, -0.0159894, -6.59659e-10, 0.0198392, 2.69993, 0.00167191, 0.271868, 0.00440514)
+
+[node name="ring3" parent="." instance=ExtResource("3_g8smx")]
+transform = Transform3D(2.08817, -1.71154, 0.0125765, 1.45173, 1.7816, 1.41717, -0.906648, -1.08927, 2.29815, 0.00167191, 0.271868, 0.00440514)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f67in")

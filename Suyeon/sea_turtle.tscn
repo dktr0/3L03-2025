@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo28o20edvl6t"]
+
+[ext_resource type="PackedScene" uid="uid://378e20hi8ahh" path="res://Suyeon/sea turtle.glb" id="1_2i5pb"]
+
+[node name="sea turtle" instance=ExtResource("1_2i5pb")]

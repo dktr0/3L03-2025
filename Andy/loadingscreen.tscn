@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5drbqu23fnmj"]
+
+[ext_resource type="Script" path="res://Andy/loadingscreen.gd" id="1_yullw"]
+[ext_resource type="Texture2D" uid="uid://dht65tp05n0tq" path="res://Zhu/concept page.png" id="2_m35r1"]
+[ext_resource type="Texture2D" uid="uid://c3jp6hehkqlkt" path="res://Zhu/something to use/HALCYON-click to start.png" id="3_hp54o"]
+[ext_resource type="AudioStream" uid="uid://fqjjwj8unuo1" path="res://Bihan/SoundEffects and Soundscape/TeleportSoundEffects1.mp3" id="4_knkwk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yullw")
+
+[node name="ConceptPage" type="Sprite2D" parent="."]
+position = Vector2(588, 321)
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("2_m35r1")
+
+[node name="Halcyon-clickToStart" type="Sprite2D" parent="."]
+position = Vector2(739, 307)
+texture = ExtResource("3_hp54o")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -467.0
+offset_top = -69.0
+offset_right = 517.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_knkwk")
+volume_db = 4.685
+autoplay = true
