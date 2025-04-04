@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfuqq5uqhnlh7"]
+[gd_scene load_steps=3 format=3 uid="uid://cfuqq5uqhnlh7"]
 
 [ext_resource type="Texture2D" uid="uid://bfflwoq5yhj80" path="res://Ruth/bars.png" id="1_indu0"]
+[ext_resource type="Script" path="res://Ruth/energybar.gd" id="1_pejwv"]
 
 [node name="Bars" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_pejwv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1029, 129)
+scale = Vector2(2.78, 2.78)
 texture = ExtResource("1_indu0")
