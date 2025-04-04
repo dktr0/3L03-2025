@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://w0e24yhiypns"]
+
+[ext_resource type="PackedScene" uid="uid://c4frqd4uak6nk" path="res://Wren/coast gaurd old.glb" id="1_6dtjm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsyye"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1u6dd"]
+height = 0.469448
+
+[node name="CoastGuardStationOld" type="StaticBody3D"]
+
+[node name="coast gaurd old" parent="." instance=ExtResource("1_6dtjm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 3, 3.2, 2)
+shape = SubResource("BoxShape3D_nsyye")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 3, 3.2, -2)
+shape = SubResource("BoxShape3D_nsyye")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 3, 4.5, 0)
+shape = SubResource("BoxShape3D_nsyye")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.683365, 0.0138381, -2.47995)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0991186, 0.0138381, -2.23011)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0991186, 0.0138381, 3.48573)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.20828, 0.0138381, 5.14601)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.74499, 0.0138381, 5.21527)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.64341, 0.0138381, 2.26205)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 6.59405, 0.0138381, -1.31933)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.11832, 0.0138381, -1.74525)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.11509, 0.0138381, -3.42443)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 6.15097, 0.0138381, 0.246695)
+shape = SubResource("CylinderShape3D_1u6dd")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.180179, 0.0138381, 1.23782)
+shape = SubResource("CylinderShape3D_1u6dd")

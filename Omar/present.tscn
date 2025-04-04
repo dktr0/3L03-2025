@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="5_eyu1o"]
 [ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="6_k0hcq"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/assests/chest.tscn" id="7_lc440"]
-[ext_resource type="PackedScene" uid="uid://cetv4q45see0s" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
+[ext_resource type="PackedScene" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="11_6vhei"]
 [ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="13_3jtso"]
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="13_d7obm"]
@@ -664,7 +664,6 @@ stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 500.0
-bus = &"Waves"
 parameters/looping = true
 script = ExtResource("41_yeoeq")
 player = NodePath("../../Player")
@@ -675,7 +674,6 @@ stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
-bus = &"Waves"
 script = ExtResource("41_yeoeq")
 player = NodePath("../../Player")
 
@@ -685,7 +683,6 @@ stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
-bus = &"Waves"
 script = ExtResource("41_yeoeq")
 player = NodePath("../../Player")
 
@@ -695,7 +692,6 @@ stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
-bus = &"Waves"
 script = ExtResource("41_yeoeq")
 player = NodePath("../../Player")
 
@@ -705,7 +701,6 @@ stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
-bus = &"Waves"
 script = ExtResource("41_yeoeq")
 player = NodePath("../../Player")
 
@@ -715,7 +710,6 @@ stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
-bus = &"Waves"
 script = ExtResource("41_yeoeq")
 player = NodePath("../../Player")
 
@@ -725,7 +719,6 @@ stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
-bus = &"Waves"
 script = ExtResource("41_yeoeq")
 player = NodePath("../../Player")
 
@@ -735,7 +728,6 @@ stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
-bus = &"Waves"
 script = ExtResource("41_yeoeq")
 player = NodePath("../../Player")
 
@@ -747,7 +739,6 @@ stream = ExtResource("37_yj8k3")
 volume_db = 10.0
 autoplay = true
 max_distance = 470.0
-bus = &"Wind"
 parameters/looping = true
 script = ExtResource("40_ijixa")
 player = NodePath("../../Player")
@@ -757,7 +748,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.3049, 0, 190.559)
 stream = ExtResource("37_yj8k3")
 volume_db = 10.0
 autoplay = true
-bus = &"Wind"
 parameters/looping = true
 script = ExtResource("40_ijixa")
 player = NodePath("../../Player")
@@ -767,7 +757,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.2465, 0, 190.559)
 stream = ExtResource("37_yj8k3")
 volume_db = 10.0
 autoplay = true
-bus = &"Wind"
 parameters/looping = true
 script = ExtResource("40_ijixa")
 player = NodePath("../../Player")
@@ -777,7 +766,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -183.155, 0, 190.559)
 stream = ExtResource("37_yj8k3")
 volume_db = 10.0
 autoplay = true
-bus = &"Wind"
 parameters/looping = true
 script = ExtResource("40_ijixa")
 player = NodePath("../../Player")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bkin0g8d1ylbb"]
+[gd_scene load_steps=33 format=3 uid="uid://bkin0g8d1ylbb"]
 
 [ext_resource type="Texture2D" uid="uid://df8rytnkxhlci" path="res://Nan/Badsky.jpg" id="2_kij1i"]
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="3_vfc3k"]
@@ -22,14 +22,12 @@
 [ext_resource type="PackedScene" path="res://Riley/GarbagePile.tscn" id="21_3cje3"]
 [ext_resource type="PackedScene" uid="uid://dj0ikx20ebw7a" path="res://Wilson/fire_smoke.tscn" id="22_2kwsw"]
 [ext_resource type="PackedScene" uid="uid://bt0oah83alnvb" path="res://Wilson/vfx_smoke.tscn" id="23_og3xp"]
-[ext_resource type="Script" path="res://Wilson/fire_smoke.gd" id="23_uv6my"]
 [ext_resource type="PackedScene" uid="uid://craqwm4x5w6so" path="res://Naomi/DeadSeaweed.glb" id="24_m0os1"]
-[ext_resource type="PackedScene" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="25_lrmig"]
-[ext_resource type="PackedScene" uid="uid://c2kt27qdcgfu" path="res://Sing-yu/Cottage_House_destroyed1.glb" id="26_wntvp"]
+[ext_resource type="PackedScene" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="26_wntvp"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="27_cjl7l"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="28_fxtaf"]
 [ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="29_7xcbf"]
-[ext_resource type="AudioStream" uid="uid://c3tlvx8jlm073" path="res://Tram/sound effects/magical bell chime 2.mp3" id="30_haush"]
+[ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="30_haush"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_edrb3"]
 panorama = ExtResource("2_kij1i")
@@ -205,7 +203,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.957, 5.86947, -31.1224)
 
 [node name="Node3D3" parent="3d/fire" instance=ExtResource("22_2kwsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70554, -9.65778, 281.985)
-script = ExtResource("23_uv6my")
 
 [node name="Node3D4" parent="3d/fire" instance=ExtResource("22_2kwsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -213.49, -14.8633, 271.155)
@@ -224,7 +221,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.1944, -10.6451, 13.6271)
 
 [node name="House" type="Node3D" parent="3d"]
 
-[node name="Cottage_House_destroyed1" parent="3d/House" instance=ExtResource("25_lrmig")]
+[node name="Cottage_House_destroyed1" parent="3d/House" instance=ExtResource("26_wntvp")]
 transform = Transform3D(6.72003, 0, 2.18853, 0, 7.06743, 0, -2.18853, 0, 6.72003, 134.648, -6.99998, 69.071)
 
 [node name="Node3D3" parent="3d/House" instance=ExtResource("22_2kwsw")]
@@ -242,6 +239,7 @@ transform = Transform3D(0.0249382, 0, -0.999689, 0, 1, 0, 0.999689, 0, 0.0249382
 [node name="Portal 1" parent="." instance=ExtResource("27_cjl7l")]
 transform = Transform3D(6.405, 0, 0, 0, 6.405, 0, 0, 0, 6.405, 5.24354, 21.9521, 140.922)
 player_path = NodePath("../Player")
+teleport_method = 1
 target_scene_path = "res://Andy/playable/present.tscn"
 amulet_ui_path = NodePath("../Control")
 
