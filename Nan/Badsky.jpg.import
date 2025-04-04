@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ru7du4044vdv"
-path.s3tc="res://.godot/imported/badsky.jpg-ec18d612f06d29578e46bbb8a8e9a6e8.s3tc.ctex"
+path.s3tc="res://.godot/imported/Badsky.jpg-976ffb978f32dceb5f8fbfa9c023714e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Nan/badsky.jpg"
-dest_files=["res://.godot/imported/badsky.jpg-ec18d612f06d29578e46bbb8a8e9a6e8.s3tc.ctex"]
+source_file="res://Nan/Badsky.jpg"
+dest_files=["res://.godot/imported/Badsky.jpg-976ffb978f32dceb5f8fbfa9c023714e.s3tc.ctex"]
 
 [params]
 

@@ -2,11 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-<<<<<<< HEAD
-uid="uid://bp10u2t3i23xy"
-=======
-uid="uid://cd2wif78vc74e"
->>>>>>> f38fe288f115075956f4c61008868df21ed667b2
+uid="uid://dn48l31f2eq3a"
 path="res://.godot/imported/positive-idle-music-loop.wav-31a8254c5d277eb86dfbb8646b7fefea.sample"
 
 [deps]
