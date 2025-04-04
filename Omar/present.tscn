@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=69 format=3 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="24_jgkje"]
 [ext_resource type="PackedScene" uid="uid://bvliaw7oqrkq0" path="res://Darius/Boat_Paddles.tscn" id="27_5h5rp"]
 [ext_resource type="Script" path="res://Omar/kill_zone_platformer.gd" id="27_tbh2r"]
+[ext_resource type="Script" path="res://Darius/boat_paddles.gd" id="28_ai6ff"]
 [ext_resource type="Script" path="res://Omar/sand_area.gd" id="30_05fr5"]
 [ext_resource type="AudioStream" uid="uid://dj0flvdbt82si" path="res://Spencer/General/FootstepDull/02.mp3" id="31_51xlb"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="32_3v2qo"]
@@ -46,12 +47,13 @@
 [ext_resource type="Script" path="res://Omar/waves.gd" id="41_yeoeq"]
 [ext_resource type="PackedScene" uid="uid://bvdew8p0jq66c" path="res://BohanYuchi/helmet.glb" id="42_xspbn"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="43_71u0b"]
+[ext_resource type="AudioStream" uid="uid://dmbyvij6joxyn" path="res://Tram/music/bossa-nova-synth.mp3" id="48_n2nxe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aolfg"]
 size = Vector3(13.3947, 1.56104, 14.007)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7reoo"]
-size = Vector3(1, 1.31564, 1)
+size = Vector3(1, 0.873154, 0.987427)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1q080"]
 
@@ -94,6 +96,9 @@ size = Vector3(587.076, 47.1141, 497.398)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ss6x"]
 size = Vector3(319.015, 75.1254, 439.936)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i5xlb"]
+size = Vector3(1.22766, 1.04834, 1.01105)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7ydq"]
 size = Vector3(640.669, 0.566574, 179.996)
@@ -160,7 +165,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4801, -0.1094, 140.271)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D9"]
-transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
+transform = Transform3D(4.10465, 0.00127188, 5.78164, -0.00100528, 1.618, -0.0555109, -1.01702, 0.00353393, 23.3346, 1.1191, 0.638476, -0.93779)
 shape = SubResource("BoxShape3D_7reoo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D9"]
@@ -552,7 +557,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7314, -35.7923, 149.612)
 shape = SubResource("BoxShape3D_3ss6x")
 
 [node name="Node3D" parent="." instance=ExtResource("27_5h5rp")]
-transform = Transform3D(-5.62257, 0, -9.45445, 0, 11, 0, 9.45445, 0, -5.62257, -186.523, -9.73352, -35.1662)
+transform = Transform3D(-6.68388, 0, -8.73646, 0, 11, 0, 8.73646, 0, -6.68388, -186.523, -9.734, -35.166)
+script = ExtResource("28_ai6ff")
+point_a = Vector3(-186.523, -9.734, -35.166)
+point_b = Vector3(-461.819, -9.734, -227.263)
+
+[node name="Area3D" type="Area3D" parent="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+transform = Transform3D(0.999999, 0, 7.77841e-06, 0, 1, 0, -7.77841e-06, 0, 0.999999, -0.159536, 0.0241699, -0.233134)
+shape = SubResource("BoxShape3D_i5xlb")
 
 [node name="Node3D2" parent="." instance=ExtResource("27_5h5rp")]
 transform = Transform3D(-6.22145, 0, -9.07158, 0, 11, 0, 9.07158, 0, -6.22145, -199.724, -9.6337, 24.1961)
@@ -577,10 +591,11 @@ stream = ExtResource("31_51xlb")
 attenuation_model = 3
 volume_db = 53.333
 
-[node name="Seagulls" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio")]
+[node name="Seagulls" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio", "player")]
 transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, 132.462, 16.4945, 109.16)
 script = ExtResource("34_agfna")
 seagulls_audio = NodePath("Seagulls")
+player = NodePath("../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Seagulls"]
 shape = SubResource("SphereShape3D_3bf4o")
@@ -589,10 +604,11 @@ shape = SubResource("SphereShape3D_3bf4o")
 stream = ExtResource("35_cbgrm")
 volume_db = 80.0
 
-[node name="Seagulls2" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio")]
+[node name="Seagulls2" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio", "player")]
 transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, -106.675, 16.4945, 138.662)
 script = ExtResource("34_agfna")
 seagulls_audio = NodePath("Seagulls")
+player = NodePath("../Player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Seagulls2"]
 shape = SubResource("SphereShape3D_3bf4o")
@@ -638,7 +654,7 @@ transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 
 fragment_scene = ExtResource("8_fio87")
 
 [node name="Player" parent="." instance=ExtResource("32_3v2qo")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 122.999, 5.20599, 180.862)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 151.114, 1.71884, 20.7798)
 
 [node name="waves" type="Node" parent="."]
 
@@ -784,8 +800,16 @@ transform = Transform3D(0.208314, -0.958794, 1.74279, -0.15863, 1.73873, 0.97552
 [node name="WaterRock" parent="." instance=ExtResource("43_71u0b")]
 transform = Transform3D(0.643135, -0.765753, 0, 0.479553, 0.402763, 0.779622, -0.596998, -0.501402, 0.62625, -512.071, -1.06553, -227.81)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("48_n2nxe")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer" to="killzone/Kill Zone Platformer" method="_on_body_entered"]
+[connection signal="body_entered" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="SandArea" to="SandArea" method="_on_body_entered"]
 [connection signal="body_exited" from="SandArea" to="SandArea" method="_on_body_exited"]
 [connection signal="body_entered" from="Seagulls" to="Seagulls" method="_on_body_entered"]
