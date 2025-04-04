@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv5oimat0ack8"]
+
+[ext_resource type="Script" path="res://overlays.gd" id="1_5l30d"]
+[ext_resource type="PackedScene" uid="uid://f0mn5b8lwtx" path="res://Ruth/all_bars.tscn" id="2_qrdbh"]
+
+[node name="Overlays" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5l30d")
+
+[node name="AllBars" parent="." instance=ExtResource("2_qrdbh")]
+layout_mode = 1
