@@ -37,9 +37,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("move_right"):
 		angle += rotate_speed * delta
-	elif Input.is_action_pressed("left"):
+	elif Input.is_action_pressed("move_left"):
 		angle -= rotate_speed * delta
 
 	collision_pivot.rotation = angle
@@ -51,7 +51,7 @@ func _input(_event: InputEvent) -> void:
 		match current_collision_node_name:
 			"PosStart":
 				print("激活 START 按钮")
-				# get_tree().change_scene("res://YourGameScene.tscn")
+				Loadingmanager.change_scene_with_loading("res://Andy/playable/beginning.tscn")
 			"PosCredit":
 				print("激活 CREDIT 按钮")
 				# get_tree().change_scene("res://CreditScene.tscn")

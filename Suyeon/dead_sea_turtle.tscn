@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn67k105en2ld"]
+
+[ext_resource type="PackedScene" uid="uid://s06lpm0ovy52" path="res://Suyeon/dead sea turtle.glb" id="1_046fo"]
+
+[node name="dead sea turtle" instance=ExtResource("1_046fo")]

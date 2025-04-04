@@ -6,7 +6,7 @@ extends Node3D
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var area: Area3D = $Area3D
-
+@onready var open_sfx: AudioStreamPlayer3D = $OpenSFX
 var is_opened: bool = false
 var can_open: bool = false
 
@@ -35,7 +35,7 @@ func _on_area_body_exited(body: Node):
 
 func _input(event):
 	# 1) 正常玩家交互
-	if event.is_action_pressed("activate_button") and can_open and not is_opened:
+	if event.is_action_pressed("activate") and can_open and not is_opened:
 		open_chest()
 
 	# 2) 开发者测试: 按下 "dev_complete_quest" 直接让箱子出现(相当于任务完成)
@@ -47,7 +47,8 @@ func open_chest():
 	if is_opened:
 		return
 	is_opened = true
-
+	if open_sfx:
+		open_sfx.play()
 	# 如果存在名为 "open" 的动画，则播放
 	if anim_player.has_animation("open"):
 		anim_player.play("open")

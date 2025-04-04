@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://du3jyfo2jkna2"
+uid="uid://xqbx7yh8s8gp"
 path="res://.godot/imported/magical bell chime 1.mp3-a6b34503f5ec7fc570cb1928f01b6b7e.mp3str"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/magical bell chime 1.mp3-a6b34503f5ec7fc570cb
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

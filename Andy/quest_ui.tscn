@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://brnale7hmas1w"]
 
-[ext_resource type="Script" path="res://quest_ui.gd" id="1_ongds"]
-[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Andy/words/font/font for all words.ttf" id="2_4k231"]
+[ext_resource type="Script" path="res://Andy/quest_ui.gd" id="1_ongds"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="2_4k231"]
 
 [node name="QuestUI" type="Control"]
 layout_mode = 3

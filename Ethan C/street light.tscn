@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgp6t2wxb84bk"]
+
+[ext_resource type="PackedScene" uid="uid://bwmt417bnrlmk" path="res://Ethan C/street light.glb" id="1_am8rq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56cvc"]
+size = Vector3(0.469788, 3.04828, 0.513184)
+
+[node name="Area3D" type="Area3D"]
+
+[node name="street light" parent="." instance=ExtResource("1_am8rq")]
+transform = Transform3D(0.229172, 0, 0, 0, 0.229172, 0, 0, 0, 0.229172, -0.072979, 0, -0.0455999)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.00246, 0, 0, 0, 1.00246, 0, 0, 0, 1.00246, -0.0765686, 1.52164, -0.052002)
+shape = SubResource("BoxShape3D_56cvc")

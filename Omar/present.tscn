@@ -1,15 +1,20 @@
-[gd_scene load_steps=43 format=3 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=69 format=3 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="3_k0l6t"]
 [ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="5_eyu1o"]
 [ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="6_k0hcq"]
+[ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/assests/chest.tscn" id="7_lc440"]
+[ext_resource type="PackedScene" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="11_6vhei"]
 [ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="13_3jtso"]
+[ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="13_d7obm"]
 [ext_resource type="PackedScene" uid="uid://dbhxcdh47t2s" path="res://Quinn/Dock Spiders/spider_1.tscn" id="13_x8py4"]
+[ext_resource type="PackedScene" uid="uid://ttreyma0ladq" path="res://Matty/Penguin/penguin.tscn" id="14_2d3a0"]
 [ext_resource type="PackedScene" uid="uid://cgtq2fff325mx" path="res://Quinn/Dock Spiders/spider_2.tscn" id="14_rolbw"]
 [ext_resource type="PackedScene" uid="uid://dxv1pswtk7jhx" path="res://Quinn/Dock Spiders/spider_3.tscn" id="15_u36hn"]
+[ext_resource type="PackedScene" uid="uid://6u5l3dgbsjjj" path="res://Matty/Penguin/penguin.glb" id="15_uec0a"]
 [ext_resource type="ArrayMesh" uid="uid://cswa167n3gdaa" path="res://Omar/texture/new_array_mesh.tres" id="16_7evvv"]
 [ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="16_28bgx"]
 [ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="16_532hx"]
@@ -18,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="17_01jia"]
 [ext_resource type="ArrayMesh" uid="uid://snlp8xd5hv2n" path="res://Omar/texture/tree.tres" id="17_2xwom"]
 [ext_resource type="PackedScene" uid="uid://dfjs3jo3ls7is" path="res://Mackie/icicle clump_1.tscn" id="17_f81mf"]
-[ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="17_n3ard"]
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="17_vhbp1"]
 [ext_resource type="PackedScene" uid="uid://b4kixgrxdj358" path="res://Omar/ice_arena_present.tscn" id="18_2sia6"]
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="19_qt78c"]
@@ -26,12 +30,34 @@
 [ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="22_tpijs"]
 [ext_resource type="Script" path="res://Omar/kill_zone.gd" id="23_7v35e"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="23_51q5n"]
-[ext_resource type="PackedScene" uid="uid://vumn7ywya5q8" path="res://Wren/coastguardstation.glb" id="24_jgkje"]
-[ext_resource type="PackedScene" path="res://Darius/Boat_Paddles.tscn" id="27_5h5rp"]
+[ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="24_jgkje"]
+[ext_resource type="PackedScene" uid="uid://bvliaw7oqrkq0" path="res://Darius/Boat_Paddles.tscn" id="27_5h5rp"]
 [ext_resource type="Script" path="res://Omar/kill_zone_platformer.gd" id="27_tbh2r"]
+[ext_resource type="Script" path="res://Darius/boat_paddles.gd" id="28_ai6ff"]
+[ext_resource type="Script" path="res://Omar/sand_area.gd" id="30_05fr5"]
+[ext_resource type="AudioStream" uid="uid://dj0flvdbt82si" path="res://Spencer/General/FootstepDull/02.mp3" id="31_51xlb"]
+[ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="32_3v2qo"]
+[ext_resource type="PackedScene" uid="uid://btj6i7h1cco8a" path="res://Maga/player_controller/scenes/player_trigger.tscn" id="32_qsmq8"]
+[ext_resource type="AudioStream" uid="uid://vex7tu3vi5qc" path="res://Tram/sound effects/Ocean Waves 1.mp3" id="32_upd76"]
+[ext_resource type="Script" path="res://Omar/seagulls.gd" id="34_agfna"]
+[ext_resource type="AudioStream" uid="uid://b2osjf035f8du" path="res://Tram/sound effects/seagulls.mp3" id="35_cbgrm"]
+[ext_resource type="AudioStream" uid="uid://ryufl0mim8ai" path="res://Tram/sound effects/leaves rustling 2.mp3" id="37_yj8k3"]
+[ext_resource type="Script" path="res://Omar/wind.gd" id="40_ijixa"]
+[ext_resource type="PackedScene" uid="uid://btbfwfjoc6wqr" path="res://Chiara/broken_dock.tscn" id="41_m81b8"]
+[ext_resource type="Script" path="res://Omar/waves.gd" id="41_yeoeq"]
+[ext_resource type="PackedScene" uid="uid://bvdew8p0jq66c" path="res://BohanYuchi/helmet.glb" id="42_xspbn"]
+[ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="43_71u0b"]
+[ext_resource type="AudioStream" uid="uid://dmbyvij6joxyn" path="res://Tram/music/bossa-nova-synth.mp3" id="48_n2nxe"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8kw5l"]
-size = Vector3(8.48912, 5.17664, 4.11774)
+[sub_resource type="BoxShape3D" id="BoxShape3D_aolfg"]
+size = Vector3(13.3947, 1.56104, 14.007)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7reoo"]
+size = Vector3(1, 0.873154, 0.987427)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1q080"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pfey"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
 
@@ -71,6 +97,18 @@ size = Vector3(587.076, 47.1141, 497.398)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ss6x"]
 size = Vector3(319.015, 75.1254, 439.936)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_i5xlb"]
+size = Vector3(1.22766, 1.04834, 1.01105)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7ydq"]
+size = Vector3(640.669, 0.566574, 179.996)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3bf4o"]
+radius = 48.4889
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8kw5l"]
+size = Vector3(8.48912, 5.17664, 4.11774)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8i671"]
 size = Vector3(6.09671, 6.40433, 10.2422)
 
@@ -78,9 +116,128 @@ size = Vector3(6.09671, 6.40433, 10.2422)
 
 [node name="World" parent="." instance=ExtResource("1_pht0b")]
 
-[node name="Player" parent="." instance=ExtResource("17_n3ard")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 70.6867, -2.01459, 40.6774)
-collision_layer = 1
+[node name="PlayerTrigger" parent="." instance=ExtResource("32_qsmq8")]
+player_scene = ExtResource("32_3v2qo")
+
+[node name="Tasks" type="Node" parent="."]
+
+[node name="PlatformingGame" parent="Tasks" instance=ExtResource("5_eyu1o")]
+transform = Transform3D(-3.53553, 0, -3.53553, 0, 5, 0, 3.53553, 0, -3.53553, 391.669, -7.53811, 272.302)
+
+[node name="PuzzleGame" parent="Tasks" instance=ExtResource("6_k0hcq")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -568.188, -119.278, -283.719)
+
+[node name="Ice_Arena_Present" parent="Tasks" instance=ExtResource("18_2sia6")]
+transform = Transform3D(2.82275, 0, -1.01592, 0, 3, 0, 1.01592, 0, 2.82275, 146.66, -11.4512, -445.597)
+
+[node name="icicleclump1_nonglow3" parent="Tasks/Ice_Arena_Present" instance=ExtResource("17_f81mf")]
+transform = Transform3D(-1.10871, -7.22237, -11.5838, 14.9399, -0.580475, -0.858665, -0.0108145, -61.4685, 1.36917, 17.6547, 0.371141, 51.5496)
+
+[node name="icicleclump1_nonglow4" parent="Tasks/Ice_Arena_Present" instance=ExtResource("17_f81mf")]
+transform = Transform3D(1.11195, 15.1874, 11.2544, 15.9645, -1.05684, -0.783932, -0.000257254, 60.0924, -2.85815, 23.4321, -0.0654473, 98.3943)
+
+[node name="icicleclump1_nonglow5" parent="Tasks/Ice_Arena_Present" instance=ExtResource("17_f81mf")]
+transform = Transform3D(-0.570342, -7.6066, -10.912, 9.7396, 0.48126, -0.723554, 0.299884, -30.097, 2.74627, 32.2001, 0.446044, 126.632)
+
+[node name="icicleclump1_nonglow6" parent="Tasks/Ice_Arena_Present" instance=ExtResource("17_f81mf")]
+transform = Transform3D(-0.570342, -7.6066, -10.912, 9.7396, 0.48126, -0.723554, 0.299884, -30.097, 2.74627, 35.4459, 0.446044, 135.65)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8106, 5.23058, -17.922)
+shape = SubResource("BoxShape3D_aolfg")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3085, 0.0782409, 134.237)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D2"]
+transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
+shape = SubResource("BoxShape3D_7reoo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D2"]
+transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
+visible = false
+mesh = SubResource("BoxMesh_1q080")
+surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4801, -0.1094, 140.271)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D9"]
+transform = Transform3D(4.10465, 0.00127188, 5.78164, -0.00100528, 1.618, -0.0555109, -1.01702, 0.00353393, 23.3346, 1.1191, 0.638476, -0.93779)
+shape = SubResource("BoxShape3D_7reoo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D9"]
+transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
+visible = false
+mesh = SubResource("BoxMesh_1q080")
+surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.328, 0.0782409, 115.229)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D3"]
+transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
+shape = SubResource("BoxShape3D_7reoo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D3"]
+transform = Transform3D(4.12309, 0, 5.34081, 0, 1.618, 0, -0.939469, 0, 23.4395, 1.15545, 0.870759, -0.7911)
+visible = false
+mesh = SubResource("BoxMesh_1q080")
+surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(0.999567, 0, 0.029422, 0, 1, 0, -0.029422, 0, 0.999567, 22.6577, 0.144223, 95.3506)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D4"]
+transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 1.06447, -0.791103)
+shape = SubResource("BoxShape3D_7reoo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D4"]
+transform = Transform3D(4.12309, 0, 5.34081, 0, 1.618, 0, -0.939469, 0, 23.4395, 1.15545, 0.870759, -0.7911)
+visible = false
+mesh = SubResource("BoxMesh_1q080")
+surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(0.997867, 0, -0.0652638, 0, 1, 0, 0.0652638, 0, 0.997867, 17.7868, 0.144223, 72.6419)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D5"]
+transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3346, 1.15545, 1.07348, -0.791092)
+shape = SubResource("BoxShape3D_7reoo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D5"]
+transform = Transform3D(4.12309, 0, 5.34081, 0, 1.618, 0, -0.939469, 0, 23.4395, 1.15545, 0.870759, -0.7911)
+visible = false
+mesh = SubResource("BoxMesh_1q080")
+surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(0.993985, 0, -0.109509, 0, 1, 0, 0.109509, 0, 0.993985, 14.6859, 0.144223, 51.0367)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D6"]
+transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
+shape = SubResource("BoxShape3D_7reoo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D6"]
+transform = Transform3D(4.12309, 0, 5.34081, 0, 1.618, 0, -0.939469, 0, 23.4395, 1.15545, 0.870759, -0.7911)
+visible = false
+mesh = SubResource("BoxMesh_1q080")
+surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(0.989267, 0, -0.146118, 0, 1, 0, 0.146118, 0, 0.989267, 12.6247, 0.144223, 25.3411)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D8"]
+transform = Transform3D(4.10452, -0.0172642, 5.77884, 0.0235553, 1.61758, 0.526117, -1.01725, -0.0322029, 23.3294, 1.55831, 0.634272, 1.28633)
+shape = SubResource("BoxShape3D_7reoo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D8"]
+transform = Transform3D(4.12295, -0.0172641, 5.33801, 0.0252954, 1.61758, 0.5235, -0.939719, -0.0322029, 23.4343, 1.55831, 0.634272, 1.28633)
+visible = false
+mesh = SubResource("BoxMesh_1q080")
+surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
 
 [node name="Docks" type="Node" parent="."]
 
@@ -99,12 +256,6 @@ transform = Transform3D(-0.11, 0, 9.6165e-09, 0, 0.11, 0, -9.6165e-09, 0, -0.11,
 [node name="SingleLaneDock3" parent="Docks" instance=ExtResource("3_k0l6t")]
 transform = Transform3D(-0.11, 0, 9.6165e-09, 0, 0.11, 0, -9.6165e-09, 0, -0.11, -232.756, -63.0971, -58.1373)
 
-[node name="PlatformingGame" parent="." instance=ExtResource("5_eyu1o")]
-transform = Transform3D(-3.53553, 0, -3.53553, 0, 5, 0, 3.53553, 0, -3.53553, 391.669, -7.53811, 272.302)
-
-[node name="PuzzleGame" parent="." instance=ExtResource("6_k0hcq")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -568.188, -119.278, -283.719)
-
 [node name="decorations" type="Node" parent="."]
 
 [node name="Spider1" parent="decorations" instance=ExtResource("13_x8py4")]
@@ -118,22 +269,40 @@ transform = Transform3D(7.45058e-09, -0.5, 2.98023e-08, -0.453102, 2.78906e-09, 
 
 [node name="Spider3" parent="decorations" instance=ExtResource("15_u36hn")]
 
-[node name="fish_shop_owner" parent="." instance=ExtResource("16_aie5t")]
-transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 35.2944, 0.469059, 9.8571)
-collision_layer = 16
-collision_mask = 2
+[node name="penguins" type="Node" parent="decorations"]
 
-[node name="Area3D" type="Area3D" parent="fish_shop_owner"]
-transform = Transform3D(0.999966, 0, -0.00822034, 0, 1, 0, 0.00822034, 0, 0.999966, -0.39463, 0.901521, -1.98553)
-collision_layer = 16
-script = ExtResource("11_6vhei")
+[node name="Ice_Platform" parent="decorations/penguins" instance=ExtResource("13_d7obm")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 78.9388, -9.21486, -442.498)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fish_shop_owner/Area3D"]
-transform = Transform3D(0.975474, 0, 0.22012, 0, 1, 0, -0.22012, 0, 0.975474, -0.223166, 2.08832, -1.34286)
-shape = SubResource("BoxShape3D_8kw5l")
+[node name="Ice_Platform2" parent="decorations/penguins" instance=ExtResource("13_d7obm")]
+transform = Transform3D(4.56985, 0, 1.21734, 0, 3, 0, -2.0289, 0, 2.74191, 100.729, -4.65016, -506.802)
 
-[node name="Dialogue" parent="fish_shop_owner" instance=ExtResource("13_3jtso")]
-d_file = "res://Omar/Dialogue/json/FisherMan_Chat.json"
+[node name="Penguin" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
+transform = Transform3D(4.76356, 0, 3.64808, 0, 6, 0, -3.64808, 0, 4.76356, 72.9014, -4.42815, -444.757)
+
+[node name="Penguin2" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
+transform = Transform3D(4.23413, 0, -2.65936, 0, 5, 0, 2.65936, 0, 4.23413, 76.4305, -4.42815, -443.231)
+
+[node name="Penguin3" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
+transform = Transform3D(4.76356, 0, 3.64808, 0, 6, 0, -3.64808, 0, 4.76356, 82.0973, 1.54044, -501.743)
+
+[node name="Penguin4" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
+transform = Transform3D(4.23413, 0, -2.65936, 0, 5, 0, 2.65936, 0, 4.23413, 85.6264, 1.54044, -500.216)
+
+[node name="Penguin5" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
+transform = Transform3D(4.74106, 0, 1.58818, 0, 5, 0, -1.58818, 0, 4.74106, 92.874, 1.54044, -490.12)
+
+[node name="penguin" parent="decorations/penguins" instance=ExtResource("15_uec0a")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 75.9718, -4.22641, -433.465)
+
+[node name="Skeleton3D" parent="decorations/penguins/penguin/Armature" index="0"]
+bones/6/rotation = Quaternion(0.0562544, 0.275456, 0.100822, 0.954356)
+bones/9/rotation = Quaternion(0.735101, 0.118741, 0.650361, -0.150195)
+bones/12/rotation = Quaternion(-0.738376, 0.121789, 0.645078, 0.154414)
+bones/15/rotation = Quaternion(-0.000273919, -0.0136374, 0.999706, -0.0200464)
+
+[node name="AnimationPlayer" parent="decorations/penguins/penguin" index="2"]
+autoplay = "Idle"
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="."]
 transform = Transform3D(-9.43409, 0, -28.7437, 0, 1, 0, 9.19349, 0, -29.496, 316.983, -7.69652, 193.099)
@@ -161,24 +330,6 @@ transform = Transform3D(4.23908, 0, 4.24619, 0, 6, 0, -4.24619, 0, 4.23908, 101.
 
 [node name="StaticBody3D3" parent="Logs" instance=ExtResource("17_vhbp1")]
 transform = Transform3D(5.52483, -1.5033, -1.79341, 2.10113, 5.21111, 2.10465, 1.03029, -2.566, 5.32486, 97.2561, -8.35616, 93.4681)
-
-[node name="FishShop" parent="." instance=ExtResource("17_01jia")]
-transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.5898, 1.1015, 7.09023)
-
-[node name="Present_light_house" parent="." instance=ExtResource("16_28bgx")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.62613, 3.22927, -29.9847)
-
-[node name="Ice_Arena_Present" parent="." instance=ExtResource("18_2sia6")]
-transform = Transform3D(2.82275, 0, -1.01592, 0, 3, 0, 1.01592, 0, 2.82275, 146.66, -11.4512, -445.597)
-
-[node name="icicleclump1_nonglow3" parent="Ice_Arena_Present" instance=ExtResource("17_f81mf")]
-transform = Transform3D(-1.10871, -7.22237, -11.5838, 14.9399, -0.580475, -0.858665, -0.0108145, -61.4685, 1.36917, 17.6547, 0.371141, 51.5496)
-
-[node name="icicleclump1_nonglow4" parent="Ice_Arena_Present" instance=ExtResource("17_f81mf")]
-transform = Transform3D(1.11195, 15.1874, 11.2544, 15.9645, -1.05684, -0.783932, -0.000257254, 60.0924, -2.85815, 23.4321, -0.0654473, 98.3943)
-
-[node name="icicleclump1_nonglow5" parent="Ice_Arena_Present" instance=ExtResource("17_f81mf")]
-transform = Transform3D(-0.570342, -7.6066, -10.912, 9.7396, 0.48126, -0.723554, 0.299884, -30.097, 2.74627, 32.2001, 0.798686, 126.632)
 
 [node name="healthy trees" type="Node" parent="."]
 
@@ -405,15 +556,17 @@ script = ExtResource("27_tbh2r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7314, -35.7923, 149.612)
 shape = SubResource("BoxShape3D_3ss6x")
 
-[node name="coastguardstation" parent="." instance=ExtResource("24_jgkje")]
-transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -41.5846, 1.26531, -28.0052)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="coastguardstation"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04119, 2.70216, 0.0107441)
-shape = SubResource("BoxShape3D_8i671")
-
 [node name="Node3D" parent="." instance=ExtResource("27_5h5rp")]
-transform = Transform3D(-5.62257, 0, -9.45445, 0, 11, 0, 9.45445, 0, -5.62257, -186.523, -9.73352, -35.1662)
+transform = Transform3D(-6.68388, 0, -8.73646, 0, 11, 0, 8.73646, 0, -6.68388, -186.523, -9.734, -35.166)
+script = ExtResource("28_ai6ff")
+point_a = Vector3(-186.523, -9.734, -35.166)
+point_b = Vector3(-461.819, -9.734, -227.263)
+
+[node name="Area3D" type="Area3D" parent="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+transform = Transform3D(0.999999, 0, 7.77841e-06, 0, 1, 0, -7.77841e-06, 0, 0.999999, -0.159536, 0.0241699, -0.233134)
+shape = SubResource("BoxShape3D_i5xlb")
 
 [node name="Node3D2" parent="." instance=ExtResource("27_5h5rp")]
 transform = Transform3D(-6.22145, 0, -9.07158, 0, 11, 0, 9.07158, 0, -6.22145, -199.724, -9.6337, 24.1961)
@@ -423,7 +576,233 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 32.946, 12
 pixel_size = 0.05
 text = "Press 'Enter' to Interact"
 
-[connection signal="area_entered" from="killzone/Kill Zone" to="Player" method="_on_kill_zone_area_entered"]
-[connection signal="body_entered" from="killzone/Kill Zone" to="Player" method="_on_kill_zone_body_entered"]
+[node name="SandArea" type="Area3D" parent="." node_paths=PackedStringArray("sand_audio", "player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1572, -7.09409, 75.9445)
+script = ExtResource("30_05fr5")
+sand_audio = NodePath("AudioStreamPlayer3D")
+player = NodePath("../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SandArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8545, -0.216713, 31.1172)
+shape = SubResource("BoxShape3D_h7ydq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SandArea"]
+stream = ExtResource("31_51xlb")
+attenuation_model = 3
+volume_db = 53.333
+
+[node name="Seagulls" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio", "player")]
+transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, 132.462, 16.4945, 109.16)
+script = ExtResource("34_agfna")
+seagulls_audio = NodePath("Seagulls")
+player = NodePath("../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Seagulls"]
+shape = SubResource("SphereShape3D_3bf4o")
+
+[node name="Seagulls" type="AudioStreamPlayer3D" parent="Seagulls"]
+stream = ExtResource("35_cbgrm")
+volume_db = 80.0
+
+[node name="Seagulls2" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio", "player")]
+transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, -106.675, 16.4945, 138.662)
+script = ExtResource("34_agfna")
+seagulls_audio = NodePath("Seagulls")
+player = NodePath("../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Seagulls2"]
+shape = SubResource("SphereShape3D_3bf4o")
+
+[node name="Seagulls" type="AudioStreamPlayer3D" parent="Seagulls2"]
+stream = ExtResource("35_cbgrm")
+volume_db = 80.0
+
+[node name="lighthouse area" type="Node" parent="."]
+
+[node name="fish_shop_owner" parent="lighthouse area" instance=ExtResource("16_aie5t")]
+transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 35.2944, 0.469059, 9.8571)
+collision_layer = 16
+collision_mask = 2
+
+[node name="Area3D" type="Area3D" parent="lighthouse area/fish_shop_owner"]
+transform = Transform3D(0.999966, 0, -0.00822034, 0, 1, 0, 0.00822034, 0, 0.999966, -0.39463, 0.901521, -1.98553)
+collision_layer = 16
+script = ExtResource("11_6vhei")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lighthouse area/fish_shop_owner/Area3D"]
+transform = Transform3D(0.975474, 0, 0.22012, 0, 1, 0, -0.22012, 0, 0.975474, -0.223166, 2.08832, -1.34286)
+shape = SubResource("BoxShape3D_8kw5l")
+
+[node name="Dialogue" parent="lighthouse area/fish_shop_owner" instance=ExtResource("13_3jtso")]
+d_file = "res://Omar/Dialogue/json/FisherMan_Chat.json"
+
+[node name="FishShop" parent="lighthouse area" instance=ExtResource("17_01jia")]
+transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.5898, 1.1015, 7.09023)
+
+[node name="Present_light_house" parent="lighthouse area" instance=ExtResource("16_28bgx")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.62613, 3.22927, -29.9847)
+
+[node name="coastguardstation" parent="lighthouse area" instance=ExtResource("24_jgkje")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -41.5846, 1.26531, -28.0052)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lighthouse area/coastguardstation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04119, 2.70216, 0.0107441)
+shape = SubResource("BoxShape3D_8i671")
+
+[node name="Chest" parent="." instance=ExtResource("7_lc440")]
+transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 171.949, 6.51752, -485.5)
+fragment_scene = ExtResource("8_fio87")
+
+[node name="Player" parent="." instance=ExtResource("32_3v2qo")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 151.114, 1.71884, 20.7798)
+
+[node name="waves" type="Node" parent="."]
+
+[node name="Waves" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.908, -2.63886, 1.82494)
+stream = ExtResource("32_upd76")
+volume_db = 4.0
+unit_size = 1.0
+max_distance = 500.0
+parameters/looping = true
+script = ExtResource("41_yeoeq")
+player = NodePath("../../Player")
+
+[node name="Waves8" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.908, -2.63886, -231.235)
+stream = ExtResource("32_upd76")
+volume_db = 4.0
+unit_size = 1.0
+max_distance = 479.13
+script = ExtResource("41_yeoeq")
+player = NodePath("../../Player")
+
+[node name="Waves3" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0185, -2.63886, -33.2891)
+stream = ExtResource("32_upd76")
+volume_db = 4.0
+unit_size = 1.0
+max_distance = 479.13
+script = ExtResource("41_yeoeq")
+player = NodePath("../../Player")
+
+[node name="Waves4" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200.754, -2.63886, -33.2891)
+stream = ExtResource("32_upd76")
+volume_db = 4.0
+unit_size = 1.0
+max_distance = 479.13
+script = ExtResource("41_yeoeq")
+player = NodePath("../../Player")
+
+[node name="Waves5" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -351.795, -2.63886, -33.2891)
+stream = ExtResource("32_upd76")
+volume_db = 4.0
+unit_size = 1.0
+max_distance = 479.13
+script = ExtResource("41_yeoeq")
+player = NodePath("../../Player")
+
+[node name="Waves6" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -351.795, -2.63886, 56.7182)
+stream = ExtResource("32_upd76")
+volume_db = 4.0
+unit_size = 1.0
+max_distance = 479.13
+script = ExtResource("41_yeoeq")
+player = NodePath("../../Player")
+
+[node name="Waves7" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -351.795, -2.63886, 145.132)
+stream = ExtResource("32_upd76")
+volume_db = 4.0
+unit_size = 1.0
+max_distance = 479.13
+script = ExtResource("41_yeoeq")
+player = NodePath("../../Player")
+
+[node name="Waves2" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.694, -2.63886, -33.2891)
+stream = ExtResource("32_upd76")
+volume_db = 4.0
+unit_size = 1.0
+max_distance = 479.13
+script = ExtResource("41_yeoeq")
+player = NodePath("../../Player")
+
+[node name="wind" type="Node" parent="."]
+
+[node name="Wind" type="AudioStreamPlayer3D" parent="wind" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.958, 0, 190.559)
+stream = ExtResource("37_yj8k3")
+volume_db = 10.0
+autoplay = true
+max_distance = 470.0
+parameters/looping = true
+script = ExtResource("40_ijixa")
+player = NodePath("../../Player")
+
+[node name="Wind2" type="AudioStreamPlayer3D" parent="wind" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.3049, 0, 190.559)
+stream = ExtResource("37_yj8k3")
+volume_db = 10.0
+autoplay = true
+parameters/looping = true
+script = ExtResource("40_ijixa")
+player = NodePath("../../Player")
+
+[node name="Wind3" type="AudioStreamPlayer3D" parent="wind" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.2465, 0, 190.559)
+stream = ExtResource("37_yj8k3")
+volume_db = 10.0
+autoplay = true
+parameters/looping = true
+script = ExtResource("40_ijixa")
+player = NodePath("../../Player")
+
+[node name="Wind4" type="AudioStreamPlayer3D" parent="wind" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -183.155, 0, 190.559)
+stream = ExtResource("37_yj8k3")
+volume_db = 10.0
+autoplay = true
+parameters/looping = true
+script = ExtResource("40_ijixa")
+player = NodePath("../../Player")
+
+[node name="broken_dock" parent="." instance=ExtResource("41_m81b8")]
+transform = Transform3D(-0.267625, 0, 0.963523, 0, 1, 0, -0.963523, 0, -0.267625, -565.377, -20.0198, -275.602)
+
+[node name="broken_dock2" parent="." instance=ExtResource("41_m81b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -550.486, -20.0198, -310.159)
+
+[node name="broken_dock3" parent="." instance=ExtResource("41_m81b8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -506.595, -20.0198, -279.866)
+
+[node name="broken_dock4" parent="." instance=ExtResource("41_m81b8")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -536.045, -20.0198, -226.78)
+
+[node name="helmet" parent="." instance=ExtResource("42_xspbn")]
+transform = Transform3D(0.208314, -0.958794, 1.74279, -0.15863, 1.73873, 0.975523, -1.98279, -0.239837, 0.105054, -508.746, 0.0391369, -226.112)
+
+[node name="WaterRock" parent="." instance=ExtResource("43_71u0b")]
+transform = Transform3D(0.643135, -0.765753, 0, 0.479553, 0.402763, 0.779622, -0.596998, -0.501402, 0.62625, -512.071, -1.06553, -227.81)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("48_n2nxe")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer" to="killzone/Kill Zone Platformer" method="_on_body_entered"]
+[connection signal="body_entered" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="SandArea" to="SandArea" method="_on_body_entered"]
+[connection signal="body_exited" from="SandArea" to="SandArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Seagulls" to="Seagulls" method="_on_body_entered"]
+[connection signal="body_exited" from="Seagulls" to="Seagulls" method="_on_body_exited"]
+[connection signal="body_entered" from="Seagulls2" to="Seagulls2" method="_on_body_entered"]
+[connection signal="body_exited" from="Seagulls2" to="Seagulls2" method="_on_body_exited"]
+
+[editable path="decorations/penguins/penguin"]

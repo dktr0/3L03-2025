@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5ismj26qgcgh"]
+[gd_scene load_steps=16 format=3 uid="uid://c5ismj26qgcgh"]
 
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="1_xepk3"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/assests/chest.tscn" id="2_vrmga"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cmhupq3njsfqu" path="res://Nan/Goodsky.jpg" id="4_nqk20"]
 [ext_resource type="PackedScene" uid="uid://bv3qmxe1ecc8y" path="res://Andy/amulet_ring2.tscn" id="4_vkhi1"]
 [ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="5_xemys"]
+[ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="7_41cqa"]
+[ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="8_jfi1w"]
+[ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="8_xkfml"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_d7q54"]
 size = Vector3(100, 1, 100)
@@ -32,7 +35,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_xepk3")]
-transform = Transform3D(-0.220612, 0, -0.975362, 0, 1, 0, 0.975362, 0, -0.220612, 0, 1.68911, 0)
+transform = Transform3D(-0.220612, 0, -0.975362, 0, 1, 0, 0.975362, 0, -0.220612, 0, 0.577593, 0)
 
 [node name="Chest" parent="." instance=ExtResource("2_vrmga")]
 transform = Transform3D(0.133398, 0, 0.991063, 0, 1, 0, -0.991063, 0, 0.133398, 5.98387, 0.461618, -7.40483)
@@ -49,6 +52,8 @@ fragment_scene = ExtResource("5_xemys")
 fragment_index = 3
 
 [node name="Control" parent="." instance=ExtResource("3_w8lci")]
+pickup_sound = ExtResource("7_41cqa")
+final_amulet_sound = ExtResource("8_jfi1w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -61,3 +66,17 @@ shape = SubResource("ConvexPolygonShape3D_ocaf2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_j3ex5")
+
+[node name="Enemy" parent="." instance=ExtResource("8_xkfml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.806827, 2.888)
+is_patrol = true
+player_path = NodePath("../Player")
+patrol_point_a = NodePath("../Node3D")
+patrol_point_b = NodePath("../Node3D2")
+turn_lerp_speed = 0.6
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.125, 0, 2.888)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.941, 0, 5.372)

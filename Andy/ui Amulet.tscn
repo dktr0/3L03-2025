@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://brol5h8bq6u43"]
+[gd_scene load_steps=9 format=3 uid="uid://brol5h8bq6u43"]
 
-[ext_resource type="Script" path="res://Amulet.gd" id="1_55qcy"]
-[ext_resource type="Texture2D" uid="uid://bjtheusp68bdv" path="res://Belinda/Amulet_2.png" id="2_mbspc"]
-[ext_resource type="Texture2D" uid="uid://d0gmigf3pubck" path="res://Belinda/Amulet_3.png" id="3_bx266"]
-[ext_resource type="Texture2D" uid="uid://c2noj3t43ooqp" path="res://Belinda/Amulet_1.png" id="4_trhu4"]
-[ext_resource type="Texture2D" uid="uid://dj3ndwsgnt0h" path="res://Belinda/Amulet.png" id="5_02e0t"]
+[ext_resource type="Script" path="res://Andy/Amulet.gd" id="1_55qcy"]
+[ext_resource type="Texture2D" uid="uid://cw4l4c73bxndy" path="res://Belinda/Amulet_2.png" id="2_mbspc"]
+[ext_resource type="Texture2D" uid="uid://cn0mu3linlwrh" path="res://Belinda/Amulet_3.png" id="3_bx266"]
+[ext_resource type="Texture2D" uid="uid://8i8emejb1q7j" path="res://Belinda/Amulet_4.png" id="4_6vu3y"]
+[ext_resource type="Texture2D" uid="uid://ceisxwlltoses" path="res://Belinda/Amulet_1.png" id="5_02e0t"]
 [ext_resource type="AudioStream" uid="uid://cmf6x8ht3xydp" path="res://Andy/clock.MP3" id="6_bwenx"]
 [ext_resource type="AudioStream" uid="uid://chs4srfmh7r81" path="res://Andy/clocking.MP3" id="7_1apaf"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="8_h7jqh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,7 +20,7 @@ mouse_filter = 2
 script = ExtResource("1_55qcy")
 shard1_texture = ExtResource("2_mbspc")
 shard2_texture = ExtResource("3_bx266")
-shard3_texture = ExtResource("4_trhu4")
+shard3_texture = ExtResource("4_6vu3y")
 final_amulet_texture = ExtResource("5_02e0t")
 pickup_sound = ExtResource("6_bwenx")
 final_amulet_sound = ExtResource("7_1apaf")
@@ -82,3 +83,14 @@ grow_vertical = 2
 texture = ExtResource("5_02e0t")
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="MissingShardsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 555.0
+offset_right = 902.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("8_h7jqh")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1

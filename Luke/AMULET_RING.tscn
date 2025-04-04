@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6uv1o777qjum"]
+
+[ext_resource type="PackedScene" uid="uid://cnv0uavf6cwgm" path="res://amuletring2.glb" id="1_pppsl"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="amuletring2" parent="." instance=ExtResource("1_pppsl")]
