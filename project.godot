@@ -23,6 +23,7 @@ Cursor="*res://Maga/game_controller/cursor/autoload/cursor_manager.gd"
 PlayerControllerInputs="*res://Maga/player_controller/autoload/player_controller_inputs.gd"
 AmuletManager="*res://Andy/AmuletManager.gd"
 QuestManager="*res://Andy/QuestManager.gd"
+Loadingmanager="*res://Andy/loadingmanager.gd"
 
 [display]
 
@@ -31,6 +32,10 @@ window/stretch/mode="canvas_items"
 [filesystem]
 
 import/blender/enabled=false
+
+[global_group]
+
+Player=""
 
 [input]
 

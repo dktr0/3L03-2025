@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2dw58ec0pi2h"]
+[gd_scene load_steps=3 format=3 uid="uid://c8jckkvpjip2f"]
 
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="1_b1dxg"]
 [ext_resource type="AudioStream" uid="uid://cithrn2r6k2dr" path="res://Bihan/SoundEffects and Soundscape/TeleportSoundEffects.mp3" id="2_ak6n3"]
