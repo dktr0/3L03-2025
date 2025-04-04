@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bh47ldj70i4kk"
-path="res://.godot/imported/Ice_Platform.glb-255a37dab496b77138d2c02396a51ea9.scn"
+path="res://.godot/imported/Ice_Platform.glb-f54a1bbaf22c0757ea76bc584eee3aa8.scn"
 
 [deps]
 
-source_file="res://Ice_Platform.glb"
-dest_files=["res://.godot/imported/Ice_Platform.glb-255a37dab496b77138d2c02396a51ea9.scn"]
+source_file="res://Wilson/water-test/Ice_Platform.glb"
+dest_files=["res://.godot/imported/Ice_Platform.glb-f54a1bbaf22c0757ea76bc584eee3aa8.scn"]
 
 [params]
 
