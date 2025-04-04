@@ -2,7 +2,7 @@ extends AudioStreamPlayer3D
 
 @export var player: CharacterBody3D
 @export var custom_max_distance: float = 500
-@export var min_volume: float = -10
+@export var min_volume: float = 0
 @export var max_volume: float = 10
 
 func _ready():
