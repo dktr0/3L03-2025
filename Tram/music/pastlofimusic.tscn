@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cteg1e5qqe4vn"]
+
+[ext_resource type="AudioStream" uid="uid://jmmwrvr12h37" path="res://Tram/music/lo-fi-2025-past-music.mp3" id="1_gvt7q"]
+
+[node name="pastlofimusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_gvt7q")
