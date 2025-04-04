@@ -18,11 +18,11 @@
 extends Node
 
 ## Movement parameters exposed in the editor
-@export var move_speed := 5.0
-@export var sprint_speed := 8.0
-@export var targeting_move_speed := 3.5
-@export var acceleration := 15.0
-@export var deceleration := 18.0
+@export var move_speed := 7.5
+@export var sprint_speed := 12.0
+@export var targeting_move_speed := 5.25
+@export var acceleration := 22.5
+@export var deceleration := 27.0
 
 # References to core nodes
 var player: CharacterBody3D

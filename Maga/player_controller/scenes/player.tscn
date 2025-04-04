@@ -6,25 +6,30 @@
 [ext_resource type="PackedScene" uid="uid://b0wwl01auf08j" path="res://Dylan/character_1.tscn" id="4_duoy4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sada1"]
-radius = 0.4
-height = 1.6
+radius = 1.6
+height = 6.4
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_k1nj4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, 0)
 shape = SubResource("CapsuleShape3D_sada1")
 
+[node name="Character1" parent="." instance=ExtResource("4_duoy4")]
+transform = Transform3D(-2.6, 0, 3.92589e-07, 0, 2.6, 0, -3.92589e-07, 0, -2.6, 0, 0, 0)
+
 [node name="CameraRoot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1.2)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRoot"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("2_uqf3q")
+min_distance = 2.0
+desired_distance = 5.0
+desired_height = 3.2
 target_path = NodePath("../..")
+base_fov = 80.0
 
 [node name="MovementSystem" type="Node" parent="."]
 script = ExtResource("3_gg43f")
-
-[node name="Character1" parent="." instance=ExtResource("4_duoy4")]
-transform = Transform3D(-0.65, 0, 9.81473e-08, 0, 0.65, 0, -9.81473e-08, 0, -0.65, 0, 0, 0)

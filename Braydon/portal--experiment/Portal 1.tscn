@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://3q2asem0i7vn"]
+[gd_scene load_steps=8 format=3 uid="uid://3q2asem0i7vn"]
 
 [ext_resource type="Script" path="res://Braydon/portal--experiment/portal_1.gd" id="1_sk351"]
 [ext_resource type="Shader" uid="uid://dvkoqx2fbqiwy" path="res://Braydon/portal--experiment/Portal 1.tres" id="2_8om8n"]
-[ext_resource type="PackedScene" uid="uid://dfv81cn6unrtp" path="res://Bihan/SoundEffects and Soundscape/portal_sound.tscn" id="2_ayi1e"]
+[ext_resource type="PackedScene" path="res://Bihan/SoundEffects and Soundscape/portal_sound.tscn" id="2_ayi1e"]
+[ext_resource type="AudioStream" uid="uid://cithrn2r6k2dr" path="res://Bihan/SoundEffects and Soundscape/TeleportSoundEffects.mp3" id="3_yaxt5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rkxby"]
 render_priority = 0
@@ -19,6 +20,10 @@ size = Vector3(8.955, 7.035, 1)
 script = ExtResource("1_sk351")
 
 [node name="PortalSound" parent="." instance=ExtResource("2_ayi1e")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PortalSound"]
+stream = ExtResource("3_yaxt5")
+autoplay = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(12.6174, 0, 0, 0, 8.70814, 0, 0, 0, 3.67398, 1.10032, 0, -0.0311607)

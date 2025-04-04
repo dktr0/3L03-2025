@@ -1,14 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0mpf88wqpx5u"]
 
-[ext_resource type="PackedScene" uid="uid://c8jhdylrbfhgp" path="res://coastguardstation.glb" id="1_cdjul"]
+[ext_resource type="PackedScene" uid="uid://b20o7unpvywbh" path="res://Wren/coastgaurdstation1.glb" id="1_4lj4b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uy0r4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bpnkq"]
 
 [node name="CoastGuardStation" type="StaticBody3D"]
-
-[node name="coastguardstation" parent="." instance=ExtResource("1_cdjul")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 3, 3.2, 2)
@@ -21,3 +19,5 @@ shape = SubResource("BoxShape3D_uy0r4")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 3, 4.5, 0)
 shape = SubResource("BoxShape3D_bpnkq")
+
+[node name="coastgaurdstation1" parent="." instance=ExtResource("1_4lj4b")]
