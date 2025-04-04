@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=71 format=4 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="5_eyu1o"]
 [ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="6_k0hcq"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/assests/chest.tscn" id="7_lc440"]
-[ext_resource type="PackedScene" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
+[ext_resource type="PackedScene" uid="uid://cetv4q45see0s" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="11_6vhei"]
 [ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="13_3jtso"]
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="13_d7obm"]
@@ -24,9 +24,8 @@
 [ext_resource type="ArrayMesh" uid="uid://snlp8xd5hv2n" path="res://Omar/texture/tree.tres" id="17_2xwom"]
 [ext_resource type="PackedScene" uid="uid://dfjs3jo3ls7is" path="res://Mackie/icicle clump_1.tscn" id="17_f81mf"]
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="17_vhbp1"]
-[ext_resource type="PackedScene" uid="uid://b4kixgrxdj358" path="res://Omar/ice_arena_present.tscn" id="18_2sia6"]
+[ext_resource type="PackedScene" uid="uid://x7glgcbmrjhe" path="res://Omar/ice_arena_present.tscn" id="18_2sia6"]
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="19_qt78c"]
-[ext_resource type="PackedScene" uid="uid://dx6jtdwd2satn" path="res://Nan/Bad_cloud.tscn" id="20_pd4jm"]
 [ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="22_tpijs"]
 [ext_resource type="Script" path="res://Omar/kill_zone.gd" id="23_7v35e"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="23_51q5n"]
@@ -58,6 +57,45 @@ size = Vector3(1, 0.873154, 0.987427)
 [sub_resource type="BoxMesh" id="BoxMesh_1q080"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pfey"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_futxm"]
+resource_name = "ice"
+cull_mode = 2
+albedo_color = Color(0.643135, 0.843138, 0.956863, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_isdtl"]
+_surfaces = [{
+"aabb": AABB(-9.28, -7.79, -8.99512, 18.56, 9.85, 17.9902),
+"format": 34896613377,
+"index_count": 144,
+"index_data": PackedByteArray("BgACAAAABgADAAIABgAHAAMABwAIAAMACAAEAAMACAAFAAQACAAJAAUACgAGAAAACgAHAAYACgALAAcACwAMAAcADAAIAAcADAAJAAgADAANAAkADgAKAAAADgALAAoADgAPAAsADwAQAAsAEAAMAAsAEAANAAwAEAARAA0AEgAOAAAAEgAPAA4AEgATAA8AEwAUAA8AFAAQAA8AFAARABAAFAAVABEAFgASAAAAFgATABIAFgAXABMAFwAYABMAGAAUABMAGAAVABQAGAAZABUAAgAWAAAAAgAXABYAAgADABcAAwAEABcABAAYABcABAAZABgABAAFABkAAQAZAAUABQAJAAEACQANAAEADQARAAEAEQAVAAEAFQAZAAEA"),
+"lods": [1.85683, PackedByteArray("BgADAAAAAwAWAAAAAwAXABYAAwAEABcAFgAXABMAFwAYABMAFgATABIAFgASAAAAEgATAA8AEwAUAA8AEgAPAAsADwAQAAsAEgALAAAACwAKAAAACgAGAAAACgALAAcACgAHAAYACwAMAAcABgAHAAMABwAIAAMACAAEAAMABAAYABcADAAIAAcAGAAEABQAGAAUABMACAAJAAQAFAAEAAkADAAJAAgAEAAUAAkADAAQAAkAFAAQAA8AEAAMAAsA"), 2.89307, PackedByteArray("BgADAAAAAwAWAAAABgAHAAMAAAAHAAYAAAALAAcAFgADABgAFgAYABIAFgASAAAAEgALAAAAEgAPAAsAEgAYAA8AGAAUAA8ABwALAAMACwAYAAMAFAAYAAsADwAUAAsA"), 8.12076, PackedByteArray("BgADAAAAAwAWAAAABgAUAAMAFgADABQAAAAUAAYAEgAUAAAAFgAUABIAFgASAAAA")],
+"name": "ice",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 26,
+"vertex_data": PackedByteArray("/38AAP9/AAD/f////38AAP9/OmXCMwAA/791yqMNAAD/fzrlAAAAAHKr//9cMgAA/786ZeBZAAD//3XK/38AAHHrOuX/PwAA5Nb///9/AAD/vzplHqYAAP+/dcpb8gAAces65f+/AAByq///os0AAP9/OmU8zAAA/z91ylvyAAD/fzrl//8AAIxU//+izQAA/z86ZR6mAAAAAHXK/38AAI0UOuX/vwAAGin///9/AAD/Pzpl4FkAAP8/dcqjDQAAjRQ65f8/AACMVP//XDIAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0sco3"]
+resource_name = "Ice_Platform_Gem_010"
+_surfaces = [{
+"aabb": AABB(-9.28, -7.79, -8.99512, 18.56, 9.85, 17.9902),
+"format": 34896613383,
+"index_count": 144,
+"index_data": PackedByteArray("GAAIAAEAGAANAAgAGgAgAA8AHQAkAA4AIgASAAwAIgAXABIAIQAnABYAKgAZAAIAKgAeABkAKwAxAB8AMAA1ABwANAAjABsANAAoACMAMgA4ACYAOwApAAAAOwAvACkAOgA9ACwAPgBEAC0ARQAzAC4ARQA5ADMAQwBHADYASwA8AAMASwBAADwATQBSAEIATwBXAEEAVQBGAD8AVQBKAEYAVABZAEkAXQBMAAUAXQBRAEwAXgBkAFMAYwBoAFAAZwBWAE4AZwBbAFYAZQBrAFoACQBcAAQACQBiAFwABwAKAF8ACwARAGAAEwBmAGEAEwBsAGYAEAAUAGkABgBqABUAFQAlAAYAJQA3AAYANwBIAAYASABYAAYAWABqAAYA"),
+"lods": [1.85683, PackedByteArray("hQCEAAEAhACMAAEAhACNAIwAhAARAI0AjACNAIsAjQBoAIsAjACLAIoAjACKAAUAigCLAIkAiwBXAIkAigCJAIgAiQBEAIgAigCIAIMAiACHAIMAhwCFAIMAhwCIAIYAhwCGAIUAiAA1AIYAhQCGAIQAhgAkAIQAIQAQAAwAEABlAGEAMgAhABsAZQAQAFQAZQBUAE4AIQAlABAAVAAQACUAMgAlACEAQwBUACUAMgBDACUAVABDAD8AQwAyAC4A"), 2.89307, PackedByteArray("ewB5AAEAeQCBAAEAewB8AHkAdwB8AHsAdwB9AHwAgQB5AIIAgQCCAIAAgQCAAAUAgAB9AHgAgAB/AH0AgACCAH8AggBXAH8AGwB+AHoAfgBlAHoAVABlAH4APwBUAH4A"), 8.12076, PackedByteArray("GABuAAEAbgBcAAEAcABzAG8AdgBvAHMAbQB0AHEAcgB0AG0AdQB0AHIAdQByAAUA")],
+"material": SubResource("StandardMaterial3D_futxm"),
+"name": "ice",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 142,
+"vertex_data": PackedByteArray("/38AAP9/huP/fwAA/3/f9/9/AAD/fyP6/38AAP9/PvD/fwAA/3/m6v9/AAD/f7Te/3////9/////fzplwjNJ8v9/OmXCM9/3/386ZcIz5ur/v3XKow1J8v+/dcqjDYvx/791yqMNsuz/v3XKow3f9/+/dcqjDYv8/791yqMNp/z/fzrlAADR+P9/OuUAAIvx/3865QAAsuz/fzrlAAD8/nKr//9cMtH4cqv//1wy//9yq///XDIx93Kr//9cMrLs/786ZeBZ3/f/vzpl4Fkj+v+/OmXgWaf8//91yv9/Xvn//3XK/3/x7P//dcr/f4v8//91yv9/I/r//3XK/3817f//dcr/f6f8ces65f8/Mfdx6zrl/z+y7HHrOuX/P175ces65f8/i/zk1v///3///+TW////f3D+5Nb///9/Mffk1v///39e+f+/OmUepobj/786ZR6mI/r/vzplHqY17f+/dcpb8p/R/791ylvyF9r/v3XKW/Kd9f+/dcpb8obj/791ylvy8ez/v3XKW/I17XHrOuX/v3D+ces65f+/nfVx6zrl/79e+XHrOuX/v/Hscqv//6LNa/Zyq///os3//3Kr//+izXD+cqv//6LNnfX/fzplPMyf0f9/OmU8zIbj/386ZTzMPvD/P3XKW/Kf0f8/dcpb8hfa/z91ylvyFtz/P3XKW/I+8P8/dcpb8pHZ/z91ylvyGMP/fzrl//9r9v9/OuX//xfa/3865f//nfX/fzrl//8W3IxU//+izWv2jFT//6LN//+MVP//os0Q8oxU//+izRbc/z86ZR6mPvD/PzplHqa03v8/OmUephjDAAB1yv9/XuQAAHXK/3+R2QAAdcr/f27fAAB1yv9/tN4AAHXK/38YwwAAdcr/f0/bjRQ65f+/EPKNFDrl/78W3I0UOuX/v17kjRQ65f+/kdkaKf///3///xop////fxDyGin///9/dvsaKf///39e5P8/OmXgWebq/z86ZeBZtN7/Pzpl4FlP2/8/dcqjDUny/z91yqMNi/H/P3XKow38/v8/dcqjDebq/z91yqMNbt//P3XKow1P240UOuX/P3b7jRQ65f8//P6NFDrl/z9e5I0UOuX/P27fjFT//1wy0fiMVP//XDL//4xU//9cMnb7jFT//1wy/P7/fwAA/39a6P+/dcqjDWvw/791yqMN797/vzpl4FmP5f+/OmXgWUfk/z86ZR6m//+NFDrl/79p4Y0UOuX/v2va/z86ZeBZR97/Pzpl4FkR5v9/AAD/f5nj/38AAP9/OOj/v3XKow2k8v+/dcqjDVft/786ZeBZ/////3XK/3/L8v+/dcpb8trR/791ylvyUPD/P3XKW/LG3/8/OmUepv///z86ZeBZceWNFDrl/z+W3P9/AAD/f7Pk/791yqMNKvT/vzpl4FmH+f//dcr/fyfy/786ZR6m1uL/v3XKW/Ic0f8/dcpb8tHa/z86ZR6m//8AAHXK/3/U3P8/OmXgWcHk/z91yqMNOOPzfxVRyzaq2SmelFMGaZxfUU7x8cy9Pfn/f/+/L0Ag1Ms2qtlRTvHxL0Ag1NxBw9uTs68Lyzaq2YQpEtNUI9vLlbz9CdxBw9uTs68L27/zF5W8/Qn/f/+/6kFmBZOzrwvLNqrZKZ6UU1Qj28slMKgZ35RsVoQpEtMpnpRT55kFXFQj28vqQWYFk7OvCyUwqBmEKRLT/3//vzo1/QvqQWYFJTCoGfN/FVEpnpRT55kFXCZu4mXLbrlgbJNGpfN/FVHflGxW55kFXDo1/Qtsk0alJTCoGd+UbFalh5iz/3//vzo1/Qtsk0alJm7iZfN/FVEGaZxfJm7iZctuuWDLiFyvBmmcX/HKBvd7QTH9pYeYs8tuuWBsk0aly4hcr6WHmLP/f/+/1H7Hu8uIXK8GaZxfzL09+XtBMf2ceN6/8coG9/9U2v7MvT35e0Ex/VFaG/3Ufse7y4hcr5x43r/xygb3/3//v9R+x7u/dbm+nHjev1FO8fHMvT35UVob/S9AINTcQcPb27/zF1FO8fH/VNr+UVob/b91ub7bv/MXnHjev/9U2v6VvP0J/3//v791ub7bv/MXjnDdaxs11MjMjWKhM5kwmNZ+oK43ZCh6uK5O02Uqh/zZWrb9qocs0+2JL0S/cIJrOTW+yhi+vw11LaLhjpt2Sn9w5F6jj/K191KtgZRkGHXdUsnzGayl/2l+vFC7NEPLcla8gW2boEuoirJFqXQoWQVaeXnJYx10qMNo81RURfT3QbvK")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_isdtl")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
 
@@ -271,6 +309,11 @@ transform = Transform3D(7.45058e-09, -0.5, 2.98023e-08, -0.453102, 2.78906e-09, 
 
 [node name="penguins" type="Node" parent="decorations"]
 
+[node name="Gem_010" type="MeshInstance3D" parent="decorations/penguins"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.3167, -391.979)
+mesh = SubResource("ArrayMesh_0sco3")
+skeleton = NodePath("")
+
 [node name="Ice_Platform" parent="decorations/penguins" instance=ExtResource("13_d7obm")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 78.9388, -9.21486, -442.498)
 
@@ -403,9 +446,6 @@ multimesh = SubResource("MultiMesh_h30lg")
 
 [node name="Good sky" parent="." instance=ExtResource("19_qt78c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.98898, 0)
-
-[node name="Bad Cloud" parent="." instance=ExtResource("20_pd4jm")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 293.935, 0)
 
 [node name="treewall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.09371, 200.768)
@@ -654,7 +694,7 @@ transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 
 fragment_scene = ExtResource("8_fio87")
 
 [node name="Player" parent="." instance=ExtResource("32_3v2qo")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 151.114, 1.71884, 20.7798)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 9.0085, 1.87748, 31.8683)
 
 [node name="waves" type="Node" parent="."]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dj0ikx20ebw7a"]
 
-[ext_resource type="Shader" uid="uid://ba4x72iqeobm7" path="res://Wilson/3d-assets---wilsoncheng/s_smoke_shader.tres" id="1_6e4io"]
-[ext_resource type="PackedScene" uid="uid://dhxorqquga27y" path="res://Wilson/3d-assets---wilsoncheng/vfx_fire.tscn" id="2_b88jb"]
+[ext_resource type="Shader" uid="uid://ba4x72iqeobm7" path="res://s_smoke_shader.tres" id="1_6e4io"]
+[ext_resource type="PackedScene" uid="uid://dhxorqquga27y" path="res://vfx_fire.tscn" id="2_b88jb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqevc"]
 render_priority = 0

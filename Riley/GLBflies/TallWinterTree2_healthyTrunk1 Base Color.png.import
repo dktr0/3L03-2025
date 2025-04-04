@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cekmwmubwe2sq"
+uid="uid://iwgmvx2d714e"
 path.s3tc="res://.godot/imported/TallWinterTree2_healthyTrunk1 Base Color.png-4f882c05c5d65c12b00183c93760fde1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "a87537d4bcd1961f392e68f0e43bd1cb"
 }
 
 [deps]
