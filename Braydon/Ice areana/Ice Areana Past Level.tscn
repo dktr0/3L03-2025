@@ -574,7 +574,7 @@ transform = Transform3D(-0.476415, 0, 0.00109557, 0, 0.3747, 0, -0.0011641, 0, -
 transform = Transform3D(-2.099, 0, -0.00512886, 0, 2.6688, 0, 0.00544968, 0, -2.23031, 12.9074, -1.49257, 3.18717)
 
 [node name="FreeCameraRig" parent="Player" instance=ExtResource("4_ul8bi")]
-transform = Transform3D(-0.999997, 0, -0.00244346, 0, 1, 0, 0.00244346, 0, -0.999997, -8.88299, -5.28576, -10.8992)
+transform = Transform3D(-0.999998, 0, -0.00244346, 0, 1, 0, 0.00244346, 0, -0.999998, 0.671935, -2.09569, 3.31642)
 player_path = NodePath("")
 
 [node name="ice_monster" parent="." instance=ExtResource("10_146yo")]
