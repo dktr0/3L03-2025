@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c217uro8bdwyr"]
 
-[ext_resource type="PackedScene" uid="uid://c52rkfex1ts7f" path="res://Luke/amuletgem.glb" id="1_cglr8"]
+[ext_resource type="PackedScene" uid="uid://up0ce0k1prgx" path="res://Luke/amuletgem.glb" id="1_cglr8"]
 [ext_resource type="PackedScene" uid="uid://5trngm4ml1rs" path="res://Luke/amuletring.glb" id="2_q1hlf"]
 
 [node name="amulet" type="Node3D"]

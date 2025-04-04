@@ -1,98 +1,112 @@
-[gd_scene load_steps=9 format=3 uid="uid://co0ky7kry764f"]
+[gd_scene load_steps=14 format=3 uid="uid://co0ky7kry764f"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_atq23"]
-[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/3d-assets---wilsoncheng/water_base.tscn" id="2_jnel2"]
-[ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Highmountain.tscn" id="3_pujxe"]
-[ext_resource type="PackedScene" uid="uid://4cexfi3rf5f1" path="res://Braydon/battle-areana-(past)/Ice Areana Past Level.tscn" id="4_ratvb"]
+[ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="2_dci5a"]
+[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="3_b75uh"]
 [ext_resource type="PackedScene" uid="uid://bragmruxldk4r" path="res://Yufei/game(past_water).tscn" id="5_3x1ld"]
-[ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="7_k5dbg"]
-[ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="8_2erhy"]
-[ext_resource type="PackedScene" uid="uid://b5xqkd7wyxnl8" path="res://Sandhya/wildfire_level_arena.tscn" id="9_36upe"]
+[ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="5_atutq"]
+[ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="6_4ucsn"]
+[ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="8_mm83i"]
+[ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="9_rv4y1"]
+[ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="10_4wkfk"]
+[ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="11_56olb"]
+[ext_resource type="PackedScene" uid="uid://bov4hwigpqpdb" path="res://Sandhya/deadtrees.tscn" id="11_wftq0"]
+[ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="12_8h434"]
+[ext_resource type="PackedScene" uid="uid://dgscxkjb38rls" path="res://Sandhya/healthytrees.tscn" id="12_r3jq7"]
+[ext_resource type="PackedScene" uid="uid://b5xqkd7wyxnl8" path="res://Sandhya/wildfire_level_arena.tscn" id="13_gg8tq"]
 
 [node name="past" type="Node3D"]
 
 [node name="World" parent="." instance=ExtResource("1_atq23")]
 
 [node name="Water" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.8198, 0)
 
-[node name="Water_Base" parent="Water" instance=ExtResource("2_jnel2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -187.025, -62.4506, 51.4724)
+[node name="Water_Base" parent="Water" instance=ExtResource("3_b75uh")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 348.146, -200.268, 802.272)
 skeleton = NodePath("../..")
 
-[node name="Water_Base2" parent="Water" instance=ExtResource("2_jnel2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 108.159, -62.4506, 51.4185)
+[node name="Water_Base2" parent="Water" instance=ExtResource("3_b75uh")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 348.146, -200.268, -1431.02)
 skeleton = NodePath("../..")
 
-[node name="Water_Base3" parent="Water" instance=ExtResource("2_jnel2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 195.227, -62.4506, 50.6209)
+[node name="Water_Base3" parent="Water" instance=ExtResource("3_b75uh")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -638.614, -200.268, -1431.02)
 skeleton = NodePath("../..")
 
-[node name="Water_Base4" parent="Water" instance=ExtResource("2_jnel2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 195.227, -62.4506, -94.8543)
-skeleton = NodePath("../..")
-
-[node name="Water_Base5" parent="Water" instance=ExtResource("2_jnel2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -93.3081, -62.4506, -94.8543)
-skeleton = NodePath("../..")
-
-[node name="Water_Base6" parent="Water" instance=ExtResource("2_jnel2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -186.687, -62.4506, -94.8543)
-skeleton = NodePath("../..")
-
-[node name="Water_Base7" parent="Water" instance=ExtResource("2_jnel2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -186.687, -62.4506, -285.309)
-skeleton = NodePath("../..")
-
-[node name="Water_Base8" parent="Water" instance=ExtResource("2_jnel2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 84.1148, -62.4506, -285.309)
-skeleton = NodePath("../..")
-
-[node name="Water_Base9" parent="Water" instance=ExtResource("2_jnel2")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 197.062, -62.4506, -285.309)
+[node name="Water_Base4" parent="Water" instance=ExtResource("3_b75uh")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -638.614, -200.268, 884.179)
 skeleton = NodePath("../..")
 
 [node name="Mountains" type="Node3D" parent="."]
 
-[node name="Highmountain" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-0.0570195, 0, -8.99982, 0, 9, 0, 8.99982, 0, -0.0570195, -198.197, -91.1906, -414.441)
+[node name="Ground" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.56692, 31.3145)
 
-[node name="Highmountain2" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-0.0570195, 0, -8.99982, 0, 9, 0, 8.99982, 0, -0.0570195, 32.0165, -114.534, -407.297)
+[node name="Damaged soil" parent="Ground" instance=ExtResource("2_dci5a")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 93.6594, -11.2545, 263.512)
 
-[node name="Highmountain3" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-0.0570195, 0, -8.99982, 0, 9, 0, 8.99982, 0, -0.0570195, 262.821, -85.5457, -402.791)
+[node name="Damaged soil2" parent="Ground" instance=ExtResource("2_dci5a")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -98.831, -11.2545, 263.512)
 
-[node name="Highmountain4" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-8.99256, 0, 0.365895, 0, 9, 0, -0.365895, 0, -8.99256, 311.592, -125.797, -226.832)
+[node name="Damaged soil3" parent="Ground" instance=ExtResource("2_dci5a")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -218.1, -11.2545, 263.512)
 
-[node name="Highmountain11" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-8.99628, 0, -0.258832, 0, 9, 0, 0.258832, 0, -8.99628, -312.638, -114.575, -258.785)
+[node name="Damaged soil4" parent="Ground" instance=ExtResource("2_dci5a")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 210.892, -11.2545, 263.512)
 
-[node name="Highmountain5" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-0.0570195, 0, -8.99982, 0, 9, 0, 8.99982, 0, -0.0570195, -210.227, -129.929, 173.244)
+[node name="Damaged soil5" parent="Ground" instance=ExtResource("2_dci5a")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -269.26, -11.2545, 263.512)
 
-[node name="Highmountain6" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-0.0570195, 0, -8.99982, 0, 9, 0, 8.99982, 0, -0.0570195, -19.4431, -129.929, 173.244)
+[node name="Damaged soil6" parent="Ground" instance=ExtResource("2_dci5a")]
+transform = Transform3D(57.3605, 0, -81.9132, 0, 100, 0, 81.9132, 0, 57.3605, 338.942, -11.2545, 220.976)
 
-[node name="Highmountain8" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-0.0570195, 0, -8.99982, 0, 9, 0, 8.99982, 0, -0.0570195, 228.583, -129.929, 173.244)
-
-[node name="Highmountain9" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-8.99256, 0, 0.365895, 0, 9, 0, -0.365895, 0, -8.99256, 311.592, -125.797, 22.575)
-
-[node name="Highmountain12" parent="Mountains" instance=ExtResource("3_pujxe")]
-transform = Transform3D(-8.99628, 0, -0.258832, 0, 9, 0, 0.258832, 0, -8.99628, -312.638, -114.575, 6.22941)
-
-[node name="Iceberg Arena" parent="." instance=ExtResource("4_ratvb")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 109.896, -31.6889, -218.93)
+[node name="Damaged soil7" parent="Ground" instance=ExtResource("2_dci5a")]
+transform = Transform3D(-2.74331, 0, -99.9624, 0, 100, 0, 99.9624, 0, -2.74331, 383.108, -11.2545, 143.128)
 
 [node name="Game(past_water)" parent="." instance=ExtResource("5_3x1ld")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -143.151, -30.8226, -164.131)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -554.68, -105.39, -283.71)
 
-[node name="Wildfire Level Arena" parent="." instance=ExtResource("9_36upe")]
-transform = Transform3D(0.299966, 0, -0.00450279, 0, 0.3, 0, 0.00450279, 0, 0.299966, 207.157, -7.7913, 244.901)
+[node name="Docks" type="Node3D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("7_k5dbg")]
-transform = Transform3D(-0.999997, 0, 0.00244346, 0, 1, 0, -0.00244346, 0, -0.999997, 0.815401, 5.30401, 2.43582)
+[node name="SingleLaneDock" parent="Docks" instance=ExtResource("8_mm83i")]
+transform = Transform3D(-0.00291592, 0, -0.109961, 0, 0.11, 0, 0.109961, 0, -0.00291592, -106.385, -68.0907, 27.7056)
 
-[node name="FreeCameraRig" parent="Player" instance=ExtResource("8_2erhy")]
+[node name="MultipleLaneDock" parent="Docks" instance=ExtResource("6_4ucsn")]
+transform = Transform3D(0.000353242, 0, 0.109999, 0, 0.11, 0, -0.109999, 0, 0.000353242, -22.4298, -29.0658, 14.8477)
+
+[node name="SingleLaneDock2" parent="Docks" instance=ExtResource("8_mm83i")]
+transform = Transform3D(0.109997, 0, -0.000790967, 0, 0.11, 0, 0.000790967, 0, 0.109997, -238.201, -129.863, -236.44)
+
+[node name="MultipleLaneDock2" parent="Docks" instance=ExtResource("6_4ucsn")]
+transform = Transform3D(0.000353242, 0, 0.109999, 0, 0.11, 0, -0.109999, 0, 0.000353242, -76.9208, -43.8808, -154.152)
+
+[node name="MultipleLaneDock3" parent="Docks" instance=ExtResource("6_4ucsn")]
+transform = Transform3D(-0.109967, 0, 0.00269904, 0, 0.11, 0, -0.00269904, 0, -0.109967, -195.011, -58.756, -208.384)
+
+[node name="MultipleLaneDock4" parent="Docks" instance=ExtResource("6_4ucsn")]
+transform = Transform3D(0.00066809, 0, 0.109998, 0, 0.11, 0, -0.109998, 0, 0.00066809, -247.05, -71.4179, -212.303)
+
+[node name="SingleLaneDock3" parent="Docks" instance=ExtResource("8_mm83i")]
+transform = Transform3D(0.109997, 0, -0.000790967, 0, 0.11, 0, 0.000790967, 0, 0.109997, -291.465, -148.305, -235.351)
+
+[node name="Present_light_house" parent="." instance=ExtResource("9_rv4y1")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.626, 3.229, -29.98)
+
+[node name="Area3D" parent="." instance=ExtResource("10_4wkfk")]
+transform = Transform3D(9.96939, 0, -4.6488, 0, 11, 0, 4.6488, 0, 9.96939, 34.59, 1.102, 7.09)
+
+[node name="fish_shop_owner" parent="Area3D" instance=ExtResource("11_56olb")]
+transform = Transform3D(-0.149941, 0, 0.00420392, 0, 0.15, 0, -0.00420392, 0, -0.149941, 0.248459, 0.015935, 0.179053)
+
+[node name="Player" parent="." instance=ExtResource("12_8h434")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 6.70805, 0)
+
+[node name="deadtrees" parent="." instance=ExtResource("11_wftq0")]
+transform = Transform3D(-0.00692697, 0, 2.69999, 0, 2.7, 0, -2.69999, 0, -0.00692697, 128.001, 7.77877, 286.579)
+
+[node name="healthytrees" parent="." instance=ExtResource("12_r3jq7")]
+transform = Transform3D(0.0189191, 0, 1.99991, 0, 2, 0, -1.99991, 0, 0.0189191, -179.834, -7.94262, 265.912)
+
+[node name="Wildfire Level Arena" parent="." instance=ExtResource("13_gg8tq")]
+transform = Transform3D(0.232412, 0, 0.325553, 0, 0.4, 0, -0.325553, 0, 0.232412, 381.861, 0, 208.37)

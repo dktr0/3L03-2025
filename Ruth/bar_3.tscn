@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk3ogvpqcbsgd"]
+
+[ext_resource type="Texture2D" uid="uid://b3it3vdiaqouq" path="res://Ruth/bar3.png" id="1_wmhka"]
+
+[node name="Bar3" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1029, 129)
+scale = Vector2(2.78, 2.78)
+texture = ExtResource("1_wmhka")

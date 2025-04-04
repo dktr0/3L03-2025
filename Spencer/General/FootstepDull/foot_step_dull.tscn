@@ -1,0 +1,42 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfhpmved7ctho"]
+
+[ext_resource type="Script" path="res://Spencer/General/FootstepDull/foot_step_dull.gd" id="1_8jr8f"]
+[ext_resource type="AudioStream" uid="uid://do27f7rsr87cv" path="res://Spencer/General/FootstepDull/01.mp3" id="1_vb25l"]
+[ext_resource type="AudioStream" uid="uid://dj0flvdbt82si" path="res://Spencer/General/FootstepDull/02.mp3" id="2_wnn81"]
+[ext_resource type="AudioStream" uid="uid://ba6xfferowdnt" path="res://Spencer/General/FootstepDull/03.mp3" id="3_0k8dx"]
+[ext_resource type="AudioStream" uid="uid://c1xthkwc0xd3c" path="res://Spencer/General/FootstepDull/04.mp3" id="4_wg48v"]
+[ext_resource type="AudioStream" uid="uid://4lwypdnwcy8o" path="res://Spencer/General/FootstepDull/05.mp3" id="5_lbkj6"]
+[ext_resource type="AudioStream" uid="uid://n6r3gduy8te3" path="res://Spencer/General/FootstepDull/06.mp3" id="6_5apjc"]
+[ext_resource type="AudioStream" uid="uid://dg75vkm5qgmd5" path="res://Spencer/General/FootstepDull/07.mp3" id="8_ee2ys"]
+[ext_resource type="AudioStream" uid="uid://bxlalsoprqfkt" path="res://Spencer/General/FootstepDull/08.mp3" id="9_7yr7l"]
+[ext_resource type="AudioStream" uid="uid://bylydtrumnvtc" path="res://Spencer/General/FootstepDull/09.mp3" id="10_viy3o"]
+
+[node name="FootStepDull" type="Node3D"]
+script = ExtResource("1_8jr8f")
+
+[node name="01" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_vb25l")
+
+[node name="02" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wnn81")
+
+[node name="03" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0k8dx")
+
+[node name="04" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wg48v")
+
+[node name="05" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lbkj6")
+
+[node name="06" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5apjc")
+
+[node name="07" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ee2ys")
+
+[node name="08" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_7yr7l")
+
+[node name="09" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_viy3o")

@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4kixgrxdj358"]
+
+[ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="1_htwf0"]
+[ext_resource type="PackedScene" uid="uid://fxscysncqxhj" path="res://Wilson/glacier_wall.tscn" id="2_e0li6"]
+[ext_resource type="PackedScene" uid="uid://ee3607ux8b25" path="res://Mackie/icicle clump_2.tscn" id="3_njnep"]
+[ext_resource type="PackedScene" uid="uid://dfjs3jo3ls7is" path="res://Mackie/icicle clump_1.tscn" id="4_rqhed"]
+[ext_resource type="PackedScene" uid="uid://lfu2wgkp8eu" path="res://Mackie/icicle clump_3.tscn" id="5_j4k7k"]
+[ext_resource type="PackedScene" uid="uid://bvioh3otnsxom" path="res://Quinn/Ice Monster/ice_monster.tscn" id="6_jqymf"]
+
+[node name="Ice_Arena_Present" type="Node3D"]
+
+[node name="ice_monster" parent="." instance=ExtResource("6_jqymf")]
+transform = Transform3D(-0.751172, 0, 0.660106, 0, 1, 0, -0.660106, 0, -0.751172, 24.6743, 2.20029, 1.74458)
+
+[node name="ice_monster2" parent="." instance=ExtResource("6_jqymf")]
+transform = Transform3D(-0.894467, 0, -0.447135, 0, 1, 0, 0.447135, 0, -0.894467, 14.9823, 2.1439, 0.25923)
+
+[node name="ice_monster3" parent="." instance=ExtResource("6_jqymf")]
+transform = Transform3D(-1.15671, 0, 1.63157, 0, 2, 0, -1.63157, 0, -1.15671, 6.28936, 5.36671, -17.9257)
+
+[node name="Ice_Platform" parent="." instance=ExtResource("1_htwf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5, 13.4676, 0, 0)
+
+[node name="Ice_Platform6" parent="." instance=ExtResource("1_htwf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5, 20.1061, 0, -10.6795)
+
+[node name="Ice_Platform7" parent="." instance=ExtResource("1_htwf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5, 26.9014, 0, 1.16887)
+
+[node name="Ice_Platform2" parent="." instance=ExtResource("1_htwf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.65305, 0, -3.21535)
+
+[node name="Ice_Platform3" parent="." instance=ExtResource("1_htwf0")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.24287, 2.23929, -3.21535)
+
+[node name="Ice_Platform4" parent="." instance=ExtResource("1_htwf0")]
+transform = Transform3D(0.320903, 0, 0.506972, 0, 0.6, 0, -0.506972, 0, 0.320903, 4.21105, 3.34661, -8.26887)
+
+[node name="Ice_Platform5" parent="." instance=ExtResource("1_htwf0")]
+transform = Transform3D(0.547407, 0, 1.07229, 0, 1.2643, 0, -0.86481, 0, 0.678741, 6.27207, 2.7106, -17.5852)
+
+[node name="wall" parent="." instance=ExtResource("2_e0li6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99226, 0, -8.62158)
+
+[node name="wall8" parent="." instance=ExtResource("2_e0li6")]
+transform = Transform3D(0.893841, 0, 0.448383, 0, 1, 0, -0.448383, 0, 0.893841, -3.33274, 0, 1.32567)
+
+[node name="wall2" parent="." instance=ExtResource("2_e0li6")]
+transform = Transform3D(0.507298, 0, -0.861771, 0, 1, 0, 0.861771, 0, 0.507298, 4.00761, 0, -27.0748)
+
+[node name="wall3" parent="." instance=ExtResource("2_e0li6")]
+transform = Transform3D(-0.928551, 0, -0.371206, 0, 1, 0, 0.371206, 0, -0.928551, 31.4159, 0, -21.1025)
+
+[node name="wall7" parent="." instance=ExtResource("2_e0li6")]
+transform = Transform3D(-0.302985, 0, -0.952995, 0, 1, 0, 0.952995, 0, -0.302985, 24.282, 0, -30.1687)
+
+[node name="wall4" parent="." instance=ExtResource("2_e0li6")]
+transform = Transform3D(-0.967161, 0, 0.254163, 0, 1, 0, -0.254163, 0, -0.967161, 33.7504, 0, 1.25812)
+
+[node name="wall5" parent="." instance=ExtResource("2_e0li6")]
+transform = Transform3D(0.286252, 0.9562, 0.0611705, -0.958126, 0.285168, 0.0259599, 0.00737908, -0.0660401, 0.99779, -6.21706, 22.6488, -14.8871)
+
+[node name="wall6" parent="." instance=ExtResource("2_e0li6")]
+transform = Transform3D(0.25032, -0.965926, -0.0657823, 0.968135, 0.250252, 0.00940351, 0.00737911, -0.0660401, 0.99779, 35.8639, 26.5912, -9.25924)
+
+[node name="icicle clump2_nonglow" parent="." instance=ExtResource("3_njnep")]
+transform = Transform3D(30, 0, 0, 0, 41.1786, 0, 0, 0, 30, 18.6306, 20.131, -7.9449)
+
+[node name="icicleclump1_nonglow" parent="." instance=ExtResource("4_rqhed")]
+transform = Transform3D(-4.37114e-07, -1.38428, 10.9526, -10, 6.05088e-08, -4.78752e-07, 0, -32.714, -0.463454, 12.5065, 0.256778, 22.5005)
+
+[node name="icicleclump1_nonglow2" parent="." instance=ExtResource("4_rqhed")]
+transform = Transform3D(4.37114e-07, 1.38428, -10.9526, -10, 6.05088e-08, -4.78752e-07, -3.71035e-14, 32.714, 0.463455, 15.3831, 0.256778, 30.7657)
+
+[node name="Icicle clump3_nonglow" parent="." instance=ExtResource("5_j4k7k")]
+transform = Transform3D(-0.685794, -10.9624, 17.6878, 0.135694, -18.7192, -10.4213, 7.56641, -0.657897, 1.79005, 5.68619, 6.12437, 10.4934)
+
+[node name="Icicle clump3_nonglow2" parent="." instance=ExtResource("5_j4k7k")]
+transform = Transform3D(-0.168264, 10.9669, -17.7769, 0.135694, -18.7192, -10.4213, -7.59556, -0.57736, 0.207635, 23.8335, 5.23097, 13.1276)
+
+[node name="Icicle clump3_nonglow3" parent="." instance=ExtResource("5_j4k7k")]
+transform = Transform3D(0.0771272, -0.187915, 20.6553, -0.199713, 29.5274, 0.136996, -7.52276, -0.78581, 0.208133, 24.6779, 17.5631, 9.14992)
+
+[node name="Icicle clump3_nonglow4" parent="." instance=ExtResource("5_j4k7k")]
+transform = Transform3D(0.0771272, -0.187915, 20.6553, -0.199713, 29.5274, 0.136996, -7.52276, -0.78581, 0.208133, 1.59596, 15.6108, 9.14992)

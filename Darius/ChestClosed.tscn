@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://icjd630qdk6d"]
 
-[ext_resource type="PackedScene" uid="uid://bmpc03v6kg8c7" path="res://Darius/ChestClosed.glb" id="1_ebg64"]
+[ext_resource type="PackedScene" uid="uid://dvqlb6drnr711" path="res://Darius/ChestClosed.glb" id="1_ebg64"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rafy6"]
 size = Vector3(1.12811, 0.64088, 0.650665)

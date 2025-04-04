@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://t54d1uviijv0"]
+
+[ext_resource type="PackedScene" uid="uid://bkib2oxlcxfb1" path="res://Nan/High mountain.glb" id="1_eo132"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2dpam"]
+size = Vector3(0.808533, 0.440994, 1.32812)
+
+[node name="High mountain" type="StaticBody3D"]
+
+[node name="High mountain" parent="." instance=ExtResource("1_eo132")]
+transform = Transform3D(0.197058, 0, -0.230644, 0, 0.303362, 0, 0.230644, 0, 0.197058, -3.76929, 0, 0.681995)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(10.0993, 0.25276, -10.0237, 0.0152668, 14.2265, 0.374122, 10.0269, -0.276248, 10.0956, -0.181454, 3.19766, 1.2551)
+shape = SubResource("BoxShape3D_2dpam")

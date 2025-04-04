@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b11tkdo3t2ce"]
+
+[ext_resource type="AudioStream" uid="uid://bjrq26v31mkmg" path="res://Bihan/SoundEffects and Soundscape/FireCrackling.mp3" id="1_reuod"]
+
+[node name="FireCracklingSound" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_reuod")

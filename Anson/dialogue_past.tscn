@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://db3rkgk3map01"]
+
+[ext_resource type="Texture2D" uid="uid://msl5hnliqx0v" path="res://Anson/dialoguebox.png" id="1_sbn7x"]
+
+[node name="Dialogue_past" type="CanvasLayer"]
+
+[node name="DialogueBox1" type="TextureRect" parent="."]
+offset_left = -65.0
+offset_top = -286.0
+offset_right = 959.0
+offset_bottom = 738.0
+texture = ExtResource("1_sbn7x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text1" type="RichTextLabel" parent="DialogueBox1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0146484
+anchor_bottom = 0.0439453
+offset_left = 119.0
+offset_top = 348.0
+offset_right = 910.0
+offset_bottom = 730.0
+theme_override_font_sizes/normal_font_size = 28
+text = "Ah, now there’s a face I ain’t seen before. You lookin’ for trouble, or tryin’ to fix it? ‘Cause we
+could use a hand ‘round here.
+The ice up north? It ain't holdin' like it used to. Somethin’ unnatural’s tearin’ through the
+glaciers—beasts made of ice, crackin’ the ground right out from under us."
+visible_characters_behavior = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueBox2" type="TextureRect" parent="DialogueBox1"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 957.0
+offset_right = 1021.0
+offset_bottom = 1981.0
+texture = ExtResource("1_sbn7x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text2" type="RichTextLabel" parent="DialogueBox1/DialogueBox2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0205078
+anchor_bottom = 0.0205078
+offset_left = 121.0
+offset_top = 318.0
+offset_right = 912.0
+offset_bottom = 706.0
+theme_override_font_sizes/normal_font_size = 28
+text = "Then there’s the forest. Dry as tinder, and wouldn’t you know it—fire’s started up. If it spreads,
+we’ll lose the whole damn valley. Some folks are tryin’ to stop it, but they ain't enough.
+And the village? Used to be clean water, good fishin’. Now the shore’s fillin’ up with filth, and no
+one’s takin’ the blame. If somethin’ ain’t done soon, there won’t be a village left to save."
+visible_characters_behavior = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueBox3" type="TextureRect" parent="DialogueBox1/DialogueBox2"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 957.0
+offset_right = 1021.0
+offset_bottom = 1981.0
+texture = ExtResource("1_sbn7x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text3" type="RichTextLabel" parent="DialogueBox1/DialogueBox2/DialogueBox3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.104492
+anchor_bottom = 0.104492
+offset_left = 121.0
+offset_top = 318.0
+offset_right = 912.0
+offset_bottom = 706.0
+theme_override_font_sizes/normal_font_size = 28
+text = "Things ain't too far gone yet, but they’re slippin’. You got that look about ya—like you might be
+able to turn the tide. If you can, do it quickly. We ain't got forever.\""
+visible_characters_behavior = 1
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fqjjwj8unuo1"
+path="res://.godot/imported/TeleportSoundEffects1.mp3-3db1058c9adb60e921094c7e76e6c2f3.mp3str"
+
+[deps]
+
+source_file="res://Bihan/SoundEffects and Soundscape/TeleportSoundEffects1.mp3"
+dest_files=["res://.godot/imported/TeleportSoundEffects1.mp3-3db1058c9adb60e921094c7e76e6c2f3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

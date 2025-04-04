@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg74el00a2jlx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wqsfa"]
+load_path = "res://.godot/imported/Amulet_1.png-918400136f789b10dcb7cde7f93267db.ctex"
+
+[node name="Amulet1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Amulet1" type="Sprite2D" parent="."]
+position = Vector2(101, 89.75)
+scale = Vector2(2.5, 2.5)
+texture = SubResource("CompressedTexture2D_wqsfa")

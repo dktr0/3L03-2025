@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvliaw7oqrkq0"]
+
+[ext_resource type="PackedScene" uid="uid://wvov4k7f4wvi" path="res://Darius/Boat_Paddles.glb" id="1_hgvru"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xlnqy"]
+size = Vector3(2.34006, 1.85229, 7.85187)
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1.7712, 0, 0, 0, 1.7712, 0, 0, 0, 1.7712, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Boat_Paddles" parent="StaticBody3D" instance=ExtResource("1_hgvru")]
+transform = Transform3D(0.294952, 0, 0, 0, 0.294952, 0, 0, 0, 0.294952, 0.0979666, 0, 0.586603)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.294952, 0, 0, 0, 0.294952, 0, 0, 0, 0.294952, 0.0954689, 0.0867935, 0.352653)
+shape = SubResource("BoxShape3D_xlnqy")
