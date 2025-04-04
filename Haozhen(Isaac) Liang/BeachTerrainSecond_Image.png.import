@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p8r38uuk3iwu"
-path.s3tc="res://.godot/imported/BeachTerrainSecond_Image.png-974f87040e3325590f386997898e2e97.s3tc.ctex"
+path.s3tc="res://.godot/imported/BeachTerrainSecond_Image.png-6c8883741aa918db2e035d6d01db6129.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://BeachTerrainSecond_Image.png"
-dest_files=["res://.godot/imported/BeachTerrainSecond_Image.png-974f87040e3325590f386997898e2e97.s3tc.ctex"]
+source_file="res://Haozhen(Isaac) Liang/BeachTerrainSecond_Image.png"
+dest_files=["res://.godot/imported/BeachTerrainSecond_Image.png-6c8883741aa918db2e035d6d01db6129.s3tc.ctex"]
 
 [params]
 

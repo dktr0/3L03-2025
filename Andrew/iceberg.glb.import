@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://n6m8kxrd2fly"
-path="res://.godot/imported/BeachTerrainSecond.glb-0cdcd0f7a304c8b203432b8b07f5523e.scn"
+uid="uid://bjogrgg1yhvmw"
+path="res://.godot/imported/iceberg.glb-dc6effb6645075bf0da845b813028f5d.scn"
 
 [deps]
 
-source_file="res://Haozhen(Isaac) Liang/BeachTerrainSecond.glb"
-dest_files=["res://.godot/imported/BeachTerrainSecond.glb-0cdcd0f7a304c8b203432b8b07f5523e.scn"]
+source_file="res://Andrew/iceberg.glb"
+dest_files=["res://.godot/imported/iceberg.glb-dc6effb6645075bf0da845b813028f5d.scn"]
 
 [params]
 
