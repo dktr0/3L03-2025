@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="2_dci5a"]
 [ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="3_b75uh"]
 [ext_resource type="PackedScene" uid="uid://bragmruxldk4r" path="res://Yufei/game(past_water).tscn" id="5_3x1ld"]
+[ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="5_atutq"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="6_4ucsn"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="8_mm83i"]
 [ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="9_rv4y1"]

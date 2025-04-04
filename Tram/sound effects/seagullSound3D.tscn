@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://i0lj0ytb6stj"]
 
-[ext_resource type="AudioStream" uid="uid://c1i7yovx8iwky" path="res://Tram/sound effects/seagulls.mp3" id="1_dsmnl"]
+[ext_resource type="AudioStream" uid="uid://cqsxemqfv47jr" path="res://Tram/sound effects/seagulls louder.mp3" id="1_qrxml"]
 
 [node name="SeagulSound3d" type="AudioStreamPlayer3D"]
-stream = ExtResource("1_dsmnl")
+stream = ExtResource("1_qrxml")

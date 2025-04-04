@@ -11,6 +11,9 @@ extends Control
 @export var shard2_texture: Texture2D
 @export var shard3_texture: Texture2D
 
+@export var start_with_shard1: bool = false
+@export var start_with_shard2: bool = false
+@export var start_with_shard3: bool = false
 # ---------------------------
 # 最终护身符图标
 # ---------------------------
@@ -23,7 +26,7 @@ extends Control
 @onready var audio_player: AudioStreamPlayer2D = $AudioPlayer  # 在场景里添加的AudioStreamPlayer节点
 @export var pickup_sound: AudioStream                       # 收集碎片时的提示音
 @export var final_amulet_sound: AudioStream                 # 最终合成时播放的音效
-
+@onready var missing_shards_label: Label = $MissingShardsLabel
 # ---------------------------
 # 记录淡出计数、以检测3个碎片都淡出后再合成
 # ---------------------------
@@ -41,15 +44,20 @@ func _ready():
 
 	# 连接收集碎片的信号
 	AmuletManager.connect("shard_collected_changed", Callable(self, "_on_shard_collected_changed"))
-
+	if start_with_shard1:
+		AmuletManager.collect_shard(1)
+	if start_with_shard2:
+		AmuletManager.collect_shard(2)
+	if start_with_shard3:
+		AmuletManager.collect_shard(3)
 	# 如果已经收集过某些碎片(读档等)，立刻更新
 	_update_shard_icon(1, AmuletManager.has_shard(1))
 	_update_shard_icon(2, AmuletManager.has_shard(2))
 	_update_shard_icon(3, AmuletManager.has_shard(3))
-
-#
+	
+	missing_shards_label.visible = false
 # 当某个碎片收集时
-#
+
 func _on_shard_collected_changed(shard_index: int, collected: bool) -> void:
 	# 先更新UI动画(淡入或淡出)
 	_update_shard_icon(shard_index, collected)
@@ -159,3 +167,13 @@ func _fade_out_icon(icon_node: TextureRect, duration: float):
 	var tween = get_tree().create_tween()
 	tween.tween_property(icon_node, "self_modulate:a", 0.0, duration).from(icon_node.self_modulate.a)
 	tween.finished.connect(_on_shard_fade_out_finished)
+func show_missing_shards(missing: int) -> void:
+	missing_shards_label.text = "Still need " + str(missing) + " shards to use the portal"
+	missing_shards_label.visible = true
+
+	# 如果想在若干秒后自动隐藏，也可以加一个 Timer 或 Tween
+	var timer_tween = get_tree().create_tween()
+	timer_tween.tween_callback(Callable(self, "_hide_missing_shards")).set_delay(3.0)
+
+func _hide_missing_shards():
+	missing_shards_label.visible = false

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cteg1e5qqe4vn"]
+
+[ext_resource type="AudioStream" uid="uid://crrfaajqpfann" path="res://Bihan/SoundEffects and Soundscape/LoFiPresentMusic.mp3" id="1_ere4k"]
+
+[node name="pastlofimusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_ere4k")
+parameters/looping = true
