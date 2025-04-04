@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx5ny6oh20mmg"
-path.s3tc="res://.godot/imported/icicleclump-glowing_Cylinder.png-05c1ff62ed26d400a2749f08d979235e.s3tc.ctex"
+uid="uid://jda58njr5k5x"
+path.s3tc="res://.godot/imported/icepickaxe_Material.png-f52ea72d9813995aec9d5bb32c008b88.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Mackie/icicleclump-glowing_Cylinder.png"
-dest_files=["res://.godot/imported/icicleclump-glowing_Cylinder.png-05c1ff62ed26d400a2749f08d979235e.s3tc.ctex"]
+source_file="res://Mackie/icepickaxe_Material.png"
+dest_files=["res://.godot/imported/icepickaxe_Material.png-f52ea72d9813995aec9d5bb32c008b88.s3tc.ctex"]
 
 [params]
 

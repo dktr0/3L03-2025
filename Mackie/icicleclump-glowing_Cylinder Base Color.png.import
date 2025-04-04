@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crno86bdrc45t"
+uid="uid://ccwsy1otncrgs"
 path.s3tc="res://.godot/imported/icicleclump-glowing_Cylinder Base Color.png-6d0909b1ee66496d50119f215b7f04d1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "cccbb7267581bcd0c7259841275a2c11"
 }
 
 [deps]

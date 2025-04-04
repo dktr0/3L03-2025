@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://i4bhu01gksdp"]
+
+[ext_resource type="AudioStream" uid="uid://hyklbevrrn8h" path="res://Bihan/SoundEffects and Soundscape/UnderWaterSoundScape.mp3" id="1_ngqs3"]
+
+[node name="UnderWaterSoundScapeBihan" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_ngqs3")
