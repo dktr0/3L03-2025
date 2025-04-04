@@ -1,15 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://drtg3y0flyxuk"]
+[gd_scene load_steps=2 format=3 uid="uid://drtg3y0flyxuk"]
 
 [ext_resource type="PackedScene" uid="uid://cfto4t17rbswa" path="res://Mackie/icicleclump2-glowing.glb" id="1_255bb"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_dogxx"]
-height = 0.866508
-radius = 0.126599
 
 [node name="icicle clump2" type="StaticBody3D"]
 
 [node name="icicleclump2-glowing" parent="." instance=ExtResource("1_255bb")]
-
-[node name="clump2 cyllinder collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0146921, -0.160073, 0.20569)
-shape = SubResource("CylinderShape3D_dogxx")
