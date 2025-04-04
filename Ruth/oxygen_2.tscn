@@ -7,4 +7,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(189, 82)
+rotation = -1.5708
+scale = Vector2(2.074, 2.074)
 texture = ExtResource("1_7sfur")
