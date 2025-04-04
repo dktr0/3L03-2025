@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b54qgxjryoeww"]
+
+[ext_resource type="PackedScene" uid="uid://ccseufsgyle3l" path="res://Le Zhang/crab.glb" id="1_qgewm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="crab" parent="." instance=ExtResource("1_qgewm")]

@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="2_dci5a"]
 [ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="3_b75uh"]
 [ext_resource type="PackedScene" uid="uid://bragmruxldk4r" path="res://Yufei/game(past_water).tscn" id="5_3x1ld"]
-[ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="5_atutq"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="6_4ucsn"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="8_mm83i"]
 [ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="9_rv4y1"]
@@ -99,9 +98,6 @@ transform = Transform3D(9.96939, 0, -4.6488, 0, 11, 0, 4.6488, 0, 9.96939, 34.59
 [node name="fish_shop_owner" parent="Area3D" instance=ExtResource("11_56olb")]
 transform = Transform3D(-0.149941, 0, 0.00420392, 0, 0.15, 0, -0.00420392, 0, -0.149941, 0.248459, 0.015935, 0.179053)
 
-[node name="Player" parent="." instance=ExtResource("12_8h434")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 6.70805, 0)
-
 [node name="deadtrees" parent="." instance=ExtResource("11_wftq0")]
 transform = Transform3D(-0.00692697, 0, 2.69999, 0, 2.7, 0, -2.69999, 0, -0.00692697, 128.001, 7.77877, 286.579)
 
@@ -110,3 +106,6 @@ transform = Transform3D(0.0189191, 0, 1.99991, 0, 2, 0, -1.99991, 0, 0.0189191, 
 
 [node name="Wildfire Level Arena" parent="." instance=ExtResource("13_gg8tq")]
 transform = Transform3D(0.232412, 0, 0.325553, 0, 0.4, 0, -0.325553, 0, 0.232412, 381.861, 0, 208.37)
+
+[node name="Player" parent="." instance=ExtResource("12_8h434")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 5.40922, 0)

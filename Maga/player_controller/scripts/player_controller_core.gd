@@ -33,6 +33,7 @@ extends CharacterBody3D
 @export var variable_jump_cutoff_multiplier := 0.5 # Multiplies upward velocity when jump button released early
 @export var coyote_time_duration := 0.1 # Seconds player can still jump after leaving a platform
 @export var jump_buffer_duration := 0.1 # Seconds a jump input is remembered before landing
+@export var max_jumps := 2 # Maximum number of jumps allowed (1 = ground, 2 = double, etc.)
 
 # Node References
 var camera_node: Camera3D
@@ -50,6 +51,8 @@ var jump_direction := Vector3.FORWARD # Stores the player's look direction at th
 var coyote_timer := 0.0 # Timer for coyote time window
 var jump_buffer_timer := 0.0 # Timer for jump input buffer
 var is_performing_jump := false # Flag to track if currently in the upward phase of a jump (for variable height)
+var current_jumps := 0 # Counter for jumps performed since last grounded
+var was_on_floor := false # Track floor state for fall detection
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
@@ -75,6 +78,9 @@ func _ready():
 	# Instantiate and add the input handler
 	input_handler = InputManager.new(self)
 	add_child(input_handler)
+	
+	# Initialize floor state
+	was_on_floor = is_on_floor()
 
 ## Called every physics frame. Handles movement, jumping, gravity, and rotation.
 func _physics_process(delta: float):
@@ -95,33 +101,54 @@ func _physics_process(delta: float):
 	var target_horizontal_velocity = movement_input["velocity"] # Desired velocity based on input
 	var look_direction = movement_input["look_direction"] # Desired facing direction
 
-	# --- Ground Check & Coyote Time ---
+	# --- Ground Check & State Reset ---
 	var on_floor = is_on_floor()
 	if on_floor:
 		coyote_timer = coyote_time_duration # Reset coyote timer when grounded
 		is_performing_jump = false # Reset jump state flags when grounded
+		current_jumps = 0 # Reset jumps on landing
+	else:
+		# Detect falling off ledge (was on floor last frame, not now, and didn't jump upwards)
+		if was_on_floor and velocity.y <= 0: 
+			if current_jumps == 0: # Only set to 1 if we haven't jumped yet (uses the 'ground' jump)
+				current_jumps = 1
 	# Coyote timer naturally decreases when not on floor
 
 	# --- Handle Jump Input Buffering ---
 	if Input.is_action_just_pressed("move_jump"):
 		jump_buffer_timer = jump_buffer_duration
 		
-	# --- Check Jump Condition (Requires buffered input and coyote time window) ---
-	var can_jump = jump_buffer_timer > 0.0 and coyote_timer > 0.0
-	
-	if can_jump:
-		velocity.y = jump_strength
-		# Store the horizontal direction faced when jumping for air control calculation
-		if look_direction.length_squared() > 0.0001: # Avoid normalizing zero vector
-			jump_direction = look_direction.normalized()
-		else:
-			# Fallback if look_direction is zero (e.g., standing still)
-			jump_direction = -transform.basis.z if transform.basis.z != Vector3.ZERO else Vector3.FORWARD
+	# --- Check Jump Condition & Execution ---
+	# Removed old can_jump check here
+	if jump_buffer_timer > 0.0:
+		var performed_jump_this_frame = false
 		
-		# Consume timers and set jump state
-		jump_buffer_timer = 0.0 
-		coyote_timer = 0.0 
-		is_performing_jump = true
+		# Check for ground/coyote jump first
+		if on_floor or coyote_timer > 0.0:
+			velocity.y = jump_strength
+			# Store the horizontal direction faced when jumping (existing logic)
+			if look_direction.length_squared() > 0.0001: 
+				jump_direction = look_direction.normalized()
+			else:
+				jump_direction = -transform.basis.z if transform.basis.z != Vector3.ZERO else Vector3.FORWARD
+			
+			current_jumps = 1 # This is the first jump
+			is_performing_jump = true
+			performed_jump_this_frame = true
+			coyote_timer = 0.0 # Consume coyote time if used
+
+		# Check for air jump (if ground/coyote jump didn't happen)
+		elif current_jumps < max_jumps: 
+			velocity.y = jump_strength
+			# Optionally update jump_direction mid-air if desired, but keeping simple for now
+			
+			current_jumps += 1 # Consume an air jump
+			is_performing_jump = true # Reset for variable jump height check
+			performed_jump_this_frame = true
+
+		# Consume buffer if any jump was performed
+		if performed_jump_this_frame:
+			jump_buffer_timer = 0.0
 
 	# --- Variable Jump Height Cutoff ---
 	# If jump button is released early while still moving upwards, reduce upward velocity
@@ -183,6 +210,9 @@ func _physics_process(delta: float):
 		
 		# Interpolate the current transform towards the target transform for smooth rotation
 		transform = transform.interpolate_with(target_transform, delta * current_rotation_speed)
+
+	# Update was_on_floor for the next frame
+	was_on_floor = on_floor
 
 ## Called every frame. Handles non-physics updates like targeting UI.
 func _process(_delta):

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://8e2ydrfqh2mk"]
+
+[ext_resource type="PackedScene" uid="uid://dskvad1j8525m" path="res://Le Zhang/mutated fish.glb" id="1_mew22"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="mutated fish" parent="." instance=ExtResource("1_mew22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
