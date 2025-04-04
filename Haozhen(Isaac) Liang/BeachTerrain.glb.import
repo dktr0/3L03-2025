@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://5dfa1dsdcpsw"
-path="res://.godot/imported/BeachTerrain.glb-d7d51ffdef5d9bb89bb7d9416decbb5f.scn"
+path="res://.godot/imported/BeachTerrain.glb-eb7bcd38011b4b35cc3509d33825d906.scn"
 
 [deps]
 
-source_file="res://BeachTerrain.glb"
-dest_files=["res://.godot/imported/BeachTerrain.glb-d7d51ffdef5d9bb89bb7d9416decbb5f.scn"]
+source_file="res://Haozhen(Isaac) Liang/BeachTerrain.glb"
+dest_files=["res://.godot/imported/BeachTerrain.glb-eb7bcd38011b4b35cc3509d33825d906.scn"]
 
 [params]
 
