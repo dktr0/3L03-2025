@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://ebdjymt356bv"]
+
+[ext_resource type="Texture2D" uid="uid://dj2328vpevx0p" path="res://Belinda/Amulet_2_3.png" id="1_6yy80"]
+
+[node name="Amulet23" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Amulet23" type="Sprite2D" parent="."]
+position = Vector2(102.449, 96.25)
+scale = Vector2(2.48551, 2.48551)
+texture = ExtResource("1_6yy80")

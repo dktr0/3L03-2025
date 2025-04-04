@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn0mu3linlwrh"
-path="res://.godot/imported/Amulet_3.png-c00fd78107f89cb4c0a1c17edbe2072b.ctex"
+uid="uid://7sohnc8pa8as"
+path="res://.godot/imported/Amulet_2_4.png-6d07f4e54c45258aa1ba85d007da5caa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Belinda/Amulet_3.png"
-dest_files=["res://.godot/imported/Amulet_3.png-c00fd78107f89cb4c0a1c17edbe2072b.ctex"]
+source_file="res://Belinda/Amulet_2_4.png"
+dest_files=["res://.godot/imported/Amulet_2_4.png-6d07f4e54c45258aa1ba85d007da5caa.ctex"]
 
 [params]
 
