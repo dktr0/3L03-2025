@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqire0kd2fecv"
+uid="uid://dd2evld0eq6lg"
 path.s3tc="res://.godot/imported/RegGrass_OuterLeaves Base Color_2.png-92b34d99ba3da9bb69e7629f92429d07.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "16494e696e01d614d078c582ad08040d"
 }
 
 [deps]

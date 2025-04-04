@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dupdln4vao1gm"
+uid="uid://ctldwkkl3qy3g"
 path.s3tc="res://.godot/imported/mantaray_mantabody.png-ea475a40b69a046ae64f3a50849bffa8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "5fca294389f5ef7be3a58ae0e21ec97f"
 }
 
 [deps]

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc4iw6slufnsy"
+uid="uid://cwqtfpejkrstf"
 path.s3tc="res://.godot/imported/filice_chiara_waterrock_Material Base Color.png-8ead86c1acb5c1ad97548dd8f3733fe9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "d50e25db394b668243291659c48a531d"
 }
 
 [deps]
