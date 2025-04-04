@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4ehwt7jv52xs"]
+
+[ext_resource type="Script" path="res://Ruth/heart_lives.gd" id="1_p5b2h"]
+[ext_resource type="PackedScene" uid="uid://duumi42705q73" path="res://Ruth/heart.tscn" id="2_5v6sa"]
+[ext_resource type="PackedScene" uid="uid://ybe1widemeit" path="res://Ruth/half_heart.tscn" id="3_3hogl"]
+[ext_resource type="PackedScene" uid="uid://bdkklg8whgr2p" path="res://Ruth/empty_heart.tscn" id="4_a17sx"]
+
+[node name="HeartLives" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p5b2h")
+
+[node name="Heart" parent="." instance=ExtResource("2_5v6sa")]
+
+[node name="HalfHeart" parent="." instance=ExtResource("3_3hogl")]
+
+[node name="EmptyHeart" parent="." instance=ExtResource("4_a17sx")]
+layout_mode = 1
