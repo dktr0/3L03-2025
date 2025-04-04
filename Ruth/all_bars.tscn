@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://f0mn5b8lwtx"]
+
+[ext_resource type="Script" path="res://Ruth/energybar.gd" id="1_ufark"]
+[ext_resource type="PackedScene" uid="uid://cfuqq5uqhnlh7" path="res://Ruth/bars.tscn" id="2_nl0rf"]
+[ext_resource type="PackedScene" uid="uid://ceg4nvk23kr50" path="res://Ruth/bar_1.tscn" id="3_ji25l"]
+[ext_resource type="PackedScene" uid="uid://dctkvyej6r5cv" path="res://Ruth/bar_2.tscn" id="4_u5yyn"]
+[ext_resource type="PackedScene" uid="uid://bk3ogvpqcbsgd" path="res://Ruth/bar_3.tscn" id="5_7h57m"]
+[ext_resource type="PackedScene" uid="uid://b2a7734s0hd3s" path="res://Ruth/bar_4.tscn" id="6_x3afb"]
+
+[node name="AllBars" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ufark")
+
+[node name="Bars" parent="." instance=ExtResource("2_nl0rf")]
+script = null
+
+[node name="Bar1" parent="." instance=ExtResource("3_ji25l")]
+
+[node name="Bar2" parent="." instance=ExtResource("4_u5yyn")]
+
+[node name="Bar3" parent="." instance=ExtResource("5_7h57m")]
+
+[node name="Bar4" parent="." instance=ExtResource("6_x3afb")]
