@@ -1,30 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1hwp1l08187b"]
+[gd_scene load_steps=2 format=3 uid="uid://b1hwp1l08187b"]
 
 [ext_resource type="PackedScene" uid="uid://d4b2ddj8r6dk2" path="res://Mackie/icicleclump-glowing.glb" id="1_vqngd"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lyjip"]
-size = Vector3(0.220337, 0.352264, 0.403217)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5l72n"]
-radius = 0.0855934
-height = 0.63694
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmxbw"]
-radius = 0.0921119
-height = 0.796411
-
 [node name="icicleclump1" type="StaticBody3D"]
-
-[node name="Box collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00480914, 0.162888, 0.120378)
-shape = SubResource("BoxShape3D_lyjip")
-
-[node name="Capsule collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0079973, -0.215813, 0.0293257)
-shape = SubResource("CapsuleShape3D_5l72n")
-
-[node name="capsule collsion 2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00165471, -0.198545, 0.220081)
-shape = SubResource("CapsuleShape3D_wmxbw")
 
 [node name="icicleclump-glowing" parent="." instance=ExtResource("1_vqngd")]
