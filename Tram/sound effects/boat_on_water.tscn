@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://v3sgfpq8gen"]
+
+[ext_resource type="AudioStream" uid="uid://eh53yhkpgb40" path="res://Tram/sound effects/boat on water (positional).mp3" id="1_d2alw"]
+
+[node name="Boat-on-water" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_d2alw")
