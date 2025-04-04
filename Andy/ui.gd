@@ -51,7 +51,7 @@ func _input(_event: InputEvent) -> void:
 		match current_collision_node_name:
 			"PosStart":
 				print("激活 START 按钮")
-				# get_tree().change_scene("res://YourGameScene.tscn")
+				Loadingmanager.change_scene_with_loading("res://Andy/playable/beginning.tscn")
 			"PosCredit":
 				print("激活 CREDIT 按钮")
 				# get_tree().change_scene("res://CreditScene.tscn")
