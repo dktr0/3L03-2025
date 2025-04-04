@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4kixgrxdj358"]
+[gd_scene load_steps=7 format=3 uid="uid://x7glgcbmrjhe"]
 
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="1_htwf0"]
 [ext_resource type="PackedScene" uid="uid://fxscysncqxhj" path="res://Wilson/glacier_wall.tscn" id="2_e0li6"]
