@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=22 format=3 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="3_k0l6t"]
-[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/3d-assets---wilsoncheng/water_base.tscn" id="4_gfa6b"]
 [ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="5_eyu1o"]
 [ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="6_k0hcq"]
 [ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="6_vshbh"]
@@ -17,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dxv1pswtk7jhx" path="res://Quinn/Dock Spiders/spider_3.tscn" id="15_u36hn"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="16_aie5t"]
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="17_vhbp1"]
+[ext_resource type="PackedScene" uid="uid://cfuqq5uqhnlh7" path="res://Ruth/bars.tscn" id="17_xk0t4"]
+[ext_resource type="PackedScene" uid="uid://duumi42705q73" path="res://Ruth/heart.tscn" id="18_8wkpa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
 
@@ -45,9 +46,6 @@ transform = Transform3D(-0.11, 0, 9.6165e-09, 0, 0.11, 0, -9.6165e-09, 0, -0.11,
 
 [node name="SingleLaneDock3" parent="Docks" instance=ExtResource("3_k0l6t")]
 transform = Transform3D(-0.11, 0, 9.6165e-09, 0, 0.11, 0, -9.6165e-09, 0, -0.11, -232.756, -63.0971, -58.1373)
-
-[node name="Water_Base" parent="." instance=ExtResource("4_gfa6b")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -78.6004, -111.768, -297.45)
 
 [node name="PlatformingGame" parent="." instance=ExtResource("5_eyu1o")]
 transform = Transform3D(-1.41421, 0, -1.41421, 0, 2, 0, 1.41421, 0, -1.41421, 353.428, -7.53811, 231.181)
@@ -13425,3 +13423,7 @@ shape = SubResource("BoxShape3D_qt55g")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5"]
 mesh = SubResource("BoxMesh_ov3oa")
 surface_material_override/0 = SubResource("StandardMaterial3D_iclnn")
+
+[node name="Bars" parent="." instance=ExtResource("17_xk0t4")]
+
+[node name="Heart" parent="." instance=ExtResource("18_8wkpa")]
