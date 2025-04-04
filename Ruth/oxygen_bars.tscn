@@ -1,0 +1,39 @@
+[gd_scene load_steps=11 format=3 uid="uid://b4jxhpfiytwsv"]
+
+[ext_resource type="Script" path="res://oxygen_bars.gd" id="1_knn8j"]
+[ext_resource type="PackedScene" uid="uid://cos4fx5speitq" path="res://Ruth/oxygen_0.tscn" id="2_d8p3y"]
+[ext_resource type="PackedScene" uid="uid://d077k3iq8650d" path="res://Ruth/oxygen_1.tscn" id="3_bsie5"]
+[ext_resource type="PackedScene" uid="uid://br2n64rcdwodp" path="res://Ruth/oxygen_2.tscn" id="4_5fm0l"]
+[ext_resource type="PackedScene" uid="uid://dp1kfuniu4ytr" path="res://Ruth/oxygen_3.tscn" id="5_ppeoa"]
+[ext_resource type="PackedScene" uid="uid://cvhbacske2jik" path="res://Ruth/oxygen_4.tscn" id="6_3t1tr"]
+[ext_resource type="PackedScene" uid="uid://ijdbhr7gnk7" path="res://Ruth/oxygen_5.tscn" id="7_02t04"]
+[ext_resource type="PackedScene" uid="uid://es1uoogo2rrr" path="res://Ruth/oxygen_6.tscn" id="8_arnox"]
+[ext_resource type="PackedScene" uid="uid://f5j8t81y42eu" path="res://Ruth/oxygen_7.tscn" id="9_x1ocu"]
+[ext_resource type="PackedScene" uid="uid://bqqtrmp4nwcpc" path="res://Ruth/oxygen_full.tscn" id="10_c78ty"]
+
+[node name="OxygenBars" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_knn8j")
+
+[node name="Oxygen0" parent="." instance=ExtResource("2_d8p3y")]
+
+[node name="Oxygen1" parent="." instance=ExtResource("3_bsie5")]
+
+[node name="Oxygen2" parent="." instance=ExtResource("4_5fm0l")]
+
+[node name="Oxygen3" parent="." instance=ExtResource("5_ppeoa")]
+
+[node name="Oxygen4" parent="." instance=ExtResource("6_3t1tr")]
+
+[node name="Oxygen5" parent="." instance=ExtResource("7_02t04")]
+
+[node name="Oxygen6" parent="." instance=ExtResource("8_arnox")]
+
+[node name="Oxygen7" parent="." instance=ExtResource("9_x1ocu")]
+
+[node name="OxygenFull" parent="." instance=ExtResource("10_c78ty")]

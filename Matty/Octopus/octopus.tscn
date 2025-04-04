@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxld4rvbsdc7m"]
+
+[ext_resource type="PackedScene" uid="uid://c3uirv6kraqe3" path="res://Matty/Octopus/octopus.glb" id="1_707gt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i5vg0"]
+radius = 0.487985
+
+[node name="Area3D" type="Area3D"]
+
+[node name="octopus" parent="." instance=ExtResource("1_707gt")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0902104, 0, 0)
+shape = SubResource("SphereShape3D_i5vg0")

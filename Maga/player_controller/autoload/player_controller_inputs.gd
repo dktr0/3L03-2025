@@ -18,9 +18,6 @@
 
 extends Node
 
-# This script handles both input mapping and control functionality
-# Set this as an AutoLoad in the Project Settings with name "PlayerController"
-
 # --- Configuration ---
 const SAVE_FILE_PATH = "user://input_mappings.cfg"
 # List of actions managed by this system (add any other remappable actions here)
@@ -56,6 +53,7 @@ func _input(event: InputEvent):
 	if detected_scheme != -1 and detected_scheme != current_input_scheme:
 		current_input_scheme = detected_scheme
 		print("Input scheme changed to: ", InputScheme.keys()[current_input_scheme])
+		@warning_ignore("int_as_enum_without_cast") 
 		emit_signal("input_scheme_changed", current_input_scheme)
 
 # --- Initialization ---

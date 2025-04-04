@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bufxt6jlr78ns"]
+
+[ext_resource type="PackedScene" uid="uid://5rteqmoatw8h" path="res://Le Zhang/conch.glb" id="1_j6o3y"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="conch" parent="." instance=ExtResource("1_j6o3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60636, 0, -0.974894)
