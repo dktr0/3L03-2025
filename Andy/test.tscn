@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="5_xemys"]
 [ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="7_41cqa"]
 [ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="8_jfi1w"]
-[ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="8_xkfml"]
+[ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/sword_enemy.tscn" id="8_xkfml"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_d7q54"]
 size = Vector3(100, 1, 100)
@@ -72,10 +72,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.806827, 2.888)
 is_patrol = true
 player_path = NodePath("../Player")
 patrol_point_a = NodePath("../Node3D")
-patrol_point_b = NodePath("../Node3D2")
+patrol_point_b = NodePath("../point")
 turn_lerp_speed = 0.6
 
-[node name="Node3D2" type="Node3D" parent="."]
+[node name="point" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.125, 0, 2.888)
 
 [node name="Node3D" type="Node3D" parent="."]
