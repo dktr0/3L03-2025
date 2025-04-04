@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bfpcgkl0scx76" path="res://Rongyu Liu/Soil/No green soil.glb" id="1_1e8q7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wl7w"]
-size = Vector3(1.02686, 0.00924683, 1.02563)
+size = Vector3(1.02686, 0.00509262, 1.02563)
 
 [node name="No green soil" type="StaticBody3D"]
 
@@ -11,5 +11,5 @@ size = Vector3(1.02686, 0.00924683, 1.02563)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0496643, 0, 0.0898654)
 
 [node name="No green soil2" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0532227, -0.00234985, 0.0925293)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0532227, -0.0037117, 0.0925293)
 shape = SubResource("BoxShape3D_3wl7w")
