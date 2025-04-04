@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd2pm1ngkalmy"]
+
+[ext_resource type="AudioStream" uid="uid://dcvulv17onxdi" path="res://Tram/music/bad-ending.mp3" id="1_vnmk6"]
+
+[node name="BadEndingMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_vnmk6")
