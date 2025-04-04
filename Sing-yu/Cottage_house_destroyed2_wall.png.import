@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh5eq84at5o14"
+uid="uid://l2j8yq2chboc"
 path.s3tc="res://.godot/imported/Cottage_house_destroyed2_wall.png-607d5ca0fae9376d52e83f04f49363df.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "42c05fdac385586ccaf643ad0cf73244"
 }
 
 [deps]

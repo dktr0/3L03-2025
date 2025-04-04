@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbkt5u3s3b7mg"]
+
+[ext_resource type="AudioStream" uid="uid://b112mcgfgkici" path="res://Spencer/Ice and Glacier/Soundscape Glacier/Glacier soundscape.mp3" id="1_k37ke"]
+
+[node name="glaciersoundscape3D" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_k37ke")
+parameters/looping = true
