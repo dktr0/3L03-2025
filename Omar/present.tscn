@@ -1,10 +1,13 @@
-[gd_scene load_steps=56 format=3 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=60 format=3 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="3_k0l6t"]
 [ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="5_eyu1o"]
 [ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="6_k0hcq"]
+[ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/assests/chest.tscn" id="7_lc440"]
+[ext_resource type="PackedScene" uid="uid://cetv4q45see0s" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
+[ext_resource type="PackedScene" uid="uid://cdevl478c5iuu" path="res://Andy/assests/amulet_ui.tscn" id="9_uhgrh"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="11_6vhei"]
 [ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="13_3jtso"]
 [ext_resource type="PackedScene" uid="uid://dbhxcdh47t2s" path="res://Quinn/Dock Spiders/spider_1.tscn" id="13_x8py4"]
@@ -25,8 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="22_tpijs"]
 [ext_resource type="Script" path="res://Omar/kill_zone.gd" id="23_7v35e"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="23_51q5n"]
-[ext_resource type="PackedScene" uid="uid://vumn7ywya5q8" path="res://Wren/coastguardstation.glb" id="24_jgkje"]
-[ext_resource type="PackedScene" path="res://Darius/Boat_Paddles.tscn" id="27_5h5rp"]
+[ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="24_jgkje"]
+[ext_resource type="PackedScene" uid="uid://bvliaw7oqrkq0" path="res://Darius/Boat_Paddles.tscn" id="27_5h5rp"]
 [ext_resource type="Script" path="res://Omar/kill_zone_platformer.gd" id="27_tbh2r"]
 [ext_resource type="Script" path="res://Omar/sand_area.gd" id="30_05fr5"]
 [ext_resource type="AudioStream" uid="uid://dj0flvdbt82si" path="res://Spencer/General/FootstepDull/02.mp3" id="31_51xlb"]
@@ -38,6 +41,9 @@
 [ext_resource type="AudioStream" uid="uid://b2osjf035f8du" path="res://Tram/sound effects/seagulls.mp3" id="35_cbgrm"]
 [ext_resource type="Script" path="res://Omar/forest_wind.gd" id="36_s66vr"]
 [ext_resource type="AudioStream" uid="uid://ryufl0mim8ai" path="res://Tram/sound effects/leaves rustling 2.mp3" id="37_yj8k3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aolfg"]
+size = Vector3(13.3947, 1.56104, 14.007)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
 
@@ -99,8 +105,8 @@ size = Vector3(26.205, 43.5073, 139.769)
 
 [node name="World" parent="." instance=ExtResource("1_pht0b")]
 
-[node name="Player2" parent="." instance=ExtResource("32_3v2qo")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 101.302, -2.8057, -35.6097)
+[node name="PlayerTrigger" parent="." instance=ExtResource("32_qsmq8")]
+player_scene = ExtResource("32_3v2qo")
 
 [node name="Tasks" type="Node" parent="."]
 
@@ -121,6 +127,12 @@ transform = Transform3D(1.11195, 15.1874, 11.2544, 15.9645, -1.05684, -0.783932,
 
 [node name="icicleclump1_nonglow5" parent="Tasks/Ice_Arena_Present" instance=ExtResource("17_f81mf")]
 transform = Transform3D(-0.570342, -7.6066, -10.912, 9.7396, 0.48126, -0.723554, 0.299884, -30.097, 2.74627, 32.2001, 0.446044, 126.632)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8106, 5.23058, -17.922)
+shape = SubResource("BoxShape3D_aolfg")
 
 [node name="Docks" type="Node" parent="."]
 
@@ -415,11 +427,10 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 32.946, 12
 pixel_size = 0.05
 text = "Press 'Enter' to Interact"
 
-[node name="SandArea" type="Area3D" parent="." node_paths=PackedStringArray("sand_audio", "player")]
+[node name="SandArea" type="Area3D" parent="." node_paths=PackedStringArray("sand_audio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1572, -7.09409, 75.9445)
 script = ExtResource("30_05fr5")
 sand_audio = NodePath("AudioStreamPlayer3D")
-player = NodePath("../Player2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SandArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8545, -0.216713, 31.1172)
@@ -429,9 +440,6 @@ shape = SubResource("BoxShape3D_h7ydq")
 stream = ExtResource("31_51xlb")
 attenuation_model = 3
 volume_db = 53.333
-
-[node name="PlayerTrigger" parent="." instance=ExtResource("32_qsmq8")]
-player_scene = ExtResource("32_3v2qo")
 
 [node name="WavesSound" type="Area3D" parent="."]
 transform = Transform3D(4.92787, 0, 0, 0, 1, 0, 0, 0, 1.48099, 53.2484, -2.63886, 39.219)
@@ -495,11 +503,10 @@ stream = ExtResource("32_upd76")
 volume_db = 4.0
 max_distance = 479.13
 
-[node name="Seagulls" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio", "player")]
+[node name="Seagulls" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio")]
 transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, 132.462, 16.4945, 109.16)
 script = ExtResource("34_agfna")
 seagulls_audio = NodePath("Seagulls")
-player = NodePath("../Player2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Seagulls"]
 shape = SubResource("SphereShape3D_3bf4o")
@@ -508,11 +515,10 @@ shape = SubResource("SphereShape3D_3bf4o")
 stream = ExtResource("35_cbgrm")
 volume_db = 80.0
 
-[node name="Seagulls2" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio", "player")]
+[node name="Seagulls2" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio")]
 transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, -106.675, 16.4945, 138.662)
 script = ExtResource("34_agfna")
 seagulls_audio = NodePath("Seagulls")
-player = NodePath("../Player2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Seagulls2"]
 shape = SubResource("SphereShape3D_3bf4o")
@@ -553,14 +559,13 @@ transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -41.58
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04119, 2.70216, 0.0107441)
 shape = SubResource("BoxShape3D_8i671")
 
-[node name="ForestWind" type="Area3D" parent="." node_paths=PackedStringArray("forest_audio", "forest_audio2", "forest_audio3", "forest_audio4", "player")]
+[node name="ForestWind" type="Area3D" parent="." node_paths=PackedStringArray("forest_audio", "forest_audio2", "forest_audio3", "forest_audio4")]
 transform = Transform3D(29.7047, 0, 0, 0, 1, 0, 0, 0, 1, -245.113, 0, 158.548)
 script = ExtResource("36_s66vr")
 forest_audio = NodePath("Wind")
 forest_audio2 = NodePath("Wind2")
 forest_audio3 = NodePath("Wind3")
 forest_audio4 = NodePath("Wind4")
-player = NodePath("../Player2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ForestWind"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8747, 12.1764, 52.8109)
@@ -586,6 +591,16 @@ volume_db = 4.0
 transform = Transform3D(0.0336647, 0, 0, 0, 1, 0, 0, 0, 1, 4.45231, 0, 0)
 stream = ExtResource("37_yj8k3")
 volume_db = 4.0
+
+[node name="AmuletUI" parent="." instance=ExtResource("9_uhgrh")]
+script = null
+
+[node name="Chest" parent="." instance=ExtResource("7_lc440")]
+transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 171.949, 6.51752, -485.5)
+fragment_scene = ExtResource("8_fio87")
+
+[node name="Player" parent="." instance=ExtResource("32_3v2qo")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.26274, 14.8615)
 
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer" to="killzone/Kill Zone Platformer" method="_on_body_entered"]

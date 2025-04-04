@@ -11,7 +11,7 @@ extends Area3D
 
 var player_inside = false
 
-func _process(delta):
+func _process(_delta):
 	if player == null: 
 		return
 	var distance = global_position.distance_to(player.global_position)
@@ -32,7 +32,7 @@ func _ready():
 	forest_audio2 = $Wind2
 	forest_audio3 = $Wind3
 	forest_audio4 = $Wind4
-	player = $"../Player2"
+	player = $"../Player"
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
