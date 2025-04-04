@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxph0p7ah7hlq"
+path="res://.godot/imported/lo-fi-2025-past-music.mp3-97a54cfdad7e25c7580369943da91dc9.mp3str"
+
+[deps]
+
+source_file="res://Yunhan Liu2/lo-fi-2025-past-music.mp3"
+dest_files=["res://.godot/imported/lo-fi-2025-past-music.mp3-97a54cfdad7e25c7580369943da91dc9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

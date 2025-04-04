@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
+uid="uid://bjou6kimxg54b"
+=======
 uid="uid://b2osjf035f8du"
+>>>>>>> f38fe288f115075956f4c61008868df21ed667b2
 path="res://.godot/imported/seagulls.mp3-dff15808ea6ce90c4271327443bf9271.mp3str"
 
 [deps]

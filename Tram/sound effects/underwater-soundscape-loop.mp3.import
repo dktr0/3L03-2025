@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
+uid="uid://cabusgvllg8u1"
+=======
 uid="uid://hxuj7xlh6tjx"
+>>>>>>> f38fe288f115075956f4c61008868df21ed667b2
 path="res://.godot/imported/underwater-soundscape-loop.mp3-e0bca0f4e910aece48fd117dc1e7df25.mp3str"
 
 [deps]
