@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh3x3y4aio0be"]
+
+[ext_resource type="Script" path="res://subislandplayer.gd" id="1_437fu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_s45t6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ub76h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f6w5n"]
+
+[node name="SubIslandPlayer" type="CharacterBody3D"]
+script = ExtResource("1_437fu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.565, 0, 0, 0, 3.565, 0, 0, 0, 3.565, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_s45t6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.565, 0, 0, 0, 3.565, 0, 0, 0, 3.565, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ub76h")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0185919, 2.48749, -1.58735)
+
+[node name="Area3D" type="Area3D" parent="." groups=["Player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(4.87, 0, 0, 0, 4.87, 0, 0, 0, 4.87, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_f6w5n")
+
+[connection signal="area_shape_entered" from="Area3D" to="." method="_on_area_3d_area_shape_entered"]
