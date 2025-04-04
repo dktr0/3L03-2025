@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://ch4a658j7xajg"
+=======
+uid="uid://dbg2f3v0jt6lv"
+>>>>>>> f38fe288f115075956f4c61008868df21ed667b2
 path="res://.godot/imported/diving underwater start.mp3-0922a4e1d1cee0dd6be5badc65209b43.mp3str"
 
 [deps]

@@ -40,7 +40,7 @@ func _physics_process(delta):
 	velocity.y += (GRAVITY + BUOYANCY) * delta
 	velocity.y = clamp(velocity.y, -MAX_RISE_SPEED, MAX_RISE_SPEED)
 
-	var input_dir = Input.get_vector("left", "right", "forward", "back");
+	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward");
 	var dir = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized();
 	# handling 4 different possibilities:
 	# these can easily be tweaked to the requirements of specific games

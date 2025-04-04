@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx56uy8tyr7cb"]
+[gd_scene load_steps=2 format=3 uid="uid://cfuqq5uqhnlh7"]
 
-[ext_resource type="Texture2D" uid="uid://dp8onek2e4a38" path="res://bars.png" id="1_fmoey"]
+[ext_resource type="Texture2D" uid="uid://bfflwoq5yhj80" path="res://Ruth/bars.png" id="1_indu0"]
 
-[node name="Bars" type="Node2D"]
+[node name="Bars" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_fmoey")
+texture = ExtResource("1_indu0")

@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://cyeex4dbcs3cv"
+=======
+uid="uid://dmbyvij6joxyn"
+>>>>>>> f38fe288f115075956f4c61008868df21ed667b2
 path="res://.godot/imported/bossa-nova-synth.mp3-f65d089b4a7e78b8e12b626faf153bc7.mp3str"
 
 [deps]

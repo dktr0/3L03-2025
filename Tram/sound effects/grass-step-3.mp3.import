@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://c0dobr6xpjhm2"
+=======
+uid="uid://cpawakiwxupce"
+>>>>>>> f38fe288f115075956f4c61008868df21ed667b2
 path="res://.godot/imported/grass-step-3.mp3-ee3377a03ffc15b41b7fbcc1f602be22.mp3str"
 
 [deps]

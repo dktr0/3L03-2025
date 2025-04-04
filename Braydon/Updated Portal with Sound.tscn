@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2dw58ec0pi2h"]
+
+[ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="1_b1dxg"]
+[ext_resource type="AudioStream" uid="uid://cithrn2r6k2dr" path="res://Bihan/SoundEffects and Soundscape/TeleportSoundEffects.mp3" id="2_ak6n3"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Portal 1" parent="." instance=ExtResource("1_b1dxg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05539, 0, -0.886942)
+
+[node name="TeleportSoundEffects" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ak6n3")

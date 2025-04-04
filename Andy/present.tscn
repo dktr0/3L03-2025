@@ -1,0 +1,99 @@
+[gd_scene load_steps=17 format=3 uid="uid://ct5lals6x4ivt"]
+
+[ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_24r4l"]
+[ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_2drxg"]
+[ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="3_xpuvj"]
+[ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="4_28583"]
+[ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="5_stxqp"]
+[ext_resource type="PackedScene" uid="uid://c3glb2e2flfrj" path="res://Andy/Player/main_character.tscn" id="6_vh77i"]
+[ext_resource type="PackedScene" uid="uid://ctqo3g1pb73t3" path="res://Andy/free_camera_rig.tscn" id="7_fqoap"]
+[ext_resource type="PackedScene" uid="uid://dbhxcdh47t2s" path="res://Quinn/Dock Spiders/spider_1.tscn" id="12_la2c0"]
+[ext_resource type="PackedScene" uid="uid://csblovveijqrr" path="res://Andy/node_3d.tscn" id="13_d1wc3"]
+[ext_resource type="PackedScene" uid="uid://cgtq2fff325mx" path="res://Quinn/Dock Spiders/spider_2.tscn" id="13_wnfy0"]
+[ext_resource type="PackedScene" uid="uid://dxv1pswtk7jhx" path="res://Quinn/Dock Spiders/spider_3.tscn" id="14_0u25r"]
+[ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="15_kp4we"]
+[ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="16_g3u0y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ov3oa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iclnn"]
+albedo_color = Color(0.592157, 0.294118, 0.0901961, 1)
+
+[node name="Present" type="Node3D"]
+
+[node name="World" parent="." instance=ExtResource("1_24r4l")]
+
+[node name="Docks" type="Node" parent="."]
+
+[node name="MultipleLaneDock" parent="Docks" instance=ExtResource("2_2drxg")]
+transform = Transform3D(-4.80825e-09, 0, 0.101116, 0, 0.11, 0, -0.11, 0, -4.41992e-09, -27.9156, -22.4027, 23.5097)
+
+[node name="MultipleLaneDock2" parent="Docks" instance=ExtResource("2_2drxg")]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, -113.537, -22.2354, 48.3751)
+
+[node name="SingleLaneDock" parent="Docks" instance=ExtResource("3_xpuvj")]
+transform = Transform3D(-4.80825e-09, 0, -0.11, 0, 0.11, 0, 0.11, 0, -4.80825e-09, -223.036, -67.3299, 144.081)
+
+[node name="SingleLaneDock2" parent="Docks" instance=ExtResource("3_xpuvj")]
+transform = Transform3D(-0.11, 0, 9.6165e-09, 0, 0.11, 0, -9.6165e-09, 0, -0.11, -180.862, -63.0971, -58.1373)
+
+[node name="SingleLaneDock3" parent="Docks" instance=ExtResource("3_xpuvj")]
+transform = Transform3D(-0.11, 0, 9.6165e-09, 0, 0.11, 0, -9.6165e-09, 0, -0.11, -232.756, -63.0971, -58.1373)
+
+[node name="PlatformingGame" parent="." instance=ExtResource("4_28583")]
+transform = Transform3D(-1.41421, 0, -1.41421, 0, 2, 0, 1.41421, 0, -1.41421, 353.428, -7.53811, 231.181)
+
+[node name="PuzzleGame" parent="." instance=ExtResource("5_stxqp")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -327.887, -119.278, -181.481)
+
+[node name="Player" parent="." instance=ExtResource("6_vh77i")]
+transform = Transform3D(-1.99999, 0, 0.00488692, 0, 2, 0, -0.00488692, 0, -1.99999, 0, 3.51831, 15.689)
+
+[node name="FreeCameraRig" parent="Player" instance=ExtResource("7_fqoap")]
+
+[node name="deadgrass" type="Node" parent="."]
+
+[node name="deadtree" type="Node" parent="."]
+
+[node name="decorations" type="Node" parent="."]
+
+[node name="Spider1" parent="decorations" instance=ExtResource("12_la2c0")]
+transform = Transform3D(0.330707, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -89.3079, -2.2387, 7.44995)
+
+[node name="Spider2" parent="decorations" instance=ExtResource("13_wnfy0")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -87.2449, -4.77374, 56.1585)
+
+[node name="Spider4" parent="decorations" instance=ExtResource("13_wnfy0")]
+transform = Transform3D(7.45058e-09, -0.5, 2.98023e-08, -0.453102, 2.78906e-09, 0.21142, -0.21142, -2.98023e-08, -0.453102, -88.8634, -9.3298, 54.7389)
+
+[node name="Spider3" parent="decorations" instance=ExtResource("14_0u25r")]
+
+[node name="fish_shop_owner" parent="." instance=ExtResource("15_kp4we")]
+transform = Transform3D(-0.908676, 0, 0.417502, 0, 1, 0, -0.417502, 0, -0.908676, 39.0796, 1.41861, 8.30865)
+
+[node name="StaticBody3D" parent="." instance=ExtResource("16_g3u0y")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -60.1467, -8.35616, 185.194)
+
+[node name="StaticBody3D4" parent="." instance=ExtResource("16_g3u0y")]
+transform = Transform3D(5.06389, 0, 3.21823, 0, 6, 0, -3.21823, 0, 5.06389, 208.136, -8.35616, 166.104)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("16_g3u0y")]
+transform = Transform3D(4.23908, 0, 4.24619, 0, 6, 0, -4.24619, 0, 4.23908, 101.481, -8.35616, 93.4681)
+
+[node name="StaticBody3D3" parent="." instance=ExtResource("16_g3u0y")]
+transform = Transform3D(5.52483, -1.5033, -1.79341, 2.10113, 5.21111, 2.10465, 1.03029, -2.566, 5.32486, 97.2561, -8.35616, 93.4681)
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
+transform = Transform3D(-9.43409, 0, -28.7437, 0, 1, 0, 9.19349, 0, -29.496, 316.983, -7.69652, 193.099)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
+shape = SubResource("BoxShape3D_qt55g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5"]
+mesh = SubResource("BoxMesh_ov3oa")
+surface_material_override/0 = SubResource("StandardMaterial3D_iclnn")
+
+[node name="Node3D" parent="." instance=ExtResource("13_d1wc3")]
+transform = Transform3D(0.999785, 0, 0.0207505, 0, 1, 0, -0.0207505, 0, 0.999785, -164.579, -7.09781, 302.114)

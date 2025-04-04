@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdevl478c5iuu"]
+
+[ext_resource type="Script" path="res://Andy/amulet/amulet_ui.gd" id="1_dgdrm"]
+[ext_resource type="Texture2D" uid="uid://bjtheusp68bdv" path="res://Belinda/Amulet_2.png" id="2_pgjt2"]
+[ext_resource type="Texture2D" uid="uid://d0gmigf3pubck" path="res://Belinda/Amulet_3.png" id="3_kyrc2"]
+[ext_resource type="Texture2D" uid="uid://c2noj3t43ooqp" path="res://Belinda/Amulet_1.png" id="4_vp6mn"]
+
+[node name="AmuletUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dgdrm")
+shard1_texture = ExtResource("2_pgjt2")
+shard2_texture = ExtResource("3_kyrc2")
+shard3_texture = ExtResource("4_vp6mn")
+
+[node name="Shard1Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -51.0
+offset_right = -31.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Shard2Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -105.0
+offset_right = -38.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Shard3Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -157.0
+offset_right = -25.0
+offset_bottom = -103.0
+grow_horizontal = 0
+grow_vertical = 2
