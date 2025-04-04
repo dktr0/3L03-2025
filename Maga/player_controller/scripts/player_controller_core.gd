@@ -22,11 +22,11 @@ extends CharacterBody3D
 @export var target_group := "targetable" # Group name for objects that can be targeted
 
 @export_category("Physics Settings")
-@export var gravity := 9.8
-@export var jump_strength := 5.0
-@export var rotation_speed := 10.0 # Base speed for player rotation towards look direction
+@export var gravity := 19.6
+@export var jump_strength := 15.0 # Lowered from 20.0
+@export var rotation_speed := 7.0 # Base speed for player rotation towards look direction (Lowered from 10.0)
 @export var moving_rotation_multiplier := 1.2 # Multiplier applied to rotation speed when moving
-@export var air_control_factor := 0.7 # How much control the player has while airborne (0=none, 1=full)
+@export var air_control_factor := 0.4 # How much control the player has while airborne (Lowered from 0.7)
 @export var sideways_jump_hindrance := 0.2 # Reduces air control when moving sideways/backwards during jump (0=no hindrance, 1=full stop)
 
 @export_category("Jump Tuning")

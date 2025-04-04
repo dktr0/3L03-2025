@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bv3qmxe1ecc8y" path="res://Andy/amulet_ring2.tscn" id="4_vkhi1"]
 [ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="5_xemys"]
 [ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="7_41cqa"]
-[ext_resource type="AudioStream" uid="uid://c3tlvx8jlm073" path="res://Tram/sound effects/magical bell chime 2.mp3" id="8_jfi1w"]
+[ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="8_jfi1w"]
 [ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="8_xkfml"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_d7q54"]

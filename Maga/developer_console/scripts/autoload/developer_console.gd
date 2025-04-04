@@ -516,7 +516,7 @@ func _execute_command(command_name: String, args_string: String) -> void: # Chan
 	var provided_args: Array = []
 	var error_parsing_args = false
 	# Simple split by space - adjust if quotes needed
-	var raw_args = args_string.split(" ", false) if not args_string.is_empty() else [] 
+	var raw_args = args_string.split(" ", false) if not args_string.is_empty() else PackedStringArray() 
 
 	if raw_args.size() != expected_arg_types.size():
 		# Allow zero args if none expected
