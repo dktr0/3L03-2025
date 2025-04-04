@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd3at8iabuslj"]
+
+[ext_resource type="PackedScene" uid="uid://brbljls4h7yn8" path="res://Callum/ice_pillar.glb" id="1_ckq1t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_elqq5"]
+size = Vector3(2.20943, 9.28833, 2.00659)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3tq7i"]
+height = 0.918363
+radius = 1.17321
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_guaxh"]
+size = Vector3(1, 0.125122, 0.381775)
+
+[node name="ice_pillar" type="StaticBody3D"]
+
+[node name="ice_pillar_body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000570297, 5.15562, -0.0802002)
+shape = SubResource("BoxShape3D_elqq5")
+
+[node name="ice_pillar_base" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.230537, 0)
+shape = SubResource("CylinderShape3D_3tq7i")
+
+[node name="ice_pillar_foot_1" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.780289, 0, -0.62542, 0, 1, 0, 0.62542, 0, 0.780289, 1.12661, -0.176785, 1.07684)
+shape = SubResource("BoxShape3D_guaxh")
+
+[node name="ice_pillar_foot_2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.622337, 0, -0.782749, 0, 1, 0, 0.782749, 0, -0.622337, -1.15194, -0.176785, 1.16531)
+shape = SubResource("BoxShape3D_guaxh")
+
+[node name="ice_pillar_foot_3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.518997, 0, 0.854776, 0, 1, 0, -0.854776, 0, -0.518997, -1.09849, -0.176785, -1.33734)
+shape = SubResource("BoxShape3D_guaxh")
+
+[node name="ice_pillar_foot_4" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.623102, 0, 0.782141, 0, 1, 0, -0.782141, 0, 0.623102, 1.222, -0.215702, -1.25762)
+shape = SubResource("BoxShape3D_guaxh")
+
+[node name="ice_pillar" parent="." instance=ExtResource("1_ckq1t")]
