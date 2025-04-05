@@ -4,3 +4,4 @@
 
 [node name="OpeningMenuSound" type="AudioStreamPlayer"]
 stream = ExtResource("1_6k25r")
+autoplay = true

@@ -1,9 +1,9 @@
 [gd_scene load_steps=24 format=3 uid="uid://ibd80rq3l2u5"]
 
 [ext_resource type="Script" path="res://Andy/ui.gd" id="1_82klm"]
-[ext_resource type="Texture2D" uid="uid://3y7vlp5ha7a1" path="res://Andy/backgrounds/content page (1).png" id="2_r00vy"]
+[ext_resource type="Texture2D" uid="uid://3y7vlp5ha7a1" path="res://Zhu/zhu_title_page_assests/backgrounds/content page (1).png" id="2_r00vy"]
 [ext_resource type="Texture2D" uid="uid://dh4fpl8vorfgu" path="res://Zhu/something to use/资源 63.png" id="3_stitn"]
-[ext_resource type="Texture2D" uid="uid://c57wtsc2ohhq8" path="res://Andy/资源 65.png" id="4_fp02o"]
+[ext_resource type="Texture2D" uid="uid://c57wtsc2ohhq8" path="res://Zhu/zhu_title_page_assests/assests/资源 65.png" id="4_fp02o"]
 [ext_resource type="Texture2D" uid="uid://y2y4ss35xi2c" path="res://Zhu/something to use/资源 64.png" id="5_pa08g"]
 [ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="7_ilghq"]
 [ext_resource type="AudioStream" uid="uid://rdmwwbtnvxxs" path="res://Andy/3月29日.MP3" id="8_xkcnl"]
