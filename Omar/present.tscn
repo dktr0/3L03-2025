@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=75 format=4 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="5_eyu1o"]
 [ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="6_k0hcq"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Zhu/zhu_title_page_assests/assests/chest.tscn" id="7_lc440"]
-[ext_resource type="PackedScene" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
+[ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="8_b28uw"]
+[ext_resource type="PackedScene" uid="uid://cetv4q45see0s" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
+[ext_resource type="AudioStream" uid="uid://c2i2okl4khod3" path="res://Spencer/Ice and Glacier/Ice monster/ice monster without roar.mp3" id="9_g27jk"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="11_6vhei"]
 [ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="13_3jtso"]
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="13_d7obm"]
@@ -29,34 +31,31 @@
 [ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="22_tpijs"]
 [ext_resource type="Script" path="res://Omar/kill_zone.gd" id="23_7v35e"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="23_51q5n"]
-[ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="24_jgkje"]
 [ext_resource type="PackedScene" uid="uid://bvliaw7oqrkq0" path="res://Darius/Boat_Paddles.tscn" id="27_5h5rp"]
 [ext_resource type="Script" path="res://Omar/kill_zone_platformer.gd" id="27_tbh2r"]
 [ext_resource type="Script" path="res://Darius/boat_paddles.gd" id="28_ai6ff"]
-[ext_resource type="Script" path="res://Omar/sand_area.gd" id="30_05fr5"]
 [ext_resource type="AudioStream" uid="uid://dj0flvdbt82si" path="res://Spencer/General/FootstepDull/02.mp3" id="31_51xlb"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="32_3v2qo"]
 [ext_resource type="PackedScene" uid="uid://btj6i7h1cco8a" path="res://Maga/player_controller/scenes/player_trigger.tscn" id="32_qsmq8"]
 [ext_resource type="AudioStream" uid="uid://vex7tu3vi5qc" path="res://Tram/sound effects/Ocean Waves 1.mp3" id="32_upd76"]
 [ext_resource type="Script" path="res://Omar/seagulls.gd" id="34_agfna"]
+[ext_resource type="PackedScene" uid="uid://b0mpf88wqpx5u" path="res://Wren/coast_guard_station.tscn" id="35_1dy3d"]
 [ext_resource type="AudioStream" uid="uid://d1ub8tci5vmgc" path="res://Tram/sound effects/seagulls.mp3" id="35_cbgrm"]
 [ext_resource type="AudioStream" uid="uid://btftkfftud01b" path="res://Tram/sound effects/leaves rustling 2.mp3" id="37_yj8k3"]
 [ext_resource type="Script" path="res://Omar/wind.gd" id="40_ijixa"]
 [ext_resource type="PackedScene" uid="uid://btbfwfjoc6wqr" path="res://Chiara/broken_dock.tscn" id="41_m81b8"]
+[ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="41_spbdn"]
 [ext_resource type="Script" path="res://Omar/waves.gd" id="41_yeoeq"]
 [ext_resource type="PackedScene" uid="uid://bvdew8p0jq66c" path="res://BohanYuchi/helmet.glb" id="42_xspbn"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="43_71u0b"]
-[ext_resource type="AudioStream" uid="uid://bm4vkvlovejbx" path="res://Tram/music/bossa-nova-synth.mp3" id="48_n2nxe"]
+[ext_resource type="AudioStream" uid="uid://crrfaajqpfann" path="res://Bihan/SoundEffects and Soundscape/LoFiPresentMusic.mp3" id="49_tvd2p"]
+[ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="50_fu1qj"]
+[ext_resource type="AudioStream" uid="uid://b112mcgfgkici" path="res://Spencer/Ice and Glacier/Soundscape Glacier/Glacier soundscape.mp3" id="52_8wk0a"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_aolfg"]
-size = Vector3(13.3947, 1.56104, 14.007)
+[sub_resource type="BoxShape3D" id="BoxShape3D_dncvc"]
+size = Vector3(16.9939, 2.60687, 225.882)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7reoo"]
-size = Vector3(1, 0.873154, 0.987427)
-
-[sub_resource type="BoxMesh" id="BoxMesh_1q080"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pfey"]
+[sub_resource type="BoxMesh" id="BoxMesh_hs7d4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_futxm"]
 resource_name = "ice"
@@ -96,6 +95,20 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_isdtl")
+
+[sub_resource type="MultiMesh" id="MultiMesh_mtspv"]
+transform_format = 1
+instance_count = 15
+mesh = SubResource("ArrayMesh_0sco3")
+buffer = PackedFloat32Array(3.22362, 0, -1.76484, -75.7382, 0, 3.6751, 0, -5.56294, 1.76484, 0, 3.22362, -417.52, 2.04228, 0, 2.61407, 2.09125, 0, -3.31727, 0, -16.5296, 2.61407, 0, -2.04228, -623.435, -3.06221, 0, 2.45377, 2.19197, 0, 3.92404, 0, -5.56294, -2.45377, 0, -3.06221, -589.826, 1.10364, 0, 1.99226, -19.4671, 0, -2.27753, 0, -16.5296, 1.99226, 0, -1.10364, -445.164, 2.104, 0, -2.61622, -1.92104, 0, 3.35729, 0, -5.56294, 2.61622, 0, 2.104, -448.493, 0, 3.01916, 0, 43.2767, 1.71008, 0, 2.48816, -13.949, 2.48816, 0, -1.71008, -374.798, -3.41383, 0, -1.83815, -97.0392, 0, 3.87724, 0, -5.56294, 1.83815, 0, -3.41383, -377.125, -2.97004, 0, 1.60803, -28.8907, 0, 3.37742, 0, -5.56294, -1.60803, 0, -2.97004, -565.477, 1.96002, 0, -1.47634, 28.5278, 0, -2.45383, 0, -16.5296, -1.47634, 0, -1.96002, -499.243, -2.13303, 0, 1.3299, -44.8427, 0, -2.51365, 0, -16.5296, 1.3299, 0, 2.13303, -417.312, -2.3753, 0, -2.02264, -27.5379, 0, 3.11979, 0, -5.56294, 2.02264, 0, -2.3753, -448.704, 0.01599, 0, -3.94912, -23.5864, 0, 3.94915, 0, -5.56294, 3.94912, 0, 0.01599, -499.247, 0, -2.73298, 0, -109.351, -2.21802, 0, -1.59674, -12.3788, 1.59674, 0, -2.21802, -489.575, -1.26005, 0, -2.70343, -77.7517, 0, 2.98266, 0, -5.56294, 2.70343, 0, -1.26005, -626.658, -1.57973, 0, 2.98713, -41.6679, 0, 3.37912, 0, -5.56294, -2.98713, 0, -1.57973, -542.775)
+
+[sub_resource type="BoxMesh" id="BoxMesh_drou1"]
+
+[sub_resource type="MultiMesh" id="MultiMesh_0bqul"]
+transform_format = 1
+instance_count = 15
+mesh = SubResource("ArrayMesh_0sco3")
+buffer = PackedFloat32Array(1.57739, 0, 2.21203, 369.89, 0, -2.71685, 0, -12.2366, 2.21203, 0, -1.57739, -461.406, -2.79364, 0, -0.877134, 372.811, 0, 2.92811, 0, -5.76578, 0.877134, 0, -2.79364, -333.699, -2.55336, 0, 2.38715, 330.952, 0, 3.49545, 0, -5.76578, -2.38715, 0, -2.55336, -466.927, -3.61577, 0, -1.46129, 287.759, 0, 3.89989, 0, -5.76578, 1.46129, 0, -3.61577, -370.114, 0.234426, 0, 3.52072, 342.922, 0, -3.52852, 0, -12.2366, 3.52072, 0, -0.234426, -395.941, -1.03352, 0, 1.81711, 343.468, 0, 2.09047, 0, -5.76578, -1.81711, 0, -1.03352, -427.732, -0.31541, 0, 2.90379, 326.137, 0, 2.92087, 0, -5.76578, -2.90379, 0, -0.31541, -412.089, 1.93832, 0, 1.24776, 355.963, 0, -2.30521, 0, -12.2366, 1.24776, 0, -1.93832, -445.188, 0.588464, 2.03493, -0.651809, 400.071, -1.64507, 0, -1.4852, -10.8307, -1.36365, 0.878148, 1.51043, -394.295, -2.84299, 0, -1.05295, 265.352, 0, 3.03172, 0, -5.76578, 1.05295, 0, -2.84299, -327.857, -1.24864, 0, 2.21364, 277.694, 0, -2.54152, 0, -12.2366, 2.21364, 0, 1.24864, -357.608, -0.926816, 0, -3.28805, 394.821, 0, 3.41618, 0, -5.76578, 3.28805, 0, -0.926816, -437.103, -2.50493, 0, 2.80498, 322.391, 0, 3.76066, 0, -5.76578, -2.80498, 0, -2.50493, -460.994, 3.62799, 0, -0.659893, 418.585, 0, -3.68752, 0, -12.2366, -0.659893, 0, -3.62799, -437.45, -2.52708, 0, -2.19867, 386.13, 0, 3.34967, 0, -5.76578, 2.19867, 0, -2.52708, -401.237)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt55g"]
 
@@ -138,19 +151,20 @@ size = Vector3(319.015, 75.1254, 439.936)
 [sub_resource type="BoxShape3D" id="BoxShape3D_i5xlb"]
 size = Vector3(1.22766, 1.04834, 1.01105)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8kw5l"]
+size = Vector3(8.48912, 5.17664, 4.11774)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7ydq"]
 size = Vector3(640.669, 0.566574, 179.996)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3bf4o"]
 radius = 48.4889
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8kw5l"]
-size = Vector3(8.48912, 5.17664, 4.11774)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8i671"]
-size = Vector3(6.09671, 6.40433, 10.2422)
-
 [node name="Present" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("32_3v2qo")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.2397, 3.37917, 14.6729)
+collision_layer = 3
 
 [node name="World" parent="." instance=ExtResource("1_pht0b")]
 
@@ -160,122 +174,64 @@ player_scene = ExtResource("32_3v2qo")
 [node name="Tasks" type="Node" parent="."]
 
 [node name="PlatformingGame" parent="Tasks" instance=ExtResource("5_eyu1o")]
-transform = Transform3D(-3.53553, 0, -3.53553, 0, 5, 0, 3.53553, 0, -3.53553, 391.669, -7.53811, 272.302)
+transform = Transform3D(-2.82843, 0, -2.82843, 0, 4, 0, 2.82843, 0, -2.82843, 391.669, -7.53811, 272.302)
 
 [node name="PuzzleGame" parent="Tasks" instance=ExtResource("6_k0hcq")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -568.188, -119.278, -283.719)
 
 [node name="Ice_Arena_Present" parent="Tasks" instance=ExtResource("18_2sia6")]
-transform = Transform3D(2.82275, 0, -1.01592, 0, 3, 0, 1.01592, 0, 2.82275, 146.66, -11.4512, -445.597)
+transform = Transform3D(2.82275, 0, -1.01592, 0, 3, 0, 1.01592, 0, 2.82275, 146.66, -11.4512, -241.748)
 
 [node name="icicleclump1_nonglow3" parent="Tasks/Ice_Arena_Present" instance=ExtResource("17_f81mf")]
-transform = Transform3D(-1.10871, -7.22237, -11.5838, 14.9399, -0.580475, -0.858665, -0.0108145, -61.4685, 1.36917, 17.6547, 0.371141, 51.5496)
+transform = Transform3D(-1.10871, -7.22237, -11.5838, 14.9399, -0.580475, -0.858665, -0.0108145, -61.4685, 1.36917, 18.4299, -0.329162, 58.9187)
 
-[node name="icicleclump1_nonglow4" parent="Tasks/Ice_Arena_Present" instance=ExtResource("17_f81mf")]
-transform = Transform3D(1.11195, 15.1874, 11.2544, 15.9645, -1.05684, -0.783932, -0.000257254, 60.0924, -2.85815, 23.4321, -0.0654473, 98.3943)
+[node name="IceBridgeCollisionShapes" type="Node" parent="Tasks/Ice_Arena_Present"]
 
-[node name="icicleclump1_nonglow5" parent="Tasks/Ice_Arena_Present" instance=ExtResource("17_f81mf")]
-transform = Transform3D(-0.570342, -7.6066, -10.912, 9.7396, 0.48126, -0.723554, 0.299884, -30.097, 2.74627, 32.2001, 0.446044, 126.632)
+[node name="StaticBody3D" type="StaticBody3D" parent="Tasks/Ice_Arena_Present/IceBridgeCollisionShapes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.025, -8.60315, 0)
 
-[node name="icicleclump1_nonglow6" parent="Tasks/Ice_Arena_Present" instance=ExtResource("17_f81mf")]
-transform = Transform3D(-0.570342, -7.6066, -10.912, 9.7396, 0.48126, -0.723554, 0.299884, -30.097, 2.74627, 35.4459, 0.446044, 135.65)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/IceBridgeCollisionShapes/StaticBody3D"]
+transform = Transform3D(0.962075, 0, -0.272784, 0, 1, 0, 0.272784, 0, 0.962075, 20.5323, 0.803436, -92.7641)
+shape = SubResource("BoxShape3D_dncvc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
+[node name="Enemy" parent="Tasks/Ice_Arena_Present" instance=ExtResource("8_b28uw")]
+transform = Transform3D(0.920981, 0, -0.389606, 0, 1, 0, 0.389606, 0, 0.920981, 23.4399, 2.13573, -14.8744)
+is_patrol = true
+player_path = NodePath("../../../Player")
+patrol_point_a = NodePath("../point A mid")
+patrol_point_b = NodePath("../point B mid")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8106, 5.23058, -17.922)
-shape = SubResource("BoxShape3D_aolfg")
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Tasks/Ice_Arena_Present/Enemy"]
+stream = ExtResource("9_g27jk")
+volume_db = 16.0
+unit_size = 3.0
+autoplay = true
+parameters/looping = true
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3085, 0.0782409, 134.237)
+[node name="point B mid" type="Node3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6644, 2.1903, -4.75653)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D2"]
-transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
-shape = SubResource("BoxShape3D_7reoo")
+[node name="point A mid" type="Node3D" parent="Tasks/Ice_Arena_Present"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D2"]
-transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
-visible = false
-mesh = SubResource("BoxMesh_1q080")
-surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
+[node name="Enemy2" parent="Tasks/Ice_Arena_Present" instance=ExtResource("8_b28uw")]
+transform = Transform3D(-0.0310795, 0, -0.999516, 0, 1, 0, 0.999516, 0, -0.0310795, 27.0764, 2.00614, 4.23811)
+is_patrol = true
+player_path = NodePath("../../../Player")
+patrol_point_a = NodePath("../Point A Close")
+patrol_point_b = NodePath("../Point B Close")
 
-[node name="StaticBody3D9" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4801, -0.1094, 140.271)
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Tasks/Ice_Arena_Present/Enemy2"]
+stream = ExtResource("9_g27jk")
+volume_db = 16.0
+unit_size = 3.0
+autoplay = true
+parameters/looping = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D9"]
-transform = Transform3D(4.10465, 0.00127188, 5.78164, -0.00100528, 1.618, -0.0555109, -1.01702, 0.00353393, 23.3346, 1.1191, 0.638476, -0.93779)
-shape = SubResource("BoxShape3D_7reoo")
+[node name="Point A Close" type="Node3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8955, 2.15042, 4.85435)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D9"]
-transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
-visible = false
-mesh = SubResource("BoxMesh_1q080")
-surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.328, 0.0782409, 115.229)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D3"]
-transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
-shape = SubResource("BoxShape3D_7reoo")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D3"]
-transform = Transform3D(4.12309, 0, 5.34081, 0, 1.618, 0, -0.939469, 0, 23.4395, 1.15545, 0.870759, -0.7911)
-visible = false
-mesh = SubResource("BoxMesh_1q080")
-surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
-transform = Transform3D(0.999567, 0, 0.029422, 0, 1, 0, -0.029422, 0, 0.999567, 22.6577, 0.144223, 95.3506)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D4"]
-transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 1.06447, -0.791103)
-shape = SubResource("BoxShape3D_7reoo")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D4"]
-transform = Transform3D(4.12309, 0, 5.34081, 0, 1.618, 0, -0.939469, 0, 23.4395, 1.15545, 0.870759, -0.7911)
-visible = false
-mesh = SubResource("BoxMesh_1q080")
-surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
-transform = Transform3D(0.997867, 0, -0.0652638, 0, 1, 0, 0.0652638, 0, 0.997867, 17.7868, 0.144223, 72.6419)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D5"]
-transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3346, 1.15545, 1.07348, -0.791092)
-shape = SubResource("BoxShape3D_7reoo")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D5"]
-transform = Transform3D(4.12309, 0, 5.34081, 0, 1.618, 0, -0.939469, 0, 23.4395, 1.15545, 0.870759, -0.7911)
-visible = false
-mesh = SubResource("BoxMesh_1q080")
-surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
-
-[node name="StaticBody3D6" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
-transform = Transform3D(0.993985, 0, -0.109509, 0, 1, 0, 0.109509, 0, 0.993985, 14.6859, 0.144223, 51.0367)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D6"]
-transform = Transform3D(4.10465, 0, 5.78166, 0, 1.618, 0, -1.01702, 0, 23.3347, 1.15545, 0.870758, -0.791094)
-shape = SubResource("BoxShape3D_7reoo")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D6"]
-transform = Transform3D(4.12309, 0, 5.34081, 0, 1.618, 0, -0.939469, 0, 23.4395, 1.15545, 0.870759, -0.7911)
-visible = false
-mesh = SubResource("BoxMesh_1q080")
-surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
-
-[node name="StaticBody3D8" type="StaticBody3D" parent="Tasks/Ice_Arena_Present"]
-transform = Transform3D(0.989267, 0, -0.146118, 0, 1, 0, 0.146118, 0, 0.989267, 12.6247, 0.144223, 25.3411)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/StaticBody3D8"]
-transform = Transform3D(4.10452, -0.0172642, 5.77884, 0.0235553, 1.61758, 0.526117, -1.01725, -0.0322029, 23.3294, 1.55831, 0.634272, 1.28633)
-shape = SubResource("BoxShape3D_7reoo")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tasks/Ice_Arena_Present/StaticBody3D8"]
-transform = Transform3D(4.12295, -0.0172641, 5.33801, 0.0252954, 1.61758, 0.5235, -0.939719, -0.0322029, 23.4343, 1.55831, 0.634272, 1.28633)
-visible = false
-mesh = SubResource("BoxMesh_1q080")
-surface_material_override/0 = SubResource("StandardMaterial3D_3pfey")
+[node name="Point B Close" type="Node3D" parent="Tasks/Ice_Arena_Present"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.986, 2.15, 6.165)
 
 [node name="Docks" type="Node" parent="."]
 
@@ -309,34 +265,29 @@ transform = Transform3D(7.45058e-09, -0.5, 2.98023e-08, -0.453102, 2.78906e-09, 
 
 [node name="penguins" type="Node" parent="decorations"]
 
-[node name="Gem_010" type="MeshInstance3D" parent="decorations/penguins"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.3167, -391.979)
-mesh = SubResource("ArrayMesh_0sco3")
-skeleton = NodePath("")
-
 [node name="Ice_Platform" parent="decorations/penguins" instance=ExtResource("13_d7obm")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 78.9388, -9.21486, -442.498)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 78.9388, -9.21486, -273.462)
 
 [node name="Ice_Platform2" parent="decorations/penguins" instance=ExtResource("13_d7obm")]
-transform = Transform3D(4.56985, 0, 1.21734, 0, 3, 0, -2.0289, 0, 2.74191, 100.729, -4.65016, -506.802)
+transform = Transform3D(4.56985, 0, 1.21734, 0, 3, 0, -2.0289, 0, 2.74191, 100.729, -4.65016, -337.766)
 
 [node name="Penguin" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
-transform = Transform3D(4.76356, 0, 3.64808, 0, 6, 0, -3.64808, 0, 4.76356, 72.9014, -4.42815, -444.757)
+transform = Transform3D(4.76356, 0, 3.64808, 0, 6, 0, -3.64808, 0, 4.76356, 72.9014, -5.08009, -275.721)
 
 [node name="Penguin2" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
-transform = Transform3D(4.23413, 0, -2.65936, 0, 5, 0, 2.65936, 0, 4.23413, 76.4305, -4.42815, -443.231)
+transform = Transform3D(4.23413, 0, -2.65936, 0, 5, 0, 2.65936, 0, 4.23413, 76.4305, -5.16041, -274.195)
 
 [node name="Penguin3" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
-transform = Transform3D(4.76356, 0, 3.64808, 0, 6, 0, -3.64808, 0, 4.76356, 82.0973, 1.54044, -501.743)
+transform = Transform3D(4.76356, 0, 3.64808, 0, 6, 0, -3.64808, 0, 4.76356, 82.0973, 1.54044, -332.707)
 
 [node name="Penguin4" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
-transform = Transform3D(4.23413, 0, -2.65936, 0, 5, 0, 2.65936, 0, 4.23413, 85.6264, 1.54044, -500.216)
+transform = Transform3D(4.23413, 0, -2.65936, 0, 5, 0, 2.65936, 0, 4.23413, 85.6264, 1.54044, -331.18)
 
 [node name="Penguin5" parent="decorations/penguins" instance=ExtResource("14_2d3a0")]
-transform = Transform3D(4.74106, 0, 1.58818, 0, 5, 0, -1.58818, 0, 4.74106, 92.874, 1.54044, -490.12)
+transform = Transform3D(4.74106, 0, 1.58818, 0, 5, 0, -1.58818, 0, 4.74106, 92.874, 1.54044, -321.084)
 
 [node name="penguin" parent="decorations/penguins" instance=ExtResource("15_uec0a")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 75.9718, -4.22641, -433.465)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 75.9718, -4.22641, -264.903)
 
 [node name="Skeleton3D" parent="decorations/penguins/penguin/Armature" index="0"]
 bones/6/rotation = Quaternion(0.0562544, 0.275456, 0.100822, 0.954356)
@@ -344,8 +295,29 @@ bones/9/rotation = Quaternion(0.735101, 0.118741, 0.650361, -0.150195)
 bones/12/rotation = Quaternion(-0.738376, 0.121789, 0.645078, 0.154414)
 bones/15/rotation = Quaternion(-0.000273919, -0.0136374, 0.999706, -0.0200464)
 
+[node name="Penguin" parent="decorations/penguins/penguin/Armature/Skeleton3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.293654, 0)
+
 [node name="AnimationPlayer" parent="decorations/penguins/penguin" index="2"]
 autoplay = "Idle"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="decorations/penguins"]
+transform = Transform3D(152.628, 0, 0, 0, 10.9666, 0, 0, 0, 301.498, -33.037, -11.0462, -322.124)
+visible = false
+mesh = SubResource("BoxMesh_hs7d4")
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="decorations/penguins"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 187.003)
+multimesh = SubResource("MultiMesh_mtspv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="decorations/penguins"]
+transform = Transform3D(114.856, 0, -75.6025, 0, 6.47084, 0, 49.5647, 0, 175.193, 333.64, -9.0012, -211.211)
+visible = false
+mesh = SubResource("BoxMesh_drou1")
+
+[node name="MultiMeshInstance3D2" type="MultiMeshInstance3D" parent="decorations/penguins"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 187.003)
+multimesh = SubResource("MultiMesh_0bqul")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="."]
 transform = Transform3D(-9.43409, 0, -28.7437, 0, 1, 0, 9.19349, 0, -29.496, 316.983, -7.69652, 193.099)
@@ -582,6 +554,7 @@ transform = Transform3D(-34.8592, 0, -26.2821, 0, 50, 0, 35.3728, 0, -25.9005, 4
 
 [node name="Kill Zone" type="Area3D" parent="killzone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.555, -20.4196, -28.9995)
+collision_mask = 2
 script = ExtResource("23_7v35e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="killzone/Kill Zone"]
@@ -590,6 +563,7 @@ shape = SubResource("BoxShape3D_dlss7")
 
 [node name="Kill Zone Platformer" type="Area3D" parent="killzone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 344.037, -22.6889, 116.212)
+collision_mask = 2
 script = ExtResource("27_tbh2r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="killzone/Kill Zone Platformer"]
@@ -597,10 +571,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7314, -35.7923, 149.612)
 shape = SubResource("BoxShape3D_3ss6x")
 
 [node name="Node3D" parent="." instance=ExtResource("27_5h5rp")]
-transform = Transform3D(-6.68388, 0, -8.73646, 0, 11, 0, 8.73646, 0, -6.68388, -186.523, -9.734, -35.166)
+transform = Transform3D(-1.9502, 0, -10.8257, 0, 11, 0, 10.8257, 0, -1.9502, -186.523, -8.51037, -35.166)
 script = ExtResource("28_ai6ff")
-point_a = Vector3(-186.523, -9.734, -35.166)
-point_b = Vector3(-461.819, -9.734, -227.263)
+point_a = Vector3(-186.523, -8.51, -35.166)
+point_b = Vector3(-384.544, -8.51, -58.952)
 
 [node name="Area3D" type="Area3D" parent="Node3D"]
 
@@ -615,47 +589,6 @@ transform = Transform3D(-6.22145, 0, -9.07158, 0, 11, 0, 9.07158, 0, -6.22145, -
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 32.946, 12.9266, 14.3617)
 pixel_size = 0.05
 text = "Press 'Enter' to Interact"
-
-[node name="SandArea" type="Area3D" parent="." node_paths=PackedStringArray("sand_audio", "player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1572, -7.09409, 75.9445)
-script = ExtResource("30_05fr5")
-sand_audio = NodePath("AudioStreamPlayer3D")
-player = NodePath("../Player")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SandArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8545, -0.216713, 31.1172)
-shape = SubResource("BoxShape3D_h7ydq")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SandArea"]
-stream = ExtResource("31_51xlb")
-attenuation_model = 3
-volume_db = 53.333
-
-[node name="Seagulls" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio", "player")]
-transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, 132.462, 16.4945, 109.16)
-script = ExtResource("34_agfna")
-seagulls_audio = NodePath("Seagulls")
-player = NodePath("../Player")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Seagulls"]
-shape = SubResource("SphereShape3D_3bf4o")
-
-[node name="Seagulls" type="AudioStreamPlayer3D" parent="Seagulls"]
-stream = ExtResource("35_cbgrm")
-volume_db = 80.0
-
-[node name="Seagulls2" type="Area3D" parent="." node_paths=PackedStringArray("seagulls_audio", "player")]
-transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, -106.675, 16.4945, 138.662)
-script = ExtResource("34_agfna")
-seagulls_audio = NodePath("Seagulls")
-player = NodePath("../Player")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Seagulls2"]
-shape = SubResource("SphereShape3D_3bf4o")
-
-[node name="Seagulls" type="AudioStreamPlayer3D" parent="Seagulls2"]
-stream = ExtResource("35_cbgrm")
-volume_db = 80.0
 
 [node name="lighthouse area" type="Node" parent="."]
 
@@ -682,23 +615,89 @@ transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.
 [node name="Present_light_house" parent="lighthouse area" instance=ExtResource("16_28bgx")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.62613, 3.22927, -29.9847)
 
-[node name="coastguardstation" parent="lighthouse area" instance=ExtResource("24_jgkje")]
-transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -41.5846, 1.26531, -28.0052)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="lighthouse area/coastguardstation"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04119, 2.70216, 0.0107441)
-shape = SubResource("BoxShape3D_8i671")
+[node name="CoastGuardStation" parent="lighthouse area" instance=ExtResource("35_1dy3d")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -46.7642, 1.61392, -21.9288)
 
 [node name="Chest" parent="." instance=ExtResource("7_lc440")]
-transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 171.949, 6.51752, -485.5)
+transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 171.949, 6.51752, -280.141)
 fragment_scene = ExtResource("8_fio87")
 
-[node name="Player" parent="." instance=ExtResource("32_3v2qo")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 9.0085, 1.87748, 31.8683)
+[node name="Control" parent="." instance=ExtResource("41_spbdn")]
 
-[node name="waves" type="Node" parent="."]
+[node name="broken_dock" parent="." instance=ExtResource("41_m81b8")]
+transform = Transform3D(-0.267625, 0, 0.963523, 0, 1, 0, -0.963523, 0, -0.267625, -488.662, -20.0198, -115.881)
 
-[node name="Waves" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+[node name="broken_dock2" parent="." instance=ExtResource("41_m81b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -473.771, -20.0198, -150.438)
+
+[node name="broken_dock3" parent="." instance=ExtResource("41_m81b8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -429.88, -20.0198, -120.145)
+
+[node name="broken_dock4" parent="." instance=ExtResource("41_m81b8")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -459.33, -20.0198, -67.0588)
+
+[node name="helmet" parent="." instance=ExtResource("42_xspbn")]
+transform = Transform3D(0.208314, -0.958794, 1.74279, -0.15863, 1.73873, 0.975523, -1.98279, -0.239837, 0.105054, -432.031, 0.0391369, -66.3908)
+
+[node name="WaterRock" parent="." instance=ExtResource("43_71u0b")]
+transform = Transform3D(0.643135, -0.765753, 0, 0.479553, 0.402763, 0.779622, -0.596998, -0.501402, 0.62625, -435.356, -1.06553, -68.0888)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("49_tvd2p")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[node name="Portal 1" parent="." instance=ExtResource("50_fu1qj")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.1896, 30.1687)
+player_path = NodePath("../Player")
+teleport_method = 1
+target_scene_path = "res://Sandhya/past.tscn"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="SandArea" type="Area3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.1572, -7.09409, 75.9445)
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sounds/SandArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8545, -0.216713, 31.1172)
+shape = SubResource("BoxShape3D_h7ydq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sounds/SandArea"]
+stream = ExtResource("31_51xlb")
+attenuation_model = 3
+volume_db = 53.333
+
+[node name="Seagulls" type="Area3D" parent="Sounds" node_paths=PackedStringArray("seagulls_audio", "player")]
+transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, 132.462, 16.4945, 109.16)
+script = ExtResource("34_agfna")
+seagulls_audio = NodePath("Seagulls")
+player = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sounds/Seagulls"]
+shape = SubResource("SphereShape3D_3bf4o")
+
+[node name="Seagulls" type="AudioStreamPlayer3D" parent="Sounds/Seagulls"]
+stream = ExtResource("35_cbgrm")
+volume_db = 80.0
+
+[node name="Seagulls2" type="Area3D" parent="Sounds" node_paths=PackedStringArray("seagulls_audio", "player")]
+transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, -106.675, 16.4945, 138.662)
+script = ExtResource("34_agfna")
+seagulls_audio = NodePath("Seagulls")
+player = NodePath("../../Player")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sounds/Seagulls2"]
+shape = SubResource("SphereShape3D_3bf4o")
+
+[node name="Seagulls" type="AudioStreamPlayer3D" parent="Sounds/Seagulls2"]
+stream = ExtResource("35_cbgrm")
+volume_db = 80.0
+
+[node name="waves" type="Node" parent="Sounds"]
+
+[node name="Waves" type="AudioStreamPlayer3D" parent="Sounds/waves" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.908, -2.63886, 1.82494)
 stream = ExtResource("32_upd76")
 volume_db = 4.0
@@ -706,74 +705,74 @@ unit_size = 1.0
 max_distance = 500.0
 parameters/looping = true
 script = ExtResource("41_yeoeq")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Waves8" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+[node name="Waves8" type="AudioStreamPlayer3D" parent="Sounds/waves" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.908, -2.63886, -231.235)
 stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
 script = ExtResource("41_yeoeq")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Waves3" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+[node name="Waves3" type="AudioStreamPlayer3D" parent="Sounds/waves" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0185, -2.63886, -33.2891)
 stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
 script = ExtResource("41_yeoeq")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Waves4" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+[node name="Waves4" type="AudioStreamPlayer3D" parent="Sounds/waves" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200.754, -2.63886, -33.2891)
 stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
 script = ExtResource("41_yeoeq")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Waves5" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+[node name="Waves5" type="AudioStreamPlayer3D" parent="Sounds/waves" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -351.795, -2.63886, -33.2891)
 stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
 script = ExtResource("41_yeoeq")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Waves6" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+[node name="Waves6" type="AudioStreamPlayer3D" parent="Sounds/waves" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -351.795, -2.63886, 56.7182)
 stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
 script = ExtResource("41_yeoeq")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Waves7" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+[node name="Waves7" type="AudioStreamPlayer3D" parent="Sounds/waves" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -351.795, -2.63886, 145.132)
 stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
 script = ExtResource("41_yeoeq")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Waves2" type="AudioStreamPlayer3D" parent="waves" node_paths=PackedStringArray("player")]
+[node name="Waves2" type="AudioStreamPlayer3D" parent="Sounds/waves" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.694, -2.63886, -33.2891)
 stream = ExtResource("32_upd76")
 volume_db = 4.0
 unit_size = 1.0
 max_distance = 479.13
 script = ExtResource("41_yeoeq")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="wind" type="Node" parent="."]
+[node name="wind" type="Node" parent="Sounds"]
 
-[node name="Wind" type="AudioStreamPlayer3D" parent="wind" node_paths=PackedStringArray("player")]
+[node name="Wind" type="AudioStreamPlayer3D" parent="Sounds/wind" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.958, 0, 190.559)
 stream = ExtResource("37_yj8k3")
 volume_db = 10.0
@@ -781,68 +780,49 @@ autoplay = true
 max_distance = 470.0
 parameters/looping = true
 script = ExtResource("40_ijixa")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Wind2" type="AudioStreamPlayer3D" parent="wind" node_paths=PackedStringArray("player")]
+[node name="Wind2" type="AudioStreamPlayer3D" parent="Sounds/wind" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.3049, 0, 190.559)
 stream = ExtResource("37_yj8k3")
 volume_db = 10.0
 autoplay = true
 parameters/looping = true
 script = ExtResource("40_ijixa")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Wind3" type="AudioStreamPlayer3D" parent="wind" node_paths=PackedStringArray("player")]
+[node name="Wind3" type="AudioStreamPlayer3D" parent="Sounds/wind" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.2465, 0, 190.559)
 stream = ExtResource("37_yj8k3")
 volume_db = 10.0
 autoplay = true
 parameters/looping = true
 script = ExtResource("40_ijixa")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="Wind4" type="AudioStreamPlayer3D" parent="wind" node_paths=PackedStringArray("player")]
+[node name="Wind4" type="AudioStreamPlayer3D" parent="Sounds/wind" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -183.155, 0, 190.559)
 stream = ExtResource("37_yj8k3")
 volume_db = 10.0
 autoplay = true
 parameters/looping = true
 script = ExtResource("40_ijixa")
-player = NodePath("../../Player")
+player = NodePath("../../../Player")
 
-[node name="broken_dock" parent="." instance=ExtResource("41_m81b8")]
-transform = Transform3D(-0.267625, 0, 0.963523, 0, 1, 0, -0.963523, 0, -0.267625, -565.377, -20.0198, -275.602)
-
-[node name="broken_dock2" parent="." instance=ExtResource("41_m81b8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -550.486, -20.0198, -310.159)
-
-[node name="broken_dock3" parent="." instance=ExtResource("41_m81b8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -506.595, -20.0198, -279.866)
-
-[node name="broken_dock4" parent="." instance=ExtResource("41_m81b8")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -536.045, -20.0198, -226.78)
-
-[node name="helmet" parent="." instance=ExtResource("42_xspbn")]
-transform = Transform3D(0.208314, -0.958794, 1.74279, -0.15863, 1.73873, 0.975523, -1.98279, -0.239837, 0.105054, -508.746, 0.0391369, -226.112)
-
-[node name="WaterRock" parent="." instance=ExtResource("43_71u0b")]
-transform = Transform3D(0.643135, -0.765753, 0, 0.479553, 0.402763, 0.779622, -0.596998, -0.501402, 0.62625, -512.071, -1.06553, -227.81)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("48_n2nxe")
-volume_db = -10.0
-autoplay = true
-parameters/looping = true
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 182.831, 0, -229.136)
+stream = ExtResource("52_8wk0a")
+volume_db = 12.19
 
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer" to="killzone/Kill Zone Platformer" method="_on_body_entered"]
 [connection signal="body_entered" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="SandArea" to="SandArea" method="_on_body_entered"]
-[connection signal="body_exited" from="SandArea" to="SandArea" method="_on_body_exited"]
-[connection signal="body_entered" from="Seagulls" to="Seagulls" method="_on_body_entered"]
-[connection signal="body_exited" from="Seagulls" to="Seagulls" method="_on_body_exited"]
-[connection signal="body_entered" from="Seagulls2" to="Seagulls2" method="_on_body_entered"]
-[connection signal="body_exited" from="Seagulls2" to="Seagulls2" method="_on_body_exited"]
+[connection signal="body_entered" from="Sounds/SandArea" to="Sounds/SandArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Sounds/SandArea" to="Sounds/SandArea" method="_on_body_exited"]
+[connection signal="body_entered" from="Sounds/Seagulls" to="Sounds/Seagulls" method="_on_body_entered"]
+[connection signal="body_exited" from="Sounds/Seagulls" to="Sounds/Seagulls" method="_on_body_exited"]
+[connection signal="body_entered" from="Sounds/Seagulls2" to="Sounds/Seagulls2" method="_on_body_entered"]
+[connection signal="body_exited" from="Sounds/Seagulls2" to="Sounds/Seagulls2" method="_on_body_exited"]
 
 [editable path="decorations/penguins/penguin"]

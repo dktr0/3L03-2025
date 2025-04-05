@@ -305,8 +305,8 @@ func _die():
 # ========================= 动画辅助 =========================
 
 func _play_walk_animation():
-	if anim_player and anim_player.current_animation != "ArmatureAction":
-		anim_player.play("ArmatureAction")
+	if anim_player and anim_player.current_animation != "walk":
+		anim_player.play("walk")
 
 func _stop_animation():
 	if anim_player:
