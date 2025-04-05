@@ -1,7 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://brx3ypw5mosbc"]
 
-[ext_resource type="AudioStream" uid="uid://cjtexvvp6o8ah" path="res://Tram/music/positive-future-loop.mp3" id="1_hqwr5"]
+[ext_resource type="AudioStream" uid="uid://ph0cl0jk740l" path="res://Tram/music/positive-future-loop.mp3" id="1_hqwr5"]
 
 [node name="Positivefutureloop" type="AudioStreamPlayer"]
 stream = ExtResource("1_hqwr5")
+autoplay = true
 parameters/looping = true

@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dffp8drh4rhbm"]
 
-[ext_resource type="AudioStream" uid="uid://dtwoexag8utn5" path="res://Tram/sound effects/Ocean Waves 2.mp3" id="1_3qwfo"]
+[ext_resource type="AudioStream" uid="uid://blx0uqvhivuds" path="res://Tram/sound effects/Ocean Waves 2.mp3" id="1_3qwfo"]
 
 [node name="WaveSound3d2" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_3qwfo")
+autoplay = true
