@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://co0ky7kry764f"]
+[gd_scene load_steps=15 format=3 uid="uid://co0ky7kry764f"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_atq23"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="2_dci5a"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bov4hwigpqpdb" path="res://Sandhya/deadtrees.tscn" id="11_wftq0"]
 [ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="12_8h434"]
 [ext_resource type="PackedScene" uid="uid://dgscxkjb38rls" path="res://Sandhya/healthytrees.tscn" id="12_r3jq7"]
+[ext_resource type="PackedScene" uid="uid://c8jckkvpjip2f" path="res://Braydon/Updated Portal with Sound.tscn" id="13_v61rk"]
+[ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="14_h1q43"]
 
 [node name="past" type="Node3D"]
 
@@ -105,3 +107,8 @@ transform = Transform3D(0.0189191, 0, 1.99991, 0, 2, 0, -1.99991, 0, 0.0189191, 
 
 [node name="Player" parent="." instance=ExtResource("12_8h434")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 5.40922, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("13_v61rk")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 20.6874, 33.2035, 153.303)
+
+[node name="Goodsky" parent="." instance=ExtResource("14_h1q43")]
