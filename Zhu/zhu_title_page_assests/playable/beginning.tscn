@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://bkin0g8d1ylbb"]
 
-[ext_resource type="Texture2D" uid="uid://df8rytnkxhlci" path="res://Nan/Badsky.jpg" id="2_kij1i"]
+[ext_resource type="Texture2D" uid="uid://ru7du4044vdv" path="res://Nan/Badsky.jpg" id="2_kij1i"]
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="3_vfc3k"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="4_ceyov"]
 [ext_resource type="PackedScene" path="res://DeadLargeSeaweed.tscn" id="5_xe756"]
@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dj0ikx20ebw7a" path="res://Wilson/fire_smoke.tscn" id="22_2kwsw"]
 [ext_resource type="PackedScene" uid="uid://bt0oah83alnvb" path="res://Wilson/vfx_smoke.tscn" id="23_og3xp"]
 [ext_resource type="PackedScene" uid="uid://craqwm4x5w6so" path="res://Naomi/DeadSeaweed.glb" id="24_m0os1"]
-[ext_resource type="PackedScene" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="26_wntvp"]
+[ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed.tscn" id="26_wntvp"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="27_cjl7l"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="28_fxtaf"]
 [ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="29_7xcbf"]
