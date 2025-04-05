@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oklsmn33xw0a"
-path.s3tc="res://.godot/imported/BeachTerrainWithPool_color.jpg-d009a3fd409d71376ed93bc48ec70b5d.s3tc.ctex"
+uid="uid://fyc07dowfkpj"
+path.s3tc="res://.godot/imported/PlayerCharacter_Head Base Color.png-01e1cd6007ea8689c2017e7c1e8b22b0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "08a8820c04db302dc8d78da4c64f034a"
+"md5": "7f4ef9848f656d5590653147fb689cda"
 }
 
 [deps]
 
-source_file="res://Haozhen(Isaac) Liang/BeachTerrainWithPool_color.jpg"
-dest_files=["res://.godot/imported/BeachTerrainWithPool_color.jpg-d009a3fd409d71376ed93bc48ec70b5d.s3tc.ctex"]
+source_file="res://Dylan/PlayerAnimations/PlayerCharacter_Head Base Color.png"
+dest_files=["res://.godot/imported/PlayerCharacter_Head Base Color.png-01e1cd6007ea8689c2017e7c1e8b22b0.s3tc.ctex"]
 
 [params]
 

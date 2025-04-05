@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oklsmn33xw0a"
-path.s3tc="res://.godot/imported/BeachTerrainWithPool_color.jpg-d009a3fd409d71376ed93bc48ec70b5d.s3tc.ctex"
+uid="uid://cte168pakpelf"
+path.s3tc="res://.godot/imported/CharacterTest_Hand Base Color.png-e5270cfe27d6b4ebca1f06a79473a10f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "08a8820c04db302dc8d78da4c64f034a"
+"md5": "339019182081c7ec206d7457338910c4"
 }
 
 [deps]
 
-source_file="res://Haozhen(Isaac) Liang/BeachTerrainWithPool_color.jpg"
-dest_files=["res://.godot/imported/BeachTerrainWithPool_color.jpg-d009a3fd409d71376ed93bc48ec70b5d.s3tc.ctex"]
+source_file="res://Dylan/Test/CharacterTest_Hand Base Color.png"
+dest_files=["res://.godot/imported/CharacterTest_Hand Base Color.png-e5270cfe27d6b4ebca1f06a79473a10f.s3tc.ctex"]
 
 [params]
 

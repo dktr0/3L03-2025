@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cmbdbg5d2aj6e"
-path="res://.godot/imported/Bass2.glb-06535d8767c1c92b570c54aac6b95568.scn"
+uid="uid://dla6r0vw41xn7"
+path="res://.godot/imported/CharacterTest.glb-5c3a572d01f4dc7e5733676291d5df61.scn"
 
 [deps]
 
-source_file="res://Dylan/Bass2.glb"
-dest_files=["res://.godot/imported/Bass2.glb-06535d8767c1c92b570c54aac6b95568.scn"]
+source_file="res://Dylan/Test/CharacterTest.glb"
+dest_files=["res://.godot/imported/CharacterTest.glb-5c3a572d01f4dc7e5733676291d5df61.scn"]
 
 [params]
 

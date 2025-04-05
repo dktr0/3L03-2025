@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oklsmn33xw0a"
-path.s3tc="res://.godot/imported/BeachTerrainWithPool_color.jpg-d009a3fd409d71376ed93bc48ec70b5d.s3tc.ctex"
+uid="uid://cjpjjstyln3j6"
+path.s3tc="res://.godot/imported/Character(Sleepy)_Arm Base Color.png-536452b3d1e05303779d93bcec2687a4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "08a8820c04db302dc8d78da4c64f034a"
+"md5": "08a82fcc02258d96ebc0340a65df6b3a"
 }
 
 [deps]
 
-source_file="res://Haozhen(Isaac) Liang/BeachTerrainWithPool_color.jpg"
-dest_files=["res://.godot/imported/BeachTerrainWithPool_color.jpg-d009a3fd409d71376ed93bc48ec70b5d.s3tc.ctex"]
+source_file="res://Dylan/Character(Sleepy)_Arm Base Color.png"
+dest_files=["res://.godot/imported/Character(Sleepy)_Arm Base Color.png-536452b3d1e05303779d93bcec2687a4.s3tc.ctex"]
 
 [params]
 
