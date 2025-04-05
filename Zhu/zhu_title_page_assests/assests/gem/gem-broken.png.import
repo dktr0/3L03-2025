@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd5valtcuiwaq"
-path="res://.godot/imported/gem-broken.png-c77ad5ae25fd50598ed9d8d66ab91c1b.ctex"
+path="res://.godot/imported/gem-broken.png-1a6403e85d97ba1380fcb5c35b61d9ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Andy/assests/gem/gem-broken.png"
-dest_files=["res://.godot/imported/gem-broken.png-c77ad5ae25fd50598ed9d8d66ab91c1b.ctex"]
+source_file="res://Zhu/zhu_title_page_assests/assests/gem/gem-broken.png"
+dest_files=["res://.godot/imported/gem-broken.png-1a6403e85d97ba1380fcb5c35b61d9ae.ctex"]
 
 [params]
 

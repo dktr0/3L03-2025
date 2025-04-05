@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccpug8un8c5qg"
-path="res://.godot/imported/not move but 100%.png-1b546c49a7686f2dc126259e3b9b52e4.ctex"
+path="res://.godot/imported/not move but 100%.png-537cf542e98357e9a709f17cf36f3926.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Andy/assests/clock/dependent/not move but 100%.png"
-dest_files=["res://.godot/imported/not move but 100%.png-1b546c49a7686f2dc126259e3b9b52e4.ctex"]
+source_file="res://Zhu/zhu_title_page_assests/assests/clock/dependent/not move but 100%.png"
+dest_files=["res://.godot/imported/not move but 100%.png-537cf542e98357e9a709f17cf36f3926.ctex"]
 
 [params]
 
