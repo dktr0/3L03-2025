@@ -1,7 +1,8 @@
-[gd_scene load_steps=92 format=3 uid="uid://4cexfi3rf5f1"]
+[gd_scene load_steps=93 format=3 uid="uid://4cexfi3rf5f1"]
 
 [ext_resource type="Script" path="res://Braydon/Ice areana/ice_areana_past_level.gd" id="1_dixax"]
-[ext_resource type="PackedScene" path="res://Spencer/Ice and Glacier/Soundscape Glacier/glaciersoundscape_3d.tscn" id="2_l5apv"]
+[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="2_cmmpk"]
+[ext_resource type="PackedScene" uid="uid://dbkt5u3s3b7mg" path="res://Spencer/Ice and Glacier/Soundscape Glacier/glaciersoundscape_3d.tscn" id="2_l5apv"]
 [ext_resource type="PackedScene" uid="uid://dh1g7wywkgw8r" path="res://Spencer/Ice and Glacier/Footsteps Ice/FootStepIce.tscn" id="3_err04"]
 [ext_resource type="PackedScene" uid="uid://dpcpm538hbjih" path="res://Mackie/icicle1-glowing.glb" id="4_0pln2"]
 [ext_resource type="PackedScene" uid="uid://c7b3jfvcpwv7j" path="res://Mackie/icicle2-glowing.glb" id="5_0bh8j"]
@@ -16,11 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://bkok2d4npgrbx" path="res://Quinn/ICE MONSTER FINAL/ICE_MONSTER_FINAL.tscn" id="17_463vk"]
 [ext_resource type="PackedScene" uid="uid://dlmvtoi6hdyvo" path="res://Wilson/weater_snowing.tscn" id="17_ionju"]
 [ext_resource type="PackedScene" uid="uid://c0ylwq1b8dvjj" path="res://Spencer/Ice and Glacier/Ice monster/IceMonsterSound.tscn" id="18_ak2tp"]
-[ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/assests/chest.tscn" id="18_m0guq"]
+[ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Zhu/zhu_title_page_assests/assests/chest.tscn" id="18_m0guq"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="18_ui4io"]
 [ext_resource type="PackedScene" path="res://Andrew/iceberg.tscn" id="18_va0w8"]
 [ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="19_j60uq"]
-[ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/sword_enemy.tscn" id="19_t6t31"]
+[ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="19_t6t31"]
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="20_7rr2b"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="20_fhpke"]
 
@@ -186,6 +187,9 @@ albedo_color = Color(0.686275, 1, 1, 1)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 script = ExtResource("1_dixax")
 
+[node name="Water_Base" parent="." instance=ExtResource("2_cmmpk")]
+transform = Transform3D(1.24936, 0, 0, 0, 0.2, 0, 0, 0, 1.2975, -12.3887, -7.95844, 3.31251)
+
 [node name="Player" parent="." instance=ExtResource("18_ui4io")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 5.44238, 0.254387, 2.16574)
 
@@ -198,8 +202,20 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 3.31237, 0)
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.199869, 5, 0, 0)
 
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.199869, -0.052, 2, 2)
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.199869, -5, 3, 1)
+
 [node name="point" type="Node3D" parent="."]
 transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.199869, 5, 0, 0)
+
+[node name="point2" type="Node3D" parent="."]
+transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.199869, 0, 2, 2)
+
+[node name="point3" type="Node3D" parent="."]
+transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.199869, -5, 3, 1)
 
 [node name="Enemy" parent="." instance=ExtResource("19_t6t31")]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 5.24918, 0.320499, -2.33692)
@@ -215,6 +231,18 @@ transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.
 
 [node name="weater_snowing" parent="." instance=ExtResource("17_ionju")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0344301, -10.9944, -0.188829)
+
+[node name="weater_snowing2" parent="." instance=ExtResource("17_ionju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40517, -2.76935, -21.3727)
+
+[node name="weater_snowing3" parent="." instance=ExtResource("17_ionju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40517, -2.76935, -29.2315)
+
+[node name="weater_snowing4" parent="." instance=ExtResource("17_ionju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87536, -2.76935, -29.2315)
+
+[node name="weater_snowing5" parent="." instance=ExtResource("17_ionju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.259, -2.76935, -29.2315)
 
 [node name="Chest" parent="." instance=ExtResource("18_m0guq")]
 transform = Transform3D(-0.690176, 0, 0.723642, 0, 1, 0, -0.723642, 0, -0.690176, 7.14051, 0.322842, -4.91271)
@@ -667,19 +695,34 @@ transform = Transform3D(0.768901, 0, 0, 0, 0.947265, 0, 0, 0, 0.548378, -1.41097
 transform = Transform3D(0.0816128, 0, 0.644856, 0, 0.65, 0, -0.644856, 0, 0.0816128, -4.6382, 4.11811, 33.469)
 
 [node name="Ice_Platform" parent="." instance=ExtResource("20_7rr2b")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.11539, 4.0818, -16.4175)
+transform = Transform3D(0.3, 0, 0, 0, 2.91005, 0, 0, 0, 0.3, -2.11539, -1.591, -16.4175)
 
 [node name="Ice_Platform2" parent="." instance=ExtResource("20_7rr2b")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.55887, 4.0818, -22.0053)
+transform = Transform3D(0.3, 0, 0, 0, 7.0362, 0, 0, 0, 0.3, -5.55887, -10.3669, -21.2109)
 
 [node name="Ice_Platform3" parent="." instance=ExtResource("20_7rr2b")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.489547, 4.0818, -25.0849)
+transform = Transform3D(0.3, 0, 0, 0, 11.8299, 0, 0, 0, 0.3, -0.489547, -21.1341, -24.3649)
 
 [node name="Ice_Platform4" parent="." instance=ExtResource("20_7rr2b")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.63537, 4.0818, -30.3661)
+transform = Transform3D(0.3, 0, 0, 0, 9.33015, 0, 0, 0, 0.3, -4.63537, -16.4112, -27.9629)
 
 [node name="Ice_Platform5" parent="." instance=ExtResource("20_7rr2b")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.11879, 4.0818, -33.5132)
+transform = Transform3D(0.3, 0, 0, 0, 9.87196, 0, 0, 0, 0.3, 0.56054, -18.8201, -30.9388)
+
+[node name="Ice_Platform7" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 9.87196, 0, 0, 0, 0.3, -4.37295, -19.8248, -34.349)
+
+[node name="Ice_Platform8" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 9.87196, 0, 0, 0, 0.3, -0.314868, -20.8043, -38.5379)
+
+[node name="Ice_Platform9" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 9.87196, 0, 0, 0, 0.3, -3.71376, -21.7824, -41.7519)
+
+[node name="Ice_Platform10" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 9.87196, 0, 0, 0, 0.3, 0.462413, -23.0683, -45.2447)
+
+[node name="Ice_Platform11" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 9.87196, 0, 0, 0, 0.3, -3.55835, -24.0676, -49.3161)
 
 [node name="Ice_Platform6" parent="." instance=ExtResource("20_7rr2b")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.11539, 3.68326, -13.9119)
@@ -710,12 +753,12 @@ mesh = SubResource("BoxMesh_v0vty")
 surface_material_override/0 = SubResource("StandardMaterial3D_17hd2")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="."]
-transform = Transform3D(12.9643, 0.621941, -0.524074, -0.853005, 11.9013, -1.01226, 1.00061, 2.08753, 5.92718, -3.41959, 15.4979, -13.0265)
+transform = Transform3D(12.9643, 0.621941, -0.524074, -0.853005, 11.9013, -1.01226, 1.00061, 2.08753, 5.92718, -3.41959, 13.946, -13.0265)
 mesh = SubResource("BoxMesh_sw78u")
 surface_material_override/0 = SubResource("StandardMaterial3D_17hd2")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0480181, 0.0642936, -3.69333, -0.492096, 5.50037, 0.0413227, 7.24845, 0.372994, 0.0272724, 1.0264, 6.68739, -13.0956)
+transform = Transform3D(0.0475403, 0.0657309, -7.89776, -0.487199, 5.62333, 0.0883639, 7.17632, 0.381332, 0.0583189, 2.39362, 6.42713, -13.0956)
 mesh = SubResource("BoxMesh_sw78u")
 surface_material_override/0 = SubResource("StandardMaterial3D_17hd2")
 
@@ -725,7 +768,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_17hd2")
 shape = SubResource("BoxShape3D_j4vmt")
 
 [node name="MeshInstance3D18" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.047534, 0.0725602, -4.39049, -0.487136, 6.20759, 0.0491227, 7.17539, 0.420952, 0.0324203, -6.81984, 6.68739, -13.0956)
+transform = Transform3D(0.0473734, 0.0743997, -5.42936, -0.48549, 6.36496, 0.060746, 7.15114, 0.431624, 0.0400915, -7.21726, 6.68739, -13.0956)
 mesh = SubResource("BoxMesh_sw78u")
 surface_material_override/0 = SubResource("StandardMaterial3D_17hd2")
 
