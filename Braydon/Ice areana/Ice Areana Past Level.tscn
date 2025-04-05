@@ -1,6 +1,7 @@
-[gd_scene load_steps=83 format=3 uid="uid://4cexfi3rf5f1"]
+[gd_scene load_steps=85 format=3 uid="uid://4cexfi3rf5f1"]
 
 [ext_resource type="Script" path="res://Braydon/Ice areana/ice_areana_past_level.gd" id="1_dixax"]
+[ext_resource type="PackedScene" path="res://Spencer/Ice and Glacier/Soundscape Glacier/glaciersoundscape_3d.tscn" id="2_l5apv"]
 [ext_resource type="PackedScene" uid="uid://dpcpm538hbjih" path="res://Mackie/icicle1-glowing.glb" id="4_0pln2"]
 [ext_resource type="PackedScene" uid="uid://c7b3jfvcpwv7j" path="res://Mackie/icicle2-glowing.glb" id="5_0bh8j"]
 [ext_resource type="PackedScene" uid="uid://c50uqkdddnib" path="res://Mackie/icicle3-glowing.glb" id="6_jwhm4"]
@@ -10,11 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://6u5l3dgbsjjj" path="res://Matty/Penguin/penguin.glb" id="9_wvyns"]
 [ext_resource type="PackedScene" uid="uid://cfto4t17rbswa" path="res://Mackie/icicleclump2-glowing.glb" id="12_kfgkj"]
 [ext_resource type="PackedScene" uid="uid://dn8b2oofj5cdi" path="res://Mackie/icicleclump3-glowing.glb" id="13_suwgt"]
+[ext_resource type="PackedScene" uid="uid://bd3at8iabuslj" path="res://Callum/ice_pillar.tscn" id="17_2ow1n"]
+[ext_resource type="PackedScene" uid="uid://bkok2d4npgrbx" path="res://Quinn/ICE MONSTER FINAL/ICE_MONSTER_FINAL.tscn" id="17_463vk"]
 [ext_resource type="PackedScene" uid="uid://dlmvtoi6hdyvo" path="res://Wilson/weater_snowing.tscn" id="17_ionju"]
+[ext_resource type="PackedScene" uid="uid://c0ylwq1b8dvjj" path="res://Spencer/Ice and Glacier/Ice monster/IceMonsterSound.tscn" id="18_ak2tp"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/assests/chest.tscn" id="18_m0guq"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="18_ui4io"]
+[ext_resource type="PackedScene" path="res://Andrew/iceberg.tscn" id="18_va0w8"]
 [ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="19_j60uq"]
 [ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/sword_enemy.tscn" id="19_t6t31"]
+[ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="20_7rr2b"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="20_fhpke"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gnbse"]
@@ -119,14 +125,6 @@ albedo_color = Color(0.992157, 1, 1, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ny24v"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_6adpq"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ih12"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1dg3m"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_arxnm"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_hxj6e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjtwf"]
@@ -170,7 +168,17 @@ radius = 0.19836
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vr27c"]
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 script = ExtResource("1_dixax")
+
+[node name="glaciersoundscape3D" parent="." instance=ExtResource("2_l5apv")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 3.31237, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.199869, 1.00881, 1.91389, 0.575236)
+
+[node name="point" type="Node3D" parent="."]
+transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.199869, -3.04441, 1.91389, 1.80021)
 
 [node name="Ground Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(9.59746, 0, 0, 0, 1.01557, 0, 0, 0, 8.28039, 0, 0, 0)
@@ -183,76 +191,76 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8k0a6")
 shape = SubResource("WorldBoundaryShape3D_o3tro")
 
 [node name="Wall Plane 1" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.59746, 0, 0, 0, -4.43922e-08, 8.28039, 0, -1.01557, -3.61948e-07, 0, 8, 8)
+transform = Transform3D(9.59746, 0, 0, 0, -4.4392e-08, 8.28039, 0, -1.01557, -3.61947e-07, 0, 8, 8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_rpmpq")
 
 [node name="Wall Plane 1_5" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.77566e-07, 1.01557, 3.61948e-07, 0, -4.43922e-08, 8.28039, 8.63771, 4.43922e-08, 4.52391e-14, -9, 8, 0)
+transform = Transform3D(-3.77566e-07, 1.01557, 3.61947e-07, 0, -4.4392e-08, 8.28039, 8.63771, 4.4392e-08, 1.58212e-14, -9, 8, 0)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_dc4mo")
 
 [node name="Wall Plane 1_6" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.1327e-06, -1.01557, -3.61948e-07, 3.17049e-21, -4.43922e-08, 8.28039, -8.63771, -1.33177e-07, -7.68816e-14, 9, 8, 0)
+transform = Transform3D(6.52129e-07, -1.01557, -3.61947e-07, 0, -4.4392e-08, 8.28039, -8.63771, -7.66734e-08, -2.73263e-14, 9, 8, 0)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_dio32")
 
 [node name="Ceiling Plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.59746, 0, 0, 0, -1.01557, -7.96285e-07, 0, 8.87844e-08, -9.10843, 0, 16, -1)
+transform = Transform3D(9.59746, 0, 0, 0, -1.01557, -1.37533e-06, 0, 1.53347e-07, -9.10843, 0, 16, -1)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_vsq3i")
 
 [node name="Wall Plane 2" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, 8, 8, -8)
+transform = Transform3D(4.19518e-07, -7.66734e-08, 1.65608, 9.59746, -4.4392e-08, -7.23895e-08, 4.19518e-07, 1.01557, 1.25031e-07, 8, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_4hoe6")
 
 [node name="Wall Plane 3" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, 5, 8, -8)
+transform = Transform3D(4.19518e-07, -7.66734e-08, 1.65608, 9.59746, -4.4392e-08, -7.23895e-08, 4.19518e-07, 1.01557, 1.25031e-07, 5, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_74d7n")
 
 [node name="Wall Plane 4" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, -8, 8, -8)
+transform = Transform3D(4.19518e-07, -7.66734e-08, 1.65608, 9.59746, -4.4392e-08, -7.23895e-08, 4.19518e-07, 1.01557, 1.25031e-07, -8, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_2rknr")
 
 [node name="Wall Plane 5" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, 2, 8, -8)
+transform = Transform3D(4.19518e-07, -7.66734e-08, 1.65608, 9.59746, -4.4392e-08, -7.23895e-08, 4.19518e-07, 1.01557, 1.25031e-07, 2, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_slx8t")
 
 [node name="Wall Plane 6" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.82169, 9.59746, 9.15654e-15, -7.96284e-08, 0, 1.01557, 7.96285e-08, 0.284321, 8, -8)
+transform = Transform3D(4.19518e-07, -7.66734e-08, 1.82169, 9.59746, -4.4392e-08, -7.96285e-08, 4.19518e-07, 1.01557, 1.37534e-07, 0.284321, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_bddx2")
 
 [node name="Wall Plane 7" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.82169, -9.59746, 8.87844e-08, 7.96284e-08, -8.39036e-07, -1.01557, -7.96284e-08, 0.211765, 8, -8)
+transform = Transform3D(4.19518e-07, -4.4392e-08, 1.82169, -9.59746, 7.66734e-08, 7.96285e-08, -7.24588e-07, -1.01557, -7.96286e-08, 0.211765, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_cuatg")
 
 [node name="Wall Plane 8" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, 9.59746, 9.15654e-15, -7.23895e-08, 0, 1.01557, 7.23895e-08, -6, 8, -8)
+transform = Transform3D(4.19518e-07, -7.66734e-08, 1.65608, 9.59746, -4.4392e-08, -7.23895e-08, 4.19518e-07, 1.01557, 1.25031e-07, -6, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_nnmmd")
 
 [node name="Wall Plane 9" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.19518e-07, -4.43922e-08, 1.65608, -9.59746, 8.9407e-08, 7.23895e-08, -4.76837e-07, -1.01557, -7.23895e-08, -6, 8, -8)
+transform = Transform3D(4.19518e-07, -4.4392e-08, 1.65608, -9.59746, 7.66734e-08, 7.23895e-08, -7.24588e-07, -1.01557, -7.23896e-08, -6, 8, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_nifvt")
 
 [node name="Wall Plane 10" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.64296e-07, -4.43922e-08, 1.32486, 6.0464, 9.15654e-15, -5.79116e-08, 0, 1.01557, 5.79116e-08, -4, 12, -8)
+transform = Transform3D(2.64296e-07, -7.66734e-08, 1.32486, 6.0464, -4.4392e-08, -5.79114e-08, 2.64297e-07, 1.01557, 1.00024e-07, -4, 12, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 surface_material_override/0 = SubResource("StandardMaterial3D_uydnq")
 
 [node name="Wall Plane 11" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.64296e-07, -4.43922e-08, 1.32486, 6.0464, 9.15654e-15, -5.79116e-08, 0, 1.01557, 5.79116e-08, -4, -2, -8)
+transform = Transform3D(2.64296e-07, -7.66734e-08, 1.32486, 6.0464, -4.4392e-08, -5.79114e-08, 2.64297e-07, 1.01557, 1.00024e-07, -4, -2, -8)
 mesh = SubResource("PlaneMesh_gnbse")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-16.1562, 0, 0, 0, 1, 0, 0, 0, -19.5387, -6.6018, 0.878046, -0.252868)
+transform = Transform3D(-16.1562, 0, 2.95026e-06, 0, 1, 0, -2.43952e-06, 0, -19.5387, -6.6018, 0.878046, -0.252868)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_dep8l")
 
@@ -262,7 +270,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dep8l")
 shape = SubResource("CylinderShape3D_vph7s")
 
 [node name="Frozen lake" type="MeshInstance3D" parent="."]
-transform = Transform3D(10.3025, 0, 0, 0, 1, 0, 0, 0, -15.3431, 3.68542, -0.753838, -0.252868)
+transform = Transform3D(10.3025, -1.50996e-07, 0, 1.55563e-06, 1, 0, 0, 0, -15.3431, 3.68542, -0.753838, -0.252868)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_ly1sh")
 
@@ -282,7 +290,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wdwcn")
 shape = SubResource("WorldBoundaryShape3D_wc6po")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.09274, 0, 0, 0, 0.640524, 0, 0, 0, -8.11461, -3.15477, 2.50009, -4.18134)
+transform = Transform3D(6.09274, -9.67164e-08, 0, 9.19978e-07, 0.640524, 0, 0, 0, -8.11461, -3.15477, 2.50009, -4.18134)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_d2gjd")
 
@@ -293,7 +301,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16413, 3.12244, 0)
 shape = SubResource("CylinderShape3D_7qsaq")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
-transform = Transform3D(8.89507, 0, -1.71841, 0, 1.35969, 0, -3.43964, 0, -4.44388, -0.0548058, -0.144796, -5.6417)
+transform = Transform3D(8.89507, -1.91489e-07, -1.71841, 1.44004e-06, 1.35969, 0, -3.43964, 7.40471e-08, -4.44388, -0.0548058, -0.144796, -5.6417)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_p8kka")
 
@@ -303,7 +311,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_p8kka")
 shape = SubResource("CylinderShape3D_hh5en")
 
 [node name="MeshInstance3D19" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.86852, 0, -0.821539, 0, 1.35969, 0, -1.10923, 0, -2.12454, 4.94519, -0.144796, -7.6417)
+transform = Transform3D(2.86852, -1.91489e-07, -0.82154, 4.6439e-07, 1.35969, 0, -1.10923, 7.40472e-08, -2.12454, 4.94519, -0.144796, -7.6417)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_rftnm")
 
@@ -313,7 +321,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rftnm")
 shape = SubResource("CylinderShape3D_l4if7")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.27836, 0, 0.639864, 0, 1.35969, 0, 1.75043, 0, -0.467299, 6.15058, -0.772362, -7.18652)
+transform = Transform3D(1.27836, -1.21085e-07, 0.639863, 3.27289e-07, 1.35969, 0, 1.75043, -1.658e-07, -0.4673, 6.15058, -0.772362, -7.18652)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_c7jnx")
 
@@ -323,7 +331,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_c7jnx")
 shape = SubResource("CylinderShape3D_twqp4")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.333, 0, 0, 0, -0.907883, 0, 0, 0, -4.4079, -3.34715, 3.44254, -6.04687)
+transform = Transform3D(4.333, 0, 0, 0, -0.907883, 6.65574e-07, 0, -1.37087e-07, -4.4079, -3.34715, 3.44254, -6.04687)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_gsirl")
 
@@ -333,7 +341,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gsirl")
 shape = SubResource("CylinderShape3D_chd1l")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.333, 0, 0, 0, 0.634864, 0, 0, 0, -4.4079, -4.05103, 3.15287, -3.71652)
+transform = Transform3D(4.333, -9.58618e-08, 0, 6.54265e-07, 0.634864, 0, 0, 0, -4.4079, -4.05103, 3.15287, -3.71652)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_8q5be")
 
@@ -343,7 +351,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8q5be")
 shape = SubResource("CylinderShape3D_i8ldo")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.333, 0, 0, 0, 0.634864, 0, 0, 0, -4.4079, -4.74606, 2.10785, -0.205912)
+transform = Transform3D(4.333, -9.58618e-08, 0, 6.54265e-07, 0.634864, 0, 0, 0, -4.4079, -4.74606, 2.10785, -0.205912)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_i06aj")
 
@@ -353,7 +361,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_i06aj")
 shape = SubResource("CylinderShape3D_i8ldo")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.333, 0, 0, 0, 0.634864, 0, 0, 0, -4.4079, -2.79728, 1.74549, -0.205912)
+transform = Transform3D(4.333, -9.58618e-08, 0, 6.54265e-07, 0.634864, 0, 0, 0, -4.4079, -2.79728, 1.74549, -0.205912)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_oacy5")
 
@@ -363,7 +371,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_oacy5")
 shape = SubResource("CylinderShape3D_i8ldo")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.333, 0, 0, 0, 0.634864, 0, 0, 0, -4.4079, 1.13058, 0.627189, 2.39067)
+transform = Transform3D(4.333, -9.58618e-08, 0, 6.54265e-07, 0.634864, 0, 0, 0, -4.4079, 1.13058, 0.627189, 2.39067)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_67mtq")
 
@@ -373,7 +381,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_67mtq")
 shape = SubResource("CylinderShape3D_i8ldo")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.333, 0, 0, 0, 0.634864, 0, 0, 0, -4.4079, 1.94327, 0.10493, 3.62259)
+transform = Transform3D(4.333, -9.58618e-08, 0, 6.54265e-07, 0.634864, 0, 0, 0, -4.4079, 1.94327, 0.10493, 3.62259)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_s0t04")
 
@@ -383,7 +391,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s0t04")
 shape = SubResource("CylinderShape3D_i8ldo")
 
 [node name="MeshInstance3D37" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.333, 0, 0, 0, 2.39344, 0, 0, 0, -4.4079, -7.05103, 2.44254, -5.71652)
+transform = Transform3D(4.333, -3.61399e-07, 0, 6.54265e-07, 2.39344, 0, 0, 0, -4.4079, -7.05103, 2.44254, -5.71652)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_feaxj")
 
@@ -393,7 +401,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_feaxj")
 shape = SubResource("CylinderShape3D_he3qx")
 
 [node name="MeshInstance3D38" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.333, 0, 0, 0, 2.39344, 0, 0, 0, -4.4079, -7.05103, 2.44254, -3.71652)
+transform = Transform3D(4.333, -3.61399e-07, 0, 6.54265e-07, 2.39344, 0, 0, 0, -4.4079, -7.05103, 2.44254, -3.71652)
 mesh = SubResource("CylinderMesh_6cmrb")
 surface_material_override/0 = SubResource("StandardMaterial3D_pkrhh")
 
@@ -401,33 +409,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pkrhh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D38/StaticBody3D"]
 shape = SubResource("CylinderShape3D_ny24v")
-
-[node name="Ice Pillar 2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.0199, 0, 0, 0, 7.58518, 0, 0, 0, 1.06405, 1.08256, 8.9985, -0.219858)
-mesh = SubResource("CapsuleMesh_6adpq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ice Pillar 2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ice Pillar 2/StaticBody3D"]
-shape = SubResource("CapsuleShape3D_5ih12")
-
-[node name="Ice Pillar 3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.727849, 0.960054, 0.472161, -0.00621447, 12.4034, -0.0737773, -0.680646, 0.913389, 0.505579, 8.08256, 7.53075, 5.24206)
-mesh = SubResource("CapsuleMesh_6adpq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ice Pillar 3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ice Pillar 3/StaticBody3D"]
-shape = SubResource("CapsuleShape3D_1dg3m")
-
-[node name="Ice Pillar 4" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.685363, -0.608704, -0.576751, -0.00625755, 8.26595, -0.0841631, 0.732894, 0.639803, 0.538629, -2.91744, 9.52819, 5.24206)
-mesh = SubResource("CapsuleMesh_6adpq")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ice Pillar 4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ice Pillar 4/StaticBody3D"]
-shape = SubResource("CapsuleShape3D_arxnm")
 
 [node name="Everything below is entrance blocks" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.05, 0, 0, 0, 1, 0, 0, 0, 4.08, -3, 4, -10)
@@ -440,22 +421,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gjtwf")
 shape = SubResource("BoxShape3D_8cjlq")
 
 [node name="MeshInstance3D30" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.912, 6.58447e-08, -0.281595, -1.04822, 2.45736e-07, -1.05093, -3.47455e-15, -5.8201, -4.7558e-08, -3, 7, -9)
+transform = Transform3D(3.912, 2.1731e-07, -0.281597, -1.04822, 2.45417e-07, -1.05093, 1.01866e-07, -5.8201, -5.48289e-08, -3, 7, -9)
 mesh = SubResource("BoxMesh_hxj6e")
 surface_material_override/0 = SubResource("StandardMaterial3D_tyo88")
 
 [node name="MeshInstance3D32" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.5074, -1.27202e-07, 0.544, 2.025, 2.20321e-07, -0.942235, -1.06731e-14, -5.8201, -4.7558e-08, -4, 7, -9)
+transform = Transform3D(3.5074, -2.19084e-07, 0.544, 2.025, 1.27202e-07, -0.942235, -8.77703e-08, -5.8201, -4.10709e-08, -4, 7, -9)
 mesh = SubResource("BoxMesh_hxj6e")
 surface_material_override/0 = SubResource("StandardMaterial3D_safcj")
 
 [node name="MeshInstance3D36" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.05, -1.7053e-14, -1.74931e-07, -3.57628e-07, 7.63214e-08, 2.12875, -1.06731e-14, -1.74603, 9.30505e-08, -3, 7.37989, -9.01088)
+transform = Transform3D(4.05, 2.13805e-15, 1.13943e-22, 0, -7.63214e-08, 2.12875, 4.95932e-15, -1.74603, -9.30506e-08, -3, 7.37989, -9.01088)
 mesh = SubResource("BoxMesh_hxj6e")
 surface_material_override/0 = SubResource("StandardMaterial3D_k54o5")
 
 [node name="MeshInstance3D31" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.215, 0, 0, 0, -1.6901e-07, -2.72, 0, 3.8665, -1.18895e-07, -1, 5, -10)
+transform = Transform3D(-1.215, 0, 0, 0, 1.6901e-07, -2.72, 0, 3.8665, 1.18895e-07, -1, 5, -10)
 mesh = SubResource("BoxMesh_hxj6e")
 surface_material_override/0 = SubResource("StandardMaterial3D_3djp4")
 
@@ -465,7 +446,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3djp4")
 shape = SubResource("BoxShape3D_2kabc")
 
 [node name="MeshInstance3D33" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.215, 0, 0, 0, -1.6901e-07, -2.72, 0, 3.8665, -1.18895e-07, -4.63878, 5, -10)
+transform = Transform3D(-1.215, 0, 0, 0, 1.6901e-07, -2.72, 0, 3.8665, 1.18895e-07, -4.63878, 5, -10)
 mesh = SubResource("BoxMesh_hxj6e")
 surface_material_override/0 = SubResource("StandardMaterial3D_cu42f")
 
@@ -481,19 +462,19 @@ transform = Transform3D(3.83047, 0, 0, 0, -3.44308, -0.175597, 0, 0.187315, -3.2
 transform = Transform3D(-1.60242, -1.22548, 0, 0.946196, -2.07539, 0, 0, 0, 3.19421, 1.41442, 1.33554, -1.49309)
 
 [node name="icicle2-glowing2" parent="." instance=ExtResource("5_0bh8j")]
-transform = Transform3D(-6.88596, -0.0205117, 0, 0.0576888, -2.44832, 0, 0, 0, 4.61968, -2.43752, 2.45865, 0.674318)
+transform = Transform3D(-6.88596, -0.0205112, 0, 0.0576882, -2.44832, 0, 0, 0, 4.61968, -2.43752, 2.45865, 0.674318)
 
 [node name="icicle2-glowing5" parent="." instance=ExtResource("5_0bh8j")]
-transform = Transform3D(-6.88596, -0.0205117, 0, 0.0576888, -2.44832, 0, 0, 0, 4.61968, -0.114043, 2.45865, -5.31443)
+transform = Transform3D(-6.88596, -0.0205112, 0, 0.0576882, -2.44832, 0, 0, 0, 4.61968, -0.114043, 2.45865, -5.31443)
 
 [node name="icicle2-glowing6" parent="." instance=ExtResource("5_0bh8j")]
-transform = Transform3D(-6.88596, -0.0205117, 0, 0.0576888, -2.44832, 0, 0, 0, 4.61968, -2.04551, 3.7541, -5.31443)
+transform = Transform3D(-6.88596, -0.0205112, 0, 0.0576882, -2.44832, 0, 0, 0, 4.61968, -2.04551, 3.7541, -5.31443)
 
 [node name="icicle2-glowing3" parent="." instance=ExtResource("5_0bh8j")]
-transform = Transform3D(-6.88596, -0.0205117, 0, 0.0576888, -2.44832, 0, 0, 0, 4.61968, -4.77508, 2.04681, 5.05041)
+transform = Transform3D(-6.88596, -0.0205112, 0, 0.0576882, -2.44832, 0, 0, 0, 4.61968, -4.77508, 2.04681, 5.05041)
 
 [node name="icicle2-glowing4" parent="." instance=ExtResource("5_0bh8j")]
-transform = Transform3D(-1.92666, -0.00573907, -4.43517, 0.0576888, -2.44832, 0, -6.61093, -0.0196924, 1.29257, -4.16095, 4.82711, -4.33937)
+transform = Transform3D(-1.92666, -0.00573894, -4.43517, 0.0576882, -2.44832, 7.60914e-09, -6.61093, -0.019692, 1.29257, -4.16095, 4.82711, -4.33937)
 
 [node name="icicle3-glowing" parent="." instance=ExtResource("6_jwhm4")]
 transform = Transform3D(1.76462, 0, 0, 0, -5.76618, -0.0240717, 0, 0.0330093, -4.20493, 5.74384, 1.99679, -5.86514)
@@ -511,7 +492,7 @@ transform = Transform3D(19.0115, 0, 0, 0, 10.1351, 0, 0, 0, 19.766, 0.420094, 15
 transform = Transform3D(0.414214, 0, 0, 0, 0.794118, 0, 0, 0, 0.637088, -8.61566, 0.0328159, 0.648634)
 
 [node name="glacier_wall2" parent="." instance=ExtResource("8_vsc4l")]
-transform = Transform3D(0.414134, 0, 0.0124862, 0, 0.794118, 0, -0.00811813, 0, 0.636966, 31.1297, 0.0328159, -1.21731)
+transform = Transform3D(0.414134, 0, 0.0124862, 0, 0.794118, 0, -0.00811813, 0, 0.636966, 29.6094, 0.0328159, -0.244035)
 
 [node name="glacier_wall3" parent="." instance=ExtResource("8_vsc4l")]
 transform = Transform3D(0.030875, 0, -0.460344, 0, 0.794118, 0, 0.421444, 0, 0.0337248, 5.50423, 0.0328159, -7.11357)
@@ -520,10 +501,10 @@ transform = Transform3D(0.030875, 0, -0.460344, 0, 0.794118, 0, 0.421444, 0, 0.0
 transform = Transform3D(0.0302642, 0, -0.635385, 0, 0.576128, 0, 0.413107, 0, 0.0465483, -2.00213, 6.46536, -6.53749)
 
 [node name="glacier_wall6" parent="." instance=ExtResource("8_vsc4l")]
-transform = Transform3D(0.0324127, 0, -0.158023, 0, 0.244167, 0, 0.442435, 0, 0.0115768, -7.36882, 4.26835, -6.53749)
+transform = Transform3D(0.0324127, 0, -0.158023, 0, 0.244167, 0, 0.442435, 0, 0.0115767, -7.36882, 4.26835, -6.53749)
 
 [node name="glacier_wall4" parent="." instance=ExtResource("8_vsc4l")]
-transform = Transform3D(-0.0116811, 0, 0.636835, 0, 0.794118, 0, -0.414049, 0, -0.0179664, 0.109657, 0.0328159, 30.4591)
+transform = Transform3D(0.0166087, 0, -0.636576, 0, 0.794118, 0, 0.413881, 0, 0.0255452, 0.109657, 0.0328159, 26.8163)
 
 [node name="icicleclump2-glowing" parent="." instance=ExtResource("12_kfgkj")]
 transform = Transform3D(1.54399, 0, 0, 0, -2.90859, 0.0520053, 0, -0.0299015, -5.05868, 1.60918, 0.621951, 1.14316)
@@ -531,16 +512,16 @@ transform = Transform3D(1.54399, 0, 0, 0, -2.90859, 0.0520053, 0, -0.0299015, -5
 [node name="StaticBody3D" type="StaticBody3D" parent="icicleclump2-glowing"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="icicleclump2-glowing/StaticBody3D"]
-transform = Transform3D(0.746997, 0, 0, 0, 0.65975, -9.31323e-10, 0, 0, 0.236269, 0.0942924, 0.00318095, 0.177906)
+transform = Transform3D(0.746997, 0, 0, 0, 0.65975, 0, 0, 0, 0.236269, 0.0942924, 0.00318095, 0.177906)
 shape = SubResource("CapsuleShape3D_dbxti")
 
 [node name="icicleclump2-glowing2" parent="." instance=ExtResource("12_kfgkj")]
-transform = Transform3D(-1.36456, 0.0287829, 5.5645, 0.93613, -2.85493, 0.37773, 4.62394, 0.586484, 1.56566, 1.14504, 0.71704, 0.0346528)
+transform = Transform3D(-1.36456, 0.0287831, 5.5645, 0.93613, -2.85493, 0.37773, 4.62394, 0.586483, 1.56565, 1.14504, 0.71704, 0.0346528)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="icicleclump2-glowing2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="icicleclump2-glowing2/StaticBody3D"]
-transform = Transform3D(0.275201, -2.23517e-08, -7.45058e-09, -4.47035e-08, 0.668195, -1.30385e-08, -4.47035e-08, 0, 0.184359, -0.0260288, 0.00155872, 0.0762884)
+transform = Transform3D(0.275201, 1.08541e-07, 2.99472e-08, -4.47035e-08, 0.668195, 8.88178e-16, -4.47035e-08, -2.08505e-14, 0.184359, -0.0260288, 0.00155872, 0.0762884)
 shape = SubResource("CapsuleShape3D_oinas")
 
 [node name="icicleclump2-glowing3" parent="." instance=ExtResource("12_kfgkj")]
@@ -549,7 +530,7 @@ transform = Transform3D(-4.12973, -0.374962, 3.04526, 0.93613, -2.85493, 0.37773
 [node name="StaticBody3D" type="StaticBody3D" parent="icicleclump2-glowing3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="icicleclump2-glowing3/StaticBody3D"]
-transform = Transform3D(0.106688, -0.0362755, -0.0636759, 0.00296075, 0.458604, -0.0228129, 0.0459835, 0.0546379, 0.149206, 0.0369639, -0.252502, 0.079239)
+transform = Transform3D(0.106688, -0.0362762, -0.063676, 0.00296075, 0.458604, -0.0228131, 0.0459835, 0.0546376, 0.149206, 0.0369639, -0.252502, 0.079239)
 shape = SubResource("CapsuleShape3D_meg5x")
 
 [node name="icicleclump2-glowing4" parent="." instance=ExtResource("12_kfgkj")]
@@ -558,43 +539,43 @@ transform = Transform3D(-4.12973, -0.374962, 3.04526, 0.93613, -2.85493, 0.37773
 [node name="StaticBody3D" type="StaticBody3D" parent="icicleclump2-glowing4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="icicleclump2-glowing4/StaticBody3D"]
-transform = Transform3D(0.154428, 1.86265e-08, 0, 2.42144e-08, 0.649409, -3.72529e-09, 0, 1.49012e-08, 0.218995, 0, 0, 0)
+transform = Transform3D(0.154428, -1.01828e-07, 7.87925e-16, 2.42144e-08, 0.649409, -5.02501e-09, 0, 1.49012e-08, 0.218995, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_f3n03")
 
 [node name="icicleclump2-glowing5" parent="." instance=ExtResource("12_kfgkj")]
-transform = Transform3D(-3.47513, -0.533781, -3.95344, 0.936129, -2.85493, 0.37773, -3.3416, -0.244681, 4.21725, 2.43819, 0.71704, 4.58029)
+transform = Transform3D(-3.47513, -0.533781, -3.95345, 0.936128, -2.85493, 0.377731, -3.3416, -0.244681, 4.21724, 2.43819, 0.71704, 4.58029)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="icicleclump2-glowing5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="icicleclump2-glowing5/StaticBody3D"]
-transform = Transform3D(0.108913, -1.49012e-08, 1.2666e-07, 1.11759e-08, 0.614587, 6.70552e-08, -3.35276e-08, -6.33299e-08, 0.18465, 0.0236999, 0.0780713, 0.222869)
+transform = Transform3D(0.108913, -6.30647e-08, 5.68424e-08, 1.11759e-08, 0.614587, 1.90272e-08, -3.35276e-08, -6.33299e-08, 0.18465, 0.0236999, 0.0780713, 0.222869)
 shape = SubResource("CapsuleShape3D_m6gt1")
 
 [node name="icicleclump3-glowing" parent="." instance=ExtResource("13_suwgt")]
-transform = Transform3D(2.30564, -0.483174, -0.583728, -0.737257, -1.58397, 0.0772606, -0.687298, 0.0782253, -2.04108, 1.59709, 1.94683, -1.0572)
+transform = Transform3D(2.30564, -0.483175, -0.583729, -0.737257, -1.58397, 0.0772607, -0.687298, 0.0782257, -2.04108, 1.59709, 1.94683, -1.0572)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="icicleclump3-glowing"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="icicleclump3-glowing/StaticBody3D"]
-transform = Transform3D(0.844421, 9.31323e-10, 4.47035e-08, -8.75443e-08, 0.69931, -7.45058e-09, -2.98023e-08, 2.79397e-08, 0.772318, 0.046066, -0.0167677, 0.0958101)
+transform = Transform3D(0.844421, 7.25001e-08, 2.72576e-08, -8.75443e-08, 0.69931, -3.08566e-08, -2.98023e-08, 2.79397e-08, 0.772318, 0.046066, -0.0167677, 0.0958101)
 shape = SubResource("CapsuleShape3D_1edvf")
 
 [node name="icicleclump3-glowing2" parent="." instance=ExtResource("13_suwgt")]
-transform = Transform3D(2.24807, -0.490769, -0.693097, -0.718849, -1.60886, 0.0917363, -0.670137, 0.0794549, -2.4235, 1.48329, 1.54792, -1.75829)
+transform = Transform3D(2.24807, -0.490769, -0.693097, -0.718849, -1.60886, 0.0917369, -0.670137, 0.0794548, -2.4235, 1.48329, 1.54792, -1.75829)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="icicleclump3-glowing2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="icicleclump3-glowing2/StaticBody3D"]
-transform = Transform3D(0.324271, 1.45286e-07, 0, 1.35042e-08, 1.23324, 3.72529e-09, 1.04308e-07, -1.11759e-08, 0.315465, 0.109298, 0.290419, 0.122393)
+transform = Transform3D(0.324271, -5.1358e-08, -1.01475e-07, 1.35042e-08, 1.23324, 2.85883e-09, 1.04308e-07, -1.1176e-08, 0.315465, 0.109298, 0.290419, 0.122393)
 shape = SubResource("CapsuleShape3D_pf8ue")
 
 [node name="icicleclump3-glowing3" parent="." instance=ExtResource("13_suwgt")]
-transform = Transform3D(2.80349, -0.994328, -0.33844, -0.896449, -3.25966, 0.044795, -0.835702, 0.160981, -1.1834, 1.25905, 0.984567, -2.58215)
+transform = Transform3D(2.80349, -0.994328, -0.33844, -0.896449, -3.25966, 0.0447947, -0.835702, 0.160981, -1.1834, 1.25905, 0.984567, -2.58215)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="icicleclump3-glowing3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="icicleclump3-glowing3/StaticBody3D"]
-transform = Transform3D(0.209023, 9.03383e-08, -2.98023e-08, -4.00469e-08, 0.760391, 3.86499e-08, -2.98023e-08, -8.9407e-08, 0.384861, 0.0432726, 0.0981554, 0.0700725)
+transform = Transform3D(0.209023, 1.45684e-07, 5.48731e-08, -4.00469e-08, 0.760391, 4.52521e-08, -2.98023e-08, -8.9407e-08, 0.384861, 0.0432726, 0.0981554, 0.0700725)
 shape = SubResource("CapsuleShape3D_vr27c")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
@@ -613,7 +594,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.33793, 5.74426, -4.0771)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96741, 3.04332, 6.29884)
 
 [node name="weater_snowing" parent="." instance=ExtResource("17_ionju")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02014, -2.01191, -0.188829)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0344301, -10.9944, -0.188829)
 
 [node name="Chest" parent="." instance=ExtResource("18_m0guq")]
 transform = Transform3D(-0.690176, 0, 0.723642, 0, 1, 0, -0.723642, 0, -0.690176, 7.14051, 0.322842, -4.91271)
@@ -623,23 +604,61 @@ fragment_index = 3
 [node name="Control" parent="." instance=ExtResource("20_fhpke")]
 
 [node name="Player" parent="." instance=ExtResource("18_ui4io")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 5.44238, 0.279614, 2.16574)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 5.44238, 0.254387, 2.16574)
 
 [node name="Penguin" parent="." instance=ExtResource("8_qoe8n")]
+transform = Transform3D(0.0465485, 0.998916, 0, -0.998916, 0.0465485, 0, 0, 0, 1, -5.05948, -1.12134, 0)
 
 [node name="penguin2" parent="Penguin" instance=ExtResource("9_wvyns")]
 transform = Transform3D(-0.151543, 0, -0.476482, 0, 0.5, 0, 0.476482, 0, -0.151543, -2.92628, 2.00065, 5.67872)
 
 [node name="Penguin2" parent="." instance=ExtResource("8_qoe8n")]
+transform = Transform3D(-0.0219895, -0.830878, 0.55602, 0.99965, -0.0264561, 0, 0.0147101, 0.555825, 0.831169, 0.234046, 3.88515, 4.09853)
 
 [node name="penguin2" parent="Penguin2" instance=ExtResource("9_wvyns")]
 transform = Transform3D(-0.366093, 0, 0.340552, 0, 0.5, 0, -0.340552, 0, -0.366093, -5.27122, 2.00065, 5.1339)
 
 [node name="Penguin3" parent="." instance=ExtResource("8_qoe8n")]
-transform = Transform3D(0.992527, 0, 0.122025, 0, 1, 0, -0.122025, 0, 0.992527, -1.35512, 0, 1.97746)
+transform = Transform3D(0.208865, 0.977607, 0.0256787, -0.970302, 0.210438, -0.119293, -0.122025, 3.21396e-10, 0.992527, -2.13832, -1.51947, -4.28913)
 
 [node name="penguin2" parent="Penguin3" instance=ExtResource("9_wvyns")]
 transform = Transform3D(0.0631601, 0, 0.495995, 0, 0.5, 0, -0.495995, 0, 0.0631601, -4.81463, 2.00065, 1.42016)
 
 [node name="Enemy" parent="." instance=ExtResource("19_t6t31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24918, 0.320499, -2.33692)
+
+[node name="IceMonsterSound" parent="Enemy" instance=ExtResource("18_ak2tp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.24918, -0.320499, 2.33692)
+
+[node name="Baby Golem" parent="." instance=ExtResource("17_463vk")]
+transform = Transform3D(0.0283219, 0, 0.197985, 0, 0.2, 0, -0.197985, 0, 0.0283219, -4.79864, 2.83722, 1.18688)
+
+[node name="Baby Golem2" parent="." instance=ExtResource("17_463vk")]
+transform = Transform3D(-0.199869, 0, 0.00722409, 0, 0.2, 0, -0.00722409, 0, -0.199869, -0.101886, 1.91389, 2.42169)
+
+[node name="ice_pillar" parent="." instance=ExtResource("17_2ow1n")]
+transform = Transform3D(1, 0, 0, 0, 1.19924, 0, 0, 0, 0.725836, 5.41126, 0.507788, 5.11876)
+
+[node name="ice_pillar2" parent="." instance=ExtResource("17_2ow1n")]
+transform = Transform3D(1, 0, 0, 0, 1.19924, 0, 0, 0, 0.725836, -3.37631, 2.07758, 3.31466)
+
+[node name="ice_pillar3" parent="." instance=ExtResource("17_2ow1n")]
+transform = Transform3D(0.768901, 0, 0, 0, 0.947265, 0, 0, 0, 0.548378, -1.41097, 3.34371, -3.21796)
+
+[node name="icebergroot" parent="." instance=ExtResource("18_va0w8")]
+transform = Transform3D(0.0816128, 0, 0.644856, 0, 0.65, 0, -0.644856, 0, 0.0816128, -4.6382, 4.11811, 79.1823)
+
+[node name="Ice_Platform" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.11539, 4.0818, -16.4175)
+
+[node name="Ice_Platform2" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.55887, 4.0818, -22.0053)
+
+[node name="Ice_Platform3" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.489547, 4.0818, -25.0849)
+
+[node name="Ice_Platform4" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.63537, 4.0818, -30.3661)
+
+[node name="Ice_Platform5" parent="." instance=ExtResource("20_7rr2b")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.11879, 4.0818, -33.5132)
