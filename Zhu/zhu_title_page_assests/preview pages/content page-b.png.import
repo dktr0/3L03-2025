@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c46raiqxo20ch"
-path="res://.godot/imported/halo.png-94330e12ca2fb3821a40e305e0cbed2b.ctex"
+uid="uid://b4jafl12brrep"
+path="res://.godot/imported/content page-b.png-284f6c1fc0de6110f60dbff710232c0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Zhu/zhu_title_page_assests/assests/gem/halo.png"
-dest_files=["res://.godot/imported/halo.png-94330e12ca2fb3821a40e305e0cbed2b.ctex"]
+source_file="res://Zhu/zhu_title_page_assests/preview pages/content page-b.png"
+dest_files=["res://.godot/imported/content page-b.png-284f6c1fc0de6110f60dbff710232c0d.ctex"]
 
 [params]
 

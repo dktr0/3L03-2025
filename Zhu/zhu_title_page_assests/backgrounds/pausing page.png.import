@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqxh7l82fquio"
-path="res://.godot/imported/pausing page.png-6ea6d57988e2f724d4e878bdfb912727.ctex"
+path="res://.godot/imported/pausing page.png-01f9aff5d91621f7877924ee49c3b084.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Andy/backgrounds/pausing page.png"
-dest_files=["res://.godot/imported/pausing page.png-6ea6d57988e2f724d4e878bdfb912727.ctex"]
+source_file="res://Zhu/zhu_title_page_assests/backgrounds/pausing page.png"
+dest_files=["res://.godot/imported/pausing page.png-01f9aff5d91621f7877924ee49c3b084.ctex"]
 
 [params]
 

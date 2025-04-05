@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c46raiqxo20ch"
-path="res://.godot/imported/halo.png-94330e12ca2fb3821a40e305e0cbed2b.ctex"
+uid="uid://hjk8t8bswqf0"
+path="res://.godot/imported/HALCYON-click to start.png-665c5ddeabef4938cfa1a0476f00f911.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Zhu/zhu_title_page_assests/assests/gem/halo.png"
-dest_files=["res://.godot/imported/halo.png-94330e12ca2fb3821a40e305e0cbed2b.ctex"]
+source_file="res://Zhu/zhu_title_page_assests/words/words/HALCYON-click to start.png"
+dest_files=["res://.godot/imported/HALCYON-click to start.png-665c5ddeabef4938cfa1a0476f00f911.ctex"]
 
 [params]
 
