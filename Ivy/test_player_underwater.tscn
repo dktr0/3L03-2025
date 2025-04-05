@@ -1,28 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://gwugaype7el2"]
+[gd_scene load_steps=4 format=3 uid="uid://gwugaype7el2"]
 
 [ext_resource type="Script" path="res://Ivy/test_player_underwater.gd" id="1_7f301"]
+[ext_resource type="PackedScene" uid="uid://b0wwl01auf08j" path="res://Dylan/character_1.tscn" id="2_ylthk"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ynpky"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bltkc"]
-albedo_color = Color(1, 0.74902, 0, 1)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5kn8e"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r2tku"]
+height = 2.55524
 
 [node name="TestPlayerUnderwater" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_7f301")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_ynpky")
-surface_material_override/0 = SubResource("StandardMaterial3D_bltkc")
+[node name="Body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19395, 0)
+shape = SubResource("CapsuleShape3D_r2tku")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_5kn8e")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.338685, 0.15243)
+[node name="Character1" parent="." instance=ExtResource("2_ylthk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337972, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95216, -0.12041)
