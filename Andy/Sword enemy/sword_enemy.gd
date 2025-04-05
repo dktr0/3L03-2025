@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-enum AbilityType { NONE, SWORD, MAGIC }
 enum State {
 	IDLE,
 	PATROL,
@@ -12,52 +11,71 @@ enum State {
 @export var is_patrol: bool = false
 @export var detection_range: float = 10.0
 @export var chase_speed: float = 2.0
-@export var attack_cooldown: float = 2.0
 
-@export var damage_amount: int = 1  
+@export var attack_cooldown: float = 2.0
+@export var attack_active_time: float = 0.4
+@export var knockback_force: float = 5.0
 
 @export var max_health: int = 5
-var health: int = 5
+var health: int
 
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
-@onready var sword_area: Area3D = $Sword/Sword/SwordArea
+@onready var anim_player: AnimationPlayer = $ice_monster/AnimationPlayer
 @onready var attack_area: Area3D = $AttackArea
+@onready var attack_collision_area: Area3D = $AttackCollisionArea
 
-var ability_type: int = AbilityType.SWORD
+# 在 AttackCollisionArea 下添加一个子节点 "AttackDebugMesh" (MeshInstance3D)，并默认隐藏
+@onready var debug_mesh: MeshInstance3D = $AttackCollisionArea/AttackDebugMesh
+
+@export var player_path: NodePath
+
+# 拖拽两个物体，用于巡逻点 A / B
+@export var patrol_point_a: NodePath
+@export var patrol_point_b: NodePath
+
 var current_state: int = State.IDLE
-
 var attack_timer: float = 0.0
+var attack_active_timer: float = 0.0
+var attacking: bool = false
+
 var player_ref: Node3D
 var original_position: Vector3
 
+var patrol_target_index := 0  # 0=A点, 1=B点
+
+@export var turn_lerp_speed: float = 0.3
+
 func _ready() -> void:
 	add_to_group("Enemy")
-	player_ref = get_tree().get_root().get_node("Game/Player")
+
+	if player_path:
+		player_ref = get_node_or_null(player_path)
+	else:
+		push_warning("No player_path assigned in Inspector! Please specify the player NodePath.")
 
 	original_position = global_transform.origin
 	health = max_health
 
 	if is_patrol:
 		current_state = State.PATROL
+		_play_walk_animation()
 	else:
 		current_state = State.IDLE
+		_stop_animation()
 
-	sword_area.monitoring = false
-	sword_area.monitorable = false
-	sword_area.body_entered.connect(_on_sword_area_body_entered)
-
+	# 设置攻击范围 (始终开启监测)
 	attack_area.monitoring = true
 	attack_area.monitorable = true
 	attack_area.body_entered.connect(_on_attack_area_body_entered)
 	attack_area.body_exited.connect(_on_attack_area_body_exited)
 
-	match current_state:
-		State.PATROL:
-			if anim_player:
-				anim_player.play("Patrol")
-		State.IDLE:
-			if anim_player:
-				anim_player.play("idle")
+	# 攻击碰撞箱：初始关闭
+	attack_collision_area.monitoring = false
+	attack_collision_area.monitorable = false
+	attack_collision_area.body_entered.connect(_on_attack_collision_body_entered)
+
+	# 可视化网格：初始隐藏
+	if debug_mesh:
+		debug_mesh.visible = false
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -75,121 +93,173 @@ func _physics_process(delta: float) -> void:
 	if current_state not in [State.ATTACK, State.RETURN]:
 		_check_player_distance()
 
-# ========== AI状态函数 ==========
+# ========================= 各状态逻辑 =========================
 
 func _state_idle(_delta: float) -> void:
 	velocity = Vector3.ZERO
 	move_and_slide()
 
-func _state_patrol(_delta: float) -> void:
-	velocity = Vector3.ZERO
-	move_and_slide()
+func _state_patrol(delta: float) -> void:
+	if not patrol_point_a or not patrol_point_b:
+		_stop_animation()
+		velocity = Vector3.ZERO
+		move_and_slide()
+		return
 
-func _state_chase(_delta: float) -> void:
+	_play_walk_animation()
+
+	var target_point: Node3D
+	if patrol_target_index == 0:
+		target_point = get_node_or_null(patrol_point_a)
+	else:
+		target_point = get_node_or_null(patrol_point_b)
+
+	if not target_point:
+		velocity = Vector3.ZERO
+		move_and_slide()
+		return
+
+	var my_pos = global_transform.origin
+	var tgt_pos = target_point.global_transform.origin
+
+	# 只算水平方向的距离 dxz：忽略 Y 差
+	var dx = tgt_pos.x - my_pos.x
+	var dz = tgt_pos.z - my_pos.z
+	var dxz = sqrt(dx*dx + dz*dz)
+
+	# 如果离目标在水平面够近，就认为到达
+	if dxz < 0.3:
+		patrol_target_index = 1 - patrol_target_index
+		velocity = Vector3.ZERO
+		move_and_slide()
+	else:
+		var angle = atan2(dx, dz)
+		angle = wrapf(angle, -PI, PI)
+		rotation.y = wrapf(rotation.y, -PI, PI)
+		rotation.y = lerp_angle(rotation.y, angle, turn_lerp_speed)
+		rotation.y = wrapf(rotation.y, -PI, PI)
+
+		var dir = Vector3(dx, 0, dz).normalized()
+		velocity.x = dir.x * chase_speed
+		velocity.z = dir.z * chase_speed
+		move_and_slide()
+
+func _state_chase(delta: float) -> void:
 	if not player_ref:
 		return
-	if anim_player and anim_player.current_animation == "Patrol":
-		anim_player.stop()
-	if anim_player and anim_player.current_animation != "walk":
-		anim_player.play("walk")
+	_play_walk_animation()
 
 	var my_pos = global_transform.origin
 	var player_pos = player_ref.global_transform.origin
-	var dir = (player_pos - my_pos)
-	dir.y = 0
-	dir = dir.normalized()
 
-	var angle = atan2(dir.x, dir.z)
-	rotation.y = lerp_angle(rotation.y, angle, 0.1)
+	# 一样忽略 Y，或你可以改用 3D 逻辑
+	var dx = player_pos.x - my_pos.x
+	var dz = player_pos.z - my_pos.z
 
-	velocity.x = dir.x * chase_speed
-	velocity.z = dir.z * chase_speed
+	var dist_xz = sqrt(dx*dx + dz*dz)
+	if dist_xz > 0.001:
+		var angle = atan2(dx, dz)
+		angle = wrapf(angle, -PI, PI)
+		rotation.y = wrapf(rotation.y, -PI, PI)
+		rotation.y = lerp_angle(rotation.y, angle, turn_lerp_speed)
+		rotation.y = wrapf(rotation.y, -PI, PI)
+
+		var dir = Vector3(dx, 0, dz).normalized()
+		velocity.x = dir.x * chase_speed
+		velocity.z = dir.z * chase_speed
+	else:
+		velocity = Vector3.ZERO
+
 	move_and_slide()
 
 func _state_attack(delta: float) -> void:
 	attack_timer += delta
-	if attack_timer >= attack_cooldown:
-		sword_area.set_deferred("monitoring", false)
-		sword_area.set_deferred("monitorable", false)
-
-		if _is_player_in_attack_area():
-			attack_timer = 0.0
-			if anim_player:
-				anim_player.play("attack")
-			sword_area.set_deferred("monitoring", true)
-			sword_area.set_deferred("monitorable", true)
-		else:
-			current_state = State.CHASE
-			if anim_player and anim_player.current_animation != "walk":
-				anim_player.play("walk")
+	_stop_animation()
 
 	velocity = Vector3.ZERO
 	move_and_slide()
 
-func _state_return(_delta: float) -> void:
-	if anim_player and anim_player.current_animation == "Patrol":
-		anim_player.stop()
-	if anim_player and anim_player.current_animation != "walk":
-		anim_player.play("walk")
+	if attacking:
+		attack_active_timer += delta
+		if attack_active_timer >= attack_active_time:
+			_disable_attack_collision()
+			current_state = State.CHASE
+	else:
+		if attack_timer >= attack_cooldown:
+			attack_timer = 0.0
+			_enable_attack_collision()
+
+func _state_return(delta: float) -> void:
+	_play_walk_animation()
 
 	var my_pos = global_transform.origin
-	var dir = (original_position - my_pos)
-	dir.y = 0
-	var dist = dir.length()
+	var dx = original_position.x - my_pos.x
+	var dz = original_position.z - my_pos.z
+	var dist_xz = sqrt(dx*dx + dz*dz)
 
-	if dist < 0.3:
+	if dist_xz < 0.3:
 		if is_patrol:
 			current_state = State.PATROL
-			if anim_player:
-				anim_player.play("Patrol")
+			_play_walk_animation()
 		else:
 			current_state = State.IDLE
-			if anim_player:
-				anim_player.play("idle")
+			_stop_animation()
 		return
 
-	dir = dir.normalized()
-	var angle = atan2(dir.x, dir.z)
-	rotation.y = lerp_angle(rotation.y, angle, 0.1)
+	var angle = atan2(dx, dz)
+	angle = wrapf(angle, -PI, PI)
+	rotation.y = wrapf(rotation.y, -PI, PI)
+	rotation.y = lerp_angle(rotation.y, angle, turn_lerp_speed)
+	rotation.y = wrapf(rotation.y, -PI, PI)
 
+	var dir = Vector3(dx, 0, dz).normalized()
 	velocity.x = dir.x * chase_speed
 	velocity.z = dir.z * chase_speed
+
 	move_and_slide()
+
+# ========================= 攻击碰撞箱(含调试网格) =========================
+
+func _enable_attack_collision():
+	attack_active_timer = 0.0
+	attacking = true
+	attack_collision_area.set_deferred("monitoring", true)
+	attack_collision_area.set_deferred("monitorable", true)
+
+	# 显示调试网格
+	if debug_mesh:
+		debug_mesh.visible = true
+
+func _disable_attack_collision():
+	attacking = false
+	attack_collision_area.set_deferred("monitoring", false)
+	attack_collision_area.set_deferred("monitorable", false)
+
+	# 隐藏调试网格
+	if debug_mesh:
+		debug_mesh.visible = false
+
+# ========================= 检测玩家 =========================
 
 func _check_player_distance() -> void:
 	if not player_ref:
 		return
-	var dist = global_transform.origin.distance_to(player_ref.global_transform.origin)
-	if dist < detection_range:
+	var my_pos = global_transform.origin
+	var player_pos = player_ref.global_transform.origin
+
+	var dx = player_pos.x - my_pos.x
+	var dz = player_pos.z - my_pos.z
+	var dist_xz = sqrt(dx*dx + dz*dz)
+
+	if dist_xz < detection_range:
 		if current_state in [State.IDLE, State.PATROL, State.CHASE]:
 			current_state = State.CHASE
-			if anim_player and anim_player.current_animation == "Patrol":
-				anim_player.stop()
-			if anim_player:
-				anim_player.play("walk")
+			_play_walk_animation()
 	else:
 		if current_state in [State.CHASE, State.ATTACK]:
-			sword_area.set_deferred("monitoring", false)
-			sword_area.set_deferred("monitorable", false)
+			_disable_attack_collision()
 			current_state = State.RETURN
-			if anim_player:
-				anim_player.play("walk")
-
-
-
-func _on_attack_area_body_entered(body: Node) -> void:
-	if body.name == "Player": 
-		if current_state in [State.CHASE, State.IDLE, State.PATROL]:
-			current_state = State.ATTACK
-			attack_timer = 0.0
-			if anim_player:
-				anim_player.play("attack")
-			sword_area.set_deferred("monitoring", true)
-			sword_area.set_deferred("monitorable", true)
-
-func _on_attack_area_body_exited(_body: Node) -> void:
-
-	pass
+			_play_walk_animation()
 
 func _is_player_in_attack_area() -> bool:
 	if not player_ref:
@@ -197,20 +267,47 @@ func _is_player_in_attack_area() -> bool:
 	var bodies = attack_area.get_overlapping_bodies()
 	return player_ref in bodies
 
+# ========================= 信号回调 =========================
 
+func _on_attack_area_body_entered(body: Node) -> void:
+	if body == player_ref:
+		if current_state in [State.CHASE, State.IDLE, State.PATROL]:
+			current_state = State.ATTACK
+			attack_timer = 0.0
+			_disable_attack_collision()
 
-func _on_sword_area_body_entered(body: Node) -> void:
-	if body.name == "Player": # or body.is_in_group("Player")
-		if body.has_method("take_damage"):
-			body.take_damage(damage_amount, self)
+func _on_attack_area_body_exited(body: Node) -> void:
+	if body == player_ref:
+		pass
 
+func _on_attack_collision_body_entered(body: Node) -> void:
+	if body == player_ref:
+		_apply_knockback_to_player(body)
 
-func take_damage(dmg_amount: int, _attacker: Node=null) -> void:
+func _apply_knockback_to_player(target: Node):
+	var knockback_dir = (target.global_transform.origin - global_transform.origin).normalized()
+	if target.has_method("knockback"):
+		target.knockback(knockback_dir * knockback_force)
+	else:
+		if target is CharacterBody3D:
+			target.velocity += knockback_dir * knockback_force
+
+# ========================= 受伤及死亡 =========================
+
+func take_damage(dmg_amount: int, _attacker: Node = null):
 	health -= dmg_amount
-	print("Enemy HP:", health)
 	if health <= 0:
 		_die()
 
-func _die() -> void:
-	print("Enemy died!")
+func _die():
 	queue_free()
+
+# ========================= 动画辅助 =========================
+
+func _play_walk_animation():
+	if anim_player and anim_player.current_animation != "walk":
+		anim_player.play("walk")
+
+func _stop_animation():
+	if anim_player:
+		anim_player.stop()

@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp7olf7tr54s1"]
+
+[ext_resource type="Material" uid="uid://ddlg5iasny477" path="res://Underwater_Caustics/caustics.tres" id="1_ntorc"]
+[ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Underwater_Caustics/water_base.tscn" id="2_4bupu"]
+[ext_resource type="PackedScene" uid="uid://c6xmw21g7x5kr" path="res://underwater_bubbles.tscn" id="3_qswaf"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nw2ef"]
+size = Vector2(200, 200)
+
+[sub_resource type="ImageTexture" id="ImageTexture_7tbh6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y18cf"]
+next_pass = ExtResource("1_ntorc")
+albedo_color = Color(0.760784, 0.698039, 0.454902, 1)
+roughness_texture = SubResource("ImageTexture_7tbh6")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bnwjd"]
+sky_top_color = Color(0.345098, 0.662745, 0.956863, 1)
+sky_horizon_color = Color(0.776471, 0.840196, 0.864706, 1)
+ground_bottom_color = Color(0.760784, 0.698039, 0.501961, 1)
+ground_horizon_color = Color(0.776471, 0.840196, 0.864706, 1)
+
+[sub_resource type="Sky" id="Sky_j33pk"]
+sky_material = SubResource("ProceduralSkyMaterial_bnwjd")
+
+[sub_resource type="Environment" id="Environment_71y74"]
+background_mode = 2
+sky = SubResource("Sky_j33pk")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.627451, 0.847059, 0.937255, 1)
+fog_density = 1.0
+fog_depth_curve = 0.535887
+fog_depth_begin = 50.0
+fog_depth_end = 150.0
+
+[node name="Water_Caustics" type="MeshInstance3D"]
+mesh = SubResource("PlaneMesh_nw2ef")
+surface_material_override/0 = SubResource("StandardMaterial3D_y18cf")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_71y74")
+
+[node name="MeshInstance3D" parent="WorldEnvironment" instance=ExtResource("2_4bupu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.8799, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="GPUParticles3D" parent="Node3D" instance=ExtResource("3_qswaf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.29273, 0)

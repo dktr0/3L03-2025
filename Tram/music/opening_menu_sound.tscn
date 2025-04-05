@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhls483kudv13"]
+
+[ext_resource type="AudioStream" uid="uid://crivpwmelviue" path="res://Tram/music/Opening Menu Theme Song Official.mp3" id="1_6k25r"]
+
+[node name="OpeningMenuSound" type="AudioStreamPlayer"]
+stream = ExtResource("1_6k25r")
+autoplay = true

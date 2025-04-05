@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmc3wwh0248a3"]
 
-[ext_resource type="AudioStream" uid="uid://isw3nr1witqk" path="res://Tram/music/bossa-nova-synth.mp3" id="1_q58rp"]
+[ext_resource type="AudioStream" uid="uid://bm4vkvlovejbx" path="res://Tram/music/bossa-nova-synth.mp3" id="1_q58rp"]
 
 [node name="Bossanovasynth" type="AudioStreamPlayer"]
 stream = ExtResource("1_q58rp")
+autoplay = true

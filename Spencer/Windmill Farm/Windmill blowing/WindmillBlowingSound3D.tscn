@@ -4,3 +4,4 @@
 
 [node name="WindmillBlowingSound3d" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_phq6h")
+autoplay = true

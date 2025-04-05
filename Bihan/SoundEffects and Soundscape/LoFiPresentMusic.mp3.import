@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crrfaajqpfann"
+path="res://.godot/imported/LoFiPresentMusic.mp3-3f0f72fa25c9322a6df86bf0741b8448.mp3str"
+
+[deps]
+
+source_file="res://Bihan/SoundEffects and Soundscape/LoFiPresentMusic.mp3"
+dest_files=["res://.godot/imported/LoFiPresentMusic.mp3-3f0f72fa25c9322a6df86bf0741b8448.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

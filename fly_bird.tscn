@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://deeq5coupwyra"]
+
+[ext_resource type="PackedScene" uid="uid://dv3mqy4f3khee" path="res://Xinyu Luo/Bird03.glb" id="1_565st"]
+
+[node name="fly bird" type="Node3D"]
+
+[node name="Bird04" parent="." instance=ExtResource("1_565st")]
+transform = Transform3D(1.30174, 0, 0, 0, 1.30174, 0, 0, 0, 1.30174, 88.0519, 80.5947, 77.2313)
+
+[node name="Bird05" parent="." instance=ExtResource("1_565st")]
+transform = Transform3D(1.30174, 0, 0, 0, 1.30174, 0, 0, 0, 1.30174, 69.7724, 80.5947, 114.851)
+
+[node name="Bird03" parent="." instance=ExtResource("1_565st")]
+transform = Transform3D(1.4852, 0, 0, 0, 1.4852, 0, 0, 0, 1.4852, -23.6914, 34.0783, 76.7858)
+
+[node name="fly bird" parent="." instance=ExtResource("1_565st")]
+transform = Transform3D(1.14094, 0, 0, 0, 1.14094, 0, 0, 0, 1.14094, 0, 112.935, 40.1477)
+
+[node name="fly bird2" parent="." instance=ExtResource("1_565st")]
+transform = Transform3D(1.30174, 0, 0, 0, 1.30174, 0, 0, 0, 1.30174, 38.7823, -2.97506, 40.1477)
+
+[node name="Bird06" parent="." instance=ExtResource("1_565st")]
+transform = Transform3D(1.30174, 0, 0, 0, 1.30174, 0, 0, 0, 1.30174, 91.5649, 63.3733, 16.5906)
+
+[node name="Bird07" parent="." instance=ExtResource("1_565st")]
+transform = Transform3D(1.30174, 0, 0, 0, 1.30174, 0, 0, 0, 1.30174, 91.5649, 191.37, 85.9537)
+
+[node name="Bird08" parent="." instance=ExtResource("1_565st")]
+transform = Transform3D(1.30174, 0, 0, 0, 1.30174, 0, 0, 0, 1.30174, -114.734, 81.0094, 34.2299)

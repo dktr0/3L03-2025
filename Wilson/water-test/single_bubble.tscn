@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bur47cay8puj5"]
+
+[ext_resource type="Material" uid="uid://bc62nga50weke" path="res://new_shader_material.tres" id="1_db4uw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_klj62"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_klj62")
+surface_material_override/0 = ExtResource("1_db4uw")

@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4sesr4r2f7cq"]
+
+[ext_resource type="Texture2D" uid="uid://dqxh7l82fquio" path="res://Zhu/zhu_title_page_assests/backgrounds/pausing page.png" id="1_vd1vt"]
+[ext_resource type="Texture2D" uid="uid://glxul2rkvvkd" path="res://Zhu/zhu_title_page_assests/backgrounds/pausing page-clock.png" id="2_5ryhf"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="4_lulii"]
+
+[node name="Pausing-Page" type="Node2D"]
+
+[node name="PausingPage" type="Sprite2D" parent="."]
+position = Vector2(575.5, 326)
+scale = Vector2(0.609896, 0.62037)
+texture = ExtResource("1_vd1vt")
+
+[node name="PausingPage-clock" type="Sprite2D" parent="."]
+position = Vector2(582, 314)
+scale = Vector2(0.163135, 0.163135)
+texture = ExtResource("2_5ryhf")
+
+[node name="透明层" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.647059)
+light_mask = 0
+visibility_layer = 2
+position = Vector2(579.95, 326.168)
+scale = Vector2(1.68509, 1.75954)
+
+[node name="Menu" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 165.0
+offset_right = 218.0
+offset_bottom = 195.0
+theme_override_fonts/font = ExtResource("4_lulii")
+theme_override_font_sizes/font_size = 29
+text = "MENU"
+
+[node name="CreditLabel3" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 315.0
+offset_right = 314.0
+offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("4_lulii")
+theme_override_font_sizes/font_size = 29
+text = "INTRODUCTION"
+
+[node name="Exit" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 465.0
+offset_right = 218.0
+offset_bottom = 495.0
+theme_override_fonts/font = ExtResource("4_lulii")
+theme_override_font_sizes/font_size = 29
+text = "EXIT"
