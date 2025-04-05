@@ -4,4 +4,5 @@
 
 [node name="pastlofimusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_ere4k")
+autoplay = true
 parameters/looping = true

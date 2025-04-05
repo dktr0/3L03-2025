@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cofaa1rwaesmn"]
+
+[ext_resource type="AudioStream" uid="uid://dqt4rekrcpn0s" path="res://Bihan/SoundEffects and Soundscape/TreeRustlingFinal.mp3" id="1_dneyn"]
+
+[node name="TreeRustling3D" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_dneyn")
+autoplay = true

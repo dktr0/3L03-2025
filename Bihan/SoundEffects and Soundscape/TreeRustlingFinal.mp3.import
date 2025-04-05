@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqt4rekrcpn0s"
+path="res://.godot/imported/TreeRustlingFinal.mp3-79b39e84ebbb00805d72cc99313eafd6.mp3str"
+
+[deps]
+
+source_file="res://Bihan/SoundEffects and Soundscape/TreeRustlingFinal.mp3"
+dest_files=["res://.godot/imported/TreeRustlingFinal.mp3-79b39e84ebbb00805d72cc99313eafd6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

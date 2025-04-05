@@ -4,3 +4,4 @@
 
 [node name="SeagulSound3d" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_qrxml")
+autoplay = true
