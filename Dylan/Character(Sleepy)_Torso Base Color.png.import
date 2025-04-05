@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2hnwyu7vtxxj"
-path.s3tc="res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"
+uid="uid://88thya2io8g3"
+path.s3tc="res://.godot/imported/Character(Sleepy)_Torso Base Color.png-01ac104d520cb8c30bcf9a88502c3c84.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "afd35300d23849d191d4c704d40638ca"
+"md5": "eb427805ce0bcfb2ba325101bd81415a"
 }
 
 [deps]
 
-source_file="res://Rongyu Liu/Soil/No green soil_cracked_red_ground_diff_1k.jpg"
-dest_files=["res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"]
+source_file="res://Dylan/Character(Sleepy)_Torso Base Color.png"
+dest_files=["res://.godot/imported/Character(Sleepy)_Torso Base Color.png-01ac104d520cb8c30bcf9a88502c3c84.s3tc.ctex"]
 
 [params]
 

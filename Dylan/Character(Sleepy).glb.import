@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://blxw2vl32eft"
-path="res://.godot/imported/Character1.glb-7dcad1bc6398af6be240d43636e22848.scn"
+uid="uid://bejvi6jbdk1rs"
+path="res://.godot/imported/Character(Sleepy).glb-e077cfdb29c1073a8453fa7dabddd21e.scn"
 
 [deps]
 
-source_file="res://Dylan/Character1.glb"
-dest_files=["res://.godot/imported/Character1.glb-7dcad1bc6398af6be240d43636e22848.scn"]
+source_file="res://Dylan/Character(Sleepy).glb"
+dest_files=["res://.godot/imported/Character(Sleepy).glb-e077cfdb29c1073a8453fa7dabddd21e.scn"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2hnwyu7vtxxj"
-path.s3tc="res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"
+uid="uid://cn7s1oqpxaley"
+path.s3tc="res://.godot/imported/CharacterTest_Skirt Base Color.png-80257ce87816a59a2bb6817092902f01.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "afd35300d23849d191d4c704d40638ca"
+"md5": "3521e879771450ba8be7ec2f34876fc2"
 }
 
 [deps]
 
-source_file="res://Rongyu Liu/Soil/No green soil_cracked_red_ground_diff_1k.jpg"
-dest_files=["res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"]
+source_file="res://Dylan/Test/CharacterTest_Skirt Base Color.png"
+dest_files=["res://.godot/imported/CharacterTest_Skirt Base Color.png-80257ce87816a59a2bb6817092902f01.s3tc.ctex"]
 
 [params]
 

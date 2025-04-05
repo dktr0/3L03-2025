@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2hnwyu7vtxxj"
-path.s3tc="res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"
+uid="uid://cc55cikq3hgyl"
+path.s3tc="res://.godot/imported/CharacterTest_Shoe Base Color.png-0e8c043725849c2b7e2d120e80a71dd5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "afd35300d23849d191d4c704d40638ca"
+"md5": "fc08d39f0605e4d6860f92d281685a72"
 }
 
 [deps]
 
-source_file="res://Rongyu Liu/Soil/No green soil_cracked_red_ground_diff_1k.jpg"
-dest_files=["res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"]
+source_file="res://Dylan/Test/CharacterTest_Shoe Base Color.png"
+dest_files=["res://.godot/imported/CharacterTest_Shoe Base Color.png-0e8c043725849c2b7e2d120e80a71dd5.s3tc.ctex"]
 
 [params]
 

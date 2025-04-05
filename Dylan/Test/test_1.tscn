@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://btbn2do5ctf8u"]
+
+[ext_resource type="PackedScene" uid="uid://dla6r0vw41xn7" path="res://Dylan/Test/CharacterTest.glb" id="1_wnhcg"]
+
+[node name="Test1" type="CharacterBody3D"]
+
+[node name="CharacterTest" parent="." instance=ExtResource("1_wnhcg")]

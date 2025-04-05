@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2hnwyu7vtxxj"
-path.s3tc="res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"
+uid="uid://uibsow44hrsh"
+path.s3tc="res://.godot/imported/PlayerCharacter_Arm Base Color.png-6ca4ff33d08036935c7b182821c715b4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "afd35300d23849d191d4c704d40638ca"
+"md5": "08a82fcc02258d96ebc0340a65df6b3a"
 }
 
 [deps]
 
-source_file="res://Rongyu Liu/Soil/No green soil_cracked_red_ground_diff_1k.jpg"
-dest_files=["res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"]
+source_file="res://Dylan/PlayerAnimations/PlayerCharacter_Arm Base Color.png"
+dest_files=["res://.godot/imported/PlayerCharacter_Arm Base Color.png-6ca4ff33d08036935c7b182821c715b4.s3tc.ctex"]
 
 [params]
 

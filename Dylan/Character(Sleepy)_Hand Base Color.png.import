@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2hnwyu7vtxxj"
-path.s3tc="res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"
+uid="uid://dr4bg07fymk1p"
+path.s3tc="res://.godot/imported/Character(Sleepy)_Hand Base Color.png-f7f3093dcf6a8d05b1bb3b6723413bfd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "afd35300d23849d191d4c704d40638ca"
+"md5": "a8e3a43d45c775c8c5f55ba89e37b422"
 }
 
 [deps]
 
-source_file="res://Rongyu Liu/Soil/No green soil_cracked_red_ground_diff_1k.jpg"
-dest_files=["res://.godot/imported/No green soil_cracked_red_ground_diff_1k.jpg-2122ea0e947f7aaf9fc13dd558ce5ddd.s3tc.ctex"]
+source_file="res://Dylan/Character(Sleepy)_Hand Base Color.png"
+dest_files=["res://.godot/imported/Character(Sleepy)_Hand Base Color.png-f7f3093dcf6a8d05b1bb3b6723413bfd.s3tc.ctex"]
 
 [params]
 
