@@ -12,11 +12,14 @@ signal dialogue_finished
 @export var typing_speed: float = 0.04
 @export var page_wait_time: float = 1.0
 
+# 保存当前活跃任务的字典
 var active_quests: Dictionary = {}
 
-# 对话相关
-var finish_callback = null        # 外部对话结束时的回调
-var lines: Array[String] = []     # 要显示的多行(最多3行)
+#
+# ============= 对话相关变量 =============
+#
+var finish_callback = null         # 对话结束后的回调
+var lines = []                     # 不再写 : Array[String]，改成动态数组
 var current_line_index: int = 0
 var current_char_index: int = 0
 
@@ -27,19 +30,19 @@ func _ready():
 	dialogue_panel.visible = false
 	quest_panel.visible = false
 
-	# 连接任务管理器信号
+	# 连接到 QuestManager 信号
 	QuestManager.connect("quest_started", self._on_quest_started)
 	QuestManager.connect("quest_completed", self._on_quest_completed)
 	QuestManager.connect("progress_updated", self._on_progress_updated)
 
-	# 创建 Timer 节点专门用于“打字机”
+	# 创建一个 Timer 用于“打字机”
 	typing_timer = Timer.new()
 	typing_timer.one_shot = false
 	typing_timer.wait_time = typing_speed
 	typing_timer.timeout.connect(_on_typing_timeout)
 	add_child(typing_timer)
 
-	# 创建 Timer 节点专门用于“页面等待”
+	# 创建另一个 Timer 用于“页面等待”
 	page_wait_timer = Timer.new()
 	page_wait_timer.one_shot = true
 	page_wait_timer.wait_time = page_wait_time
@@ -47,29 +50,38 @@ func _ready():
 	add_child(page_wait_timer)
 
 #
-# ============= 对话: 最多3页 + 打字机 + 自动翻页（无 yield/await） =============
+# =========== 对话：最多3页 + 打字机 + 自动翻页（无 yield/await） ===========
 #
-func show_dialogue_3page(pages: Array[String], callback = null):
-	# 若超过3页，截断
-	if pages.size() > 3:
-		pages = pages.slice(0, 3)
+func show_dialogue_3page(pages, callback = null):
+	"""
+	不再写 `pages: Array[String]`，这样不会报“array of argument 1 does not match typed array”错误。
+	任何类型都可以进来，我们在脚本内部把它转成字符串列表。
+	"""
 	finish_callback = callback
 
-	lines = pages
-	current_line_index = 0
+	var final_lines = []
+	# 遍历传入的 pages 数组，把每个元素都转为字符串
+	for item in pages:
+		var text_version = str(item)            # 强制转字符串
+		text_version = text_version.strip_edges()  # 去掉首尾空格
+		if text_version != "":  # 如果不是空的，就保留
+			final_lines.append(text_version)
 
+	# 若超过3页，截断到3行
+	if final_lines.size() > 3:
+		final_lines = final_lines.slice(0, 3)
+
+	lines = final_lines
+	current_line_index = 0
 	dialogue_label.text = ""
 	dialogue_panel.visible = true
 
 	if lines.size() > 0:
 		_start_typewriter_line(0)
 	else:
-		# 如果没行，则直接结束
+		# 如果最终没有任何有效行，则直接结束
 		_end_dialogue()
 
-#
-# 启动“打字机”定时器，逐字显示 lines[line_index]
-#
 func _start_typewriter_line(line_index: int):
 	current_line_index = line_index
 	current_char_index = 0
@@ -78,26 +90,24 @@ func _start_typewriter_line(line_index: int):
 	typing_timer.start()
 
 #
-# 逐字显示: Timer 的 timeout 回调
+# 逐字显示：typing_timer.timeout 回调
 #
 func _on_typing_timeout():
-	# 显示下一字符
 	var line = lines[current_line_index]
 	if current_char_index < line.length():
 		dialogue_label.text += line[current_char_index]
 		current_char_index += 1
 	else:
-		# 当前行已全部显示完，停止打字机timer
+		# 当前行已全部显示完
 		typing_timer.stop()
-		# 开启页面等待timer
+		# 等待 page_wait_time 后继续下一行
 		page_wait_timer.wait_time = page_wait_time
 		page_wait_timer.start()
 
 #
-# 一页显示完后，等 page_wait_time 秒，再切下一页
+# 等 page_wait_time 后切下一行
 #
 func _on_page_wait_timeout():
-	# 切换到下一行
 	var next_line_index = current_line_index + 1
 	if next_line_index < lines.size():
 		_start_typewriter_line(next_line_index)
@@ -142,7 +152,7 @@ func _refresh_quest_panel():
 	else:
 		quest_panel.visible = true
 
-	# 1) 显示主要任务信息
+	# 构建任务列表文本
 	var text_lines = []
 	for quest_id in active_quests.keys():
 		var q = active_quests[quest_id]
@@ -156,12 +166,12 @@ func _refresh_quest_panel():
 			line += "\n  [已完成]"
 		text_lines.append(line)
 
+	# 更新左侧任务文本
 	quest_label.text = text_lines.join("\n\n")
 
-	# 2) 显示更详细的追踪信息
+	# 显示更详细的追踪信息
 	var tracker_info = []
 
-	# 示例: open_chest
 	if active_quests.has("open_chest"):
 		var chest_info = active_quests["open_chest"]
 		if chest_info["completed"]:

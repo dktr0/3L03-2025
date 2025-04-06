@@ -19,22 +19,29 @@ grow_vertical = 2
 script = ExtResource("1_w0xqi")
 
 [node name="Amulet1" parent="." instance=ExtResource("2_jf7tv")]
+visible = false
 layout_mode = 1
 
 [node name="Amulet2" parent="." instance=ExtResource("3_dfepb")]
+visible = false
 layout_mode = 1
 
 [node name="Amulet23" parent="." instance=ExtResource("4_qb2gd")]
+visible = false
 layout_mode = 1
 
 [node name="Amulet24" parent="." instance=ExtResource("5_fjjmm")]
+visible = false
 layout_mode = 1
 
 [node name="Amulet3" parent="." instance=ExtResource("6_kx6ls")]
+visible = false
 layout_mode = 1
 
 [node name="Amulet34" parent="." instance=ExtResource("7_lbqog")]
+visible = false
 layout_mode = 1
 
 [node name="Amulet4" parent="." instance=ExtResource("8_dlvx6")]
+visible = false
 layout_mode = 1

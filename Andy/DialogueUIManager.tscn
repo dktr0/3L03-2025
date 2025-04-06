@@ -13,6 +13,7 @@ expand_margin_bottom = 95.0
 
 [node name="Control" type="CanvasLayer"]
 script = ExtResource("1_nexia")
+page_wait_time = 0.5
 
 [node name="DialoguePanel" type="Panel" parent="."]
 anchors_preset = 7
@@ -64,7 +65,6 @@ offset_left = 25.0
 offset_top = 22.0
 offset_right = 194.0
 offset_bottom = 147.0
-text = "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
 autowrap_mode = 1
 clip_text = true
 

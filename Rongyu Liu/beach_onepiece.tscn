@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cxuv0tja5rb2q" path="res://Rongyu Liu/Beach_onepiece.glb" id="1_qnw7v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wvvn0"]
-size = Vector3(0.968689, 0.00539398, 0.969238)
+size = Vector3(0.969, 0.115, 0.969)
 
 [node name="Beach_onepiece" type="StaticBody3D"]
 
@@ -11,5 +11,5 @@ size = Vector3(0.968689, 0.00539398, 0.969238)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0124022, 0, -0.0153714)
 
 [node name="Beach_onepiece2" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.10753, 0, 0, 0, 2.10753, 0, 0, 0, 2.10753, 0.0104954, -0.00167123, -0.0147236)
+transform = Transform3D(2.10753, 0, 0, 0, 2.10753, 0, 0, 0, 2.10753, 0.0104954, -0.113028, -0.0147236)
 shape = SubResource("BoxShape3D_wvvn0")

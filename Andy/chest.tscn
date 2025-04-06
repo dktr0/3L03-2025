@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://if3f5lyupjxr"]
+[gd_scene load_steps=8 format=3 uid="uid://if3f5lyupjxr"]
 
 [ext_resource type="Script" path="res://Andy/chest.gd" id="1_tddmd"]
-[ext_resource type="PackedScene" uid="uid://btl1ap6tswitv" path="res://Darius/ChestOpened.tscn" id="2_aups3"]
 [ext_resource type="PackedScene" uid="uid://cobenij0mftuy" path="res://Darius/TreasureChest_Lid.tscn" id="3_r5dnr"]
+[ext_resource type="AudioStream" uid="uid://xqbx7yh8s8gp" path="res://Tram/sound effects/magical bell chime 1.mp3" id="4_bkeyf"]
 [ext_resource type="PackedScene" path="res://Darius/TreasureChest_Bottom.tscn" id="4_m3pvl"]
-[ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="5_1ga1c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m08d4"]
 
@@ -68,9 +67,6 @@ _data = {
 [node name="Chest" type="Node3D"]
 script = ExtResource("1_tddmd")
 
-[node name="ChestOpened" parent="." instance=ExtResource("2_aups3")]
-visible = false
-
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
@@ -89,4 +85,4 @@ transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -0.0927239, 0.065134
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161397, -0.168948, 0)
 
 [node name="OpenSFX" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_1ga1c")
+stream = ExtResource("4_bkeyf")
