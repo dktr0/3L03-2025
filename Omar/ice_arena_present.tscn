@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://x7glgcbmrjhe"]
+[gd_scene load_steps=7 format=3 uid="uid://x7glgcbmrjhe"]
 
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="1_htwf0"]
 [ext_resource type="PackedScene" uid="uid://fxscysncqxhj" path="res://Wilson/glacier_wall.tscn" id="2_e0li6"]
 [ext_resource type="PackedScene" uid="uid://ee3607ux8b25" path="res://Mackie/icicle clump_2.tscn" id="3_njnep"]
 [ext_resource type="PackedScene" uid="uid://dfjs3jo3ls7is" path="res://Mackie/icicle clump_1.tscn" id="4_rqhed"]
 [ext_resource type="PackedScene" uid="uid://lfu2wgkp8eu" path="res://Mackie/icicle clump_3.tscn" id="5_j4k7k"]
+[ext_resource type="PackedScene" uid="uid://dlmvtoi6hdyvo" path="res://Wilson/weater_snowing.tscn" id="6_jl0uh"]
 
 [node name="Ice_Arena_Present" type="Node3D"]
 
@@ -57,7 +58,7 @@ transform = Transform3D(0.25032, -0.965926, -0.0657823, 0.968135, 0.250252, 0.00
 transform = Transform3D(30, 0, 0, 0, 41.1786, 0, 0, 0, 30, 18.6306, 20.131, -7.9449)
 
 [node name="icicleclump1_nonglow" parent="." instance=ExtResource("4_rqhed")]
-transform = Transform3D(-4.37114e-07, -1.38428, 10.9526, -10, 6.05088e-08, -4.78752e-07, 0, -32.714, -0.463454, 12.5065, 0.256778, 22.5005)
+transform = Transform3D(-4.37114e-07, -1.38428, 10.9526, -10, 6.05088e-08, -4.78752e-07, 0, -32.714, -0.463454, 12.5065, 0.543173, 22.5005)
 
 [node name="icicleclump1_nonglow2" parent="." instance=ExtResource("4_rqhed")]
 transform = Transform3D(4.37114e-07, 1.38428, -10.9526, -10, 6.05088e-08, -4.78752e-07, -3.71035e-14, 32.714, 0.463455, 15.3831, 0.256778, 30.7657)
@@ -73,3 +74,27 @@ transform = Transform3D(0.0771272, -0.187915, 20.6553, -0.199713, 29.5274, 0.136
 
 [node name="Icicle clump3_nonglow4" parent="." instance=ExtResource("5_j4k7k")]
 transform = Transform3D(0.0771272, -0.187915, 20.6553, -0.199713, 29.5274, 0.136996, -7.52276, -0.78581, 0.208133, 1.59596, 15.6108, 9.14992)
+
+[node name="weater_snowing" parent="." instance=ExtResource("6_jl0uh")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 17.6906, -44.3638, -23.0046)
+
+[node name="weater_snowing2" parent="." instance=ExtResource("6_jl0uh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.5319, 3.17846, 0)
+
+[node name="weater_snowing3" parent="." instance=ExtResource("6_jl0uh")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 9.36556, 17.1448, -40.0259)
+
+[node name="weater_snowing4" parent="." instance=ExtResource("6_jl0uh")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -52.2899, 17.1448, -40.0259)
+
+[node name="weater_snowing5" parent="." instance=ExtResource("6_jl0uh")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 79.0625, 17.1448, -40.0259)
+
+[node name="weater_snowing6" parent="." instance=ExtResource("6_jl0uh")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 7.48448, 17.1448, 17.8121)
+
+[node name="weater_snowing7" parent="." instance=ExtResource("6_jl0uh")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -45.6451, 17.1448, 17.8121)
+
+[node name="weater_snowing8" parent="." instance=ExtResource("6_jl0uh")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 63.5486, 17.1448, 17.8121)
