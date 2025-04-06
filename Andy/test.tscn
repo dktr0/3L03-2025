@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://c5ismj26qgcgh"]
+[gd_scene load_steps=21 format=3 uid="uid://c5ismj26qgcgh"]
 
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="1_xepk3"]
-[ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Zhu/zhu_title_page_assests/assests/chest.tscn" id="2_vrmga"]
+[ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/chest.tscn" id="2_vrmga"]
 [ext_resource type="PackedScene" uid="uid://cetv4q45see0s" path="res://Andy/amulet_ring.tscn" id="3_icnn5"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="3_w8lci"]
 [ext_resource type="Texture2D" uid="uid://cmhupq3njsfqu" path="res://Nan/Goodsky.jpg" id="4_nqk20"]
@@ -10,8 +10,10 @@
 [ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="7_41cqa"]
 [ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="8_jfi1w"]
 [ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="8_xkfml"]
-[ext_resource type="PackedScene" uid="uid://ttreyma0ladq" path="res://Matty/Penguin/penguin.tscn" id="11_4jr7y"]
-[ext_resource type="PackedScene" uid="uid://b2m63jeribe5p" path="res://Sing-yu/cottage_house_destoryed3.tscn" id="12_52qwc"]
+[ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="11_euw74"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5pdqd"]
+size = Vector3(1.82, 2.795, 2.07)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d7q54"]
 size = Vector3(100, 1, 100)
@@ -36,6 +38,9 @@ size = Vector3(7.73, 2.815, 19.42)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ksfm3"]
 data = PackedVector3Array(-3.865, 1.4075, 9.71, 3.865, 1.4075, 9.71, -3.865, -1.4075, 9.71, 3.865, 1.4075, 9.71, 3.865, -1.4075, 9.71, -3.865, -1.4075, 9.71, 3.865, 1.4075, -9.71, -3.865, 1.4075, -9.71, 3.865, -1.4075, -9.71, -3.865, 1.4075, -9.71, -3.865, -1.4075, -9.71, 3.865, -1.4075, -9.71, 3.865, 1.4075, 9.71, 3.865, 1.4075, -9.71, 3.865, -1.4075, 9.71, 3.865, 1.4075, -9.71, 3.865, -1.4075, -9.71, 3.865, -1.4075, 9.71, -3.865, 1.4075, -9.71, -3.865, 1.4075, 9.71, -3.865, -1.4075, -9.71, -3.865, 1.4075, 9.71, -3.865, -1.4075, 9.71, -3.865, -1.4075, -9.71, 3.865, 1.4075, 9.71, -3.865, 1.4075, 9.71, 3.865, 1.4075, -9.71, -3.865, 1.4075, 9.71, -3.865, 1.4075, -9.71, 3.865, 1.4075, -9.71, -3.865, -1.4075, 9.71, 3.865, -1.4075, 9.71, -3.865, -1.4075, -9.71, 3.865, -1.4075, 9.71, 3.865, -1.4075, -9.71, -3.865, -1.4075, -9.71)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g1e0p"]
+size = Vector3(7.66, 2.96, 17.76)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -43,8 +48,14 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_xepk3")]
-transform = Transform3D(-0.220612, 0, -0.975362, 0, 1, 0, 0.975362, 0, -0.220612, 25.5562, 1.72198, 0)
+transform = Transform3D(-0.220612, 0, -0.975362, 0, 1, 0, 0.975362, 0, -0.220612, 25.5562, 0.503348, 0)
 jump_strength = 20.0
+
+[node name="Area3D" type="Area3D" parent="Player"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Player/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308659, 1.598, -1.36463)
+shape = SubResource("BoxShape3D_5pdqd")
 
 [node name="Chest" parent="." instance=ExtResource("2_vrmga")]
 transform = Transform3D(0.133398, 0, 0.991063, 0, 1, 0, -0.991063, 0, 0.133398, 5.98387, 0.461618, -7.40483)
@@ -77,12 +88,16 @@ shape = SubResource("ConvexPolygonShape3D_ocaf2")
 environment = SubResource("Environment_j3ex5")
 
 [node name="Enemy" parent="." instance=ExtResource("8_xkfml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.806827, 2.888)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435551, 2.888)
 is_patrol = true
+chase_speed = 4.0
+max_health = 2
+auto_jump_speed = 10.0
 player_path = NodePath("../Player")
 patrol_point_a = NodePath("../point B")
 patrol_point_b = NodePath("../point A")
 turn_lerp_speed = 0.6
+player_collider_path = NodePath("../Player/Area3D")
 
 [node name="point A" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.125, 0, 2.888)
@@ -90,13 +105,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.125, 0, 2.888)
 [node name="point B" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.941, 0, 5.372)
 
-[node name="Penguin" parent="." instance=ExtResource("11_4jr7y")]
-transform = Transform3D(-0.446198, 0, -0.894934, 0, 1, 0, 0.894934, 0, -0.446198, 0, 0.716701, 14.7277)
-
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59868, 16.1922)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2249, 1.59868, 16.1922)
 mesh = SubResource("BoxMesh_rocns")
 skeleton = NodePath("../..")
 
@@ -104,5 +116,18 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59868, 16.1922)
 shape = SubResource("ConcavePolygonShape3D_ksfm3")
 
-[node name="Node3D" parent="." instance=ExtResource("12_52qwc")]
-transform = Transform3D(3.57, 0, 0, 0, 3.57, 0, 0, 0, 3.57, 22.8497, 0, 0)
+[node name="Control2" parent="." instance=ExtResource("11_euw74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3592, -0.131591, 0)
+dialogue_lines = Array[String](["Then there’s the forest. Dry as tinder, and wouldn’t you know it—fire’s started up. If it spreads,we’ll lose the whole damn valley. Some folks are tryin’ to stop it, but they ain't enough.And the village? Used to be clean water, good fishin’. Now the shore’s fillin’ up with filth, and noone’s takin’ the blame. If somethin’ ain’t done soon, there won’t be a village left to save.", "Things ain't too far gone yet, but they’re slippin’. You got that look about ya—like you might beable to turn the tide. If you can, do it quickly. We ain't got forever."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15152, 0)
+shape = SubResource("BoxShape3D_g1e0p")
+
+[node name="Enemy2" parent="." instance=ExtResource("8_xkfml")]
+transform = Transform3D(-0.825205, 0, 4.00589, 0, 4.09, 0, -4.00589, 0, -0.825205, 17.0716, 0.691455, 14.4142)
+chase_speed = 4.0
+knockback_force = 200.0
+auto_jump_speed = 10.0
+player_path = NodePath("../Player")
+player_collider_path = NodePath("../Player/Area3D")

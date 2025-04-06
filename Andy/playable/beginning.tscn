@@ -239,7 +239,6 @@ transform = Transform3D(0.0249382, 0, -0.999689, 0, 1, 0, 0.999689, 0, 0.0249382
 [node name="Portal 1" parent="." instance=ExtResource("27_cjl7l")]
 transform = Transform3D(6.405, 0, 0, 0, 6.405, 0, 0, 0, 6.405, 5.24354, 21.9521, 140.922)
 player_path = NodePath("../Player")
-teleport_method = 1
 target_scene_path = "res://Andy/playable/present.tscn"
 amulet_ui_path = NodePath("../Control")
 

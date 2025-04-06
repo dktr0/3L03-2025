@@ -13,6 +13,7 @@ texture = ExtResource("1_sbn7x")
 metadata/_edit_use_anchors_ = true
 
 [node name="Text1" type="RichTextLabel" parent="DialogueBox1"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.0146484

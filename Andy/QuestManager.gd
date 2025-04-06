@@ -1,23 +1,46 @@
 extends Node
 
-signal quest_completed
-signal progress_updated(current: int, goal: int)
+signal quest_started(quest_id: String)
+signal quest_completed(quest_id: String)
+signal progress_updated(quest_id: String, current: int, goal: int)
 
-@export var collect_goal: int = 7    # 需要收集的总数
-var collect_count: int = 0          # 当前收集了多少
+var quests_data: Dictionary = {}
 
 func _ready():
-	pass
+	print("[QuestManager] Ready...")
 
-func add_item():
-	collect_count += 1
-	emit_signal("progress_updated", collect_count, collect_goal)
-	
-	if collect_count >= collect_goal:
-		emit_signal("quest_completed")
+func start_quest(quest_id: String, goal: int, description: String = ""):
+	if not quests_data.has(quest_id):
+		quests_data[quest_id] = {
+			"description": description,
+			"current": 0,
+			"goal": goal,
+			"completed": false
+		}
+		emit_signal("quest_started", quest_id)
+		print("[QuestManager] 任务开始: %s (目标=%d, 描述=%s)" %
+			[quest_id, goal, description])
 
-func get_progress() -> int:
-	return collect_count
+func add_progress(quest_id: String, amount: int = 1):
+	if quests_data.has(quest_id):
+		var info = quests_data[quest_id]
+		if info["completed"]:
+			return
+		info["current"] += amount
+		emit_signal("progress_updated", quest_id, info["current"], info["goal"])
+		print("[QuestManager] 进度: %s -> %d / %d" %
+			[quest_id, info["current"], info["goal"]])
 
-func get_goal() -> int:
-	return collect_goal
+		if info["current"] >= info["goal"]:
+			_complete_quest(quest_id)
+
+func complete_quest(quest_id: String):
+	if quests_data.has(quest_id):
+		var info = quests_data[quest_id]
+		if not info["completed"]:
+			_complete_quest(quest_id)
+
+func _complete_quest(quest_id: String):
+	quests_data[quest_id]["completed"] = true
+	emit_signal("quest_completed", quest_id)
+	print("[QuestManager] 任务完成: %s" % quest_id)
