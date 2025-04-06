@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=78 format=4 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -51,6 +51,7 @@
 [ext_resource type="AudioStream" uid="uid://crrfaajqpfann" path="res://Bihan/SoundEffects and Soundscape/LoFiPresentMusic.mp3" id="49_tvd2p"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="50_fu1qj"]
 [ext_resource type="AudioStream" uid="uid://b112mcgfgkici" path="res://Spencer/Ice and Glacier/Soundscape Glacier/Glacier soundscape.mp3" id="52_8wk0a"]
+[ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="52_rl4wu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ufjtn"]
 size = Vector3(2.76624, 2.61658, 3)
@@ -163,10 +164,13 @@ size = Vector3(640.669, 0.566574, 179.996)
 [sub_resource type="SphereShape3D" id="SphereShape3D_3bf4o"]
 radius = 48.4889
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nobjg"]
+size = Vector3(18.9987, 7.24939, 11.5142)
+
 [node name="Present" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("32_3v2qo")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 159.178, -5.43017, -154.289)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.29387, 2.40403, 20.8242)
 collision_layer = 3
 
 [node name="Area3D" type="Area3D" parent="Player"]
@@ -227,8 +231,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6644, 2.1903, -4.75653)
 [node name="Enemy2" parent="Tasks/Ice_Arena_Present" instance=ExtResource("8_b28uw")]
 transform = Transform3D(-0.0310795, 0, -0.999516, 0, 1, 0, 0.999516, 0, -0.0310795, 27.0764, 2.00614, 4.23811)
 is_patrol = true
+chase_speed = 6.0
 knockback_force = 200.0
-gravity = 30.0
+auto_jump_speed = 10.0
 player_path = NodePath("../../../Player")
 patrol_point_a = NodePath("../Point A Close")
 patrol_point_b = NodePath("../Point B Close")
@@ -826,6 +831,14 @@ player = NodePath("../../../Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 182.831, 0, -229.136)
 stream = ExtResource("52_8wk0a")
 volume_db = 12.19
+
+[node name="Control2" parent="." instance=ExtResource("52_rl4wu")]
+transform = Transform3D(-0.507072, 0, 0.861904, 0, 1, 0, -0.861904, 0, -0.507072, 29.6487, 0, 8.46244)
+dialogue_lines = Array[String](["Eh? Eh? You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned up with got destroyed. I seen the shards of it fly off all over the place. One flew right into that fire, at the top of those charred trees. Wouldn’t want to be the one to have to go there.You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned up with got destroyed, I seen the shards of it fly off all over the place", "Another got snatched by some ice critters, settin’ traps up northeast. Been watching those troublemakers destroy everything around them. I tell you, there is no reasoning with those fellas, what with their violent nature. Mean things, they are. I wouldn’t go messing with ‘em unless you’ve got something sharp or magical up your sleeve, you hear?", "Last piece? Done sunk to the bottom of what was once my home. The village under the sea—just northwest of here. Was thinking of heading there to snag it, but that water ain't what it used to be. Too much filth in the water as is. Murky, twisted, full of things best left alone.", "Things ain’t like they used to be. The ice, the rivers, even the fish—they’re all disappearin’. Used to be a paradise here. Now? Just smoke, poison, and bad luck. It’s like the world itself gave up. Or maybe something worse moved in and made it theirs. Either way, don’t expect the land to show mercy.", "Hope you find what you’re lookin’ for. Just watch where you step—world ain’t too kind these days. These may help ya later on. I got no use for these anymore, so have your pick. Only one thing, though—I’m not foolish enough to be here defenseless. Always good to keep a little surprise tucked away."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control2"]
+transform = Transform3D(-0.812887, 0, -0.582421, 0, 1, 0, 0.582421, 0, -0.812887, -8.12427, 3.12469, -2.97259)
+shape = SubResource("BoxShape3D_nobjg")
 
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer" to="killzone/Kill Zone Platformer" method="_on_body_entered"]
