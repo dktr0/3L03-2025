@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnupbmfgig6my"]
 
-[ext_resource type="PackedScene" uid="uid://bh47ldj70i4kk" path="res://Ice_Platform.glb" id="1_x6ft2"]
+[ext_resource type="PackedScene" uid="uid://bh47ldj70i4kk" path="res://Wilson/Ice_Platform.glb" id="1_x6ft2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7qd8o"]
-height = 4.22443
+height = 4.48649
 radius = 8.94166
 
 [node name="Ice_Platform" type="StaticBody3D"]
