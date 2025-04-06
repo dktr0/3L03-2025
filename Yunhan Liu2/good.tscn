@@ -25,14 +25,14 @@
 [ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="16_wdtqw"]
 [ext_resource type="PackedScene" uid="uid://b7ge4fbq1syiw" path="res://Zibo/windmill.tscn" id="16_xn8la"]
 [ext_resource type="PackedScene" uid="uid://bas58vrt0ro6o" path="res://Xinyu Luo/Tree2.glb" id="17_eh4x8"]
-[ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="18_1xakh"]
 [ext_resource type="PackedScene" uid="uid://xt2k5eif24su" path="res://Xinyu Luo/Bird 01.glb" id="18_l3lot"]
 [ext_resource type="PackedScene" uid="uid://deeq5coupwyra" path="res://fly_bird.tscn" id="18_lfiss"]
 [ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="25_n514t"]
-[ext_resource type="AudioStream" uid="uid://ph0cl0jk740l" path="res://Tram/music/positive-future-loop.mp3" id="27_pr3dp"]
+[ext_resource type="AudioStream" uid="uid://dvs1mcx5q0ptu" path="res://Yunhan Liu2/positive-future-loop.mp3" id="27_f6pr8"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="30_rr3n8"]
 [ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="31_687fs"]
 [ext_resource type="Script" path="res://dialogue.gd" id="32_p5v5g"]
+[ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="33_e5mph"]
 
 [sub_resource type="Animation" id="Animation_qj1fd"]
 length = 0.001
@@ -3723,12 +3723,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8903, -8.78195, 121.354)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 86.5546)
-stream = ExtResource("27_pr3dp")
+stream = ExtResource("27_f6pr8")
 autoplay = true
-
-[node name="Player" parent="." instance=ExtResource("18_1xakh")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.97392, 4.46584, 40.6774)
-collision_layer = 1
 
 [node name="fish_shop_owner" parent="." instance=ExtResource("11_jj2kk")]
 transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 35.2944, 0.469059, 9.8571)
@@ -3749,3 +3745,6 @@ script = ExtResource("32_p5v5g")
 
 [node name="FishShop" parent="." instance=ExtResource("10_jhoqv")]
 transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.5898, 1.1015, 7.09023)
+
+[node name="Player" parent="." instance=ExtResource("33_e5mph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.544, 1.33539, 114.5)
