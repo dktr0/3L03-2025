@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=77 format=4 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="8_b28uw"]
 [ext_resource type="PackedScene" uid="uid://cetv4q45see0s" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
 [ext_resource type="AudioStream" uid="uid://c2i2okl4khod3" path="res://Spencer/Ice and Glacier/Ice monster/ice monster without roar.mp3" id="9_g27jk"]
-[ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="11_6vhei"]
-[ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="13_3jtso"]
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="13_d7obm"]
 [ext_resource type="PackedScene" uid="uid://dbhxcdh47t2s" path="res://Quinn/Dock Spiders/spider_1.tscn" id="13_x8py4"]
 [ext_resource type="PackedScene" uid="uid://ttreyma0ladq" path="res://Matty/Penguin/penguin.tscn" id="14_2d3a0"]
@@ -41,6 +39,8 @@
 [ext_resource type="Script" path="res://Omar/seagulls.gd" id="34_agfna"]
 [ext_resource type="PackedScene" uid="uid://b0mpf88wqpx5u" path="res://Wren/coast_guard_station.tscn" id="35_1dy3d"]
 [ext_resource type="AudioStream" uid="uid://d1ub8tci5vmgc" path="res://Tram/sound effects/seagulls.mp3" id="35_cbgrm"]
+[ext_resource type="PackedScene" uid="uid://bv3qmxe1ecc8y" path="res://Andy/amulet_ring2.tscn" id="36_ti2ee"]
+[ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="37_boe7m"]
 [ext_resource type="AudioStream" uid="uid://btftkfftud01b" path="res://Tram/sound effects/leaves rustling 2.mp3" id="37_yj8k3"]
 [ext_resource type="Script" path="res://Omar/wind.gd" id="40_ijixa"]
 [ext_resource type="PackedScene" uid="uid://btbfwfjoc6wqr" path="res://Chiara/broken_dock.tscn" id="41_m81b8"]
@@ -155,9 +155,6 @@ size = Vector3(319.015, 75.1254, 439.936)
 [sub_resource type="BoxShape3D" id="BoxShape3D_i5xlb"]
 size = Vector3(1.22766, 1.04834, 1.01105)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8kw5l"]
-size = Vector3(8.48912, 5.17664, 4.11774)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7ydq"]
 size = Vector3(640.669, 0.566574, 179.996)
 
@@ -165,7 +162,7 @@ size = Vector3(640.669, 0.566574, 179.996)
 radius = 48.4889
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nobjg"]
-size = Vector3(18.9987, 7.24939, 11.5142)
+size = Vector3(16.2928, 7.24939, 11.5142)
 
 [node name="Present" type="Node3D"]
 
@@ -604,32 +601,15 @@ shape = SubResource("BoxShape3D_i5xlb")
 [node name="Node3D2" parent="." instance=ExtResource("27_5h5rp")]
 transform = Transform3D(-6.22145, 0, -9.07158, 0, 11, 0, 9.07158, 0, -6.22145, -199.724, -9.6337, 24.1961)
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 32.946, 12.9266, 14.3617)
-pixel_size = 0.05
-text = "Press 'Enter' to Interact"
-
 [node name="lighthouse area" type="Node" parent="."]
 
 [node name="fish_shop_owner" parent="lighthouse area" instance=ExtResource("16_aie5t")]
-transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 35.2944, 0.469059, 9.8571)
+transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 28.2557, 0.469059, 11.7185)
 collision_layer = 16
 collision_mask = 2
 
-[node name="Area3D" type="Area3D" parent="lighthouse area/fish_shop_owner"]
-transform = Transform3D(0.999966, 0, -0.00822034, 0, 1, 0, 0.00822034, 0, 0.999966, -0.39463, 0.901521, -1.98553)
-collision_layer = 16
-script = ExtResource("11_6vhei")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="lighthouse area/fish_shop_owner/Area3D"]
-transform = Transform3D(0.975474, 0, 0.22012, 0, 1, 0, -0.22012, 0, 0.975474, -0.223166, 2.08832, -1.34286)
-shape = SubResource("BoxShape3D_8kw5l")
-
-[node name="Dialogue" parent="lighthouse area/fish_shop_owner" instance=ExtResource("13_3jtso")]
-d_file = "res://Omar/Dialogue/json/FisherMan_Chat.json"
-
 [node name="FishShop" parent="lighthouse area" instance=ExtResource("17_01jia")]
-transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.5898, 1.1015, 7.09023)
+transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 27.9637, 1.1015, 7.93006)
 
 [node name="Present_light_house" parent="lighthouse area" instance=ExtResource("16_28bgx")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.62613, 3.22927, -22.9156)
@@ -640,6 +620,14 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -46.76
 [node name="Chest" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 171.949, 6.51752, -280.141)
 fragment_scene = ExtResource("8_fio87")
+
+[node name="Chest2" parent="." instance=ExtResource("7_lc440")]
+transform = Transform3D(2.9798, 0, 0.347568, 0, 3, 0, -0.347568, 0, 2.9798, 390.363, 39.7444, 290.797)
+fragment_scene = ExtResource("36_ti2ee")
+
+[node name="Chest3" parent="." instance=ExtResource("7_lc440")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -477.872, -118.2, -301.183)
+fragment_scene = ExtResource("37_boe7m")
 
 [node name="Control" parent="." instance=ExtResource("41_spbdn")]
 
@@ -834,10 +822,10 @@ volume_db = 12.19
 
 [node name="Control2" parent="." instance=ExtResource("52_rl4wu")]
 transform = Transform3D(-0.507072, 0, 0.861904, 0, 1, 0, -0.861904, 0, -0.507072, 29.6487, 0, 8.46244)
-dialogue_lines = Array[String](["Eh? Eh? You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned up with got destroyed. I seen the shards of it fly off all over the place. One flew right into that fire, at the top of those charred trees. Wouldn’t want to be the one to have to go there.You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned up with got destroyed, I seen the shards of it fly off all over the place", "Another got snatched by some ice critters, settin’ traps up northeast. Been watching those troublemakers destroy everything around them. I tell you, there is no reasoning with those fellas, what with their violent nature. Mean things, they are. I wouldn’t go messing with ‘em unless you’ve got something sharp or magical up your sleeve, you hear?", "Last piece? Done sunk to the bottom of what was once my home. The village under the sea—just northwest of here. Was thinking of heading there to snag it, but that water ain't what it used to be. Too much filth in the water as is. Murky, twisted, full of things best left alone.", "Things ain’t like they used to be. The ice, the rivers, even the fish—they’re all disappearin’. Used to be a paradise here. Now? Just smoke, poison, and bad luck. It’s like the world itself gave up. Or maybe something worse moved in and made it theirs. Either way, don’t expect the land to show mercy.", "Hope you find what you’re lookin’ for. Just watch where you step—world ain’t too kind these days. These may help ya later on. I got no use for these anymore, so have your pick. Only one thing, though—I’m not foolish enough to be here defenseless. Always good to keep a little surprise tucked away."])
+dialogue_lines = Array[String](["Eh? You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned up with got destroyed. I seen the shards of it fly off all over the place. One flew right into that fire, at the top of those charred trees. Wouldn’t want to be the one to have to go there.", "Another got snatched by some ice critters, settin’ traps up northeast. Been watching those troublemakers destroy everything around them.", "I tell you, there is no reasoning with those fellas, what with their violent nature. Mean things, they are. I wouldn’t go messing with ‘em unless you’ve got something sharp or magical up your sleeve, you hear?", "Last piece? Done sunk to the bottom of what was once my home. The village under the sea—just northwest of here. Was thinking of heading there to snag it, but that water ain't what it used to be. Too much filth in the water as is. Murky, twisted, full of things best left alone.", "Things ain’t like they used to be. The ice, the rivers, even the fish—they’re all disappearin’. Used to be a paradise here. Now? Just smoke, poison, and bad luck. ", "It’s like the world itself gave up. Or maybe something worse moved in and made it theirs. Either way, don’t expect the land to show mercy.", "Hope you find what you’re lookin’ for. Just watch where you step—world ain’t too kind these days.", "These may help ya later on. I got no use for these anymore, so have your pick. Only one thing, though—I’m not foolish enough to be here defenseless. Always good to keep a little surprise tucked away."])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control2"]
-transform = Transform3D(-0.812887, 0, -0.582421, 0, 1, 0, 0.582421, 0, -0.812887, -8.12427, 3.12469, -2.97259)
+transform = Transform3D(-0.845254, 0, -0.534369, 0, 1, 0, 0.534369, 0, -0.845254, -3.8614, 3.12469, -5.79645)
 shape = SubResource("BoxShape3D_nobjg")
 
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]

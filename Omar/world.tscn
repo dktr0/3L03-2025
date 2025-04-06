@@ -7,18 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Mountain/Highmountain.tscn" id="8_tuxek"]
 [ext_resource type="PackedScene" uid="uid://cmckqn74iwe3i" path="res://Rongyu Liu/Mountain/Green_mountainnoice.tscn" id="9_qxx8k"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lbtjg"]
-size = Vector3(0.787845, 0.99295, 0.734731)
-
-[sub_resource type="BoxMesh" id="BoxMesh_bx7su"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svgfv"]
-albedo_color = Color(0.310617, 0.310617, 0.310617, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_lxyqm"]
 size = Vector3(1.00096, 0.990234, 2.72393)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wkr7r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0oglt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wfdq1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbli1"]
+albedo_color = Color(0.389287, 0.389287, 0.389287, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhcm1"]
 size = Vector3(12.8075, 3.79721, 5.83105)
@@ -160,19 +159,6 @@ buffer = PackedFloat32Array(0.101548, -0.0156504, 6.9711, -41.2818, 6.96912, 0.1
 
 [node name="Floors" type="Node" parent="."]
 
-[node name="Base" type="StaticBody3D" parent="Floors"]
-transform = Transform3D(1.21256, 0, 0, 0, 0.802688, 0, 0, 0, 1.18321, -9.19878, 0.759038, 6.36864)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Base"]
-transform = Transform3D(127.726, 0, 0, 0, 8.97515, 0, 0, 0, 89.9854, 0.143902, -3.96132, -11.688)
-shape = SubResource("BoxShape3D_lbtjg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/Base"]
-transform = Transform3D(100.898, 0, 0, 0, 8.97515, 0, 0, 0, 65.0495, 0, -3.92969, -12.0878)
-mesh = SubResource("BoxMesh_bx7su")
-skeleton = NodePath("../CollisionShape3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_svgfv")
-
 [node name="BaseWalkway" type="StaticBody3D" parent="Floors"]
 transform = Transform3D(0.594631, 0, 0, 0, 8.13046, 0, 0, 0, 0.669241, 9.86899, -2.90881, 58.007)
 
@@ -203,6 +189,18 @@ transform = Transform3D(0.577905, 0, 0, 0, 0.5, 0, 0, 0, 0.384867, 270.035, -17.
 
 [node name="rock_platform2" parent="Floors" instance=ExtResource("4_b0u6j")]
 transform = Transform3D(-2.18557e-08, 0, -0.305556, 0, 0.5, 0, 0.5, 0, -1.33563e-08, 239.238, -19.1431, -94.1072)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.62152, -1.78957)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/StaticBody3D"]
+transform = Transform3D(111.065, 0, 0, 0, 14.0852, 0, 0, 0, 69.48, -15.3953, -9.33141, -12.1723)
+shape = SubResource("BoxShape3D_0oglt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/StaticBody3D"]
+transform = Transform3D(111.065, 0, 0, 0, 14.0852, 0, 0, 0, 88.783, -15.3953, -9.33141, -4.28077)
+mesh = SubResource("BoxMesh_wfdq1")
+surface_material_override/0 = SubResource("StandardMaterial3D_hbli1")
 
 [node name="Lights" type="Node" parent="."]
 

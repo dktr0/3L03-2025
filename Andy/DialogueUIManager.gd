@@ -67,9 +67,6 @@ func show_dialogue_3page(pages, callback = null):
 		if text_version != "":  # 如果不是空的，就保留
 			final_lines.append(text_version)
 
-	# 若超过3页，截断到3行
-	if final_lines.size() > 3:
-		final_lines = final_lines.slice(0, 3)
 
 	lines = final_lines
 	current_line_index = 0
