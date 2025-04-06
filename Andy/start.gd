@@ -64,4 +64,4 @@ func fade_out_and_goto_menu() -> void:
 
 	# 等待三条插值都完成
 	await tween.finished
-	get_tree().change_scene_to_file("res://Andy/playable/control.tscn")
+	get_tree().change_scene_to_file("res://Zhu/zhu_title_page_assests/playable/control.tscn")
