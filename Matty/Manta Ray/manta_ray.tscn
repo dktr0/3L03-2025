@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Matty/Manta Ray/mantarayanimation.gd" id="1_0y6b1"]
 [ext_resource type="Texture2D" uid="uid://c5e4uwe1pvg0o" path="res://Matty/Manta Ray/mantaray_eyel Base Color.png" id="2_dgkdn"]
-[ext_resource type="Texture2D" uid="uid://dupdln4vao1gm" path="res://Matty/Manta Ray/mantaray_mantabody.png" id="3_nm06n"]
+[ext_resource type="Texture2D" uid="uid://ctldwkkl3qy3g" path="res://Matty/Manta Ray/mantaray_mantabody.png" id="3_nm06n"]
 [ext_resource type="Texture2D" uid="uid://b66hpv4bkcl0i" path="res://Matty/Manta Ray/mantaray_Sphere.png" id="4_gfolh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vosoh"]
