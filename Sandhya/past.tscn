@@ -1,17 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://co0ky7kry764f"]
+[gd_scene load_steps=17 format=3 uid="uid://co0ky7kry764f"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_atq23"]
+[ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Mountain/Highmountain.tscn" id="2_5vogq"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="2_dci5a"]
 [ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="3_b75uh"]
 [ext_resource type="PackedScene" uid="uid://bragmruxldk4r" path="res://Yufei/game(past_water).tscn" id="5_3x1ld"]
-[ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="6_4ucsn"]
-[ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="8_mm83i"]
 [ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="9_rv4y1"]
 [ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="10_4wkfk"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="11_56olb"]
 [ext_resource type="PackedScene" uid="uid://bov4hwigpqpdb" path="res://Sandhya/deadtrees.tscn" id="11_wftq0"]
 [ext_resource type="PackedScene" uid="uid://dvtc2s5ni02xp" path="res://Omar/test-player.tscn" id="12_8h434"]
 [ext_resource type="PackedScene" uid="uid://dgscxkjb38rls" path="res://Sandhya/healthytrees.tscn" id="12_r3jq7"]
+[ext_resource type="PackedScene" uid="uid://c8jckkvpjip2f" path="res://Braydon/Updated Portal with Sound.tscn" id="13_v61rk"]
+[ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="14_h1q43"]
+[ext_resource type="PackedScene" uid="uid://b0mpf88wqpx5u" path="res://Wren/coast_guard_station.tscn" id="14_iaiik"]
+[ext_resource type="PackedScene" uid="uid://dr0fr4rpf67yx" path="res://Tram/sound effects/WaveSound3D.tscn" id="15_1obll"]
+[ext_resource type="PackedScene" uid="uid://dffp8drh4rhbm" path="res://Tram/sound effects/WaveSound3d2.tscn" id="16_nta24"]
 
 [node name="past" type="Node3D"]
 
@@ -63,30 +67,7 @@ transform = Transform3D(57.3605, 0, -81.9132, 0, 100, 0, 81.9132, 0, 57.3605, 33
 transform = Transform3D(-2.74331, 0, -99.9624, 0, 100, 0, 99.9624, 0, -2.74331, 383.108, -11.2545, 143.128)
 
 [node name="Game(past_water)" parent="." instance=ExtResource("5_3x1ld")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -554.68, -105.39, -283.71)
-
-[node name="Docks" type="Node3D" parent="."]
-
-[node name="SingleLaneDock" parent="Docks" instance=ExtResource("8_mm83i")]
-transform = Transform3D(-0.00291592, 0, -0.109961, 0, 0.11, 0, 0.109961, 0, -0.00291592, -106.385, -68.0907, 27.7056)
-
-[node name="MultipleLaneDock" parent="Docks" instance=ExtResource("6_4ucsn")]
-transform = Transform3D(0.000353242, 0, 0.109999, 0, 0.11, 0, -0.109999, 0, 0.000353242, -22.4298, -29.0658, 14.8477)
-
-[node name="SingleLaneDock2" parent="Docks" instance=ExtResource("8_mm83i")]
-transform = Transform3D(0.109997, 0, -0.000790967, 0, 0.11, 0, 0.000790967, 0, 0.109997, -238.201, -129.863, -236.44)
-
-[node name="MultipleLaneDock2" parent="Docks" instance=ExtResource("6_4ucsn")]
-transform = Transform3D(0.000353242, 0, 0.109999, 0, 0.11, 0, -0.109999, 0, 0.000353242, -76.9208, -43.8808, -154.152)
-
-[node name="MultipleLaneDock3" parent="Docks" instance=ExtResource("6_4ucsn")]
-transform = Transform3D(-0.109967, 0, 0.00269904, 0, 0.11, 0, -0.00269904, 0, -0.109967, -195.011, -58.756, -208.384)
-
-[node name="MultipleLaneDock4" parent="Docks" instance=ExtResource("6_4ucsn")]
-transform = Transform3D(0.00066809, 0, 0.109998, 0, 0.11, 0, -0.109998, 0, 0.00066809, -247.05, -71.4179, -212.303)
-
-[node name="SingleLaneDock3" parent="Docks" instance=ExtResource("8_mm83i")]
-transform = Transform3D(0.109997, 0, -0.000790967, 0, 0.11, 0, 0.000790967, 0, 0.109997, -291.465, -148.305, -235.351)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -568.18, -119.27, -283.71)
 
 [node name="Present_light_house" parent="." instance=ExtResource("9_rv4y1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.626, 3.229, -29.98)
@@ -104,4 +85,53 @@ transform = Transform3D(-0.00692697, 0, 2.69999, 0, 2.7, 0, -2.69999, 0, -0.0069
 transform = Transform3D(0.0189191, 0, 1.99991, 0, 2, 0, -1.99991, 0, 0.0189191, -179.834, -7.94262, 265.912)
 
 [node name="Player" parent="." instance=ExtResource("12_8h434")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 5.40922, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -287.064, -6.9282, 192.962)
+
+[node name="Node3D" parent="." instance=ExtResource("13_v61rk")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 20.6874, 33.2035, 153.303)
+
+[node name="Goodsky" parent="." instance=ExtResource("14_h1q43")]
+
+[node name="Highmountain" parent="." instance=ExtResource("2_5vogq")]
+transform = Transform3D(6.16444, 0, -3.31657, 0, 7, 0, 3.31657, 0, 6.16444, -335.22, -88.6959, 90.5276)
+
+[node name="Highmountain2" parent="." instance=ExtResource("2_5vogq")]
+transform = Transform3D(-6.03908, 0, 3.53971, 0, 7, 0, -3.53971, 0, -6.03908, -394.908, -122.339, 61.8806)
+
+[node name="Highmountain3" parent="." instance=ExtResource("2_5vogq")]
+transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -439.246, -150.208, -2.16752)
+
+[node name="CoastGuardStation" parent="." instance=ExtResource("14_iaiik")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -46.76, 1.614, -21.92)
+
+[node name="Wave Sounds" type="Node3D" parent="."]
+
+[node name="WaveSound3d" parent="Wave Sounds" instance=ExtResource("15_1obll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -432.169, -93.901, 34.5269)
+
+[node name="WaveSound3d2" parent="Wave Sounds" instance=ExtResource("16_nta24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -281.481, -18.9151, 28.2744)
+
+[node name="WaveSound3d3" parent="Wave Sounds" instance=ExtResource("16_nta24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -286.543, -18.9151, 120.674)
+
+[node name="WaveSound3d4" parent="Wave Sounds" instance=ExtResource("16_nta24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -358.257, -18.9151, 171.982)
+
+[node name="WaveSound3d5" parent="Wave Sounds" instance=ExtResource("16_nta24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.6335, -18.9151, 62.9368)
+
+[node name="WaveSound3d6" parent="Wave Sounds" instance=ExtResource("16_nta24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.649, -18.9151, -12.9949)
+
+[node name="WaveSound3d7" parent="Wave Sounds" instance=ExtResource("16_nta24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219.674, -18.9151, -53.1723)
+
+[node name="WaveSound3d8" parent="Wave Sounds" instance=ExtResource("15_1obll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -719.54, -93.901, 34.5269)
+
+[node name="WaveSound3d9" parent="Wave Sounds" instance=ExtResource("15_1obll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -851.596, -93.901, -338.836)
+
+[node name="WaveSound3d11" parent="Wave Sounds" instance=ExtResource("15_1obll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -199.891, -93.901, -282.478)

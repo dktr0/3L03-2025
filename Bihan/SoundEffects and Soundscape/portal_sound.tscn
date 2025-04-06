@@ -4,3 +4,4 @@
 
 [node name="PortalSound" type="AudioStreamPlayer"]
 stream = ExtResource("1_unjlc")
+autoplay = true

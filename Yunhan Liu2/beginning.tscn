@@ -1,9 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://t3v7ddegi0pl"]
+[gd_scene load_steps=34 format=3 uid="uid://t3v7ddegi0pl"]
 
 [ext_resource type="Texture2D" uid="uid://ru7du4044vdv" path="res://Nan/Badsky.jpg" id="1_4f6iv"]
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="2_28e1i"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="3_3d2c6"]
-[ext_resource type="PackedScene" path="res://DeadLargeSeaweed.tscn" id="4_2kjxj"]
+[ext_resource type="PackedScene" uid="uid://cycjp4vmr1kal" path="res://DeadLargeSeaweed.tscn" id="4_2kjxj"]
 [ext_resource type="PackedScene" uid="uid://c2bdcxn28whgv" path="res://Darius/Rubble.glb" id="5_l6blv"]
 [ext_resource type="PackedScene" uid="uid://dt1mfgeidwbmi" path="res://Ethan C/Water Bottle.tscn" id="6_kuji6"]
 [ext_resource type="PackedScene" uid="uid://k0juh3usoo66" path="res://Chiara/broken_Dock.glb" id="7_ywhs5"]
@@ -15,18 +15,19 @@
 [ext_resource type="PackedScene" uid="uid://bwqy20x2uomik" path="res://Rongyu Liu/Bad_water.tscn" id="13_ec8j6"]
 [ext_resource type="PackedScene" uid="uid://dm3pl02h2a4d4" path="res://Rongyu Liu/Soil/Damaged soil.glb" id="14_3hail"]
 [ext_resource type="PackedScene" uid="uid://daggh56yuy6g3" path="res://Nan/Bad Cloud.glb" id="15_ik3ff"]
-[ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="16_umuuf"]
-[ext_resource type="PackedScene" path="res://Nan/Dead_wood.tscn" id="17_kwcgp"]
-[ext_resource type="PackedScene" path="res://Riley/DeadBulrush.tscn" id="18_4h0tc"]
-[ext_resource type="PackedScene" path="res://Riley/DeadGrass.tscn" id="19_6mm6o"]
-[ext_resource type="PackedScene" path="res://Riley/GarbagePile.tscn" id="20_j76fh"]
+[ext_resource type="PackedScene" uid="uid://31k1eq7dvbqa" path="res://Riley/DeadTree.tscn" id="16_umuuf"]
+[ext_resource type="PackedScene" uid="uid://neudcqb0ff87" path="res://Nan/Dead_wood.tscn" id="17_kwcgp"]
+[ext_resource type="PackedScene" uid="uid://bnesfoix585wh" path="res://Riley/DeadBulrush.tscn" id="18_4h0tc"]
+[ext_resource type="PackedScene" uid="uid://spmbye82jg58" path="res://Riley/DeadGrass.tscn" id="19_6mm6o"]
+[ext_resource type="PackedScene" uid="uid://b1mb8vepspln2" path="res://Riley/GarbagePile.tscn" id="20_j76fh"]
 [ext_resource type="PackedScene" uid="uid://dj0ikx20ebw7a" path="res://Wilson/fire_smoke.tscn" id="21_aj2n0"]
 [ext_resource type="PackedScene" uid="uid://bt0oah83alnvb" path="res://Wilson/vfx_smoke.tscn" id="23_0uq6m"]
 [ext_resource type="PackedScene" uid="uid://craqwm4x5w6so" path="res://Naomi/DeadSeaweed.glb" id="24_0pbaj"]
-[ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed.tscn" id="25_pypbu"]
+[ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="25_pypbu"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="26_447af"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="27_0r8fv"]
 [ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="28_c4dp5"]
+[ext_resource type="AudioStream" uid="uid://dcvulv17onxdi" path="res://Tram/music/bad-ending.mp3" id="29_6ltci"]
 [ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="29_hor6l"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_edrb3"]
@@ -249,3 +250,9 @@ start_with_shard2 = true
 start_with_shard3 = true
 pickup_sound = ExtResource("28_c4dp5")
 final_amulet_sound = ExtResource("29_hor6l")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 94.487)
+stream = ExtResource("29_6ltci")
+unit_size = 30.93
+autoplay = true

@@ -4,7 +4,7 @@ extends CharacterBody3D
 var mouseLookLeftRight = 0
 var mouseLookUpDown = 0
 
-const SPEED = 2.5
+const SPEED = 40.0
 const ACCEL = 10.0
 const DECEL = 10.0
 
@@ -20,7 +20,6 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
@@ -42,9 +41,7 @@ func _physics_process(delta):
 
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward");
 	var dir = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized();
-	# handling 4 different possibilities:
-	# these can easily be tweaked to the requirements of specific games
-	if dir: # if player is pressing a direction control...
+	if dir:
 		velocity.x = move_toward(velocity.x, dir.x*SPEED, abs(dir.x*ACCEL*delta));
 		velocity.z = move_toward(velocity.z, dir.z*SPEED, abs(dir.z*ACCEL*delta));
 	else:
@@ -62,9 +59,9 @@ func _physics_process(delta):
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		mouseLookLeftRight = -event.relative.x * 0.01; # increase/decrease 0.01 to change sensitivity
-		if abs(mouseLookLeftRight) < 0.02: # dead zone for mouse motion left/right
+		mouseLookLeftRight = -event.relative.x * 0.01;
+		if abs(mouseLookLeftRight) < 0.02:
 			mouseLookLeftRight = 0.0;
-		mouseLookUpDown = -event.relative.y * 0.01; # increase/decrease 0.01 to change sensitivity
-		if abs(mouseLookUpDown) < 0.02: # dead zone for mouse motion up/down
+		mouseLookUpDown = -event.relative.y * 0.01;
+		if abs(mouseLookUpDown) < 0.02:
 			mouseLookUpDown = 0.0;

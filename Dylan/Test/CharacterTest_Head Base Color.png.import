@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rysalatdq4k6"
-path.s3tc="res://.godot/imported/Bass2_Fishe Base Color.png-30c5177c9745649e15cdbb811c0f4e93.s3tc.ctex"
+uid="uid://i7dghlxegrjj"
+path.s3tc="res://.godot/imported/CharacterTest_Head Base Color.png-5a22379bc2516b06c015525bf046dfb8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "c3d3a1a8cef2a4ef9d63362b44a70562"
+"md5": "7f4ef9848f656d5590653147fb689cda"
 }
 
 [deps]
 
-source_file="res://Dylan/Bass2_Fishe Base Color.png"
-dest_files=["res://.godot/imported/Bass2_Fishe Base Color.png-30c5177c9745649e15cdbb811c0f4e93.s3tc.ctex"]
+source_file="res://Dylan/Test/CharacterTest_Head Base Color.png"
+dest_files=["res://.godot/imported/CharacterTest_Head Base Color.png-5a22379bc2516b06c015525bf046dfb8.s3tc.ctex"]
 
 [params]
 
