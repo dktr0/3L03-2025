@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bhvggiixftuup"]
+[gd_scene load_steps=41 format=3 uid="uid://bhvggiixftuup"]
 
 [ext_resource type="PackedScene" uid="uid://couoihr1xwbk3" path="res://Riley/Kelp.tscn" id="2_4ty13"]
 [ext_resource type="PackedScene" uid="uid://brpse8kilyf1m" path="res://Zibo/waterweed.tscn" id="3_1bdq5"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cugyufxm7gt77" path="res://Naomi/Anchor.tscn" id="11_hbc7l"]
 [ext_resource type="PackedScene" uid="uid://bvcgaa6bfn1ex" path="res://Naomi/Crab.tscn" id="12_doah5"]
 [ext_resource type="PackedScene" uid="uid://devktc7pfnl5r" path="res://Naomi/Shell.tscn" id="12_oguft"]
-[ext_resource type="PackedScene" uid="uid://icjd630qdk6d" path="res://Darius/ChestClosed.tscn" id="13_7hm1y"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="13_a3a6l"]
 [ext_resource type="PackedScene" uid="uid://bv1eb3hpcnx0j" path="res://Ethan C/greenbarrel.tscn" id="14_ajkl1"]
 [ext_resource type="PackedScene" uid="uid://dffctwdfacdjg" path="res://Chiara/surrounding_rocks.tscn" id="15_gwluc"]
@@ -116,9 +115,6 @@ transform = Transform3D(-0.105416, 0.266822, -0.356413, 0.425528, 0.168118, 0, 0
 
 [node name="sea turtle" parent="AquaticAnimals" instance=ExtResource("38_5lt7y")]
 transform = Transform3D(-0.323051, 0, 0.222583, 0, 0.392308, 0, -0.222583, 0, -0.323051, -14.8609, -0.251142, 24.6923)
-
-[node name="ChestClosed" parent="." instance=ExtResource("13_7hm1y")]
-transform = Transform3D(0.0384749, 0, 1.38088, 0, 1.38142, 0, -1.38088, 0, 0.0384749, 18.038, 0.289313, -3.84497)
 
 [node name="greenbarrel" parent="." instance=ExtResource("14_ajkl1")]
 transform = Transform3D(-0.493027, 0.00912872, 0.869966, -0.0823716, 0.994963, -0.057122, -0.866106, -0.0998232, -0.489792, 16.8092, -0.144656, -5.85478)
