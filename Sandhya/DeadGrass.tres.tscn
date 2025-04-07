@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhugw0syyo4dv"]
+
+[ext_resource type="PackedScene" uid="uid://bosuqegx4cy4i" path="res://Riley/GLBflies/DeadGrass.glb" id="1_tlhck"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dm4ii"]
+
+[node name="DeadGrass" type="StaticBody3D"]
+
+[node name="DeadGrass" parent="." instance=ExtResource("1_tlhck")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.461532, 0)
+shape = SubResource("SphereShape3D_dm4ii")

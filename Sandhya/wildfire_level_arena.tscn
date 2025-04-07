@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bt0oah83alnvb" path="res://Wilson/vfx_smoke.tscn" id="9_kp2u2"]
 
 [node name="Wildfire Level Arena" type="Node3D"]
-transform = Transform3D(0.999887, 0, -0.0150093, 0, 1, 0, 0.0150093, 0, 0.999887, 0, 0, 0)
+transform = Transform3D(0.599932, 0, -0.00900558, 0, 0.6, 0, 0.00900558, 0, 0.599932, 0, 6.67313, 0)
 
 [node name="Branches" type="Node3D" parent="."]
 
@@ -266,6 +266,9 @@ transform = Transform3D(-1.67352, -0.657205, 49.9677, 0.00987586, 49.9957, 0.657
 [node name="cliff-number-three8" parent="Cliffs" instance=ExtResource("8_ifa2q")]
 transform = Transform3D(-0.703407, -0.6577, 49.9907, 0.00987586, 49.9957, 0.657903, -49.995, 0.0191295, -0.703217, 98.3879, 110.814, 271.832)
 
+[node name="Cliff-number-one13" parent="Cliffs" instance=ExtResource("7_2vqx6")]
+transform = Transform3D(50, -0.000681206, 5.96046e-07, 0.000681498, 50, 0.0453348, -1.19209e-06, -0.0453269, 49.9999, 43.8489, -101.4, -142.461)
+
 [node name="Main Trees" type="Node3D" parent="."]
 
 [node name="deadTree" parent="Main Trees" instance=ExtResource("9_ahmu0")]
@@ -320,6 +323,51 @@ transform = Transform3D(1, 0, 2.32831e-08, 0, 1, 0, -2.32831e-08, 0, 1, 114.69, 
 
 [node name="vfx_fire4" parent="Fire" instance=ExtResource("8_ggwfq")]
 transform = Transform3D(1, 0, 2.6077e-08, 0, 1, 0, -2.6077e-08, 0, 1, 108.102, 22.135, -91.1574)
+
+[node name="vfx_fire5" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999999, 0, -2.6077e-08, 0, 1, -62.9037, 47.6991, -66.9664)
+
+[node name="vfx_fire6" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999999, 0, -2.6077e-08, 0, 1, -63.0211, 34.8673, -74.7877)
+
+[node name="vfx_fire7" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999999, 0, -2.6077e-08, 0, 1, -55.5847, 32.5008, -61.2773)
+
+[node name="vfx_fire8" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999998, 0, -2.6077e-08, 0, 1, -116.123, 48.2958, -58.6952)
+
+[node name="vfx_fire9" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999998, 0, -2.6077e-08, 0, 1, -116.066, 27.2462, -54.85)
+
+[node name="vfx_fire10" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999997, 0, -2.6077e-08, 0, 1, -106.165, 80.6127, 2.64424)
+
+[node name="vfx_fire11" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999997, 0, -2.6077e-08, 0, 1, -106.047, 73.7034, 10.4777)
+
+[node name="vfx_fire12" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999996, 0, -2.6077e-08, 0, 1, -69.894, 93.2334, 43.0874)
+
+[node name="vfx_fire13" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999996, 0, -2.6077e-08, 0, 1, -77.0043, 77.3969, 47.3816)
+
+[node name="vfx_fire14" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999996, 0, -2.6077e-08, 0, 1, -110.979, 94.5818, 73.3506)
+
+[node name="vfx_fire15" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999995, 0, -2.6077e-08, 0, 1, -121.934, 107.622, 73.3491)
+
+[node name="vfx_fire16" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 2.6077e-08, 0, 0.999995, 0, -2.6077e-08, 0, 1, -56.9153, 107.622, 83.4622)
+
+[node name="vfx_fire17" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 1.02445e-08, 0, 0.999999, 0, -1.02445e-08, 0, 1, 73.9676, 97.2199, 29.2705)
+
+[node name="vfx_fire18" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 1.02445e-08, 0, 0.999999, 0, -1.02445e-08, 0, 1, 83.8293, 82.4452, 34.102)
+
+[node name="vfx_fire19" parent="Fire" instance=ExtResource("8_ggwfq")]
+transform = Transform3D(1, 0, 1.02445e-08, 0, 0.999999, 0, -1.02445e-08, 0, 1, 70.5467, 82.4452, 37.1555)
 
 [node name="Smoke" type="Node3D" parent="."]
 
