@@ -52,7 +52,7 @@ func _input(_event: InputEvent) -> void:
 		match current_collision_node_name:
 			"PosStart":
 				print("激活 START 按钮")
-				Loadingmanager.change_scene_with_loading("res://Andy/playable/beginning.tscn")
+				Loadingmanager.change_scene_with_loading("res://Yunhan Liu2/beginning.tscn")
 			"PosCredit":
 				print("激活 CREDIT 按钮")
 				Loadingmanager.change_scene_with_loading("res://Andy/credit.tscn")
