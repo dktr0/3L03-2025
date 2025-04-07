@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cn67k105en2ld" path="res://Suyeon/dead_sea_turtle.tscn" id="31_1jnf1"]
 [ext_resource type="PackedScene" uid="uid://rqy64lsppbid" path="res://Sing-yu/cottage_house_destroyed2.tscn" id="31_jvfwo"]
 [ext_resource type="PackedScene" uid="uid://bvvcn5m53xl14" path="res://Matty/Manta Ray/manta_ray.tscn" id="33_uwn0q"]
-[ext_resource type="PackedScene" path="res://Tram/sound effects/under_water_sound_scape_tram.tscn" id="33_v1vur"]
+[ext_resource type="PackedScene" uid="uid://dnhxmh2okb2u0" path="res://Tram/sound effects/under_water_sound_scape_tram.tscn" id="33_v1vur"]
 [ext_resource type="PackedScene" uid="uid://bxld4rvbsdc7m" path="res://Matty/Octopus/octopus.tscn" id="34_cwpad"]
 [ext_resource type="PackedScene" uid="uid://dvkoynp3vo2xd" path="res://Rongyu Liu/Soil/No_green_soil.tscn" id="34_fxlfq"]
 [ext_resource type="PackedScene" uid="uid://8e2ydrfqh2mk" path="res://Le Zhang/mutated fish.tscn" id="35_bpauy"]
@@ -100,6 +100,9 @@ transform = Transform3D(0.756566, -0.145938, 0.637424, 0.189404, 0.981899, 0, -0
 
 [node name="MantaRay" parent="AquaticAnimals" instance=ExtResource("33_uwn0q")]
 transform = Transform3D(-0.997291, 0, -0.0735516, 0, 1, 0, 0.0735516, 0, -0.997291, 9.46605, 14.4456, 23.984)
+
+[node name="MantaRay2" parent="AquaticAnimals" instance=ExtResource("33_uwn0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4038, 11.9528, -18.3493)
 
 [node name="Octopus" parent="AquaticAnimals" instance=ExtResource("34_cwpad")]
 transform = Transform3D(0.92977, 0, -0.368141, 0, 1, 0, 0.368141, 0, 0.92977, -7.77552, 0.351045, 14.2186)
