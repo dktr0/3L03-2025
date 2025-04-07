@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cguq43dg6fpog"]
+[gd_scene load_steps=8 format=3 uid="uid://cguq43dg6fpog"]
 
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="2_u0bwf"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="4_1n8n2"]
-[ext_resource type="PackedScene" uid="uid://icjd630qdk6d" path="res://Darius/ChestClosed.tscn" id="6_m8mpi"]
 [ext_resource type="PackedScene" uid="uid://c01ihmgehc1ui" path="res://Naomi/Ant.tscn" id="7_nj8lt"]
 [ext_resource type="PackedScene" uid="uid://31k1eq7dvbqa" path="res://Riley/DeadTree.tscn" id="9_eqirc"]
 [ext_resource type="PackedScene" uid="uid://bnesfoix585wh" path="res://Riley/DeadBulrush.tscn" id="10_7d6id"]
@@ -82,9 +81,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03329, 0.289268, 15.7057)
 
 [node name="DeadGrass2" parent="." instance=ExtResource("11_t7toi")]
 transform = Transform3D(0.0476907, 0, -0.546095, 0, 0.548174, 0, 0.546095, 0, 0.0476907, 4.48116, 0.210138, 16.3111)
-
-[node name="ChestClosed" parent="." instance=ExtResource("6_m8mpi")]
-transform = Transform3D(-0.999997, -0.000759573, -0.00251793, -0.000747897, 0.999989, -0.00462916, 0.00252142, -0.00462726, -0.999986, 4.04939, 14.1439, -3.24111)
 
 [node name="Ant" parent="." instance=ExtResource("7_nj8lt")]
 transform = Transform3D(0.0769013, 0, -0.0407515, 0, 0.0870316, 0, 0.0407515, 0, 0.0769013, 0, 4.29338, 8.12546)

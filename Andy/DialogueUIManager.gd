@@ -58,9 +58,12 @@ func show_dialogue_no_limit(pages, callback = null):
 
 	var final_lines = []
 	for item in pages:
-		var txt = str(item).strip_edges()
-		if txt != "":
-			final_lines.append(txt)
+		var text_version = str(item)            # 强制转字符串
+		text_version = text_version.strip_edges()  # 去掉首尾空格
+		if text_version != "":  # 如果不是空的，就保留
+			final_lines.append(text_version)
+
+
 
 	lines = final_lines
 	current_line_index = 0

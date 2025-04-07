@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://fxscysncqxhj"]
 
-[ext_resource type="PackedScene" uid="uid://dg4pp3s4vmcnd" path="res://glacier_wall.glb" id="1_ui6y4"]
+[ext_resource type="PackedScene" uid="uid://dg4pp3s4vmcnd" path="res://Wilson/glacier_wall.glb" id="1_ui6y4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i8cm2"]
-size = Vector3(13.5351, 29.0571, 30.3298)
+size = Vector3(5.97423, 29.0571, 24.6498)
 
 [node name="Node3D" type="StaticBody3D"]
 
 [node name="glacier_wall" parent="." instance=ExtResource("1_ui6y4")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38379, 14.0285, 1.12795)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.640328, 14.0285, 0.0646603)
 shape = SubResource("BoxShape3D_i8cm2")

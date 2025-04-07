@@ -2,28 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://ct77a1ho1s2ep" path="res://Chiara/lighthouse_base_.glb" id="1_5058c"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rnxqe"]
-size = Vector3(168.056, 36.0608, 140.55)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_8i14b"]
-size = Vector3(148.35, 22.0635, 23.3062)
+size = Vector3(141.259, 22.0635, 23.3062)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iftqt"]
-size = Vector3(143.616, 23.2942, 286.904)
+size = Vector3(143.616, 21.5212, 286.904)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_waoux"]
+size = Vector3(131.466, 18.2676, 119.397)
 
 [node name="light_house_base" type="StaticBody3D"]
 
 [node name="lighthouse_base_" parent="." instance=ExtResource("1_5058c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69788, -16.4467, -24.7538)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.999797, 0.0201397, 0, -0.0201397, 0.999797, -53.5434, 28.8378, -39.4352)
-shape = SubResource("BoxShape3D_rnxqe")
-
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0945, 27.723, -126.832)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.5492, 27.723, -126.832)
 shape = SubResource("BoxShape3D_8i14b")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.254, 17.8253, -306.726)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.254, 16.9388, -306.726)
 shape = SubResource("BoxShape3D_iftqt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3907, 36.8434, -46.545)
+shape = SubResource("BoxShape3D_waoux")
