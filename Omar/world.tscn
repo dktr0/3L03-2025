@@ -13,6 +13,7 @@ size = Vector3(1.00096, 0.990234, 2.72393)
 [sub_resource type="BoxMesh" id="BoxMesh_wkr7r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0oglt"]
+size = Vector3(1, 1, 1.24951)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wfdq1"]
 
@@ -194,7 +195,7 @@ transform = Transform3D(-2.18557e-08, 0, -0.305556, 0, 0.5, 0, 0.5, 0, -1.33563e
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.62152, -1.78957)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/StaticBody3D"]
-transform = Transform3D(111.065, 0, 0, 0, 14.0852, 0, 0, 0, 69.48, -15.3953, -9.33141, -12.1723)
+transform = Transform3D(111.065, 0, 0, 0, 14.0852, 0, 0, 0, 69.48, -15.3953, -9.33141, -3.50426)
 shape = SubResource("BoxShape3D_0oglt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/StaticBody3D"]
@@ -492,61 +493,112 @@ transform = Transform3D(-26.9389, 0, 1.74846e-06, 0, 20, 0, -2.35508e-06, 0, -20
 [node name="Green_mountainnoice4" parent="mountain" instance=ExtResource("9_qxx8k")]
 transform = Transform3D(2.77113e-06, 0, 20, 0, 20, 0, -21.132, 0, 2.62269e-06, -2494.16, -59.3198, -1685.05)
 
-[node name="Baseplane" type="MeshInstance3D" parent="."]
+[node name="Rocks" type="Node" parent="."]
+
+[node name="Baseplane" type="MeshInstance3D" parent="Rocks"]
 transform = Transform3D(111.64, 0, 0, 0, 19.8776, 0, 0, 0, 10.2898, -11.6574, -9.49855, -54.0775)
 visible = false
 mesh = SubResource("BoxMesh_gykp6")
+skeleton = NodePath("../..")
 
-[node name="mediumrock" type="MeshInstance3D" parent="."]
+[node name="mediumrock" type="MeshInstance3D" parent="Rocks"]
 transform = Transform3D(2.1435, 0, 0, 0, 2.1435, 0, 0, 0, 2.1435, 0, 0, 0)
 visible = false
 mesh = SubResource("ArrayMesh_2gqvq")
 skeleton = NodePath("")
 
-[node name="largerock" type="MeshInstance3D" parent="."]
+[node name="largerock" type="MeshInstance3D" parent="Rocks"]
 transform = Transform3D(2.1435, 0, 0, 0, 3.86771, 0, 0, 0, 2.38682, -0.373483, 1.06099, -3.56885)
 visible = false
 mesh = SubResource("ArrayMesh_al46h")
 skeleton = NodePath("")
 
-[node name="smallrock" type="MeshInstance3D" parent="."]
+[node name="smallrock" type="MeshInstance3D" parent="Rocks"]
 transform = Transform3D(1.01257, 0, 0, 0, 1.01257, 0, 0, 0, 1.01257, -1.29392, -0.482013, -1.79027)
 visible = false
 mesh = SubResource("ArrayMesh_3e4np")
 skeleton = NodePath("")
 
-[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Rocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.80626, -4.36159)
 multimesh = SubResource("MultiMesh_pq3ml")
 
-[node name="MultiMeshInstance3D2" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D2" type="MultiMeshInstance3D" parent="Rocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.80626, -4.36159)
 multimesh = SubResource("MultiMesh_xkesm")
 
-[node name="MultiMeshInstance3D3" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D3" type="MultiMeshInstance3D" parent="Rocks"]
 transform = Transform3D(1, 0, 0, 0, 1.49298, 0, 0, 0, 1, 0, 4.80626, -4.36159)
 multimesh = SubResource("MultiMesh_kpj4g")
 
-[node name="MultiMeshInstance3D7" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D10" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(-0.111841, 0, 0.98689, 0, 1, 0, -0.683873, 0, -0.161397, -257.4, -15.2682, 65.8778)
+multimesh = SubResource("MultiMesh_pq3ml")
+
+[node name="MultiMeshInstance3D11" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(-0.111841, 0, 0.98689, 0, 1, 0, -0.683873, 0, -0.161397, -257.4, -15.2682, 65.8778)
+multimesh = SubResource("MultiMesh_xkesm")
+
+[node name="MultiMeshInstance3D12" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(-0.111841, 0, 0.98689, 0, 1.49298, 0, -0.683873, 0, -0.161397, -257.4, -15.2682, 65.8778)
+multimesh = SubResource("MultiMesh_kpj4g")
+
+[node name="MultiMeshInstance3D13" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(-0.692958, 0, -8.74228e-08, 0, 1, 0, 6.05803e-08, 0, -1, -288.524, -8.34584, 72.7676)
+multimesh = SubResource("MultiMesh_pq3ml")
+
+[node name="MultiMeshInstance3D14" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(-0.692958, 0, -8.74228e-08, 0, 1, 0, 6.05803e-08, 0, -1, -288.524, -8.34584, 72.7676)
+multimesh = SubResource("MultiMesh_xkesm")
+
+[node name="MultiMeshInstance3D15" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(-0.692958, 0, -8.74228e-08, 0, 1.49298, 0, 6.05803e-08, 0, -1, -288.524, -8.34584, 72.7676)
+multimesh = SubResource("MultiMesh_kpj4g")
+
+[node name="MultiMeshInstance3D16" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(-3.26218e-08, 0, 1, 0, 1, 0, -0.746301, 0, -4.37114e-08, -273.898, 0.202989, 160.292)
+multimesh = SubResource("MultiMesh_pq3ml")
+
+[node name="MultiMeshInstance3D17" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(-3.26218e-08, 0, 1, 0, 1, 0, -0.746301, 0, -4.37114e-08, -273.898, 0.202989, 160.292)
+multimesh = SubResource("MultiMesh_xkesm")
+
+[node name="MultiMeshInstance3D18" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(-3.26218e-08, 0, 1, 0, 1.49298, 0, -0.746301, 0, -4.37114e-08, -273.898, 0.202989, 160.292)
+multimesh = SubResource("MultiMesh_kpj4g")
+
+[node name="MultiMeshInstance3D19" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(0.746301, 0, 0, 0, 1, 0, 3.55271e-15, 0, 1, -263.333, -14.4192, 100.371)
+multimesh = SubResource("MultiMesh_pq3ml")
+
+[node name="MultiMeshInstance3D20" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(0.746301, 0, 0, 0, 1, 0, 3.55271e-15, 0, 1, -263.333, -14.4192, 100.371)
+multimesh = SubResource("MultiMesh_xkesm")
+
+[node name="MultiMeshInstance3D21" type="MultiMeshInstance3D" parent="Rocks"]
+transform = Transform3D(0.746301, 0, -3.55271e-15, 0, 1.49298, 0, 0, 0, 1, -263.333, -14.4192, 100.371)
+multimesh = SubResource("MultiMesh_kpj4g")
+
+[node name="MultiMeshInstance3D7" type="MultiMeshInstance3D" parent="Rocks"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 293.704, -3.73364, -55.4857)
 multimesh = SubResource("MultiMesh_pq3ml")
 
-[node name="MultiMeshInstance3D8" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D8" type="MultiMeshInstance3D" parent="Rocks"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 293.704, -3.73364, -55.4857)
 multimesh = SubResource("MultiMesh_xkesm")
 
-[node name="MultiMeshInstance3D9" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D9" type="MultiMeshInstance3D" parent="Rocks"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1.49298, 0, -1, 0, -4.37114e-08, 293.704, -3.73364, -55.4857)
 multimesh = SubResource("MultiMesh_kpj4g")
 
-[node name="MultiMeshInstance3D4" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D4" type="MultiMeshInstance3D" parent="Rocks"]
 transform = Transform3D(-2.91154e-08, 0, -1, 0, 0.596925, 0, 0.666082, 0, -4.37114e-08, -0.940533, -0.402489, -14.1543)
 multimesh = SubResource("MultiMesh_pq3ml")
 
-[node name="MultiMeshInstance3D5" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D5" type="MultiMeshInstance3D" parent="Rocks"]
 transform = Transform3D(-2.91154e-08, 0, -1, 0, 0.596925, 0, 0.666082, 0, -4.37114e-08, -0.940533, -0.402489, -14.1543)
 multimesh = SubResource("MultiMesh_xkesm")
 
-[node name="MultiMeshInstance3D6" type="MultiMeshInstance3D" parent="."]
+[node name="MultiMeshInstance3D6" type="MultiMeshInstance3D" parent="Rocks"]
 transform = Transform3D(-2.91154e-08, 0, -1, 0, 0.891196, 0, 0.666082, 0, -4.37114e-08, -0.940533, -0.402489, -14.1543)
 multimesh = SubResource("MultiMesh_kpj4g")

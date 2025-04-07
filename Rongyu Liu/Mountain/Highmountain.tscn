@@ -1,8 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://caytmt15utrsy"]
+[gd_scene load_steps=4 format=3 uid="uid://caytmt15utrsy"]
 
 [ext_resource type="PackedScene" uid="uid://5nthmmj56nh5" path="res://Rongyu Liu/Mountain/Highmountain.glb" id="1_qt8yu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgx17"]
+size = Vector3(2.60806, 16.2845, 12.0474)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_brn7e"]
+size = Vector3(3.45999, 12.427, 11.6699)
 
 [node name="Highmountain" type="StaticBody3D"]
 
 [node name="Highmountain" parent="." instance=ExtResource("1_qt8yu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00848019, -1.20642, 0.925158)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815067, 5.07823, 7.62707)
+shape = SubResource("BoxShape3D_kgx17")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.490975, 5.7135, -5.33496)
+shape = SubResource("BoxShape3D_brn7e")
