@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=83 format=4 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -25,7 +25,12 @@
 [ext_resource type="PackedScene" uid="uid://dfjs3jo3ls7is" path="res://Mackie/icicle clump_1.tscn" id="17_f81mf"]
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="17_vhbp1"]
 [ext_resource type="PackedScene" uid="uid://x7glgcbmrjhe" path="res://Omar/ice_arena_present.tscn" id="18_2sia6"]
+[ext_resource type="PackedScene" uid="uid://bbgrkkkwp2ukl" path="res://Ethan C/Blue Tent.tscn" id="18_xjo11"]
+[ext_resource type="PackedScene" uid="uid://bwkirwohli3ge" path="res://Ethan C/Purple Tent.tscn" id="19_eb7hd"]
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="19_qt78c"]
+[ext_resource type="PackedScene" uid="uid://cno47m3u2lv28" path="res://Ethan C/Red Tent.tscn" id="20_rrhma"]
+[ext_resource type="PackedScene" uid="uid://cuoukfstjn00h" path="res://Ethan C/Yellow Tent.tscn" id="21_75owf"]
+[ext_resource type="PackedScene" uid="uid://c27srq5ofafyb" path="res://Ethan C/Green Tent.tscn" id="22_p10kc"]
 [ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="22_tpijs"]
 [ext_resource type="Script" path="res://Omar/kill_zone.gd" id="23_7v35e"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="23_51q5n"]
@@ -52,6 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="50_fu1qj"]
 [ext_resource type="AudioStream" uid="uid://b112mcgfgkici" path="res://Spencer/Ice and Glacier/Soundscape Glacier/Glacier soundscape.mp3" id="52_8wk0a"]
 [ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="52_rl4wu"]
+[ext_resource type="PackedScene" uid="uid://dxsedgdoe3w3d" path="res://Andy/signal.tscn" id="58_a77y2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ufjtn"]
 size = Vector3(2.76624, 2.61658, 3)
@@ -167,7 +173,7 @@ size = Vector3(16.2928, 7.24939, 11.5142)
 [node name="Present" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("32_3v2qo")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.29387, 2.40403, 20.8242)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 173.003, 2.40403, -197.898)
 collision_layer = 3
 
 [node name="Area3D" type="Area3D" parent="Player"]
@@ -184,7 +190,7 @@ player_scene = ExtResource("32_3v2qo")
 [node name="Tasks" type="Node" parent="."]
 
 [node name="PlatformingGame" parent="Tasks" instance=ExtResource("5_eyu1o")]
-transform = Transform3D(-2.47487, 0, -2.47487, 0, 3.5, 0, 2.47487, 0, -2.47487, 391.669, -9.61707, 272.302)
+transform = Transform3D(-2.12132, 0, -2.12132, 0, 3, 0, 2.12132, 0, -2.12132, 371.049, -9.61707, 248.586)
 
 [node name="PuzzleGame" parent="Tasks" instance=ExtResource("6_k0hcq")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -568.188, -119.278, -283.719)
@@ -334,6 +340,24 @@ mesh = SubResource("BoxMesh_drou1")
 [node name="MultiMeshInstance3D2" type="MultiMeshInstance3D" parent="decorations/penguins"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 187.003)
 multimesh = SubResource("MultiMesh_0bqul")
+
+[node name="Area3D" parent="decorations" instance=ExtResource("18_xjo11")]
+transform = Transform3D(12.5087, 0, 15.6056, 0, 20, 0, -15.6056, 0, 12.5087, -111.676, -7.7352, 125.682)
+
+[node name="Area3D2" parent="decorations" instance=ExtResource("19_eb7hd")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -100.944, -7.69394, 122.395)
+
+[node name="Area3D3" parent="decorations" instance=ExtResource("20_rrhma")]
+transform = Transform3D(24.1138, 0, -6.59725, 0, 25, 0, 6.59725, 0, 24.1138, -283.787, -7.45143, 62.3402)
+
+[node name="Area3D4" parent="decorations" instance=ExtResource("21_75owf")]
+transform = Transform3D(-17.2673, 0, 18.0787, 0, 25, 0, -18.0787, 0, -17.2673, -296.053, -7.45143, 107.149)
+
+[node name="Area3D5" parent="decorations" instance=ExtResource("22_p10kc")]
+transform = Transform3D(2.63838, 0, 24.8604, 0, 25, 0, -24.8604, 0, 2.63838, -299.406, -7.45143, 86.2286)
+
+[node name="StaticBody3D" parent="decorations" instance=ExtResource("17_vhbp1")]
+transform = Transform3D(1.81097, 0, 4.66051, 0, 5, 0, -4.66051, 0, 1.81097, -282.69, -8.32998, 86.9465)
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="."]
 transform = Transform3D(9.76772, 0, 27.6329, 0, 1, 0, -8.83821, 0, 30.5391, 313.455, -8.19766, 187.353)
@@ -622,7 +646,7 @@ transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 
 fragment_scene = ExtResource("8_fio87")
 
 [node name="Chest2" parent="." instance=ExtResource("7_lc440")]
-transform = Transform3D(2.9798, 0, 0.347568, 0, 3, 0, -0.347568, 0, 2.9798, 390.363, 39.7444, 290.797)
+transform = Transform3D(2.9798, 0, 0.347568, 0, 3, 0, -0.347568, 0, 2.9798, 370.464, 32.5951, 264.381)
 fragment_scene = ExtResource("36_ti2ee")
 
 [node name="Chest3" parent="." instance=ExtResource("7_lc440")]
@@ -656,7 +680,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="Portal 1" parent="." instance=ExtResource("50_fu1qj")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 10.1896, 30.1687)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.0467, 10.1896, 137.169)
 player_path = NodePath("../Player")
 target_scene_path = "res://Sandhya/past.tscn"
 
@@ -827,6 +851,15 @@ dialogue_lines = Array[String](["Eh? You alright there, stranger? You lookin’ 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control2"]
 transform = Transform3D(-0.845254, 0, -0.534369, 0, 1, 0, 0.534369, 0, -0.845254, -3.8614, 3.12469, -5.79645)
 shape = SubResource("BoxShape3D_nobjg")
+
+[node name="Signal" parent="." instance=ExtResource("58_a77y2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 192.487, 131.936, -243.826)
+
+[node name="Signal2" parent="." instance=ExtResource("58_a77y2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -444.626, 35.0855, -113.462)
+
+[node name="Signal3" parent="." instance=ExtResource("58_a77y2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 367.303, 83.8447, 248.262)
 
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer" to="killzone/Kill Zone Platformer" method="_on_body_entered"]

@@ -527,6 +527,54 @@ multimesh = SubResource("MultiMesh_xkesm")
 transform = Transform3D(1, 0, 0, 0, 1.49298, 0, 0, 0, 1, 0, 4.80626, -4.36159)
 multimesh = SubResource("MultiMesh_kpj4g")
 
+[node name="MultiMeshInstance3D10" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(-3.02902e-08, 0, 1, 0, 1, 0, -0.692958, 0, -4.37114e-08, -263.824, -8.34584, 72.9849)
+multimesh = SubResource("MultiMesh_pq3ml")
+
+[node name="MultiMeshInstance3D11" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(-3.02902e-08, 0, 1, 0, 1, 0, -0.692958, 0, -4.37114e-08, -263.824, -8.34584, 72.9849)
+multimesh = SubResource("MultiMesh_xkesm")
+
+[node name="MultiMeshInstance3D12" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(-3.02902e-08, 0, 1, 0, 1.49298, 0, -0.692958, 0, -4.37114e-08, -263.824, -8.34584, 72.9849)
+multimesh = SubResource("MultiMesh_kpj4g")
+
+[node name="MultiMeshInstance3D13" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(-0.692958, 0, -8.74228e-08, 0, 1, 0, 6.05803e-08, 0, -1, -288.524, -8.34584, 72.7676)
+multimesh = SubResource("MultiMesh_pq3ml")
+
+[node name="MultiMeshInstance3D14" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(-0.692958, 0, -8.74228e-08, 0, 1, 0, 6.05803e-08, 0, -1, -288.524, -8.34584, 72.7676)
+multimesh = SubResource("MultiMesh_xkesm")
+
+[node name="MultiMeshInstance3D15" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(-0.692958, 0, -8.74228e-08, 0, 1.49298, 0, 6.05803e-08, 0, -1, -288.524, -8.34584, 72.7676)
+multimesh = SubResource("MultiMesh_kpj4g")
+
+[node name="MultiMeshInstance3D16" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(-3.26218e-08, 0, 1, 0, 1, 0, -0.746301, 0, -4.37114e-08, -273.898, 0.202989, 160.292)
+multimesh = SubResource("MultiMesh_pq3ml")
+
+[node name="MultiMeshInstance3D17" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(-3.26218e-08, 0, 1, 0, 1, 0, -0.746301, 0, -4.37114e-08, -273.898, 0.202989, 160.292)
+multimesh = SubResource("MultiMesh_xkesm")
+
+[node name="MultiMeshInstance3D18" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(-3.26218e-08, 0, 1, 0, 1.49298, 0, -0.746301, 0, -4.37114e-08, -273.898, 0.202989, 160.292)
+multimesh = SubResource("MultiMesh_kpj4g")
+
+[node name="MultiMeshInstance3D19" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(0.746301, 0, 0, 0, 1, 0, 3.55271e-15, 0, 1, -263.333, -14.4192, 100.371)
+multimesh = SubResource("MultiMesh_pq3ml")
+
+[node name="MultiMeshInstance3D20" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(0.746301, 0, 0, 0, 1, 0, 3.55271e-15, 0, 1, -263.333, -14.4192, 100.371)
+multimesh = SubResource("MultiMesh_xkesm")
+
+[node name="MultiMeshInstance3D21" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(0.746301, 0, -3.55271e-15, 0, 1.49298, 0, 0, 0, 1, -263.333, -14.4192, 100.371)
+multimesh = SubResource("MultiMesh_kpj4g")
+
 [node name="MultiMeshInstance3D7" type="MultiMeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 293.704, -3.73364, -55.4857)
 multimesh = SubResource("MultiMesh_pq3ml")
