@@ -16,36 +16,20 @@ position = Vector2(582, 314)
 scale = Vector2(0.163135, 0.163135)
 texture = ExtResource("2_5ryhf")
 
-[node name="透明层" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.647059)
-light_mask = 0
-visibility_layer = 2
-position = Vector2(579.95, 326.168)
-scale = Vector2(1.68509, 1.75954)
-
 [node name="Menu" type="Label" parent="."]
-offset_left = 150.0
-offset_top = 165.0
-offset_right = 218.0
-offset_bottom = 195.0
+offset_left = 144.0
+offset_top = 133.0
+offset_right = 212.0
+offset_bottom = 163.0
 theme_override_fonts/font = ExtResource("4_lulii")
 theme_override_font_sizes/font_size = 29
 text = "MENU"
 
-[node name="CreditLabel3" type="Label" parent="."]
-offset_left = 150.0
-offset_top = 315.0
-offset_right = 314.0
-offset_bottom = 345.0
-theme_override_fonts/font = ExtResource("4_lulii")
-theme_override_font_sizes/font_size = 29
-text = "INTRODUCTION"
-
 [node name="Exit" type="Label" parent="."]
-offset_left = 150.0
-offset_top = 465.0
-offset_right = 218.0
-offset_bottom = 495.0
+offset_left = 148.0
+offset_top = 466.0
+offset_right = 216.0
+offset_bottom = 496.0
 theme_override_fonts/font = ExtResource("4_lulii")
 theme_override_font_sizes/font_size = 29
 text = "EXIT"

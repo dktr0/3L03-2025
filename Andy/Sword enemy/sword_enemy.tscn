@@ -1,6 +1,10 @@
-[gd_scene load_steps=126 format=4 uid="uid://7xm62lefk2vo"]
+[gd_scene load_steps=129 format=4 uid="uid://7xm62lefk2vo"]
 
 [ext_resource type="Script" path="res://Andy/Sword enemy/sword_enemy.gd" id="1_wfcee"]
+[ext_resource type="AudioStream" uid="uid://c2i2okl4khod3" path="res://Spencer/Ice and Glacier/Ice monster/ice monster without roar.mp3" id="2_0hpp2"]
+[ext_resource type="AudioStream" uid="uid://bl31sgyabmo7r" path="res://Spencer/Ice and Glacier/Ice monster/ice monster with roar.mp3" id="3_4vuhh"]
+[ext_resource type="AudioStream" uid="uid://bjlmbv0onu1ny" path="res://Bihan/SoundEffects and Soundscape/MonsterTwo.mp3" id="4_s5xlf"]
+[ext_resource type="AudioStream" uid="uid://1oltgrd134q2" path="res://Bihan/SoundEffects and Soundscape/MonsterFour.mp3" id="5_htrbg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kyuvw"]
 
@@ -2191,33 +2195,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Animation" id="Animation_7pgf3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Armature/Skeleton3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Armature/Skeleton3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.122574, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_51au7"]
 resource_name = "attack"
 length = 2.0
@@ -2751,7 +2728,6 @@ tracks/21/keys = PackedFloat32Array(0, 1, -0.632532, -0.0186314, 0.118641, 0.765
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ak6ck"]
 _data = {
-"RESET": SubResource("Animation_7pgf3"),
 "attack": SubResource("Animation_51au7"),
 "attackholding": SubResource("Animation_ot6hr"),
 "die": SubResource("Animation_3ketw"),
@@ -3404,3 +3380,24 @@ skin = SubResource("Skin_en2pl")
 libraries = {
 "": SubResource("AnimationLibrary_ak6ck")
 }
+
+[node name="WalkSFX" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.823672, 0, 0)
+stream = ExtResource("2_0hpp2")
+volume_db = -3.856
+max_db = 1.916
+
+[node name="ChaseSFX" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.598271, 0, 0)
+stream = ExtResource("3_4vuhh")
+volume_db = -5.783
+max_db = 2.895
+
+[node name="AttackSFX" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08945, 1.3882)
+stream = ExtResource("4_s5xlf")
+volume_db = -7.711
+
+[node name="DieSFX" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25586, 0)
+stream = ExtResource("5_htrbg")

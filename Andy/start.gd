@@ -5,6 +5,9 @@ extends Control
 @onready var press_label = $PressLabel
 
 func _ready() -> void:
+	# 让鼠标可见、自由移动（Godot 4写法）
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 	# 设置初始可见度
 	background.modulate = Color(1,1,1,1)  # 背景完全可见
 	halcyon.modulate    = Color(1,1,1,0)  # Halcyon 透明
@@ -18,9 +21,9 @@ func fade_in_sequence() -> void:
 	await get_tree().create_timer(1.0).timeout
 
 	# 1) 淡入 halcyon (从当前 alpha=0 -> alpha=1，时长1秒)
-	var color_from = halcyon.modulate              # 当前正是 alpha=0
+	var color_from = halcyon.modulate
 	var color_to   = color_from
-	color_to.a     = 1.0                           # 目标 alpha=1
+	color_to.a     = 1.0
 
 	var tween1 = get_tree().create_tween()
 	tween1.tween_property(halcyon, "modulate", color_to, 1.0)
@@ -37,7 +40,7 @@ func fade_in_sequence() -> void:
 	# 到这里 halcyon & label 都淡入完成
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("activate"):
 		fade_out_and_goto_menu()
 
 func fade_out_and_goto_menu() -> void:
@@ -62,6 +65,5 @@ func fade_out_and_goto_menu() -> void:
 	lbl_to.a     = 0.0
 	tween.tween_property(press_label, "modulate", lbl_to, 1.0)
 
-	# 等待三条插值都完成
 	await tween.finished
 	get_tree().change_scene_to_file("res://Zhu/zhu_title_page_assests/playable/control.tscn")

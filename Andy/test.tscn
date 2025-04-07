@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5ismj26qgcgh"]
+[gd_scene load_steps=22 format=3 uid="uid://c5ismj26qgcgh"]
 
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="1_xepk3"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/chest.tscn" id="2_vrmga"]
@@ -41,6 +41,9 @@ data = PackedVector3Array(-3.865, 1.4075, 9.71, 3.865, 1.4075, 9.71, -3.865, -1.
 [sub_resource type="BoxShape3D" id="BoxShape3D_g1e0p"]
 size = Vector3(7.66, 2.96, 17.76)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_et6nx"]
+size = Vector3(23.07, 13.525, 36.225)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -48,7 +51,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_xepk3")]
-transform = Transform3D(-0.220612, 0, -0.975362, 0, 1, 0, 0.975362, 0, -0.220612, 25.5562, 0.503348, 0)
+transform = Transform3D(-0.220612, 0, -0.975362, 0, 1, 0, 0.975362, 0, -0.220612, 25.5562, 0.503348, 80.9887)
 jump_strength = 20.0
 
 [node name="Area3D" type="Area3D" parent="Player"]
@@ -82,6 +85,36 @@ mesh = SubResource("BoxMesh_d7q54")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ocaf2")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 99.5332)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
+mesh = SubResource("BoxMesh_d7q54")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D3"]
+shape = SubResource("ConvexPolygonShape3D_ocaf2")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.6937, 0, 99.5332)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4"]
+mesh = SubResource("BoxMesh_d7q54")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D4"]
+shape = SubResource("ConvexPolygonShape3D_ocaf2")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.6937, 0, -0.204445)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5"]
+mesh = SubResource("BoxMesh_d7q54")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D5"]
 shape = SubResource("ConvexPolygonShape3D_ocaf2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -118,10 +151,10 @@ shape = SubResource("ConcavePolygonShape3D_ksfm3")
 
 [node name="Control2" parent="." instance=ExtResource("11_euw74")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3592, -0.131591, 0)
-dialogue_lines = Array[String](["Then there’s the forest. Dry as tinder, and wouldn’t you know it—fire’s started up. If it spreads,we’ll lose the whole damn valley. Some folks are tryin’ to stop it, but they ain't enough.And the village? Used to be clean water, good fishin’. Now the shore’s fillin’ up with filth, and noone’s takin’ the blame. If somethin’ ain’t done soon, there won’t be a village left to save.", "Things ain't too far gone yet, but they’re slippin’. You got that look about ya—like you might beable to turn the tide. If you can, do it quickly. We ain't got forever."])
+dialogue_lines = Array[String](["\"Eh? You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned up with got destroyed, I seen the shards of it fly off all over the place", "One flew right into that fire, at the top of those charred trees, wouldnt want to be the one to have to go there.", "Another got snatched by some ice critters settin’ traps up north east. Been watching those troublemakers destroy everything around them. I tell you, there is no reasoning with those fellas, what with their violent nature ", "Last piece? Done sunk to the bottom of what was once my home. The village under the sea - just north west of here. Was thinking of heading there to snag it, but that water ain't what it used to be - too much filth in the water as is", "Things ain’t like they used to be. The ice, the rivers, even the fish—they’re all disappearin’. Used to be a paradise here. Now? Just smoke, poison, and bad luck.", "Hope you find what you’re lookin’ for. Just watch where you step—world ain’t too kind these days.\"", "These may help ya later on, I got no use for these anymore, so have your pick. Only 1 thing, though, I’m not foolish enough to be here defenseless. "])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15152, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825272, 2.15152, 62.8903)
 shape = SubResource("BoxShape3D_g1e0p")
 
 [node name="Enemy2" parent="." instance=ExtResource("8_xkfml")]
@@ -131,3 +164,12 @@ knockback_force = 200.0
 auto_jump_speed = 10.0
 player_path = NodePath("../Player")
 player_collider_path = NodePath("../Player/Area3D")
+
+[node name="Control3" parent="." instance=ExtResource("11_euw74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8804, 94.4692)
+trigger_type = 1
+quest_id = "open_chest"
+quest_description = "open the chest"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control3"]
+shape = SubResource("BoxShape3D_et6nx")
