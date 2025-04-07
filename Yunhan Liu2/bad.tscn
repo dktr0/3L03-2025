@@ -1,5 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://t3v7ddegi0pl"]
+[gd_scene load_steps=46 format=3 uid="uid://t3v7ddegi0pl"]
 
+[ext_resource type="PackedScene" uid="uid://dskvad1j8525m" path="res://Le Zhang/mutated fish.glb" id="1_1maeu"]
+[ext_resource type="PackedScene" uid="uid://cldomxhffitcn" path="res://Yunhan Liu2/Npc_Dialog.tscn" id="1_exclq"]
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_hb1m7"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="2_ujjpv"]
 [ext_resource type="PackedScene" uid="uid://cycjp4vmr1kal" path="res://DeadLargeSeaweed.tscn" id="3_287qh"]
@@ -25,16 +27,14 @@
 [ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="23_4jitw"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="24_fcj6q"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="25_8sy7t"]
-[ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="26_eykpa"]
-[ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="27_lodc1"]
 [ext_resource type="AudioStream" uid="uid://dcvulv17onxdi" path="res://Tram/music/bad-ending.mp3" id="28_xr3t1"]
 [ext_resource type="PackedScene" uid="uid://c7niujgajwjqk" path="res://Nan/Badsky.tscn" id="29_wgvx5"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="30_dssij"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="31_p6muy"]
-[ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="32_x1ox1"]
-[ext_resource type="Script" path="res://bad_dialogue.gd" id="33_4nbgh"]
 [ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="34_b1l4a"]
 [ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="35_h4f76"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nrf5x"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6a1uf"]
 
@@ -179,6 +179,17 @@ size = Vector3(2.07155, 0.00760269, 2.07335)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivawu"]
 
 [node name="Bad" type="Node3D"]
+
+[node name="dialog" parent="." instance=ExtResource("1_exclq")]
+transform = Transform3D(2.00932, 0, 0, 0, 1.21056, 0, 0, 0, 2.40181, -31.9251, 26.1303, -38.3944)
+dialogue_lines = Array[String](["You didn't save anything, enter the portal again, maybe we still have a chance"])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dialog"]
+transform = Transform3D(8.17944, 0, 0, 0, 8.17944, 0, 0, 0, 8.17944, 0, 0, 0)
+shape = SubResource("BoxShape3D_nrf5x")
+
+[node name="mutated fish" parent="." instance=ExtResource("1_1maeu")]
+transform = Transform3D(-0.273044, 0, -4.58909, 0, 4.59721, 0, 4.58909, 0, -0.273044, -41.6683, 0.0763855, 0)
 
 [node name="World2" parent="." instance=ExtResource("1_hb1m7")]
 transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 8.762, -20.4973, 147.279)
@@ -378,8 +389,6 @@ amulet_ui_path = NodePath("../Control")
 start_with_shard1 = true
 start_with_shard2 = true
 start_with_shard3 = true
-pickup_sound = ExtResource("26_eykpa")
-final_amulet_sound = ExtResource("27_lodc1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 94.487)
@@ -402,9 +411,6 @@ script = ExtResource("31_p6muy")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fish_shop_owner/Area3D"]
 transform = Transform3D(0.975474, 0, 0.22012, 0, 1, 0, -0.22012, 0, 0.975474, -0.223166, 2.08832, -1.34286)
 shape = SubResource("BoxShape3D_su7hf")
-
-[node name="Dialogue" parent="fish_shop_owner" instance=ExtResource("32_x1ox1")]
-script = ExtResource("33_4nbgh")
 
 [node name="FishShop" parent="." instance=ExtResource("34_b1l4a")]
 transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.5898, 1.1015, 7.09023)
@@ -497,3 +503,14 @@ transform = Transform3D(-0.0467577, 0, -0.998906, 0, 1, 0, 0.998906, 0, -0.04675
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Air wall/StaticBody3D4"]
 transform = Transform3D(41.0147, 0, 0, 0, 51.8883, 0, 0, 0, 3.40862, -43.7428, 45.067, -22.316)
 shape = SubResource("BoxShape3D_ivawu")
+
+[node name="mutated fish2" parent="." instance=ExtResource("1_1maeu")]
+transform = Transform3D(-8.62761, 0, 2.80844, 0, 9.0732, 0, -2.80844, 0, -8.62761, -178.32, -29.687, 0)
+
+[node name="mutated fish3" parent="." instance=ExtResource("1_1maeu")]
+transform = Transform3D(2.12456, 0, 8.82095, 0, 9.0732, 0, -8.82095, 0, 2.12456, -178.32, -29.687, -132.666)
+
+[node name="Portal 2" parent="." instance=ExtResource("24_fcj6q")]
+transform = Transform3D(0.00373961, -1.40827, -0.114111, 0.0461265, 0.114172, -1.40751, 1.41213, 0, 0.0462778, -42.6514, 23.8062, -8.49351)
+player_path = NodePath("../Player")
+target_scene_path = "res://Andy/credit.tscn"
