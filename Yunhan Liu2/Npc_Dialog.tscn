@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cldomxhffitcn"]
+
+[ext_resource type="Script" path="res://Andy/DialogueQuestTrigger.gd" id="1_f1r4t"]
+
+[node name="Control" type="Area3D"]
+script = ExtResource("1_f1r4t")

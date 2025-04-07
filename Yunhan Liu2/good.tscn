@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dp6183w8v6hq8"]
+[gd_scene load_steps=52 format=3 uid="uid://dp6183w8v6hq8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ddo5a"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="4_ccliw"]
@@ -27,12 +27,14 @@
 [ext_resource type="PackedScene" uid="uid://bas58vrt0ro6o" path="res://Xinyu Luo/Tree2.glb" id="17_eh4x8"]
 [ext_resource type="PackedScene" uid="uid://xt2k5eif24su" path="res://Xinyu Luo/Bird 01.glb" id="18_l3lot"]
 [ext_resource type="PackedScene" uid="uid://deeq5coupwyra" path="res://fly_bird.tscn" id="18_lfiss"]
+[ext_resource type="PackedScene" uid="uid://cldomxhffitcn" path="res://Yunhan Liu2/Npc_Dialog.tscn" id="20_5wgk7"]
 [ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="25_n514t"]
 [ext_resource type="AudioStream" uid="uid://dvs1mcx5q0ptu" path="res://Yunhan Liu2/positive-future-loop.mp3" id="27_f6pr8"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="30_rr3n8"]
-[ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="31_687fs"]
-[ext_resource type="Script" path="res://dialogue.gd" id="32_p5v5g"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="33_e5mph"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejdrq"]
+size = Vector3(2.56543, 1, 1)
 
 [sub_resource type="Animation" id="Animation_qj1fd"]
 length = 0.001
@@ -209,6 +211,8 @@ buffer = PackedFloat32Array(-1.55168, 0, -3.02944, 85.6591, 0, 3.40371, 0, -9.54
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dgkyc"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwk05"]
+
 [sub_resource type="Animation" id="Animation_mjov8"]
 length = 0.001
 tracks/0/type = "value"
@@ -253,6 +257,14 @@ size = Vector3(8.48912, 5.17664, 4.11774)
 [node name="good" type="Node3D"]
 
 [node name="World" parent="." instance=ExtResource("1_ddo5a")]
+
+[node name="house log" parent="." instance=ExtResource("20_5wgk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.2308, -15.915, 101.322)
+dialogue_lines = Array[String](["From inside the house came the sound of cooking and a child’s laughter. It was the sound of a happy family."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="house log"]
+transform = Transform3D(19.0583, 0, 0, 0, 19.0583, 0, 0, 0, 19.0583, -6.26892, 0.69268, 2.49786)
+shape = SubResource("BoxShape3D_ejdrq")
 
 [node name="3d" type="Node" parent="."]
 
@@ -3298,6 +3310,14 @@ transform = Transform3D(2.19425, 0, 0, 0, 2.19425, 0, 0, 0, 2.19425, 165.248, -8
 [node name="Tree12" parent="3d/Tree" instance=ExtResource("17_eh4x8")]
 transform = Transform3D(2.19425, 0, 0, 0, 2.19425, 0, 0, 0, 2.19425, 231.5, -8.40585, 151.441)
 
+[node name="log" parent="3d" instance=ExtResource("20_5wgk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1379, 0, 0)
+dialogue_lines = Array[String](["Hello Adventurer, you did make this place better didn't you!", "Go look around. Meet me at the dock if you want to fish."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3d/log"]
+transform = Transform3D(11.0519, 0, -4.92802, 0, 12.1008, 0, 4.92802, 0, 11.0519, 2.3744, 0, 10.4224)
+shape = SubResource("BoxShape3D_hwk05")
+
 [node name="Bird" type="Node3D" parent="3d"]
 
 [node name="Bird 04" parent="3d/Bird" instance=ExtResource("18_l3lot")]
@@ -3740,11 +3760,48 @@ script = ExtResource("30_rr3n8")
 transform = Transform3D(0.975474, 0, 0.22012, 0, 1, 0, -0.22012, 0, 0.975474, -0.223166, 2.08832, -1.34286)
 shape = SubResource("BoxShape3D_wqgfn")
 
-[node name="Dialogue" parent="fish_shop_owner" instance=ExtResource("31_687fs")]
-script = ExtResource("32_p5v5g")
-
 [node name="FishShop" parent="." instance=ExtResource("10_jhoqv")]
 transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.5898, 1.1015, 7.09023)
 
 [node name="Player" parent="." instance=ExtResource("33_e5mph")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.544, 1.33539, 114.5)
+
+[node name="house log2" parent="." instance=ExtResource("20_5wgk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.534, -15.915, 100.251)
+dialogue_lines = Array[String](["Soft piano notes drifted out from the open window, blending with quiet conversations and the occasional warm chuckle."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="house log2"]
+transform = Transform3D(7.90042, 0, 0, 0, 19.0583, 0, 0, 0, 19.0583, -6.26892, 0.69268, 2.49786)
+shape = SubResource("BoxShape3D_ejdrq")
+
+[node name="house log3" parent="." instance=ExtResource("20_5wgk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.568, -13.8079, 106.053)
+dialogue_lines = Array[String](["Lively chatter and clinking dishes echoed from within, the unmistakable noise of family gathered around the dinner table."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="house log3"]
+transform = Transform3D(5.27182, 0, 0, 0, 19.0583, 0, 0, 0, 8.02802, -6.26892, 0.69268, 2.49786)
+shape = SubResource("BoxShape3D_ejdrq")
+
+[node name="house log4" parent="." instance=ExtResource("20_5wgk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 265.764, -13.8079, 157.606)
+dialogue_lines = Array[String](["The muffled sound of a TV game show mixed with bursts of laughter—someone just got the answer wrong, apparently."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="house log4"]
+transform = Transform3D(5.27182, 0, 0, 0, 19.0583, 0, 0, 0, 8.02802, -6.26892, 0.69268, 2.49786)
+shape = SubResource("BoxShape3D_ejdrq")
+
+[node name="house log5" parent="." instance=ExtResource("20_5wgk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.534, -13.8079, 158.882)
+dialogue_lines = Array[String](["A gentle humming could be heard, accompanied by the sound of running water and clinking plates—someone was doing the dishes, contentedly"])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="house log5"]
+transform = Transform3D(5.27182, 0, 0, 0, 19.0583, 0, 0, 0, 8.02802, -6.26892, 0.69268, 2.49786)
+shape = SubResource("BoxShape3D_ejdrq")
+
+[node name="house log6" parent="." instance=ExtResource("20_5wgk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.351, -13.8079, 157.606)
+dialogue_lines = Array[String](["The crackle of a fireplace and the low, relaxed bark of a dog made the house feel safe, warm, and lived-in."])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="house log6"]
+transform = Transform3D(5.27182, 0, 0, 0, 19.0583, 0, 0, 0, 8.02802, -6.26892, 0.69268, 2.49786)
+shape = SubResource("BoxShape3D_ejdrq")
