@@ -7,7 +7,7 @@ func _ready():
 	area.body_entered.connect(_on_area_body_entered)
 
 func _on_area_body_entered(body: Node):
-	if collected:
+	if collected: 	
 		return
 	if body.name == "Player":
 		collected = true

@@ -1,24 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ej66i32qy8ve"]
+[gd_scene load_steps=2 format=3 uid="uid://ej66i32qy8ve"]
 
 [ext_resource type="PackedScene" uid="uid://n5e7f0ppgwhk" path="res://Chiara/filice_chiara_waterrock.glb" id="1_f68go"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sjy0p"]
-radius = 2.14865
-height = 4.92418
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bjfrk"]
-radius = 2.30415
-height = 7.74147
 
 [node name="WaterRock" type="StaticBody3D"]
 
 [node name="filice_chiara_waterrock" parent="." instance=ExtResource("1_f68go")]
 transform = Transform3D(-0.35807, 0, 0.715392, 0, 0.8, 0, -0.715392, 0, -0.35807, 0.227602, 0, -0.770804)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.656704, 0, 0.754148, 0, 1, 0, -0.754148, 0, 0.656704, 0.046643, -0.258021, -0.714916)
-shape = SubResource("CapsuleShape3D_sjy0p")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20406, 0.3557, 1.27087)
-shape = SubResource("CapsuleShape3D_bjfrk")

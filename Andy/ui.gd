@@ -17,7 +17,8 @@ extends Node2D
 # 音频节点 (AudioStreamPlayer2D)
 @onready var sfx_tick: AudioStreamPlayer2D = $SFX_Tick
 @onready var sfx_dong: AudioStreamPlayer2D = $SFX_dong
-
+@onready var label_press: Label = $"Press   and   to select"
+@onready var label_press_enter: Label = $"Press enter"
 # 2) 自定义属性
 var angle: float = 0.0             # 当前旋转角度(弧度制)
 var rotate_speed: float = 0.7      # 左右方向键时，每秒多少弧度
@@ -34,7 +35,7 @@ func _ready() -> void:
 
 	# 初始化所有按钮暗淡
 	_update_button_highlight("")
-
+	_start_blinking_labels()
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
@@ -54,14 +55,23 @@ func _input(_event: InputEvent) -> void:
 				Loadingmanager.change_scene_with_loading("res://Andy/playable/beginning.tscn")
 			"PosCredit":
 				print("激活 CREDIT 按钮")
-				# get_tree().change_scene("res://CreditScene.tscn")
+				Loadingmanager.change_scene_with_loading("res://Andy/credit.tscn")
 			"PosIntro":
 				print("激活 INTRO 按钮")
-				# 可在此播放介绍动画或切换场景
+				get_tree().quit()
 			_:
 				pass
+func _start_blinking_labels():
+	var blink_tween = create_tween()
+	blink_tween.set_loops(true)
 
+	blink_tween.parallel()
+	blink_tween.tween_property(label_press, "modulate", Color(1, 1, 0, 1), 1.0)
+	blink_tween.tween_property(label_press_enter, "modulate", Color(1, 1, 0, 1), 1.0)
 
+	blink_tween.chain().parallel()
+	blink_tween.tween_property(label_press, "modulate", Color(1, 1, 1, 1), 1.0)
+	blink_tween.tween_property(label_press_enter, "modulate", Color(1, 1, 1, 1), 1.0)
 #
 # 下面是碰撞信号回调
 #

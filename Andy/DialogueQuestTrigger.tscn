@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://Andy/DialogueQuestTrigger.gd" id="1_sgi86"]
 
-[node name="Control" type="Area3D"]
+[node name="trigger" type="Area3D"]
 script = ExtResource("1_sgi86")
