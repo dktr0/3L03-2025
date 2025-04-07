@@ -1,8 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://l3iu0fdlcok3"]
+[gd_scene load_steps=38 format=3 uid="uid://l3iu0fdlcok3"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_abetd"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="2_mabp6"]
-[ext_resource type="PackedScene" uid="uid://cycjp4vmr1kal" path="res://DeadLargeSeaweed.tscn" id="3_aauup"]
+[ext_resource type="PackedScene" path="res://DeadLargeSeaweed.tscn" id="3_aauup"]
 [ext_resource type="PackedScene" uid="uid://c2bdcxn28whgv" path="res://Darius/Rubble.glb" id="4_g43o1"]
 [ext_resource type="PackedScene" uid="uid://dt1mfgeidwbmi" path="res://Ethan C/Water Bottle.tscn" id="5_yud5f"]
 [ext_resource type="PackedScene" uid="uid://k0juh3usoo66" path="res://Chiara/broken_Dock.glb" id="6_gcxeq"]
@@ -14,24 +14,22 @@
 [ext_resource type="PackedScene" uid="uid://bwqy20x2uomik" path="res://Rongyu Liu/Bad_water.tscn" id="12_hstki"]
 [ext_resource type="PackedScene" uid="uid://dm3pl02h2a4d4" path="res://Rongyu Liu/Soil/Damaged soil.glb" id="13_uj6gp"]
 [ext_resource type="PackedScene" uid="uid://daggh56yuy6g3" path="res://Nan/Bad Cloud.glb" id="14_n2des"]
-[ext_resource type="PackedScene" uid="uid://31k1eq7dvbqa" path="res://Riley/DeadTree.tscn" id="15_8tv27"]
-[ext_resource type="PackedScene" uid="uid://neudcqb0ff87" path="res://Nan/Dead_wood.tscn" id="16_ip6om"]
-[ext_resource type="PackedScene" uid="uid://bnesfoix585wh" path="res://Riley/DeadBulrush.tscn" id="17_7dpm1"]
-[ext_resource type="PackedScene" uid="uid://spmbye82jg58" path="res://Riley/DeadGrass.tscn" id="18_fx50g"]
-[ext_resource type="PackedScene" uid="uid://b1mb8vepspln2" path="res://Riley/GarbagePile.tscn" id="19_cgh4b"]
+[ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="15_8tv27"]
+[ext_resource type="PackedScene" path="res://Nan/Dead_wood.tscn" id="16_ip6om"]
+[ext_resource type="PackedScene" path="res://Riley/DeadBulrush.tscn" id="17_7dpm1"]
+[ext_resource type="PackedScene" path="res://Riley/DeadGrass.tscn" id="18_fx50g"]
+[ext_resource type="PackedScene" path="res://Riley/GarbagePile.tscn" id="19_cgh4b"]
 [ext_resource type="PackedScene" uid="uid://dj0ikx20ebw7a" path="res://Wilson/fire_smoke.tscn" id="20_yiris"]
 [ext_resource type="PackedScene" uid="uid://bt0oah83alnvb" path="res://Wilson/vfx_smoke.tscn" id="21_gui4c"]
 [ext_resource type="PackedScene" uid="uid://craqwm4x5w6so" path="res://Naomi/DeadSeaweed.glb" id="22_332ap"]
-[ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="23_3fp0h"]
+[ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed.tscn" id="23_3fp0h"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="24_8ximy"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="25_rxq3y"]
-[ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="26_rma5j"]
-[ext_resource type="AudioStream" uid="uid://wnn7r7m0jf6w" path="res://Tram/sound effects/magical bell chime 2.mp3" id="27_8op5n"]
 [ext_resource type="AudioStream" uid="uid://dcvulv17onxdi" path="res://Tram/music/bad-ending.mp3" id="28_7p4bf"]
 [ext_resource type="PackedScene" uid="uid://c7niujgajwjqk" path="res://Nan/Badsky.tscn" id="29_7tko6"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="30_s2qwy"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="31_5vku7"]
-[ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="34_0ks0q"]
+[ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="34_0ks0q"]
 [ext_resource type="PackedScene" uid="uid://cldomxhffitcn" path="res://Yunhan Liu2/Npc_Dialog.tscn" id="35_wtvn7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bk3pb"]
@@ -52,6 +50,7 @@ size = Vector3(8.48912, 5.17664, 4.11774)
 [node name="Portal_D" parent="." instance=ExtResource("35_wtvn7")]
 transform = Transform3D(-0.00649261, 0, -0.999979, 0, 1, 0, 0.999979, 0, -0.00649261, -56.8167, 0, 11.1244)
 dialogue_lines = Array[String](["Have a pleasant journey!"])
+quest_id = "dialogue_only"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Portal_D"]
 transform = Transform3D(31.3354, 0, 0, 0, 2.03632, 0, 0, 0, 1.06331, 6.56634, 1.28374, 0)
@@ -246,17 +245,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.342, -4.46617, 75.6791)
 transform = Transform3D(0.0249382, 0, -0.999689, 0, 1, 0, 0.999689, 0, 0.0249382, -111.653, -15.8173, 30.6201)
 
 [node name="Portal 1" parent="." instance=ExtResource("24_8ximy")]
-transform = Transform3D(-0.167437, 0, -3.55973, 0, 3.56366, 0, 3.55973, 0, -0.167437, -55.3853, 21.9521, 16.4246)
+transform = Transform3D(-0.167437, 0, -3.55973, 0, 3.98579, 0, 3.55973, 0, -0.167437, -55.3853, 13.4434, 16.4246)
 player_path = NodePath("../Player")
-target_scene_path = "res://Andy/playable/present.tscn"
+target_scene_path = "res://Omar/present.tscn"
 amulet_ui_path = NodePath("../Control")
 
 [node name="Control" parent="." instance=ExtResource("25_rxq3y")]
 start_with_shard1 = true
 start_with_shard2 = true
 start_with_shard3 = true
-pickup_sound = ExtResource("26_rma5j")
-final_amulet_sound = ExtResource("27_8op5n")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 94.487)
@@ -349,6 +346,7 @@ shape = SubResource("BoxShape3D_kn12n")
 
 [node name="Dialogue" parent="." instance=ExtResource("35_wtvn7")]
 dialogue_lines = Array[String](["Hello adventurers.", "I know you're confused right now, but as you can see, the world sucks.", "The amulet you're carrying opens a portal to the past.", "Change the world through it.", "May my fish bless you!"])
+quest_id = "dialogue_only"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dialogue"]
 transform = Transform3D(8.60322, 0, -4.96707, 0, 9.93414, 0, 4.96707, 0, 8.60322, 26.8318, -1.76403, 13.0617)

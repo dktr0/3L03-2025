@@ -1,5 +1,6 @@
-[gd_scene load_steps=47 format=3 uid="uid://t3v7ddegi0pl"]
+[gd_scene load_steps=48 format=3 uid="uid://t3v7ddegi0pl"]
 
+[ext_resource type="PackedScene" uid="uid://dskvad1j8525m" path="res://Le Zhang/mutated fish.glb" id="1_1maeu"]
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_hb1m7"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="2_ujjpv"]
 [ext_resource type="PackedScene" uid="uid://cycjp4vmr1kal" path="res://DeadLargeSeaweed.tscn" id="3_287qh"]
@@ -179,6 +180,9 @@ size = Vector3(2.07155, 0.00760269, 2.07335)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivawu"]
 
 [node name="Bad" type="Node3D"]
+
+[node name="mutated fish" parent="." instance=ExtResource("1_1maeu")]
+transform = Transform3D(-0.273044, 0, -4.58909, 0, 4.59721, 0, 4.58909, 0, -0.273044, -41.6683, 0.0763855, 0)
 
 [node name="World2" parent="." instance=ExtResource("1_hb1m7")]
 transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 8.762, -20.4973, 147.279)
@@ -497,3 +501,9 @@ transform = Transform3D(-0.0467577, 0, -0.998906, 0, 1, 0, 0.998906, 0, -0.04675
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Air wall/StaticBody3D4"]
 transform = Transform3D(41.0147, 0, 0, 0, 51.8883, 0, 0, 0, 3.40862, -43.7428, 45.067, -22.316)
 shape = SubResource("BoxShape3D_ivawu")
+
+[node name="mutated fish2" parent="." instance=ExtResource("1_1maeu")]
+transform = Transform3D(-8.62761, 0, 2.80844, 0, 9.0732, 0, -2.80844, 0, -8.62761, -178.32, -29.687, 0)
+
+[node name="mutated fish3" parent="." instance=ExtResource("1_1maeu")]
+transform = Transform3D(2.12456, 0, 8.82095, 0, 9.0732, 0, -8.82095, 0, 2.12456, -178.32, -29.687, -132.666)
