@@ -3,8 +3,8 @@ extends Area3D
 @export var seagulls_audio: AudioStreamPlayer3D
 @export var player: CharacterBody3D
 @export var custom_max_distance: float = 500
-@export var min_volume: float = 10
-@export var max_volume: float = 200
+@export var min_volume: float = 200
+@export var max_volume: float = 400
 
 var player_inside = false
 
