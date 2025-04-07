@@ -1,8 +1,8 @@
 [gd_resource type="ArrayMesh" load_steps=11 format=4 uid="uid://d1ppr4fk7xr3f"]
 
-[ext_resource type="Texture2D" uid="uid://ch2yrpo50qhww" path="res://Andy/2d34_OuterLeaves Base Color.png" id="1_thc4q"]
-[ext_resource type="Texture2D" uid="uid://b7k8t3llvauja" path="res://Andy/2d34_bulrushLeaf1 Base Color.png" id="2_w5dsk"]
-[ext_resource type="Texture2D" uid="uid://ceqrei3v623l6" path="res://Andy/2d34_OuterLeaves Base Color_2.png" id="3_1ilnh"]
+[ext_resource type="Texture2D" uid="uid://ch2yrpo50qhww" path="res://Omar/texture/2d34_OuterLeaves Base Color.png" id="1_thc4q"]
+[ext_resource type="Texture2D" uid="uid://b7k8t3llvauja" path="res://Omar/texture/2d34_bulrushLeaf1 Base Color.png" id="2_w5dsk"]
+[ext_resource type="Texture2D" uid="uid://ceqrei3v623l6" path="res://Omar/texture/2d34_OuterLeaves Base Color_2.png" id="3_1ilnh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7tci"]
 resource_name = "OuterLeaves"

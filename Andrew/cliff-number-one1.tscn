@@ -3,11 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://cuw2hlrienpda" path="res://Andrew/Cliff-number-one1.glb" id="1_5lys4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b0gav"]
+size = Vector3(1, 0.815552, 1)
 
 [node name="Cliff-number-one1" type="StaticBody3D"]
 
 [node name="Cliff-number-one1" parent="." instance=ExtResource("1_5lys4")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 1.17045, 0)
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0.985201, 0)
 shape = SubResource("BoxShape3D_b0gav")
