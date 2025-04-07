@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bragmruxldk4r" path="res://Yufei/game(past_water).tscn" id="5_3x1ld"]
 [ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="8_jrtj4"]
 [ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="9_rv4y1"]
-[ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="10_4wkfk"]
+[ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="10_4wkfk"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="11_56olb"]
 [ext_resource type="PackedScene" uid="uid://bov4hwigpqpdb" path="res://Sandhya/deadtrees.tscn" id="11_wftq0"]
 [ext_resource type="PackedScene" uid="uid://dgscxkjb38rls" path="res://Sandhya/healthytrees.tscn" id="12_r3jq7"]
+[ext_resource type="PackedScene" uid="uid://c8jckkvpjip2f" path="res://Braydon/Updated Portal with Sound.tscn" id="13_v61rk"]
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="14_h1q43"]
 [ext_resource type="PackedScene" uid="uid://b0mpf88wqpx5u" path="res://Wren/coast_guard_station.tscn" id="14_iaiik"]
 [ext_resource type="PackedScene" uid="uid://dr0fr4rpf67yx" path="res://Tram/sound effects/WaveSound3D.tscn" id="15_1obll"]
@@ -18,16 +19,17 @@
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="17_eo3wy"]
 [ext_resource type="PackedScene" uid="uid://i0lj0ytb6stj" path="res://Tram/sound effects/seagullSound3D.tscn" id="18_ttof1"]
 [ext_resource type="PackedScene" uid="uid://4cexfi3rf5f1" path="res://Braydon/Ice areana/Ice Areana Past Level.tscn" id="20_q664y"]
-[ext_resource type="PackedScene" path="res://Bihan/SoundEffects and Soundscape/tree_rustling_3d.tscn" id="20_sj4fu"]
+[ext_resource type="PackedScene" uid="uid://cofaa1rwaesmn" path="res://Bihan/SoundEffects and Soundscape/tree_rustling_3d.tscn" id="20_sj4fu"]
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="21_e8t6r"]
 [ext_resource type="PackedScene" uid="uid://cde78h7fgegbv" path="res://Ethan C/Grass.tscn" id="22_mwt7h"]
-[ext_resource type="PackedScene" path="res://Riley/DeadGrass.tscn" id="23_1wah4"]
+[ext_resource type="PackedScene" uid="uid://spmbye82jg58" path="res://Riley/DeadGrass.tscn" id="23_1wah4"]
 [ext_resource type="PackedScene" uid="uid://b5xqkd7wyxnl8" path="res://Sandhya/wildfire_level_arena.tscn" id="24_eomej"]
-[ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="24_rsevy"]
-[ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="25_h2b63"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tmle"]
 size = Vector3(1.28235, 0.808105, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxck3"]
+size = Vector3(319.169, 293.288, 530.517)
 
 [node name="past" type="Node3D"]
 
@@ -51,8 +53,6 @@ skeleton = NodePath("../..")
 [node name="Water_Base4" parent="Water" instance=ExtResource("3_b75uh")]
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -638.614, -200.268, 884.179)
 skeleton = NodePath("../..")
-
-[node name="Mountains" type="Node3D" parent="."]
 
 [node name="Ground" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.56692, 31.3145)
@@ -82,9 +82,6 @@ transform = Transform3D(-2.74331, 0, -99.9624, 0, 100, 0, 99.9624, 0, -2.74331, 
 [node name="Damaged soil8" parent="Ground" instance=ExtResource("2_dci5a")]
 transform = Transform3D(-2.74331, 0, -99.9624, 0, 100, 0, 99.9624, 0, -2.74331, 411.668, -11.2545, 66.3373)
 
-[node name="Game(past_water)" parent="." instance=ExtResource("5_3x1ld")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -754.56, -73.2691, -28.598)
-
 [node name="Present_light_house" parent="." instance=ExtResource("9_rv4y1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.626, 3.229, -29.98)
 
@@ -100,16 +97,10 @@ transform = Transform3D(-0.00692697, 0, 2.69999, 0, 2.7, 0, -2.69999, 0, -0.0069
 [node name="healthytrees" parent="." instance=ExtResource("12_r3jq7")]
 transform = Transform3D(0.0189191, 0, 1.99991, 0, 2, 0, -1.99991, 0, 0.0189191, -179.834, -7.94262, 265.912)
 
+[node name="Node3D" parent="." instance=ExtResource("13_v61rk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.0688, 20.4045, 153.303)
+
 [node name="Goodsky" parent="." instance=ExtResource("14_h1q43")]
-
-[node name="Highmountain" parent="." instance=ExtResource("2_5vogq")]
-transform = Transform3D(6.16444, 0, -3.31657, 0, 7, 0, 3.31657, 0, 6.16444, -335.22, -88.6959, 90.5276)
-
-[node name="Highmountain2" parent="." instance=ExtResource("2_5vogq")]
-transform = Transform3D(-6.03908, 0, 3.53971, 0, 7, 0, -3.53971, 0, -6.03908, -394.908, -122.339, 61.8806)
-
-[node name="Highmountain3" parent="." instance=ExtResource("2_5vogq")]
-transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -439.246, -150.208, -2.16752)
 
 [node name="CoastGuardStation" parent="." instance=ExtResource("14_iaiik")]
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -46.76, 1.614, -21.92)
@@ -145,30 +136,33 @@ transform = Transform3D(9.98874, 0, -0.474722, 0, 10, 0, 0.474722, 0, 9.98874, 2
 shape = SubResource("BoxShape3D_7tmle")
 
 [node name="Player" parent="." instance=ExtResource("17_eo3wy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.748, -6.0937, 50.6051)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.2582, -6.0937, 90.4462)
 
-[node name="SeagulSound3d" parent="." instance=ExtResource("18_ttof1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56.701, -25.1483)
-volume_db = -4.571
-parameters/looping = true
+[node name="Mountains2" type="Node3D" parent="."]
 
-[node name="SeagulSound3d2" parent="." instance=ExtResource("18_ttof1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4184, 40.8343, 30.1411)
-volume_db = -4.571
-parameters/looping = false
+[node name="Highmountain4" parent="Mountains2" instance=ExtResource("2_5vogq")]
+transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -398.291, -118.32, 49.9046)
 
-[node name="TreeRustling3D" parent="." instance=ExtResource("20_sj4fu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.157, 13.9749, 246.657)
-volume_db = 8.381
-parameters/looping = true
+[node name="Highmountain5" parent="Mountains2" instance=ExtResource("2_5vogq")]
+transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -416.587, -130.449, 39.7776)
 
-[node name="TreeRustling3D2" parent="." instance=ExtResource("20_sj4fu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.463, 13.9749, 246.657)
-volume_db = 8.381
-parameters/looping = true
+[node name="Highmountain6" parent="Mountains2" instance=ExtResource("2_5vogq")]
+transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -440.718, -139.399, 33.1308)
 
-[node name="Node3D2" parent="." instance=ExtResource("20_q664y")]
-transform = Transform3D(-1.99996, 0, -0.0128456, 0, 2, 0, 0.0128456, 0, -1.99996, 147.893, -39.3446, -346.891)
+[node name="Highmountain7" parent="Mountains2" instance=ExtResource("2_5vogq")]
+transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -456.689, -151.247, 25.9892)
+
+[node name="Highmountain8" parent="Mountains2" instance=ExtResource("2_5vogq")]
+transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -471.293, -170.115, 12.855)
+
+[node name="Highmountain" parent="Mountains2" instance=ExtResource("2_5vogq")]
+transform = Transform3D(6.16444, 0, -3.31657, 0, 7, 0, 3.31657, 0, 6.16444, -335.22, -88.6959, 90.5276)
+
+[node name="Highmountain2" parent="Mountains2" instance=ExtResource("2_5vogq")]
+transform = Transform3D(-6.30399, 0, 3.04299, 0, 7, 0, -3.04299, 0, -6.30399, -370.482, -93.5186, 94.3358)
+
+[node name="Highmountain3" parent="Mountains2" instance=ExtResource("2_5vogq")]
+transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -371.22, -110.882, 59.3661)
 
 [node name="Ice Platforms" type="Node3D" parent="."]
 
@@ -249,13 +243,41 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 119.187, -7.69792, 218.896)
 [node name="DeadGrass7" parent="grass" instance=ExtResource("23_1wah4")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 22.7865, -7.69792, 203.108)
 
-[node name="Wildfire Level Arena" parent="." instance=ExtResource("24_eomej")]
+[node name="Tasks" type="Node3D" parent="."]
+
+[node name="Wildfire Level Arena" parent="Tasks" instance=ExtResource("24_eomej")]
 transform = Transform3D(0.00541893, 0, 0.299951, 0, 0.3, 0, -0.299951, 0, 0.00541893, 370.868, -4.47199, 184.38)
 
-[node name="Portal 1" parent="." instance=ExtResource("24_rsevy")]
-transform = Transform3D(7.89, 0, 0, 0, 7.89, 0, 0, 0, 7.89, 0, 26.655, 146.302)
-player_path = NodePath("../Player")
-target_scene_path = "res://Yunhan Liu2/good.tscn"
-amulet_ui_path = NodePath("../Control2")
+[node name="Area3D" type="Area3D" parent="Tasks/Wildfire Level Arena"]
 
-[node name="Control2" parent="." instance=ExtResource("25_h2b63")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Wildfire Level Arena/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.19397, 76.4963, 91.8826)
+shape = SubResource("BoxShape3D_oxck3")
+
+[node name="Node3D2" parent="Tasks" instance=ExtResource("20_q664y")]
+transform = Transform3D(-1.99996, 0, -0.0128456, 0, 2, 0, 0.0128456, 0, -1.99996, 147.893, -39.3446, -346.891)
+
+[node name="Game(past_water)" parent="Tasks" instance=ExtResource("5_3x1ld")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -568.18, -119.27, -283.71)
+
+[node name="Landsounds" type="Node3D" parent="."]
+
+[node name="SeagulSound3d" parent="Landsounds" instance=ExtResource("18_ttof1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56.701, -25.1483)
+volume_db = -4.571
+parameters/looping = true
+
+[node name="SeagulSound3d2" parent="Landsounds" instance=ExtResource("18_ttof1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4184, 40.8343, 30.1411)
+volume_db = -4.571
+parameters/looping = false
+
+[node name="TreeRustling3D" parent="Landsounds" instance=ExtResource("20_sj4fu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.157, 13.9749, 246.657)
+volume_db = 8.381
+parameters/looping = true
+
+[node name="TreeRustling3D2" parent="Landsounds" instance=ExtResource("20_sj4fu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.463, 13.9749, 246.657)
+volume_db = 8.381
+parameters/looping = true
