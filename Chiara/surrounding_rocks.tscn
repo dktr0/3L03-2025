@@ -1,24 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dffctwdfacdjg"]
+[gd_scene load_steps=2 format=3 uid="uid://dffctwdfacdjg"]
 
 [ext_resource type="PackedScene" uid="uid://sv4wlx565e3" path="res://Chiara/SurroundingRocks.glb" id="1_ms6o3"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mjyjy"]
-radius = 1.50621
-height = 4.62719
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bl0ax"]
-radius = 1.38196
-height = 2.76392
 
 [node name="Surrounding Rocks" type="StaticBody3D"]
 
 [node name="SurroundingRocks" parent="." instance=ExtResource("1_ms6o3")]
 transform = Transform3D(0.129528, 0, -0.482931, 0, 0.5, 0, 0.482931, 0, 0.129528, -0.882256, 0, -4.14387)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.999981, 0, -0.00612607, 0, 1, 0, 0.00612607, 0, 0.999981, 0.802525, 0.381898, -4.95296)
-shape = SubResource("CapsuleShape3D_mjyjy")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15561, 0.0185828, -4.00859)
-shape = SubResource("CapsuleShape3D_bl0ax")

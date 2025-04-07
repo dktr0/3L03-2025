@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cguq43dg6fpog"]
+[gd_scene load_steps=14 format=3 uid="uid://cguq43dg6fpog"]
 
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="2_u0bwf"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="4_1n8n2"]
@@ -6,6 +6,29 @@
 [ext_resource type="PackedScene" uid="uid://31k1eq7dvbqa" path="res://Riley/DeadTree.tscn" id="9_eqirc"]
 [ext_resource type="PackedScene" uid="uid://bnesfoix585wh" path="res://Riley/DeadBulrush.tscn" id="10_7d6id"]
 [ext_resource type="PackedScene" uid="uid://spmbye82jg58" path="res://Riley/DeadGrass.tscn" id="11_t7toi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vam51"]
+radius = 2.16805
+height = 5.90997
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j2rmq"]
+radius = 2.31326
+height = 9.01636
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8aqx5"]
+radius = 1.93167
+height = 11.067
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j22sb"]
+radius = 2.33089
+height = 11.7076
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f33bi"]
+size = Vector3(2.08618, 4.23395, 10.4698)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dfcaj"]
+radius = 2.76487
+height = 8.53202
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_juuuv"]
 size = Vector3(1, 1.12109, 1)
@@ -37,17 +60,37 @@ transform = Transform3D(9.5724e-09, 0.218993, 4.95219, 4.95702, -2.16679e-07, 6.
 [node name="WaterRock" parent="." instance=ExtResource("4_1n8n2")]
 transform = Transform3D(0.316447, 0, -0.31326, 0, 0.445276, 0, 0.31326, 0, 0.316447, -3.50367, 0.991506, 14.1125)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterRock"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.312387, -0.87522, -0.30924)
+shape = SubResource("CapsuleShape3D_vam51")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="WaterRock"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -2.46635, -0.346317, 1.11234)
+shape = SubResource("CapsuleShape3D_j2rmq")
+
 [node name="WaterRock4" parent="." instance=ExtResource("4_1n8n2")]
 transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, -4.10563, 1.23267, 6.13638)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterRock4"]
+transform = Transform3D(0.760798, 0.458448, -0.45936, -0.516877, -4.37114e-08, -0.85606, -0.392459, 0.888721, 0.236961, -0.715102, 2.21849, 4.01221)
+shape = SubResource("CapsuleShape3D_8aqx5")
+
 [node name="WaterRock5" parent="." instance=ExtResource("4_1n8n2")]
 transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, -2.78442, 1.23267, 6.22658)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterRock5"]
+transform = Transform3D(0.753053, 0.475578, -0.454683, -0.516877, -4.37114e-08, -0.85606, -0.407123, 0.879673, 0.245816, 0.582561, -0.349072, 0.964847)
+shape = SubResource("CapsuleShape3D_j22sb")
 
 [node name="WaterRock6" parent="." instance=ExtResource("4_1n8n2")]
 transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, -1.44051, 1.23267, 6.32592)
 
 [node name="WaterRock7" parent="." instance=ExtResource("4_1n8n2")]
 transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, -0.0537552, 1.23267, 6.41442)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterRock7"]
+transform = Transform3D(0.891829, 0, 0.452372, 0, 0.999998, 0, -0.452372, 0, 0.891829, -3.48876, -0.28262, -0.516702)
+shape = SubResource("BoxShape3D_f33bi")
 
 [node name="WaterRock8" parent="." instance=ExtResource("4_1n8n2")]
 transform = Transform3D(0.401073, 0, 0.664263, 0, 0.775953, 0, -0.664263, 0, 0.401073, 1.23573, 1.23267, 6.51126)
@@ -57,6 +100,10 @@ transform = Transform3D(-0.102292, 0, 0.107963, 0, 0.148726, 0, -0.107963, 0, -0
 
 [node name="WaterRock3" parent="." instance=ExtResource("4_1n8n2")]
 transform = Transform3D(0.0596069, -0.123067, -0.0584897, 0.0878407, 0.0835105, -0.0861944, 0.104166, -5.65223e-09, 0.106155, -4.17188, 0.4021, 15.9724)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterRock3"]
+transform = Transform3D(0.622401, -0.689441, 0.370524, 0.689441, 0.258819, -0.676523, 0.370524, 0.676523, 0.636418, -0.899559, 0.533916, 0.882721)
+shape = SubResource("CapsuleShape3D_dfcaj")
 
 [node name="DeadTree" parent="." instance=ExtResource("9_eqirc")]
 transform = Transform3D(0.409521, 0, 0.717995, 0, 0.826574, 0, -0.717995, 0, 0.409521, 6.18704, 0.184548, 12.1612)
