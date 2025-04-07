@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cguq43dg6fpog"]
+[gd_scene load_steps=15 format=3 uid="uid://cguq43dg6fpog"]
 
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="2_u0bwf"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="4_1n8n2"]
@@ -32,6 +32,9 @@ height = 8.53202
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_juuuv"]
 size = Vector3(1, 1.12109, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sp4k3"]
+size = Vector3(2.50098, 0.65, 2.32)
 
 [node name="PlatformingGame" type="Node3D"]
 
@@ -143,3 +146,7 @@ shape = SubResource("BoxShape3D_juuuv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(0.991035, -0.0204122, 0.000192742, 0.0196265, 0.950228, -0.28151, 0.00561224, 0.281454, 0.950431, -4.26571, 4.63279, 8.92393)
 shape = SubResource("BoxShape3D_juuuv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14657, 13.8632, -3.40121)
+shape = SubResource("BoxShape3D_sp4k3")
