@@ -1,13 +1,13 @@
-[gd_scene load_steps=87 format=4 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=83 format=4 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
-[ext_resource type="PackedScene" uid="uid://biig36r7u5g68" path="res://Riley/Sword.tscn" id="2_0700x"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="3_k0l6t"]
 [ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="5_eyu1o"]
 [ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="6_k0hcq"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/chest.tscn" id="7_lc440"]
 [ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="8_b28uw"]
+[ext_resource type="PackedScene" uid="uid://cetv4q45see0s" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
 [ext_resource type="AudioStream" uid="uid://c2i2okl4khod3" path="res://Spencer/Ice and Glacier/Ice monster/ice monster without roar.mp3" id="9_g27jk"]
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="13_d7obm"]
 [ext_resource type="PackedScene" uid="uid://dbhxcdh47t2s" path="res://Quinn/Dock Spiders/spider_1.tscn" id="13_x8py4"]
@@ -44,6 +44,8 @@
 [ext_resource type="Script" path="res://Omar/seagulls.gd" id="34_agfna"]
 [ext_resource type="PackedScene" uid="uid://b0mpf88wqpx5u" path="res://Wren/coast_guard_station.tscn" id="35_1dy3d"]
 [ext_resource type="AudioStream" uid="uid://d1ub8tci5vmgc" path="res://Tram/sound effects/seagulls.mp3" id="35_cbgrm"]
+[ext_resource type="PackedScene" uid="uid://bv3qmxe1ecc8y" path="res://Andy/amulet_ring2.tscn" id="36_ti2ee"]
+[ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="37_boe7m"]
 [ext_resource type="AudioStream" uid="uid://btftkfftud01b" path="res://Tram/sound effects/leaves rustling 2.mp3" id="37_yj8k3"]
 [ext_resource type="Script" path="res://Omar/wind.gd" id="40_ijixa"]
 [ext_resource type="PackedScene" uid="uid://btbfwfjoc6wqr" path="res://Chiara/broken_dock.tscn" id="41_m81b8"]
@@ -55,7 +57,6 @@
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="50_fu1qj"]
 [ext_resource type="AudioStream" uid="uid://b112mcgfgkici" path="res://Spencer/Ice and Glacier/Soundscape Glacier/Glacier soundscape.mp3" id="52_8wk0a"]
 [ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="52_rl4wu"]
-[ext_resource type="PackedScene" uid="uid://dj40x6gj5jgvw" path="res://Andy/SceneChestsManager.tscn" id="55_3uwnt"]
 [ext_resource type="PackedScene" uid="uid://dxsedgdoe3w3d" path="res://Andy/signal.tscn" id="58_a77y2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ufjtn"]
@@ -169,21 +170,10 @@ radius = 48.4889
 [sub_resource type="BoxShape3D" id="BoxShape3D_nobjg"]
 size = Vector3(16.2928, 7.24939, 11.5142)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_py2sp"]
-size = Vector3(22.17, 34.87, 43.345)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_4ily2"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kmepi"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ruln8"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_x3f8u"]
-
 [node name="Present" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("32_3v2qo")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.80356, 4.36427, 15.0735)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 261.932, -4.31315, 149.938)
 collision_layer = 3
 
 [node name="Area3D" type="Area3D" parent="Player"]
@@ -191,9 +181,6 @@ collision_layer = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0387573, 1.25515, -1.67949)
 shape = SubResource("BoxShape3D_ufjtn")
-
-[node name="Sword" parent="Player/Area3D" instance=ExtResource("2_0700x")]
-transform = Transform3D(0.275, 0, 0, 0, 0.234894, 0.143003, 0, -0.143003, 0.234894, 0, 0.962736, -0.0446672)
 
 [node name="World" parent="." instance=ExtResource("1_pht0b")]
 
@@ -629,8 +616,6 @@ shape = SubResource("BoxShape3D_3ss6x")
 [node name="Node3D" parent="." instance=ExtResource("27_5h5rp")]
 transform = Transform3D(-1.9502, 0, -10.8257, 0, 11, 0, 10.8257, 0, -1.9502, -186.523, -8.51037, -35.166)
 script = ExtResource("28_ai6ff")
-point_a = Vector3(-186, -9, -35)
-point_b = Vector3(-459, -20, -67)
 
 [node name="Area3D" type="Area3D" parent="Node3D"]
 
@@ -659,14 +644,17 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -46.76
 
 [node name="Chest" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 173.128, 4.46166, -297.806)
-chest_quest_id = "open_chest_2"
+fragment_scene = ExtResource("37_boe7m")
 
 [node name="Chest2" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(2.9798, 0, 0.347568, 0, 3, 0, -0.347568, 0, 2.9798, 369.083, 32.6137, 265.751)
+fragment_scene = ExtResource("36_ti2ee")
+fragment_index = 2
 
 [node name="Chest3" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -477.744, -118.427, -300.82)
-chest_quest_id = "open_chest_3"
+fragment_scene = ExtResource("8_fio87")
+fragment_index = 3
 
 [node name="Control" parent="." instance=ExtResource("41_spbdn")]
 
@@ -682,6 +670,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -429.8
 [node name="broken_dock4" parent="." instance=ExtResource("41_m81b8")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -459.33, -20.0198, -67.0588)
 
+[node name="helmet" parent="." instance=ExtResource("42_xspbn")]
+transform = Transform3D(0.208314, -0.958794, 1.74279, -0.15863, 1.73873, 0.975523, -1.98279, -0.239837, 0.105054, -432.031, 0.0391369, -66.3908)
+
 [node name="WaterRock" parent="." instance=ExtResource("43_71u0b")]
 transform = Transform3D(0.643135, -0.765753, 0, 0.479553, 0.402763, 0.779622, -0.596998, -0.501402, 0.62625, -435.356, -1.06553, -68.0888)
 
@@ -695,7 +686,6 @@ parameters/looping = true
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.0467, 10.1896, 137.169)
 player_path = NodePath("../Player")
 target_scene_path = "res://Sandhya/past.tscn"
-amulet_ui_path = NodePath("../Control")
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -860,7 +850,6 @@ volume_db = 12.19
 [node name="Control2" parent="." instance=ExtResource("52_rl4wu")]
 transform = Transform3D(-0.507072, 0, 0.861904, 0, 1, 0, -0.861904, 0, -0.507072, 29.6487, 0, 8.46244)
 dialogue_lines = Array[String](["Eh? You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned up with got destroyed. I seen the shards of it fly off all over the place. One flew right into that fire, at the top of those charred trees. Wouldn’t want to be the one to have to go there.", "Another got snatched by some ice critters, settin’ traps up northeast. Been watching those troublemakers destroy everything around them.", "I tell you, there is no reasoning with those fellas, what with their violent nature. Mean things, they are. I wouldn’t go messing with ‘em unless you’ve got something sharp or magical up your sleeve, you hear?", "Last piece? Done sunk to the bottom of what was once my home. The village under the sea—just northwest of here. Was thinking of heading there to snag it, but that water ain't what it used to be. Too much filth in the water as is. Murky, twisted, full of things best left alone.", "Things ain’t like they used to be. The ice, the rivers, even the fish—they’re all disappearin’. Used to be a paradise here. Now? Just smoke, poison, and bad luck. ", "It’s like the world itself gave up. Or maybe something worse moved in and made it theirs. Either way, don’t expect the land to show mercy.", "Hope you find what you’re lookin’ for. Just watch where you step—world ain’t too kind these days.", "These may help ya later on. I got no use for these anymore, so have your pick. Only one thing, though—I’m not foolish enough to be here defenseless. Always good to keep a little surprise tucked away."])
-quest_id = "dialogue_only"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control2"]
 transform = Transform3D(-0.845254, 0, -0.534369, 0, 1, 0, 0.534369, 0, -0.845254, -3.8614, 3.12469, -5.79645)
@@ -874,59 +863,6 @@ transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -444.626, 35.0855, -113.46
 
 [node name="Signal3" parent="." instance=ExtResource("58_a77y2")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 367.303, 83.8447, 248.262)
-
-[node name="SceneChestsManager" parent="." instance=ExtResource("55_3uwnt")]
-
-[node name="trigger" parent="." instance=ExtResource("52_rl4wu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -164.052, 10.7101, -31.4674)
-trigger_type = 1
-quest_id = "collect_items"
-quest_description = "Grab your helmet and go find that underwater chest"
-chest_to_reveal_path = NodePath("../Chest3")
-chest_quest_id_on_appear = "open_chest_3"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="trigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.81227, -6.27819, 0)
-shape = SubResource("BoxShape3D_py2sp")
-
-[node name="Area3D" type="Area3D" parent="." groups=["collectibles"]]
-
-[node name="helmet" parent="Area3D" instance=ExtResource("42_xspbn")]
-transform = Transform3D(0.208314, -0.958794, 1.74279, -0.15863, 1.73873, 0.975523, -1.98279, -0.239837, 0.105054, -432.031, 0.0391369, -66.3908)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(10.85, 0, 0, 0, 10.85, 0, 0, 0, 10.85, -431.291, 0, -66.2111)
-shape = SubResource("SphereShape3D_4ily2")
-
-[node name="trigger2" parent="." instance=ExtResource("52_rl4wu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 297.813, -1.3602, 175.789)
-trigger_type = 1
-quest_id = "climb_quest"
-quest_description = "Climb to the top!!"
-climb_area_path = NodePath("../Area3D2")
-chest_to_reveal_path = NodePath("../Chest2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="trigger2"]
-transform = Transform3D(20.775, 0, 0, 0, 20.775, 0, 0, 0, 20.775, 0, 0, 0)
-shape = SubResource("BoxShape3D_kmepi")
-
-[node name="Area3D2" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
-transform = Transform3D(11.105, 0, 0, 0, 11.105, 0, 0, 0, 11.105, 370.459, 32.2741, 263.919)
-shape = SubResource("SphereShape3D_ruln8")
-
-[node name="trigger3" parent="." instance=ExtResource("52_rl4wu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.696, 0, 21.2708)
-trigger_type = 1
-quest_goal = 2
-quest_description = "Use your sword to touch the enemy"
-chest_to_reveal_path = NodePath("../Chest")
-chest_quest_id_on_appear = "open_chest_2"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="trigger3"]
-transform = Transform3D(21.085, 0, 0, 0, 21.085, 0, 0, 0, 21.085, 0, 0, 0)
-shape = SubResource("BoxShape3D_x3f8u")
 
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer" to="killzone/Kill Zone Platformer" method="_on_body_entered"]
