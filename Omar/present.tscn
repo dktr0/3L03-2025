@@ -1,7 +1,7 @@
-[gd_scene load_steps=87 format=4 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=90 format=4 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
-[ext_resource type="PackedScene" uid="uid://biig36r7u5g68" path="res://Riley/Sword.tscn" id="2_0700x"]
+[ext_resource type="PackedScene" path="res://Riley/Sword.tscn" id="2_0700x"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
 [ext_resource type="PackedScene" uid="uid://mka1vutdf1l8" path="res://Chiara/SingleLaneDock.tscn" id="3_k0l6t"]
 [ext_resource type="PackedScene" uid="uid://cguq43dg6fpog" path="res://Ivy/platforming_game.tscn" id="5_eyu1o"]
@@ -41,7 +41,6 @@
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="32_3v2qo"]
 [ext_resource type="PackedScene" uid="uid://btj6i7h1cco8a" path="res://Maga/player_controller/scenes/player_trigger.tscn" id="32_qsmq8"]
 [ext_resource type="AudioStream" uid="uid://vex7tu3vi5qc" path="res://Tram/sound effects/Ocean Waves 1.mp3" id="32_upd76"]
-[ext_resource type="Script" path="res://Omar/seagulls.gd" id="34_agfna"]
 [ext_resource type="PackedScene" uid="uid://b0mpf88wqpx5u" path="res://Wren/coast_guard_station.tscn" id="35_1dy3d"]
 [ext_resource type="AudioStream" uid="uid://d1ub8tci5vmgc" path="res://Tram/sound effects/seagulls.mp3" id="35_cbgrm"]
 [ext_resource type="AudioStream" uid="uid://btftkfftud01b" path="res://Tram/sound effects/leaves rustling 2.mp3" id="37_yj8k3"]
@@ -51,6 +50,8 @@
 [ext_resource type="Script" path="res://Omar/waves.gd" id="41_yeoeq"]
 [ext_resource type="PackedScene" uid="uid://bvdew8p0jq66c" path="res://BohanYuchi/helmet.glb" id="42_xspbn"]
 [ext_resource type="PackedScene" uid="uid://ej66i32qy8ve" path="res://Chiara/water_rock.tscn" id="43_71u0b"]
+[ext_resource type="Script" path="res://Omar/seagulls_3.gd" id="49_8brdl"]
+[ext_resource type="AudioStream" uid="uid://cqsxemqfv47jr" path="res://Tram/sound effects/seagulls louder.mp3" id="49_p8x25"]
 [ext_resource type="AudioStream" uid="uid://crrfaajqpfann" path="res://Bihan/SoundEffects and Soundscape/LoFiPresentMusic.mp3" id="49_tvd2p"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="50_fu1qj"]
 [ext_resource type="AudioStream" uid="uid://b112mcgfgkici" path="res://Spencer/Ice and Glacier/Soundscape Glacier/Glacier soundscape.mp3" id="52_8wk0a"]
@@ -61,8 +62,18 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ufjtn"]
 size = Vector3(2.76624, 2.61658, 3)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xl33q"]
+size = Vector3(0.0265808, 3.95865, 1.67447)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_dncvc"]
 size = Vector3(16.9939, 2.60687, 225.882)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cxqs6"]
+radius = 9.33053
+height = 34.0556
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_361d6"]
+size = Vector3(25.8595, 2.35674, 3.83051)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hs7d4"]
 
@@ -163,9 +174,6 @@ size = Vector3(1.22766, 1.04834, 1.01105)
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7ydq"]
 size = Vector3(640.669, 0.566574, 179.996)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_3bf4o"]
-radius = 48.4889
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_nobjg"]
 size = Vector3(16.2928, 7.24939, 11.5142)
 
@@ -183,7 +191,7 @@ size = Vector3(22.17, 34.87, 43.345)
 [node name="Present" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("32_3v2qo")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.80356, 4.36427, 15.0735)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 298.104, 8.31888, 167.951)
 collision_layer = 3
 
 [node name="Area3D" type="Area3D" parent="Player"]
@@ -205,6 +213,13 @@ player_scene = ExtResource("32_3v2qo")
 [node name="PlatformingGame" parent="Tasks" instance=ExtResource("5_eyu1o")]
 transform = Transform3D(-2.12132, 0, -2.12132, 0, 3, 0, 2.12132, 0, -2.12132, 371.049, -9.61707, 248.586)
 
+[node name="StaticBody3D3" type="StaticBody3D" parent="Tasks/PlatformingGame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.73996, 0, 12.2575)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/PlatformingGame/StaticBody3D3"]
+transform = Transform3D(0.964072, 0, -0.26564, 0, 1, 0, 0.26564, 0, 0.964072, 0.687057, 1.47932, 1.15518)
+shape = SubResource("BoxShape3D_xl33q")
+
 [node name="PuzzleGame" parent="Tasks" instance=ExtResource("6_k0hcq")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -568.188, -119.278, -283.719)
 
@@ -222,6 +237,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.025, -8.60315, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/IceBridgeCollisionShapes/StaticBody3D"]
 transform = Transform3D(0.962075, 0, -0.272784, 0, 1, 0, 0.272784, 0, 0.962075, 20.5323, 0.803436, -92.7641)
 shape = SubResource("BoxShape3D_dncvc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/IceBridgeCollisionShapes/StaticBody3D"]
+transform = Transform3D(0.948078, 0.276599, -0.156977, 0.0916954, 0.23489, 0.967687, 0.304533, -0.931837, 0.197332, 44.37, -6.78462, -185.028)
+shape = SubResource("CapsuleShape3D_cxqs6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Tasks/Ice_Arena_Present/IceBridgeCollisionShapes/StaticBody3D"]
+transform = Transform3D(0.912749, 0, -0.408522, 0, 1, 0, 0.408522, 0, 0.912749, 47.2761, 11.7958, -264.397)
+shape = SubResource("BoxShape3D_361d6")
 
 [node name="Enemy" parent="Tasks/Ice_Arena_Present" instance=ExtResource("8_b28uw")]
 transform = Transform3D(0.920981, 0, -0.389606, 0, 1, 0, 0.389606, 0, 0.920981, 23.4399, 2.13573, -14.8744)
@@ -586,16 +609,16 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -302.457, -11.4042, 318.314)
 transform = Transform3D(306.395, 0, 0, 0, 50, 0, 0, 0, 76.4474, -32.0429, -7.85794, 278.666)
 
 [node name="Damaged soil" parent="Soil2" instance=ExtResource("23_51q5n")]
-transform = Transform3D(75.4726, 0, -36.1584, 0, 50, 0, 74.3767, 0, 36.6912, 319.345, -8.714, 335.728)
+transform = Transform3D(75.4726, 0, -36.1584, 0, 50, 0, 74.3767, 0, 36.6912, 321.586, -8.714, 340.743)
 
 [node name="Damaged soil2" parent="Soil2" instance=ExtResource("23_51q5n")]
 transform = Transform3D(50.8222, 0, -30.8963, 0, 50, 0, 50.0843, 0, 31.3516, 421.702, -8.714, 206.304)
 
 [node name="Damaged soil4" parent="Soil2" instance=ExtResource("23_51q5n")]
-transform = Transform3D(50.8222, 0, -30.8963, 0, 50, 0, 50.0843, 0, 31.3516, 368.389, -8.71395, 261.232)
+transform = Transform3D(48.2095, 0, -25.1152, 0, 50, 0, 47.5095, 0, 25.4853, 363.628, -8.71395, 260.27)
 
 [node name="Damaged soil3" parent="Soil2" instance=ExtResource("23_51q5n")]
-transform = Transform3D(-34.8592, 0, -26.2821, 0, 50, 0, 35.3728, 0, -25.9005, 437.924, -8.714, 317.289)
+transform = Transform3D(-34.8592, 0, -26.2821, 0, 50, 0, 35.3728, 0, -25.9005, 447.696, -8.714, 325.519)
 
 [node name="killzone" type="Node" parent="."]
 
@@ -627,10 +650,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.437, -35.7923, -257.887)
 shape = SubResource("BoxShape3D_3ss6x")
 
 [node name="Node3D" parent="." instance=ExtResource("27_5h5rp")]
-transform = Transform3D(-1.9502, 0, -10.8257, 0, 11, 0, 10.8257, 0, -1.9502, -186.523, -8.51037, -35.166)
+transform = Transform3D(-1.9502, 0, -10.8257, 0, 11, 0, 10.8257, 0, -1.9502, -186, -8.51, -35)
 script = ExtResource("28_ai6ff")
-point_a = Vector3(-186, -9, -35)
-point_b = Vector3(-459, -20, -67)
+point_a = Vector3(-186, -8.51, -35)
+point_b = Vector3(-375.74, -8.51, -79.878)
 
 [node name="Area3D" type="Area3D" parent="Node3D"]
 
@@ -659,13 +682,16 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -46.76
 
 [node name="Chest" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 173.128, 4.46166, -297.806)
+visible = false
 chest_quest_id = "open_chest_2"
 
 [node name="Chest2" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(2.9798, 0, 0.347568, 0, 3, 0, -0.347568, 0, 2.9798, 369.083, 32.6137, 265.751)
+visible = false
 
 [node name="Chest3" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -477.744, -118.427, -300.82)
+visible = false
 chest_quest_id = "open_chest_3"
 
 [node name="Control" parent="." instance=ExtResource("41_spbdn")]
@@ -712,31 +738,23 @@ stream = ExtResource("31_51xlb")
 attenuation_model = 3
 volume_db = 53.333
 
-[node name="Seagulls" type="Area3D" parent="Sounds" node_paths=PackedStringArray("seagulls_audio", "player")]
-transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, 132.462, 16.4945, 109.16)
-script = ExtResource("34_agfna")
-seagulls_audio = NodePath("Seagulls")
-player = NodePath("../../Player")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sounds/Seagulls"]
-shape = SubResource("SphereShape3D_3bf4o")
-
-[node name="Seagulls" type="AudioStreamPlayer3D" parent="Sounds/Seagulls"]
+[node name="Seagulls3" type="AudioStreamPlayer3D" parent="Sounds" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.462, 16.4945, 109.16)
 stream = ExtResource("35_cbgrm")
-volume_db = 80.0
-
-[node name="Seagulls2" type="Area3D" parent="Sounds" node_paths=PackedStringArray("seagulls_audio", "player")]
-transform = Transform3D(1.77241, 0, 0, 0, 2.16676, 0, 0, 0, 1, -106.675, 16.4945, 138.662)
-script = ExtResource("34_agfna")
-seagulls_audio = NodePath("Seagulls")
+volume_db = 40.0
+max_distance = 500.0
+script = ExtResource("49_8brdl")
 player = NodePath("../../Player")
+min_volume = 0.0
+max_volume = 40.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sounds/Seagulls2"]
-shape = SubResource("SphereShape3D_3bf4o")
-
-[node name="Seagulls" type="AudioStreamPlayer3D" parent="Sounds/Seagulls2"]
-stream = ExtResource("35_cbgrm")
+[node name="Seagulls" type="AudioStreamPlayer3D" parent="Sounds" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.675, 16.4945, 138.662)
+stream = ExtResource("49_p8x25")
 volume_db = 80.0
+area_mask = 3
+script = ExtResource("49_8brdl")
+player = NodePath("../../Player")
 
 [node name="waves" type="Node" parent="Sounds"]
 
@@ -859,7 +877,7 @@ volume_db = 12.19
 
 [node name="Control2" parent="." instance=ExtResource("52_rl4wu")]
 transform = Transform3D(-0.507072, 0, 0.861904, 0, 1, 0, -0.861904, 0, -0.507072, 29.6487, 0, 8.46244)
-dialogue_lines = Array[String](["Eh? You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned up with got destroyed. I seen the shards of it fly off all over the place. One flew right into that fire, at the top of those charred trees. Wouldn’t want to be the one to have to go there.", "Another got snatched by some ice critters, settin’ traps up northeast. Been watching those troublemakers destroy everything around them.", "I tell you, there is no reasoning with those fellas, what with their violent nature. Mean things, they are. I wouldn’t go messing with ‘em unless you’ve got something sharp or magical up your sleeve, you hear?", "Last piece? Done sunk to the bottom of what was once my home. The village under the sea—just northwest of here. Was thinking of heading there to snag it, but that water ain't what it used to be. Too much filth in the water as is. Murky, twisted, full of things best left alone.", "Things ain’t like they used to be. The ice, the rivers, even the fish—they’re all disappearin’. Used to be a paradise here. Now? Just smoke, poison, and bad luck. ", "It’s like the world itself gave up. Or maybe something worse moved in and made it theirs. Either way, don’t expect the land to show mercy.", "Hope you find what you’re lookin’ for. Just watch where you step—world ain’t too kind these days.", "These may help ya later on. I got no use for these anymore, so have your pick. Only one thing, though—I’m not foolish enough to be here defenseless. Always good to keep a little surprise tucked away."])
+dialogue_lines = Array[String](["Eh? You alright there, stranger? You lookin’ like you seen a ghost. That neat amulet you turned up with got destroyed. I seen the shards of it fly off all over the place. One flew right into that fire, at the top of those charred trees. Wouldn’t want to be the one to have to go there.", "Another got snatched by some ice critters, settin’ traps up northeast. Been watching those troublemakers destroy everything around them.", "I tell you, there is no reasoning with those fellas, what with their violent nature. Mean things, they are. I wouldn’t go messing with ‘em unless you’ve got something sharp or magical up your sleeve, you hear?", "Last piece? Done sunk to the bottom of what was once my home. The village under the sea—just northwest of here. Was thinking of heading there to snag it, but that water ain't what it used to be. Too much filth in the water as is. Murky, twisted, full of things best left alone.", "Things ain’t like they used to be. The ice, the rivers, even the fish—they’re all disappearin’. Used to be a paradise here. Now? Just smoke, poison, and bad luck. ", "It’s like the world itself gave up. Or maybe something worse moved in and made it theirs. Either way, don’t expect the land to show mercy.", "Hope you find what you’re lookin’ for. Just watch where you step—world ain’t too kind these days."])
 quest_id = "dialogue_only"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control2"]
@@ -867,7 +885,7 @@ transform = Transform3D(-0.845254, 0, -0.534369, 0, 1, 0, 0.534369, 0, -0.845254
 shape = SubResource("BoxShape3D_nobjg")
 
 [node name="Signal" parent="." instance=ExtResource("58_a77y2")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 192.487, 131.936, -243.826)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 192.487, 127.472, -243.826)
 
 [node name="Signal2" parent="." instance=ExtResource("58_a77y2")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -444.626, 35.0855, -113.462)
@@ -928,6 +946,42 @@ chest_quest_id_on_appear = "open_chest_2"
 transform = Transform3D(21.085, 0, 0, 0, 21.085, 0, 0, 0, 21.085, 0, 0, 0)
 shape = SubResource("BoxShape3D_x3f8u")
 
+[node name="Signal4" parent="." instance=ExtResource("58_a77y2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.206, 9.11793, -298.518)
+
+[node name="Signal5" parent="." instance=ExtResource("58_a77y2")]
+transform = Transform3D(0.990605, 0, 0.136753, 0, 1, 0, -0.136753, 0, 0.990605, 369.356, 37.1558, 266.048)
+
+[node name="Signal6" parent="." instance=ExtResource("58_a77y2")]
+transform = Transform3D(0.999786, 0, 0.0206632, 0, 1, 0, -0.0206632, 0, 0.999786, -477.762, -112.704, -300.918)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 173.462, 17.7029, -297.872)
+light_color = Color(1, 1, 0, 1)
+light_energy = 14.899
+light_indirect_energy = 1.485
+light_volumetric_fog_energy = 0.0
+spot_range = 34.5185
+spot_angle = 23.5845
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 368.954, 39.8167, 265.192)
+light_color = Color(1, 0, 0, 1)
+light_energy = 200.0
+light_indirect_energy = 1.485
+light_volumetric_fog_energy = 0.0
+spot_range = 8.59951
+spot_angle = 23.5845
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -477.534, -111.553, -300.359)
+light_color = Color(0, 0, 1, 1)
+light_energy = 200.0
+light_indirect_energy = 1.485
+light_volumetric_fog_energy = 0.0
+spot_range = 34.5185
+spot_angle = 23.5845
+
 [connection signal="body_entered" from="killzone/Kill Zone" to="killzone/Kill Zone" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer" to="killzone/Kill Zone Platformer" method="_on_body_entered"]
 [connection signal="body_entered" from="killzone/Kill Zone Platformer2" to="killzone/Kill Zone Platformer2" method="_on_body_entered"]
@@ -935,9 +989,5 @@ shape = SubResource("BoxShape3D_x3f8u")
 [connection signal="body_exited" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="Sounds/SandArea" to="Sounds/SandArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Sounds/SandArea" to="Sounds/SandArea" method="_on_body_exited"]
-[connection signal="body_entered" from="Sounds/Seagulls" to="Sounds/Seagulls" method="_on_body_entered"]
-[connection signal="body_exited" from="Sounds/Seagulls" to="Sounds/Seagulls" method="_on_body_exited"]
-[connection signal="body_entered" from="Sounds/Seagulls2" to="Sounds/Seagulls2" method="_on_body_entered"]
-[connection signal="body_exited" from="Sounds/Seagulls2" to="Sounds/Seagulls2" method="_on_body_exited"]
 
 [editable path="decorations/penguins/penguin"]
