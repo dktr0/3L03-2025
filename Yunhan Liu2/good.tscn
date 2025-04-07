@@ -3815,3 +3815,5 @@ start_with_shard3 = true
 
 [node name="Portal 1" parent="." instance=ExtResource("34_oimwc")]
 transform = Transform3D(0.0462778, 0, -1.41213, 0, 1.41289, 0, 1.41213, 0, 0.0462778, -66.7636, 8.0704, 10.4719)
+player_path = NodePath("../Player")
+target_scene_path = "res://Andy/credit.tscn"
