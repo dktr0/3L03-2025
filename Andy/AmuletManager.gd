@@ -22,20 +22,17 @@ func collect_shard(shard_index: int) -> void:
 			return
 
 	emit_signal("shard_collected_changed", shard_index, true)
+	print_debug("Collected shard %d" % shard_index)
 
 func has_shard(shard_index: int) -> bool:
 	match shard_index:
-		1:
-			return shard_collected_1
-		2:
-			return shard_collected_2
-		3:
-			return shard_collected_3
-		_:
-			return false
+		1: return shard_collected_1
+		2: return shard_collected_2
+		3: return shard_collected_3
+		_: return false
 
-# 在这里添加一个重置碎片的方法
 func reset_shards():
 	shard_collected_1 = false
 	shard_collected_2 = false
 	shard_collected_3 = false
+	print_debug("All shards reset.")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv5oimat0ack8"]
+[gd_scene load_steps=4 format=3 uid="uid://c15543iruy41d"]
 
 [ext_resource type="Script" path="res://dr0/overlays.gd" id="1_5l30d"]
 [ext_resource type="PackedScene" uid="uid://f0mn5b8lwtx" path="res://Ruth/all_bars.tscn" id="2_qrdbh"]
