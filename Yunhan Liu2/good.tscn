@@ -3801,7 +3801,7 @@ transform = Transform3D(5.27182, 0, 0, 0, 19.0583, 0, 0, 0, 8.02802, -6.26892, 0
 shape = SubResource("BoxShape3D_ejdrq")
 
 [node name="house log6" parent="." instance=ExtResource("20_5wgk7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.351, -13.8079, 157.606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.351, -9.8079, 157.606)
 dialogue_lines = Array[String](["The crackle of a fireplace and the low, relaxed bark of a dog made the house feel safe, warm, and lived-in."])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house log6"]
