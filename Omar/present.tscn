@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://c2o1u1vf8ddv8"]
+[gd_scene load_steps=80 format=4 uid="uid://c2o1u1vf8ddv8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_pht0b"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="2_ql5te"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bhvggiixftuup" path="res://Ivy/puzzle_game.tscn" id="6_k0hcq"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/chest.tscn" id="7_lc440"]
 [ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="8_b28uw"]
-[ext_resource type="PackedScene" uid="uid://cetv4q45see0s" path="res://Andy/amulet_ring.tscn" id="8_fio87"]
 [ext_resource type="AudioStream" uid="uid://c2i2okl4khod3" path="res://Spencer/Ice and Glacier/Ice monster/ice monster without roar.mp3" id="9_g27jk"]
 [ext_resource type="PackedScene" uid="uid://dnupbmfgig6my" path="res://Wilson/ice_platform.tscn" id="13_d7obm"]
 [ext_resource type="PackedScene" uid="uid://dbhxcdh47t2s" path="res://Quinn/Dock Spiders/spider_1.tscn" id="13_x8py4"]
@@ -20,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="16_532hx"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="16_aie5t"]
 [ext_resource type="PackedScene" uid="uid://cde78h7fgegbv" path="res://Ethan C/Grass.tscn" id="16_vxd02"]
-[ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="17_01jia"]
+[ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="17_01jia"]
 [ext_resource type="ArrayMesh" uid="uid://snlp8xd5hv2n" path="res://Omar/texture/tree.tres" id="17_2xwom"]
 [ext_resource type="PackedScene" uid="uid://dfjs3jo3ls7is" path="res://Mackie/icicle clump_1.tscn" id="17_f81mf"]
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="17_vhbp1"]
@@ -29,12 +28,12 @@
 [ext_resource type="PackedScene" uid="uid://bwkirwohli3ge" path="res://Ethan C/Purple Tent.tscn" id="19_eb7hd"]
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="19_qt78c"]
 [ext_resource type="PackedScene" uid="uid://cno47m3u2lv28" path="res://Ethan C/Red Tent.tscn" id="20_rrhma"]
-[ext_resource type="PackedScene" uid="uid://cuoukfstjn00h" path="res://Ethan C/Yellow Tent.tscn" id="21_75owf"]
+[ext_resource type="PackedScene" path="res://Ethan C/Yellow Tent.tscn" id="21_75owf"]
 [ext_resource type="PackedScene" uid="uid://c27srq5ofafyb" path="res://Ethan C/Green Tent.tscn" id="22_p10kc"]
 [ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="22_tpijs"]
 [ext_resource type="Script" path="res://Omar/kill_zone.gd" id="23_7v35e"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="23_51q5n"]
-[ext_resource type="PackedScene" uid="uid://bvliaw7oqrkq0" path="res://Darius/Boat_Paddles.tscn" id="27_5h5rp"]
+[ext_resource type="PackedScene" uid="uid://bxfwbkrkmnjui" path="res://Darius/Boat_Paddles.tscn" id="27_5h5rp"]
 [ext_resource type="Script" path="res://Omar/kill_zone_platformer.gd" id="27_tbh2r"]
 [ext_resource type="Script" path="res://Darius/boat_paddles.gd" id="28_ai6ff"]
 [ext_resource type="AudioStream" uid="uid://dj0flvdbt82si" path="res://Spencer/General/FootstepDull/02.mp3" id="31_51xlb"]
@@ -44,11 +43,9 @@
 [ext_resource type="Script" path="res://Omar/seagulls.gd" id="34_agfna"]
 [ext_resource type="PackedScene" uid="uid://b0mpf88wqpx5u" path="res://Wren/coast_guard_station.tscn" id="35_1dy3d"]
 [ext_resource type="AudioStream" uid="uid://d1ub8tci5vmgc" path="res://Tram/sound effects/seagulls.mp3" id="35_cbgrm"]
-[ext_resource type="PackedScene" uid="uid://bv3qmxe1ecc8y" path="res://Andy/amulet_ring2.tscn" id="36_ti2ee"]
-[ext_resource type="PackedScene" uid="uid://dq5pccdtrcdsp" path="res://Andy/amulet_ring3.tscn" id="37_boe7m"]
 [ext_resource type="AudioStream" uid="uid://btftkfftud01b" path="res://Tram/sound effects/leaves rustling 2.mp3" id="37_yj8k3"]
 [ext_resource type="Script" path="res://Omar/wind.gd" id="40_ijixa"]
-[ext_resource type="PackedScene" uid="uid://btbfwfjoc6wqr" path="res://Chiara/broken_dock.tscn" id="41_m81b8"]
+[ext_resource type="PackedScene" path="res://Chiara/broken_dock.tscn" id="41_m81b8"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="41_spbdn"]
 [ext_resource type="Script" path="res://Omar/waves.gd" id="41_yeoeq"]
 [ext_resource type="PackedScene" uid="uid://bvdew8p0jq66c" path="res://BohanYuchi/helmet.glb" id="42_xspbn"]
@@ -644,17 +641,12 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -46.76
 
 [node name="Chest" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(-2.99338, 0, 0.199241, 0, 3, 0, -0.199241, 0, -2.99338, 173.128, 4.46166, -297.806)
-fragment_scene = ExtResource("37_boe7m")
 
 [node name="Chest2" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(2.9798, 0, 0.347568, 0, 3, 0, -0.347568, 0, 2.9798, 369.083, 32.6137, 265.751)
-fragment_scene = ExtResource("36_ti2ee")
-fragment_index = 2
 
 [node name="Chest3" parent="." instance=ExtResource("7_lc440")]
 transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -477.744, -118.427, -300.82)
-fragment_scene = ExtResource("8_fio87")
-fragment_index = 3
 
 [node name="Control" parent="." instance=ExtResource("41_spbdn")]
 
@@ -686,6 +678,7 @@ parameters/looping = true
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.0467, 10.1896, 137.169)
 player_path = NodePath("../Player")
 target_scene_path = "res://Sandhya/past.tscn"
+amulet_ui_path = NodePath("../Control")
 
 [node name="Sounds" type="Node" parent="."]
 

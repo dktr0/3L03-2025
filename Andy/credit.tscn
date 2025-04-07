@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b028ih23qhhiy" path="res://Andy/A/UI-light.png" id="11_axmgc"]
 [ext_resource type="Texture2D" uid="uid://cp55ixlfe6dms" path="res://Andy/A/UI.png" id="12_1ex80"]
 [ext_resource type="Texture2D" uid="uid://gbiofav5b6gc" path="res://Andy/A/dr.0.png" id="13_prsjb"]
-[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Andy/words/font/font for all words.ttf" id="14_osnsc"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="14_osnsc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
