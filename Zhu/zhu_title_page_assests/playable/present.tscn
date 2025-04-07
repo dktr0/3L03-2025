@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="31_hf1j7"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="32_ftvi4"]
 [ext_resource type="AudioStream" uid="uid://dvwp7wtmnohix" path="res://Bihan/SoundEffects and Soundscape/CollectingAmulets.mp3" id="33_b0pqg"]
-[ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/chest.tscn" id="33_o6fca"]
+[ext_resource type="PackedScene" uid="uid://bjktdx43esckw" path="res://Andy/chest.tscn" id="33_o6fca"]
 [ext_resource type="PackedScene" uid="uid://bv3qmxe1ecc8y" path="res://Andy/amulet_ring2.tscn" id="34_3jhir"]
 [ext_resource type="AudioStream" uid="uid://xqbx7yh8s8gp" path="res://Tram/sound effects/magical bell chime 1.mp3" id="34_qq177"]
 [ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="35_7xnmy"]

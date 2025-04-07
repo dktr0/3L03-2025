@@ -1,36 +1,25 @@
 extends Node3D
 
-@export var fragment_scene: PackedScene
-@export var fragment_index: int = 1
-@export var spawn_condition_mode: int = 0
+@export var chest_quest_id: String = "open_chest_1"
 """
-0 = 默认可见
-1 = 要等“某个任务”完成后才出现
-(因为我们没指定具体任务ID，所以只要任意任务完成就会触发 _on_quest_completed)
+每只宝箱有独立任务ID, 如 "open_chest_1", "open_chest_2", ...
+当玩家打开该宝箱时, add_progress(chest_quest_id,1).
 """
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-@onready var area: Area3D = $Area3D
+@onready var area: Area3D               = $Area3D
 @onready var open_sfx: AudioStreamPlayer3D = $OpenSFX
 
 var is_opened: bool = false
 var can_open: bool = false
 
 func _ready():
-	# 若 spawn_condition_mode=1, 则默认隐藏, 等任务完成后再显示
-	if spawn_condition_mode == 1:
-		visible = false
-		area.monitoring = false
+	# 让宝箱缺省可见性由外部决定(若需要初始隐藏,可在Inspector关掉).
+	# 不自动 start_quest(chest_quest_id)!
+	#area.monitoring = false  # 若想初始不可交互
 
-	# 1) 连接 Area3D 的检测事件
 	area.body_entered.connect(_on_area_body_entered)
 	area.body_exited.connect(_on_area_body_exited)
-
-	# 2) 监听 QuestManager 的 "quest_completed" 信号
-	#    只要有任务完成，就调用 _on_quest_completed()
-	QuestManager.connect("quest_completed", self._on_quest_completed)
-
-	# 3) 监听动画结束
 	anim_player.animation_finished.connect(_on_animation_finished)
 
 func _on_area_body_entered(body: Node):
@@ -42,19 +31,10 @@ func _on_area_body_exited(body: Node):
 		can_open = false
 
 func _input(event):
-	# 玩家按键“activate”，可以开箱
 	if event.is_action_pressed("activate"):
 		if can_open and not is_opened:
 			open_chest()
 
-	# 测试用: 按下 "dev_complete_quest" 等效于任务完成
-	if event.is_action_pressed("dev_complete_quest"):
-		if spawn_condition_mode == 1:
-			_on_quest_completed()
-
-#
-# 打开宝箱
-#
 func open_chest():
 	if is_opened:
 		return
@@ -68,27 +48,26 @@ func open_chest():
 	else:
 		_on_open_animation_finished()
 
-#
-# 动画播放结束
-#
 func _on_animation_finished(anim_name: String):
 	if anim_name == "open":
 		_on_open_animation_finished()
 
-#
-# 生成护身符碎片
-#
 func _on_open_animation_finished():
-	if fragment_scene:
-		var fragment = fragment_scene.instantiate() as Node3D
-		add_child(fragment)
-		fragment.set("shard_index", fragment_index)
-		fragment.global_transform = global_transform.translated(Vector3(0, 3, 0))
-
-#
-# 当有人调用 QuestManager.emit_signal("quest_completed", ...) 时触发
-#
-func _on_quest_completed():
-	if spawn_condition_mode == 1:
-		visible = true
-		area.monitoring = true
+	var scene_manager_path = "../SceneChestsManager"  # 依你节点层级
+	var scene_manager = get_node(scene_manager_path)
+	if scene_manager == null:
+		push_warning("SceneChestsManager not found. Can't produce shard.")
+	else:
+		# 从 manager 获取下一碎片路径
+		var scene_path = scene_manager.get_next_shard_scene_path()
+		if scene_path != "":
+			var frag_scene = ResourceLoader.load(scene_path) as PackedScene
+			if frag_scene:
+				var fragment = frag_scene.instantiate() as Node3D
+				add_child(fragment)
+				fragment.global_transform = global_transform.translated(Vector3(0,3,0))
+	# 产出碎片(如需)
+	# ...
+	
+	#  任务加进度 => chest_quest_id
+	QuestManager.add_progress(chest_quest_id, 1)

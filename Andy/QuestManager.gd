@@ -62,7 +62,9 @@ func track_collectibles_for_quest(quest_id: String, goal: int, description: Stri
 		if c.has_signal("body_entered"):
 			# 连接到本脚本的回调
 			# 我们把“c”自身、quest_id 当附加参数
-			c.body_entered.connect(_on_collectible_body_entered, [c, quest_id])
+			c.body_entered.connect(
+	Callable(self, "_on_collectible_body_entered").bind(c, quest_id)
+)
 		else:
 			push_warning("Node %s in group 'collectibles' is not an Area3D or lacks 'body_entered' signal" % c.name)
 

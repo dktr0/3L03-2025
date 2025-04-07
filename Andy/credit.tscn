@@ -1,0 +1,201 @@
+[gd_scene load_steps=15 format=3 uid="uid://ch8seema8pfuv"]
+
+[ext_resource type="Script" path="res://Andy/credit.gd" id="1_8i8ia"]
+[ext_resource type="Texture2D" uid="uid://b6sn8qlgq0lie" path="res://Andy/A/background-creidt.png" id="2_1088w"]
+[ext_resource type="Texture2D" uid="uid://dnxlp75vcfcxh" path="res://Andy/A/3d-art-light.png" id="3_vlut3"]
+[ext_resource type="Texture2D" uid="uid://bxthlf0wg5nnk" path="res://Andy/A/3d-art.png" id="4_vippy"]
+[ext_resource type="Texture2D" uid="uid://oymynm0woucd" path="res://Andy/A/Level Design-light.png" id="5_c3tbs"]
+[ext_resource type="Texture2D" uid="uid://bmyucaeaey87m" path="res://Andy/A/Level Design.png" id="6_jle3j"]
+[ext_resource type="Texture2D" uid="uid://b438as72g0gg2" path="res://Andy/A/programming-light.png" id="7_nspgs"]
+[ext_resource type="Texture2D" uid="uid://dasuhelcvvm43" path="res://Andy/A/Programming.png" id="8_jfe7f"]
+[ext_resource type="Texture2D" uid="uid://bsblw7y0y2wxc" path="res://Andy/A/sound-light.png" id="9_knv5j"]
+[ext_resource type="Texture2D" uid="uid://dbblm68oqrl2w" path="res://Andy/A/sound.png" id="10_h2aci"]
+[ext_resource type="Texture2D" uid="uid://b028ih23qhhiy" path="res://Andy/A/UI-light.png" id="11_axmgc"]
+[ext_resource type="Texture2D" uid="uid://cp55ixlfe6dms" path="res://Andy/A/UI.png" id="12_1ex80"]
+[ext_resource type="Texture2D" uid="uid://gbiofav5b6gc" path="res://Andy/A/dr.0.png" id="13_prsjb"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Andy/words/font/font for all words.ttf" id="14_osnsc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8i8ia")
+
+[node name="Background-creidt" type="Sprite2D" parent="."]
+position = Vector2(580, 330)
+scale = Vector2(0.146219, 0.146653)
+texture = ExtResource("2_1088w")
+
+[node name="3DART" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 75.0
+offset_top = -26.0
+offset_right = 292.0
+offset_bottom = 28.0
+grow_vertical = 2
+scale = Vector2(0.795, 0.795)
+icon = ExtResource("3_vlut3")
+
+[node name="TextureRect" type="TextureRect" parent="3DART"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 88.6604
+offset_top = -204.358
+offset_right = 1052.66
+offset_bottom = 352.642
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_vippy")
+
+[node name="LevelDesign" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 47.0
+offset_top = 42.0
+offset_right = 368.0
+offset_bottom = 96.0
+grow_vertical = 2
+scale = Vector2(0.795, 0.795)
+icon = ExtResource("5_c3tbs")
+
+[node name="TextureRect" type="TextureRect" parent="LevelDesign"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 89.0629
+offset_top = -248.384
+offset_right = 771.063
+offset_bottom = -33.3837
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("6_jle3j")
+
+[node name="Programming" type="Button" parent="."]
+layout_mode = 1
+offset_left = 55.0
+offset_top = 440.0
+offset_right = 382.0
+offset_bottom = 494.0
+scale = Vector2(0.75, 0.75)
+icon = ExtResource("7_nspgs")
+
+[node name="TextureRect" type="TextureRect" parent="Programming"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 99.6667
+offset_top = -312.333
+offset_right = 773.667
+offset_bottom = -272.333
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_jfe7f")
+
+[node name="Sound" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1075.0
+offset_top = -153.0
+offset_right = -866.0
+offset_bottom = -99.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+icon = ExtResource("9_knv5j")
+
+[node name="TextureRect" type="TextureRect" parent="Sound"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.333
+offset_top = -50.0
+offset_right = 786.333
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("10_h2aci")
+
+[node name="2D UI" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -496.0
+offset_top = 233.0
+offset_right = -288.0
+offset_bottom = 287.0
+grow_horizontal = 2
+scale = Vector2(0.75, 0.75)
+icon = ExtResource("11_axmgc")
+
+[node name="TextureRect" type="TextureRect" parent="2D UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 82.6667
+offset_top = -91.0
+offset_right = 1004.67
+offset_bottom = -51.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("12_1ex80")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -57.0
+offset_right = 472.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("13_prsjb")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 606.0
+offset_right = 1147.0
+offset_bottom = 641.0
+theme_override_fonts/font = ExtResource("14_osnsc")
+theme_override_font_sizes/font_size = 26
+text = "Back to menu"
+flat = true

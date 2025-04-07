@@ -58,12 +58,9 @@ func show_dialogue_no_limit(pages, callback = null):
 
 	var final_lines = []
 	for item in pages:
-		var text_version = str(item)            # 强制转字符串
-		text_version = text_version.strip_edges()  # 去掉首尾空格
-		if text_version != "":  # 如果不是空的，就保留
-			final_lines.append(text_version)
-
-
+		var txt = str(item).strip_edges()
+		if txt != "":
+			final_lines.append(txt)
 
 	lines = final_lines
 	current_line_index = 0
@@ -179,11 +176,10 @@ func _on_quest_completed(quest_id: String):
 		active_quests.erase(quest_id)
 	_refresh_quest_panel()
 
-
 #
-# 这里保留你不想改动的任务显示逻辑:
-# kill_monsters / collect_items => "进度: current / goal"
-# climb_quest / open_chest     => "已完成" / "未完成"
+# 在这里把 “open_chest_x” 之类任务ID 强行显示成 "Quest: Open the chest"
+# kill_monsters / collect_items => "current / goal"
+# climb_quest / open_chest => complete/incomplete
 #
 func _refresh_quest_panel():
 	if active_quests.size() == 0:
@@ -192,8 +188,8 @@ func _refresh_quest_panel():
 	else:
 		quest_panel.visible = true
 
-	var text_lines = []   # 准备给左侧 quest_label
-	var tracker_info = [] # 准备给右侧 quest_tracking_label
+	var text_lines = []   # 左侧：Quest: <desc> ...
+	var tracker_info = [] # 右侧: Progress: ...
 
 	for quest_id in active_quests.keys():
 		var q = active_quests[quest_id]
@@ -202,38 +198,41 @@ func _refresh_quest_panel():
 		var goal = q["goal"]
 		var completed = q["completed"]
 
-		# ---- 左侧：只要 “Quest: desc + (可选 [已完成])” ----
+		# 如果任务ID是 "open_chest" / "open_chest_1" / "open_chest_2"...
+		# 强制让 desc = "Open the chest"
+		if quest_id.begins_with("open_chest"):
+			desc = "Open the chest"
+
+		# 左侧: "Quest: <desc>"
 		var line = "Quest: %s" % desc
 		if completed:
 			line += " [已完成]"
 		text_lines.append(line)
 
-		# ---- 右侧：根据任务ID分不同显示 ----
+		# 右侧: kill_monsters/collect_items => x / y ; climb_quest/open_chest => complete/incomplete
 		var info_line = ""
 		if quest_id == "kill_monsters" or quest_id == "collect_items":
-			# 显示 “2 / 5” 或 “3 / 7”
-			info_line = "%d / %d" % [current, goal]
-		elif quest_id == "climb_quest" or quest_id == "open_chest":
-			# 显示 “complete” 或 “incomplete”
+			info_line = "Progress: %d / %d" % [current, goal]
+		elif quest_id == "climb_quest" or quest_id.begins_with("open_chest"):
 			if completed:
-				info_line = "complete"
+				info_line = "Progress: complete"
 			else:
-				info_line = "incomplete"
+				info_line = "Progress: incomplete"
 
 		if info_line != "":
 			tracker_info.append(info_line)
 
-	# 左侧合成文本
+	# 拼接
 	quest_label.text = array_to_string(text_lines, "\n\n")
 
-	# 右侧合成文本
 	if tracker_info.size() == 0:
-		quest_tracking_label.text = "无详细任务信息"
+		quest_tracking_label.text = "No detailed quest info"
 	else:
 		quest_tracking_label.text = array_to_string(tracker_info, "\n")
 
+
 #
-# =========== 自定义 array_to_string() ===========
+# 用于拼接数组 => 字符串, 避免 Godot 4.3 "joined()" 警告
 #
 func array_to_string(arr: Array, sep: String) -> String:
 	var result = ""

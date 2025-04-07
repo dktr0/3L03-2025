@@ -13,7 +13,8 @@ expand_margin_bottom = 95.0
 
 [node name="Control" type="CanvasLayer"]
 script = ExtResource("1_nexia")
-page_wait_time = 0.5
+typing_speed = 0.05
+page_wait_time = 0.7
 
 [node name="DialoguePanel" type="Panel" parent="."]
 anchors_preset = 7
@@ -65,7 +66,9 @@ offset_left = 25.0
 offset_top = 22.0
 offset_right = 194.0
 offset_bottom = 147.0
-autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 clip_text = true
 
 [node name="QuestTrackingLabel" type="Label" parent="QuestPanel"]
@@ -77,8 +80,8 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -84.0
 offset_top = -82.0
-offset_right = 83.0
-offset_bottom = -42.0
+offset_right = 87.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 autowrap_mode = 1

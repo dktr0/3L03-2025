@@ -28,7 +28,6 @@ extends Control
 @export var pickup_sound: AudioStream                         # 收集碎片时的提示音
 @export var final_amulet_sound: AudioStream                   # 最终合成时播放的音效
 
-@onready var missing_shards_label: Label = $MissingShardsLabel
 
 # ---------------------------
 # 记录淡出计数、以检测3个碎片都淡出后再合成
@@ -62,7 +61,6 @@ func _ready():
 	_update_shard_icon(3, AmuletManager.has_shard(3), true)
 
 	# 隐藏“缺少碎片”的 Label
-	missing_shards_label.visible = false
 
 
 #
@@ -191,22 +189,3 @@ func _fade_out_icon(icon_node: TextureRect, duration: float, skip_if_initial: bo
 	var tween = get_tree().create_tween()
 	tween.tween_property(icon_node, "self_modulate:a", 0.0, duration).from(icon_node.self_modulate.a)
 	tween.finished.connect(_on_shard_fade_out_finished)
-
-
-#
-# 显示“缺少多少碎片”提示
-#
-func show_missing_shards(missing: int) -> void:
-	missing_shards_label.text = "Still need " + str(missing) + " shards to use the portal"
-	missing_shards_label.visible = true
-
-	# 如果想在若干秒后自动隐藏，也可以加一个 Timer 或 Tween
-	var timer_tween = get_tree().create_tween()
-	timer_tween.tween_callback(Callable(self, "_hide_missing_shards")).set_delay(3.0)
-
-
-#
-# 隐藏“缺少碎片”提示
-#
-func _hide_missing_shards():
-	missing_shards_label.visible = false

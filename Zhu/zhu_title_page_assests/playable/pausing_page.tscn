@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4sesr4r2f7cq"]
+[gd_scene load_steps=5 format=3 uid="uid://b4sesr4r2f7cq"]
 
+[ext_resource type="Script" path="res://Zhu/zhu_title_page_assests/playable/pausing_page.gd" id="1_1bf36"]
 [ext_resource type="Texture2D" uid="uid://dqxh7l82fquio" path="res://Zhu/zhu_title_page_assests/backgrounds/pausing page.png" id="1_vd1vt"]
 [ext_resource type="Texture2D" uid="uid://glxul2rkvvkd" path="res://Zhu/zhu_title_page_assests/backgrounds/pausing page-clock.png" id="2_5ryhf"]
 [ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="4_lulii"]
 
-[node name="Pausing-Page" type="Node2D"]
+[node name="Pausing-Page" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1bf36")
 
 [node name="PausingPage" type="Sprite2D" parent="."]
 position = Vector2(575.5, 326)
@@ -16,20 +20,24 @@ position = Vector2(582, 314)
 scale = Vector2(0.163135, 0.163135)
 texture = ExtResource("2_5ryhf")
 
-[node name="Menu" type="Label" parent="."]
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 144.0
 offset_top = 133.0
 offset_right = 212.0
-offset_bottom = 163.0
+offset_bottom = 171.0
 theme_override_fonts/font = ExtResource("4_lulii")
 theme_override_font_sizes/font_size = 29
 text = "MENU"
+flat = true
 
-[node name="Exit" type="Label" parent="."]
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 148.0
 offset_top = 466.0
 offset_right = 216.0
-offset_bottom = 496.0
+offset_bottom = 504.0
 theme_override_fonts/font = ExtResource("4_lulii")
 theme_override_font_sizes/font_size = 29
 text = "EXIT"
+flat = true

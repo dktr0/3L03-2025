@@ -54,7 +54,6 @@ var is_dead: bool = false
 @onready var anim_player: AnimationPlayer = $ice_monster/AnimationPlayer
 @onready var attack_area: Area3D = $AttackArea
 
-
 # ========== 音效节点 ==========
 @onready var walk_sfx: AudioStreamPlayer3D = $WalkSFX
 @onready var chase_sfx: AudioStreamPlayer3D = $ChaseSFX
@@ -63,9 +62,6 @@ var is_dead: bool = false
 
 # ========== Chase音效定时器 ==========
 var chase_timer: Timer = null
-
-@onready var debug_mesh: MeshInstance3D = $AttackCollisionArea/DebugMesh
-
 
 func _ready() -> void:
 	add_to_group("Enemy")
