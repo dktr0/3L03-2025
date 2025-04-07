@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cn67k105en2ld" path="res://Suyeon/dead_sea_turtle.tscn" id="31_1jnf1"]
 [ext_resource type="PackedScene" uid="uid://rqy64lsppbid" path="res://Sing-yu/cottage_house_destroyed2.tscn" id="31_jvfwo"]
 [ext_resource type="PackedScene" uid="uid://bvvcn5m53xl14" path="res://Matty/Manta Ray/manta_ray.tscn" id="33_uwn0q"]
-[ext_resource type="PackedScene" uid="uid://dnhxmh2okb2u0" path="res://Tram/sound effects/under_water_sound_scape_tram.tscn" id="33_v1vur"]
+[ext_resource type="PackedScene" path="res://Tram/sound effects/under_water_sound_scape_tram.tscn" id="33_v1vur"]
 [ext_resource type="PackedScene" uid="uid://bxld4rvbsdc7m" path="res://Matty/Octopus/octopus.tscn" id="34_cwpad"]
 [ext_resource type="PackedScene" uid="uid://dvkoynp3vo2xd" path="res://Rongyu Liu/Soil/No_green_soil.tscn" id="34_fxlfq"]
 [ext_resource type="PackedScene" uid="uid://8e2ydrfqh2mk" path="res://Le Zhang/mutated fish.tscn" id="35_bpauy"]

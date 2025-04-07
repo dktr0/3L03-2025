@@ -53,7 +53,7 @@ var is_dead: bool = false
 # ---------- 节点引用 ----------
 @onready var anim_player: AnimationPlayer = $ice_monster/AnimationPlayer
 @onready var attack_area: Area3D = $AttackArea
-@onready var debug_mesh: MeshInstance3D = $AttackArea/DebugMesh
+@onready var debug_mesh: MeshInstance3D = $AttackCollisionArea/DebugMesh
 
 func _ready() -> void:
 	add_to_group("Enemy")
