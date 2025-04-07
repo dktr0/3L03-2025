@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://t3v7ddegi0pl"]
+[gd_scene load_steps=47 format=3 uid="uid://t3v7ddegi0pl"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_hb1m7"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="2_ujjpv"]
@@ -34,11 +34,149 @@
 [ext_resource type="PackedScene" uid="uid://comn1ruh06kyp" path="res://Omar/Dialogue/dialogue.tscn" id="32_x1ox1"]
 [ext_resource type="Script" path="res://bad_dialogue.gd" id="33_4nbgh"]
 [ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="34_b1l4a"]
+[ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="35_h4f76"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6a1uf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_su7hf"]
 size = Vector3(8.48912, 5.17664, 4.11774)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ma2x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_21vwy"]
+
+[sub_resource type="Shader" id="Shader_m8704"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_always, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform float point_size : hint_range(0.1, 128.0, 0.1);
+
+uniform float roughness : hint_range(0.0, 1.0);
+uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
+
+uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float metallic : hint_range(0.0, 1.0, 0.01);
+
+uniform sampler2D texture_refraction : filter_linear_mipmap, repeat_enable;
+uniform float refraction : hint_range(-1.0, 1.0, 0.001);
+uniform vec4 refraction_texture_channel;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_linear_mipmap;
+
+uniform sampler2D texture_normal : hint_roughness_normal, filter_linear_mipmap, repeat_enable;
+uniform float normal_scale : hint_range(-16.0, 16.0);
+varying vec3 uv1_triplanar_pos;
+
+uniform float uv1_blend_sharpness : hint_range(0.0, 150.0, 0.001);
+varying vec3 uv1_power_normal;
+
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+void vertex() {
+	vec3 normal = MODEL_NORMAL_MATRIX * NORMAL;
+
+	TANGENT = vec3(0.0, 0.0, -1.0) * abs(normal.x);
+	TANGENT += vec3(1.0, 0.0, 0.0) * abs(normal.y);
+	TANGENT += vec3(1.0, 0.0, 0.0) * abs(normal.z);
+	TANGENT = inverse(MODEL_NORMAL_MATRIX) * normalize(TANGENT);
+
+	BINORMAL = vec3(0.0, 1.0, 0.0) * abs(normal.x);
+	BINORMAL += vec3(0.0, 0.0, -1.0) * abs(normal.y);
+	BINORMAL += vec3(0.0, 1.0, 0.0) * abs(normal.z);
+	BINORMAL = inverse(MODEL_NORMAL_MATRIX) * normalize(BINORMAL);
+
+	// UV1 Triplanar: Enabled (with World Triplanar)
+	uv1_power_normal = pow(abs(normal), vec3(uv1_blend_sharpness));
+	uv1_triplanar_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz * uv1_scale + uv1_offset + TIME*0.01;
+	uv1_power_normal /= dot(uv1_power_normal, vec3(1.0));
+	uv1_triplanar_pos *= vec3(1.0, -1.0, 1.0);
+}
+
+vec4 triplanar_texture(sampler2D p_sampler, vec3 p_weights, vec3 p_triplanar_pos) {
+	vec4 samp = vec4(0.0);
+	samp += texture(p_sampler, p_triplanar_pos.xy) * p_weights.z;
+	samp += texture(p_sampler, p_triplanar_pos.xz) * p_weights.y;
+	samp += texture(p_sampler, p_triplanar_pos.zy * vec2(-1.0, 1.0)) * p_weights.x;
+	return samp;
+}
+
+void fragment() {
+	vec4 albedo_tex = triplanar_texture(texture_albedo, uv1_power_normal, uv1_triplanar_pos);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+
+	float metallic_tex = dot(triplanar_texture(texture_metallic, uv1_power_normal, uv1_triplanar_pos), metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	SPECULAR = specular;
+
+	vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
+	float roughness_tex = dot(triplanar_texture(texture_roughness, uv1_power_normal, uv1_triplanar_pos), roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+
+	// Normal Map: Enabled
+	NORMAL_MAP = triplanar_texture(texture_normal, uv1_power_normal, uv1_triplanar_pos).rgb;
+	NORMAL_MAP_DEPTH = normal_scale;
+
+	// Refraction: Enabled (with normal map texture)
+	vec3 unpacked_normal = NORMAL_MAP;
+	unpacked_normal.xy = unpacked_normal.xy * 2.0 - 1.0;
+	unpacked_normal.z = sqrt(max(0.0, 1.0 - dot(unpacked_normal.xy, unpacked_normal.xy)));
+	vec3 ref_normal = normalize(mix(
+			NORMAL,
+			TANGENT * unpacked_normal.x + BINORMAL * unpacked_normal.y + NORMAL * unpacked_normal.z,
+			NORMAL_MAP_DEPTH));
+	vec2 ref_ofs = SCREEN_UV - ref_normal.xy * dot(triplanar_texture(texture_refraction, uv1_power_normal, uv1_triplanar_pos), refraction_texture_channel) * refraction;
+
+	float ref_amount = 1.0 - albedo.a * albedo_tex.a;
+	EMISSION += textureLod(screen_texture, ref_ofs, ROUGHNESS * 8.0).rgb * ref_amount * EXPOSURE;
+	ALBEDO *= 1.0 - ref_amount;
+	// Force transparency on the material (required for refraction).
+	ALPHA = 1.0;
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kgpen"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1aw56"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_kgpen")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uucmi"]
+render_priority = 0
+shader = SubResource("Shader_m8704")
+shader_parameter/albedo = Color(0.069933, 0.196684, 0.104011, 0.635294)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/refraction = 0.05
+shader_parameter/refraction_texture_channel = null
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.06, 0.06, 0.06)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_refraction = SubResource("NoiseTexture2D_1aw56")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_1aw56")
+
+[sub_resource type="BoxMesh" id="BoxMesh_332bq"]
+material = SubResource("ShaderMaterial_uucmi")
+size = Vector3(10, 0.02, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cadud"]
+size = Vector3(2.07155, 0.00760269, 2.07335)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ivawu"]
 
 [node name="Bad" type="Node3D"]
 
@@ -50,7 +188,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.408, -5.79681, 91.7809)
 mesh = SubResource("CapsuleMesh_6a1uf")
 
 [node name="Player" parent="." instance=ExtResource("2_ujjpv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.544, 1.33539, 114.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -46.456, 33.3354, -37.5)
 
 [node name="3d" type="Node3D" parent="."]
 
@@ -233,7 +371,6 @@ transform = Transform3D(0.0249382, 0, -0.999689, 0, 1, 0, 0.999689, 0, 0.0249382
 [node name="Portal 1" parent="." instance=ExtResource("24_fcj6q")]
 transform = Transform3D(6.405, 0, 0, 0, 6.405, 0, 0, 0, 6.405, 5.24354, 21.9521, 140.922)
 player_path = NodePath("../Player")
-teleport_method = 1
 target_scene_path = "res://Andy/playable/present.tscn"
 amulet_ui_path = NodePath("../Control")
 
@@ -253,7 +390,7 @@ autoplay = true
 [node name="Badsky" parent="." instance=ExtResource("29_wgvx5")]
 
 [node name="fish_shop_owner" parent="." instance=ExtResource("30_dssij")]
-transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 35.2944, 0.469059, 9.8571)
+transform = Transform3D(0.019378, 0, 1.9999, 0, 2, 0, -1.9999, 0, 0.019378, 35.2944, 15.3705, 9.8571)
 collision_layer = 16
 collision_mask = 2
 
@@ -271,3 +408,92 @@ script = ExtResource("33_4nbgh")
 
 [node name="FishShop" parent="." instance=ExtResource("34_b1l4a")]
 transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.5898, 1.1015, 7.09023)
+
+[node name="coastguardstation" parent="." instance=ExtResource("35_h4f76")]
+transform = Transform3D(-0.236886, 0, 4.43417, 0, 4.44049, 0, -4.43417, 0, -0.236886, -43.7665, 0.899689, -25.3587)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="coastguardstation"]
+transform = Transform3D(0.962657, 0, 7.45058e-09, 0, 1, 0, 0, 0, 1.699, 2.92344, -0.167662, 0.156178)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coastguardstation/StaticBody3D"]
+transform = Transform3D(9.2941, 0, -5.96046e-08, 0, 9.4241, 0, -5.96046e-08, 0, 7.57692, -0.0576954, 0.168986, 0.669433)
+shape = SubResource("BoxShape3D_8ma2x")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="coastguardstation"]
+transform = Transform3D(0.962657, 0, 2.23517e-08, 0, 1, 0, -7.45058e-09, 0, 1.699, 2.92344, 5.67658, 0.156178)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coastguardstation/StaticBody3D2"]
+transform = Transform3D(2.54261, 0, -4.47035e-08, 0, 2.57817, 0, -7.45058e-09, 0, 2.07284, -0.0128679, -0.258049, 0.193952)
+shape = SubResource("BoxShape3D_21vwy")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="coastguardstation"]
+transform = Transform3D(0.962657, 0, 2.98023e-08, 0, 1, 0, -1.11759e-08, 0, 1.699, 0.999788, 2.99766, 0.344961)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coastguardstation/StaticBody3D3"]
+transform = Transform3D(2.54261, 0, -4.47035e-08, 0, 2.57817, 0, -7.45058e-09, 0, 2.07284, -0.0128679, -0.258049, 0.193952)
+shape = SubResource("BoxShape3D_21vwy")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="coastguardstation"]
+transform = Transform3D(0.962657, 0, 6.70552e-08, 0, 1, 0, -3.35276e-08, 0, 1.699, 2.41057, 1.87166, 5.83284)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coastguardstation/StaticBody3D4"]
+transform = Transform3D(4.32244, 0, -1.49012e-07, 0, 4.3829, 0, -4.47035e-08, 0, 3.52383, -0.430155, -0.0328486, -0.34963)
+shape = SubResource("BoxShape3D_21vwy")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="coastguardstation"]
+transform = Transform3D(0.962657, 0, 6.70552e-08, 0, 1, 0, -3.35276e-08, 0, 1.699, 4.87046, 6.08586, 0.551741)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coastguardstation/StaticBody3D5"]
+transform = Transform3D(2.54261, 0, -4.47035e-08, 0, 2.57817, 0, -7.45058e-09, 0, 2.07284, -0.0128679, -0.258049, 0.193952)
+shape = SubResource("BoxShape3D_21vwy")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="coastguardstation"]
+transform = Transform3D(0.962657, 0, 8.19564e-08, 0, 1, 0, -4.09782e-08, 0, 1.699, 1.33892, 5.17007, 0.363074)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coastguardstation/StaticBody3D6"]
+transform = Transform3D(2.54261, 0, -4.47035e-08, 0, 2.57817, 0, -7.45058e-09, 0, 2.07284, -0.0128679, -0.258049, 0.193952)
+shape = SubResource("BoxShape3D_21vwy")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="coastguardstation"]
+transform = Transform3D(0.962657, 0, 7.45058e-08, 0, 1, 0, -3.72529e-08, 0, 1.699, 2.72152, 4.55057, 3.93575)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coastguardstation/StaticBody3D7"]
+transform = Transform3D(2.54261, 0, -4.47035e-08, 0, 2.57817, 0, -7.45058e-09, 0, 2.07284, -0.0128679, -0.258049, 0.193952)
+shape = SubResource("BoxShape3D_21vwy")
+
+[node name="Badwater" type="MeshInstance3D" parent="."]
+transform = Transform3D(266.677, 0, 0, 0, 266.677, 0, 0, 0, 266.677, 0, 11.8251, 0.0291687)
+mesh = SubResource("BoxMesh_332bq")
+
+[node name="Badwater2" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.84201, 0, 0, 0, 4.84201, 0, 0, 0, 4.84201, 0.000667261, -0.0568246, 0.0239073)
+shape = SubResource("BoxShape3D_cadud")
+
+[node name="Air wall" type="Node" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Air wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Air wall/StaticBody3D"]
+transform = Transform3D(41.0147, 0, 0, 0, 51.8883, 0, 0, 0, 3.40862, -43.7428, 45.067, -22.316)
+shape = SubResource("BoxShape3D_ivawu")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Air wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.0311, 0, -37.3951)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Air wall/StaticBody3D2"]
+transform = Transform3D(41.0147, 0, 0, 0, 51.8883, 0, 0, 0, 3.40862, -43.7428, 45.067, -22.316)
+shape = SubResource("BoxShape3D_ivawu")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Air wall"]
+transform = Transform3D(-0.0467577, 0, -0.998906, 0, 1, 0, 0.998906, 0, -0.0467577, -60.7217, -21, -17.802)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Air wall/StaticBody3D3"]
+transform = Transform3D(20.5073, 0, 0, 0, 25.9442, 0, 5.96046e-08, 0, 1.70431, -43.7428, 45.067, -22.316)
+shape = SubResource("BoxShape3D_ivawu")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Air wall"]
+transform = Transform3D(-0.0467577, 0, -0.998906, 0, 1, 0, 0.998906, 0, -0.0467577, -76.3206, 0, -17.802)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Air wall/StaticBody3D4"]
+transform = Transform3D(41.0147, 0, 0, 0, 51.8883, 0, 0, 0, 3.40862, -43.7428, 45.067, -22.316)
+shape = SubResource("BoxShape3D_ivawu")
