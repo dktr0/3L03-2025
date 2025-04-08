@@ -14,9 +14,9 @@ var is_opened: bool = false
 var can_open: bool = false
 
 func _ready():
-	# 让宝箱缺省可见性由外部决定(若需要初始隐藏,可在Inspector关掉).
-	# 不自动 start_quest(chest_quest_id)!
-	#area.monitoring = false  # 若想初始不可交互
+	
+	
+	
 
 	area.body_entered.connect(_on_area_body_entered)
 	area.body_exited.connect(_on_area_body_exited)

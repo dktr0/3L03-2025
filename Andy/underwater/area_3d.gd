@@ -19,7 +19,7 @@ func _on_body_exited(body: Node) -> void:
 		player_in_range = false
 
 func _process(delta: float) -> void:
-	# 假设已在 Project Settings->Input Map 把 F 键映射为 "ui_interact"
+	
 	if player_in_range and Input.is_action_just_pressed("activate"):
 		if is_first_person:
 			switch_to_third_person()

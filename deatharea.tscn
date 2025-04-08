@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceukyihxj1n85"]
+
+[ext_resource type="Script" path="res://deatharea.gd" id="1_51ki0"]
+
+[node name="deatharea" type="Area3D"]
+script = ExtResource("1_51ki0")

@@ -51,7 +51,7 @@ script = ExtResource("1_gmd6e")
 shard_index = 2
 
 [node name="Torus" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.00128494, -0.27342, 0, -1.13263, 0.000310181, 0, 0, 0, 1.12688, 0, 0, 0)
+transform = Transform3D(-0.000570623, -0.121, -4.37114e-08, -0.503, 0.000137267, 0, -4.98854e-11, -1.05781e-08, 0.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_5xx1h")
 skeleton = NodePath("")
 

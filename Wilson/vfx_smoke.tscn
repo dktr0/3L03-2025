@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bt0oah83alnvb"]
+[gd_scene load_steps=9 format=3 uid="uid://bt0oah83alnvb"]
 
-[ext_resource type="Shader" uid="uid://ba4x72iqeobm7" path="res://s_smoke_shader.tres" id="1_b4xre"]
-[ext_resource type="PackedScene" uid="uid://dhxorqquga27y" path="res://vfx_fire.tscn" id="2_yf3yt"]
+[ext_resource type="Shader" uid="uid://ba4x72iqeobm7" path="res://Wilson/s_smoke_shader.tres" id="1_b4xre"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jqevc"]
 render_priority = 0
@@ -50,6 +49,3 @@ fixed_fps = 60
 visibility_aabb = AABB(0, 0, 0, 1, 1, 1)
 process_material = SubResource("ParticleProcessMaterial_iy1tf")
 draw_pass_1 = SubResource("QuadMesh_nv0vs")
-
-[node name="vfx_fire" parent="." instance=ExtResource("2_yf3yt")]
-visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhxorqquga27y"]
+[gd_scene load_steps=4 format=3 uid="uid://dhxorqquga27y"]
 
 [ext_resource type="Shader" uid="uid://cu52a36053kac" path="res://Wilson/s_special_shader.tres" id="1_y7wgh"]
 
@@ -10,11 +10,6 @@ shader_parameter/Speed = Vector2(0, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_muygx"]
 size = Vector2(10, 10)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6p5p8"]
-gravity = Vector3(0, 5, 0)
-
-[sub_resource type="QuadMesh" id="QuadMesh_vb0nw"]
-
 [node name="vfx_fire" type="Node3D"]
 visibility_parent = NodePath("Fire")
 
@@ -25,8 +20,3 @@ amount = 1
 mesh = SubResource("QuadMesh_muygx")
 gravity = Vector3(0, 0, 0)
 color = Color(4, 0.8, 0, 1)
-
-[node name="Smoke" type="GPUParticles3D" parent="."]
-amount = 15
-process_material = SubResource("ParticleProcessMaterial_6p5p8")
-draw_pass_1 = SubResource("QuadMesh_vb0nw")

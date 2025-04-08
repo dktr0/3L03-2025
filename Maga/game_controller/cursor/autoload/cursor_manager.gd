@@ -65,7 +65,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	# Check if Escape key was just pressed to toggle cursor in development builds
 	if OS.has_feature("editor") or OS.has_feature("debug"):
-		if Input.is_action_just_pressed("ui_cancel"):
+		if Input.is_action_just_pressed("anything"):
 			toggle_cursor()
 
 # Main function to request cursor visibility

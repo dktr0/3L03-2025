@@ -11,8 +11,7 @@ enum TeleportMethod {
 @export var target_position: Vector3 = Vector3.ZERO
 @export var target_scene_path: String = "res://NextScene.tscn"
 
-@export var amulet_ui_path: NodePath  # 在编辑器里把 AmuletUI 的路径 drag 到这里
-									  # 例如 MainScene/UI/AmuletUI
+@export var amulet_ui_path: NodePath
 
 func _ready():
 	body_entered.connect(_on_body_entered)
@@ -24,11 +23,16 @@ func _on_body_entered(body: Node) -> void:
 		return
 
 	if body == player:
-		if _player_has_all_shards():
-			_teleport_player(player)
-		else:
-			var missing = _calculate_missing_shards()
-			_show_missing_shards_on_ui(missing)
+		match teleport_method:
+			TeleportMethod.LOCAL_TELEPORT:
+				_teleport_player(player)
+
+			TeleportMethod.CHANGE_SCENE:
+				if _player_has_all_shards():
+					_teleport_player(player)
+				else:
+					var missing = _calculate_missing_shards()
+					_show_missing_shards_on_ui(missing)
 
 func _player_has_all_shards() -> bool:
 	return AmuletManager.has_shard(1) \
@@ -46,20 +50,23 @@ func _calculate_missing_shards() -> int:
 	return missing
 
 func _show_missing_shards_on_ui(missing: int):
-	var ui = get_node_or_null("res://Andy/ui Amulet.tscn")
+	var ui = get_node_or_null(amulet_ui_path)
 	if ui:
-		# 调用前面UI脚本写的 show_missing_shards(missing)
-		ui.show_missing_shards(missing)
-	else:
-		print("Portal: Cannot find UI node from amulet_ui_path")
+		pass
 
 func _teleport_player(player: Node):
 	match teleport_method:
 		TeleportMethod.LOCAL_TELEPORT:
-			var transform = player.global_transform
-			transform.origin = target_position
-			player.global_transform = transform
+			var t = player.global_transform
+			t.origin = target_position
+			player.global_transform = t
 
 		TeleportMethod.CHANGE_SCENE:
+			# 1) 先重置碎片
 			AmuletManager.reset_shards()
+
+			
+			QuestManager.reset_all_quests()
+
+			# 3) 切换场景
 			Loadingmanager.change_scene_with_loading(target_scene_path)
