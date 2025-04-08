@@ -28,6 +28,8 @@ extends CharacterBody3D
 @export var moving_rotation_multiplier := 1.2 # Multiplier applied to rotation speed when moving
 @export var air_control_factor := 0.4 # How much control the player has while airborne (Lowered from 0.7)
 @export var sideways_jump_hindrance := 0.2 # Reduces air control when moving sideways/backwards during jump (0=no hindrance, 1=full stop)
+@export var max_step_height := 0.3 # Max height player can step up
+@export var step_climb_speed := 8.0 # Vertical speed when stepping up
 
 @export_category("Jump Tuning")
 @export var variable_jump_cutoff_multiplier := 0.5 # Multiplies upward velocity when jump button released early
@@ -35,9 +37,15 @@ extends CharacterBody3D
 @export var jump_buffer_duration := 0.1 # Seconds a jump input is remembered before landing
 @export var max_jumps := 2 # Maximum number of jumps allowed (1 = ground, 2 = double, etc.)
 
+@export_category("Node References")
+@export var animation_player_path: NodePath # Path to the AnimationPlayer node
+@onready var step_detect_ray: RayCast3D = $StepDetectRay # Assign in editor
+@onready var step_height_ray: RayCast3D = $StepHeightRay # Assign in editor
+
 # Node References
 var camera_node: Camera3D
 var movement_system: Node # Reference to the MovementSystem script/node
+var animation_system: Node # Reference to the new AnimationSystem node
 var controller: Node # Reference to the PlayerControllerInputs Autoload
 var input_handler: Node # Reference to the InputManager inner class instance
 
@@ -59,18 +67,54 @@ func _ready():
 	# Get references to child nodes and autoloads
 	camera_node = get_node_or_null("CameraRoot/Camera3D") as Camera3D
 	movement_system = get_node_or_null("MovementSystem")
+	animation_system = get_node_or_null("AnimationSystem") # Get the new node
 	controller = get_node_or_null("/root/PlayerControllerInputs")
+
+	# Find the AnimationTree node (ensure it exists in your scene and the path is correct)
+	# Note: We are fetching the AnimationTree now, not the AnimationPlayer directly for the system setup.
+	var anim_tree = get_node_or_null("AnimationTree") as AnimationTree 
+	# Find the AnimationPlayer for validation if needed, but it's not passed to setup anymore
+	var anim_player = get_node_or_null(animation_player_path) as AnimationPlayer
 
 	# Validate node references
 	if !camera_node:
 		printerr("Player Core: Camera3D node not found at 'CameraRoot/Camera3D'.")
 	if !movement_system:
 		printerr("Player Core: MovementSystem node not found at 'MovementSystem'.")
-	# Pass camera reference to movement system if both exist and method is available
 	elif movement_system.has_method("setup"):
 		movement_system.setup(camera_node)
 	else:
 		printerr("Player Core: MovementSystem node does not have a setup() method.")
+	
+	if !anim_player:
+		printerr("Player Core: AnimationPlayer node not found at path: ", animation_player_path)
+	
+	if !anim_tree: # Validate the AnimationTree node
+		printerr("Player Core: AnimationTree node not found (expected name 'AnimationTree'). AnimationSystem setup skipped.")
+
+	if !animation_system:
+		printerr("Player Core: AnimationSystem node not found at 'AnimationSystem'.")
+	# Pass AnimationTree reference and speeds to the AnimationSystem
+	elif animation_system.has_method("setup"):
+		if anim_tree and movement_system: # Ensure both tree and movement system exist
+			# Get base speeds - **ADJUST THESE LINES if your speed variables have different names**
+			var base_move_speed = movement_system.get("move_speed") if movement_system.has_method("get") else 5.0 # Example: Get speed or use default
+			var base_sprint_speed = movement_system.get("sprint_speed") if movement_system.has_method("get") else 8.0 # Example: Get speed or use default
+			
+			# Check if speeds were successfully retrieved (or handle potential errors)
+			if base_move_speed == null:
+				printerr("Player Core: Could not get 'move_speed' from MovementSystem. Using default for AnimationSystem.")
+				base_move_speed = 5.0 
+			if base_sprint_speed == null:
+				printerr("Player Core: Could not get 'sprint_speed' from MovementSystem. Using default for AnimationSystem.")
+				base_sprint_speed = 8.0
+
+			# Call setup with the correct 3 arguments
+			animation_system.setup(anim_tree, base_move_speed, base_sprint_speed) 
+		else:
+			printerr("Player Core: Cannot setup AnimationSystem because AnimationTree or MovementSystem was not found.")
+	else:
+		printerr("Player Core: AnimationSystem node does not have a setup() method.")
 	
 	if !controller:
 		push_warning("Player Core: PlayerControllerInputs Autoload not found.")
@@ -78,16 +122,25 @@ func _ready():
 	# Instantiate and add the input handler
 	input_handler = InputManager.new(self)
 	add_child(input_handler)
-	
+
+	# Validate step raycasts
+	if !step_detect_ray:
+		printerr("Player Core: StepDetectRay node not found (expected name 'StepDetectRay'). Stepping disabled.")
+	if !step_height_ray:
+		printerr("Player Core: StepHeightRay node not found (expected name 'StepHeightRay'). Stepping disabled.")
+
 	# Initialize floor state
 	was_on_floor = is_on_floor()
 
 ## Called every physics frame. Handles movement, jumping, gravity, and rotation.
 func _physics_process(delta: float):
-	# Ensure movement system is valid before proceeding
 	if !movement_system or !movement_system.has_method("get_movement_input"):
 		printerr("Player Core: Movement system invalid or missing 'get_movement_input' method.")
 		return
+	# We still need animation system even if movement is invalid? Maybe not.
+	if !animation_system or !animation_system.has_method("update_animation"):
+		printerr("Player Core: Animation system invalid or missing 'update_animation' method.")
+		# Can optionally return here if animations are critical
 
 	# --- Update Timers ---
 	if coyote_timer > 0.0:
@@ -96,10 +149,10 @@ func _physics_process(delta: float):
 		jump_buffer_timer -= delta
 
 	# --- Get Movement Input ---
-	# This is needed early for jump direction calculation
 	var movement_input = movement_system.get_movement_input(delta, is_targeting)
-	var target_horizontal_velocity = movement_input["velocity"] # Desired velocity based on input
-	var look_direction = movement_input["look_direction"] # Desired facing direction
+	var target_horizontal_velocity = movement_input["velocity"]
+	var look_direction = movement_input["look_direction"]
+	var is_sprinting = movement_input["is_sprinting"]
 
 	# --- Ground Check & State Reset ---
 	var on_floor = is_on_floor()
@@ -119,7 +172,6 @@ func _physics_process(delta: float):
 		jump_buffer_timer = jump_buffer_duration
 		
 	# --- Check Jump Condition & Execution ---
-	# Removed old can_jump check here
 	if jump_buffer_timer > 0.0:
 		var performed_jump_this_frame = false
 		
@@ -195,8 +247,45 @@ func _physics_process(delta: float):
 		velocity.x = lerp(velocity.x, 0.0, current_decel * delta)
 		velocity.z = lerp(velocity.z, 0.0, current_decel * delta)
 
+	# --- Step Up Logic (Before move_and_slide) ---
+	var did_step_up = false # Flag to prevent step logic interfering with normal jumping
+	if is_on_floor() and step_detect_ray and step_height_ray:
+		var horizontal_vel = Vector3(velocity.x, 0, velocity.z)
+		if horizontal_vel.length_squared() > 0.01: # Moving horizontally
+			var forward_dir = -transform.basis.z.normalized()
+			# Check if moving generally forward
+			if horizontal_vel.normalized().dot(forward_dir) > 0.5: 
+				step_detect_ray.force_raycast_update()
+				step_height_ray.force_raycast_update()
+
+				# Check if lower ray hits an obstacle but upper ray doesn't (clear path above step)
+				if step_detect_ray.is_colliding() and not step_height_ray.is_colliding():
+					var step_collider = step_detect_ray.get_collider()
+					# Optional: Add check here if collider.is_in_group("ground") or similar
+					if step_collider: 
+						var step_hit_point = step_detect_ray.get_collision_point()
+						var step_up_amount = step_hit_point.y - global_position.y
+
+						# Ensure step is actually above feet and within max height
+						if step_up_amount > 0.01 and step_up_amount <= max_step_height:
+							velocity.y = step_climb_speed # Apply upward velocity boost
+							did_step_up = true # Mark that we initiated a step
+
+	# --- Apply Gravity (Only if not stepping up) ---
+	# Apply gravity if not on floor OR if on floor but didn't just step up
+	if not is_on_floor():
+		# If we just initiated a step up this frame, the upward velocity overrides gravity briefly
+		if not did_step_up:
+			velocity.y -= gravity * delta
+	# If on floor AND did_step_up is false, gravity is effectively cancelled by floor collision in move_and_slide
+
 	# --- Apply Movement via move_and_slide ---
 	move_and_slide()
+
+	# --- Update Animation System ---
+	if animation_system and animation_system.has_method("update_animation"):
+		# Call with the updated 3 arguments expected by the refactored script
+		animation_system.update_animation(on_floor, is_sprinting, velocity)
 
 	# --- Handle Rotation (Smoothly turn towards look_direction) ---
 	if look_direction.length_squared() > 0.0001: # Check if there is a valid look direction
