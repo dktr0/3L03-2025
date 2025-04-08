@@ -1,12 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://co0ky7kry764f"]
+[gd_scene load_steps=47 format=3 uid="uid://co0ky7kry764f"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_atq23"]
-[ext_resource type="PackedScene" uid="uid://caytmt15utrsy" path="res://Rongyu Liu/Mountain/Highmountain.tscn" id="2_5vogq"]
 [ext_resource type="PackedScene" uid="uid://dm24h3lp0q575" path="res://Rongyu Liu/Soil/Damaged soil.tscn" id="2_dci5a"]
+[ext_resource type="PackedScene" uid="uid://c6xmw21g7x5kr" path="res://Wilson/water-test/underwater_bubbles.tscn" id="3_aj4mr"]
 [ext_resource type="PackedScene" uid="uid://dr686rbpyq46o" path="res://Wilson/water_base.tscn" id="3_b75uh"]
 [ext_resource type="PackedScene" uid="uid://bragmruxldk4r" path="res://Yufei/game(past_water).tscn" id="5_3x1ld"]
 [ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="8_jrtj4"]
-[ext_resource type="PackedScene" uid="uid://cwevg5ffeyeu5" path="res://Mason/Present_light_house.tscn" id="9_rv4y1"]
 [ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="10_4wkfk"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="11_56olb"]
 [ext_resource type="PackedScene" uid="uid://bov4hwigpqpdb" path="res://Sandhya/deadtrees.tscn" id="11_wftq0"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="14_h1q43"]
 [ext_resource type="PackedScene" uid="uid://b0mpf88wqpx5u" path="res://Wren/coast_guard_station.tscn" id="14_iaiik"]
 [ext_resource type="PackedScene" uid="uid://dr0fr4rpf67yx" path="res://Tram/sound effects/WaveSound3D.tscn" id="15_1obll"]
+[ext_resource type="PackedScene" uid="uid://btj6i7h1cco8a" path="res://Maga/player_controller/scenes/player_trigger.tscn" id="15_ddp5w"]
 [ext_resource type="PackedScene" uid="uid://dffp8drh4rhbm" path="res://Tram/sound effects/WaveSound3d2.tscn" id="16_nta24"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="17_eo3wy"]
 [ext_resource type="PackedScene" uid="uid://i0lj0ytb6stj" path="res://Tram/sound effects/seagullSound3D.tscn" id="18_ttof1"]
@@ -24,6 +24,20 @@
 [ext_resource type="PackedScene" uid="uid://spmbye82jg58" path="res://Riley/DeadGrass.tscn" id="23_1wah4"]
 [ext_resource type="PackedScene" uid="uid://b5xqkd7wyxnl8" path="res://Sandhya/wildfire_level_arena.tscn" id="24_eomej"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="24_jqo8q"]
+[ext_resource type="PackedScene" uid="uid://cteg1e5qqe4vn" path="res://Tram/music/pastlofimusic.tscn" id="25_kl13t"]
+[ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/chest.tscn" id="26_c874u"]
+[ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="27_oqxl2"]
+[ext_resource type="PackedScene" path="res://Andy/signal.tscn" id="28_piqm0"]
+[ext_resource type="PackedScene" uid="uid://cno47m3u2lv28" path="res://Ethan C/Red Tent.tscn" id="30_p7ije"]
+[ext_resource type="PackedScene" uid="uid://c27srq5ofafyb" path="res://Ethan C/Green Tent.tscn" id="31_iqkra"]
+[ext_resource type="PackedScene" uid="uid://cuoukfstjn00h" path="res://Ethan C/Yellow Tent.tscn" id="32_gx388"]
+[ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="33_kr7lu"]
+[ext_resource type="PackedScene" uid="uid://bwkirwohli3ge" path="res://Ethan C/Purple Tent.tscn" id="34_xi5eq"]
+[ext_resource type="PackedScene" uid="uid://bbgrkkkwp2ukl" path="res://Ethan C/Blue Tent.tscn" id="35_88evn"]
+[ext_resource type="PackedScene" uid="uid://dtmqga6nsa27i" path="res://Mason/beginning_light_house.tscn" id="36_wvwl7"]
+[ext_resource type="PackedScene" uid="uid://dgp6t2wxb84bk" path="res://Ethan C/street light.tscn" id="36_x3cdy"]
+[ext_resource type="PackedScene" uid="uid://dt1mfgeidwbmi" path="res://Ethan C/Water Bottle.tscn" id="36_xfecw"]
+[ext_resource type="PackedScene" uid="uid://b11tkdo3t2ce" path="res://Bihan/SoundEffects and Soundscape/fire_crackling_sound.tscn" id="38_eq1rd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tmle"]
 size = Vector3(1.28235, 0.808105, 1)
@@ -38,6 +52,15 @@ size = Vector3(102.756, 137.127, 124.698)
 size = Vector3(109.43, 38.9147, 105.783)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_daxj5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qetbj"]
+size = Vector3(36.4386, 0.674133, 11.457)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yymc5"]
+size = Vector3(46.8199, 7.53015, 21.3157)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w31rb"]
+size = Vector3(506.455, 162.749, 511.26)
 
 [node name="past" type="Node3D"]
 
@@ -62,6 +85,9 @@ skeleton = NodePath("../..")
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -638.614, -200.268, 884.179)
 skeleton = NodePath("../..")
 
+[node name="GPUParticles3D" parent="Water" instance=ExtResource("3_aj4mr")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -650.676, -722.996, -97.2294)
+
 [node name="Ground" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.56692, 31.3145)
 
@@ -75,7 +101,7 @@ transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -98.831, -11.2545, 263.
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -218.339, -11.2545, 264.004)
 
 [node name="Damaged soil4" parent="Ground" instance=ExtResource("2_dci5a")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 210.892, -11.2545, 263.512)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 212.67, -11.2545, 263.512)
 
 [node name="Damaged soil5" parent="Ground" instance=ExtResource("2_dci5a")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -269.26, -11.2545, 263.512)
@@ -89,9 +115,6 @@ transform = Transform3D(-2.74331, 0, -99.9624, 0, 100, 0, 99.9624, 0, -2.74331, 
 
 [node name="Damaged soil8" parent="Ground" instance=ExtResource("2_dci5a")]
 transform = Transform3D(-2.74331, 0, -99.9624, 0, 100, 0, 99.9624, 0, -2.74331, 411.668, -11.2545, 66.3373)
-
-[node name="Present_light_house" parent="." instance=ExtResource("9_rv4y1")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.626, 3.229, -29.98)
 
 [node name="Area3D" parent="." instance=ExtResource("10_4wkfk")]
 transform = Transform3D(9.96939, 0, -4.6488, 0, 11, 0, 4.6488, 0, 9.96939, 26.583, 1.102, 12.6081)
@@ -113,7 +136,7 @@ transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -46.76
 [node name="Wave Sounds" type="Node3D" parent="."]
 
 [node name="WaveSound3d4" parent="Wave Sounds" instance=ExtResource("16_nta24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -449.374, -18.9151, 150.656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -383.796, -18.9151, 150.656)
 volume_db = -3.048
 
 [node name="WaveSound3d5" parent="Wave Sounds" instance=ExtResource("16_nta24")]
@@ -135,39 +158,17 @@ volume_db = -3.048
 [node name="Control" parent="." instance=ExtResource("8_jrtj4")]
 transform = Transform3D(0.901953, 0, -0.431833, 0, 1, 0, 0.431833, 0, 0.901953, 23.5697, 4.8019, 17.893)
 dialogue_lines = Array[String](["Ah, now there’s a face I ain’t seen before. You lookin’ for trouble, or tryin’ to fix it? ‘Cause we could use a hand ‘round here.", "The ice up north? It ain't holdin' like it used to. Somethin’ unnatural’s tearin’ through the glaciers—beasts made of ice, crackin’ the ground right out from under us.", "Then there’s the forest. Dry as tinder, and wouldn’t you know it—fire’s started up. If it spreads, we’ll lose the whole damn valley. Some folks are tryin’ to stop it, but they ain't enough.", "And the village? Used to be clean water, good fishin’. Now the shore’s fillin’ up with filth, and no one’s takin’ the blame. If somethin’ ain’t done soon, there won’t be a village left to save.", "Things ain't too far gone yet, but they’re slippin’. You got that look about ya—like you might be able to turn the tide. If you can, do it quickly. We ain't got forever.\""])
+quest_id = "dialogue_only"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control"]
 transform = Transform3D(9.98874, 0, -0.474722, 0, 10, 0, 0.474722, 0, 9.98874, 2.93663, 1.89337, 4.34115)
 shape = SubResource("BoxShape3D_7tmle")
 
+[node name="PlayerTrigger" parent="." instance=ExtResource("15_ddp5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252.643, 1.6395, 161.479)
+
 [node name="Player" parent="." instance=ExtResource("17_eo3wy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.2582, -6.0937, 90.4462)
-
-[node name="Mountains2" type="Node3D" parent="."]
-
-[node name="Highmountain4" parent="Mountains2" instance=ExtResource("2_5vogq")]
-transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -398.291, -118.32, 49.9046)
-
-[node name="Highmountain5" parent="Mountains2" instance=ExtResource("2_5vogq")]
-transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -416.587, -130.449, 39.7776)
-
-[node name="Highmountain6" parent="Mountains2" instance=ExtResource("2_5vogq")]
-transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -440.718, -139.399, 33.1308)
-
-[node name="Highmountain7" parent="Mountains2" instance=ExtResource("2_5vogq")]
-transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -456.689, -151.247, 25.9892)
-
-[node name="Highmountain8" parent="Mountains2" instance=ExtResource("2_5vogq")]
-transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -471.293, -170.115, 12.855)
-
-[node name="Highmountain" parent="Mountains2" instance=ExtResource("2_5vogq")]
-transform = Transform3D(6.16444, 0, -3.31657, 0, 7, 0, 3.31657, 0, 6.16444, -335.22, -88.6959, 90.5276)
-
-[node name="Highmountain2" parent="Mountains2" instance=ExtResource("2_5vogq")]
-transform = Transform3D(-6.30399, 0, 3.04299, 0, 7, 0, -3.04299, 0, -6.30399, -370.482, -93.5186, 94.3358)
-
-[node name="Highmountain3" parent="Mountains2" instance=ExtResource("2_5vogq")]
-transform = Transform3D(5.9154, 0, -3.74274, 0, 7, 0, 3.74274, 0, 5.9154, -371.22, -110.882, 59.3661)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252.643, 1.6395, 161.479)
 
 [node name="Ice Platforms" type="Node3D" parent="."]
 
@@ -251,7 +252,7 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 22.7865, -7.69792, 203.108)
 [node name="Tasks" type="Node3D" parent="."]
 
 [node name="Wildfire Level Arena" parent="Tasks" instance=ExtResource("24_eomej")]
-transform = Transform3D(0.00541893, 0, 0.299951, 0, 0.3, 0, -0.299951, 0, 0.00541893, 370.868, -4.47199, 184.38)
+transform = Transform3D(0.0999149, 0, 0.282873, 0, 0.3, 0, -0.282873, 0, 0.0999149, 365.897, -4.47199, 187.206)
 
 [node name="Area3D" type="Area3D" parent="Tasks/Wildfire Level Arena"]
 
@@ -306,3 +307,204 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.20366, 11.9618, 148.064)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone"]
 shape = SubResource("BoxShape3D_daxj5")
+
+[node name="pastlofimusic" parent="." instance=ExtResource("25_kl13t")]
+volume_db = -6.45
+
+[node name="trigger" parent="." instance=ExtResource("8_jrtj4")]
+transform = Transform3D(-0.306972, 0, 1.9763, 0, 2, 0, -1.9763, 0, -0.306972, 450.783, 42.5622, 161.274)
+trigger_type = 1
+quest_id = "climb_quest"
+quest_description = "Climb to the top of the hill using the trees to retrieve a pirce of the Amulet. "
+climb_area_path = NodePath("../Tasks/Wildfire Level Arena/Area3D")
+chest_to_reveal_path = NodePath("../Chest")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trigger"]
+transform = Transform3D(0.990654, 0, -0.136407, 0, 1, 0, 0.136407, 0, 0.990654, 12.3845, -25.3718, -77.8302)
+shape = SubResource("BoxShape3D_qetbj")
+
+[node name="Chest" parent="." instance=ExtResource("26_c874u")]
+transform = Transform3D(0.624704, 0, 3.95092, 0, 4, 0, -3.95092, 0, 0.624704, 446.385, 42.5622, 192.923)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.952055, 0.305926, 0.00110525, 0, -0.00361279, 0.999994, 0.305928, -0.952048, -0.00343958, 446.415, 47.3606, 193.133)
+light_color = Color(0.732987, 0, 0.120593, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_specular = 2.29
+
+[node name="Chest2" parent="." instance=ExtResource("26_c874u")]
+transform = Transform3D(1.77971, 0, -2.41509, 0, 3, 0, 2.41509, 0, 1.77971, 132.769, -38.4397, -338.618)
+visible = false
+chest_quest_id = "open_chest_2"
+
+[node name="trigger2" parent="." instance=ExtResource("8_jrtj4")]
+trigger_type = 1
+quest_description = "Kill the monsters to reveal a piece of the Amulet. "
+climb_area_path = NodePath("../Tasks/Node3D2/Area3D")
+chest_to_reveal_path = NodePath("../Chest2")
+chest_quest_id_on_appear = "open_chest_2"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trigger2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.129, -10.8191, 15.4547)
+shape = SubResource("BoxShape3D_yymc5")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.00361279, 0.999994, 0, -0.999994, -0.00361279, 133.312, -33.9931, -340.122)
+light_color = Color(0.732987, 0, 0.120593, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_specular = 2.29
+
+[node name="Chest3" parent="." instance=ExtResource("26_c874u")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -410.955, -124.093, -169.459)
+visible = false
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.00361279, 0.999994, 0, -0.999994, -0.00361279, -411.119, -118.295, -169.507)
+light_color = Color(0.732987, 0, 0.120593, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_specular = 2.29
+
+[node name="trigger3" parent="." instance=ExtResource("8_jrtj4")]
+quest_id = "collect_items"
+quest_description = "Collect all items to gain a piece of the Amulet. "
+climb_area_path = NodePath("../Tasks/Game(past_water)/Area3D")
+chest_to_reveal_path = NodePath("../Chest3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trigger3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -563.884, -93.043, -296.033)
+shape = SubResource("BoxShape3D_w31rb")
+
+[node name="Control2" parent="." instance=ExtResource("27_oqxl2")]
+
+[node name="Signal" parent="." instance=ExtResource("28_piqm0")]
+transform = Transform3D(4.76027, 0, -1.52964, 0, 5, 0, 1.52964, 0, 4.76027, 446.26, 67.9768, 193.171)
+
+[node name="Signal2" parent="." instance=ExtResource("28_piqm0")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 409.394, 133.8, 199.006)
+
+[node name="Signal3" parent="." instance=ExtResource("28_piqm0")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 191.288, 171.888, -426.346)
+
+[node name="Signal4" parent="." instance=ExtResource("28_piqm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.617, -29.8722, -340.83)
+
+[node name="Signal5" parent="." instance=ExtResource("28_piqm0")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -529.647, 171.888, -265.114)
+
+[node name="Signal6" parent="." instance=ExtResource("28_piqm0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -410.202, -95.1241, -168.458)
+
+[node name="Extra Assets" type="Node3D" parent="."]
+
+[node name="Area3D2" parent="Extra Assets" instance=ExtResource("30_p7ije")]
+transform = Transform3D(18.5275, 0, -7.53192, 0, 20, 0, 7.53192, 0, 18.5275, -274.779, -7.80937, 66.6341)
+
+[node name="Area3D3" parent="Extra Assets" instance=ExtResource("31_iqkra")]
+transform = Transform3D(0.553548, 0, 19.9923, 0, 20, 0, -19.9923, 0, 0.553548, -291.475, -7.7992, 77.0485)
+
+[node name="Area3D4" parent="Extra Assets" instance=ExtResource("32_gx388")]
+transform = Transform3D(-17.234, 0, 10.1484, 0, 20, 0, -10.1484, 0, -17.234, -283.908, -7.63071, 93.2388)
+
+[node name="StaticBody3D" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(1.23502, 0, -2.73399, 0, 3, 0, 2.73399, 0, 1.23502, -273.057, -7.93796, 81.4238)
+
+[node name="StaticBody3D2" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(2.92439, 0.643132, 0.185217, -0.641846, 2.93025, -0.0406515, -0.189626, 1.01635e-10, 2.994, -270.995, -7.11834, 81.4238)
+
+[node name="StaticBody3D3" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(1.64669, 0, -3.64533, 0, 4, 0, 3.64533, 0, 1.64669, 90.1688, -7.74571, 121.106)
+
+[node name="StaticBody3D4" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(3.89919, 0.85751, 0.246956, -0.855795, 3.907, -0.0542019, -0.252834, -3.72529e-08, 3.992, 92.2307, -6.92609, 121.106)
+
+[node name="Area3D5" parent="Extra Assets" instance=ExtResource("34_xi5eq")]
+transform = Transform3D(15.8894, 0, -12.1461, 0, 20, 0, 12.1461, 0, 15.8894, -130.161, -7.65493, 122.912)
+
+[node name="Area3D6" parent="Extra Assets" instance=ExtResource("35_88evn")]
+transform = Transform3D(15.4025, 0, 12.7579, 0, 20, 0, -12.7579, 0, 15.4025, -145.931, -7.77612, 126.593)
+
+[node name="Area3D7" parent="Extra Assets" instance=ExtResource("30_p7ije")]
+transform = Transform3D(18.5275, 0, -7.53192, 0, 20, 0, 7.53192, 0, 18.5275, -274.779, -7.80937, 151.632)
+
+[node name="Area3D8" parent="Extra Assets" instance=ExtResource("34_xi5eq")]
+transform = Transform3D(8.9074, 0, 17.9069, 0, 20, 0, -17.9069, 0, 8.9074, -301.008, -7.65493, 161.256)
+
+[node name="Area3D9" parent="Extra Assets" instance=ExtResource("32_gx388")]
+transform = Transform3D(-19.8499, 0, -2.44605, 0, 20, 0, 2.44605, 0, -19.8499, -283.908, -7.63071, 175.263)
+
+[node name="StaticBody3D5" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(1.23502, 0, -2.73399, 0, 3, 0, 2.73399, 0, 1.23502, -284.358, -7.93796, 159.272)
+
+[node name="Area3D10" parent="Extra Assets" instance=ExtResource("34_xi5eq")]
+transform = Transform3D(-13.6749, 0, -14.5944, 0, 20, 0, 14.5944, 0, -13.6749, -48.488, -7.65493, 172.121)
+
+[node name="Area3D11" parent="Extra Assets" instance=ExtResource("35_88evn")]
+transform = Transform3D(-19.9922, 0, -0.558782, 0, 20, 0, 0.558782, 0, -19.9922, -72.342, -7.77612, 186.51)
+
+[node name="Area3D12" parent="Extra Assets" instance=ExtResource("31_iqkra")]
+transform = Transform3D(-19.9989, 0, 0.205247, 0, 20, 0, -0.205247, 0, -19.9989, -93.5081, -7.7992, 175.381)
+
+[node name="Area3D" parent="Extra Assets" instance=ExtResource("36_x3cdy")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -66.379, 1.30493, -16.4434)
+
+[node name="Area3D13" parent="Extra Assets" instance=ExtResource("36_xfecw")]
+transform = Transform3D(0.423423, -0.637254, 0.64391, 0.832902, 0.553421, 0, -0.356353, 0.536314, 0.765101, -124.591, -8.7035, 127.272)
+
+[node name="Area3D14" parent="Extra Assets" instance=ExtResource("36_xfecw")]
+transform = Transform3D(-0.123589, 0.186002, 0.974746, 0.832902, 0.553421, 0, -0.539444, 0.811867, -0.223318, -278.769, -8.7035, 170.979)
+
+[node name="Area3D15" parent="Extra Assets" instance=ExtResource("36_xfecw")]
+transform = Transform3D(-0.506159, 0.761772, 0.40436, 0.832902, 0.553421, 6.6554e-09, -0.223781, 0.336792, -0.9146, -300.705, -8.7035, 165.424)
+
+[node name="Area3D16" parent="Extra Assets" instance=ExtResource("36_xfecw")]
+transform = Transform3D(-0.506159, 0.761772, 0.40436, 0.832902, 0.553421, 6.6554e-09, -0.223781, 0.336792, -0.9146, -291.028, -8.7035, 80.8576)
+
+[node name="Area3D17" parent="Extra Assets" instance=ExtResource("36_xfecw")]
+transform = Transform3D(-0.202713, 0.305084, -0.930501, 0.832902, 0.553421, 1.33108e-08, 0.514958, -0.775016, -0.36629, -89.6697, -8.7035, 177.894)
+
+[node name="StaticBody3D6" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(3.99427, 0, 0.214015, 0, 4, 0, -0.214015, 0, 3.99427, 205.06, -7.74571, 161.083)
+
+[node name="StaticBody3D7" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(1.17712, 0.310696, 3.81023, -0.855795, 3.907, -0.0542019, -3.72586, -0.799244, 1.21622, 205.807, -6.92609, 159.161)
+
+[node name="StaticBody3D8" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(-3.95035, 0, 0.628289, 0, 4, 0, -0.628289, 0, -3.95035, 182.622, -7.74571, 69.0348)
+
+[node name="StaticBody3D9" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(-1.93221, -0.47138, -3.4705, -0.855795, 3.907, -0.0542019, 3.3962, 0.716327, -1.98814, 181.489, -6.92609, 70.7573)
+
+[node name="StaticBody3D10" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(-3.95035, 0, 0.628289, 0, 4, 0, -0.628289, 0, -3.95035, -182.239, -7.74571, 144.312)
+
+[node name="StaticBody3D11" parent="Extra Assets" instance=ExtResource("33_kr7lu")]
+transform = Transform3D(-1.93221, -0.47138, -3.4705, -0.855795, 3.907, -0.0542019, 3.3962, 0.716327, -1.98814, -183.372, -6.92609, 146.034)
+
+[node name="Area3D18" parent="Extra Assets" instance=ExtResource("36_xfecw")]
+transform = Transform3D(0.123052, -0.185194, -0.974967, 0.832902, 0.553421, 2.36724e-08, 0.539567, -0.812052, 0.222348, 109.663, -8.7035, 104.186)
+
+[node name="Area3D19" parent="Extra Assets" instance=ExtResource("36_xfecw")]
+transform = Transform3D(0.469844, -0.707118, -0.528423, 0.832902, 0.553421, 3.94431e-08, 0.292441, -0.440125, 0.848981, 229.434, -8.7035, 104.186)
+
+[node name="Area3D20" parent="Extra Assets" instance=ExtResource("36_xfecw")]
+transform = Transform3D(0.24407, -0.367327, -0.897497, 0.832902, 0.553421, 3.94431e-08, 0.496694, -0.747527, 0.44102, 50.7844, -8.7035, 168.976)
+
+[node name="Area3D21" parent="Extra Assets" instance=ExtResource("36_xfecw")]
+transform = Transform3D(0.524585, -0.789505, -0.318579, 0.832902, 0.553421, 2.51855e-08, 0.176308, -0.265345, 0.947896, 167.332, -8.7035, 141.378)
+
+[node name="Area3D22" parent="Extra Assets" instance=ExtResource("34_xi5eq")]
+transform = Transform3D(-16.9036, 0, 10.6897, 0, 20, 0, -10.6897, 0, -16.9036, 128.812, -7.65493, 175.739)
+
+[node name="Area3D23" parent="Extra Assets" instance=ExtResource("35_88evn")]
+transform = Transform3D(-14.2108, 0, -14.0731, 0, 20, 0, 14.0731, 0, -14.2108, 144.194, -7.77612, 170.674)
+
+[node name="Beginning_light_house" parent="." instance=ExtResource("36_wvwl7")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.626, 3.229, -29.98)
+
+[node name="FireCracklingSound" parent="." instance=ExtResource("38_eq1rd")]
+transform = Transform3D(0.787882, 0, -0.615826, 0, 1, 0, 0.615826, 0, 0.787882, 382.08, 38.134, 192.054)
+unit_size = 6.8
+pitch_scale = 2.56
