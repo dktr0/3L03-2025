@@ -1,10 +1,10 @@
-[gd_scene load_steps=46 format=3 uid="uid://t3v7ddegi0pl"]
+[gd_scene load_steps=53 format=3 uid="uid://t3v7ddegi0pl"]
 
 [ext_resource type="PackedScene" uid="uid://dskvad1j8525m" path="res://Le Zhang/mutated fish.glb" id="1_1maeu"]
 [ext_resource type="PackedScene" uid="uid://cldomxhffitcn" path="res://Yunhan Liu2/Npc_Dialog.tscn" id="1_exclq"]
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_hb1m7"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="2_ujjpv"]
-[ext_resource type="PackedScene" uid="uid://cycjp4vmr1kal" path="res://DeadLargeSeaweed.tscn" id="3_287qh"]
+[ext_resource type="PackedScene" path="res://DeadLargeSeaweed.tscn" id="3_287qh"]
 [ext_resource type="PackedScene" uid="uid://c2bdcxn28whgv" path="res://Darius/Rubble.glb" id="4_gev5a"]
 [ext_resource type="PackedScene" uid="uid://dt1mfgeidwbmi" path="res://Ethan C/Water Bottle.tscn" id="5_5yc40"]
 [ext_resource type="PackedScene" uid="uid://k0juh3usoo66" path="res://Chiara/broken_Dock.glb" id="6_vw3j6"]
@@ -16,23 +16,28 @@
 [ext_resource type="PackedScene" uid="uid://bwqy20x2uomik" path="res://Rongyu Liu/Bad_water.tscn" id="12_qohf7"]
 [ext_resource type="PackedScene" uid="uid://dm3pl02h2a4d4" path="res://Rongyu Liu/Soil/Damaged soil.glb" id="13_01rjx"]
 [ext_resource type="PackedScene" uid="uid://daggh56yuy6g3" path="res://Nan/Bad Cloud.glb" id="14_iwfgv"]
-[ext_resource type="PackedScene" uid="uid://31k1eq7dvbqa" path="res://Riley/DeadTree.tscn" id="15_n65du"]
-[ext_resource type="PackedScene" uid="uid://neudcqb0ff87" path="res://Nan/Dead_wood.tscn" id="16_f4xg8"]
-[ext_resource type="PackedScene" uid="uid://bnesfoix585wh" path="res://Riley/DeadBulrush.tscn" id="17_ieysg"]
-[ext_resource type="PackedScene" uid="uid://spmbye82jg58" path="res://Riley/DeadGrass.tscn" id="18_yxiwd"]
-[ext_resource type="PackedScene" uid="uid://b1mb8vepspln2" path="res://Riley/GarbagePile.tscn" id="19_qk8lj"]
+[ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="15_n65du"]
+[ext_resource type="PackedScene" path="res://Nan/Dead_wood.tscn" id="16_f4xg8"]
+[ext_resource type="PackedScene" path="res://Riley/DeadBulrush.tscn" id="17_ieysg"]
+[ext_resource type="PackedScene" path="res://Riley/DeadGrass.tscn" id="18_yxiwd"]
+[ext_resource type="PackedScene" path="res://Riley/GarbagePile.tscn" id="19_qk8lj"]
 [ext_resource type="PackedScene" uid="uid://dj0ikx20ebw7a" path="res://Wilson/fire_smoke.tscn" id="20_74yjm"]
 [ext_resource type="PackedScene" uid="uid://bt0oah83alnvb" path="res://Wilson/vfx_smoke.tscn" id="21_h67pt"]
 [ext_resource type="PackedScene" uid="uid://craqwm4x5w6so" path="res://Naomi/DeadSeaweed.glb" id="22_ywn03"]
-[ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed1.tscn" id="23_4jitw"]
+[ext_resource type="PackedScene" uid="uid://c5xp7gtkn6r52" path="res://Sing-yu/cottage_house_destroyed.tscn" id="23_4jitw"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="24_fcj6q"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="25_8sy7t"]
 [ext_resource type="AudioStream" uid="uid://dcvulv17onxdi" path="res://Tram/music/bad-ending.mp3" id="28_xr3t1"]
 [ext_resource type="PackedScene" uid="uid://c7niujgajwjqk" path="res://Nan/Badsky.tscn" id="29_wgvx5"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="30_dssij"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="31_p6muy"]
-[ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="34_b1l4a"]
+[ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="34_b1l4a"]
+[ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="34_ivkwf"]
+[ext_resource type="PackedScene" uid="uid://bkok2d4npgrbx" path="res://Quinn/ICE MONSTER FINAL/ICE_MONSTER_FINAL.tscn" id="35_68n6v"]
 [ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="35_h4f76"]
+[ext_resource type="PackedScene" uid="uid://dpbua5v2g8bg4" path="res://safearea.tscn" id="36_lrxob"]
+[ext_resource type="PackedScene" uid="uid://ceukyihxj1n85" path="res://deatharea.tscn" id="37_n6caq"]
+[ext_resource type="PackedScene" uid="uid://c15543iruy41d" path="res://dr0/overlays.tscn" id="38_6v548"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nrf5x"]
 
@@ -178,6 +183,12 @@ size = Vector3(2.07155, 0.00760269, 2.07335)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivawu"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0eccp"]
+size = Vector3(14.045, 21.405, 12.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1m45"]
+size = Vector3(1000, 100, 1000)
+
 [node name="Bad" type="Node3D"]
 
 [node name="dialog" parent="." instance=ExtResource("1_exclq")]
@@ -189,7 +200,7 @@ transform = Transform3D(8.17944, 0, 0, 0, 8.17944, 0, 0, 0, 8.17944, 0, 0, 0)
 shape = SubResource("BoxShape3D_nrf5x")
 
 [node name="mutated fish" parent="." instance=ExtResource("1_1maeu")]
-transform = Transform3D(-0.273044, 0, -4.58909, 0, 4.59721, 0, 4.58909, 0, -0.273044, -41.6683, 0.0763855, 0)
+transform = Transform3D(4.00002, 0, -2.26587, 0, 4.59721, 0, 2.26587, 0, 4.00002, -99.8954, -5.50073, 0)
 
 [node name="World2" parent="." instance=ExtResource("1_hb1m7")]
 transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 8.762, -20.4973, 147.279)
@@ -199,7 +210,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.408, -5.79681, 91.7809)
 mesh = SubResource("CapsuleMesh_6a1uf")
 
 [node name="Player" parent="." instance=ExtResource("2_ujjpv")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -46.456, 33.3354, -37.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.53299, 1.65376, 34.037)
 
 [node name="3d" type="Node3D" parent="."]
 
@@ -221,7 +232,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355561, 3.59808, -22.8677)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6713, 4.28799, -20.19)
 
 [node name="bottle" parent="3d" instance=ExtResource("5_5yc40")]
-transform = Transform3D(0.470084, 0, 0, 0, 0.330392, 0, 0, 0, 0.330392, 0, 15.649, 0)
+transform = Transform3D(0.470084, 0, 0, 0, 0.330392, 0, 0, 0, 0.330392, -30.9428, 2.43467, -38.2717)
 
 [node name="broken_Dock" parent="3d" instance=ExtResource("6_vw3j6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.719, -16.244, 66.3471)
@@ -380,12 +391,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.342, -4.46617, 75.6791)
 transform = Transform3D(0.0249382, 0, -0.999689, 0, 1, 0, 0.999689, 0, 0.0249382, -111.653, -15.8173, 30.6201)
 
 [node name="Portal 1" parent="." instance=ExtResource("24_fcj6q")]
-transform = Transform3D(6.405, 0, 0, 0, 6.405, 0, 0, 0, 6.405, 5.24354, 21.9521, 140.922)
+transform = Transform3D(6.405, 0, 0, 0, 6.405, 0, 0, 0, 6.405, 5.24354, 21.9521, 138.298)
 player_path = NodePath("../Player")
-target_scene_path = "res://Andy/playable/present.tscn"
+target_scene_path = "res://Andy/credit.tscn"
 amulet_ui_path = NodePath("../Control")
 
 [node name="Control" parent="." instance=ExtResource("25_8sy7t")]
+overlays_path = NodePath("../Overlays")
 start_with_shard1 = true
 start_with_shard2 = true
 start_with_shard3 = true
@@ -399,7 +411,7 @@ autoplay = true
 [node name="Badsky" parent="." instance=ExtResource("29_wgvx5")]
 
 [node name="fish_shop_owner" parent="." instance=ExtResource("30_dssij")]
-transform = Transform3D(0.019378, 0, 1.9999, 0, 2, 0, -1.9999, 0, 0.019378, 35.2944, 15.3705, 9.8571)
+transform = Transform3D(-1.8728, 0, 0.701856, 0, 2, 0, -0.701856, 0, -1.8728, 4.11378, 3.83813, -15.9722)
 collision_layer = 16
 collision_mask = 2
 
@@ -468,7 +480,7 @@ transform = Transform3D(2.54261, 0, -4.47035e-08, 0, 2.57817, 0, -7.45058e-09, 0
 shape = SubResource("BoxShape3D_21vwy")
 
 [node name="Badwater" type="MeshInstance3D" parent="."]
-transform = Transform3D(266.677, 0, 0, 0, 266.677, 0, 0, 0, 266.677, 0, 11.8251, 0.0291687)
+transform = Transform3D(266.677, 0, 0, 0, 266.677, 0, 0, 0, 266.677, 0, -3.49579, 0.0291687)
 mesh = SubResource("BoxMesh_332bq")
 
 [node name="Badwater2" type="CollisionShape3D" parent="."]
@@ -511,6 +523,40 @@ transform = Transform3D(-8.62761, 0, 2.80844, 0, 9.0732, 0, -2.80844, 0, -8.6276
 transform = Transform3D(2.12456, 0, 8.82095, 0, 9.0732, 0, -8.82095, 0, 2.12456, -178.32, -29.687, -132.666)
 
 [node name="Portal 2" parent="." instance=ExtResource("24_fcj6q")]
-transform = Transform3D(0.00373961, -1.40827, -0.114111, 0.0461265, 0.114172, -1.40751, 1.41213, 0, 0.0462778, -42.6514, 23.8062, -8.49351)
+transform = Transform3D(0.00493178, -1.41288, -0.00216473, 1.4128, 0.00495422, -0.0148415, 0.0148491, -0.00211204, 1.41281, -38.0141, 7.63947, -9.02872)
 player_path = NodePath("../Player")
 target_scene_path = "res://Andy/credit.tscn"
+amulet_ui_path = NodePath("../Control")
+
+[node name="trigger" parent="." instance=ExtResource("34_ivkwf")]
+dialogue_lines = Array[String](["It seems like you didn't listen to my advice in the past timeline.", "Now the whole world is destroyed, and all the fish are mutated.", "If you still want to try, go to the portal on the left, and this time don't forget to kill the little monster hiding behind the lighthouse, who ruined everything.", "If you don't want to save the world, go to the portal at the end of the road, where all the pain will end."])
+quest_id = "dialogue_only"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0578, 3.11106, -10.4971)
+shape = SubResource("BoxShape3D_0eccp")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("35_68n6v")]
+transform = Transform3D(-989.893, 0, -141.817, 0, 1000, 0, 141.817, 0, -989.893, 0, -1091.93, -2946.74)
+
+[node name="CharacterBody3D2" parent="." instance=ExtResource("35_68n6v")]
+transform = Transform3D(-213.951, 0, 976.844, 0, 1000, 0, -976.844, 0, -213.951, 2773.81, -1091.93, -446.328)
+
+[node name="CharacterBody3D3" parent="." instance=ExtResource("35_68n6v")]
+transform = Transform3D(993.166, 0, 116.705, 0, 1000, 0, -116.705, 0, 993.166, 131.257, -1091.93, 2795.91)
+
+[node name="CharacterBody3D4" parent="." instance=ExtResource("35_68n6v")]
+transform = Transform3D(267.406, 0, -963.583, 0, 1000, 0, 963.583, 0, 267.406, -2982.16, -1091.93, 480.283)
+
+[node name="safearea" parent="." instance=ExtResource("36_lrxob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.23733, 31.3855)
+
+[node name="deatharea" parent="." instance=ExtResource("37_n6caq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22.8589, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deatharea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -62.9163, 0)
+shape = SubResource("BoxShape3D_e1m45")
+
+[node name="Overlays" parent="." instance=ExtResource("38_6v548")]
+mouse_filter = 2

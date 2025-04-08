@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://l3iu0fdlcok3"]
+[gd_scene load_steps=43 format=3 uid="uid://l3iu0fdlcok3"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_abetd"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="2_mabp6"]
@@ -29,7 +29,11 @@
 [ext_resource type="PackedScene" uid="uid://c7niujgajwjqk" path="res://Nan/Badsky.tscn" id="29_7tko6"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="30_s2qwy"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="31_5vku7"]
+[ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="32_hv3ju"]
+[ext_resource type="PackedScene" uid="uid://dpbua5v2g8bg4" path="res://safearea.tscn" id="33_knmqy"]
 [ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="34_0ks0q"]
+[ext_resource type="PackedScene" uid="uid://ceukyihxj1n85" path="res://deatharea.tscn" id="34_ntjtb"]
+[ext_resource type="PackedScene" uid="uid://c15543iruy41d" path="res://dr0/overlays.tscn" id="35_npgsw"]
 [ext_resource type="PackedScene" uid="uid://cldomxhffitcn" path="res://Yunhan Liu2/Npc_Dialog.tscn" id="35_wtvn7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bk3pb"]
@@ -44,6 +48,9 @@ size = Vector3(8.48912, 5.17664, 4.11774)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kn12n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5gtf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejbkr"]
+size = Vector3(1000, 113.383, 1000)
 
 [node name="Beginning" type="Node3D"]
 
@@ -251,6 +258,7 @@ target_scene_path = "res://Omar/present.tscn"
 amulet_ui_path = NodePath("../Control")
 
 [node name="Control" parent="." instance=ExtResource("25_rxq3y")]
+overlays_path = NodePath("../Overlays")
 start_with_shard1 = true
 start_with_shard2 = true
 start_with_shard3 = true
@@ -351,3 +359,22 @@ quest_id = "dialogue_only"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dialogue"]
 transform = Transform3D(8.60322, 0, -4.96707, 0, 9.93414, 0, 4.96707, 0, 8.60322, 26.8318, -1.76403, 13.0617)
 shape = SubResource("BoxShape3D_l5gtf")
+
+[node name="trigger4" parent="." instance=ExtResource("32_hv3ju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3131, 9.34136, 6.28962)
+dialogue_lines = Array[String](["w a s d for walk, shift for run, press right mouse button to attack, press enter to interact, press space to jump.", "PRESS ESC for pausing page, "])
+quest_id = "dialogue_only"
+one_time_trigger = false
+
+[node name="safearea" parent="." instance=ExtResource("33_knmqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6072, 3.67741, 72.9223)
+
+[node name="deatharea" parent="." instance=ExtResource("34_ntjtb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deatharea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -99.757, 0)
+shape = SubResource("BoxShape3D_ejbkr")
+
+[node name="Overlays" parent="." instance=ExtResource("35_npgsw")]
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
