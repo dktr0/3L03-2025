@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ch8seema8pfuv"]
+[gd_scene load_steps=15 format=3 uid="uid://ch8seema8pfuv"]
 
 [ext_resource type="Script" path="res://Andy/credit.gd" id="1_8i8ia"]
 [ext_resource type="Texture2D" uid="uid://b6sn8qlgq0lie" path="res://Andy/A/background-creidt.png" id="2_1088w"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b438as72g0gg2" path="res://Andy/A/programming-light.png" id="7_nspgs"]
 [ext_resource type="Texture2D" uid="uid://dasuhelcvvm43" path="res://Andy/A/Programming.png" id="8_jfe7f"]
 [ext_resource type="Texture2D" uid="uid://bsblw7y0y2wxc" path="res://Andy/A/sound-light.png" id="9_knv5j"]
-[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Andy/words/font/font for all words.ttf" id="9_sxbqo"]
 [ext_resource type="Texture2D" uid="uid://dbblm68oqrl2w" path="res://Andy/A/sound.png" id="10_h2aci"]
 [ext_resource type="Texture2D" uid="uid://b028ih23qhhiy" path="res://Andy/A/UI-light.png" id="11_axmgc"]
 [ext_resource type="Texture2D" uid="uid://cp55ixlfe6dms" path="res://Andy/A/UI.png" id="12_1ex80"]
@@ -119,7 +118,7 @@ offset_left = -30.6667
 offset_top = -37.3337
 offset_right = 200.333
 offset_bottom = -4.33366
-theme_override_fonts/font = ExtResource("9_sxbqo")
+theme_override_fonts/font = ExtResource("14_osnsc")
 theme_override_font_sizes/font_size = 30
 text = "MAIN PROGRAMMER"
 
@@ -129,7 +128,7 @@ offset_left = 226.667
 offset_top = -34.667
 offset_right = 443.667
 offset_bottom = -4.66699
-theme_override_fonts/font = ExtResource("9_sxbqo")
+theme_override_fonts/font = ExtResource("14_osnsc")
 theme_override_font_sizes/font_size = 30
 text = "Player programmer"
 
@@ -139,7 +138,7 @@ offset_left = 526.667
 offset_top = -34.667
 offset_right = 640.667
 offset_bottom = -4.66699
-theme_override_fonts/font = ExtResource("9_sxbqo")
+theme_override_fonts/font = ExtResource("14_osnsc")
 theme_override_font_sizes/font_size = 30
 text = "Professor"
 
