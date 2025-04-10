@@ -7,7 +7,7 @@ func _ready():
 	# 关键：允许在暂停时依然处理输入
 	process_mode = Node.PROCESS_MODE_ALWAYS
 func _input(event):
-	if event.is_action_released("pause"):
+	if Input.is_action_just_pressed("pause"):
 		if get_tree().paused:
 			resume_game()
 		else:
@@ -50,4 +50,4 @@ func resume_game():
 	get_tree().paused = false
 
 	# 如果需要重新捕获鼠标，可以写：
-	# Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

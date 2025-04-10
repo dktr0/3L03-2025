@@ -37,10 +37,10 @@ var patrol_target_index := 0
 @export var quest_on_death_id: String = "kill_monsters"
 @export var quest_on_death_amount: int = 1
 
-# ============== 玩家下方碰撞体 => 造成伤害 =============
-@export var player_collider_path: NodePath
-@export var collider_damage: int = 1
-var player_collider: Area3D
+# ============== [删除] 玩家下方碰撞体 => 造成伤害 =============
+# @export var player_collider_path: NodePath    # [删除]
+# @export var collider_damage: int = 1          # [删除]
+# var player_collider: Area3D                   # [删除]
 
 # ---------- 攻击逻辑 -----------
 var last_attack_time: float = -999.0
@@ -86,11 +86,19 @@ func _ready() -> void:
 		attack_area.body_entered.connect(_on_attack_area_body_entered)
 		attack_area.body_exited.connect(_on_attack_area_body_exited)
 
-	# 如果设置了 player_collider
-	if player_collider_path != null:
-		player_collider = get_node_or_null(player_collider_path)
-		if player_collider:
-			player_collider.body_entered.connect(_on_player_collider_body_entered)
+	# =========== [删除] 原先玩家碰撞体监听 ===========
+	# if player_collider_path != null:
+	#     player_collider = get_node_or_null(player_collider_path)
+	#     if player_collider:
+	#         player_collider.body_entered.connect(_on_player_collider_body_entered)
+
+	# =========== 新增：监听 "Sword" 组里的玩家剑Area3D ===========
+	var swords = get_tree().get_nodes_in_group("Sword")
+	if swords.size() > 0:
+		for sword_area in swords:
+			if sword_area is Area3D:
+				sword_area.body_entered.connect(_on_sword_body_entered)
+				# 可选：也可以连接 body_exited，看你是否需要
 
 	# 创建chase_timer
 	chase_timer = Timer.new()
@@ -126,7 +134,11 @@ func _physics_process(delta: float) -> void:
 
 	_apply_gravity_and_auto_jump(delta)
 
-#
+func _on_sword_body_entered(body: Node) -> void:
+	# 如果是怪物自己进入了剑的碰撞，就让怪物掉血
+	if body == self:
+		take_damage(1)
+		print("Monster got hit by sword!")
 # =========== 状态逻辑 ===========
 #
 func _state_idle(_delta: float):
@@ -309,16 +321,18 @@ func _check_attack_holding_cooldown():
 			_start_attack_anim()
 
 #
-# =========== 玩家碰撞体 => 怪物受伤 ===========
+# =========== [删除] 玩家碰撞体 => 怪物受伤 ===========
 #
-func _on_player_collider_body_entered(body: Node):
-	if is_dead:
-		return
-	if body == self:
-		take_damage(collider_damage)
+# func _on_player_collider_body_entered(body: Node):
+#     if is_dead:
+#         return
+#     if body == self:
+#         take_damage(collider_damage)
+#
 
 #
 # =========== 受伤 & 死亡 ===========
+#
 
 func take_damage(dmg_amount: int, _attacker: Node = null):
 	health -= dmg_amount
@@ -390,6 +404,7 @@ func _is_player_in_attack_area() -> bool:
 
 #
 # =========== 重力 & 自动跳 ===========
+#
 
 func _apply_gravity_and_auto_jump(delta: float):
 	velocity.y -= gravity * delta
@@ -412,6 +427,7 @@ func _try_auto_jump():
 
 #
 # =========== 音效逻辑 ===========
+#
 
 func _start_chase_sfx():
 	if chase_timer == null:

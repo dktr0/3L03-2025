@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=4 uid="uid://dw8fde4ghx6qm"]
 
-[ext_resource type="PackedScene" uid="uid://dv4mqi5ll4dx7" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
+[ext_resource type="PackedScene" path="res://Chiara/light_house_base.tscn" id="2_j6qob"]
 [ext_resource type="PackedScene" uid="uid://3squhnolhfdx" path="res://Chiara/rock_platform.tscn" id="4_b0u6j"]
 [ext_resource type="PackedScene" uid="uid://15so6a73xnba" path="res://Rongyu Liu/beach_onepiece.tscn" id="5_qhjos"]
 [ext_resource type="Texture2D" uid="uid://cwqtfpejkrstf" path="res://Chiara/filice_chiara_waterrock_Material Base Color.png" id="6_xw1is"]
@@ -470,7 +470,7 @@ transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 324.989, -4.91832, 0)
 transform = Transform3D(14.0326, 0, 0, 0, 7, 0, 0, 0, 7, -75.3251, -109.48, -83.3728)
 
 [node name="Highmountain6" parent="mountain" instance=ExtResource("8_tuxek")]
-transform = Transform3D(-6.13385e-07, 0, -7, 0, 7, 0, 14.0326, 0, -3.0598e-07, 56.9417, -109.48, -119.577)
+transform = Transform3D(-6.13385e-07, 0, -7, 0, 7, 0, 14.0326, 0, -3.0598e-07, 43.3604, -109.48, -119.577)
 
 [node name="Highmountain2" parent="mountain" instance=ExtResource("8_tuxek")]
 transform = Transform3D(-3.0598e-07, 0, -7, 0, 4.54792, 0, 7, 0, -3.0598e-07, 116.13, -13.8103, 371.723)

@@ -112,6 +112,36 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("8_jfe7f")
 
+[node name="Label" type="Label" parent="Programming/TextureRect"]
+layout_mode = 0
+offset_left = -30.6667
+offset_top = -37.3337
+offset_right = 200.333
+offset_bottom = -4.33366
+theme_override_fonts/font = ExtResource("14_osnsc")
+theme_override_font_sizes/font_size = 30
+text = "MAIN PROGRAMMER"
+
+[node name="Label2" type="Label" parent="Programming/TextureRect"]
+layout_mode = 0
+offset_left = 226.667
+offset_top = -34.667
+offset_right = 443.667
+offset_bottom = -4.66699
+theme_override_fonts/font = ExtResource("14_osnsc")
+theme_override_font_sizes/font_size = 30
+text = "Player programmer"
+
+[node name="Label3" type="Label" parent="Programming/TextureRect"]
+layout_mode = 0
+offset_left = 526.667
+offset_top = -34.667
+offset_right = 640.667
+offset_bottom = -4.66699
+theme_override_fonts/font = ExtResource("14_osnsc")
+theme_override_font_sizes/font_size = 30
+text = "Professor"
+
 [node name="Sound" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 6

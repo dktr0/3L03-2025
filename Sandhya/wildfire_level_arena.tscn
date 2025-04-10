@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://b5xqkd7wyxnl8"]
 
 [ext_resource type="PackedScene" uid="uid://b64q7f76oh3mn" path="res://Chiara/TreeLog.tscn" id="6_7aicr"]
-[ext_resource type="PackedScene" uid="uid://31k1eq7dvbqa" path="res://Riley/DeadTree.tscn" id="6_sqjc6"]
+[ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="6_sqjc6"]
 [ext_resource type="PackedScene" uid="uid://4b4i81wlwayx" path="res://Andrew/cliff-number-one1.tscn" id="7_2vqx6"]
 [ext_resource type="PackedScene" uid="uid://c8vf2qb0selhy" path="res://Riley/HealthyTree1.tscn" id="7_qvdsk"]
-[ext_resource type="PackedScene" uid="uid://w6yst81o2dve" path="res://Chiara/water_bucket.tscn" id="7_rh20i"]
+[ext_resource type="PackedScene" path="res://Chiara/water_bucket.tscn" id="7_rh20i"]
 [ext_resource type="PackedScene" uid="uid://dhxorqquga27y" path="res://Wilson/vfx_fire.tscn" id="8_ggwfq"]
 [ext_resource type="PackedScene" uid="uid://5kebg2i472px" path="res://Andrew/cliff-number-three1.tscn" id="8_ifa2q"]
-[ext_resource type="PackedScene" uid="uid://bhps2xsfx8mdp" path="res://Sandhya/dead_tree.tscn" id="9_ahmu0"]
+[ext_resource type="PackedScene" uid="uid://tnx4pjelvaqv" path="res://Sandhya/dead_tree.tscn" id="9_ahmu0"]
 [ext_resource type="PackedScene" uid="uid://bt0oah83alnvb" path="res://Wilson/vfx_smoke.tscn" id="9_kp2u2"]
 
 [node name="Wildfire Level Arena" type="Node3D"]
@@ -198,9 +198,6 @@ transform = Transform3D(4, 0, 9.31323e-08, 0, 4, 0, -9.31323e-08, 0, 4, -4.85149
 [node name="DeadTree18" parent="Trees" instance=ExtResource("6_sqjc6")]
 transform = Transform3D(2.19765, -2.9533, -1.56473, -0.0532966, 1.84148, -3.55051, 3.34178, 1.97154, 0.972382, -39.8126, 89.2137, 80.3749)
 
-[node name="DeadTree19" parent="Trees" instance=ExtResource("6_sqjc6")]
-transform = Transform3D(3.99949, 0.0541095, -0.0340212, -0.0541094, 1.73306, -3.60466, -0.0340214, 3.60466, 1.73357, 33.9204, 158.67, 247.927)
-
 [node name="DeadTree20" parent="Trees" instance=ExtResource("6_sqjc6")]
 transform = Transform3D(4, 0, 1.00583e-07, 0, 4, 0, -1.00583e-07, 0, 4, -145.07, 156.433, 259.51)
 
@@ -246,25 +243,25 @@ transform = Transform3D(49.9987, -0.340296, -0.0815783, 0.340295, 44.5642, 22.66
 transform = Transform3D(49.9994, -0.240609, -0.0396118, 0.240609, 47.3605, 16.0288, -0.0396129, -16.0288, 47.3611, 122.007, 40.1584, 209.937)
 
 [node name="Cliff-number-one10" parent="Cliffs" instance=ExtResource("7_2vqx6")]
-transform = Transform3D(49.9994, -0.240609, -0.0396117, 0.240609, 47.3605, 16.0288, -0.0396129, -16.0288, 47.3611, 29.092, 43.9597, 219.778)
+transform = Transform3D(49.9994, -0.240609, -0.0396117, 0.240609, 47.3605, 16.0288, -0.0396129, -16.0288, 47.3611, 29.092, 39.9326, 219.778)
 
 [node name="Cliff-number-one11" parent="Cliffs" instance=ExtResource("7_2vqx6")]
-transform = Transform3D(49.9994, -0.240609, -0.0396117, 0.240609, 47.3605, 16.0288, -0.0396129, -16.0288, 47.3611, -70.118, 43.9597, 221.267)
+transform = Transform3D(49.9994, -0.240609, -0.0396117, 0.240609, 47.3605, 16.0288, -0.0396129, -16.0288, 47.3611, -70.118, 38.9647, 221.267)
 
 [node name="Cliff-number-one12" parent="Cliffs" instance=ExtResource("7_2vqx6")]
 transform = Transform3D(49.9994, -0.240609, -0.0396117, 0.240609, 47.3605, 16.0288, -0.0396129, -16.0288, 47.3611, -165.434, 43.9597, 222.698)
 
 [node name="cliff-number-three5" parent="Cliffs" instance=ExtResource("8_ifa2q")]
-transform = Transform3D(4.9096, 0.653755, -49.7541, 0.00987586, 49.9957, 0.657904, 49.7583, -0.0744283, 4.90905, -156.377, 110.814, 275.656)
+transform = Transform3D(4.88585, 0.466332, -49.7585, 12.4565, 48.3945, 1.67667, 48.1763, -12.5602, 4.61279, -156.377, 110.814, 275.656)
 
 [node name="cliff-number-three6" parent="Cliffs" instance=ExtResource("8_ifa2q")]
-transform = Transform3D(29.5837, -0.53623, 40.3053, 0.00987586, 49.9957, 0.657904, -40.3088, -0.381304, 29.5813, -72.2711, 110.814, 274.393)
+transform = Transform3D(5.71772, 1.70122, 49.6429, -14.347, 47.8975, 0.0110413, -47.5549, -14.2458, 5.96544, -72.2711, 108.299, 274.393)
 
 [node name="cliff-number-three7" parent="Cliffs" instance=ExtResource("8_ifa2q")]
-transform = Transform3D(-1.67352, -0.657205, 49.9677, 0.00987586, 49.9957, 0.657904, -49.972, 0.0318898, -1.67324, 10.8376, 110.814, 273.146)
+transform = Transform3D(-1.6457, -0.859784, 49.9655, -13.4854, 48.1456, 0.384301, -48.119, -13.4635, -1.81655, 10.8376, 110.814, 273.146)
 
 [node name="cliff-number-three8" parent="Cliffs" instance=ExtResource("8_ifa2q")]
-transform = Transform3D(-0.703407, -0.6577, 49.9907, 0.00987586, 49.9957, 0.657903, -49.995, 0.0191295, -0.703217, 98.3879, 110.814, 271.832)
+transform = Transform3D(-0.688752, -0.805422, 49.9887, -9.83296, 49.0193, 0.654319, -49.0187, -9.82175, -0.833636, 98.3879, 99.1836, 271.832)
 
 [node name="Cliff-number-one13" parent="Cliffs" instance=ExtResource("7_2vqx6")]
 transform = Transform3D(50, -0.000681206, 5.96046e-07, 0.000681498, 50, 0.0453348, -1.19209e-06, -0.0453269, 49.9999, 43.8489, -101.4, -142.461)

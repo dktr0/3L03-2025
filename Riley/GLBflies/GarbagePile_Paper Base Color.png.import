@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt27tfutd6fsa"
 path.s3tc="res://.godot/imported/GarbagePile_Paper Base Color.png-470cc1a04e730288ba1bb44fa5fc7779.s3tc.ctex"
+path.etc2="res://.godot/imported/GarbagePile_Paper Base Color.png-470cc1a04e730288ba1bb44fa5fc7779.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/GarbagePile_Paper Base Color.png"
-dest_files=["res://.godot/imported/GarbagePile_Paper Base Color.png-470cc1a04e730288ba1bb44fa5fc7779.s3tc.ctex"]
+dest_files=["res://.godot/imported/GarbagePile_Paper Base Color.png-470cc1a04e730288ba1bb44fa5fc7779.s3tc.ctex", "res://.godot/imported/GarbagePile_Paper Base Color.png-470cc1a04e730288ba1bb44fa5fc7779.etc2.ctex"]
 
 [params]
 

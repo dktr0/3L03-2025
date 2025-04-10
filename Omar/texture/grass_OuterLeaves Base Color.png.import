@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh2nmbrjcr2pt"
 path.s3tc="res://.godot/imported/grass_OuterLeaves Base Color.png-44b5125f9fe9a0a528e34887feed9295.s3tc.ctex"
+path.etc2="res://.godot/imported/grass_OuterLeaves Base Color.png-44b5125f9fe9a0a528e34887feed9295.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Omar/texture/grass_OuterLeaves Base Color.png"
-dest_files=["res://.godot/imported/grass_OuterLeaves Base Color.png-44b5125f9fe9a0a528e34887feed9295.s3tc.ctex"]
+dest_files=["res://.godot/imported/grass_OuterLeaves Base Color.png-44b5125f9fe9a0a528e34887feed9295.s3tc.ctex", "res://.godot/imported/grass_OuterLeaves Base Color.png-44b5125f9fe9a0a528e34887feed9295.etc2.ctex"]
 
 [params]
 

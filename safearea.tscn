@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpbua5v2g8bg4"]
+
+[ext_resource type="Script" path="res://safearea.gd" id="1_vhe7y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdv74"]
+size = Vector3(11.45, 6.065, 12.855)
+
+[node name="safearea" type="Area3D"]
+script = ExtResource("1_vhe7y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rdv74")

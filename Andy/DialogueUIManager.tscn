@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsm7bac565mp8"]
+[gd_scene load_steps=6 format=3 uid="uid://bsm7bac565mp8"]
 
 [ext_resource type="Script" path="res://Andy/DialogueUIManager.gd" id="1_nexia"]
 [ext_resource type="Texture2D" uid="uid://msl5hnliqx0v" path="res://Anson/dialoguebox.png" id="2_gma0r"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Andy/words/font/font for all words.ttf" id="3_7ptek"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hqvsu"]
 texture = ExtResource("2_gma0r")
@@ -43,8 +44,11 @@ offset_right = 400.0
 offset_bottom = 75.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_7ptek")
+theme_override_font_sizes/font_size = 26
 horizontal_alignment = 1
-autowrap_mode = 1
+vertical_alignment = 1
+autowrap_mode = 2
 clip_text = true
 
 [node name="QuestPanel" type="Panel" parent="."]
@@ -66,6 +70,8 @@ offset_left = 25.0
 offset_top = 22.0
 offset_right = 194.0
 offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("3_7ptek")
+theme_override_font_sizes/font_size = 17
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -84,5 +90,9 @@ offset_right = 87.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_7ptek")
+theme_override_font_sizes/font_size = 17
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 1
 clip_text = true

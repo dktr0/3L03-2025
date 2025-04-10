@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cm61384thgtvf"
 path.s3tc="res://.godot/imported/Untitled2_bulrushLeaf1 Base Color.png-a790fe5ab5aafcc0901ae6336592e69d.s3tc.ctex"
+path.etc2="res://.godot/imported/Untitled2_bulrushLeaf1 Base Color.png-a790fe5ab5aafcc0901ae6336592e69d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Andy/texture/Untitled2_bulrushLeaf1 Base Color.png"
-dest_files=["res://.godot/imported/Untitled2_bulrushLeaf1 Base Color.png-a790fe5ab5aafcc0901ae6336592e69d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Untitled2_bulrushLeaf1 Base Color.png-a790fe5ab5aafcc0901ae6336592e69d.s3tc.ctex", "res://.godot/imported/Untitled2_bulrushLeaf1 Base Color.png-a790fe5ab5aafcc0901ae6336592e69d.etc2.ctex"]
 
 [params]
 

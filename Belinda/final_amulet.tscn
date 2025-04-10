@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chtmrwggokmm0" path="res://Belinda/Amulet_4.tscn" id="8_dlvx6"]
 
 [node name="Final Amulet" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -21,14 +21,13 @@ var quest_id: String = "kill_monsters"
 @export var quest_description: String = ""
 @export var one_time_trigger: bool = true
 
-# 如果是 climb_quest，需要玩家进入哪个Area才判定成功
+
 @export var climb_area_path: NodePath
 
 # 完成后要显的宝箱 (可选)
 @export var chest_to_reveal_path: NodePath
 
-# 当此前置任务完成后，要启动哪个宝箱任务ID?
-# 例如 "open_chest_1", "open_chest_2"
+
 @export var chest_quest_id_on_appear: String = "open_chest_1"
 
 var is_triggered = false
@@ -123,7 +122,6 @@ func _start_quest():
 		if climb_area_path != null and climb_area_path != NodePath(""):
 			var climb_area = get_node(climb_area_path)
 			if climb_area:
-				# Godot 4: 旧式4参 or Callable
 				climb_area.body_entered.connect(
 	Callable(self, "_on_climb_area_body_entered").bind(quest_id)
 )
@@ -139,7 +137,7 @@ func _on_climb_area_body_entered(body: Node, quest_id: String):
 		QuestManager.add_progress(quest_id, 1)
 
 #
-# 前置任务完成 => 显示宝箱 => start chest_quest_id_on_appear
+
 #
 func _on_quest_completed(completed_quest_id: String):
 	if quest_id == "dialogue_only":
@@ -165,9 +163,3 @@ func _on_quest_completed(completed_quest_id: String):
 
 		if one_time_trigger and trigger_type in [TriggerType.QUEST, TriggerType.BOTH]:
 			queue_free()
-
-#
-# 本脚本不监听 "chest_opened" 信号, 
-# 由 chest.gd 脚本在 open_chest() 完成后 => QuestManager.add_progress(chest_quest_id).
-# 这样每个宝箱有自己ID, 不冲突.
-#

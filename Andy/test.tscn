@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=4 uid="uid://c5ismj26qgcgh"]
+[gd_scene load_steps=32 format=4 uid="uid://c5ismj26qgcgh"]
 
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="1_xepk3"]
 [ext_resource type="PackedScene" uid="uid://brol5h8bq6u43" path="res://Andy/ui Amulet.tscn" id="3_w8lci"]
 [ext_resource type="Texture2D" uid="uid://cmhupq3njsfqu" path="res://Nan/Goodsky.jpg" id="4_nqk20"]
 [ext_resource type="PackedScene" uid="uid://dj40x6gj5jgvw" path="res://Andy/SceneChestsManager.tscn" id="7_pkid7"]
 [ext_resource type="PackedScene" uid="uid://if3f5lyupjxr" path="res://Andy/chest.tscn" id="7_ti75o"]
+[ext_resource type="PackedScene" uid="uid://c15543iruy41d" path="res://dr0/overlays.tscn" id="8_gg7o0"]
 [ext_resource type="PackedScene" uid="uid://7xm62lefk2vo" path="res://Andy/Sword enemy/sword_enemy.tscn" id="8_xkfml"]
 [ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="11_euw74"]
 
@@ -206,6 +207,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308659, 1.598, -1.36463)
 shape = SubResource("BoxShape3D_5pdqd")
 
 [node name="Control" parent="." instance=ExtResource("3_w8lci")]
+overlays_path = NodePath("../Overlays")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -259,7 +261,6 @@ player_path = NodePath("../Player")
 patrol_point_a = NodePath("../point B")
 patrol_point_b = NodePath("../point A")
 turn_lerp_speed = 0.6
-player_collider_path = NodePath("../Player/Area3D")
 
 [node name="point A" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.125, 0, 2.888)
@@ -307,7 +308,6 @@ chase_speed = 4.0
 knockback_force = 200.0
 auto_jump_speed = 10.0
 player_path = NodePath("../Player")
-player_collider_path = NodePath("../Player/Area3D")
 
 [node name="Control3" parent="." instance=ExtResource("11_euw74")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8804, 94.4692)
@@ -372,3 +372,6 @@ shape = SubResource("BoxShape3D_2sj73")
 transform = Transform3D(0.810124, -7.45058e-09, 0, 1.11759e-08, 0.810124, 0, 0, 0, 0.810124, 9.53674e-07, 18.1732, 0)
 mesh = SubResource("ArrayMesh_1vo0p")
 skeleton = NodePath("")
+
+[node name="Overlays" parent="." instance=ExtResource("8_gg7o0")]
+mouse_filter = 2

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://f6sle2hj5anx"
 path.s3tc="res://.godot/imported/DeadGrass_DeadInner4 Base Color.png-441e84b9b55b0d8b2d3b2405470daccb.s3tc.ctex"
+path.etc2="res://.godot/imported/DeadGrass_DeadInner4 Base Color.png-441e84b9b55b0d8b2d3b2405470daccb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/DeadGrass_DeadInner4 Base Color.png"
-dest_files=["res://.godot/imported/DeadGrass_DeadInner4 Base Color.png-441e84b9b55b0d8b2d3b2405470daccb.s3tc.ctex"]
+dest_files=["res://.godot/imported/DeadGrass_DeadInner4 Base Color.png-441e84b9b55b0d8b2d3b2405470daccb.s3tc.ctex", "res://.godot/imported/DeadGrass_DeadInner4 Base Color.png-441e84b9b55b0d8b2d3b2405470daccb.etc2.ctex"]
 
 [params]
 

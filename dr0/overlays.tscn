@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c15543iruy41d"]
+[gd_scene load_steps=9 format=3 uid="uid://c15543iruy41d"]
 
 [ext_resource type="Script" path="res://dr0/overlays.gd" id="1_5l30d"]
-[ext_resource type="PackedScene" uid="uid://f0mn5b8lwtx" path="res://Ruth/all_bars.tscn" id="2_qrdbh"]
-[ext_resource type="PackedScene" uid="uid://bahmetxc7f45c" path="res://Belinda/final_amulet.tscn" id="3_p5fsy"]
+[ext_resource type="Texture2D" uid="uid://ceisxwlltoses" path="res://Belinda/Amulet_1.png" id="2_h5x3p"]
+[ext_resource type="Texture2D" uid="uid://cw4l4c73bxndy" path="res://Belinda/Amulet_2.png" id="3_ycfja"]
+[ext_resource type="Texture2D" uid="uid://dj2328vpevx0p" path="res://Belinda/Amulet_2_3.png" id="4_jqfp3"]
+[ext_resource type="Texture2D" uid="uid://7sohnc8pa8as" path="res://Belinda/Amulet_2_4.png" id="5_nkyp5"]
+[ext_resource type="Texture2D" uid="uid://cn0mu3linlwrh" path="res://Belinda/Amulet_3.png" id="6_tllfm"]
+[ext_resource type="Texture2D" uid="uid://8i8emejb1q7j" path="res://Belinda/Amulet_4.png" id="7_kt7qp"]
+[ext_resource type="Texture2D" uid="uid://dia4s3q8d28ek" path="res://Belinda/Amulet_3_4.png" id="8_4f5r0"]
 
 [node name="Overlays" type="Control"]
 layout_mode = 3
@@ -13,8 +18,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5l30d")
 
-[node name="AllBars" parent="." instance=ExtResource("2_qrdbh")]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
+offset_right = 89.0
+offset_bottom = 85.0
+texture = ExtResource("2_h5x3p")
 
-[node name="Final Amulet" parent="." instance=ExtResource("3_p5fsy")]
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
+offset_right = 92.0
+offset_bottom = 85.0
+texture = ExtResource("3_ycfja")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -3.0
+offset_top = -11.0
+offset_right = 100.0
+offset_bottom = 86.0
+texture = ExtResource("4_jqfp3")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -3.0
+offset_top = -8.0
+offset_right = 85.0
+offset_bottom = 82.0
+texture = ExtResource("5_nkyp5")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 19.0
+offset_top = 13.0
+offset_right = 89.0
+offset_bottom = 80.0
+scale = Vector2(0.83, 0.83)
+texture = ExtResource("6_tllfm")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 85.0
+texture = ExtResource("7_kt7qp")
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 6.0
+offset_right = 92.0
+offset_bottom = 82.0
+texture = ExtResource("8_4f5r0")

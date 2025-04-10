@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://88thya2io8g3"
 path.s3tc="res://.godot/imported/Character(Sleepy)_Torso Base Color.png-01ac104d520cb8c30bcf9a88502c3c84.s3tc.ctex"
+path.etc2="res://.godot/imported/Character(Sleepy)_Torso Base Color.png-01ac104d520cb8c30bcf9a88502c3c84.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Dylan/Character(Sleepy)_Torso Base Color.png"
-dest_files=["res://.godot/imported/Character(Sleepy)_Torso Base Color.png-01ac104d520cb8c30bcf9a88502c3c84.s3tc.ctex"]
+dest_files=["res://.godot/imported/Character(Sleepy)_Torso Base Color.png-01ac104d520cb8c30bcf9a88502c3c84.s3tc.ctex", "res://.godot/imported/Character(Sleepy)_Torso Base Color.png-01ac104d520cb8c30bcf9a88502c3c84.etc2.ctex"]
 
 [params]
 

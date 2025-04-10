@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2e6o7li2b24y"
 path.s3tc="res://.godot/imported/TallDeadTree_DeadTreeLeaf Base Color.png-a486638a8a3a11c06fd633581ca1c895.s3tc.ctex"
+path.etc2="res://.godot/imported/TallDeadTree_DeadTreeLeaf Base Color.png-a486638a8a3a11c06fd633581ca1c895.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/TallDeadTree_DeadTreeLeaf Base Color.png"
-dest_files=["res://.godot/imported/TallDeadTree_DeadTreeLeaf Base Color.png-a486638a8a3a11c06fd633581ca1c895.s3tc.ctex"]
+dest_files=["res://.godot/imported/TallDeadTree_DeadTreeLeaf Base Color.png-a486638a8a3a11c06fd633581ca1c895.s3tc.ctex", "res://.godot/imported/TallDeadTree_DeadTreeLeaf Base Color.png-a486638a8a3a11c06fd633581ca1c895.etc2.ctex"]
 
 [params]
 

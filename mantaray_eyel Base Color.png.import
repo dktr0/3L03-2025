@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdrmbkakchbwr"
 path.s3tc="res://.godot/imported/mantaray_eyel Base Color.png-c100a205788cbd9ee499e32f188b368e.s3tc.ctex"
+path.etc2="res://.godot/imported/mantaray_eyel Base Color.png-c100a205788cbd9ee499e32f188b368e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://mantaray_eyel Base Color.png"
-dest_files=["res://.godot/imported/mantaray_eyel Base Color.png-c100a205788cbd9ee499e32f188b368e.s3tc.ctex"]
+dest_files=["res://.godot/imported/mantaray_eyel Base Color.png-c100a205788cbd9ee499e32f188b368e.s3tc.ctex", "res://.godot/imported/mantaray_eyel Base Color.png-c100a205788cbd9ee499e32f188b368e.etc2.ctex"]
 
 [params]
 

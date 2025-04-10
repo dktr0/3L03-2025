@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0n3l4pk6gcfv"
 path.s3tc="res://.godot/imported/dead sea turtle_Material.png-90593d8382681f483ed39047c061050e.s3tc.ctex"
+path.etc2="res://.godot/imported/dead sea turtle_Material.png-90593d8382681f483ed39047c061050e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Suyeon/dead sea turtle_Material.png"
-dest_files=["res://.godot/imported/dead sea turtle_Material.png-90593d8382681f483ed39047c061050e.s3tc.ctex"]
+dest_files=["res://.godot/imported/dead sea turtle_Material.png-90593d8382681f483ed39047c061050e.s3tc.ctex", "res://.godot/imported/dead sea turtle_Material.png-90593d8382681f483ed39047c061050e.etc2.ctex"]
 
 [params]
 

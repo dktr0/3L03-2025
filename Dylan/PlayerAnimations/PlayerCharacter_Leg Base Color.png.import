@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs86ejpt8scs7"
 path.s3tc="res://.godot/imported/PlayerCharacter_Leg Base Color.png-bf43996583d93cc608fe51ae03007bbc.s3tc.ctex"
+path.etc2="res://.godot/imported/PlayerCharacter_Leg Base Color.png-bf43996583d93cc608fe51ae03007bbc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Dylan/PlayerAnimations/PlayerCharacter_Leg Base Color.png"
-dest_files=["res://.godot/imported/PlayerCharacter_Leg Base Color.png-bf43996583d93cc608fe51ae03007bbc.s3tc.ctex"]
+dest_files=["res://.godot/imported/PlayerCharacter_Leg Base Color.png-bf43996583d93cc608fe51ae03007bbc.s3tc.ctex", "res://.godot/imported/PlayerCharacter_Leg Base Color.png-bf43996583d93cc608fe51ae03007bbc.etc2.ctex"]
 
 [params]
 

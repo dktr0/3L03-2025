@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://clcnn0dnalnql"
 path.s3tc="res://.godot/imported/coast gaurd old_panels Base Color.png-e02930beaa7220e3ba934a1de18342a2.s3tc.ctex"
+path.etc2="res://.godot/imported/coast gaurd old_panels Base Color.png-e02930beaa7220e3ba934a1de18342a2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Wren/coast gaurd old_panels Base Color.png"
-dest_files=["res://.godot/imported/coast gaurd old_panels Base Color.png-e02930beaa7220e3ba934a1de18342a2.s3tc.ctex"]
+dest_files=["res://.godot/imported/coast gaurd old_panels Base Color.png-e02930beaa7220e3ba934a1de18342a2.s3tc.ctex", "res://.godot/imported/coast gaurd old_panels Base Color.png-e02930beaa7220e3ba934a1de18342a2.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dolee036vlelo"
 path.s3tc="res://.godot/imported/starfish_starfish Base Color.png-eb37aa551ea816d708ab39c8e75177e1.s3tc.ctex"
+path.etc2="res://.godot/imported/starfish_starfish Base Color.png-eb37aa551ea816d708ab39c8e75177e1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Matty/textures/starfish_starfish Base Color.png"
-dest_files=["res://.godot/imported/starfish_starfish Base Color.png-eb37aa551ea816d708ab39c8e75177e1.s3tc.ctex"]
+dest_files=["res://.godot/imported/starfish_starfish Base Color.png-eb37aa551ea816d708ab39c8e75177e1.s3tc.ctex", "res://.godot/imported/starfish_starfish Base Color.png-eb37aa551ea816d708ab39c8e75177e1.etc2.ctex"]
 
 [params]
 

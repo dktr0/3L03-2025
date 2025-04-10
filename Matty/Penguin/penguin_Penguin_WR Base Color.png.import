@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbnnk4rxwwdmi"
 path.s3tc="res://.godot/imported/penguin_Penguin_WR Base Color.png-403fe758d3bc9c8934bbecf86b11d2cc.s3tc.ctex"
+path.etc2="res://.godot/imported/penguin_Penguin_WR Base Color.png-403fe758d3bc9c8934bbecf86b11d2cc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Matty/Penguin/penguin_Penguin_WR Base Color.png"
-dest_files=["res://.godot/imported/penguin_Penguin_WR Base Color.png-403fe758d3bc9c8934bbecf86b11d2cc.s3tc.ctex"]
+dest_files=["res://.godot/imported/penguin_Penguin_WR Base Color.png-403fe758d3bc9c8934bbecf86b11d2cc.s3tc.ctex", "res://.godot/imported/penguin_Penguin_WR Base Color.png-403fe758d3bc9c8934bbecf86b11d2cc.etc2.ctex"]
 
 [params]
 

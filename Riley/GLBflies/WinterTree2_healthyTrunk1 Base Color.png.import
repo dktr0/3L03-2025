@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://35eog1r4ww4m"
 path.s3tc="res://.godot/imported/WinterTree2_healthyTrunk1 Base Color.png-a0a8756a7c548d7b3aa03d1dcea09742.s3tc.ctex"
+path.etc2="res://.godot/imported/WinterTree2_healthyTrunk1 Base Color.png-a0a8756a7c548d7b3aa03d1dcea09742.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/WinterTree2_healthyTrunk1 Base Color.png"
-dest_files=["res://.godot/imported/WinterTree2_healthyTrunk1 Base Color.png-a0a8756a7c548d7b3aa03d1dcea09742.s3tc.ctex"]
+dest_files=["res://.godot/imported/WinterTree2_healthyTrunk1 Base Color.png-a0a8756a7c548d7b3aa03d1dcea09742.s3tc.ctex", "res://.godot/imported/WinterTree2_healthyTrunk1 Base Color.png-a0a8756a7c548d7b3aa03d1dcea09742.etc2.ctex"]
 
 [params]
 

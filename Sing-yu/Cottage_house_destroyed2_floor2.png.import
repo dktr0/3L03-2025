@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cd7edac28rsek"
 path.s3tc="res://.godot/imported/Cottage_house_destroyed2_floor2.png-6d23448dedaceb07730b66c0e168e6f9.s3tc.ctex"
+path.etc2="res://.godot/imported/Cottage_house_destroyed2_floor2.png-6d23448dedaceb07730b66c0e168e6f9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Sing-yu/Cottage_house_destroyed2_floor2.png"
-dest_files=["res://.godot/imported/Cottage_house_destroyed2_floor2.png-6d23448dedaceb07730b66c0e168e6f9.s3tc.ctex"]
+dest_files=["res://.godot/imported/Cottage_house_destroyed2_floor2.png-6d23448dedaceb07730b66c0e168e6f9.s3tc.ctex", "res://.godot/imported/Cottage_house_destroyed2_floor2.png-6d23448dedaceb07730b66c0e168e6f9.etc2.ctex"]
 
 [params]
 

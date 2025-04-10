@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://njn1443bc85c"
 path.s3tc="res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.s3tc.ctex"
+path.etc2="res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Braydon/portal--experiment/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png"
-dest_files=["res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.s3tc.ctex"]
+dest_files=["res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.s3tc.ctex", "res://.godot/imported/82363099-0ad65c80-9a16-11ea-9fb5-baa7733b3fd0-2342165225.png-273f593fc9db9cc27da4e1c1ce390b3f.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://f713surev6u7"
 path.s3tc="res://.godot/imported/sea turtle_turtle.jpg-72cc2014910e2768710801ba8447fded.s3tc.ctex"
+path.etc2="res://.godot/imported/sea turtle_turtle.jpg-72cc2014910e2768710801ba8447fded.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Suyeon/sea turtle_turtle.jpg"
-dest_files=["res://.godot/imported/sea turtle_turtle.jpg-72cc2014910e2768710801ba8447fded.s3tc.ctex"]
+dest_files=["res://.godot/imported/sea turtle_turtle.jpg-72cc2014910e2768710801ba8447fded.s3tc.ctex", "res://.godot/imported/sea turtle_turtle.jpg-72cc2014910e2768710801ba8447fded.etc2.ctex"]
 
 [params]
 

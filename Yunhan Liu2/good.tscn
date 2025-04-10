@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dp6183w8v6hq8"]
+[gd_scene load_steps=55 format=3 uid="uid://dp6183w8v6hq8"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_ddo5a"]
 [ext_resource type="PackedScene" uid="uid://ctnkb5km08ug7" path="res://Chiara/MultipleLaneDock.tscn" id="4_ccliw"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ccseufsgyle3l" path="res://Le Zhang/crab.glb" id="8_elqjq"]
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="8_ujeq7"]
 [ext_resource type="PackedScene" uid="uid://cde78h7fgegbv" path="res://Ethan C/Grass.tscn" id="9_7w417"]
-[ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="10_jhoqv"]
+[ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="10_jhoqv"]
 [ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="10_m1jp4"]
 [ext_resource type="ArrayMesh" uid="uid://cswa167n3gdaa" path="res://Omar/texture/new_array_mesh.tres" id="11_bw2wi"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="11_jj2kk"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="33_e5mph"]
 [ext_resource type="PackedScene" uid="uid://bfgno620c03ib" path="res://Yunhan Liu2/ui Amulet.tscn" id="33_vx8iw"]
 [ext_resource type="PackedScene" uid="uid://3q2asem0i7vn" path="res://Braydon/portal--experiment/Portal 1.tscn" id="34_oimwc"]
+[ext_resource type="PackedScene" uid="uid://c15543iruy41d" path="res://dr0/overlays.tscn" id="35_riofo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ejdrq"]
 size = Vector3(2.56543, 1, 1)
@@ -3809,11 +3810,16 @@ transform = Transform3D(5.27182, 0, 0, 0, 19.0583, 0, 0, 0, 8.02802, -6.26892, 0
 shape = SubResource("BoxShape3D_ejdrq")
 
 [node name="Control" parent="." instance=ExtResource("33_vx8iw")]
+overlays_path = NodePath("../Overlays")
 start_with_shard1 = true
 start_with_shard2 = true
 start_with_shard3 = true
 
 [node name="Portal 1" parent="." instance=ExtResource("34_oimwc")]
-transform = Transform3D(0.0462778, 0, -1.41213, 0, 1.41289, 0, 1.41213, 0, 0.0462778, -66.7636, 8.0704, 10.4719)
+transform = Transform3D(-3.98747, 0, -0.0652159, 0, 3.988, 0, 0.0652159, 0, -3.98747, -40.2307, 12.3561, -14.0967)
 player_path = NodePath("../Player")
 target_scene_path = "res://Andy/credit.tscn"
+amulet_ui_path = NodePath("../Control")
+
+[node name="Overlays" parent="." instance=ExtResource("35_riofo")]
+mouse_filter = 2

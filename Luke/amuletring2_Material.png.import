@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://be6e53c3djxwj"
 path.s3tc="res://.godot/imported/amuletring2_Material.png-02aeac760479035038137b915fb3c1d3.s3tc.ctex"
+path.etc2="res://.godot/imported/amuletring2_Material.png-02aeac760479035038137b915fb3c1d3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Luke/amuletring2_Material.png"
-dest_files=["res://.godot/imported/amuletring2_Material.png-02aeac760479035038137b915fb3c1d3.s3tc.ctex"]
+dest_files=["res://.godot/imported/amuletring2_Material.png-02aeac760479035038137b915fb3c1d3.s3tc.ctex", "res://.godot/imported/amuletring2_Material.png-02aeac760479035038137b915fb3c1d3.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://be7e2410cv35u"
 path.s3tc="res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"
+path.etc2="res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Xinyu Luo/Box_wood.jpg"
-dest_files=["res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex"]
+dest_files=["res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.s3tc.ctex", "res://.godot/imported/Box_wood.jpg-e156f650273b97ff00fc3d8607cb4cdb.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1mm2jbrsp6sa"
 path.s3tc="res://.godot/imported/Bulrush_bulrush2Texture Base Color.png-2ce61e21d6becb12f2f4263682f33602.s3tc.ctex"
+path.etc2="res://.godot/imported/Bulrush_bulrush2Texture Base Color.png-2ce61e21d6becb12f2f4263682f33602.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/Bulrush_bulrush2Texture Base Color.png"
-dest_files=["res://.godot/imported/Bulrush_bulrush2Texture Base Color.png-2ce61e21d6becb12f2f4263682f33602.s3tc.ctex"]
+dest_files=["res://.godot/imported/Bulrush_bulrush2Texture Base Color.png-2ce61e21d6becb12f2f4263682f33602.s3tc.ctex", "res://.godot/imported/Bulrush_bulrush2Texture Base Color.png-2ce61e21d6becb12f2f4263682f33602.etc2.ctex"]
 
 [params]
 
