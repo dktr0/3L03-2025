@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ccseufsgyle3l" path="res://Le Zhang/crab.glb" id="8_elqjq"]
 [ext_resource type="PackedScene" uid="uid://bwunh13guxrji" path="res://Nan/good_sky.tscn" id="8_ujeq7"]
 [ext_resource type="PackedScene" uid="uid://cde78h7fgegbv" path="res://Ethan C/Grass.tscn" id="9_7w417"]
-[ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="10_jhoqv"]
+[ext_resource type="PackedScene" uid="uid://c4japnhf3f4h4" path="res://Ethan C/Fish Shop.tscn" id="10_jhoqv"]
 [ext_resource type="PackedScene" uid="uid://cwfbfb754fbg7" path="res://Rongyu Liu/Soil/Soil.tscn" id="10_m1jp4"]
 [ext_resource type="ArrayMesh" uid="uid://cswa167n3gdaa" path="res://Omar/texture/new_array_mesh.tres" id="11_bw2wi"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="11_jj2kk"]
