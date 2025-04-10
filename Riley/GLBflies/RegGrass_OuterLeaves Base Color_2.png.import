@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd2evld0eq6lg"
 path.s3tc="res://.godot/imported/RegGrass_OuterLeaves Base Color_2.png-92b34d99ba3da9bb69e7629f92429d07.s3tc.ctex"
+path.etc2="res://.godot/imported/RegGrass_OuterLeaves Base Color_2.png-92b34d99ba3da9bb69e7629f92429d07.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Riley/GLBflies/RegGrass_OuterLeaves Base Color_2.png"
-dest_files=["res://.godot/imported/RegGrass_OuterLeaves Base Color_2.png-92b34d99ba3da9bb69e7629f92429d07.s3tc.ctex"]
+dest_files=["res://.godot/imported/RegGrass_OuterLeaves Base Color_2.png-92b34d99ba3da9bb69e7629f92429d07.s3tc.ctex", "res://.godot/imported/RegGrass_OuterLeaves Base Color_2.png-92b34d99ba3da9bb69e7629f92429d07.etc2.ctex"]
 
 [params]
 

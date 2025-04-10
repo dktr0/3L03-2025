@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2y54ke6avqd6"
 path.s3tc="res://.godot/imported/Fish Shop_Material.png-67963ba819164ee344122b622f50825c.s3tc.ctex"
+path.etc2="res://.godot/imported/Fish Shop_Material.png-67963ba819164ee344122b622f50825c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Ethan C/Fish Shop_Material.png"
-dest_files=["res://.godot/imported/Fish Shop_Material.png-67963ba819164ee344122b622f50825c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Fish Shop_Material.png-67963ba819164ee344122b622f50825c.s3tc.ctex", "res://.godot/imported/Fish Shop_Material.png-67963ba819164ee344122b622f50825c.etc2.ctex"]
 
 [params]
 

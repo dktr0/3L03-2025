@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbfi8dx42jnxb"
 path.s3tc="res://.godot/imported/icicle ceiling_Cylinder.png-ac797d26ea773ef605d176c95bf325d5.s3tc.ctex"
+path.etc2="res://.godot/imported/icicle ceiling_Cylinder.png-ac797d26ea773ef605d176c95bf325d5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Mackie/icicle ceiling_Cylinder.png"
-dest_files=["res://.godot/imported/icicle ceiling_Cylinder.png-ac797d26ea773ef605d176c95bf325d5.s3tc.ctex"]
+dest_files=["res://.godot/imported/icicle ceiling_Cylinder.png-ac797d26ea773ef605d176c95bf325d5.s3tc.ctex", "res://.godot/imported/icicle ceiling_Cylinder.png-ac797d26ea773ef605d176c95bf325d5.etc2.ctex"]
 
 [params]
 

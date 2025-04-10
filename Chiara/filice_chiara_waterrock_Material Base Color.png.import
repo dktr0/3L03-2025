@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwqtfpejkrstf"
 path.s3tc="res://.godot/imported/filice_chiara_waterrock_Material Base Color.png-8ead86c1acb5c1ad97548dd8f3733fe9.s3tc.ctex"
+path.etc2="res://.godot/imported/filice_chiara_waterrock_Material Base Color.png-8ead86c1acb5c1ad97548dd8f3733fe9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Chiara/filice_chiara_waterrock_Material Base Color.png"
-dest_files=["res://.godot/imported/filice_chiara_waterrock_Material Base Color.png-8ead86c1acb5c1ad97548dd8f3733fe9.s3tc.ctex"]
+dest_files=["res://.godot/imported/filice_chiara_waterrock_Material Base Color.png-8ead86c1acb5c1ad97548dd8f3733fe9.s3tc.ctex", "res://.godot/imported/filice_chiara_waterrock_Material Base Color.png-8ead86c1acb5c1ad97548dd8f3733fe9.etc2.ctex"]
 
 [params]
 

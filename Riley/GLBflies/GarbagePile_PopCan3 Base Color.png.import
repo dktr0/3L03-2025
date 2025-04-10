@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpjp1eduumhj1"
 path.s3tc="res://.godot/imported/GarbagePile_PopCan3 Base Color.png-1372366e12aff8c21f831a62bfb0184b.s3tc.ctex"
+path.etc2="res://.godot/imported/GarbagePile_PopCan3 Base Color.png-1372366e12aff8c21f831a62bfb0184b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/GarbagePile_PopCan3 Base Color.png"
-dest_files=["res://.godot/imported/GarbagePile_PopCan3 Base Color.png-1372366e12aff8c21f831a62bfb0184b.s3tc.ctex"]
+dest_files=["res://.godot/imported/GarbagePile_PopCan3 Base Color.png-1372366e12aff8c21f831a62bfb0184b.s3tc.ctex", "res://.godot/imported/GarbagePile_PopCan3 Base Color.png-1372366e12aff8c21f831a62bfb0184b.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://u7vryoedwhio"
 path.s3tc="res://.godot/imported/deadtree_Material Base Color.png-3adbfae951b774935dd1aac1cb29230f.s3tc.ctex"
+path.etc2="res://.godot/imported/deadtree_Material Base Color.png-3adbfae951b774935dd1aac1cb29230f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Luke/deadtree_Material Base Color.png"
-dest_files=["res://.godot/imported/deadtree_Material Base Color.png-3adbfae951b774935dd1aac1cb29230f.s3tc.ctex"]
+dest_files=["res://.godot/imported/deadtree_Material Base Color.png-3adbfae951b774935dd1aac1cb29230f.s3tc.ctex", "res://.godot/imported/deadtree_Material Base Color.png-3adbfae951b774935dd1aac1cb29230f.etc2.ctex"]
 
 [params]
 

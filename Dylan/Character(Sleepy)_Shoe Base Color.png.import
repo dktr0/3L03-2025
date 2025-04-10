@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://el0360xxyd5n"
 path.s3tc="res://.godot/imported/Character(Sleepy)_Shoe Base Color.png-c4f354fb0a3a7251f471c717d5854ef7.s3tc.ctex"
+path.etc2="res://.godot/imported/Character(Sleepy)_Shoe Base Color.png-c4f354fb0a3a7251f471c717d5854ef7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Dylan/Character(Sleepy)_Shoe Base Color.png"
-dest_files=["res://.godot/imported/Character(Sleepy)_Shoe Base Color.png-c4f354fb0a3a7251f471c717d5854ef7.s3tc.ctex"]
+dest_files=["res://.godot/imported/Character(Sleepy)_Shoe Base Color.png-c4f354fb0a3a7251f471c717d5854ef7.s3tc.ctex", "res://.godot/imported/Character(Sleepy)_Shoe Base Color.png-c4f354fb0a3a7251f471c717d5854ef7.etc2.ctex"]
 
 [params]
 

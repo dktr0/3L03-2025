@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn7s1oqpxaley"
 path.s3tc="res://.godot/imported/CharacterTest_Skirt Base Color.png-80257ce87816a59a2bb6817092902f01.s3tc.ctex"
+path.etc2="res://.godot/imported/CharacterTest_Skirt Base Color.png-80257ce87816a59a2bb6817092902f01.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Dylan/Test/CharacterTest_Skirt Base Color.png"
-dest_files=["res://.godot/imported/CharacterTest_Skirt Base Color.png-80257ce87816a59a2bb6817092902f01.s3tc.ctex"]
+dest_files=["res://.godot/imported/CharacterTest_Skirt Base Color.png-80257ce87816a59a2bb6817092902f01.s3tc.ctex", "res://.godot/imported/CharacterTest_Skirt Base Color.png-80257ce87816a59a2bb6817092902f01.etc2.ctex"]
 
 [params]
 

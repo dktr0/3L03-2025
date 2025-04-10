@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnfqudx75hmtt"
 path.s3tc="res://.godot/imported/RegGrass_bulrushLeaf1 Base Color.png-ac7eb1be9c73a4fc66eaf3d808add967.s3tc.ctex"
+path.etc2="res://.godot/imported/RegGrass_bulrushLeaf1 Base Color.png-ac7eb1be9c73a4fc66eaf3d808add967.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/RegGrass_bulrushLeaf1 Base Color.png"
-dest_files=["res://.godot/imported/RegGrass_bulrushLeaf1 Base Color.png-ac7eb1be9c73a4fc66eaf3d808add967.s3tc.ctex"]
+dest_files=["res://.godot/imported/RegGrass_bulrushLeaf1 Base Color.png-ac7eb1be9c73a4fc66eaf3d808add967.s3tc.ctex", "res://.godot/imported/RegGrass_bulrushLeaf1 Base Color.png-ac7eb1be9c73a4fc66eaf3d808add967.etc2.ctex"]
 
 [params]
 

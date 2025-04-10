@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbq150qja0o6r"
 path.s3tc="res://.godot/imported/SurroundingRocks_Material Roughness.png-d33b0f823585ed161cf057c36be3f1aa.s3tc.ctex"
+path.etc2="res://.godot/imported/SurroundingRocks_Material Roughness.png-d33b0f823585ed161cf057c36be3f1aa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Chiara/SurroundingRocks_Material Roughness.png"
-dest_files=["res://.godot/imported/SurroundingRocks_Material Roughness.png-d33b0f823585ed161cf057c36be3f1aa.s3tc.ctex"]
+dest_files=["res://.godot/imported/SurroundingRocks_Material Roughness.png-d33b0f823585ed161cf057c36be3f1aa.s3tc.ctex", "res://.godot/imported/SurroundingRocks_Material Roughness.png-d33b0f823585ed161cf057c36be3f1aa.etc2.ctex"]
 
 [params]
 

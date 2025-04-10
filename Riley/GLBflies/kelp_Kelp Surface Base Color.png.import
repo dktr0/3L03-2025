@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6ncfpthjwokt"
 path.s3tc="res://.godot/imported/kelp_Kelp Surface Base Color.png-8934de83058c0bc8e5fadf6c7e800eae.s3tc.ctex"
+path.etc2="res://.godot/imported/kelp_Kelp Surface Base Color.png-8934de83058c0bc8e5fadf6c7e800eae.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/kelp_Kelp Surface Base Color.png"
-dest_files=["res://.godot/imported/kelp_Kelp Surface Base Color.png-8934de83058c0bc8e5fadf6c7e800eae.s3tc.ctex"]
+dest_files=["res://.godot/imported/kelp_Kelp Surface Base Color.png-8934de83058c0bc8e5fadf6c7e800eae.s3tc.ctex", "res://.godot/imported/kelp_Kelp Surface Base Color.png-8934de83058c0bc8e5fadf6c7e800eae.etc2.ctex"]
 
 [params]
 

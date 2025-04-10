@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cruxtujc3aco0"
 path.s3tc="res://.godot/imported/2d3_DeadTreeTrunk Base Color.png-3a4447caa1eaf310292cb4c8e9c5e967.s3tc.ctex"
+path.etc2="res://.godot/imported/2d3_DeadTreeTrunk Base Color.png-3a4447caa1eaf310292cb4c8e9c5e967.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Omar/texture/2d3_DeadTreeTrunk Base Color.png"
-dest_files=["res://.godot/imported/2d3_DeadTreeTrunk Base Color.png-3a4447caa1eaf310292cb4c8e9c5e967.s3tc.ctex"]
+dest_files=["res://.godot/imported/2d3_DeadTreeTrunk Base Color.png-3a4447caa1eaf310292cb4c8e9c5e967.s3tc.ctex", "res://.godot/imported/2d3_DeadTreeTrunk Base Color.png-3a4447caa1eaf310292cb4c8e9c5e967.etc2.ctex"]
 
 [params]
 

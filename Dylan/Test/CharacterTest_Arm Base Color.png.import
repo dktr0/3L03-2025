@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://80j3aoslnaxu"
 path.s3tc="res://.godot/imported/CharacterTest_Arm Base Color.png-59aa8d02a7fd681ae85923b1a71f9137.s3tc.ctex"
+path.etc2="res://.godot/imported/CharacterTest_Arm Base Color.png-59aa8d02a7fd681ae85923b1a71f9137.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Dylan/Test/CharacterTest_Arm Base Color.png"
-dest_files=["res://.godot/imported/CharacterTest_Arm Base Color.png-59aa8d02a7fd681ae85923b1a71f9137.s3tc.ctex"]
+dest_files=["res://.godot/imported/CharacterTest_Arm Base Color.png-59aa8d02a7fd681ae85923b1a71f9137.s3tc.ctex", "res://.godot/imported/CharacterTest_Arm Base Color.png-59aa8d02a7fd681ae85923b1a71f9137.etc2.ctex"]
 
 [params]
 

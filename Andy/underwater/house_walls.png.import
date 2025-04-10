@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://clhherds1mvp2"
 path.s3tc="res://.godot/imported/house_walls.png-dc6571cd45ea5ceceea9911080a38b3f.s3tc.ctex"
+path.etc2="res://.godot/imported/house_walls.png-dc6571cd45ea5ceceea9911080a38b3f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Andy/underwater/house_walls.png"
-dest_files=["res://.godot/imported/house_walls.png-dc6571cd45ea5ceceea9911080a38b3f.s3tc.ctex"]
+dest_files=["res://.godot/imported/house_walls.png-dc6571cd45ea5ceceea9911080a38b3f.s3tc.ctex", "res://.godot/imported/house_walls.png-dc6571cd45ea5ceceea9911080a38b3f.etc2.ctex"]
 
 [params]
 

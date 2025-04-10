@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b03kcvtpg2r61"
 path.s3tc="res://.godot/imported/WinterTreeSNOW_Snow Base Color.png-86800d66170b60355c5fd72084907d0e.s3tc.ctex"
+path.etc2="res://.godot/imported/WinterTreeSNOW_Snow Base Color.png-86800d66170b60355c5fd72084907d0e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/WinterTreeSNOW_Snow Base Color.png"
-dest_files=["res://.godot/imported/WinterTreeSNOW_Snow Base Color.png-86800d66170b60355c5fd72084907d0e.s3tc.ctex"]
+dest_files=["res://.godot/imported/WinterTreeSNOW_Snow Base Color.png-86800d66170b60355c5fd72084907d0e.s3tc.ctex", "res://.godot/imported/WinterTreeSNOW_Snow Base Color.png-86800d66170b60355c5fd72084907d0e.etc2.ctex"]
 
 [params]
 

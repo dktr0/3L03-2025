@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c37rhyobvrqrk"
 path.s3tc="res://.godot/imported/CharacterTest_Cylinder Base Color.png-9b7d14a34680030b7417271de585d8e2.s3tc.ctex"
+path.etc2="res://.godot/imported/CharacterTest_Cylinder Base Color.png-9b7d14a34680030b7417271de585d8e2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Dylan/Test/CharacterTest_Cylinder Base Color.png"
-dest_files=["res://.godot/imported/CharacterTest_Cylinder Base Color.png-9b7d14a34680030b7417271de585d8e2.s3tc.ctex"]
+dest_files=["res://.godot/imported/CharacterTest_Cylinder Base Color.png-9b7d14a34680030b7417271de585d8e2.s3tc.ctex", "res://.godot/imported/CharacterTest_Cylinder Base Color.png-9b7d14a34680030b7417271de585d8e2.etc2.ctex"]
 
 [params]
 

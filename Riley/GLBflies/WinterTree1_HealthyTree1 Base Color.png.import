@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvk3pxonxf7ob"
 path.s3tc="res://.godot/imported/WinterTree1_HealthyTree1 Base Color.png-85f927319e162a728ccea718f5996ca6.s3tc.ctex"
+path.etc2="res://.godot/imported/WinterTree1_HealthyTree1 Base Color.png-85f927319e162a728ccea718f5996ca6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/WinterTree1_HealthyTree1 Base Color.png"
-dest_files=["res://.godot/imported/WinterTree1_HealthyTree1 Base Color.png-85f927319e162a728ccea718f5996ca6.s3tc.ctex"]
+dest_files=["res://.godot/imported/WinterTree1_HealthyTree1 Base Color.png-85f927319e162a728ccea718f5996ca6.s3tc.ctex", "res://.godot/imported/WinterTree1_HealthyTree1 Base Color.png-85f927319e162a728ccea718f5996ca6.etc2.ctex"]
 
 [params]
 

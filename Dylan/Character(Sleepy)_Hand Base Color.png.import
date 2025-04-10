@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr4bg07fymk1p"
 path.s3tc="res://.godot/imported/Character(Sleepy)_Hand Base Color.png-f7f3093dcf6a8d05b1bb3b6723413bfd.s3tc.ctex"
+path.etc2="res://.godot/imported/Character(Sleepy)_Hand Base Color.png-f7f3093dcf6a8d05b1bb3b6723413bfd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Dylan/Character(Sleepy)_Hand Base Color.png"
-dest_files=["res://.godot/imported/Character(Sleepy)_Hand Base Color.png-f7f3093dcf6a8d05b1bb3b6723413bfd.s3tc.ctex"]
+dest_files=["res://.godot/imported/Character(Sleepy)_Hand Base Color.png-f7f3093dcf6a8d05b1bb3b6723413bfd.s3tc.ctex", "res://.godot/imported/Character(Sleepy)_Hand Base Color.png-f7f3093dcf6a8d05b1bb3b6723413bfd.etc2.ctex"]
 
 [params]
 

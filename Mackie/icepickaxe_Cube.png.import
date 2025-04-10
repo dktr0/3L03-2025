@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://brslyqddqnobm"
 path.s3tc="res://.godot/imported/icepickaxe_Cube.png-89a71b15b8afd370c329024ab87475fd.s3tc.ctex"
+path.etc2="res://.godot/imported/icepickaxe_Cube.png-89a71b15b8afd370c329024ab87475fd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Mackie/icepickaxe_Cube.png"
-dest_files=["res://.godot/imported/icepickaxe_Cube.png-89a71b15b8afd370c329024ab87475fd.s3tc.ctex"]
+dest_files=["res://.godot/imported/icepickaxe_Cube.png-89a71b15b8afd370c329024ab87475fd.s3tc.ctex", "res://.godot/imported/icepickaxe_Cube.png-89a71b15b8afd370c329024ab87475fd.etc2.ctex"]
 
 [params]
 

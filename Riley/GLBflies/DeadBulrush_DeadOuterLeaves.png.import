@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgl4ds3wqsxrq"
 path.s3tc="res://.godot/imported/DeadBulrush_DeadOuterLeaves.png-6c509fee43384ae6c980297551a08e6c.s3tc.ctex"
+path.etc2="res://.godot/imported/DeadBulrush_DeadOuterLeaves.png-6c509fee43384ae6c980297551a08e6c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Riley/GLBflies/DeadBulrush_DeadOuterLeaves.png"
-dest_files=["res://.godot/imported/DeadBulrush_DeadOuterLeaves.png-6c509fee43384ae6c980297551a08e6c.s3tc.ctex"]
+dest_files=["res://.godot/imported/DeadBulrush_DeadOuterLeaves.png-6c509fee43384ae6c980297551a08e6c.s3tc.ctex", "res://.godot/imported/DeadBulrush_DeadOuterLeaves.png-6c509fee43384ae6c980297551a08e6c.etc2.ctex"]
 
 [params]
 

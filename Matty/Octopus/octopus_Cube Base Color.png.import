@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://db366xwolhp31"
 path.s3tc="res://.godot/imported/octopus_Cube Base Color.png-b6f18187b97e36b53bf5af5fc7bd2e99.s3tc.ctex"
+path.etc2="res://.godot/imported/octopus_Cube Base Color.png-b6f18187b97e36b53bf5af5fc7bd2e99.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Matty/Octopus/octopus_Cube Base Color.png"
-dest_files=["res://.godot/imported/octopus_Cube Base Color.png-b6f18187b97e36b53bf5af5fc7bd2e99.s3tc.ctex"]
+dest_files=["res://.godot/imported/octopus_Cube Base Color.png-b6f18187b97e36b53bf5af5fc7bd2e99.s3tc.ctex", "res://.godot/imported/octopus_Cube Base Color.png-b6f18187b97e36b53bf5af5fc7bd2e99.etc2.ctex"]
 
 [params]
 
