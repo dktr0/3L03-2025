@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://biig36r7u5g68"]
 
-[ext_resource type="PackedScene" uid="uid://cyhbt6jlm2ttd" path="res://Riley/GLBflies/Sword.glb" id="1_45mf3"]
+[ext_resource type="PackedScene" uid="uid://chibctf3f6v5s" path="res://Riley/GLBflies/PurpleSword.glb" id="1_y21up"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_75muk"]
-size = Vector3(1, 21.8, 3)
+size = Vector3(1, 21.8, 3.1543)
 
 [node name="Sword" type="Area3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
-[node name="Sword" parent="." instance=ExtResource("1_45mf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.23554, 2.27328)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.2093, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.2093, -0.0332031)
 shape = SubResource("BoxShape3D_75muk")
+
+[node name="PurpleSword" parent="." instance=ExtResource("1_y21up")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.58673, 2.24389)
