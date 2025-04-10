@@ -1,0 +1,20 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+  padding-top: 2em;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+a {
+  color: white;
+}
+
+div {
+  margin: 1em;
+}
+
+li {
+  margin: 1em;
+}
