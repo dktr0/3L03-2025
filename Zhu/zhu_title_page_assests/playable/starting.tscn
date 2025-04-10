@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Andy/start.gd" id="1_4ue0o"]
 [ext_resource type="Texture2D" uid="uid://dht65tp05n0tq" path="res://Zhu/concept page.png" id="2_4pplv"]
 [ext_resource type="Texture2D" uid="uid://di2fk6fw1ydpu" path="res://Andy/HALCYON-click to start.png" id="3_lrkh6"]
-[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="4_p3g1q"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Andy/words/font/font for all words.ttf" id="4_p3g1q"]
 [ext_resource type="AudioStream" uid="uid://crivpwmelviue" path="res://Tram/music/Opening Menu Theme Song Official.mp3" id="5_uu7bv"]
 
 [node name="Control" type="Control"]

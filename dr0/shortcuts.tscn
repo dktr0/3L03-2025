@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4jtkwm6ijunn"]
+
+[ext_resource type="Script" path="res://dr0/shortcuts.gd" id="1_5kbt8"]
+
+[node name="Shortcuts" type="Node3D"]
+script = ExtResource("1_5kbt8")
