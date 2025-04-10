@@ -2,9 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_abetd"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="2_mabp6"]
-[ext_resource type="PackedScene" path="res://DeadLargeSeaweed.tscn" id="3_aauup"]
+[ext_resource type="PackedScene" uid="uid://cycjp4vmr1kal" path="res://DeadLargeSeaweed.tscn" id="3_aauup"]
 [ext_resource type="PackedScene" uid="uid://c2bdcxn28whgv" path="res://Darius/Rubble.glb" id="4_g43o1"]
-[ext_resource type="PackedScene" uid="uid://dt1mfgeidwbmi" path="res://Ethan C/Water Bottle.tscn" id="5_yud5f"]
 [ext_resource type="PackedScene" uid="uid://k0juh3usoo66" path="res://Chiara/broken_Dock.glb" id="6_gcxeq"]
 [ext_resource type="PackedScene" uid="uid://b1k2j8kjwglsq" path="res://Mason/Broken_down_light_house.glb" id="7_rbru2"]
 [ext_resource type="PackedScene" uid="uid://2gv276l2p1uf" path="res://Riley/GlowingBarrel.tscn" id="8_423u6"]
@@ -14,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://bwqy20x2uomik" path="res://Rongyu Liu/Bad_water.tscn" id="12_hstki"]
 [ext_resource type="PackedScene" uid="uid://dm3pl02h2a4d4" path="res://Rongyu Liu/Soil/Damaged soil.glb" id="13_uj6gp"]
 [ext_resource type="PackedScene" uid="uid://daggh56yuy6g3" path="res://Nan/Bad Cloud.glb" id="14_n2des"]
-[ext_resource type="PackedScene" path="res://Riley/DeadTree.tscn" id="15_8tv27"]
-[ext_resource type="PackedScene" path="res://Nan/Dead_wood.tscn" id="16_ip6om"]
-[ext_resource type="PackedScene" path="res://Riley/DeadBulrush.tscn" id="17_7dpm1"]
-[ext_resource type="PackedScene" path="res://Riley/DeadGrass.tscn" id="18_fx50g"]
-[ext_resource type="PackedScene" path="res://Riley/GarbagePile.tscn" id="19_cgh4b"]
+[ext_resource type="PackedScene" uid="uid://31k1eq7dvbqa" path="res://Riley/DeadTree.tscn" id="15_8tv27"]
+[ext_resource type="PackedScene" uid="uid://neudcqb0ff87" path="res://Nan/Dead_wood.tscn" id="16_ip6om"]
+[ext_resource type="PackedScene" uid="uid://bnesfoix585wh" path="res://Riley/DeadBulrush.tscn" id="17_7dpm1"]
+[ext_resource type="PackedScene" uid="uid://spmbye82jg58" path="res://Riley/DeadGrass.tscn" id="18_fx50g"]
+[ext_resource type="PackedScene" uid="uid://b1mb8vepspln2" path="res://Riley/GarbagePile.tscn" id="19_cgh4b"]
 [ext_resource type="PackedScene" uid="uid://dj0ikx20ebw7a" path="res://Wilson/fire_smoke.tscn" id="20_yiris"]
 [ext_resource type="PackedScene" uid="uid://bt0oah83alnvb" path="res://Wilson/vfx_smoke.tscn" id="21_gui4c"]
 [ext_resource type="PackedScene" uid="uid://craqwm4x5w6so" path="res://Naomi/DeadSeaweed.glb" id="22_332ap"]
@@ -31,7 +30,7 @@
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="31_5vku7"]
 [ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="32_hv3ju"]
 [ext_resource type="PackedScene" uid="uid://dpbua5v2g8bg4" path="res://safearea.tscn" id="33_knmqy"]
-[ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="34_0ks0q"]
+[ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="34_0ks0q"]
 [ext_resource type="PackedScene" uid="uid://ceukyihxj1n85" path="res://deatharea.tscn" id="34_ntjtb"]
 [ext_resource type="PackedScene" uid="uid://c15543iruy41d" path="res://dr0/overlays.tscn" id="35_npgsw"]
 [ext_resource type="PackedScene" uid="uid://cldomxhffitcn" path="res://Yunhan Liu2/Npc_Dialog.tscn" id="35_wtvn7"]
@@ -46,11 +45,15 @@ size = Vector3(8.48912, 5.17664, 4.11774)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rafp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kn12n"]
+size = Vector3(1, 1, 0.892822)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5gtf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ejbkr"]
 size = Vector3(1000, 113.383, 1000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_likin"]
+size = Vector3(19.6363, 15.3169, 13.5324)
 
 [node name="Beginning" type="Node3D"]
 
@@ -92,9 +95,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355561, 3.59808, -22.8677)
 [node name="Rubble2" parent="3d/rubbles" instance=ExtResource("4_g43o1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6713, 4.28799, -20.19)
 
-[node name="bottle" parent="3d" instance=ExtResource("5_yud5f")]
-transform = Transform3D(0.470084, 0, 0, 0, 0.330392, 0, 0, 0, 0.330392, 0, 15.649, 0)
-
 [node name="broken_Dock" parent="3d" instance=ExtResource("6_gcxeq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.719, -16.244, 66.3471)
 
@@ -102,31 +102,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.719, -16.244, 66.3471)
 transform = Transform3D(2.3388, 0, 0, 0, 2.3388, 0, 0, 0, 2.3388, 4.61589, 3.50898, -30.4189)
 
 [node name="GlowingBarrel" parent="3d" instance=ExtResource("8_423u6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7521, 3.08801, 5.29281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7521, 2.29554, 5.29281)
 
 [node name="barrels" type="Node3D" parent="3d"]
 transform = Transform3D(2.79633, 0, 0, 0, 2.79633, 0, 0, 0, 2.79633, -26.0917, -3.66342, -11.3447)
 
 [node name="greenbarrel" parent="3d/barrels" instance=ExtResource("9_kccih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1335, 2.45869, 6.6924)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3312, 1.78881, 6.6924)
 
 [node name="yellowbarrel" parent="3d/barrels" instance=ExtResource("10_ktwm4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9294, 1.71087, 7.63683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5179, 1.71087, 7.63683)
 
 [node name="redbarrel" parent="3d/barrels" instance=ExtResource("11_torqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2691, 1.77459, 6.6993)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2711, 1.77459, 6.6993)
 
 [node name="barrels2" type="Node3D" parent="3d"]
 transform = Transform3D(-2.79479, 0, -0.092615, 0, 2.79633, 0, 0.092615, 0, -2.79479, 53.0004, -5.15535, 93.7397)
 
 [node name="greenbarrel" parent="3d/barrels2" instance=ExtResource("9_kccih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1335, 2.45869, 6.6924)
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 19.1344, 2.25649, 6.6639)
 
 [node name="yellowbarrel" parent="3d/barrels2" instance=ExtResource("10_ktwm4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9294, 1.71087, 7.63683)
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 18.9294, 2.24279, 7.63683)
 
 [node name="redbarrel" parent="3d/barrels2" instance=ExtResource("11_torqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2691, 1.77459, 6.6993)
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 18.2691, 2.24602, 6.6993)
 
 [node name="Badwater" parent="3d" instance=ExtResource("12_hstki")]
 transform = Transform3D(693.379, 0, 0, 0, 693.379, 0, 0, 0, 693.379, 0, 21.6228, -703.907)
@@ -272,7 +272,7 @@ autoplay = true
 [node name="Badsky" parent="." instance=ExtResource("29_7tko6")]
 
 [node name="fish_shop_owner" parent="." instance=ExtResource("30_s2qwy")]
-transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 35.2944, 0.469059, 9.8571)
+transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 31.4235, 0.469059, 9.8571)
 collision_layer = 16
 collision_mask = 2
 
@@ -292,7 +292,7 @@ transform = Transform3D(7.7613, 0, 0.525898, 0, 5.472, 0, -2.07963, 0, 1.96268, 
 shape = SubResource("BoxShape3D_1rafp")
 
 [node name="FishShop" parent="." instance=ExtResource("34_0ks0q")]
-transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.5898, 1.1015, 7.09023)
+transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 29.6141, 1.1015, 7.09023)
 
 [node name="airwall" type="Node" parent="."]
 
@@ -300,14 +300,14 @@ transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 52.3188)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 38.29)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="airwall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5976, 0, 52.3188)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -1.40303, 0, 40.2962)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="airwall"]
@@ -378,3 +378,9 @@ shape = SubResource("BoxShape3D_ejbkr")
 [node name="Overlays" parent="." instance=ExtResource("35_npgsw")]
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.915101, 0, -0.403226, 0, 1, 0, 0.403226, 0, 0.915101, 31.8003, 7.64986, 8.58383)
+shape = SubResource("BoxShape3D_likin")
