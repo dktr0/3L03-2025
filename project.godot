@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="3L03-2025"
+config/name="Halcyon"
 run/main_scene="res://Zhu/zhu_title_page_assests/playable/starting.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=60
