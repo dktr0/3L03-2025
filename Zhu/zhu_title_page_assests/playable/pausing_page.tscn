@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Zhu/zhu_title_page_assests/playable/pausing_page.gd" id="1_1bf36"]
 [ext_resource type="Texture2D" uid="uid://dqxh7l82fquio" path="res://Zhu/zhu_title_page_assests/backgrounds/pausing page.png" id="1_vd1vt"]
 [ext_resource type="Texture2D" uid="uid://glxul2rkvvkd" path="res://Zhu/zhu_title_page_assests/backgrounds/pausing page-clock.png" id="2_5ryhf"]
-[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="4_lulii"]
+[ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="5_rblqw"]
 
 [node name="Pausing-Page" type="Control"]
 layout_mode = 3
@@ -26,7 +26,7 @@ offset_left = 144.0
 offset_top = 133.0
 offset_right = 212.0
 offset_bottom = 171.0
-theme_override_fonts/font = ExtResource("4_lulii")
+theme_override_fonts/font = ExtResource("5_rblqw")
 theme_override_font_sizes/font_size = 29
 text = "MENU"
 flat = true
@@ -37,7 +37,18 @@ offset_left = 148.0
 offset_top = 466.0
 offset_right = 216.0
 offset_bottom = 504.0
-theme_override_fonts/font = ExtResource("4_lulii")
+theme_override_fonts/font = ExtResource("5_rblqw")
 theme_override_font_sizes/font_size = 29
 text = "EXIT"
+flat = true
+
+[node name="Unstuck" type="Button" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 257.0
+offset_right = 267.0
+offset_bottom = 367.0
+theme_override_fonts/font = ExtResource("5_rblqw")
+theme_override_font_sizes/font_size = 29
+text = "Unstuck"
 flat = true
