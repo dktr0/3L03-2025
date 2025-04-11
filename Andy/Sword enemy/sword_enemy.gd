@@ -62,6 +62,7 @@ var is_dead: bool = false
 
 # ========== Chase音效定时器 ==========
 var chase_timer: Timer = null
+var slam_timer: Timer = null
 
 func _ready() -> void:
 	add_to_group("Enemy")
@@ -106,6 +107,13 @@ func _ready() -> void:
 	chase_timer.wait_time = 5.0
 	chase_timer.timeout.connect(_on_chase_timer_timeout)
 	add_child(chase_timer)
+
+	# ADDED: Create slam_timer once
+	slam_timer = Timer.new()
+	slam_timer.one_shot = true
+	# wait_time will be set in _start_attack_anim
+	slam_timer.timeout.connect(_on_attack_slam)
+	add_child(slam_timer)
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -162,17 +170,22 @@ func _state_patrol(delta: float):
 		velocity = Vector3.ZERO
 		return
 
-	var dx = target_point.global_transform.origin.x - global_transform.origin.x
-	var dz = target_point.global_transform.origin.z - global_transform.origin.z
-	var dist_xz = sqrt(dx*dx + dz*dz)
+	# OPTIMIZED: Use distance_squared_to for XZ plane
+	var target_pos_xz = target_point.global_transform.origin * Vector3(1, 0, 1)
+	var current_pos_xz = global_transform.origin * Vector3(1, 0, 1)
+	var dist_sq_xz = current_pos_xz.distance_squared_to(target_pos_xz)
 
-	if dist_xz < 0.3:
+	# Compare squared distance to squared threshold (0.3*0.3 = 0.09)
+	if dist_sq_xz < 0.09:
 		patrol_target_index = 1 - patrol_target_index
 		velocity = Vector3.ZERO
 	else:
+		var dx = target_point.global_transform.origin.x - global_transform.origin.x
+		var dz = target_point.global_transform.origin.z - global_transform.origin.z
 		var angle = atan2(dx, dz)
 		rotation.y = lerp_angle(rotation.y, angle, turn_lerp_speed)
-		var dir = Vector3(dx, 0, dz).normalized()
+		# Use normalized direction from difference vector
+		var dir = (target_pos_xz - current_pos_xz).normalized()
 		velocity.x = dir.x * chase_speed
 		velocity.z = dir.z * chase_speed
 
@@ -181,14 +194,19 @@ func _state_chase(delta: float):
 		return
 	_play_walk_animation()
 
-	var dx = player_ref.global_transform.origin.x - global_transform.origin.x
-	var dz = player_ref.global_transform.origin.z - global_transform.origin.z
-	var dist_xz = sqrt(dx*dx + dz*dz)
+	# OPTIMIZED: Use distance_squared_to for XZ plane
+	var target_pos_xz = player_ref.global_transform.origin * Vector3(1, 0, 1)
+	var current_pos_xz = global_transform.origin * Vector3(1, 0, 1)
+	var dist_sq_xz = current_pos_xz.distance_squared_to(target_pos_xz)
 
-	if dist_xz > 0.001:
+	# Check squared distance against a small threshold (avoids sqrt)
+	if dist_sq_xz > 0.0001:
+		var dx = player_ref.global_transform.origin.x - global_transform.origin.x
+		var dz = player_ref.global_transform.origin.z - global_transform.origin.z
 		var angle = atan2(dx, dz)
 		rotation.y = lerp_angle(rotation.y, angle, turn_lerp_speed)
-		var dir = Vector3(dx, 0, dz).normalized()
+		# Use normalized direction from difference vector
+		var dir = (target_pos_xz - current_pos_xz).normalized()
 		velocity.x = dir.x * chase_speed
 		velocity.z = dir.z * chase_speed
 	else:
@@ -201,11 +219,13 @@ func _state_attack(delta: float):
 func _state_return(delta: float):
 	_play_walk_animation()
 
-	var dx = original_position.x - global_transform.origin.x
-	var dz = original_position.z - global_transform.origin.z
-	var dist_xz = sqrt(dx*dx + dz*dz)
+	# OPTIMIZED: Use distance_squared_to for XZ plane
+	var target_pos_xz = original_position * Vector3(1, 0, 1)
+	var current_pos_xz = global_transform.origin * Vector3(1, 0, 1)
+	var dist_sq_xz = current_pos_xz.distance_squared_to(target_pos_xz)
 
-	if dist_xz < 0.3:
+	# Compare squared distance to squared threshold (0.3*0.3 = 0.09)
+	if dist_sq_xz < 0.09:
 		if is_patrol:
 			current_state = State.PATROL
 			_play_walk_animation()
@@ -214,9 +234,12 @@ func _state_return(delta: float):
 			_play_idle_animation()
 		return
 
+	var dx = original_position.x - global_transform.origin.x
+	var dz = original_position.z - global_transform.origin.z
 	var angle = atan2(dx, dz)
 	rotation.y = lerp_angle(rotation.y, angle, turn_lerp_speed)
-	var dir = Vector3(dx, 0, dz).normalized()
+	# Use normalized direction from difference vector
+	var dir = (target_pos_xz - current_pos_xz).normalized()
 	velocity.x = dir.x * chase_speed
 	velocity.z = dir.z * chase_speed
 
@@ -227,16 +250,19 @@ func _check_player_distance_scale(delta: float):
 	if not player_ref:
 		return
 
+	# OPTIMIZED: Calculate squared detection range
 	var scale_factor = (global_transform.basis.get_scale().x + global_transform.basis.get_scale().y + global_transform.basis.get_scale().z) / 3.0
-	var used_range = detection_range
+	var used_range_sq = detection_range * detection_range
 	if scale_factor > 1.0:
-		used_range *= scale_factor
+		used_range_sq *= (scale_factor * scale_factor) # Square the scale factor too
 
-	var dx = player_ref.global_transform.origin.x - global_transform.origin.x
-	var dz = player_ref.global_transform.origin.z - global_transform.origin.z
-	var dist_xz = sqrt(dx*dx + dz*dz)
+	# OPTIMIZED: Use distance_squared_to for XZ plane
+	var target_pos_xz = player_ref.global_transform.origin * Vector3(1, 0, 1)
+	var current_pos_xz = global_transform.origin * Vector3(1, 0, 1)
+	var dist_sq_xz = current_pos_xz.distance_squared_to(target_pos_xz)
 
-	if dist_xz < used_range:
+	# Compare squared distance to squared range
+	if dist_sq_xz < used_range_sq:
 		if current_state in [State.IDLE, State.PATROL, State.CHASE]:
 			if current_state != State.CHASE:
 				_start_chase_sfx()
@@ -287,12 +313,12 @@ func _start_attack_anim():
 	# 攻击动画 => 1s后砸下 => knockback + attack sound
 	anim_player.play("attack")
 
-	var slam_timer = Timer.new()
-	slam_timer.one_shot = true
-	slam_timer.wait_time = 1.0
-	slam_timer.timeout.connect(_on_attack_slam)
-	add_child(slam_timer)
-	slam_timer.start()
+	# REUSE slam_timer instead of creating new
+	if slam_timer:
+		slam_timer.wait_time = attack_anim_time # Use exported variable
+		slam_timer.start()
+	else:
+		push_error("Slam Timer not initialized!")
 
 func _on_attack_slam():
 	if not is_dead and is_in_attack_anim:
@@ -384,7 +410,7 @@ func _on_animation_finished(anim_name: String):
 			_play_walk_animation()
 
 #
-# =========== Knockback(攻击动画“砸下去”时) ===========
+# =========== Knockback(攻击动画"砸下去"时) ===========
 #
 
 func _do_knockback_if_player_in_range():
