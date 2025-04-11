@@ -1,10 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://l3iu0fdlcok3"]
+[gd_scene load_steps=42 format=3 uid="uid://l3iu0fdlcok3"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_abetd"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="2_mabp6"]
 [ext_resource type="PackedScene" uid="uid://cycjp4vmr1kal" path="res://DeadLargeSeaweed.tscn" id="3_aauup"]
 [ext_resource type="PackedScene" uid="uid://c2bdcxn28whgv" path="res://Darius/Rubble.glb" id="4_g43o1"]
-[ext_resource type="PackedScene" uid="uid://dt1mfgeidwbmi" path="res://Ethan C/Water Bottle.tscn" id="5_yud5f"]
 [ext_resource type="PackedScene" uid="uid://k0juh3usoo66" path="res://Chiara/broken_Dock.glb" id="6_gcxeq"]
 [ext_resource type="PackedScene" uid="uid://b1k2j8kjwglsq" path="res://Mason/Broken_down_light_house.glb" id="7_rbru2"]
 [ext_resource type="PackedScene" uid="uid://2gv276l2p1uf" path="res://Riley/GlowingBarrel.tscn" id="8_423u6"]
@@ -31,14 +30,12 @@
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="31_5vku7"]
 [ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="32_hv3ju"]
 [ext_resource type="PackedScene" uid="uid://dpbua5v2g8bg4" path="res://safearea.tscn" id="33_knmqy"]
-[ext_resource type="PackedScene" uid="uid://c4japnhf3f4h4" path="res://Ethan C/Fish Shop.tscn" id="34_0ks0q"]
+[ext_resource type="PackedScene" uid="uid://ir3emhbgyaih" path="res://Ethan C/Fish Shop.tscn" id="34_0ks0q"]
 [ext_resource type="PackedScene" uid="uid://ceukyihxj1n85" path="res://deatharea.tscn" id="34_ntjtb"]
 [ext_resource type="PackedScene" uid="uid://c15543iruy41d" path="res://dr0/overlays.tscn" id="35_npgsw"]
 [ext_resource type="PackedScene" uid="uid://cldomxhffitcn" path="res://Yunhan Liu2/Npc_Dialog.tscn" id="35_wtvn7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bk3pb"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_6a1uf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_su7hf"]
 size = Vector3(8.48912, 5.17664, 4.11774)
@@ -46,11 +43,15 @@ size = Vector3(8.48912, 5.17664, 4.11774)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rafp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kn12n"]
+size = Vector3(2.62821, 1.97266, 0.91922)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5gtf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ejbkr"]
 size = Vector3(1000, 113.383, 1000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_likin"]
+size = Vector3(19.6363, 15.3169, 13.5324)
 
 [node name="Beginning" type="Node3D"]
 
@@ -64,11 +65,7 @@ transform = Transform3D(31.3354, 0, 0, 0, 2.03632, 0, 0, 0, 1.06331, 6.56634, 1.
 shape = SubResource("BoxShape3D_bk3pb")
 
 [node name="World2" parent="." instance=ExtResource("1_abetd")]
-transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 8.762, -20.4973, 147.279)
-
-[node name="NPC with gas masks" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.408, -5.79681, 91.7809)
-mesh = SubResource("CapsuleMesh_6a1uf")
+transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 14.3556, -13.1095, 152.202)
 
 [node name="Player" parent="." instance=ExtResource("2_mabp6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7329, 1.21465, 73.1241)
@@ -92,9 +89,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355561, 3.59808, -22.8677)
 [node name="Rubble2" parent="3d/rubbles" instance=ExtResource("4_g43o1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6713, 4.28799, -20.19)
 
-[node name="bottle" parent="3d" instance=ExtResource("5_yud5f")]
-transform = Transform3D(0.470084, 0, 0, 0, 0.330392, 0, 0, 0, 0.330392, 0, 15.649, 0)
-
 [node name="broken_Dock" parent="3d" instance=ExtResource("6_gcxeq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.719, -16.244, 66.3471)
 
@@ -102,31 +96,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.719, -16.244, 66.3471)
 transform = Transform3D(2.3388, 0, 0, 0, 2.3388, 0, 0, 0, 2.3388, 4.61589, 3.50898, -30.4189)
 
 [node name="GlowingBarrel" parent="3d" instance=ExtResource("8_423u6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7521, 3.08801, 5.29281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7521, 2.29554, 5.29281)
 
 [node name="barrels" type="Node3D" parent="3d"]
 transform = Transform3D(2.79633, 0, 0, 0, 2.79633, 0, 0, 0, 2.79633, -26.0917, -3.66342, -11.3447)
 
 [node name="greenbarrel" parent="3d/barrels" instance=ExtResource("9_kccih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1335, 2.45869, 6.6924)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3312, 1.78881, 6.6924)
 
 [node name="yellowbarrel" parent="3d/barrels" instance=ExtResource("10_ktwm4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9294, 1.71087, 7.63683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5179, 1.71087, 7.63683)
 
 [node name="redbarrel" parent="3d/barrels" instance=ExtResource("11_torqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2691, 1.77459, 6.6993)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2711, 1.77459, 6.6993)
 
 [node name="barrels2" type="Node3D" parent="3d"]
 transform = Transform3D(-2.79479, 0, -0.092615, 0, 2.79633, 0, 0.092615, 0, -2.79479, 53.0004, -5.15535, 93.7397)
 
 [node name="greenbarrel" parent="3d/barrels2" instance=ExtResource("9_kccih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1335, 2.45869, 6.6924)
+transform = Transform3D(0.20886, 0.936188, 0.282717, -0.977638, 0.207131, 0.0363468, -0.0245319, -0.283986, 0.958515, 20.3228, -0.537128, 6.70327)
 
 [node name="yellowbarrel" parent="3d/barrels2" instance=ExtResource("10_ktwm4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9294, 1.71087, 7.63683)
+transform = Transform3D(0.999687, 0.0231751, 0.00945358, -0.0231751, 0.714411, 0.699342, 0.00945357, -0.699342, 0.714725, 21.3193, -0.454254, 7.71601)
 
 [node name="redbarrel" parent="3d/barrels2" instance=ExtResource("11_torqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2691, 1.77459, 6.6993)
+transform = Transform3D(0.999061, -0.0327781, 0.0283562, 0.0327781, 0.143372, -0.989126, 0.0283562, 0.989126, 0.144311, 20.1305, 0.165046, 5.90341)
 
 [node name="Badwater" parent="3d" instance=ExtResource("12_hstki")]
 transform = Transform3D(693.379, 0, 0, 0, 693.379, 0, 0, 0, 693.379, 0, 21.6228, -703.907)
@@ -252,7 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.342, -4.46617, 75.6791)
 transform = Transform3D(0.0249382, 0, -0.999689, 0, 1, 0, 0.999689, 0, 0.0249382, -111.653, -15.8173, 30.6201)
 
 [node name="Portal 1" parent="." instance=ExtResource("24_8ximy")]
-transform = Transform3D(-0.167437, 0, -3.55973, 0, 3.98579, 0, 3.55973, 0, -0.167437, -55.3853, 13.4434, 16.4246)
+transform = Transform3D(-0.767128, 0, -3.48012, 0, 3.98579, 0, 3.48012, 0, -0.767128, -55.3853, 13.4434, 16.4246)
 player_path = NodePath("../Player")
 target_scene_path = "res://Omar/present.tscn"
 amulet_ui_path = NodePath("../Control")
@@ -272,7 +266,7 @@ autoplay = true
 [node name="Badsky" parent="." instance=ExtResource("29_7tko6")]
 
 [node name="fish_shop_owner" parent="." instance=ExtResource("30_s2qwy")]
-transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 35.2944, 0.469059, 9.8571)
+transform = Transform3D(-1.58683, 0, 1.21736, 0, 2, 0, -1.21736, 0, -1.58683, 31.4235, 0.469059, 9.8571)
 collision_layer = 16
 collision_mask = 2
 
@@ -292,7 +286,7 @@ transform = Transform3D(7.7613, 0, 0.525898, 0, 5.472, 0, -2.07963, 0, 1.96268, 
 shape = SubResource("BoxShape3D_1rafp")
 
 [node name="FishShop" parent="." instance=ExtResource("34_0ks0q")]
-transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.5898, 1.1015, 7.09023)
+transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 29.6141, 1.1015, 7.09023)
 
 [node name="airwall" type="Node" parent="."]
 
@@ -300,28 +294,28 @@ transform = Transform3D(9.97149, 0, -4.64428, 0, 11, 0, 4.64428, 0, 9.97149, 34.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 52.3188)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 38.29)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="airwall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5976, 0, 52.3188)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, 3.40991, 0, 41.1001)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="airwall"]
 transform = Transform3D(-0.0444912, 0, 0.99901, 0, 1, 0, -0.99901, 0, -0.0444912, 40.4473, -2.55907, 28.1415)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 8.10623e-06, 0, 20.1829, 0, 0, 0, 116.557, -10.4921, -0.715122, 34.3914)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="airwall"]
 transform = Transform3D(-0.0444912, 0, 0.99901, 0, 1, 0, -0.99901, 0, -0.0444912, -97.4958, -2.55907, 28.1415)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 8.10623e-06, 0, 20.1829, 0, 0, 0, 116.557, -16.1661, 0, 39.5609)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="airwall"]
@@ -335,14 +329,14 @@ shape = SubResource("BoxShape3D_kn12n")
 transform = Transform3D(0.999999, 0, 0.00143111, 0, 1, 0, -0.00143111, 0, 0.999999, 56.0245, -2.55907, -31.763)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D6"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -16.9882, 0, 36.1506)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="airwall"]
 transform = Transform3D(-0.0444912, 0, 0.99901, 0, 1, 0, -0.99901, 0, -0.0444912, -61.9264, -2.55907, -40.2472)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D7"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 8.10623e-06, 0, 20.1829, 0, 0, 0, 116.557, -10.9449, 9.81551, 36.17)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D8" type="StaticBody3D" parent="airwall"]
@@ -378,3 +372,9 @@ shape = SubResource("BoxShape3D_ejbkr")
 [node name="Overlays" parent="." instance=ExtResource("35_npgsw")]
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.915101, 0, -0.403226, 0, 1, 0, 0.403226, 0, 0.915101, 31.8003, 7.64986, 8.58383)
+shape = SubResource("BoxShape3D_likin")

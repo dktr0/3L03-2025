@@ -39,8 +39,14 @@ func fade_in_sequence() -> void:
 	await tween2.finished
 	# 到这里 halcyon & label 都淡入完成
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			fade_out_and_goto_menu()
+			get_viewport().set_input_as_handled()
+
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("activate"):
+	if Input.is_action_just_pressed("activate") or Input.is_action_just_pressed("ui_accept"):
 		fade_out_and_goto_menu()
 
 func fade_out_and_goto_menu() -> void:

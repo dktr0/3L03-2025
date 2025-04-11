@@ -62,7 +62,7 @@ func get_movement_input(_delta: float, targeting_active: bool) -> Dictionary:
 	if !player or !camera_node:
 		printerr("MovementSystem: Player or Camera node is invalid in get_movement_input.")
 		# Return zero vectors to prevent errors downstream
-		return {"velocity": Vector3.ZERO, "look_direction": Vector3.ZERO} 
+		return {"velocity": Vector3.ZERO, "look_direction": Vector3.ZERO, "is_sprinting": false} 
 
 	# Sprinting is only allowed when not targeting
 	is_sprinting = Input.is_action_pressed("move_sprint") and not is_targeting
@@ -99,7 +99,8 @@ func get_movement_input(_delta: float, targeting_active: bool) -> Dictionary:
 		target_velocity = Vector3.ZERO
 		# Keep the previously set look_direction (player's current forward)
 
-	return {"velocity": target_velocity, "look_direction": look_direction}
+	# Return results including target velocity, look direction, and sprinting status
+	return {"velocity": target_velocity, "look_direction": look_direction, "is_sprinting": is_sprinting}
 
 ## Updates the targeting state and direction.
 func set_targeting_state(is_target_active: bool, direction_to_target: Vector3):
