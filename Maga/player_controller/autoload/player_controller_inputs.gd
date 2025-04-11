@@ -151,6 +151,7 @@ func setup_default_events():
 	add_key_mapping("move_jump", KEY_SPACE)
 	add_key_mapping("move_sprint", KEY_SHIFT)
 	add_key_mapping("action", KEY_E) # 'action' is managed
+	add_mouse_button_mapping("action", MOUSE_BUTTON_LEFT) # Also map left click to action
 	add_key_mapping("target", KEY_TAB) # 'target' is managed
 
 	# --- Handle OTHER specific actions (ensure they exist, clear, map) ---
