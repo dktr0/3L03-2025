@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://c7niujgajwjqk" path="res://Nan/Badsky.tscn" id="29_wgvx5"]
 [ext_resource type="PackedScene" uid="uid://q3a2x1c8fgf1" path="res://Quinn/Fish Shop Owner/fish_shop_owner.tscn" id="30_dssij"]
 [ext_resource type="Script" path="res://Omar/NPCDialogue.gd" id="31_p6muy"]
-[ext_resource type="PackedScene" path="res://Ethan C/Fish Shop.tscn" id="34_b1l4a"]
+[ext_resource type="PackedScene" uid="uid://c4japnhf3f4h4" path="res://Ethan C/Fish Shop.tscn" id="34_b1l4a"]
 [ext_resource type="PackedScene" uid="uid://br0gbes8w1ft4" path="res://Andy/DialogueQuestTrigger.tscn" id="34_ivkwf"]
 [ext_resource type="PackedScene" uid="uid://bkok2d4npgrbx" path="res://Quinn/ICE MONSTER FINAL/ICE_MONSTER_FINAL.tscn" id="35_68n6v"]
 [ext_resource type="PackedScene" uid="uid://bqlps6f2j57a8" path="res://Wren/coastguardstation.glb" id="35_h4f76"]
