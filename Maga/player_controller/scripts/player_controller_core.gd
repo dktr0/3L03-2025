@@ -23,7 +23,7 @@ extends CharacterBody3D
 
 @export_category("Physics Settings")
 @export var gravity := 19.6
-@export var jump_strength := 15.0 # Lowered from 20.0
+@export var jump_strength := 16.0 # Decreased from 18.0 for a smaller jump
 @export var rotation_speed := 7.0 # Base speed for player rotation towards look direction (Lowered from 10.0)
 @export var moving_rotation_multiplier := 1.2 # Multiplier applied to rotation speed when moving
 @export var air_control_factor := 0.4 # How much control the player has while airborne (Lowered from 0.7)
@@ -39,11 +39,14 @@ extends CharacterBody3D
 
 @export_category("Node References")
 @export var animation_player_path: NodePath # Path to the AnimationPlayer node
-@onready var step_detect_ray: RayCast3D = $StepDetectRay # Assign in editor
-@onready var step_height_ray: RayCast3D = $StepHeightRay # Assign in editor
+@onready var step_detect_ray: RayCast3D = $StepDetectRay
+@onready var step_height_ray: RayCast3D = $StepHeightRay
+@onready var animation_player: AnimationPlayer = get_node_or_null(animation_player_path) if animation_player_path else null 
 
 # Node References
-var camera_node: Camera3D
+var character_body: CharacterBody3D # Reference to this node itself
+var camera_root: Node3D # Reference to the CameraRoot node
+var camera_3d: Camera3D # Reference to the Camera3D node (renamed from camera_node for consistency)
 var movement_system: Node # Reference to the MovementSystem script/node
 var animation_system: Node # Reference to the new AnimationSystem node
 var controller: Node # Reference to the PlayerControllerInputs Autoload
@@ -61,11 +64,15 @@ var jump_buffer_timer := 0.0 # Timer for jump input buffer
 var is_performing_jump := false # Flag to track if currently in the upward phase of a jump (for variable height)
 var current_jumps := 0 # Counter for jumps performed since last grounded
 var was_on_floor := false # Track floor state for fall detection
+var is_attacking := false # ADDED: State flag for attacking
+var was_walking_on_floor := false # ADDED: Track previous walking state
 
 ## Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	# Get references to child nodes and autoloads
-	camera_node = get_node_or_null("CameraRoot/Camera3D") as Camera3D
+	character_body = self # Assign self to character_body
+	camera_root = get_node_or_null("CameraRoot") as Node3D # Assign CameraRoot
+	camera_3d = get_node_or_null("CameraRoot/Camera3D") as Camera3D # Assign Camera3D (was camera_node)
 	movement_system = get_node_or_null("MovementSystem")
 	animation_system = get_node_or_null("AnimationSystem") # Get the new node
 	controller = get_node_or_null("/root/PlayerControllerInputs")
@@ -77,12 +84,12 @@ func _ready():
 	var anim_player = get_node_or_null(animation_player_path) as AnimationPlayer
 
 	# Validate node references
-	if !camera_node:
+	if !camera_3d: # Changed from camera_node
 		printerr("Player Core: Camera3D node not found at 'CameraRoot/Camera3D'.")
 	if !movement_system:
 		printerr("Player Core: MovementSystem node not found at 'MovementSystem'.")
 	elif movement_system.has_method("setup"):
-		movement_system.setup(camera_node)
+		movement_system.setup(camera_3d)
 	else:
 		printerr("Player Core: MovementSystem node does not have a setup() method.")
 	
@@ -95,27 +102,27 @@ func _ready():
 	if !animation_system:
 		printerr("Player Core: AnimationSystem node not found at 'AnimationSystem'.")
 	# Pass AnimationTree reference and speeds to the AnimationSystem
-	elif animation_system.has_method("setup"):
-		if anim_tree and movement_system: # Ensure both tree and movement system exist
-			# Get base speeds - **ADJUST THESE LINES if your speed variables have different names**
-			var base_move_speed = movement_system.get("move_speed") if movement_system.has_method("get") else 5.0 # Example: Get speed or use default
-			var base_sprint_speed = movement_system.get("sprint_speed") if movement_system.has_method("get") else 8.0 # Example: Get speed or use default
-			
-			# Check if speeds were successfully retrieved (or handle potential errors)
-			if base_move_speed == null:
-				printerr("Player Core: Could not get 'move_speed' from MovementSystem. Using default for AnimationSystem.")
-				base_move_speed = 5.0 
-			if base_sprint_speed == null:
-				printerr("Player Core: Could not get 'sprint_speed' from MovementSystem. Using default for AnimationSystem.")
-				base_sprint_speed = 8.0
+	# elif animation_system.has_method("setup"):
+	# 	if anim_tree and movement_system: # Ensure both tree and movement system exist
+	# 		# Get base speeds - **ADJUST THESE LINES if your speed variables have different names**
+	# 		var base_move_speed = movement_system.get("move_speed") if movement_system.has_method("get") else 5.0 # Example: Get speed or use default
+	# 		var base_sprint_speed = movement_system.get("sprint_speed") if movement_system.has_method("get") else 8.0 # Example: Get speed or use default
+	# 		
+	# 		# Check if speeds were successfully retrieved (or handle potential errors)
+	# 		if base_move_speed == null:
+	# 			printerr("Player Core: Could not get 'move_speed' from MovementSystem. Using default for AnimationSystem.")
+	# 			base_move_speed = 5.0 
+	# 		if base_sprint_speed == null:
+	# 			printerr("Player Core: Could not get 'sprint_speed' from MovementSystem. Using default for AnimationSystem.")
+	# 			base_sprint_speed = 8.0
 
-			# Call setup with the correct 3 arguments
-			animation_system.setup(anim_tree, base_move_speed, base_sprint_speed) 
-		else:
-			printerr("Player Core: Cannot setup AnimationSystem because AnimationTree or MovementSystem was not found.")
-	else:
-		printerr("Player Core: AnimationSystem node does not have a setup() method.")
-	
+	# 		# Call setup with the correct 3 arguments
+	# 		animation_system.setup(anim_tree, base_move_speed, base_sprint_speed) 
+	# 	else:
+	# 		printerr("Player Core: Cannot setup AnimationSystem because AnimationTree or MovementSystem was not found.")
+	# else:
+	# 	printerr("Player Core: AnimationSystem node does not have a setup() method.")
+
 	if !controller:
 		push_warning("Player Core: PlayerControllerInputs Autoload not found.")
 
@@ -132,15 +139,60 @@ func _ready():
 	# Initialize floor state
 	was_on_floor = is_on_floor()
 
+	# Check for PlayerControllerInputs autoload
+	var controller = get_node_or_null("/root/PlayerControllerInputs")
+	if controller:
+		input_handler = controller
+	else:
+		printerr("Player Core: Controller not found at '/root/PlayerControllerInputs'. Setting up dynamic input mappings.")
+		setup_dynamic_inputs()
+		input_handler = self
+	
+	# Enhanced Controller Detection
+	check_controller_connection()
+	
+	# Set up custom controller mappings if needed
+	setup_custom_controller_mappings()
+	
+	# Connect to input events for real-time controller detection
+	Input.joy_connection_changed.connect(_on_joy_connection_changed)
+
+	if not character_body:
+		printerr("Player Core: CharacterBody3D node not found at '" + str(get_path()) + "'.")
+	if not camera_root:
+		printerr("Player Core: CameraRoot node not found at 'CameraRoot'.")
+	if not camera_3d:
+		printerr("Player Core: Camera3D node not found at 'CameraRoot/Camera3D'.")
+
+	# Connect animation finished signal IF animation player exists
+	if animation_player:
+		animation_player.animation_finished.connect(_on_AnimationPlayer_animation_finished)
+	else:
+		if animation_player_path: # Only warn if path was set but node not found
+			printerr("Player Core: Cannot connect animation_finished signal, AnimationPlayer not found at path: ", animation_player_path)
+
 ## Called every physics frame. Handles movement, jumping, gravity, and rotation.
 func _physics_process(delta: float):
+	# --- REMOVED AnimationSystem Check ---
+	# if !animation_system or !animation_system.has_method("update_animation"):
+	# 	printerr("Player Core: Animation system invalid or missing 'update_animation' method.")
+		# Can optionally return here if animations are critical
+
+	# --- Validation for Movement System (Keep) ---
 	if !movement_system or !movement_system.has_method("get_movement_input"):
 		printerr("Player Core: Movement system invalid or missing 'get_movement_input' method.")
-		return
-	# We still need animation system even if movement is invalid? Maybe not.
-	if !animation_system or !animation_system.has_method("update_animation"):
-		printerr("Player Core: Animation system invalid or missing 'update_animation' method.")
-		# Can optionally return here if animations are critical
+		return 
+
+	# --- ADDED: Check for Attack Input --- (Moved from InputManager._input)
+	if Input.is_action_just_pressed("attack"):
+		# Only attack if not already attacking and animation player exists
+		if not is_attacking and animation_player:
+			is_attacking = true # Set attacking state
+			# Play the attack animation (Make sure "Sword" is the correct name!)
+			animation_player.play("Sword") 
+			# Reset speed scale for attack animation
+			animation_player.speed_scale = 1.0 
+	# -------------------------------------
 
 	# --- Update Timers ---
 	if coyote_timer > 0.0:
@@ -148,24 +200,24 @@ func _physics_process(delta: float):
 	if jump_buffer_timer > 0.0:
 		jump_buffer_timer -= delta
 
-	# --- Get Movement Input ---
+	# --- Get Movement Input & Floor State (MOVED EARLIER) ---
+	var on_floor = is_on_floor()
 	var movement_input = movement_system.get_movement_input(delta, is_targeting)
 	var target_horizontal_velocity = movement_input["velocity"]
 	var look_direction = movement_input["look_direction"]
 	var is_sprinting = movement_input["is_sprinting"]
+	var is_moving = velocity.length_squared() > 0.1 # Determine is_moving AFTER velocity updates
 
-	# --- Ground Check & State Reset ---
-	var on_floor = is_on_floor()
+	# --- Ground State Reset ---
 	if on_floor:
-		coyote_timer = coyote_time_duration # Reset coyote timer when grounded
-		is_performing_jump = false # Reset jump state flags when grounded
-		current_jumps = 0 # Reset jumps on landing
+		coyote_timer = coyote_time_duration
+		is_performing_jump = false
+		current_jumps = 0
 	else:
-		# Detect falling off ledge (was on floor last frame, not now, and didn't jump upwards)
-		if was_on_floor and velocity.y <= 0: 
-			if current_jumps == 0: # Only set to 1 if we haven't jumped yet (uses the 'ground' jump)
+		# Detect falling off ledge
+		if was_on_floor and velocity.y <= 0:
+			if current_jumps == 0:
 				current_jumps = 1
-	# Coyote timer naturally decreases when not on floor
 
 	# --- Handle Jump Input Buffering ---
 	if Input.is_action_just_pressed("move_jump"):
@@ -176,10 +228,10 @@ func _physics_process(delta: float):
 		var performed_jump_this_frame = false
 		
 		# Check for ground/coyote jump first
-		if on_floor or coyote_timer > 0.0:
+		if on_floor or coyote_timer > 0.0: # Use the 'on_floor' variable determined earlier
 			velocity.y = jump_strength
-			# Store the horizontal direction faced when jumping (existing logic)
-			if look_direction.length_squared() > 0.0001: 
+			# Store the horizontal direction faced when jumping (using 'look_direction' determined earlier)
+			if look_direction.length_squared() > 0.0001:
 				jump_direction = look_direction.normalized()
 			else:
 				jump_direction = -transform.basis.z if transform.basis.z != Vector3.ZERO else Vector3.FORWARD
@@ -203,10 +255,9 @@ func _physics_process(delta: float):
 			jump_buffer_timer = 0.0
 
 	# --- Variable Jump Height Cutoff ---
-	# If jump button is released early while still moving upwards, reduce upward velocity
 	if is_performing_jump and not on_floor and Input.is_action_just_released("move_jump") and velocity.y > 0:
 		velocity.y *= variable_jump_cutoff_multiplier
-		is_performing_jump = false # Cutoff applied, stop checking for this jump
+		is_performing_jump = false
 	
 	# --- Apply Gravity ---
 	if not on_floor:
@@ -215,10 +266,10 @@ func _physics_process(delta: float):
 	# --- Apply Air Control & Directional Hindrance ---
 	var current_accel = movement_system.acceleration
 	var current_decel = movement_system.deceleration
-	var effective_air_control = air_control_factor # Start with base air control
+	var effective_air_control = air_control_factor
 
 	if not on_floor:
-		# Reduce air control if moving sideways or backwards relative to the jump direction
+		# Reduce air control (uses 'target_horizontal_velocity' determined earlier)
 		var current_dir = Vector3.ZERO
 		if target_horizontal_velocity.length_squared() > 0.0001:
 			current_dir = target_horizontal_velocity.normalized()
@@ -247,9 +298,40 @@ func _physics_process(delta: float):
 		velocity.x = lerp(velocity.x, 0.0, current_decel * delta)
 		velocity.z = lerp(velocity.z, 0.0, current_decel * delta)
 
+	# --- Animation Logic ---
+	# Only process movement/idle/jump animations if NOT attacking
+	if not is_attacking:
+		if animation_player:
+			var anim_name = ""
+			var anim_speed = 1.0
+			
+			# Determine animation based on state
+			if not on_floor:
+				anim_name = "Jump"
+				anim_speed = 2.2
+			elif is_moving:
+				anim_speed = 4.0
+				if is_sprinting:
+					anim_name = "Run"
+				else:
+					anim_name = "Walk"
+			else: # Idle
+				anim_name = "Idle_001"
+				anim_speed = 2.2
+
+			# Play the animation and set speed scale
+			if anim_name != "" and (not animation_player.is_playing() or animation_player.current_animation != anim_name):
+				animation_player.play(anim_name)
+				animation_player.speed_scale = anim_speed
+			else:
+				# Update speed scale if animation is already playing but speed needs change
+				if anim_name != "" and animation_player.is_playing() and animation_player.current_animation == anim_name:
+					if animation_player.speed_scale != anim_speed:
+						animation_player.speed_scale = anim_speed
+
 	# --- Step Up Logic (Before move_and_slide) ---
 	var did_step_up = false # Flag to prevent step logic interfering with normal jumping
-	if is_on_floor() and step_detect_ray and step_height_ray:
+	if on_floor and step_detect_ray and step_height_ray:
 		var horizontal_vel = Vector3(velocity.x, 0, velocity.z)
 		if horizontal_vel.length_squared() > 0.01: # Moving horizontally
 			var forward_dir = -transform.basis.z.normalized()
@@ -271,21 +353,8 @@ func _physics_process(delta: float):
 							velocity.y = step_climb_speed # Apply upward velocity boost
 							did_step_up = true # Mark that we initiated a step
 
-	# --- Apply Gravity (Only if not stepping up) ---
-	# Apply gravity if not on floor OR if on floor but didn't just step up
-	if not is_on_floor():
-		# If we just initiated a step up this frame, the upward velocity overrides gravity briefly
-		if not did_step_up:
-			velocity.y -= gravity * delta
-	# If on floor AND did_step_up is false, gravity is effectively cancelled by floor collision in move_and_slide
-
 	# --- Apply Movement via move_and_slide ---
 	move_and_slide()
-
-	# --- Update Animation System ---
-	if animation_system and animation_system.has_method("update_animation"):
-		# Call with the updated 3 arguments expected by the refactored script
-		animation_system.update_animation(on_floor, is_sprinting, velocity)
 
 	# --- Handle Rotation (Smoothly turn towards look_direction) ---
 	if look_direction.length_squared() > 0.0001: # Check if there is a valid look direction
@@ -300,7 +369,7 @@ func _physics_process(delta: float):
 		# Interpolate the current transform towards the target transform for smooth rotation
 		transform = transform.interpolate_with(target_transform, delta * current_rotation_speed)
 
-	# Update was_on_floor for the next frame
+	# --- Update State for Next Frame ---
 	was_on_floor = on_floor
 
 ## Called every frame. Handles non-physics updates like targeting UI.
@@ -323,14 +392,35 @@ class InputManager extends Node:
 	
 	## Handles unhandled input events.
 	func _input(event):
+		# --- REMOVED DEBUG for Mouse Events ---
+		# if event is InputEventMouseButton:
+		# 	print("InputManager received mouse event: ", event)
+		
 		# Toggle targeting mode
-		if event.is_action_pressed("target"):
+		if Input.is_action_pressed("target"): # Use Input singleton
 			parent.toggle_targeting()
 			
 		# Trigger interaction via the movement system
-		if event.is_action_pressed("action"):
+		if Input.is_action_pressed("action"): # Use Input singleton
 			if parent.movement_system and parent.movement_system.has_method("interact"):
 				parent.movement_system.interact()
+				
+		# --- REMOVED ATTACK HANDLING FROM HERE ---
+		# if Input.is_action_just_pressed("attack"):
+		# 	print("[DEBUG] Attack action JUST PRESSED")
+		# 	print("[DEBUG]   Current InputMap events for 'attack':", InputMap.action_get_events("attack")) 
+		# 	print("[DEBUG]   is_attacking before check: ", parent.is_attacking)
+		# 	print("[DEBUG]   animation_player valid: ", is_instance_valid(parent.animation_player))
+		# 	if not parent.is_attacking and parent.animation_player:
+		# 		print("[DEBUG]     Starting attack sequence!")
+		# 		parent.is_attacking = true
+		# 		parent.animation_player.play("Sword") 
+		# 		parent.animation_player.speed_scale = 1.0 
+		# 	else:
+		# 		if parent.is_attacking:
+		# 			print("[DEBUG]     Attack prevented: Already attacking.")
+		# 		if not parent.animation_player:
+		# 			print("[DEBUG]     Attack prevented: AnimationPlayer is null.")
 
 # ============================================================================ #
 # region Targeting System
@@ -373,8 +463,8 @@ func acquire_target():
 				# Position icon slightly above target's origin
 				controller.set_target_icon_position(true, current_target.global_position + Vector3.UP * 1.5)
 			
-			if camera_node and camera_node.has_method("set_targeting_mode"):
-				camera_node.set_targeting_mode(true, current_target)
+			if camera_3d and camera_3d.has_method("set_targeting_mode"): # Changed from camera_node
+				camera_3d.set_targeting_mode(true, current_target) # Changed from camera_node
 				
 			if movement_system and movement_system.has_method("set_targeting_state"):
 				var direction_to_target = (current_target.global_position - global_position)
@@ -390,8 +480,8 @@ func release_target():
 		controller.set_target_icon_position(false)
 	
 	# Notify the camera to return to normal mode
-	if camera_node and camera_node.has_method("set_targeting_mode"):
-		camera_node.set_targeting_mode(false, null)
+	if camera_3d and camera_3d.has_method("set_targeting_mode"): # Changed from camera_node
+		camera_3d.set_targeting_mode(false, null) # Changed from camera_node
 		
 	# Notify movement system about targeting off
 	if movement_system and movement_system.has_method("set_targeting_state"):
@@ -438,3 +528,136 @@ func find_child_of_type(node: Node, script_name: String) -> Node:
 			return result
 	
 	return null
+
+# Enhanced Controller Detection
+func check_controller_connection() -> void:
+	var connected_joypads = Input.get_connected_joypads()
+	if connected_joypads.size() > 0:
+		print("Controller(s) detected: ", connected_joypads.size())
+		for joypad_id in connected_joypads:
+			print("Joypad ID: ", joypad_id, " Name: ", Input.get_joy_name(joypad_id))
+	else:
+		print("No controllers detected. Please connect a controller or use keyboard/mouse.")
+
+func _on_joy_connection_changed(device_id: int, connected: bool) -> void:
+	if connected:
+		print("Controller connected: ID ", device_id, " Name: ", Input.get_joy_name(device_id))
+	else:
+		print("Controller disconnected: ID ", device_id)
+		# Notify the input autoload system about the disconnection
+		if controller and controller.has_method("handle_joy_disconnection"):
+			controller.handle_joy_disconnection(device_id)
+		else:
+			printerr("Player Core: Could not notify PlayerControllerInputs autoload about joy disconnection.")
+	# Update the connection status printout regardless
+	check_controller_connection()
+
+# Custom Controller Mappings
+func setup_custom_controller_mappings() -> void:
+	# Example of adding a custom mapping for a specific controller
+	# This can be expanded based on specific controller GUIDs and mappings
+	var joy_guid = Input.get_joy_guid(0) if Input.get_connected_joypads().size() > 0 else ""
+	if joy_guid != "":
+		print("Setting up custom mappings for controller: ", joy_guid)
+		# Add custom mapping if needed - example placeholder
+		# Input.add_joy_mapping("mapping_string_here", true)
+		# For now, we'll log that we're checking for custom mappings
+		print("Custom controller mapping setup complete for ", Input.get_joy_name(0))
+
+# Enhanced Dynamic Input Setup with Dead Zone Adjustments
+func setup_dynamic_inputs() -> void:
+	print("WARNING: PlayerControllerCore.setup_dynamic_inputs() called, but this logic is likely superseded by PlayerControllerInputs autoload.")
+	var actions = {
+		"move_forward": [KEY_W, JOY_BUTTON_DPAD_UP, JOY_AXIS_LEFT_Y, -0.5, 0.2],
+		"move_backward": [KEY_S, JOY_BUTTON_DPAD_DOWN, JOY_AXIS_LEFT_Y, 0.5, 0.2],
+		"move_left": [KEY_A, JOY_BUTTON_DPAD_LEFT, JOY_AXIS_LEFT_X, -0.5, 0.2],
+		"move_right": [KEY_D, JOY_BUTTON_DPAD_RIGHT, JOY_AXIS_LEFT_X, 0.5, 0.2],
+		"move_jump": [KEY_SPACE, JOY_BUTTON_A],
+		"move_sprint": [KEY_SHIFT, JOY_BUTTON_X],
+		"action": [KEY_E, JOY_BUTTON_B],
+		"target": [KEY_TAB, JOY_BUTTON_Y],
+		# --- ADDED: Attack Action --- 
+		"attack": [MOUSE_BUTTON_LEFT, JOY_BUTTON_RIGHT_SHOULDER], # LMB / R1/RB
+		# ---------------------------
+		"ui_up": [KEY_UP, JOY_BUTTON_DPAD_UP, JOY_AXIS_LEFT_Y, -0.5, 0.2],
+		"ui_down": [KEY_DOWN, JOY_BUTTON_DPAD_DOWN, JOY_AXIS_LEFT_Y, 0.5, 0.2],
+		"ui_left": [KEY_LEFT, JOY_BUTTON_DPAD_LEFT, JOY_AXIS_LEFT_X, -0.5, 0.2],
+		"ui_right": [KEY_RIGHT, JOY_BUTTON_DPAD_RIGHT, JOY_AXIS_LEFT_X, 0.5, 0.2],
+		"ui_accept": [KEY_ENTER, JOY_BUTTON_A],
+		"ui_cancel": [KEY_ESCAPE, JOY_BUTTON_B],
+		# Add camera controls
+		"camera_left": [null, null, JOY_AXIS_RIGHT_X, -0.5, 0.2], # Map right stick X negative
+		"camera_right": [null, null, JOY_AXIS_RIGHT_X, 0.5, 0.2], # Map right stick X positive
+		"camera_up": [null, null, JOY_AXIS_RIGHT_Y, -0.5, 0.2],   # Map right stick Y negative
+		"camera_down": [null, null, JOY_AXIS_RIGHT_Y, 0.5, 0.2]    # Map right stick Y positive
+	}
+
+	for action_name in actions.keys():
+		if not InputMap.has_action(action_name):
+			InputMap.add_action(action_name)
+			# Set deadzone only if it's defined (actions[action_name].size() > 4)
+			if actions[action_name].size() > 4 and actions[action_name][4] != null:
+				InputMap.action_set_deadzone(action_name, actions[action_name][4])
+
+		var events = InputMap.action_get_events(action_name)
+		var has_keyboard = false
+		var has_joypad_button = false
+		var has_joypad_axis = false
+		var has_mouse_button = false # ADDED: Check for mouse buttons
+		for event in events:
+			if event is InputEventKey:
+				has_keyboard = true
+			elif event is InputEventJoypadButton:
+				has_joypad_button = true
+			elif event is InputEventJoypadMotion:
+				has_joypad_axis = true
+			elif event is InputEventMouseButton: # ADDED
+				has_mouse_button = true # ADDED
+
+		# Determine potential mapping types from the definition array
+		var key_defined = actions[action_name].size() > 0 and actions[action_name][0] != null
+		var joy_button_defined = actions[action_name].size() > 1 and actions[action_name][1] != null
+		var joy_axis_defined = actions[action_name].size() > 3 and actions[action_name][2] != null
+		# ADDED: Check if the first element *could* be a mouse button (integer check)
+		var mouse_button_defined = key_defined and actions[action_name][0] is int and actions[action_name][0] >= MOUSE_BUTTON_LEFT and actions[action_name][0] <= MOUSE_BUTTON_XBUTTON2
+
+		# Add Keyboard event if missing and defined (and not intended as mouse button)
+		if not has_keyboard and key_defined and not mouse_button_defined:
+			var key_event = InputEventKey.new()
+			key_event.keycode = actions[action_name][0]
+			InputMap.action_add_event(action_name, key_event)
+
+		# ADDED: Add Mouse Button event if missing and defined
+		if not has_mouse_button and mouse_button_defined:
+			# REMOVED DEBUG Print
+			var mouse_event = InputEventMouseButton.new()
+			mouse_event.button_index = actions[action_name][0]
+			InputMap.action_add_event(action_name, mouse_event)
+
+		# Add Joypad Button event if missing and defined
+		if not has_joypad_button and joy_button_defined:
+			var joy_event = InputEventJoypadButton.new()
+			joy_event.button_index = actions[action_name][1]
+			InputMap.action_add_event(action_name, joy_event)
+
+		# Add Joypad Axis event if missing and defined
+		if not has_joypad_axis and actions[action_name].size() > 3 and actions[action_name][2] != null:
+			var axis_event = InputEventJoypadMotion.new()
+			axis_event.axis = actions[action_name][2]
+			axis_event.axis_value = actions[action_name][3]
+			InputMap.action_add_event(action_name, axis_event)
+
+	print("Dynamic input mappings including camera controls and custom dead zones have been set up.")
+
+# ============================================================================ #
+# region Signal Handlers & Helpers
+# ============================================================================ #
+
+# ADDED: Function to handle animation finishing
+func _on_AnimationPlayer_animation_finished(anim_name: StringName) -> void:
+	# If the attack animation finished, reset the state
+	if anim_name == "Sword": # Make sure "Sword" matches the animation name
+		is_attacking = false
+
+func get_jump_strength() -> float:
+	return jump_strength

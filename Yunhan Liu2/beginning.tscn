@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://l3iu0fdlcok3"]
+[gd_scene load_steps=42 format=3 uid="uid://l3iu0fdlcok3"]
 
 [ext_resource type="PackedScene" uid="uid://dw8fde4ghx6qm" path="res://Omar/world.tscn" id="1_abetd"]
 [ext_resource type="PackedScene" uid="uid://divnvg70t62q" path="res://Maga/player_controller/scenes/player.tscn" id="2_mabp6"]
@@ -37,15 +37,13 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bk3pb"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_6a1uf"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_su7hf"]
 size = Vector3(8.48912, 5.17664, 4.11774)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rafp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kn12n"]
-size = Vector3(1, 1, 0.892822)
+size = Vector3(19.2486, 1.97266, 0.953369)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5gtf"]
 
@@ -67,11 +65,7 @@ transform = Transform3D(31.3354, 0, 0, 0, 2.03632, 0, 0, 0, 1.06331, 6.56634, 1.
 shape = SubResource("BoxShape3D_bk3pb")
 
 [node name="World2" parent="." instance=ExtResource("1_abetd")]
-transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 8.762, -20.4973, 147.279)
-
-[node name="NPC with gas masks" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.408, -5.79681, 91.7809)
-mesh = SubResource("CapsuleMesh_6a1uf")
+transform = Transform3D(1.655, 0, 0, 0, 1.655, 0, 0, 0, 1.655, 14.3556, -13.1095, 152.202)
 
 [node name="Player" parent="." instance=ExtResource("2_mabp6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7329, 1.21465, 73.1241)
@@ -120,13 +114,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2711, 1.77459, 6.6993)
 transform = Transform3D(-2.79479, 0, -0.092615, 0, 2.79633, 0, 0.092615, 0, -2.79479, 53.0004, -5.15535, 93.7397)
 
 [node name="greenbarrel" parent="3d/barrels2" instance=ExtResource("9_kccih")]
-transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 19.1344, 2.25649, 6.6639)
+transform = Transform3D(0.20886, 0.936188, 0.282717, -0.977638, 0.207131, 0.0363468, -0.0245319, -0.283986, 0.958515, 20.3228, -0.537128, 6.70327)
 
 [node name="yellowbarrel" parent="3d/barrels2" instance=ExtResource("10_ktwm4")]
-transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 18.9294, 2.24279, 7.63683)
+transform = Transform3D(0.999687, 0.0231751, 0.00945358, -0.0231751, 0.714411, 0.699342, 0.00945357, -0.699342, 0.714725, 21.3193, -0.454254, 7.71601)
 
 [node name="redbarrel" parent="3d/barrels2" instance=ExtResource("11_torqb")]
-transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 18.2691, 2.24602, 6.6993)
+transform = Transform3D(0.999061, -0.0327781, 0.0283562, 0.0327781, 0.143372, -0.989126, 0.0283562, 0.989126, 0.144311, 20.1305, 0.165046, 5.90341)
 
 [node name="Badwater" parent="3d" instance=ExtResource("12_hstki")]
 transform = Transform3D(693.379, 0, 0, 0, 693.379, 0, 0, 0, 693.379, 0, 21.6228, -703.907)
@@ -252,7 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.342, -4.46617, 75.6791)
 transform = Transform3D(0.0249382, 0, -0.999689, 0, 1, 0, 0.999689, 0, 0.0249382, -111.653, -15.8173, 30.6201)
 
 [node name="Portal 1" parent="." instance=ExtResource("24_8ximy")]
-transform = Transform3D(-0.167437, 0, -3.55973, 0, 3.98579, 0, 3.55973, 0, -0.167437, -55.3853, 13.4434, 16.4246)
+transform = Transform3D(-0.767128, 0, -3.48012, 0, 3.98579, 0, 3.48012, 0, -0.767128, -55.3853, 13.4434, 16.4246)
 player_path = NodePath("../Player")
 target_scene_path = "res://Omar/present.tscn"
 amulet_ui_path = NodePath("../Control")
@@ -314,14 +308,14 @@ shape = SubResource("BoxShape3D_kn12n")
 transform = Transform3D(-0.0444912, 0, 0.99901, 0, 1, 0, -0.99901, 0, -0.0444912, 40.4473, -2.55907, 28.1415)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 4.29153e-06, 0, 20.1829, 0, 0, 0, 116.557, -10.2093, -0.715122, 32.8956)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="airwall"]
 transform = Transform3D(-0.0444912, 0, 0.99901, 0, 1, 0, -0.99901, 0, -0.0444912, -97.4958, -2.55907, 28.1415)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 8.10623e-06, 0, 20.1829, 0, 0, 0, 116.557, -12.9516, 0, 39.2514)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="airwall"]
@@ -335,14 +329,14 @@ shape = SubResource("BoxShape3D_kn12n")
 transform = Transform3D(0.999999, 0, 0.00143111, 0, 1, 0, -0.00143111, 0, 0.999999, 56.0245, -2.55907, -31.763)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D6"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -16.9882, 0, 36.1506)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="airwall"]
 transform = Transform3D(-0.0444912, 0, 0.99901, 0, 1, 0, -0.99901, 0, -0.0444912, -61.9264, -2.55907, -40.2472)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D7"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -2.91151, 0, 36.17)
+transform = Transform3D(1, 0, 8.10623e-06, 0, 20.1829, 0, 0, 0, 116.557, -10.9449, 9.81551, 36.17)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D8" type="StaticBody3D" parent="airwall"]

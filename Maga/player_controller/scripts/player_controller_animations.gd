@@ -74,7 +74,7 @@ func update_animation(on_floor: bool, is_sprinting: bool, current_velocity: Vect
 	# The BlendSpace1D should be configured to blend between Idle (0), Walk (e.g., base_move_speed),
 	# and Run (e.g., base_sprint_speed) based on this value.
 	animation_tree.set(SPEED_PARAM, current_horizontal_speed)
-	
+
 	# --- Optional: Handling Jump Triggers ---
 	# If your StateMachine uses triggers for jumps (e.g., AnimationNodeOneShot),
 	# you'd need the core script to pass a 'jump_requested' flag here.

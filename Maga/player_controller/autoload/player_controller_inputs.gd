@@ -40,46 +40,91 @@ var current_input_scheme: InputScheme = InputScheme.KEYBOARD_MOUSE
 var target_icon_instance: MeshInstance3D = null
 var target_icon_scene: Node3D = null
 
+# --- Scheme Switching Debounce ---
+var gamepad_grace_period_active := false
+var gamepad_grace_timer: Timer
+const GAMEPAD_GRACE_DURATION = 0.3 # Seconds to ignore KBM after gamepad input
+
 # --- Input Processing for Scheme Detection ---
 func _input(event: InputEvent):
-	var detected_scheme = -1 # Use -1 for no change
+	var detected_kbm = false
+	var detected_gamepad = false
 	
 	if event is InputEventKey or event is InputEventMouseButton or event is InputEventMouseMotion:
-		detected_scheme = InputScheme.KEYBOARD_MOUSE
+		detected_kbm = true
 	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
-		detected_scheme = InputScheme.GAMEPAD
+		detected_gamepad = true
 		
-	# If a relevant input type was detected and it's different from the current scheme
-	if detected_scheme != -1 and detected_scheme != current_input_scheme:
-		current_input_scheme = detected_scheme
-		print("Input scheme changed to: ", InputScheme.keys()[current_input_scheme])
-		@warning_ignore("int_as_enum_without_cast") 
+	# --- Logic with Debounce ---
+	var previous_scheme = current_input_scheme
+	
+	if detected_gamepad:
+		# Always switch to gamepad immediately on controller input
+		current_input_scheme = InputScheme.GAMEPAD
+		# Start or reset the grace period timer
+		gamepad_grace_period_active = true
+		if gamepad_grace_timer:
+			gamepad_grace_timer.start(GAMEPAD_GRACE_DURATION)
+	elif detected_kbm and not gamepad_grace_period_active:
+		# Switch to KBM only if KBM input detected AND grace period is NOT active
+		current_input_scheme = InputScheme.KEYBOARD_MOUSE
+	# Else (neither detected, or KBM detected during grace period): Scheme remains unchanged
+	
+	# --- Emit signal only if the scheme actually changed ---
+	if current_input_scheme != previous_scheme:
+		print(">>> INPUT SCHEME CHANGED TO: ", InputScheme.keys()[current_input_scheme])
+		@warning_ignore("int_as_enum_without_cast")
 		emit_signal("input_scheme_changed", current_input_scheme)
+
+# NEW Function: Called when a joystick disconnects
+func handle_joy_disconnection(device_id: int):
+	print("Input Autoload: Received disconnection notice for device ", device_id)
+	# Check if any other joypads are still connected
+	var connected_joypads = Input.get_connected_joypads()
+	# If no controllers are left, and the current scheme IS gamepad, switch back to KBM
+	if connected_joypads.is_empty() and current_input_scheme == InputScheme.GAMEPAD:
+		print("  Last controller disconnected. Switching input scheme to Keyboard/Mouse.")
+		current_input_scheme = InputScheme.KEYBOARD_MOUSE
+		# Use call_deferred to avoid potential issues emitting signal during input processing
+		call_deferred("emit_signal", "input_scheme_changed", current_input_scheme)
+	elif not connected_joypads.is_empty():
+		print("  Other controllers still connected: ", connected_joypads)
+		# Optional: Could check if the disconnected 'device_id' was the 'active' one,
+		# but simply checking if *any* are left is usually sufficient.
+
 
 # --- Initialization ---
 func _ready():
+	# --- ADD TIMER NODE ---
+	gamepad_grace_timer = Timer.new()
+	gamepad_grace_timer.one_shot = true
+	gamepad_grace_timer.connect("timeout", _on_gamepad_grace_period_timeout)
+	add_child(gamepad_grace_timer)
+	# ---------------------
+
 	# 1. Ensure all managed actions exist in the InputMap (and set deadzones)
 	ensure_actions_exist()
 	
-	# 2. Try to load and apply saved user mappings, overriding project.godot defaults
-	var loaded_ok = load_input_mappings()
-	if loaded_ok:
-		print("Loaded custom input mappings from: ", SAVE_FILE_PATH)
-	else:
-		# If loading failed, the defaults from project.godot remain active.
-		print("No saved input mappings found or load failed. Using defaults from project.godot.")
-		# REMOVED: setup_default_events() call - project.godot is the default
-		# REMOVED: save_input_mappings() call - Don't save project.godot defaults over potential user file
+	# 2. ALWAYS setup default events and save them, overwriting any existing .cfg file
+	print("Forcing setup of default input events...")
+	setup_default_events()
+	print("Saving default mappings (overwriting any existing file at: ", SAVE_FILE_PATH, ")...")
+	save_input_mappings()
 	
 	# 3. Always create the target icon
 	create_target_icon()
+
+# --- Timer Timeout Callback ---
+func _on_gamepad_grace_period_timeout():
+	gamepad_grace_period_active = false
+	#print("Gamepad grace period ended.") # Optional: for debugging
 
 # --- Input Mapping Logic ---
 
 # Ensures all actions listed in MANAGED_ACTIONS exist in the InputMap
 func ensure_actions_exist():
 	print("Ensuring input actions exist...")
-	var low_deadzone = 0.2 # Lower deadzone for analog stick sensitivity
+	var low_deadzone = 0.15 # Lowered deadzone for analog stick sensitivity (was 0.2)
 	for action_name in MANAGED_ACTIONS:
 		if not InputMap.has_action(action_name):
 			print("  Action '", action_name, "' not found, adding.")
@@ -94,44 +139,65 @@ func ensure_actions_exist():
 # Assumes the actions themselves already exist (called by ensure_actions_exist)
 func setup_default_events():
 	print("Setting up default input events...")
-	# Clear existing events first to ensure clean defaults
+	# Clear existing events first for MANAGED actions
 	for action_name in MANAGED_ACTIONS:
 		InputMap.action_erase_events(action_name)
 		
-	# --- Add default KEYBOARD/MOUSE events ---
+	# --- Add default KEYBOARD/MOUSE events for MANAGED actions ---
 	add_key_mapping("move_forward", KEY_W)
 	add_key_mapping("move_backward", KEY_S)
 	add_key_mapping("move_left", KEY_A)
 	add_key_mapping("move_right", KEY_D)
-	# Camera actions are handled by direct mouse input, no default key mapping needed unless desired
-	# add_key_mapping("camera_up", KEY_UP)
-	# add_key_mapping("camera_down", KEY_DOWN)
-	# add_key_mapping("camera_left", KEY_LEFT)
-	# add_key_mapping("camera_right", KEY_RIGHT)
 	add_key_mapping("move_jump", KEY_SPACE)
 	add_key_mapping("move_sprint", KEY_SHIFT)
-	add_key_mapping("action", KEY_E)
-	add_key_mapping("target", KEY_TAB)
+	add_key_mapping("action", KEY_E) # 'action' is managed
+	add_key_mapping("target", KEY_TAB) # 'target' is managed
 
-	# --- Add default GAMEPAD events ---
+	# --- Handle OTHER specific actions (ensure they exist, clear, map) ---
+	var other_actions = ["ui_accept", "ui_cancel", "activate", "activate_button", "attack"]
+	for action_name in other_actions:
+		if not InputMap.has_action(action_name):
+			InputMap.add_action(action_name)
+		InputMap.action_erase_events(action_name) # Clear existing events
+
+	# Map specific KBM events for these other actions
+	add_key_mapping("ui_accept", KEY_ENTER)
+	add_key_mapping("ui_cancel", KEY_ESCAPE)
+	add_key_mapping("activate", KEY_E) # E key for activate
+	add_key_mapping("activate_button", KEY_ENTER) # Enter for activate_button (example)
+	# Keeping mouse binding from project.godot (or add here if needed)
+	# add_mouse_button_mapping("attack", MOUSE_BUTTON_LEFT) 
+	# --- ADDED: Explicitly add mouse button mapping for attack ---
+	add_mouse_button_mapping("attack", MOUSE_BUTTON_LEFT)
+	# -----------------------------------------------------------
+
+	# --- Add default GAMEPAD events for ALL relevant actions ---
 	# Movement (Left Stick)
 	add_joypad_mapping("move_forward", JOY_AXIS_LEFT_Y, -1.0) 
 	add_joypad_mapping("move_backward", JOY_AXIS_LEFT_Y, 1.0)
 	add_joypad_mapping("move_left", JOY_AXIS_LEFT_X, -1.0)
 	add_joypad_mapping("move_right", JOY_AXIS_LEFT_X, 1.0)
 	
-	# Camera (Right Stick) - Map these even though camera script might read axis directly
+	# Camera (Right Stick) 
 	add_joypad_mapping("camera_up", JOY_AXIS_RIGHT_Y, -1.0) 
 	add_joypad_mapping("camera_down", JOY_AXIS_RIGHT_Y, 1.0)
 	add_joypad_mapping("camera_left", JOY_AXIS_RIGHT_X, -1.0)
 	add_joypad_mapping("camera_right", JOY_AXIS_RIGHT_X, 1.0)
 	
-	# Buttons (Example: Xbox layout)
-	add_button_mapping("move_jump", JOY_BUTTON_A) # A
-	# Using Left Stick click for sprint as an example, adjust if needed
+	# Buttons (Standard Layout + Attack/Activate)
+	add_button_mapping("move_jump", JOY_BUTTON_A) # A / Cross
 	add_button_mapping("move_sprint", JOY_BUTTON_LEFT_STICK) # L3 Click 
-	add_button_mapping("action", JOY_BUTTON_X) # X
-	add_button_mapping("target", JOY_BUTTON_LEFT_SHOULDER) # LB
+	add_button_mapping("action", JOY_BUTTON_X) # X / Square (Managed Action)
+	add_button_mapping("target", JOY_BUTTON_LEFT_SHOULDER) # LB (Managed Action)
+	
+	# UI Buttons
+	add_button_mapping("ui_accept", JOY_BUTTON_X) # X / Square also for UI accept
+	add_button_mapping("ui_cancel", JOY_BUTTON_B) # B / Circle for UI cancel
+	
+	# Specific Activate / Attack Buttons (Mapping all to X / Square as requested)
+	add_button_mapping("activate", JOY_BUTTON_X) # X / Square for activate
+	add_button_mapping("activate_button", JOY_BUTTON_X) # X / Square for activate_button
+	add_button_mapping("attack", JOY_BUTTON_X) # X / Square for attack
 
 
 # Saves the current mappings for MANAGED_ACTIONS to the save file
@@ -312,6 +378,18 @@ func add_joypad_mapping(action_name: String, axis: int, axis_value: float) -> vo
 	event.axis = axis
 	event.axis_value = axis_value
 	InputMap.action_add_event(action_name, event)
+
+# --- ADDED: Helper function for mouse button mapping ---
+func add_mouse_button_mapping(action_name: String, button_index: int) -> void:
+	var event = InputEventMouseButton.new()
+	event.button_index = button_index
+	# Check if this specific event already exists for the action
+	var existing_events = InputMap.action_get_events(action_name)
+	for existing_event in existing_events:
+		if existing_event is InputEventMouseButton and existing_event.button_index == event.button_index:
+			return # Already mapped
+	InputMap.action_add_event(action_name, event)
+# -----------------------------------------------------
 
 # --- Target Icon Logic (keep existing) ---
 func create_target_icon():

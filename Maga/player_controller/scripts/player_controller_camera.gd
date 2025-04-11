@@ -38,9 +38,13 @@ extends Camera3D
 @export var fov_lerp_speed := 6.0 # Speed of FOV transitions
 @export var trail_offset_strength := 0.3 # How far the camera trails behind player movement
 @export var trail_lerp_speed := 5.0 # Speed at which the trail offset adapts
-@export var gamepad_sensitivity_x := 1.5 # Sensitivity for horizontal gamepad stick look
-@export var gamepad_sensitivity_y := 1.5 # Sensitivity for vertical gamepad stick look
+
+@export_category("Gamepad Settings") # Added category for clarity
+@export var gamepad_sensitivity_x := 2.0 # Sensitivity for horizontal gamepad stick look (Increased from 1.5)
+@export var gamepad_sensitivity_y := 2.0 # Sensitivity for vertical gamepad stick look (Increased from 1.5)
 @export var gamepad_invert_y := true # Invert vertical gamepad look direction?
+@export var controller_smoothing := 10.0 # How quickly rotation accelerates (higher = faster)
+@export var controller_resistance := 15.0 # How quickly rotation decelerates (higher = faster stop)
 
 # Node References
 var target: Node3D
@@ -53,6 +57,7 @@ var camera_pitch := 0.0 # Current vertical rotation in radians
 var camera_yaw := 0.0 # Current horizontal rotation in radians
 var current_distance := desired_distance # Current actual distance from target
 var current_trail_offset := Vector3.ZERO # Smoothly interpolated trail offset
+var rotation_velocity := Vector2.ZERO # For smoothed gamepad rotation
 
 # Targeting State
 var targeting_mode := false
@@ -106,49 +111,79 @@ func _ready():
 	fov = base_fov
 	current_distance = desired_distance # Initialize distance
 
-## Handles unhandled input events, primarily for mouse look.
-func _unhandled_input(event):
+## Handles input events, primarily for mouse look.
+func _input(event: InputEvent):
 	# Ensure player_controller exists
 	if not player_controller:
 		return
 
+	# Check the scheme from the autoload
+	var current_scheme = player_controller.current_input_scheme
+
 	# --- MOUSE INPUT --- 
-	if player_controller.current_input_scheme == player_controller.InputScheme.KEYBOARD_MOUSE:
+	# Process only if scheme is KBM
+	if current_scheme == player_controller.InputScheme.KEYBOARD_MOUSE:
 		# If CursorManager wants the cursor visible (e.g., for UI), don't process camera input
-		if cursor_manager and cursor_manager.is_cursor_visible:
+		# Also check if targeting mode is active, as mouse look might be disabled then.
+		if (cursor_manager and cursor_manager.is_cursor_visible) or targeting_mode:
 			return
 
-		# Process mouse motion for camera rotation if cursor is captured (not targeting)
-		if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED and not targeting_mode:
+		# Process mouse motion for camera rotation if cursor is captured
+		if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			# We apply sensitivity directly here
 			camera_yaw -= event.relative.x * mouse_sensitivity_x
 			camera_pitch += event.relative.y * mouse_sensitivity_y
-			camera_pitch = clamp(camera_pitch, min_pitch_rad, max_pitch_rad) # Clamp vertical angle
+			# Clamp vertical angle immediately
+			camera_pitch = clamp(camera_pitch, min_pitch_rad, max_pitch_rad)
 
 ## Called every physics frame. Handles camera positioning, rotation, collision, and FOV.
 func _physics_process(delta):
-	if target == null: # Don't process if target is invalid
+	if target == null or player_controller == null: # Don't process if target or controller autoload is invalid
 		return
+	
+	# --- DIAGNOSTIC PRINT --- 
+	if targeting_mode:
+		print("DEBUG: Targeting Mode ACTIVE")
+	# ----------------------
 
-	# Ensure player_controller exists before using it
-	if not player_controller:
-		return
+	# --- Get Current Input Scheme --- 
+	var current_input_scheme = player_controller.current_input_scheme
+	
+	# --- Reset rotation velocity if not using gamepad --- 
+	# Prevents leftover velocity if switching schemes
+	if current_input_scheme != player_controller.InputScheme.GAMEPAD:
+		rotation_velocity = Vector2.ZERO
+	
+	# --- GAMEPAD CAMERA ROTATION (Smoothed - Refined) --- 
+	if current_input_scheme == player_controller.InputScheme.GAMEPAD and not targeting_mode:
+		# Use InputMap actions directly
+		var cam_axis_x = Input.get_axis("camera_left", "camera_right") 
+		var cam_axis_y = Input.get_axis("camera_up", "camera_down") 
+		var input_vector = Vector2(cam_axis_x, cam_axis_y)
 		
-	# --- GAMEPAD CAMERA ROTATION --- 
-	if player_controller.current_input_scheme == player_controller.InputScheme.GAMEPAD and not targeting_mode:
-		var cam_axis_x = Input.get_axis("camera_left", "camera_right")
-		var cam_axis_y = Input.get_axis("camera_up", "camera_down")
+		# Invert Y axis input if needed
+		var processed_cam_axis_y = -cam_axis_y if gamepad_invert_y else cam_axis_y
 		
-		# Apply sensitivity and delta time
-		camera_yaw -= cam_axis_x * gamepad_sensitivity_x * delta
-		var pitch_change = cam_axis_y * gamepad_sensitivity_y * delta
-		
-		# Apply inversion based on export variable
-		if gamepad_invert_y:
-			camera_pitch += pitch_change
+		# Check if there's significant input AFTER deadzone is applied by get_axis
+		if input_vector.length_squared() > 0.01: # Threshold slightly above zero 
+			# Calculate target velocity based on input and sensitivity
+			var target_velocity = Vector2(cam_axis_x * gamepad_sensitivity_x, processed_cam_axis_y * gamepad_sensitivity_y)
+			# Lerp current velocity towards target velocity (acceleration)
+			rotation_velocity = rotation_velocity.lerp(target_velocity, delta * controller_smoothing)
 		else:
-			camera_pitch -= pitch_change
+			# No significant input, apply resistance (decelerate towards zero)
+			rotation_velocity = rotation_velocity.lerp(Vector2.ZERO, delta * controller_resistance)
+		
+		# Apply the smoothed velocity to the yaw and pitch
+		# Check magnitude again to avoid tiny movements when velocity is near zero
+		if rotation_velocity.length_squared() > 0.0001:
+			camera_yaw -= rotation_velocity.x * delta 
+			camera_pitch += rotation_velocity.y * delta # Use += because Y axis is already processed for inversion
 			
-		camera_pitch = clamp(camera_pitch, min_pitch_rad, max_pitch_rad) # Clamp vertical angle
+			# Clamp vertical angle immediately after applying pitch change
+			camera_pitch = clamp(camera_pitch, min_pitch_rad, max_pitch_rad)
+		
+	# --- Note: Mouse rotation is handled in _input based on events --- 
 
 	# --- Dynamic FOV Handling ---
 	var target_fov = base_fov
@@ -209,6 +244,7 @@ func process_free_camera(delta):
 	ray_params.exclude = [target] # Exclude the player itself
 
 	var collision = space_state.intersect_ray(ray_params)
+	# --- Restore Original Collision Logic ---
 	if collision:
 		# If collision, move camera slightly away from the collision point
 		final_cam_pos = collision.position + collision.normal * 0.1 
@@ -217,12 +253,14 @@ func process_free_camera(delta):
 	else:
 		# If no collision, smoothly interpolate distance towards the desired value
 		current_distance = lerp(current_distance, desired_distance, delta * follow_speed)
-
-	# Clamp the distance within min/max bounds
+	# --- End of Restoration ---
+	
+	# Clamp the distance within min/max bounds (keep this)
 	current_distance = clamp(current_distance, min_distance, max_distance)
 
 	# Recalculate final position using clamped distance if no collision occurred
-	if !collision:
+	# (This check might be redundant now but harmless to keep)
+	if not collision:
 		final_cam_pos = camera_lookat_pos + cam_dir * current_distance
 
 	# --- Apply Camera Transform --- 
@@ -314,14 +352,17 @@ func set_targeting_mode(is_targeting: bool, target_node: Node3D):
 		camera_pitch = clamp(camera_pitch, min_pitch_rad, max_pitch_rad)
 
 # --- Signal Receiver --- 
-func _on_input_scheme_changed(new_scheme: int): # Receives enum value
-	if new_scheme == player_controller.InputScheme.KEYBOARD_MOUSE:
-		# Show and capture mouse
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		# Potentially hide a gamepad cursor if you add one later
-		# if gamepad_cursor: gamepad_cursor.hide()
-	else: # Gamepad
-		# Release mouse
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		# Potentially show a gamepad cursor if you add one later
-		# if gamepad_cursor: gamepad_cursor.show()
+func _on_input_scheme_changed(scheme):
+	if cursor_manager:
+		if scheme == player_controller.InputScheme.GAMEPAD:
+			cursor_manager.hide_cursor()
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN) # Hide OS cursor too
+		else:
+			cursor_manager.show_cursor() # Show game cursor
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) # Capture for KBM look
+	else:
+		# Fallback if CursorManager is not found
+		if scheme == (player_controller.InputScheme.GAMEPAD if player_controller else 1):
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

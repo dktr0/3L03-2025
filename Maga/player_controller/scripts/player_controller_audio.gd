@@ -4,10 +4,16 @@
 # |+:+    +:+  +:+   +:+  +:+       +:+         +:+ +:+  +:+    +:+ :+:+:+  +:+|
 # |+#++:++#++ +#++:++#++: +#+       +#+          +#++:   +#+    +:+ +#+ +:+ +#+|
 # |+#+    +#+ +#+     +#+ +#+       +#+           +#+    +#+    +#+ +#+  +#+#+#|
-# |#+#    #+# #+#     #+# #+#       #+#    #+#    #+#    #+#    #+# #+#   #+#+#|
+# |#+#    #+# #+#     #+# #+#       #+#    #+#    #+#    #+#    #+# +#+   #+#+#|
 # |###    ### ###     ### ########## ########     ###     ########  ###    ####|
 # '----------------------------------------------------------------------------'
 # Player Controller Audio
+#
+# Handles playing footstep sounds based on player movement.
+# Assumes this node is a child of the main CharacterBody3D node.
+# Requires two child nodes:
+#   - AudioStreamPlayer named "FootstepPlayer"
+#   - Timer named "StepTimer"
 #
 # Developed by:
 # - Liam Maga
@@ -17,86 +23,162 @@
 
 extends Node
 
-# Assuming this script is a child of the main PlayerController node
-# (CharacterBody3D/2D) which has velocity and is_on_floor properties/methods.
-# Ensure this node has two children:
-# 1. An AudioStreamPlayer node named "FootstepPlayer"
-# 2. A Timer node named "StepTimer"
+@export var step_interval: float = 0.3 # Time between steps when moving
+@export var velocity_threshold: float = 0.1 # Minimum velocity magnitude squared to be considered moving
 
-@export var step_interval: float = 0.4 # Time between steps when moving
-
-# NOTE: You need to add an AudioStreamPlayer child node named "FootstepPlayer" in the scene tree.
 @onready var footstep_player: AudioStreamPlayer = $FootstepPlayer
-# NOTE: You need to add a Timer child node named "StepTimer" in the scene tree.
 @onready var step_timer: Timer = $StepTimer
 
-var grass_footstep_sounds: Array[AudioStream] = []
-const GRASS_SOUND_PATHS = [
-	"res://Tram/sound effects/grass-step-1.mp3",
-	"res://Tram/sound effects/grass-step-2.mp3",
-	"res://Tram/sound effects/grass-step-3.mp3",
-	"res://Tram/sound effects/grass-step-4.mp3",
-	"res://Tram/sound effects/grass-step-5.mp3"
-]
+# Reference to the parent CharacterBody3D
+@onready var player_node: CharacterBody3D = get_parent() if get_parent() is CharacterBody3D else null
 
-# This assumes the parent node is a CharacterBody3D or CharacterBody2D.
-# Adjust if your player controller node type is different.
-@onready var player_node = get_parent() if get_parent() is CharacterBody3D or get_parent() is CharacterBody2D else null
+var footstep_sounds: Array[AudioStream] = []
+# TODO: Consider making this path configurable via @export or using a resource
+const FOOTSTEP_SOUND_DIR = "res://Spencer/General/FootstepDull/" # Example path, adjust if needed
 
+# Track movement state
+var was_moving_on_floor := false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if not player_node:
-		push_warning("PlayerControllerAudio requires its parent to be a CharacterBody3D or CharacterBody2D. Footsteps disabled.")
+	print("Audio Script: _ready() called.")
+	if not _validate_nodes():
+		print("Audio Script: Node validation FAILED.")
 		set_process(false)
 		return
-	
-	if not footstep_player:
-		push_error("FootstepPlayer node not found. Add an AudioStreamPlayer named FootstepPlayer as a child.")
-		set_process(false)
-		return
+	print("Audio Script: Node validation PASSED.")
 
-	if not step_timer:
-		push_error("StepTimer node not found. Add a Timer named StepTimer as a child.")
-		set_process(false)
-		return
+	_load_footstep_sounds(FOOTSTEP_SOUND_DIR)
 
-	# Load sounds
-	for path in GRASS_SOUND_PATHS:
-		var stream = load(path) as AudioStream
-		if stream:
-			grass_footstep_sounds.append(stream)
-		else:
-			push_warning("Failed to load footstep sound: " + path)
+	if footstep_sounds.is_empty():
+		push_warning("No footstep sounds loaded. Footsteps will be silent.")
+		print("Audio Script: No footstep sounds loaded. Check path: %s" % FOOTSTEP_SOUND_DIR)
+	else:
+		print("Audio Script: %d footstep sounds loaded from %s." % [footstep_sounds.size(), FOOTSTEP_SOUND_DIR])
 
-	if grass_footstep_sounds.is_empty():
-		push_warning("No grass footstep sounds loaded. Footsteps will be silent.")
-		# Keep processing in case other sounds are added later, but log the warning.
-
-	# Configure timer
+	# Configure the timer
 	step_timer.wait_time = step_interval
-	step_timer.one_shot = true # Timer should stop after triggering once
+	step_timer.one_shot = true
+	if not footstep_sounds.is_empty() and step_timer:
+		if not step_timer.is_connected("timeout", _on_step_timer_timeout):
+			step_timer.timeout.connect(_on_step_timer_timeout)
+			print("Audio Script: Timer timeout connected.")
+		else:
+			print("Audio Script: Timer timeout ALREADY connected.")
+	elif step_timer:
+		print("Audio Script: No sounds loaded, stopping timer.")
+		step_timer.stop()
+	else:
+		print("Audio Script: Timer node invalid, cannot connect signal.")
 
+	# Debug audio player settings
+	print("Audio Script: FootstepPlayer volume_db=%f, autoplay=%s" % [footstep_player.volume_db, footstep_player.autoplay])
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if not player_node or grass_footstep_sounds.is_empty():
-		return # Nothing to do if no player reference or no sounds loaded
+func _validate_nodes() -> bool:
+	# Check 1: Parent
+	if not player_node:
+		push_error("PlayerControllerAudio requires its parent to be a CharacterBody3D. Footsteps disabled.")
+		print("DEBUG: _validate_nodes FAILED - player_node (parent) is null or not CharacterBody3D.")
+		return false
+	print("DEBUG: _validate_nodes PASSED Check 1 (Parent is CharacterBody3D).")
 
-	# Check movement conditions (using is_on_floor() and velocity magnitude)
-	# Adjust the velocity threshold (0.1 * 0.1 = 0.01) if needed.
-	var is_moving_on_floor = player_node.is_on_floor() and player_node.velocity.length_squared() > 0.01
+	# Check 2: FootstepPlayer
+	if not footstep_player:
+		push_error("FootstepPlayer node not found or is wrong type. Add an AudioStreamPlayer named 'FootstepPlayer' as a child.")
+		print("DEBUG: _validate_nodes FAILED - footstep_player is null (Check $FootstepPlayer path/name/type).")
+		return false
+	print("DEBUG: _validate_nodes PASSED Check 2 (FootstepPlayer found).")
 
-	if is_moving_on_floor and step_timer.is_stopped():
-		play_footstep_sound()
-		step_timer.start()
+	# Check 3: StepTimer
+	if not step_timer:
+		push_error("StepTimer node not found or is wrong type. Add a Timer named 'StepTimer' as a child.")
+		print("DEBUG: _validate_nodes FAILED - step_timer is null (Check $StepTimer path/name/type).")
+		return false
+	print("DEBUG: _validate_nodes PASSED Check 3 (StepTimer found).")
 
-func play_footstep_sound() -> void:
-	if grass_footstep_sounds.is_empty() or not footstep_player:
+	return true
+
+func _load_footstep_sounds(directory_path: String) -> void:
+	footstep_sounds.clear()
+	var dir = DirAccess.open(directory_path)
+	if not dir:
+		push_error("Failed to open footstep sound directory: " + directory_path)
 		return
 
-	# Prevent sound overlap by checking if already playing
-	if not footstep_player.playing:
-		var random_index = randi() % grass_footstep_sounds.size()
-		footstep_player.stream = grass_footstep_sounds[random_index]
-		footstep_player.play()
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if not dir.current_is_dir():
+			# Check for common audio extensions
+			var ext = file_name.get_extension().to_lower()
+			if ext == "mp3" or ext == "wav" or ext == "ogg":
+				var file_path = directory_path.path_join(file_name)
+				var stream = load(file_path) as AudioStream
+				if stream:
+					# Ensure the stream doesn't loop internally
+					if stream is AudioStreamMP3: stream.loop = false
+					elif stream is AudioStreamOggVorbis: stream.loop = false
+					# Add other types if needed (e.g., AudioStreamWav)
+					footstep_sounds.append(stream)
+				else:
+					push_warning("Failed to load footstep sound: " + file_path)
+		file_name = dir.get_next()
+	dir.list_dir_end()
+
+
+func _process(_delta: float) -> void:
+	if not is_instance_valid(player_node) or not is_instance_valid(footstep_player) or not is_instance_valid(step_timer):
+		push_warning("PlayerControllerAudio: Critical node instance became invalid during process. Disabling.")
+		set_process(false)
+		return
+		
+	var is_on_floor = player_node.is_on_floor()
+	var velocity_sq = player_node.velocity.length_squared()
+	var is_moving_on_floor = is_on_floor and velocity_sq > velocity_threshold
+	print("Audio Script Process: is_on_floor=%s, vel_sq=%.2f, moving_on_floor=%s, was_moving=%s, timer_stopped=%s" % [is_on_floor, velocity_sq, is_moving_on_floor, was_moving_on_floor, step_timer.is_stopped()])
+
+	if is_moving_on_floor:
+		# Force play a sound if moving, regardless of timer state
+		if not footstep_player.playing:
+			print("Audio Script Process: Player moving, forcing footstep sound.")
+			_play_footstep_sound()
+	else:
+		if not step_timer.is_stopped():
+			print("Audio Script Process: Stopping timer.")
+			step_timer.stop()
+	
+	was_moving_on_floor = is_moving_on_floor
+
+func _play_footstep_sound() -> void:
+	print("Audio Script: _play_footstep_sound() called.") # DEBUG
+	if footstep_sounds.is_empty() or not is_instance_valid(footstep_player):
+		print("Audio Script: Aborting play (no sounds or invalid player).") # DEBUG
+		return # Cannot play sound
+
+	# Stop previous sound to prevent overlaps if it's still playing somehow
+	if footstep_player.playing:
+		print("Audio Script: Stopping previous sound.") # DEBUG
+		footstep_player.stop()
+
+	# Select and play a random footstep sound
+	var sound_to_play = footstep_sounds.pick_random()
+	footstep_player.stream = sound_to_play
+	print("Audio Script: Playing sound: %s" % [sound_to_play.resource_path if sound_to_play else "null"]) # DEBUG
+	footstep_player.play()
+
+	# Start the timer for the *next* step. We always start it here now,
+	# the timeout handler will decide if another step should play.
+	print("Audio Script: Starting timer after playing sound.") # DEBUG
+	step_timer.start()
+
+# Called when the StepTimer finishes its wait time
+func _on_step_timer_timeout() -> void:
+	print("Audio Script: _on_step_timer_timeout() called.") # DEBUG
+	# When the timer times out, play another step IF the player is still moving.
+	if is_instance_valid(player_node) and \
+	   player_node.is_on_floor() and \
+	   player_node.velocity.length_squared() > velocity_threshold:
+		
+		print("Audio Script Timeout: Player still moving, playing next step.") # DEBUG
+		_play_footstep_sound()
+	else:
+		print("Audio Script Timeout: Player stopped or in air, not playing next step.") # DEBUG
