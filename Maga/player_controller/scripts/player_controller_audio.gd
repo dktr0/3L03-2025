@@ -23,7 +23,8 @@
 
 extends Node
 
-@export var step_interval: float = 0.3 # Time between steps when moving
+@export var step_interval: float = 0.4 # Time between steps when WALKING (increased slightly)
+@export var sprint_step_interval: float = 0.3 # Time between steps when SPRINTING (kept the original faster rate)
 @export var velocity_threshold: float = 0.1 # Minimum velocity magnitude squared to be considered moving
 
 @onready var footstep_player: AudioStreamPlayer = $FootstepPlayer
@@ -56,7 +57,7 @@ func _ready() -> void:
 		print("Audio Script: %d footstep sounds loaded from %s." % [footstep_sounds.size(), FOOTSTEP_SOUND_DIR])
 
 	# Configure the timer
-	step_timer.wait_time = step_interval
+	# step_timer.wait_time = step_interval # Initial setting removed, now set dynamically
 	step_timer.one_shot = true
 	if not footstep_sounds.is_empty() and step_timer:
 		if not step_timer.is_connected("timeout", _on_step_timer_timeout):
@@ -77,23 +78,17 @@ func _validate_nodes() -> bool:
 	# Check 1: Parent
 	if not player_node:
 		push_error("PlayerControllerAudio requires its parent to be a CharacterBody3D. Footsteps disabled.")
-		print("DEBUG: _validate_nodes FAILED - player_node (parent) is null or not CharacterBody3D.")
 		return false
-	print("DEBUG: _validate_nodes PASSED Check 1 (Parent is CharacterBody3D).")
 
 	# Check 2: FootstepPlayer
 	if not footstep_player:
 		push_error("FootstepPlayer node not found or is wrong type. Add an AudioStreamPlayer named 'FootstepPlayer' as a child.")
-		print("DEBUG: _validate_nodes FAILED - footstep_player is null (Check $FootstepPlayer path/name/type).")
 		return false
-	print("DEBUG: _validate_nodes PASSED Check 2 (FootstepPlayer found).")
 
 	# Check 3: StepTimer
 	if not step_timer:
 		push_error("StepTimer node not found or is wrong type. Add a Timer named 'StepTimer' as a child.")
-		print("DEBUG: _validate_nodes FAILED - step_timer is null (Check $StepTimer path/name/type).")
 		return false
-	print("DEBUG: _validate_nodes PASSED Check 3 (StepTimer found).")
 
 	return true
 
@@ -134,18 +129,20 @@ func _process(_delta: float) -> void:
 	var is_on_floor = player_node.is_on_floor()
 	var velocity_sq = player_node.velocity.length_squared()
 	var is_moving_on_floor = is_on_floor and velocity_sq > velocity_threshold
-	print("Audio Script Process: is_on_floor=%s, vel_sq=%.2f, moving_on_floor=%s, was_moving=%s, timer_stopped=%s" % [is_on_floor, velocity_sq, is_moving_on_floor, was_moving_on_floor, step_timer.is_stopped()])
+	# print("Audio Script Process: is_on_floor=%s, vel_sq=%.2f, moving_on_floor=%s, was_moving=%s" % [is_on_floor, velocity_sq, is_moving_on_floor, was_moving_on_floor]) # DEBUG
 
-	if is_moving_on_floor:
-		# Force play a sound if moving, regardless of timer state
-		if not footstep_player.playing:
-			print("Audio Script Process: Player moving, forcing footstep sound.")
-			_play_footstep_sound()
-	else:
+	# Check state transitions
+	if is_moving_on_floor and not was_moving_on_floor:
+		# Just started moving on floor: play first step and start timer
+		print("Audio Script Process: Started moving, playing first step.") # DEBUG
+		_play_footstep_sound()
+	elif not is_moving_on_floor and was_moving_on_floor:
+		# Just stopped moving on floor: stop the timer
 		if not step_timer.is_stopped():
-			print("Audio Script Process: Stopping timer.")
+			print("Audio Script Process: Stopped moving, stopping timer.") # DEBUG
 			step_timer.stop()
 	
+	# Update state for next frame
 	was_moving_on_floor = is_moving_on_floor
 
 func _play_footstep_sound() -> void:
@@ -167,18 +164,19 @@ func _play_footstep_sound() -> void:
 
 	# Start the timer for the *next* step. We always start it here now,
 	# the timeout handler will decide if another step should play.
-	print("Audio Script: Starting timer after playing sound.") # DEBUG
+	# Set the wait time dynamically based on current sprint state
+	var is_sprinting = player_node.is_currently_sprinting()
+	if is_sprinting:
+		step_timer.wait_time = sprint_step_interval
+	else:
+		step_timer.wait_time = step_interval
 	step_timer.start()
 
 # Called when the StepTimer finishes its wait time
 func _on_step_timer_timeout() -> void:
-	print("Audio Script: _on_step_timer_timeout() called.") # DEBUG
 	# When the timer times out, play another step IF the player is still moving.
 	if is_instance_valid(player_node) and \
 	   player_node.is_on_floor() and \
 	   player_node.velocity.length_squared() > velocity_threshold:
 		
-		print("Audio Script Timeout: Player still moving, playing next step.") # DEBUG
 		_play_footstep_sound()
-	else:
-		print("Audio Script Timeout: Player stopped or in air, not playing next step.") # DEBUG

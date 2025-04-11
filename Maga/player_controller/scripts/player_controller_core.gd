@@ -66,6 +66,7 @@ var current_jumps := 0 # Counter for jumps performed since last grounded
 var was_on_floor := false # Track floor state for fall detection
 var is_attacking := false # ADDED: State flag for attacking
 var was_walking_on_floor := false # ADDED: Track previous walking state
+var _is_currently_sprinting := false # ADDED: Track sprint state for audio
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -207,6 +208,7 @@ func _physics_process(delta: float):
 	var look_direction = movement_input["look_direction"]
 	var is_sprinting = movement_input["is_sprinting"]
 	var is_moving = velocity.length_squared() > 0.1 # Determine is_moving AFTER velocity updates
+	_is_currently_sprinting = is_sprinting # Store current sprint state
 
 	# --- Ground State Reset ---
 	if on_floor:
@@ -661,3 +663,7 @@ func _on_AnimationPlayer_animation_finished(anim_name: StringName) -> void:
 
 func get_jump_strength() -> float:
 	return jump_strength
+
+# ADDED: Helper function for audio script to check sprint state
+func is_currently_sprinting() -> bool:
+	return _is_currently_sprinting

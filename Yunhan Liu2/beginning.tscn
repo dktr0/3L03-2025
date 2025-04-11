@@ -43,7 +43,7 @@ size = Vector3(8.48912, 5.17664, 4.11774)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rafp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kn12n"]
-size = Vector3(19.2486, 1.97266, 0.953369)
+size = Vector3(2.62821, 1.97266, 0.91922)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5gtf"]
 
@@ -301,21 +301,21 @@ shape = SubResource("BoxShape3D_kn12n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5976, 0, 52.3188)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, -1.40303, 0, 40.2962)
+transform = Transform3D(1, 0, 0, 0, 20.1829, 0, 0, 0, 116.557, 3.40991, 0, 41.1001)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="airwall"]
 transform = Transform3D(-0.0444912, 0, 0.99901, 0, 1, 0, -0.99901, 0, -0.0444912, 40.4473, -2.55907, 28.1415)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D3"]
-transform = Transform3D(1, 0, 4.29153e-06, 0, 20.1829, 0, 0, 0, 116.557, -10.2093, -0.715122, 32.8956)
+transform = Transform3D(1, 0, 8.10623e-06, 0, 20.1829, 0, 0, 0, 116.557, -10.4921, -0.715122, 34.3914)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="airwall"]
 transform = Transform3D(-0.0444912, 0, 0.99901, 0, 1, 0, -0.99901, 0, -0.0444912, -97.4958, -2.55907, 28.1415)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="airwall/StaticBody3D4"]
-transform = Transform3D(1, 0, 8.10623e-06, 0, 20.1829, 0, 0, 0, 116.557, -12.9516, 0, 39.2514)
+transform = Transform3D(1, 0, 8.10623e-06, 0, 20.1829, 0, 0, 0, 116.557, -16.1661, 0, 39.5609)
 shape = SubResource("BoxShape3D_kn12n")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="airwall"]
