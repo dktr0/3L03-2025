@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ch8seema8pfuv"]
+[gd_scene load_steps=14 format=3 uid="uid://ch8seema8pfuv"]
 
 [ext_resource type="Script" path="res://Andy/credit.gd" id="1_8i8ia"]
 [ext_resource type="Texture2D" uid="uid://b6sn8qlgq0lie" path="res://Andy/A/background-creidt.png" id="2_1088w"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dbblm68oqrl2w" path="res://Andy/A/sound.png" id="10_h2aci"]
 [ext_resource type="Texture2D" uid="uid://b028ih23qhhiy" path="res://Andy/A/UI-light.png" id="11_axmgc"]
 [ext_resource type="Texture2D" uid="uid://cp55ixlfe6dms" path="res://Andy/A/UI.png" id="12_1ex80"]
-[ext_resource type="Texture2D" uid="uid://gbiofav5b6gc" path="res://Andy/A/dr.0.png" id="13_prsjb"]
 [ext_resource type="FontFile" uid="uid://dvldyfa6l2w01" path="res://Zhu/something to use/font for all words.ttf" id="14_osnsc"]
 
 [node name="Control" type="Control"]
@@ -127,36 +126,6 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("8_jfe7f")
 
-[node name="Label" type="Label" parent="Programming/TextureRect"]
-layout_mode = 0
-offset_left = -30.6667
-offset_top = -37.3337
-offset_right = 200.333
-offset_bottom = -4.33366
-theme_override_fonts/font = ExtResource("14_osnsc")
-theme_override_font_sizes/font_size = 30
-text = "MAIN PROGRAMMER"
-
-[node name="Label2" type="Label" parent="Programming/TextureRect"]
-layout_mode = 0
-offset_left = 226.667
-offset_top = -34.667
-offset_right = 443.667
-offset_bottom = -4.66699
-theme_override_fonts/font = ExtResource("14_osnsc")
-theme_override_font_sizes/font_size = 30
-text = "Player programmer"
-
-[node name="Label3" type="Label" parent="Programming/TextureRect"]
-layout_mode = 0
-offset_left = 526.667
-offset_top = -34.667
-offset_right = 640.667
-offset_bottom = -4.66699
-theme_override_fonts/font = ExtResource("14_osnsc")
-theme_override_font_sizes/font_size = 30
-text = "Professor"
-
 [node name="Sound" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 6
@@ -217,22 +186,6 @@ offset_bottom = -51.0
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("12_1ex80")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -181.0
-offset_top = -57.0
-offset_right = 472.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.585, 0.585)
-texture = ExtResource("13_prsjb")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
