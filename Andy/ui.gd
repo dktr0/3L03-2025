@@ -73,7 +73,7 @@ func _input(event: InputEvent) -> void: # Changed _event to event
 	
 	# --- Activation Logic --- 
 	# Check for activation action
-	if Input.is_action_just_pressed("activate"):
+	if Input.is_action_just_pressed("activate") or Input.is_action_just_pressed("ui_accept"):
 		_activate_current_selection()
 		get_viewport().set_input_as_handled() # Prevent further processing
 		return

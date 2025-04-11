@@ -31,7 +31,7 @@ func _on_area_body_exited(body: Node):
 		can_open = false
 
 func _input(event):
-	if event.is_action_pressed("activate"):
+	if event.is_action_pressed("activate_button"):
 		if can_open and not is_opened:
 			open_chest()
 

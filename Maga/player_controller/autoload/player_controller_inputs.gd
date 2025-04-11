@@ -165,11 +165,11 @@ func setup_default_events():
 	add_key_mapping("ui_accept", KEY_ENTER)
 	add_key_mapping("ui_cancel", KEY_ESCAPE)
 	add_key_mapping("activate", KEY_E) # E key for activate
-	add_key_mapping("activate_button", KEY_ENTER) # Enter for activate_button (example)
 	add_mouse_button_mapping("activate_button", MOUSE_BUTTON_LEFT)
+	add_key_mapping("activate_button", KEY_E) # E for activate_button
 	# --------------------------------------------------
 	# Keeping mouse binding from project.godot (or add here if needed)
-	# add_mouse_button_mapping("attack", MOUSE_BUTTON_LEFT) 
+	# add_mouse_button_mapping("attack", MOUSE_BUTTON_LEFT)
 	# --- ADDED: Explicitly add mouse button mapping for attack ---
 	add_mouse_button_mapping("attack", MOUSE_BUTTON_LEFT)
 	# -----------------------------------------------------------
